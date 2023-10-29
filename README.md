@@ -6,10 +6,15 @@ SPRINT 1
 COLABORADORES:
 --------------
 Nicolas Villamil
+
 Rodrigo Stochetta
+
 Agustin Macko
+
 Dayana Stefany Guerrero Avendaño
+
 Simon Garay
+
 Chiara Pittorino
 
 WIREFRAMES
@@ -36,6 +41,8 @@ DISEÑO
 ------
 
 Tipografía:
+
 Paleta de colores:
+
 Logo:
 
