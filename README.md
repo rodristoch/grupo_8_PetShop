@@ -20,6 +20,7 @@ TEMATICA DEL SITIO
 ------------------
 
 Un e-commerce para la venta de articulos varios y alimento para mascotas.
+
 El público objetivo es todo aquel con mascota/s como ser perros, gatos, aves, ya que los articulos en venta del e-commerce serán para estos 3 tipos.
 
 PAGINAS MODELO
