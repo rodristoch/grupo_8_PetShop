@@ -33,6 +33,10 @@ PAGINAS MODELO
 
 https://www.puppis.com.ar/?gclid=Cj0KCQjwhfipBhCqARIsAH9msbkfKhTwx6BW_zo9wodyoIdr-n_4L-vqTlJJgEueD8-VVD9PlLyCNVgaAj-bEALw_wcB
 
+https://www.petco.com/shop/en/petcostore
+
+https://www.chewy.com/
+
 https://www.mundo-mascota.com.ar/?gclid=Cj0KCQjwhfipBhCqARIsAH9msbnoQNeBn5cWCzflKppamKHmf4Tg2lst69HAY1Hgpf0PbiQvf4j_1HAaAlfaEALw_wcB
 
 https://nutrican.com.ar/?gclid=Cj0KCQjwhfipBhCqARIsAH9msblygGv16-KHcnoD-CR8zO17rd000eFRZc1KRNQeWS8aFoQKz7pPRagaApSdEALw_wcB
