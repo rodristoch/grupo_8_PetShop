@@ -9,7 +9,7 @@ Nicolas Villamil
 
 Rodrigo Stochetta
 
-Agustin Macko
+Agustin Macko: Argentino, 37 años, actualmente trabajo como SS UX/UI en Laika (startup colombiana) y como maquetador para la Agencia de Aprendizaje del GCBA
 
 Dayana Stefany Guerrero Avendaño
 
