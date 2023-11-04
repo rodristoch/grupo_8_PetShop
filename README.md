@@ -23,6 +23,7 @@ WIREFRAMES
 Home: https://wireframe.cc/KWwdUU
 Login: https://wireframe.cc/pro/pp/3d70a6e8d697646
 Register: https://www.figma.com/file/KzbUzv2mvlN2blUTy41zrk/Untitled?type=design&node-id=11%3A478&mode=design&t=BlPsR1Xu5Uo5dBPx-1
+Detalles del producto: https://wireframe.cc/pro/pp/7f262ac83697777
 
 TEMATICA DEL SITIO
 ------------------
