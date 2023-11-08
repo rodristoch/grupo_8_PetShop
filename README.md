@@ -18,8 +18,8 @@ Simon Garay
 
 Chiara Pittorino
 
-WIREFRAMES
-----------
+WIREFRAMES (baja calidad)
+---------------------------
 
 Home: https://wireframe.cc/XRkVH4
 
@@ -28,6 +28,11 @@ Login: https://wireframe.cc/pro/pp/3d70a6e8d697646
 Register: https://www.figma.com/file/KzbUzv2mvlN2blUTy41zrk/Untitled?type=design&node-id=11%3A478&mode=design&t=BlPsR1Xu5Uo5dBPx-1
 
 Detalles del producto: https://wireframe.cc/pro/pp/7f262ac83697777
+
+
+WIREFRAMES (alta calidad)
+------------------------
+Figma: https://www.figma.com/file/KzbUzv2mvlN2blUTy41zrk/Untitled?type=design&node-id=0%3A1&mode=design&t=YyLcp2IqYnwesjQo-1
 
 
 TEMATICA DEL SITIO
@@ -55,9 +60,17 @@ https://www.homecenter.com.co/homecenter-co/landing/cat10018/Mascotas
 DISEÑO
 ------
 
-Tipografía:
+Tipografía 
+------
+Roboto
 
-Paleta de colores:
+Paleta de colores
+------
+Principal: #18515F
+Secunario: #FFD046
+Blanco: #FCFCFC
+Negro: #271938
+Gris: #A9A3AF
 
 Logo:
 
