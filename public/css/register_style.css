@@ -20,6 +20,7 @@ h2{
 
  .contenedor {
     display: flex;
+    justify-content: center;
     width: 100%;
 }
 
@@ -53,11 +54,12 @@ cursor: pointer;
 }
 .formulario {
     flex: 1;
-    padding: 0 70px;
+    padding: 0px;
 }
 
 .centrado {
     width: 80%;
+    margin: 0 auto;
 }
 
 .input1 {
