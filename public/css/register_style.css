@@ -1,3 +1,57 @@
-p {
-    color: red;
+  @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap');
+
+
+/* --- Estilos generales */
+
+ body {
+    font-family:'Roboto';
+ }
+
+h2{
+    line-height: 28px;
+    color: #00505F;
+    text-align: center;
+}
+
+ .contenedor {
+    display: flex;
+    width: 100%;
+}
+
+ /* --- Imagen izquierda */
+.tamano-imagen {
+    width: 300px;
+    height: auto;
+    flex:1
+}
+
+ /* --- Formulario derecha */
+
+.titulo {
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 100%;
+    margin-bottom: 8px;
+}
+.formulario {
+    flex: 1;
+    padding: 0 70px;
+}
+
+.centrado {
+    width: 80%;
+}
+
+.input1 {
+    font-size: 16px;
+    border: 1px solid #B8D6BF ;
+    border-radius: 8px;
+    padding: 12px 16px ;
+    height:24px;
+    width: 100%;
+}
+
+.input1::placeholder {
+     color: #18515F;
+     color: #18515F;
 }
