@@ -15,6 +15,12 @@ app.get("/", (req, res) => {
 
 });
 
+app.get("/register", (req, res) => {
+    
+    res.sendFile(path.resolve(__dirname, "./views/register.html"));              //mando al root del sitio el archivo home.html q está dentro de la carpeta views
+
+});
+
 app.use(express.static(path.resolve(__dirname, "../public")));               //para hacer uso de la carpeta public
 
 
