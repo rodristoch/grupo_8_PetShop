@@ -11,7 +11,7 @@ app.listen (3100, () => console.log("Servidor corriendo en puerto 3100"));   //l
 
 app.get("/", (req, res) => {
     
-    res.sendFile(path.resolve(__dirname, "./views/index.html"));              //mando al root del sitio el archivo home.html q está dentro de la carpeta views
+    res.sendFile(path.resolve(__dirname, "./views/home.html"));              //mando al root del sitio el archivo home.html q está dentro de la carpeta views
 
 });
 
