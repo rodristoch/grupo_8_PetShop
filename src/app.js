@@ -1,4 +1,5 @@
 const express = require("express");                                          //para requerir express
+const { get } = require("http");
 
 const path = require("path");                                                //para requerir path (para hacer un ruteo mas sencillo para express)
 
@@ -26,7 +27,11 @@ app.get("/detalles-del-producto", (req, res) => {
     res.sendFile(path.resolve(__dirname, "./views/detalles-del-producto.html"));  
 
 });         //mando al root del sitio el archivo detalles-del-producto.html q está dentro de la carpeta views
+app.get("/carrito", (req, res) => {
+    
+    res.sendFile(path.resolve(__dirname, "./views/carrito.html"));  
 
+}); 
 
 app.use(express.static(path.resolve(__dirname, "../public")));               //para hacer uso de la carpeta public
 
