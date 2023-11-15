@@ -5,7 +5,7 @@ SPRINT 1
 
 COLABORADORES:
 --------------
-Nicolas Villamil
+Nicolas Villamil: Mitad argentino, mitad colombiano. Tengo 26 años. Mi pasión es el fútbol y desde muy chico de alguna manera programar ha sido un hobbie que me ha despertado mucho interés. Además soy periodista. 
 
 Rodrigo Stochetta: de CABA, Buenos Aires, adicto a la tecnología y computación en especial. Arquitecto, diseñador. Muy entusiasmado en el curso y aprendizaje de 
 Programación web full stack. También con experiencia en armado de PCs desde adolescente.
