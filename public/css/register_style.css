@@ -39,6 +39,7 @@ cursor: pointer;
 }
  /* --- Imagen izquierda */
 .tamano-imagen {
+    display: none;
     width: 300px;
     height: auto;
     flex:1
