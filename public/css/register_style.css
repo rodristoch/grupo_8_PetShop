@@ -24,19 +24,9 @@ h2{
     width: 100%;
 }
 
-button {
-border: none;
-border-radius: 8px;
-color: white;
-background-color: #18515F;
-padding: 15px 32px;
-text-align: center;
-text-decoration: none;
-width: 100%;
-font-size: 18px;
-margin: 32px 0px 0px 0px;
-cursor: pointer;
-}
+ /* ------------------------------------------------------------ */
+
+
  /* --- Imagen izquierda */
 .tamano-imagen {
     display: none;
@@ -44,6 +34,9 @@ cursor: pointer;
     height: auto;
     flex:1
 }
+
+ /* ------------------------------------------------------------ */
+
 
  /* --- Formulario derecha */
 
@@ -63,7 +56,7 @@ cursor: pointer;
     margin: 0 auto;
 }
 
-.input1 {
+form input {
     font-size: 16px;
     border: 1px solid #B8D6BF ;
     border-radius: 8px;
@@ -72,14 +65,76 @@ cursor: pointer;
     width: 100%;
 }
 
-.input1::placeholder {
-     color: #18515F;
+input::placeholder {
      color: #18515F;
 }
 
-.enlinea {
+.flex-enlinea {
     margin-top: 16px;
     display: flex;
     align-items: center;
+}
 
+
+                                        /* --- Condiciones formulario */
+form input:hover {
+    border: 1px solid #00505F;
+}
+
+form input:focus {
+    outline: none;
+    border: 1px solid #00505F;
+    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+}
+
+form input[type="text"]:not(:placeholder-shown), input[type="password"]:not(:placeholder-shown), input[type="email"]:not(:placeholder-shown){
+    border: 1px solid #4CAF50;
+}
+
+
+/* ------------------------------------------------------------ */
+ /* --- Labels */
+
+ .error {
+    display: none;
+    color: #E00007 ;
+    font-size: 13px;
+ }
+ /* ------------------------------------------------------------ */
+
+
+ /* --- button */
+ 
+
+button {
+    border: none;
+    border-radius: 8px;
+    color: white;
+    background-color: #18515F;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    width: 100%;
+    font-size: 18px;
+    margin: 32px 0px 0px 0px;
+    cursor: pointer;
+    }
+
+button:hover {
+    background-color: #216F83 ;
+}
+
+/* --- Media querys */
+
+@media (min-width:361px){
+
+}
+@media (min-width:769px){
+    .tamano-imagen {
+        display: block;
+    }
+}
+
+@media(min-width:1200px){
+   
 }
