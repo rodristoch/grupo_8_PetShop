@@ -14,16 +14,39 @@
 
 h2{
     line-height: 28px;
-    color: #00505F;
+    color: #18515F;
     text-align: center;
 }
 
+a {
+    color: #18515F;
+}
+
+a:hover {
+    color: #216F83 ;
+}
+
+a:visited {
+    color: #AA6DA3 ;
+}
+
+hr {
+    margin-top: 24px;
+}
  .contenedor {
     display: flex;
     justify-content: center;
     width: 100%;
 }
 
+/* ------------------------------------------------------------ */
+
+ /* --- Loging (only) */
+
+ .logo {
+    height: 40px;
+    width: auto;
+ }
  /* ------------------------------------------------------------ */
 
 
@@ -104,8 +127,6 @@ form input[type="text"]:not(:placeholder-shown), input[type="password"]:not(:pla
 
 
  /* --- button */
- 
-
 button {
     border: none;
     border-radius: 8px;
@@ -124,6 +145,23 @@ button:hover {
     background-color: #216F83 ;
 }
 
+.btn-icon {
+    width: 90%;
+    height: 48px;
+    display: flex;
+    align-items: center;
+    justify-content:space-between;
+    color: #18515F;
+    background-color: white;
+    border: 1px solid #18515F;
+}
+
+.btn-secundario {
+    height: 48px;
+    color: #18515F;
+    background-color: white;
+    border: 1px solid #18515F;
+}
 /* --- Media querys */
 
 @media (min-width:361px){
