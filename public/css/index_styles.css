@@ -79,7 +79,65 @@
     width: 100%;
 }
 
+/* HEADER Y FOOTER */
 
+.top {
+    background-color: #18515F;
+    display: flex;
+    justify-content: space-between;
+    height: 20vh;
+}
+
+.logo {
+    width: 14vw;
+    height: 14vh;
+    padding: 10px;
+}
+
+.mis-compras, .carrito, .mi-cuenta {
+    display: none;
+}
+
+.titulo-head {
+    font-family: 'Amatic SC';
+    color: white;
+    margin-left: 10px;
+    margin-top: 10px;
+    display: none;
+}
+
+.busqueda {
+    padding-top: 6vh;
+    padding-left: 30px;
+    padding-right: 30px;
+}
+
+.menu {
+    font-size: 4vh;
+    padding-top: 6vh;
+    padding-right: 50px;
+}
+
+footer {
+    background-color: #18515F;
+    display: flex;
+    justify-content: space-around;
+}
+
+.logo2 {
+    width: 17vw;
+    height: 17vh;
+}
+
+
+.contacto,.todo-gato, .todo-perro, .nosotros, .rrss{
+    display: none;
+}
+
+.redes-sociales {
+    display: block;
+    padding: 20px;
+}
 
 
 @media (min-width: 770px) {
@@ -100,16 +158,6 @@
 
 /* HEADER Y FOOTER */
 
-body { 
-    font-family: 'roboto';
-}
-
-.top {
-    background-color: #18515F;
-    display: flex;
-    height: 20vh;
-}
-
 .logo {
     width: 8%;
     height: 80%;
@@ -117,20 +165,10 @@ body {
 }
 
 .titulo-head {
-    font-family: 'Amatic SC';
     font-size: 60px;
-    color: white;
-    margin-left: 10px;
-    margin-top: 10px;
-    
+    display: flex;
 }
 
-.busqueda {
-    font-family: 'Roboto';
-    font-size: 20px;
-    color: white;
-    margin:auto
-}
 
 .mis-compras {
     font-family: 'Roboto';
@@ -157,6 +195,10 @@ body {
     color: white;
 }
 
+.menu {
+    display: none;
+}
+
 
 footer {
     background-color: #18515F;
@@ -164,45 +206,56 @@ footer {
 }
 
 .logo2 {
-    width: 3%;
-    height: 30%;
+    width: 12vw;
+    height: 12vh;
     padding: 60px;
 }
 
 .nosotros {
+    display: block;
     color: white;
     text-align: justify;
     margin: auto;
     font-size: 12px;
+    padding-left: 15px;
 }
 
 .todo-perro {
+    display: block;
     color: white;
     text-align: justify;
     margin: auto;
     font-size: 12px;
+    padding-left: 15px;
 }
 
 .todo-gato {
+    display: block;
     color: white;
     text-align: justify;
     margin: auto;
     font-size: 12px;
+    padding-left: 15px;
 }
 
 .contacto {
+    display: block;
     color: white;
     text-align: justify;
     margin: auto;
     font-size: 12px;
+    padding-left: 15px;
 }
 
 .redes-sociales {
+    display: block;
     color: white;
     text-align: justify;
     margin: auto;
     font-size: 12px;
+    padding-left: 15px;
 }
+
 
 }
 
