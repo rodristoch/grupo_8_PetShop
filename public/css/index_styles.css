@@ -98,6 +98,112 @@
         width: 25%;
     }
 
+/* HEADER Y FOOTER */
+
+body { 
+    font-family: 'roboto';
+}
+
+.top {
+    background-color: #18515F;
+    display: flex;
+    height: 20vh;
+}
+
+.logo {
+    width: 8%;
+    height: 80%;
+    padding: 10px;
+}
+
+.titulo-head {
+    font-family: 'Amatic SC';
+    font-size: 60px;
+    color: white;
+    margin-left: 10px;
+    margin-top: 10px;
+    
+}
+
+.busqueda {
+    font-family: 'Roboto';
+    font-size: 20px;
+    color: white;
+    margin:auto
+}
+
+.mis-compras {
+    font-family: 'Roboto';
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    margin: auto;
+    color: white;
+}
+
+.mi-cuenta {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    margin: auto;
+    color: white;
+}
+
+.carrito {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    margin: auto;
+    color: white;
+}
+
+
+footer {
+    background-color: #18515F;
+    display: flex;
+}
+
+.logo2 {
+    width: 3%;
+    height: 30%;
+    padding: 60px;
+}
+
+.nosotros {
+    color: white;
+    text-align: justify;
+    margin: auto;
+    font-size: 12px;
+}
+
+.todo-perro {
+    color: white;
+    text-align: justify;
+    margin: auto;
+    font-size: 12px;
+}
+
+.todo-gato {
+    color: white;
+    text-align: justify;
+    margin: auto;
+    font-size: 12px;
+}
+
+.contacto {
+    color: white;
+    text-align: justify;
+    margin: auto;
+    font-size: 12px;
+}
+
+.redes-sociales {
+    color: white;
+    text-align: justify;
+    margin: auto;
+    font-size: 12px;
+}
+
 }
 
 @media (min-width: 1200px) {
@@ -120,5 +226,7 @@
     .articulo-productos-descuentos {
         width: 15%;
     }
+
+
 
 }
