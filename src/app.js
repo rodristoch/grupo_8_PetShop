@@ -28,6 +28,13 @@ app.get("/register", (req, res) => {
 
 });
 
+app.get("/login", (req, res) => {
+    
+    res.sendFile(path.resolve(__dirname, "./views/login.html"));                  //mando al root del sitio el archivo register.html q está dentro de la carpeta views
+
+});
+
+
 app.get("/detalles-del-producto", (req, res) => {
     
     res.sendFile(path.resolve(__dirname, "./views/detalles-del-producto.html"));     //mando al root del sitio el archivo detalles-del-producto.html q está dentro de la carpeta views
