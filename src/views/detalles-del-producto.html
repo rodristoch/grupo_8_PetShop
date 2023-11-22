@@ -18,15 +18,18 @@
         <p class="titulo-head">PATITAS</p>
         <p class="busqueda">BARRA DE BUSQUEDA</p>
         <div class="mis-compras">
-            <p>icono</p>
+            <i class="fa-solid fa-lock" style="color: #ffffff;"></i>
             <p>Mis compras</p>
         </div>
         <div class="mi-cuenta">
-            <p>icono</p>
-            <a href="./register">Mi cuenta</a>
+            
+            <a href="./register">
+                <i class="fa-solid fa-circle-user" style="color: #ffffff;"></i>
+                <p>Mi cuenta</p>
+            </a>
         </div>
         <div class="carrito">
-            <p>icono</p>
+            <i class="fa-solid fa-cart-shopping" style="color: #ffffff;"></i>
             <p>Carrito</p>
         </div>
     </header>
@@ -49,36 +52,57 @@
             <p class="nombre">Comida para perros Eukanuba</p>
             <p class="precio">$30.000</p>
             <div class="icono">
-                
-                <p class="envio">Envío <br>
-                    <i class="fa-solid fa-truck"></i>
+                <p class="envio">Envío
+                    <div>
+                        <i class="fa-solid fa-truck"></i>
+                    </div>
                 </p>
-                <p class="envio">Express <br>
-                    <i class="fa-solid fa-truck-fast"></i>
+                <p class="envio">Express
+                    <div>
+                        <i class="fa-solid fa-truck-fast"></i>
+                    </div>
                 </p>
-                <p class="envio">Retiro <br>
-                    <i class="fa-solid fa-car-side"></i>
+                <p class="envio">Retiro
+                    <div>
+                        <i class="fa-solid fa-car-side"></i>
+                    </div>
                 </p>
-
             </div>
 
-            <select name="peso-tamaño">
-                <option value="valor">Seleccionar peso/tamaño</option>
-                <option value="valor">Value 1</option>
-                <option value="valor2">Value 2</option>
-                <option value="valor3">Value 3</option>
-              </select>
+            
+            <form action="/detalles-del-producto" method="">
+                <select name="peso-tamaño">
+                    <option value="valor">Seleccionar peso/tamaño</option>
+                    <option value="valor">Value 1</option>
+                    <option value="valor2">Value 2</option>
+                    <option value="valor3">Value 3</option>
+                </select>
                         
-            <select name="cantidad">
-                <option value="valor">Seleccionar cantidad</option>
-                <option value="valor">Value 1</option>
-                <option value="valor2">Value 2</option>
-                <option value="valor3">Value 3</option>
-              </select>
+                <select name="cantidad">
+                    <option value="valor">Seleccionar cantidad</option>
+                    <option value="valor">Value 1</option>
+                    <option value="valor2">Value 2</option>
+                    <option value="valor3">Value 3</option>
+                </select>
 
-            <button>Agregar al carrito</button>
+                <button type="submit">Agregar al carrito</button>
+            </form>
         </div>
         
+    </div>
+    <div class="descripcion">
+        <h2>Descripción del producto</h2>
+        <p class="descripcion-producto">Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+            Reiciendis, animi debitis voluptas voluptate aperiam quia asperiores, sed, et itaque alias optio beatae neque nihil earum excepturi voluptatibus assumenda! 
+            Eum, nisi. Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+            Reiciendis, animi debitis voluptas voluptate aperiam quia asperiores, sed, et itaque alias optio beatae neque nihil earum excepturi voluptatibus assumenda! 
+            Eum, nisi. Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+            Reiciendis, animi debitis voluptas voluptate aperiam quia asperiores, sed, et itaque alias optio beatae neque nihil earum excepturi voluptatibus assumenda! 
+            Eum, nisi.</p>
+    </div>
+        <h2>Productos relacionados</h2>
+    <div class="relacionados">
+
     </div>
 
     </main>
