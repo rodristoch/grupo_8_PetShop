@@ -12,7 +12,7 @@ Programación web full stack. También con experiencia en armado de PCs desde ad
 
 Agustin Macko: Argentino, 37 años, actualmente trabajo como SS UX/UI en Laika (startup colombiana) y como maquetador para la Agencia de Aprendizaje del GCBA
 
-Dayana Stefany Guerrero Avendaño
+Dayana Stefany Guerrero Avendaño: 25 años, valoro muchsismo el tiempo aunque el no me valore a mi, Soy Colombiana y vivo llena de curiosidad.
 
 Simon Garay
 
