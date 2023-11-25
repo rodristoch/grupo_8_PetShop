@@ -222,6 +222,7 @@ footer {
 }
 
 .logo2 {
+    display: none;
     width: 3%;
     height: 30%;
     padding: 60px;
@@ -260,6 +261,15 @@ footer {
     text-align: justify;
     margin: auto;
     font-size: 12px;
+}
+
+.facebook-tablet, .twitter-tablet, .instagram-tablet {
+    display: none;
+}
+
+.rrss-iconos {
+    display: flex;
+    justify-content: space-between;
 }
 /* --------------------------footer----------------------------------- */
 
