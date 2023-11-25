@@ -4,6 +4,57 @@
     box-sizing: border-box;
 }
 
+a {
+    text-decoration: none;
+    color: white;
+}
+
+/* --------------------------header----------------------------------- */
+.top {
+    background-color: #18515F;
+    display: flex;
+    height: 150px;
+    align-items: center;
+}
+
+.logo {
+    width: 15%;
+    height: 60%;
+    padding: 10px;
+}
+
+.titulo-head {
+    width: 15vw;
+    font-family: 'Amatic SC';
+    font-size: 60px;
+    color: white;
+    margin-left: 10px;
+    
+}
+
+.barra {
+    width: 33%;
+    font-family: 'Roboto';
+    font-size: 20px;
+    color: white;
+    margin: auto;
+}
+
+.opciones-top {
+    display: none;
+}
+
+
+.menu-top {
+    display: block;
+    text-align: right;
+}
+
+.header2 {
+    display: none;
+}
+/* --------------------------header----------------------------------- */
+
 .section-carrusel {
     width: 100%;
 }
@@ -122,9 +173,115 @@ h2 {
 }
 
 
+/* --------------------------footer----------------------------------- */
+footer {
+    background-color: #18515F;
+    display: flex;
+}
 
+.logo2 {
+    width: 3%;
+    height: 30%;
+    padding: 60px;
+}
+
+.nosotros {
+    color: white;
+    text-align: justify;
+    margin: auto;
+    font-size: 12px;
+}
+
+.todo-perro {
+    color: white;
+    text-align: justify;
+    margin: auto;
+    font-size: 12px;
+}
+
+.todo-gato {
+    color: white;
+    text-align: justify;
+    margin: auto;
+    font-size: 12px;
+}
+
+.contacto {
+    color: white;
+    text-align: justify;
+    margin: auto;
+    font-size: 12px;
+}
+
+.redes-sociales {
+    color: white;
+    text-align: justify;
+    margin: auto;
+    font-size: 12px;
+}
+/* --------------------------footer----------------------------------- */
 
 @media (min-width: 768px) {
+
+/* --------------------------header----------------------------------- */
+.opciones-top {
+    width: 40%;
+    display: flex;
+    align-items: flex-end;
+}
+
+.mis-compras {
+    font-family: 'Roboto';
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    margin: auto;
+    color: white;
+}
+
+.mi-cuenta {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    margin: auto;
+    color: white;
+}
+
+.carrito {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    margin: auto;
+    color: white;
+}
+
+.fa-bars {
+    display: none;
+}
+
+.header2 {
+    display: flex;
+    height: 35px;
+    background-color: #18515F;
+    border-top: 0.1px solid white;
+    border-bottom: 0.3px solid white;
+}
+
+.header2-opciones {
+    color: white;
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    align-items: center;
+    margin: 20px;
+}
+
+
+
+.fa-circle-arrow-down {
+    margin-left: 10px;
+}
+/* --------------------------header----------------------------------- */
 
     .articulo-servicio {
         width: 30%;
