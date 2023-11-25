@@ -278,12 +278,23 @@ footer {
 /* --------------------------header----------------------------------- */
 .titulo-head {
     display: block;
+    margin: auto;
+}
+
+.barra {
+    margin-left: 50px;
+    margin-right: 1px;
+}
+
+.barra input[type="search"] {
+    width: 500px; 
 }
 
 .opciones-top {
     width: 40%;
     display: flex;
-    align-items: flex-end;
+    justify-content: flex-end;
+    align-items: center;
 }
 
 .mis-compras {
@@ -291,7 +302,10 @@ footer {
     display: flex;
     flex-direction: column;
     text-align: center;
-    margin: auto;
+    margin-right: 10px;
+    margin-left: 50px;
+    margin-top: 40px;
+    margin-bottom: 20px;
     color: white;
 }
 
@@ -299,7 +313,9 @@ footer {
     display: flex;
     flex-direction: column;
     text-align: center;
-    margin: auto;
+    margin-right: 10px;
+    margin-left: 20px;
+    margin-top: 20px;
     color: white;
 }
 
@@ -307,8 +323,22 @@ footer {
     display: flex;
     flex-direction: column;
     text-align: center;
-    margin: auto;
+    margin-right: 10px;
+    margin-left: 20px;
+    margin-top: 10px;
     color: white;
+}
+
+.logo-carrito-tablet {
+    display: block;
+}
+
+.logo-carrito-mobile {
+    display: none;
+}
+
+.carrito-text {
+    display: block;
 }
 
 .fa-bars {
