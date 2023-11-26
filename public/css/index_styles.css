@@ -161,11 +161,11 @@ width: 100%;
 }
 
 .div-h1-perro {
-    color: goldenrod;
+    color: rgb(241, 186, 48);
 }
 
 .div-h1-gato {
-    color: #18515F;
+    color: #287d93;
 }
 
 .h1-1ra-linea {
@@ -471,7 +471,7 @@ footer {
 }
 
 .section-servicios {
-    display: block;
+    display: none;
     background-color: rgb(224, 224, 224);
     margin-top: 10px;
     border-radius: 10px;
@@ -548,6 +548,23 @@ h2 {
 
 @media (min-width: 1024px) {
 
+    .section-servicios {
+        display: block;
+    }
+
+    .h1-1ra-linea {
+        font-size: 30px;
+        position: absolute;
+        top: -20px;
+        left: 15px;
+        cursor: pointer;
+    }
+    
+    .h1-2da-linea {
+        font-size: 30px;
+        cursor: pointer;
+    }
+
     .h2-banner-1ra-linea {
         top: 15px;
         left: 20px;
@@ -558,6 +575,44 @@ h2 {
         top: 60px;
         left: 20px;
         font-size: 30px; 
+    }
+
+    .articulo-productos-descuentos {
+        width: 13%;
+        transition: 450ms;
+    }
+    
+    .articulo-productos-descuentos:hover {
+        box-shadow : 0px 0px 20px rgb(140, 140, 140);
+    }
+    
+    button {
+        cursor: pointer;
+    }
+    
+    .articulo-productos-perro {
+        width: 13%;
+        transition: 450ms;
+    }
+    
+    .articulo-productos-perro:hover {
+        box-shadow : 0px 0px 20px rgb(140, 140, 140);
+    }
+    
+    .boton-comprar {
+        transition: 450ms;
+    }
+    
+    .boton-comprar:hover {
+        background-color: #349fba;
+    }
+
+    h4 {
+        font-size: 14px;
+    }
+    
+    .descripcion {
+        font-size: 12px;
     }
 
 }
@@ -588,15 +643,15 @@ h2 {
 }
 
 .h1-1ra-linea {
-    font-size: 30px;
+    font-size: 40px;
     position: absolute;
-    top: -20px;
+    top: -30px;
     left: 15px;
     cursor: pointer;
 }
 
 .h1-2da-linea {
-    font-size: 30px;
+    font-size: 40px;
     cursor: pointer;
 }
 
@@ -677,6 +732,13 @@ button {
     background-color: #349fba;
 }
 
+h4 {
+    font-size: 16px;
+}
+
+.descripcion {
+    font-size: 14px;
+}
 
 
 }
