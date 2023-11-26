@@ -97,6 +97,8 @@ a {
 }
 /* --------------------------header----------------------------------- */
 
+/* --------------------------Main----------------------------------- */
+
 .section-carrusel {
     width: 100%;
 }
@@ -147,27 +149,40 @@ a {
 .img-boton-izq {
     width: 100%;
     margin-bottom: 15px;
+    border-radius: 10px;
 }
 
 .img-boton-der {
     width: 100%;
-}
-
-.articulo-filtro-perro-gato a {
-    text-decoration: none;
-    color: black;
-    
+    border-radius: 10px;
 }
 
 .articulo-filtro-perro-gato {
     position: relative;
 }
 
-h1 {
+.div-h1-perro {
+    color: goldenrod;
+}
+
+.div-h1-gato {
+    color: #18515F;
+}
+
+.h1-1ra-linea {
     position: absolute;
-    top: -10px;
+    top: -15px;
     left: 15px;
-    font-size: 20px
+    font-size: 25px;
+    /* color: white; */
+}
+
+.h1-2da-linea {
+    position: absolute;
+    top: 15px;
+    left: 15px;
+    font-size: 25px;
+    /* color: white; */
 }
 
 .section-productos-descuentos {
@@ -212,7 +227,78 @@ h2 {
 
 .div-boton-comprar {
     text-align: center;
+    margin: auto;
 }
+
+.boton-comprar {
+    text-align: center;
+    background-color: #18515F;
+    color: white;
+    width: 80%;
+    height: 30%;
+    border-radius: 5px;
+}
+
+.section-banner {
+    width: 100%;
+    margin: auto;
+}
+
+.div-banner {
+    width: 100%;
+    position: relative;
+}
+
+.img-banner {
+    width: 100%;
+}
+
+.h2-banner-1ra-linea {
+    position: absolute;
+    top: 5px;
+    left: 15px;
+    color: white;
+    font-size: 16px;
+}
+
+.h2-banner-2da-linea {
+    position: absolute;
+    top: 25px;
+    left: 15px;
+    color: white;
+    font-size: 16px; 
+}
+
+.section-productos-perro {
+    width: 90%;
+    margin: auto;
+}
+
+.div-productos-perro {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+.articulo-productos-perro {
+    width: 40%;
+    border: 1px solid rgb(129, 129, 129);
+    border-radius: 5px;
+    padding: 15px;
+    margin-bottom: 15px;
+}
+
+.img-productos-perro {
+    width: 90%;
+    border-radius: 5px;
+}
+
+
+
+
+
+
+/* --------------------------Main----------------------------------- */
 
 
 /* --------------------------footer----------------------------------- */
@@ -369,126 +455,211 @@ footer {
 }
 /* --------------------------header----------------------------------- */
 
-    .articulo-servicio {
-        width: 30%;
-        margin: 10px;
+/* --------------------------Main----------------------------------- */
+
+.articulo-servicio {
+    width: 30%;
+    margin: 10px;
+}
+
+.section-servicios {
+    display: block;
+    background-color: rgb(224, 224, 224);
+    margin-top: 10px;
+    border-radius: 10px;
+}
+
+.img-servicio {
+    border-radius: 8px;
+}
+
+.descripcion-servicio p {
+    font-weight: 200;
+    font-size: 14px;
+    line-height: 22px;
+}
+
+.descripcion-servicio h3 {
+    font-weight: 400;
+    font-size: 16px;
+    margin-bottom: -5px;
+}
+
+.articulo-filtro-perro-gato {
+    width: 48%;
+    margin-top: -15px;
+}
+
+.div-section-productos-descuentos {
+    justify-content: space-between;
+}
+
+.section-productos-descuentos {
+    margin-top: -30px;
+}
+
+h2 {
+    margin-bottom: 10px;
+}
+
+.articulo-productos-descuentos {
+    width: 28%;
+}
+
+.h2-banner-1ra-linea {
+    top: 5px;
+    left: 15px;
+    font-size: 30px;
+}
+
+.h2-banner-2da-linea {
+    top: 40px;
+    left: 15px;
+    font-size: 30px; 
+}
+
+.h2-productos {
+    margin-top: 40px;
+}
+
+.div-productos-perro {
+    justify-content: space-between;
+}
+
+.section-productos-perro {
+    margin-top: -30px;
+}
+
+.articulo-productos-perro {
+    width: 28%;
+}
+
+
+
+}
+
+@media (min-width: 1024px) {
+
+    .h2-banner-1ra-linea {
+        top: 15px;
+        left: 20px;
+        font-size: 30px;
     }
-
-    .section-servicios {
-        display: block;
-        background-color: rgb(224, 224, 224);
-        margin-top: 10px;
-        border-radius: 10px;
-    }
-
-    .img-servicio {
-        border-radius: 8px;
-    }
-
-    .descripcion-servicio p {
-        font-weight: 200;
-        font-size: 14px;
-        line-height: 22px;
-    }
-
-    .descripcion-servicio h3 {
-        font-weight: 400;
-        font-size: 16px;
-        margin-bottom: -5px;
-    }
-
-    .articulo-filtro-perro-gato {
-        width: 45%;
-        margin-top: -15px;
-
-    }
-
-    .div-section-productos-descuentos {
-        justify-content: space-between;
-    }
-
-    .section-productos-descuentos {
-        margin-top: -30px;
-    }
-
-    h2 {
-        margin-bottom: 10px;
-    }
-
-    .articulo-productos-descuentos {
-        width: 28%;
+    
+    .h2-banner-2da-linea {
+        top: 60px;
+        left: 20px;
+        font-size: 30px; 
     }
 
 }
 
 @media (min-width: 1200px) {
 
-    .section-servicios, .div-section-filtro-perro-gato, .section-productos-descuentos {
-        max-width: 1200px;
-        margin: auto;
-    }
+/* --------------------------Main----------------------------------- */
 
-    .section-servicios {
-        margin-top: 12px;
-    }
+.section-servicios, .div-section-filtro-perro-gato, .section-productos-descuentos, .section-productos-perro, .div-productos-perro {
+    max-width: 1200px;
+    margin: auto;
+}
 
-    .articulo-servicio {
-        width: 30%;
-        margin: 10px;
-    }
+.section-servicios {
+    margin-top: 12px;
+}
 
-    .articulo-filtro-perro-gato {
-        width: 45%;
-        margin-top: -15px;
-        margin-bottom: -15px;
-        transition: 450ms;
-    }
+.articulo-servicio {
+    width: 30%;
+    margin: 10px;
+}
 
-    /* .articulo-filtro-perro-gato:hover {
-        box-shadow : 0px 0px 20px rgb(140, 140, 140);
+.articulo-filtro-perro-gato {
+    width: 48%;
+    margin-top: -15px;
+    margin-bottom: -15px;
+    transition: 450ms;
+}
 
-        h1 {
-            display: block;
-            color: black;
+.h1-1ra-linea {
+    font-size: 30px;
+    position: absolute;
+    top: -20px;
+    left: 15px;
+    cursor: pointer;
+}
 
-        };
+.h1-2da-linea {
+    font-size: 30px;
+    cursor: pointer;
+}
 
-    } */
-
-    .img-boton-izq {
-        cursor: pointer;
-    }
-
-    .img-boton-der {
-        cursor: pointer;
-    }
-
+/* .articulo-filtro-perro-gato:hover {
+    box-shadow : 0px 0px 20px rgb(140, 140, 140);
 
     h1 {
-        font-size: 25px;
-        transition: 450ms;
+        display: block;
         color: black;
-        
-        
-    }
 
-    .articulo-productos-descuentos {
-        width: 13%;
-        transition: 450ms;
-    }
+    };
 
-    .articulo-productos-descuentos:hover {
-        box-shadow : 0px 0px 20px rgb(140, 140, 140);
-    }
+} */
 
-    h2 {
-        margin-top: -10px;
-        margin-bottom: 15px;
-    }
+.img-boton-izq {
+    cursor: pointer;
+}
 
-    button {
-        cursor: pointer;
-    }
+.img-boton-der {
+    cursor: pointer;
+}
+
+
+h1 {
+    font-size: 25px;
+    transition: 450ms;
+
+}
+
+.articulo-productos-descuentos {
+    width: 13%;
+    transition: 450ms;
+}
+
+.articulo-productos-descuentos:hover {
+    box-shadow : 0px 0px 20px rgb(140, 140, 140);
+}
+
+h2 {
+    margin-top: -10px;
+    margin-bottom: 15px;
+}
+
+button {
+    cursor: pointer;
+}
+
+.h2-banner-1ra-linea {
+    top: 80px;
+    left: 45px;
+    font-size: 40px;
+}
+
+.h2-banner-2da-linea {
+    top: 150px;
+    left: 45px;
+    font-size: 40px;
+}
+
+.h2-productos {
+    margin-top: 10px;
+}
+
+.articulo-productos-perro {
+    width: 13%;
+    transition: 450ms;
+}
+
+.articulo-productos-perro:hover {
+    box-shadow : 0px 0px 20px rgb(140, 140, 140);
+}
 
 
 
