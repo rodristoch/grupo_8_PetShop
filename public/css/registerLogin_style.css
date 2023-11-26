@@ -1,0 +1,202 @@
+  @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap');
+
+
+/* --- Estilos generales */
+
+ body {
+    font-family:'Roboto';
+ }
+
+ * {
+  box-sizing: border-box;
+}
+
+
+h2{
+    line-height: 28px;
+    color: #18515F;
+    text-align: center;
+}
+
+a {
+    color: #18515F;
+}
+
+a:hover {
+    color: #216F83 ;
+}
+
+a:visited {
+    color: #AA6DA3 ;
+}
+
+hr {
+    margin-top: 24px;
+}
+ .contenedor {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+}
+
+/* ------------------------------------------------------------ */
+
+ /* --- Loging (only) */
+
+ .logo {
+    height: 40px;
+    width: auto;
+ }
+ /* ------------------------------------------------------------ */
+
+
+ /* --- Imagen izquierda */
+.tamano-imagen {
+    display: none;
+    width: 300px;
+    height: auto;
+    flex:1
+}
+
+ /* ------------------------------------------------------------ */
+
+
+ /* --- Formulario derecha */
+
+.titulo {
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 100%;
+    margin-bottom: 8px;
+}
+.formulario {
+    flex: 1;
+    padding: 0px;
+}
+
+.centrado {
+    width: 80%;
+    margin: 0 auto;
+}
+
+form input {
+    font-size: 16px;
+    border: 1px solid #B8D6BF ;
+    border-radius: 8px;
+    padding: 12px 16px ;
+    height:48px;
+    width: 100%;
+}
+
+input::placeholder {
+     color: #18515F;
+}
+
+.flex-enlinea {
+    margin-top: 16px;
+    display: flex;
+    align-items: center;
+}
+
+
+                                        /* --- Condiciones formulario */
+form input:hover {
+    border: 1px solid #00505F;
+}
+
+form input:focus {
+    outline: none;
+    border: 1px solid #00505F;
+    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+}
+
+form input[type="text"]:not(:placeholder-shown), input[type="password"]:not(:placeholder-shown), input[type="email"]:not(:placeholder-shown){
+    border: 1px solid #4CAF50;
+}
+
+
+/* ------------------------------------------------------------ */
+ /* --- Labels */
+
+ .error {
+    display: none;
+    color: #E00007 ;
+    font-size: 13px;
+ }
+ /* ------------------------------------------------------------ */
+
+
+ /* --- button */
+button {
+    border: none;
+    border-radius: 8px;
+    color: white;
+    background-color: #18515F;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    width: 100%;
+    font-size: 18px;
+    margin: 32px 0px 0px 0px;
+    cursor: pointer;
+    }
+
+button:hover {
+    background-color: #216F83 ;
+}
+
+.btn-icon {
+    width: 100%;
+    height: 48px;
+    display: flex;
+    align-items: center;
+    justify-content:center;
+    color: #18515F;
+    background-color: white;
+    border: 1px solid #18515F;
+}
+
+.btn-icon:hover, .btn-secundario:hover {
+    background-color: #DEF2F7 ;
+    border: 1px solid #ffffff;
+}
+
+.btn-secundario {
+    height: 48px;
+    color: #18515F;
+    background-color: white;
+    border: 1px solid #18515F;
+}
+
+/* --- Login */
+.tamano-icono {
+    width: 28px;
+    margin-left: 12px;
+}
+
+/* --- Media querys */
+
+@media (min-width:361px){
+
+    section.flex-enlinea {
+       flex-direction: column;
+     }
+}
+@media (min-width:769px){
+    .tamano-imagen {
+        display: block;
+    }
+    .btn-icon {
+        width: 49%;
+    }
+    section.flex-enlinea {
+        flex-direction: row;
+        justify-content: space-between;
+      }
+    
+
+}
+
+@media(min-width:1200px){
+   
+}

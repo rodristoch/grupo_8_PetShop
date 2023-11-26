@@ -8,58 +8,58 @@
     }
 
 /*header*/
-    .top {
-        background-color: #18515F;
-        display: flex;
-        height: 20vh;
-    }
+.top {
+    background-color: #18515F;
+    display: flex;
+    height: 20vh;
+}
 
-    .logo {
-        width: 8%;
-        height: 80%;
-        padding: 10px;
-    }
+.logo {
+    width: 8%;
+    height: 80%;
+    padding: 10px;
+}
+
+.titulo-head {
+    font-family: 'Amatic SC';
+    font-size: 60px;
+    color: white;
+    margin-left: 10px;
+    margin-top: 10px;
     
-    .titulo-head {
-        font-family: 'Amatic SC';
-        font-size: 60px;
-        color: white;
-        margin-left: 10px;
-        margin-top: 10px;
-        
-    }
+}
 
-    .busqueda {
-        font-family: 'Roboto';
-        font-size: 20px;
-        color: white;
-        margin:auto
-    }
+.busqueda {
+    font-family: 'Roboto';
+    font-size: 20px;
+    color: white;
+    margin:auto
+}
 
-    .mis-compras {
-        font-family: 'Roboto';
-        display: flex;
-        flex-direction: column;
-        text-align: center;
-        margin: auto;
-        color: white;
-    }
+.mis-compras {
+    font-family: 'Roboto';
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    margin: auto;
+    color: white;
+}
 
-    .mi-cuenta {
-        display: flex;
-        flex-direction: column;
-        text-align: center;
-        margin: auto;
-        color: white;
-    }
+.mi-cuenta {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    margin: auto;
+    color: white;
+}
 
-    .carrito {
-        display: flex;
-        flex-direction: column;
-        text-align: center;
-        margin: auto;
-        color: white;
-    }
+.carrito {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    margin: auto;
+    color: white;
+}
 /*header*/
 
 /*footer*/
@@ -152,7 +152,7 @@ footer {
 .nombre{
     text-align: left;
     font-size: 40px;
-    font-weight: 500;
+    font-weight: 800;
     margin: 5px;
 }
 
@@ -207,6 +207,13 @@ select {
     margin: 20px 0px 0px 0px;
     }   
 
+
+.descripcion{
+    display: block;
+    margin-left: 25%;
+    margin-right: 25%;
+    text-align: justify;
+}
 /*main*/
 
 }
