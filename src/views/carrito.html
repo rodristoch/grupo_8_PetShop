@@ -4,12 +4,16 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Carrito de compras</title>
-    <link rel="stylesheet" href="/public/css/carrito.css">
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/8684e76fee.js" crossorigin="anonymous"></script>
     
 </head>
 <body>
     <header class="top">
-        <img src="/public/img/producto3.jfif" alt="logoB" class="logo"> 
+        <img src="" alt="logoB" class="logo"> 
         <p class="titulo-head">PATITAS</p>
         <p class="busqueda">BARRA DE BUSQUEDA</p>
         <div class="mis-compras">
@@ -28,47 +32,62 @@
             <p>Carrito</p>
         </div>
     </header>
+
+
+
+
+    <main>
     <section class="contenedor">
         <section class="producto">
-<div class="nombre-vendedor"> <h6>Eukanuba</h6>
+<div class="nombre-vendedor"> <h1>Eukanuba</h1>
 </div>
 <section class="produyprecio">
 <div class="fotoprod">
     <img src="shopping.jfif" alt="Comida para perro">
-</div>
-<div class="detalle">
 <h3> comida premiun Eukanuba 15kg</h3>
+<div class="opciones">
+<ul>
+    <li><a href="">Eliminar</a></li>
+    <li><a href="">Guardar</a></li>
+    <li><a href="">Comprar ahora</a></li>
+</ul>
+</div>
+<h1>$10.000</h1>
 </div>
 </section>
-<div class="precioproducto">
-    <h1>$10.000</h1>
-</div>
 <div class="envio">
 <p>Envio</p>
-</div>
-<div class="precioenvio">
-    <h2>Gratis</h2>
+ <h2 class="precioenvio">Gratis</h2>
+
 </div>
         </section>
          <section class="resumencompra">
-            <div> <h1>Resumen de compra</h1></div>
-            <div>
+            <div class="resumen-de-compras"> 
+                <h1>Resumen de compra</h1>
+            </div>
+            <div class="precio-producto">
                 <p>Producto</p>
-                <p>Envio</p>
+                <h3>$10.000</h3>
             </div>
             <div class="precio">
-                <h3>$10.000</h3>
+                <p>Envio</p>
                 <h3>Gratis</h3>
             </div>
 <div class="total">
     <h3>Total</h3>
-    </div>
-    <div class="preciototal">
-        <h3>$10.000</h3>
+    <h3>$10.000</h3>
     </div>
     <button class="rounded-button" onClick={handleClick}>Continuar compra</button>
          </section>
         </section>
+
+      
+        
+    </main>
+
+
+
+
 
         <footer>
             <img src="/img/header/logoB.png" alt="logoB2" class="logo2"> 
