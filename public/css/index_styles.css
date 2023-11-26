@@ -218,9 +218,15 @@ h2 {
     font-weight: 600;
 }
 
-.descuento {
-    color: rgb(6, 147, 56);
+.precio-tachado {
     font-weight: 300;
+    text-decoration: line-through;
+}
+
+.descuento {
+    margin-top: -10px;
+    color: #24768b;
+    font-weight: 400;
     font-size: 14px;
 }
 
@@ -231,7 +237,7 @@ h2 {
 
 .boton-comprar {
     text-align: center;
-    background-color: #1d6273;
+    background-color: #1e697b;
     color: white;
     width: 90%;
     height: 40%;
@@ -668,7 +674,7 @@ button {
 }
 
 .boton-comprar:hover {
-    background-color: #123a44;
+    background-color: #349fba;
 }
 
 
