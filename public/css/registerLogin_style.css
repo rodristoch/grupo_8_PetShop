@@ -100,7 +100,7 @@ input::placeholder {
 
 
 
-                                        /* --- Condiciones formulario */
+/* --- Condiciones formulario */
 form input:hover {
     border: 1px solid #00505F;
 }
@@ -183,6 +183,7 @@ button:hover {
     color: #18515F;
     background-color: white;
     border: 1px solid #18515F;
+    cursor: pointer;
 }
 
 .btn-icon:hover, .btn-secundario:hover {

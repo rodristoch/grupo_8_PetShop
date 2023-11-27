@@ -36,7 +36,7 @@ app.get("/login", (req, res) => {
 
 app.get("/categoria", (req, res) => {
     
-    res.sendFile(path.resolve(__dirname, "./views/categoría.html"));                  //mando al root del sitio el archivo register.html q está dentro de la carpeta views
+    res.sendFile(path.resolve(__dirname, "./views/categoria.html"));                  //mando al root del sitio el archivo register.html q está dentro de la carpeta views
 
 });
 
