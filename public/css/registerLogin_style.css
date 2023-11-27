@@ -99,6 +99,7 @@ input::placeholder {
 }
 
 
+
                                         /* --- Condiciones formulario */
 form input:hover {
     border: 1px solid #00505F;
@@ -123,6 +124,34 @@ form input[type="text"]:not(:placeholder-shown), input[type="password"]:not(:pla
     color: #E00007 ;
     font-size: 13px;
  }
+
+/* ------------------------------------------------------------ */
+ /* --- Checkbox ---*/
+
+ .flex-enlinea2 {
+    margin-top: 16px;
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+}
+
+input[type="checkbox"] {
+    height: 24px;
+    width: 24px;
+    border-radius: 12px;
+}
+
+
+input[type="checkbox"] + p {
+margin-left: 12px;
+}
+
+
+
+input[type="checkbox"]:checked {
+    background-color: #18515F;
+}
+
  /* ------------------------------------------------------------ */
 
 
@@ -137,7 +166,7 @@ button {
     text-decoration: none;
     width: 100%;
     font-size: 18px;
-    margin: 32px 0px 0px 0px;
+    margin: 16px 0px 16px 0px;
     cursor: pointer;
     }
 
@@ -181,6 +210,10 @@ button:hover {
     section.flex-enlinea {
        flex-direction: column;
      }
+     article.flex-enlinea {
+        flex-direction: column;
+      }
+
 }
 @media (min-width:769px){
     .tamano-imagen {
@@ -191,10 +224,14 @@ button:hover {
     }
     section.flex-enlinea {
         flex-direction: row;
-        justify-content: space-between;
+        justify-content: space-between   ;
       }
-    
 
+      article.flex-enlinea {
+        flex-direction: row;
+        justify-content: center;
+        gap: 12px;
+      }
 }
 
 @media(min-width:1200px){
