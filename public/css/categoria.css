@@ -58,9 +58,9 @@ svg {
 
 
 
-/* --- Ordenar --- */
+/* --- Menu Ordenar --- */
 .seccion-menu-ordenar {
-   display: none;
+  display: none;
     background-color: white;
     position: absolute;
     width: 100%;
@@ -111,13 +111,70 @@ input[type="radio"] {
     justify-content: space-between;
     padding: 0 16px;
 }
-/* --- Media Query --- */
 
 
+/* --- Lista productos --- */
+.lista {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    margin-top: 12px;
+}
+
+/* --- Card producto --- */
+.articulo-productos-descuentos {
+    width: 49%;
+    border: 1px solid rgb(129, 129, 129);
+    border-radius: 5px;
+    padding: 15px;
+    margin-bottom: 15px;
+}
+.img-productos-descuentos {
+    width: 90%;
+    border-radius: 5px;
+}
+
+.descripcion {
+    font-size: 14px;
+}
+.precio-tachado {
+    font-weight: 300;
+    text-decoration: line-through;
+}
+
+.descuento {
+    margin-top: -10px;
+    color: #24768b;
+    font-weight: 400;
+    font-size: 14px;
+}
+.precio {
+    font-weight: 600;
+}
+
+.boton-comprar {
+    text-align: center;
+    background-color: #1e697b;
+    color: white;
+    width: 90%;
+    height: 40px;
+    border-radius: 5px;
+    border: none;
+    font-size: 16px;
+    padding: 5px;
+    text-align: center;
+    margin: auto;
+}
 /* --- Media Query --- */
 
 @media (min-width:361px){
-
+    .flex-enlinea {
+        justify-content: space-around;
+    }
+    
+    .cantidad-producto p {
+        display: none;
+    }
 }
 @media (min-width: 500px) {
       
@@ -133,10 +190,36 @@ input[type="radio"] {
     .ordenar {
         width: 70%;
     }
+    .cantidad-producto p {
+        display: block;
+        padding-top: 12px;
+    }
+    .cantidad-producto {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        
+    }
+    .div-section-productos-descuentos {
+        justify-content: space-between;
+    }
+    .articulo-productos-descuentos {
+    width: 32%;
+    }
 }
 
 @media (min-width: 1024px) {
     .flex-enlinea {
         display: none;
     }
-}
+    }
+    .boton-comprar {
+        transition: 450ms;
+    }
+
+    .boton-comprar:hover {
+        background-color: #349fba;
+    }
+    .articulo-productos-descuentos:hover {
+        box-shadow : 0px 0px 20px rgb(140, 140, 140);
+    }
