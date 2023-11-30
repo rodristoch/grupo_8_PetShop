@@ -16,7 +16,7 @@ Dayana Stefany Guerrero Avendaño: 25 años, valoro muchsismo el tiempo aunque e
 
 Simon Garay
 
-Chiara Pittorino
+Chiara Pittorino: Argentina, 21 años. El curso de Digital House es mi primer acercamiento a la programación.
 
 WIREFRAMES (baja calidad)
 ---------------------------
