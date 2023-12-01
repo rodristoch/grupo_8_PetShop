@@ -29,32 +29,32 @@
                 <img src="/img/Producto.webp" alt="Producto Comida" class="angulo-producto">
             </div>
         
-            <div class="img-grande-producto">
-                <img src="/img/Producto.webp" alt="Producto Comida" class="producto-grande">
+            <div class="producto-en-grande">
+                <img src="/img/Producto.webp" alt="Producto Comida" class="img-producto-grande">
             </div>
 
             <div class="detalles">
                 <p class="nombre">Comida para perros Eukanuba</p>
                 <p class="precio">$30.000</p>
-                <div class="icono">
-                    <p class="envio">Envío
-                    <div>
+                <div class="iconos">
+                    <div class="icono-individual">
+                        <p class="envio">Envío</p>
                         <i class="fa-solid fa-truck"></i>
                     </div>
-                    </p>
-                    <p class="envio">Express
-                    <div>
+                    
+                    <div class="icono-individual">
+                        <p class="envio">Express</p>
                         <i class="fa-solid fa-truck-fast"></i>
                     </div>
-                    </p>
-                    <p class="envio">Retiro
-                    <div>
+                    
+                    <div class="icono-individual">
+                        <p class="envio">Retiro</p>
                         <i class="fa-solid fa-car-side"></i>
                     </div>
-                    </p>
+                    
                 </div>
 
-                <form action="/detalles-del-producto" method="post">
+                <form action="/detalles-del-producto" method="get">
                     <select name="peso-tamaño">
                         <option value="valor">Seleccionar peso/tamaño</option>
                         <option value="valor">Value 1</option>
@@ -76,7 +76,7 @@
         
         <section>
             <div class="descripcion">
-            <h2>Descripción del producto</h2>
+            <p class="titulo-descripcion">Descripción del producto</p>
                 <p class="descripcion-producto">Lorem ipsum dolor sit amet consectetur adipisicing elit. 
             Reiciendis, animi debitis voluptas voluptate aperiam quia asperiores, sed, et itaque alias optio beatae neque nihil earum excepturi voluptatibus assumenda! 
             Eum, nisi. Lorem ipsum dolor sit amet consectetur adipisicing elit. 
@@ -88,7 +88,7 @@
         </section> 
        
         
-        <h2>Productos relacionados</h2>
+        <p class="titulo-relacionados">Productos relacionados</p>
         <section>    
         <div class="relacionados">
             <article class="articulo-productos-relacionados">
