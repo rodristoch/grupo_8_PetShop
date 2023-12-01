@@ -220,24 +220,81 @@ footer {
 
 
 /*----------------------------------MAIN COMIENZO medie querie 361----------------------------*/
+.producto{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    margin: 30px;
+    flex-wrap: wrap;
+}
 
-
+.img-producto-grande{
+    width: 30vw;
+    justify-content: center;
+    padding: 3px;
+}
 
 .angulos-del-producto{
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    width: 30vw;
+    width: 10vw;
 }
 
 .angulo-producto{
-    width: 30%;
     border: solid 1px;
     border-color: rgba(0, 0, 0, 0.5);
     border-radius: 5%;
     margin: 5px;
+}
 
+.detalles {
+    display: flex;
+    flex-direction: column;
+    width: 40vh;
+    align-items: flex-start;
+}
+
+.nombre{
+    text-align: left;
+    font-size: 30px;
+    font-weight: 1000;
+    margin: 10px;
+}
+
+.precio{
+    text-align: left;
+    margin: 10px;
+}
+
+.iconos{
+    width: 90%;
+    text-align: left;
+    margin: 5px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    justify-content: space-between;
+}
+
+form{
+    text-align: left;
+    margin: 0px;
+}
+
+.select{
+    width: 100%;
+    margin: 10px;
+}
+
+button{
+    margin: 10px;
+}
+
+.descripcion{
+    width: 80%;
+    margin: auto;
+    margin-bottom: 20px;
 }
 
 .relacionados{
