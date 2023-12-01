@@ -12,98 +12,171 @@
     <script src="https://kit.fontawesome.com/94c7027fe5.js" crossorigin="anonymous"></script>
 
 </head>
+
 <body>
-    <header class="top">
-        <img src="/img/header/logoB.png" alt="logoB" class="logo"> 
-        <p class="titulo-head">PATITAS</p>
-        <p class="busqueda">BARRA DE BUSQUEDA</p>
-        <div class="mis-compras">
-            <i class="fa-solid fa-lock" style="color: #ffffff;"></i>
-            <p>Mis compras</p>
-        </div>
-        <div class="mi-cuenta">
-            
-            <a href="./register">
-                <i class="fa-solid fa-circle-user" style="color: #ffffff;"></i>
-                <p>Mi cuenta</p>
-            </a>
-        </div>
-        <div class="carrito">
-            <i class="fa-solid fa-cart-shopping" style="color: #ffffff;"></i>
-            <p>Carrito</p>
-        </div>
-    </header>
-    
+    <header>
+       <p> Acá va el header</p>
+   </header>
+
     <main>
         <p>Acá / va / la / ruta</p>
-
-    <div class="producto">
-        <div class="angulos-del-producto">
-            <img src="/img/Producto.webp" alt="Producto Comida" class="angulo-producto">
-            <img src="/img/Producto.webp" alt="Producto Comida" class="angulo-producto">
-            <img src="/img/Producto.webp" alt="Producto Comida" class="angulo-producto">
-        </div>
+    
+        <section>
+            <div class="producto">
+                <div class="angulos-del-producto">
+                <img src="/img/Producto.webp" alt="Producto Comida" class="angulo-producto">
+                <img src="/img/Producto.webp" alt="Producto Comida" class="angulo-producto">
+                <img src="/img/Producto.webp" alt="Producto Comida" class="angulo-producto">
+            </div>
         
-        <div class="img-grande-producto">
-            <img src="/img/Producto.webp" alt="Producto Comida" class="producto-grande">
-        </div>
+            <div class="img-grande-producto">
+                <img src="/img/Producto.webp" alt="Producto Comida" class="producto-grande">
+            </div>
 
-        <div class="detalles">
-            <p class="nombre">Comida para perros Eukanuba</p>
-            <p class="precio">$30.000</p>
-            <div class="icono">
-                <p class="envio">Envío
+            <div class="detalles">
+                <p class="nombre">Comida para perros Eukanuba</p>
+                <p class="precio">$30.000</p>
+                <div class="icono">
+                    <p class="envio">Envío
                     <div>
                         <i class="fa-solid fa-truck"></i>
                     </div>
-                </p>
-                <p class="envio">Express
+                    </p>
+                    <p class="envio">Express
                     <div>
                         <i class="fa-solid fa-truck-fast"></i>
                     </div>
-                </p>
-                <p class="envio">Retiro
+                    </p>
+                    <p class="envio">Retiro
                     <div>
                         <i class="fa-solid fa-car-side"></i>
                     </div>
-                </p>
-            </div>
+                    </p>
+                </div>
 
-            
-            <form action="/detalles-del-producto" method="">
-                <select name="peso-tamaño">
-                    <option value="valor">Seleccionar peso/tamaño</option>
-                    <option value="valor">Value 1</option>
-                    <option value="valor2">Value 2</option>
-                    <option value="valor3">Value 3</option>
-                </select>
+                <form action="/detalles-del-producto" method="post">
+                    <select name="peso-tamaño">
+                        <option value="valor">Seleccionar peso/tamaño</option>
+                        <option value="valor">Value 1</option>
+                        <option value="valor2">Value 2</option>
+                        <option value="valor3">Value 3</option>
+                    </select>
                         
-                <select name="cantidad">
-                    <option value="valor">Seleccionar cantidad</option>
-                    <option value="valor">Value 1</option>
-                    <option value="valor2">Value 2</option>
-                    <option value="valor3">Value 3</option>
-                </select>
+                    <select name="cantidad">
+                        <option value="valor">Seleccionar cantidad</option>
+                        <option value="valor">Value 1</option>
+                        <option value="valor2">Value 2</option>
+                        <option value="valor3">Value 3</option>
+                    </select>
 
-                <button type="submit">Agregar al carrito</button>
-            </form>
-        </div>
+                    <button type="submit">Agregar al carrito</button>
+                </form>
+            </div>
+        </section>
         
-    </div>
-    <div class="descripcion">
-        <h2>Descripción del producto</h2>
-        <p class="descripcion-producto">Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+        <section>
+            <div class="descripcion">
+            <h2>Descripción del producto</h2>
+                <p class="descripcion-producto">Lorem ipsum dolor sit amet consectetur adipisicing elit. 
             Reiciendis, animi debitis voluptas voluptate aperiam quia asperiores, sed, et itaque alias optio beatae neque nihil earum excepturi voluptatibus assumenda! 
             Eum, nisi. Lorem ipsum dolor sit amet consectetur adipisicing elit. 
             Reiciendis, animi debitis voluptas voluptate aperiam quia asperiores, sed, et itaque alias optio beatae neque nihil earum excepturi voluptatibus assumenda! 
             Eum, nisi. Lorem ipsum dolor sit amet consectetur adipisicing elit. 
             Reiciendis, animi debitis voluptas voluptate aperiam quia asperiores, sed, et itaque alias optio beatae neque nihil earum excepturi voluptatibus assumenda! 
             Eum, nisi.</p>
-    </div>
+         </div>
+        </section> 
+       
+        
         <h2>Productos relacionados</h2>
-    <div class="relacionados">
+        <section>    
+        <div class="relacionados">
+            <article class="articulo-productos-relacionados">
+                <img class="img-productos-relacionados" src="\img\Producto.webp" alt="imagen_producto">
+                <div class="descripcion-productos-relacionados">
+                    <h4>Alimento/Producto</h4>
+                    <p class="descripcion">Lorem ipsum dolor sit amet consectetur, adipisicing</p>
+                    <p class="precio-producto-relacionado">$10.000</p>
+                    <div class="div-boton-comprar">
+                        <button class="boton-comprar" type="submit">Agregar</button>
+                    </div>
+                </div>
+            </article>
 
-    </div>
+            <article class="articulo-productos-relacionados">
+                <img class="img-productos-relacionados" src="\img\Producto.webp" alt="imagen_producto">
+                <div class="descripcion-productos-relacionados">
+                    <h4>Alimento/Producto</h4>
+                    <p class="descripcion">Lorem ipsum dolor sit amet consectetur, adipisicing</p>
+                    <p class="precio-producto-relacionado">$10.000</p>
+                    <div class="div-boton-comprar">
+                        <button class="boton-comprar" type="submit">Agregar</button>
+                    </div>
+                </div>
+            </article>
+
+            <article class="articulo-productos-relacionados">
+                <img class="img-productos-relacionados" src="\img\Producto.webp" alt="imagen_producto">
+                <div class="descripcion-productos-relacionados">
+                    <h4>Alimento/Producto</h4>
+                    <p class="descripcion">Lorem ipsum dolor sit amet consectetur, adipisicing</p>
+                    <p class="precio-producto-relacionado">$10.000</p>
+                    <div class="div-boton-comprar">
+                        <button class="boton-comprar" type="submit">Agregar</button>
+                    </div>
+                </div>
+            </article>
+
+            <article class="articulo-productos-relacionados">
+                <img class="img-productos-relacionados" src="\img\Producto.webp" alt="imagen_producto">
+                <div class="descripcion-productos-relacionados">
+                    <h4>Alimento/Producto</h4>
+                    <p class="descripcion">Lorem ipsum dolor sit amet consectetur, adipisicing</p>
+                    <p class="precio-producto-relacionado">$10.000</p>
+                    <div class="div-boton-comprar">
+                        <button class="boton-comprar" type="submit">Agregar</button>
+                    </div>
+                </div>
+            </article>
+
+            <article class="articulo-productos-relacionados">
+                <img class="img-productos-relacionados" src="\img\Producto.webp" alt="imagen_producto">
+                <div class="descripcion-productos-relacionados">
+                    <h4>Alimento/Producto</h4>
+                    <p class="descripcion">Lorem ipsum dolor sit amet consectetur, adipisicing</p>
+                    <p class="precio-producto-relacionado">$10.000</p>
+                    <div class="div-boton-comprar">
+                        <button class="boton-comprar" type="submit">Agregar</button>
+                    </div>
+                </div>
+            </article>
+
+
+            <article class="articulo-productos-relacionados">
+                <img class="img-productos-relacionados" src="\img\Producto.webp" alt="imagen_producto">
+                <div class="descripcion-productos-relacionados">
+                    <h4>Alimento/Producto</h4>
+                    <p class="descripcion">Lorem ipsum dolor sit amet consectetur, adipisicing</p>
+                    <p class="precio-producto-relacionado">$10.000</p>
+                    <div class="div-boton-comprar">
+                        <button class="boton-comprar" type="submit">Agregar</button>
+                    </div>
+                </div>
+            </article>
+
+            <article class="articulo-productos-relacionados">
+                <img class="img-productos-relacionados" src="\img\Producto.webp" alt="imagen_producto">
+                <div class="descripcion-productos-relacionados">
+                    <h4>Alimento/Producto</h4>
+                    <p class="descripcion">Lorem ipsum dolor sit amet consectetur, adipisicing</p>
+                    <p class="precio-producto-relacionado">$10.000</p>
+                    <div class="div-boton-comprar">
+                        <button class="boton-comprar" type="submit">Agregar</button>
+                    </div>
+                </div>
+            </article>
+        </div>
+     </section>
 
     </main>
 
@@ -132,9 +205,14 @@
         </div>
         <div class="redes-sociales">
             <h4>Redes sociales</h4>
-            <p>Facebook</p>
-            <p>Instagram</p>
-            <p>Twitter</p>
+            <div class="rrss-iconos">
+                <div class="facebook-tablet"><i class="fa-brands fa-facebook fa-2xl"></i></div>
+                <div class="facebook-mobile"><i class="fa-brands fa-facebook fa-xl"></i></div>
+                <div class="twitter-tablet"><i class="fa-brands fa-x-twitter fa-2xl"></i></div>
+                <div class="twitter-mobile"><i class="fa-brands fa-x-twitter fa-xl"></i></div>
+                <div class="instagram-tablet"><i class="fa-brands fa-instagram fa-2xl"></i></div>
+                <div class="instagram-mobile"><i class="fa-brands fa-instagram fa-xl"></i></div>
+            </div>  
         </div>
     </footer>
 

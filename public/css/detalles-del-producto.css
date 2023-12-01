@@ -1,4 +1,3 @@
-@media (min-width: 200px) { 
 *{
     box-sizing: border-box;
 }    
@@ -8,108 +7,7 @@
     }
 
 /*header*/
-.top {
-    background-color: #18515F;
-    display: flex;
-    height: 20vh;
-}
-
-.logo {
-    width: 8%;
-    height: 80%;
-    padding: 10px;
-}
-
-.titulo-head {
-    font-family: 'Amatic SC';
-    font-size: 60px;
-    color: white;
-    margin-left: 10px;
-    margin-top: 10px;
-    
-}
-
-.busqueda {
-    font-family: 'Roboto';
-    font-size: 20px;
-    color: white;
-    margin:auto
-}
-
-.mis-compras {
-    font-family: 'Roboto';
-    display: flex;
-    flex-direction: column;
-    text-align: center;
-    margin: auto;
-    color: white;
-}
-
-.mi-cuenta {
-    display: flex;
-    flex-direction: column;
-    text-align: center;
-    margin: auto;
-    color: white;
-}
-
-.carrito {
-    display: flex;
-    flex-direction: column;
-    text-align: center;
-    margin: auto;
-    color: white;
-}
 /*header*/
-
-/*footer*/
-footer {
-    background-color: #18515F;
-    display: flex;
-}
-
-.logo2 {
-    width: 3%;
-    height: 30%;
-    padding: 60px;
-}
-
-.nosotros {
-    color: white;
-    text-align: justify;
-    margin: auto;
-    font-size: 12px;
-}
-
-.todo-perro {
-    color: white;
-    text-align: justify;
-    margin: auto;
-    font-size: 12px;
-}
-
-.todo-gato {
-    color: white;
-    text-align: justify;
-    margin: auto;
-    font-size: 12px;
-}
-
-.contacto {
-    color: white;
-    text-align: justify;
-    margin: auto;
-    font-size: 12px;
-}
-
-.redes-sociales {
-    color: white;
-    text-align: justify;
-    margin: auto;
-    font-size: 12px;
-}
-
-/*footer*/
 
 /*main*/
 .producto{
@@ -128,6 +26,10 @@ footer {
 
 .angulo-producto{
     width: 30%;
+    border: solid 1px;
+    border-color: rgba(0, 0, 0, 0.5);
+    border-radius: 5%;
+    margin: 5px;
 
 }
 
@@ -197,7 +99,7 @@ button {
     }
 
 select {
-    border: solid, 7px, black;
+    border: solid 3px black;
     border-radius: 8px;
     padding: 10px 12px;
     text-align: left;
@@ -214,6 +116,129 @@ select {
     margin-right: 25%;
     text-align: justify;
 }
+
+
+.relacionados{
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+.articulo-productos-relacionados {
+    width: 13%;
+    border: 1px solid rgb(129, 129, 129);
+    border-radius: 5px;
+    padding: 15px;
+    margin-bottom: 15px;
+    transition: 450ms;
+}
+
+.img-productos-relacionados {
+    width: 90%;
+    border-radius: 5px;
+}
+    
+.articulo-productos-relacionados:hover {
+    box-shadow : 0px 0px 20px rgb(140, 140, 140);
+    }
+    
+h4 {
+    font-size: 14px;
+    display: block;
+    margin-block-start: 1.33em;
+    margin-block-end: 1.33em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    font-weight: bold;
+}
+    
+.descripcion-productos-relacionados {
+    font-size: 14px;
+}
+
+.precio-producto-relacionado {
+    font-weight: 600;
+}
+
+.div-boton-comprar {
+    text-align: center;
+    margin: auto;
+}
+
+.boton-comprar {
+    text-align: center;
+    background-color: #1e697b;
+    color: white;
+    width: 90%;
+    height: 40%;
+    border-radius: 5px;
+    border: 1px solid black;
+    font-size: 16px;
+    padding: 5px;
+    transition: 450ms;
+}
+    
+.boton-comprar:hover {
+    background-color: #349fba;
+}
+
 /*main*/
 
+
+/*footer*/
+footer {
+    background-color: #18515F;
+    display: flex;
 }
+
+.logo2 {
+    width: 3%;
+    height: 30%;
+    padding: 60px;
+    display: none;
+}
+
+.nosotros {
+    color: white;
+    text-align: justify;
+    margin: auto;
+    font-size: 12px;
+}
+
+.todo-perro {
+    color: white;
+    text-align: justify;
+    margin: auto;
+    font-size: 12px;
+}
+
+.todo-gato {
+    color: white;
+    text-align: justify;
+    margin: auto;
+    font-size: 12px;
+}
+
+.contacto {
+    color: white;
+    text-align: justify;
+    margin: auto;
+    font-size: 12px;
+}
+
+.redes-sociales {
+    color: white;
+    text-align: justify;
+    margin: auto;
+    font-size: 12px;
+}
+
+.facebook-tablet, .twitter-tablet, .instagram-tablet {
+    display: none;
+}
+
+.rrss-iconos {
+    display: flex;
+    justify-content: space-between;
+}
+/*footer*/
