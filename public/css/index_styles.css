@@ -42,6 +42,10 @@ width: 100vw;
     
 }
 
+.logo-titulo-jun {
+    display: none;
+}
+
 .barra {
     width: 28%;
     font-family: 'Roboto';
@@ -420,8 +424,8 @@ footer {
     flex-direction: column;
     text-align: center;
     margin-right: 60px;
-    margin-left: 20px;
-    margin-top: 30px;
+    margin-left: 25px;
+    margin-top: 20px;
     color: white;
 }
 
@@ -550,12 +554,35 @@ h2 {
 
 @media (min-width: 1024px) {
 /* --------------- header ----------------------------------- */
+
+/* .top {
+    height: 15vh;
+} */
+
+.flex-top {
+    height: 10%;
+}
+
 .fa-bars {
     display: none;
 }
 
+.barra input[type="search"] {
+    width: 35vw; 
+    margin-left: 60px;
+}
+
 .carrito, .mis-compras, .mi-cuenta {
     display: block;
+}
+
+.logo-titulo-jun {
+    display: block;
+    margin-left: 30px;
+}
+
+.logo, .titulo-head {
+    display: none;
 }
 /* --------------- header ----------------------------------- */
     .section-servicios {
