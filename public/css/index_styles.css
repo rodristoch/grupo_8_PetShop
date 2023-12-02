@@ -165,7 +165,7 @@ width: 100vw;
 }
 
 .div-h1-perro {
-    color: rgb(241, 186, 48);
+    color: rgb(240, 195, 83);
 }
 
 .div-h1-gato {
@@ -236,7 +236,11 @@ h2 {
 
 .div-boton-comprar {
     text-align: center;
-    margin: auto;
+    margin-top: 10px;
+}
+
+.div-ver-producto {
+    text-align: center;
 }
 
 .boton-comprar {
@@ -249,6 +253,19 @@ h2 {
     border: 1px solid black;
     font-size: 16px;
     padding: 5px;
+}
+
+.boton-ver-producto {
+    text-align: center;
+    background-color: rgb(179, 146, 62);
+    color: white;
+    width: 90%;
+    height: 40%;
+    border-radius: 5px;
+    border: 1px solid black;
+    font-size: 16px;
+    padding: 5px;
+    margin-bottom: 5px;
 }
 
 .section-banner {
@@ -270,7 +287,7 @@ h2 {
     top: 5px;
     left: 15px;
     color: white;
-    font-size: 16px;
+    font-size: 14px;
 }
 
 .h2-banner-2da-linea {
@@ -278,7 +295,7 @@ h2 {
     top: 25px;
     left: 15px;
     color: white;
-    font-size: 16px; 
+    font-size: 14px; 
 }
 
 .section-productos-perro {
@@ -522,14 +539,14 @@ h2 {
 
 .h2-banner-1ra-linea {
     top: 5px;
-    left: 15px;
-    font-size: 30px;
+    left: 20px;
+    font-size: 27px;
 }
 
 .h2-banner-2da-linea {
     top: 40px;
-    left: 15px;
-    font-size: 30px; 
+    left: 20px;
+    font-size: 27px; 
 }
 
 .h2-productos {
@@ -585,80 +602,87 @@ h2 {
     display: none;
 }
 /* --------------- header ----------------------------------- */
-    .section-servicios {
-        display: block;
-    }
 
-    .h1-1ra-linea {
-        font-size: 30px;
-        position: absolute;
-        top: -20px;
-        left: 15px;
-        cursor: pointer;
-    }
-    
-    .h1-2da-linea {
-        font-size: 30px;
-        cursor: pointer;
-    }
-
-    .h2-banner-1ra-linea {
-        top: 15px;
-        left: 20px;
-        font-size: 30px;
-    }
-    
-    .h2-banner-2da-linea {
-        top: 60px;
-        left: 20px;
-        font-size: 30px; 
-    }
-
-    .articulo-productos-descuentos {
-        width: 13%;
-        transition: 450ms;
-    }
-    
-    .articulo-productos-descuentos:hover {
-        box-shadow : 0px 0px 20px rgb(140, 140, 140);
-    }
-    
-    button {
-        cursor: pointer;
-    }
-    
-    .articulo-productos-perro {
-        width: 13%;
-        transition: 450ms;
-    }
-    
-    .articulo-productos-perro:hover {
-        box-shadow : 0px 0px 20px rgb(140, 140, 140);
-    }
-    
-    .boton-comprar {
-        transition: 450ms;
-    }
-    
-    .boton-comprar:hover {
-        background-color: #349fba;
-    }
-
-    h4 {
-        font-size: 14px;
-    }
-    
-    .descripcion {
-        font-size: 12px;
-    }
-
+/* --------------- main ----------------------------------- */
+.section-servicios {
+    display: block;
 }
+
+.h1-1ra-linea {
+    font-size: 30px;
+    position: absolute;
+    top: -20px;
+    left: 15px;
+    cursor: pointer;
+}
+
+.h1-2da-linea {
+    font-size: 30px;
+    cursor: pointer;
+}
+
+.h2-banner-1ra-linea {
+    top: 15px;
+    left: 20px;
+    font-size: 30px;
+}
+
+.h2-banner-2da-linea {
+    top: 60px;
+    left: 20px;
+    font-size: 30px; 
+}
+
+.articulo-productos-descuentos {
+    width: 13%;
+    transition: 450ms;
+}
+
+.articulo-productos-descuentos:hover {
+    box-shadow : 0px 0px 20px rgb(140, 140, 140);
+}
+
+button {
+    cursor: pointer;
+}
+
+.articulo-productos-perro {
+    width: 13%;
+    transition: 450ms;
+}
+
+.articulo-productos-perro:hover {
+    box-shadow : 0px 0px 20px rgb(140, 140, 140);
+}
+
+.boton-comprar, .boton-ver-producto {
+    transition: 450ms;
+}
+
+.boton-comprar:hover {
+    background-color: #349fba;
+}
+
+.boton-ver-producto:hover {
+    background-color: rgb(237, 198, 99);
+}
+
+h4 {
+    font-size: 14px;
+}
+
+.descripcion {
+    font-size: 12px;
+}
+
+/* --------------- main ----------------------------------- */
 
 /* --------------------------footer----------------------------------- */
 .logo2 {
     display: block;
 }
 /* --------------------------footer----------------------------------- */
+}
 
 @media (min-width: 1200px) {
 
@@ -743,13 +767,13 @@ button {
 }
 
 .h2-banner-1ra-linea {
-    top: 80px;
+    top: 70px;
     left: 45px;
     font-size: 40px;
 }
 
 .h2-banner-2da-linea {
-    top: 150px;
+    top: 140px;
     left: 45px;
     font-size: 40px;
 }
