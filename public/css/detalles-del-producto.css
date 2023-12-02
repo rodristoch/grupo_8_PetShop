@@ -1,4 +1,7 @@
-@media (min-width: 361px){
+html{
+    margin: 0;
+    padding: 0;
+}
 *{
     box-sizing: border-box;
 }    
@@ -7,6 +10,8 @@
         font-family: 'roboto';
     }
 
+
+@media (min-width: 361px){
 /*----------------------------------MAIN COMIENZO media querie 361----------------------------*/
 
 .producto{
@@ -70,9 +75,10 @@
 }
 
 .envio{
-    font-size: 10px;
+    font-size: 90%;
     margin: 5px;
     font-weight: 800;
+    text-align: center;
 }
 
 .fa-solid{
@@ -91,7 +97,7 @@ select {
     text-align: left;
     text-decoration: none;
     font-weight: 700;
-    width: 75%;
+    width: 90%;
     font-size: 10px;
     margin: 10px;
     background-color:  rgba(255,208,70, 0.5);
@@ -105,9 +111,9 @@ button {
     padding: 10px 17px;
     text-align: center;
     text-decoration: none;
-    width: 75%;
+    width: 90%;
     font-size: 12px;
-    margin: 20px;
+    margin: 15px;
     cursor: pointer;
     }
 
@@ -219,7 +225,7 @@ footer {
 /*----------------------------------HEADER FIN medie querie 769----------------------------*/
 
 
-/*----------------------------------MAIN COMIENZO medie querie 361----------------------------*/
+/*----------------------------------MAIN COMIENZO medie querie 769----------------------------*/
 .producto{
     display: flex;
     flex-direction: row;
@@ -243,16 +249,18 @@ footer {
 }
 
 .angulo-producto{
+    display: block;
     border: solid 1px;
     border-color: rgba(0, 0, 0, 0.5);
     border-radius: 5%;
     margin: 5px;
+    width: 100%;
 }
 
 .detalles {
     display: flex;
     flex-direction: column;
-    width: 40vh;
+    width: 35vw;
     align-items: flex-start;
 }
 
@@ -269,7 +277,7 @@ footer {
 }
 
 .iconos{
-    width: 90%;
+    width: 75%;
     text-align: left;
     margin: 5px;
     margin-top: 10px;
@@ -289,12 +297,20 @@ form{
 
 button{
     margin: 10px;
+    font-weight: 600;
 }
 
 .descripcion{
     width: 80%;
     margin: auto;
     margin-bottom: 20px;
+}
+
+.titulo-relacionados{
+    display: block;
+    font-size: 20px;
+    font-weight: 600;
+    margin: 10px;
 }
 
 .relacionados{
@@ -422,4 +438,52 @@ footer {
 }
 /*footer*/
 
+} /*ESTA LLAVE CIERRA EL MEDIA QUERIE 769*/
+
+@media (min-width: 1100px){
+
+/*----------------------------------HEADER COMIENZO media querie 1100----------------------------*/
+/*----------------------------------HEADER FIN media querie 1100----------------------------*/
+
+
+/*----------------------------------MAIN COMIENZO media querie 1100----------------------------*/
+.nombre {
+    font-size: 40px;
 }
+
+.precio {
+    font-size: 35px;
+    margin: 30px 10px 30px 10px;
+}
+
+.iconos {
+    width: 75%;
+    margin-bottom: 30px;
+}
+
+.detalles {
+    align-items: flex-start;
+}
+
+.fa-solid, .fas {
+    font-weight: 900;
+    font-size: 50px;
+}
+
+select {
+    padding: 15px 17px;
+    text-align: left;
+    font-size: 15px;
+    margin: 15px 10px;
+    background-color: rgba(255,208,70, 0.5);
+}
+
+button {
+    padding: 15px 23px;
+    font-size: 15px;
+    margin-top: 15px;
+    }
+
+/*----------------------------------MAIN FIN media querie 1100----------------------------*/
+
+} /*ESTA LLAVE CIERRA EL MEDIA QUERIE 1200*/
