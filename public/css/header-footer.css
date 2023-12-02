@@ -1,4 +1,10 @@
 /* --------------------------header----------------------------------- */
+
+a {
+    text-decoration: none;
+    color: white;
+}
+
 .top {
     background-color: #18515F;
     height: 20%;
@@ -154,7 +160,7 @@ footer {
 
 
 .titulo-head {
-    display: block;
+    display: none;
     margin: auto;
 }
 
