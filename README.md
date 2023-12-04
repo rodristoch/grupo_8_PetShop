@@ -14,7 +14,7 @@ Agustin Macko: Argentino, 37 años, actualmente trabajo como SS UX/UI en Laika (
 
 Dayana Stefany Guerrero Avendaño: 25 años, valoro muchsismo el tiempo aunque el no me valore a mi, Soy Colombiana y vivo llena de curiosidad.
 
-Simon Garay
+Simon Garay: de Paraná Entre ríos, 19 años, fan de los videojuegos y de la tecnologia en si, trabajo en una empresa agricola, la programacion siempre me intereso por la fascinación que le tengo a la tecnología, programos desde el 2020 empecé con un programa que se llama Lazarus el cual probablemente ninguna de los que lea esto la conoce, ya que no se utiliza mas porque quedo obsoleta y nunca se actualizo, ahí hice cosas simples, despues pase a vs y bueno algo aprendí, pero no tanto, solo lo suficiente.
 
 Chiara Pittorino: Argentina, 21 años. El curso de Digital House es mi primer acercamiento a la programación.
 
