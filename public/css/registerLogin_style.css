@@ -1,18 +1,18 @@
   @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap');
 
-  a {
-    text-decoration: none;
-    color: white;
-}
 
 /* --- Estilos generales */
 
  body {
     font-family:'Roboto';
+    margin: 0;
+    padding: 0;
  }
 
  * {
   box-sizing: border-box;
+/*   margin: 0;
+  padding: 0; */
 }
 
 
@@ -496,6 +496,10 @@ footer {
     height: 10%;
 }
 
+.menu-top {
+    display: none;
+}
+
 .fa-bars {
     display: none;
 }
@@ -521,7 +525,7 @@ footer {
 
 /* --------------------------footer----------------------------------- */
 .logo2 {
-    display: block;
+    display: flex;
 }
 /* --------------------------footer----------------------------------- */
 }

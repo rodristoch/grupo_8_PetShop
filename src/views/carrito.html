@@ -12,41 +12,61 @@
     
 </head>
 <body>
-    <header class="top">
-        <div class="flex-top">
-           <img src="/img/header/logoB.png" alt="logoB" class="logo"> 
-           <p class="titulo-head">PATITAS</p>
-           <form action="" method="POST">
-           <div class="barra-busqueda">
-               <div class="barra">
-                   <input type="search" placeholder="Buscar producto ">
-                   <!-- <i class="fa-solid fa-magnifying-glass"></i> -->
+    <header>
+        <header class="top">
+            <div class="flex-top">
+               <div class="logo-titulo-jun">
+                   <img src="/img/header/LogoHeadBF2.png" alt="logo-titulo">
+               </div>
+               <!-- <div class="logo-titulo-sep"> -->
+                   <img src="/img/header/logoB.png" alt="logoB" class="logo"> 
+                   <p class="titulo-head">PATITAS</p>
+               <!-- </div> -->
+               <form action="" method="POST">
+               <div class="barra-busqueda">
+                   <div class="barra">
+                       <input type="search" placeholder="Buscar producto ">
+                       <!-- <i class="fa-solid fa-magnifying-glass"></i> -->
+                    </div>
+                   </div>
+               </form>
+               <div class="opciones-top">
+                <div class="mis-compras">
+                    <a href="./login">
+                     <i class="fa-solid fa-lock" style="color: #ffffff;"></i>
+                    <p>Mis compras</p>
+                     </a>
+                 </div>
+                <div class="mi-cuenta">
+                
+                <a href="./register">
+                    <i class="fa-solid fa-circle-user" style="color: #ffffff;"></i>
+                    <p>Mi cuenta</p>
+                </a>
                 </div>
-               </div>
-           </form>
-           <div class="opciones-top">
-           <div class="mis-compras">
-               <i class="fa-solid fa-lock" style="color: #ffffff;"></i>
-               <p>Mis compras</p>
-            </div>
-           <div class="mi-cuenta">
-           
-           <a href="./register">
-               <i class="fa-solid fa-circle-user" style="color: #ffffff;"></i>
-               <p>Mi cuenta</p>
-           </a>
+                <div class="carrito">
+                    <a href="./carrito">  
+                     <div class="logo-carrito-tablet"><i class="fa-solid fa-cart-shopping" style="color: #ffffff;"></i></div>
+                     <div class="logo-carrito-mobile"><i class="fa-solid fa-cart-shopping fa-2xl" style="color: #ffffff;"></i></div>
+                     <p class="carrito-text">Carrito</p>
+                     </a>
+                    </div>
+                </div>
+                <div class="menu-top">
+                    <i class="fa-solid fa-bars fa-2xl" style="color: #ffffff;"></i>
+                </div>
            </div>
-           <div class="carrito">
-               <div class="logo-carrito-tablet"><i class="fa-solid fa-cart-shopping" style="color: #ffffff;"></i></div>
-               <div class="logo-carrito-mobile"><i class="fa-solid fa-cart-shopping fa-2xl" style="color: #ffffff;"></i></div>
-           <p class="carrito-text">Carrito</p>
-               </div>
+        </header>
+        
+        <div class="header2">
+           <div class="header2-opciones">
+               <div class="header2-perro"><p>Perro<i class="fa-solid fa-circle-arrow-down" style="color: #ffffff;"></i></p></p></div>
+               <div class="header2-gato"><p>Gato<i class="fa-solid fa-circle-arrow-down" style="color: #ffffff;"></i></p></div>
+               <div class="header2-marcas"><p>Marcas<i class="fa-solid fa-circle-arrow-down" style="color: #ffffff;"></i></p></div>
+               <div class="header2-promociones"><p>Promociones<i class="fa-solid fa-circle-arrow-down" style="color: #ffffff;"></i></p></div>
            </div>
-           <div class="menu-top">
-               <i class="fa-solid fa-bars fa-2xl" style="color: #ffffff;"></i>
-           </div>
-       </div>
-   </header>
+        </div>
+    </header>
 
 
 
@@ -58,7 +78,7 @@
 </div>
 <section class="produyprecio">
 <div class="fotoprod">
-    <img src="\img\Producto.webp" alt="Comida para perro">
+    <img src="\img\Producto.webp" alt="Comida para perro" class="foto-producto">
 <h3> comida premiun Eukanuba 15kg</h3>
 <div class="opciones">
 <ul>

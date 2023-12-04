@@ -1,6 +1,13 @@
 *{
-    font-family:  Roboto, 
+    font-family:  Roboto;
 }
+
+body {
+    margin: 0;
+    padding: 0;
+}
+
+/* --------------------------header----------------------------------- */
 .top {
     background-color: #18515F;
     height: 20%;
@@ -31,6 +38,10 @@
         margin-left: 0.1px;
         margin-top: 10px;
         
+    }
+    
+    .logo-titulo-jun {
+        display: none;
     }
     
     .barra {
@@ -85,14 +96,67 @@
     .header2 {
         display: none;
     }
+    /* --------------------------header----------------------------------- */
 
-.carrito {
+
+    /* --------------------------footer----------------------------------- */
+footer {
+    background-color: #18515F;
     display: flex;
-    flex-direction: column;
-    text-align: center;
-    margin: auto;
-    color: white;
 }
+
+.logo2 {
+    width: 3%;
+    height: 30%;
+    padding: 60px;
+    display: none;
+}
+
+.nosotros {
+    color: white;
+    text-align: justify;
+    margin: auto;
+    font-size: 12px;
+}
+
+.todo-perro {
+    color: white;
+    text-align: justify;
+    margin: auto;
+    font-size: 12px;
+}
+
+.todo-gato {
+    color: white;
+    text-align: justify;
+    margin: auto;
+    font-size: 12px;
+}
+
+.contacto {
+    color: white;
+    text-align: justify;
+    margin: auto;
+    font-size: 12px;
+}
+
+.redes-sociales {
+    color: white;
+    text-align: justify;
+    margin: auto;
+    font-size: 12px;
+}
+
+.facebook-tablet, .twitter-tablet, .instagram-tablet {
+    display: none;
+}
+
+.rrss-iconos {
+    display: flex;
+    justify-content: space-between;
+}
+/* --------------------------footer----------------------------------- */
+
 /*-----------Main-------------*/
 main{
     background-color: #EBEBEB;
@@ -108,11 +172,11 @@ align-items: center;
     text-align: end;
     float: right;
 }
-img{
+.foto-producto {
   float: left;
     width: 79px;
-   
 }
+
 .precioenvio{
       color: #39b54a;
 
@@ -278,75 +342,11 @@ h2 {
     padding: 5px;
 }
 
-
-
-/*------------Footer----------*/
-
-
-footer {
-    background-color: #18515F;
-    display: flex;
-}
-
-.logo2 {
-    width: 3%;
-    height: 30%;
-    padding: 60px;
-    display: none;
-}
-
-.nosotros {
-    color: white;
-    text-align: justify;
-    margin: auto;
-    font-size: 12px;
-}
-
-.todo-perro {
-    color: white;
-    text-align: justify;
-    margin: auto;
-    font-size: 12px;
-}
-
-.todo-gato {
-    color: white;
-    text-align: justify;
-    margin: auto;
-    font-size: 12px;
-}
-
-.contacto {
-    color: white;
-    text-align: justify;
-    margin: auto;
-    font-size: 12px;
-}
-
-.redes-sociales {
-    color: white;
-    text-align: justify;
-    margin: auto;
-    font-size: 12px;
-}
-
-.facebook-tablet, .twitter-tablet, .instagram-tablet {
-    display: none;
-}
-
-.rrss-iconos {
-    display: flex;
-    justify-content: space-between;
-}
-/* --------------------------footer----------------------------------- */
-
 @media (min-width: 768px) {
 
 /* --------------------------header----------------------------------- */
-
-
 .titulo-head {
-    display: block;
+    display: none;
     margin: auto;
 }
 
@@ -393,8 +393,8 @@ footer {
     flex-direction: column;
     text-align: center;
     margin-right: 60px;
-    margin-left: 20px;
-    margin-top: 30px;
+    margin-left: 25px;
+    margin-top: 20px;
     color: white;
 }
 
@@ -429,19 +429,18 @@ footer {
     justify-content: space-between;
     align-items: center;
     margin: 20px;
-} 
 }
 
+
+
+.fa-circle-arrow-down {
+    margin-left: 10px;
+}
+/* --------------------------header----------------------------------- */
+
+
 @media (min-width: 1024px) {
-    /* --------------- header ----------------------------------- */
-    .fa-bars {
-        display: none;
-    }
-    
-    .carrito, .mis-compras, .mi-cuenta {
-        display: block;
-    }
-    /* --------------- header ----------------------------------- */
+   
         .section-servicios {
             display: block;
         }
@@ -511,11 +510,6 @@ footer {
     
     }
     
-    /* --------------------------footer----------------------------------- */
-    .logo2 {
-        display: block;
-    }
-    /* --------------------------footer----------------------------------- */
     
     @media (min-width: 1200px) {
     
@@ -637,6 +631,47 @@ footer {
         align-items: center;
 
     }
+}
+
+/* --------------- header ----------------------------------- */
+
+/* .top {
+    height: 15vh;
+} */
+
+.flex-top {
+    height: 10%;
+}
+
+.fa-bars {
+    display: none;
+}
+
+.barra input[type="search"] {
+    width: 35vw; 
+    margin-left: 60px;
+}
+
+.carrito, .mis-compras, .mi-cuenta {
+    display: block;
+}
+
+.logo-titulo-jun {
+    display: block;
+    margin-left: 30px;
+}
+
+.logo, .titulo-head {
+    display: none;
+}
+/* --------------- header ----------------------------------- */
+
+/* --------------------------footer----------------------------------- */
+.logo2 {
+    display: flex;
+}
+/* --------------------------footer----------------------------------- */
+
 }
 
 
