@@ -60,7 +60,7 @@ svg {
 
 /* --- Menu Ordenar --- */
 .seccion-menu-ordenar {
-  display: none;
+    display: none;
     background-color: white;
     position: absolute;
     width: 100%;
