@@ -100,6 +100,7 @@ main{
 .contenedor{
 display: flex;
 align-items: center;
+justify-content: center;
 
 
 
@@ -133,6 +134,30 @@ img{
     flex-direction: column;
     background-color:#FFFFFF ;
 }
+
+.nombreopciones{
+display: flex;
+flex-direction: column;
+justify-content: flex-start;
+}
+ul{
+    display: flex;
+    flex-direction: row;
+    list-style-type: none;
+    gap: 12px;
+    margin: 0;
+    padding: 0;
+
+}
+.fotoprod a{
+    text-decoration: none;
+    color: #18515F;
+    font-weight: 400;
+
+}
+
+
+
 .nombre-vendedor{
     border-bottom: solid #EDEDED;
     height: 37px;
@@ -181,7 +206,7 @@ img{
 }
 button{
     color: #fff;
-  background-color: #2968C8;
+  background-color: #18515F;
   margin: 24px 24px 0;
   width: calc(100% - 48px);
   justify-content: center;
@@ -199,7 +224,7 @@ button{
   transition: background-color 0.5s;
 }
 button:hover{
-    background-color:#39b54a;
+    background-color:#216F83;
 }
 .resumen-de-compras{
     display: flex;
@@ -641,6 +666,7 @@ width: 646px;
         display: flex;
         flex-direction: column;
         align-items: center;
+        justify-content: center;
 
     }
 }
