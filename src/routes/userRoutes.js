@@ -8,6 +8,6 @@ router.get('/register', userController.register) // ingresamos al router lo que 
 
 router.get('/login', userController.login) // ingresamos al router lo que debe hacer cuando el user ingrese en /
 
-router.get('/carritos', userController.carrito) // ingresamos al router lo que debe hacer cuando el user ingrese en /
+router.get('/carrito', userController.carrito) // ingresamos al router lo que debe hacer cuando el user ingrese en /
 
 module.exports = router; 

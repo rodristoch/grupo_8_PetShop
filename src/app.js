@@ -10,6 +10,9 @@ const mainRoutes = require('./routes/mainRoutes.js')
 
 const userRoutes = require('./routes/userRoutes.js')
 
+const productRoutes = require('./routes/productRoutes.js')
+
+
 app.listen (3100, () => console.log("Servidor corriendo en puerto 3100"));           //levanto el servidor y lo pongo a escuchar
 
 
@@ -22,26 +25,15 @@ app.listen (3100, () => console.log("Servidor corriendo en puerto 3100"));      
 app.get("/", mainRoutes); //mando al root del sitio el archivo home.html q está dentro de la carpeta views
 
 app.get("/register", userRoutes); //mando al root del sitio el archivo home.html q está dentro de la carpeta views
+
 app.get("/carrito", userRoutes);
+
 app.get("/login", userRoutes);
 
-/* app.get("/register", );
+app.get("/categoria", productRoutes);
 
-app.get("/login", ); */
+app.get("/detalle", productRoutes);
 
-app.get("/categoria", (req, res) => {
-    
-    res.sendFile(path.resolve(__dirname, "./views/categoria.html"));                  //mando al root del sitio el archivo register.html q está dentro de la carpeta views
-
-});
-
-app.get("/detalles-del-producto", (req, res) => {
-    
-    res.sendFile(path.resolve(__dirname, "./views/detalles-del-producto.html"));     //mando al root del sitio el archivo detalles-del-producto.html q está dentro de la carpeta views
-
-});   
-
-/* app.get("/carrito", );  */
 
 app.use(express.static(path.resolve(__dirname, "../public")));                       //para hacer uso de la carpeta public
 

@@ -1,68 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Home - PATITAS</title>
-    <script src="https://kit.fontawesome.com/5ca03c839c.js" crossorigin="anonymous"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;400&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="css/index_styles.css">
-</head>
+    <%- include("./partials/head.ejs") %>
 <body>
-    <header class="top">
-         <div class="flex-top">
-            <div class="logo-titulo-jun">
-                <img src="/img/header/LogoHeadBF2.png" alt="logo-titulo">
-            </div>
-            <!-- <div class="logo-titulo-sep"> -->
-                <img src="/img/header/logoB.png" alt="logoB" class="logo"> 
-                <p class="titulo-head">PATITAS</p>
-            <!-- </div> -->
-            <form action="" method="POST">
-            <div class="barra-busqueda">
-                <div class="barra">
-                    <input type="search" placeholder="Buscar producto ">
-                    <!-- <i class="fa-solid fa-magnifying-glass"></i> -->
-                 </div>
-                </div>
-            </form>
-            <div class="opciones-top">
-                <div class="mis-compras">
-                    <a href="./login">
-                     <i class="fa-solid fa-lock" style="color: #ffffff;"></i>
-                    <p>Mis compras</p>
-                     </a>
-                 </div>
-                <div class="mi-cuenta">
-                
-                <a href="./login">
-                    <i class="fa-solid fa-circle-user" style="color: #ffffff;"></i>
-                    <p>Mi cuenta</p>
-                </a>
-                </div>
-                <div class="carrito">
-                    <a href="./carrito">  
-                     <div class="logo-carrito-tablet"><i class="fa-solid fa-cart-shopping" style="color: #ffffff;"></i></div>
-                     <div class="logo-carrito-mobile"><i class="fa-solid fa-cart-shopping fa-2xl" style="color: #ffffff;"></i></div>
-                     <p class="carrito-text">Carrito</p>
-                     </a>
-                    </div>
-                </div>
-                <div class="menu-top">
-                    <i class="fa-solid fa-bars fa-2xl" style="color: #ffffff;"></i>
-                </div>
-    </header>
-
-    <div class="header2">
-        <div class="header2-opciones">
-            <div class="header2-perro"><p>Perro<i class="fa-solid fa-circle-arrow-down" style="color: #ffffff;"></i></p></p></div>
-            <div class="header2-gato"><p>Gato<i class="fa-solid fa-circle-arrow-down" style="color: #ffffff;"></i></p></div>
-            <div class="header2-marcas"><p>Marcas<i class="fa-solid fa-circle-arrow-down" style="color: #ffffff;"></i></p></div>
-            <div class="header2-promociones"><p>Promociones<i class="fa-solid fa-circle-arrow-down" style="color: #ffffff;"></i></p></div>
-        </div>
-    </div>
+    <%- include("./partials/header.ejs") %>
+    <%- include("./partials/header2.ejs") %>
 
     <main>
         <section class="section-carrusel">
@@ -376,41 +317,7 @@
         </section>
     </main>
 
-    <footer>
-        <img src="/img/header/logoB.png" alt="logoB2" class="logo2"> 
-        <div class="nosotros">
-            <h4>Nosotros</h4>
-            <p>Sobre Patitas</p>
-        </div>
-        <div class="todo-perro">
-            <h4>Todo para tu perro</h4>
-            <p>Ver productos</p>
-        </div>
-        <div class="todo-gato">
-            <h4>Todo para tu gato</h4>
-            <p>Ver productos</p>
-        </div>
-        <div class="contacto">
-            <h4>Contacto</h4>
-            <p>Atención telefónica:
-                0811-2345-7890</p>
-            <p>Atención por WhatsApp:
-                +54-9-1141965543</p>
-            <p>Lunes a sábado de 9 a 21hs
-                Domingos de 10 a 20hs</p>
-        </div>
-        <div class="redes-sociales">
-            <h4>Redes sociales</h4>
-            <div class="rrss-iconos">
-                <div class="facebook-tablet"><i class="fa-brands fa-facebook fa-2xl"></i></div>
-                <div class="facebook-mobile"><i class="fa-brands fa-facebook fa-xl"></i></div>
-                <div class="twitter-tablet"><i class="fa-brands fa-x-twitter fa-2xl"></i></div>
-                <div class="twitter-mobile"><i class="fa-brands fa-x-twitter fa-xl"></i></div>
-                <div class="instagram-tablet"><i class="fa-brands fa-instagram fa-2xl"></i></div>
-                <div class="instagram-mobile"><i class="fa-brands fa-instagram fa-xl"></i></div>
-            </div>  
-        </div>
-    </footer>
+    <%- include("./partials/footer.ejs") %>
 
 
 
