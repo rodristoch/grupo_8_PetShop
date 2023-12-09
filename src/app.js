@@ -21,8 +21,9 @@ app.listen (3100, () => console.log("Servidor corriendo en puerto 3100"));      
 
 app.get("/", mainRoutes); //mando al root del sitio el archivo home.html q está dentro de la carpeta views
 
-app.get("/", userRoutes); //mando al root del sitio el archivo home.html q está dentro de la carpeta views
-
+app.get("/register", userRoutes); //mando al root del sitio el archivo home.html q está dentro de la carpeta views
+app.get("/carrito", userRoutes);
+app.get("/login", userRoutes);
 
 /* app.get("/register", );
 
