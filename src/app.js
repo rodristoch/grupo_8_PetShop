@@ -6,21 +6,18 @@ const path = require("path");                                                   
 
 const app = express();                                                               //ejecuto express
 
+const mainRoutes = require('./routes/mainRoutes.js')
 
 app.listen (3100, () => console.log("Servidor corriendo en puerto 3100"));           //levanto el servidor y lo pongo a escuchar
 
 
-app.get("/home", (req, res) => {
+/* app.get("/home", (req, res) => {
     
-    res.sendFile(path.resolve(__dirname, "./views/home.html"));                      //mando al root del sitio el archivo home.html q está dentro de la carpeta views
+    res.sendFile(path.resolve(__dirname, "./views/home.html"));           
 
-});
+}); */
 
-app.get("/", (req, res) => {
-    
-    res.sendFile(path.resolve(__dirname, "./views/index.html"));                      //mando al root del sitio el archivo home.html q está dentro de la carpeta views
-
-});
+app.get("/", mainRoutes); //mando al root del sitio el archivo home.html q está dentro de la carpeta views
 
 app.get("/register", (req, res) => {
     
@@ -54,6 +51,6 @@ app.get("/carrito", (req, res) => {
 app.use(express.static(path.resolve(__dirname, "../public")));                       //para hacer uso de la carpeta public
 
 
-//console.log(path.resolve(__dirname, "../public"))                                  //para comprobar la ruta de la carpeta public
+app.set('view engine', 'ejs'); // configuramos ejs como motor de plantilla 
 
-//console.log(path.resolve(__dirname, "./views/home.html"))                          //para comprobar la ruta del archivo html dentro de carpeta views
+app.set('views', './src/views') // indicamos a express que los archivos ejs por defecto los debe buscar en la carpeta src-views 
