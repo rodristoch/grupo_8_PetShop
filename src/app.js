@@ -8,6 +8,8 @@ const app = express();                                                          
 
 const mainRoutes = require('./routes/mainRoutes.js')
 
+const userRoutes = require('./routes/userRoutes.js')
+
 app.listen (3100, () => console.log("Servidor corriendo en puerto 3100"));           //levanto el servidor y lo pongo a escuchar
 
 
@@ -19,17 +21,12 @@ app.listen (3100, () => console.log("Servidor corriendo en puerto 3100"));      
 
 app.get("/", mainRoutes); //mando al root del sitio el archivo home.html q está dentro de la carpeta views
 
-app.get("/register", (req, res) => {
-    
-    res.sendFile(path.resolve(__dirname, "./views/register.html"));                  //mando al root del sitio el archivo register.html q está dentro de la carpeta views
+app.get("/", userRoutes); //mando al root del sitio el archivo home.html q está dentro de la carpeta views
 
-});
 
-app.get("/login", (req, res) => {
-    
-    res.sendFile(path.resolve(__dirname, "./views/login.html"));                  //mando al root del sitio el archivo register.html q está dentro de la carpeta views
+/* app.get("/register", );
 
-});
+app.get("/login", ); */
 
 app.get("/categoria", (req, res) => {
     
@@ -41,12 +38,9 @@ app.get("/detalles-del-producto", (req, res) => {
     
     res.sendFile(path.resolve(__dirname, "./views/detalles-del-producto.html"));     //mando al root del sitio el archivo detalles-del-producto.html q está dentro de la carpeta views
 
-});         
-app.get("/carrito", (req, res) => {
-    
-    res.sendFile(path.resolve(__dirname, "./views/carrito.html"));  
+});   
 
-}); 
+/* app.get("/carrito", );  */
 
 app.use(express.static(path.resolve(__dirname, "../public")));                       //para hacer uso de la carpeta public
 
