@@ -22,9 +22,9 @@ app.listen (3100, () => console.log("Servidor corriendo en puerto 3100"));      
 
 }); */
 
-app.get("/", mainRoutes); //mando al root del sitio el archivo home.html q está dentro de la carpeta views
+app.get("/", mainRoutes); 
 
-app.get("/register", userRoutes); //mando al root del sitio el archivo home.html q está dentro de la carpeta views
+app.get("/register", userRoutes); 
 
 app.get("/carrito", userRoutes);
 
@@ -35,7 +35,7 @@ app.get("/categoria", productRoutes);
 app.get("/detalle", productRoutes);
 
 
-app.use(express.static(path.resolve(__dirname, "../public")));                       //para hacer uso de la carpeta public
+app.use(express.static(path.resolve(__dirname, "../public")));     //para hacer uso de la carpeta public
 
 
 app.set('view engine', 'ejs'); // configuramos ejs como motor de plantilla 
