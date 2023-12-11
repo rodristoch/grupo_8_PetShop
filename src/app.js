@@ -22,17 +22,11 @@ app.listen (3100, () => console.log("Servidor corriendo en puerto 3100"));      
 
 }); */
 
-app.get("/", mainRoutes); 
+app.use("/", mainRoutes); 
 
-app.get("/register", userRoutes); 
+app.use("/users", userRoutes); 
 
-app.get("/carrito", userRoutes);
-
-app.get("/login", userRoutes);
-
-app.get("/categoria", productRoutes);
-
-app.get("/detalle", productRoutes);
+app.use("/productos", productRoutes);
 
 
 app.use(express.static(path.resolve(__dirname, "../public")));     //para hacer uso de la carpeta public

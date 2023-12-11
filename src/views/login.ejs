@@ -7,54 +7,56 @@
     
     <%- include("./partials/header2.ejs") %>
 
-<main>
-    <article class="contenedor">
-        <!--Imagen hardcodeada-->
+    <main>
+        <article class="contenedor">
+            <!--Imagen hardcodeada-->
             <img src="/img/Imagen_login.png" alt="Imagen de perro y gato" class="tamano-imagen">
-        <!--Registro-->
-        <form class="formulario">
-            <div class="centrado">
-            <!--Logo + texto-->
-            <article class="flex-enlinea">
-                <img src="/img/header/logoV.png" alt="Logo" class="logo">
-                <h2> Bienvenido/a a Patitas</h2>
-            </article>
+            <!--Registro-->
+            <form class="formulario">
+                <div class="centrado">
+                    <!--Logo + texto-->
+                    <article class="flex-enlinea">
+                        <img src="/img/header/logoV.png" alt="Logo" class="logo">
+                        <h2> Bienvenido/a a Patitas</h2>
+                    </article>
 
-            <!--Input email-->
-            <p class="titulo">Email</p>
-            <input type="email" name="email" id="email" placeholder="Ingresa tu mail para el registro" class="input1">
-            <label for="email" class="error">El email ingresado no es válido</label>
+                    <!--Input email-->
+                    <p class="titulo">Email</p>
+                    <input type="email" name="email" id="email" placeholder="Ingresa tu mail para el registro" class="input1">
+                    <label for="email" class="error">El email ingresado no es válido</label>
 
-            <!--Input contraseña-->
-            <p class="titulo">Contraseña</p>
-            <input type="password" name="password" id="password" placeholder="Ingresa una contraseña" class="input1">
-            <label for="password" class="error">La contraseña ingresada debe tener mas de 8 caracteres</label>
+                    <!--Input contraseña-->
+                    <p class="titulo">Contraseña</p>
+                    <input type="password" name="password" id="password" placeholder="Ingresa una contraseña" class="input1">
+                    <label for="password" class="error">La contraseña ingresada debe tener mas de 8 caracteres</label>
 
-            <!--Recuerdame -->
-            <section class="flex-enlinea2">
-                <input type="checkbox" name="checkbox" id="recuerdame">
-                <p>Recuerdame</p>
-            </section>
+                    <!--Recuerdame -->
+                    <section class="flex-enlinea2">
+                        <input type="checkbox" name="checkbox" id="recuerdame">
+                        <p>Recuerdame</p>
+                    </section>
 
-            <a href="">¿Olvidaste la contraseña?</a>
+                    <a href="">¿Olvidaste la contraseña?</a>
 
-            <button type="submit">Iniciar sesión</button>
-            <hr>
+                    <button type="submit">Iniciar sesión</button>
+                    <hr>
 
-            <section class="flex-enlinea">
-                <button class="btn-icon"> Ingresar con  <img src="/img/Iconos/Google.png" class="tamano-icono"/></button>
-                <button class="btn-icon"> Ingresar con  <img src="/img/Iconos/Facebook.png" class="tamano-icono"/></button>
-            </section>
+                    <section class="flex-enlinea">
+                        <button class="btn-icon"> Ingresar con  <img src="/img/Iconos/Google.png" class="tamano-icono"/></button>
+                        <button class="btn-icon"> Ingresar con  <img src="/img/Iconos/Facebook.png" class="tamano-icono"/></button>
+                    </section>
 
-            <hr>
-                <button class="btn-secundario"> <a href="./register">Registrate</a> </button>
-        </div>
-        </form>  
-    </article>
+                    <hr>
+                    <button class="btn-secundario">
+                        <a href="/users/register">Registrate</a>
+                    </button>
+                </div>
+            </form>
+        </article>
 
-</main> 
+    </main> 
 
-<%- include("./partials/footer.ejs") %>
+    <%- include("./partials/footer.ejs") %>
     
 </body>
 </html>
