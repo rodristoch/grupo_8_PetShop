@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+    <%- include("./partials/head.ejs", {cssSheet: "index_styles", title: "Alta producto"}) %>
+<link rel="stylesheet" href="/css/alta-producto.css">
+<body>
+
+<%- include("./partials/header.ejs") %>    
+<%- include("./partials/header2.ejs") %>
+<main>
+    <h3>En esta sección podrás dar de alta tus productos</h3>
+    <article class="contenedor-alta">
+        <form action="/?" method="POST">
+
+            <div class="">
+
+            </div>
+            <label for="nombre_producto">Nombre del producto</label>
+            <input type="text" id="nombre_producto" name="nombre_producto" placeholder="Dog chow para perros pequeños" required>
+
+            <label for="precio_producto">Valor del producto</label>
+            <input type="number" id="precio_producto" name="precio_producto" required>
+
+            <label for="cantidad_producto">Cantidad</label>
+            <input type="number" id="cantidad_producto" name="cantidad_producto" required>
+
+            <label for="perro">
+                <input type="radio" id="perro" name="mascota" value="perro">
+                perro
+            </label>
+
+            <label for="gato">
+                <input type="radio" id="gato" name="mascota" value="gato">
+                gato
+            </label>
+
+            <label for="categoria">Selecciona una categoria:</label>
+            <select name="categoria" id="categoria">
+                <option value="">Elegí</option>
+                <option value="alimento">Alimento</option>
+                <option value="juguetes">Juguetes</option>
+                <option value="accesorios">Accesorios</option>
+                <option value="higiene">higiene</option>
+                <option value=""></option>
+            </select>
+            <!-- Seguramente debamos incorporar una condición según la categoría
+            selecciona porque cada producto tiene sus propias características-->
+            <label for="peso_producto">Ingresa el peso</label>
+            <input type="number" id="peso_producto" name="peso_producto">
+
+            <label for="color_producto">Ingrese el color</label>
+            <input type="text" id="color_producto" name="peso_producto">
+
+            <label for="descripcion">Descripción del producto</label>
+            <textarea name="descripcion" id="descripcion" cols="30" rows="10"></textarea>
+            
+            <button type="submit">Guardar producto</button>
+        </form>
+
+    </article>
+    
+</main>
+
+<%- include("./partials/footer.ejs") %>
+</body>
+</html>
