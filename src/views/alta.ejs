@@ -11,47 +11,61 @@
     <article class="contenedor-alta">
         <form action="/?" method="POST">
 
-            <div class="">
+            <section class="flex-linea">
+                <div class="flex-columna">
+                    <label for="nombre_producto">Nombre del producto</label>
+                    <input type="text" id="nombre_producto" name="nombre_producto" placeholder="Dog chow para perros pequeños" required>
+                </div>
 
-            </div>
-            <label for="nombre_producto">Nombre del producto</label>
-            <input type="text" id="nombre_producto" name="nombre_producto" placeholder="Dog chow para perros pequeños" required>
+                <div class="flex-columna">
+                    <label for="precio_producto">Precio del producto</label>
+                    <input type="number" id="precio_producto" name="precio_producto" placeholder="$50000">
+                </div>
+               
+            </section>
 
-            <label for="precio_producto">Valor del producto</label>
-            <input type="number" id="precio_producto" name="precio_producto" required>
+            <section class="flex-linea">
+                <div class="flex-columna">
+                    <label for="cantidad_producto">Cantidad</label>
+                    <input type="number" id="cantidad_producto" name="cantidad_producto" placeholder="2" required>
+                </div>
+                <div class="flex-columna">
+                    <label for="mascota">El productos es para:</label>
+                    <select name="mascota" id="mascota">
+                        <option value="">Selecciona la mascota</option>
+                        <option value="perro">Perro</option>
+                        <option value="gato">Gatp</option>
+                    </select>
+                </div>
+            </section>
 
-            <label for="cantidad_producto">Cantidad</label>
-            <input type="number" id="cantidad_producto" name="cantidad_producto" required>
+            <section class="flex-linea">
+                <div class="flex-columna">    
+                 <label for="categoria">Selecciona una categoria:</label>
+                <select name="categoria" id="categoria">
+                    <option value="">Selecciona una categoría</option>
+                    <option value="alimento">Alimento</option>
+                    <option value="juguetes">Juguetes</option>
+                    <option value="accesorios">Accesorios</option>
+                    <option value="higiene">higiene</option>
+                </select>
+                </div>
+                <div class="flex-columna">
+                    <!-- Seguramente debamos incorporar una condición según la categoría
+                    selecciona porque cada producto tiene sus propias características-->
+                    <label for="peso_producto">Ingresa el peso</label>
+                    <input type="number" id="peso_producto" name="peso_producto" placeholder="34">
+                        </div>
 
-            <label for="perro">
-                <input type="radio" id="perro" name="mascota" value="perro">
-                perro
-            </label>
-
-            <label for="gato">
-                <input type="radio" id="gato" name="mascota" value="gato">
-                gato
-            </label>
-
-            <label for="categoria">Selecciona una categoria:</label>
-            <select name="categoria" id="categoria">
-                <option value="">Elegí</option>
-                <option value="alimento">Alimento</option>
-                <option value="juguetes">Juguetes</option>
-                <option value="accesorios">Accesorios</option>
-                <option value="higiene">higiene</option>
-                <option value=""></option>
-            </select>
-            <!-- Seguramente debamos incorporar una condición según la categoría
-            selecciona porque cada producto tiene sus propias características-->
-            <label for="peso_producto">Ingresa el peso</label>
-            <input type="number" id="peso_producto" name="peso_producto">
+            </section>
+            
+            
 
             <label for="color_producto">Ingrese el color</label>
-            <input type="text" id="color_producto" name="peso_producto">
+            <input type="text" id="color_producto" name="peso_producto" placeholder="Negro">
 
             <label for="descripcion">Descripción del producto</label>
-            <textarea name="descripcion" id="descripcion" cols="30" rows="10"></textarea>
+            <textarea name="descripcion" id="descripcion" placeholder="Ingresa la información que describa lo mejor posible el producto"></textarea>
             
             <button type="submit">Guardar producto</button>
         </form>

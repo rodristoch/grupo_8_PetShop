@@ -1,14 +1,51 @@
-
+/* --- Generales */
 h3 {
     width: 90%;
     margin: 24px auto;
 }
+p {
+    margin: 12px 0px 4px 0px;
+}
 
+button {
+    border: none;
+    border-radius: 8px;
+    color: white;
+    background-color: #18515F;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    width: 100%;
+    font-size: 18px;
+    margin: 16px 0px 16px 0px;
+    cursor: pointer;
+    }
+
+button:hover {
+    background-color: #216F83 ;
+}
+
+/* --- Contenedor formulario */
 .contenedor-alta {
-    background-color: rgb(240, 240, 240);
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
     width: 90%;
     margin: 20px auto;
+    border-radius: 12px;
 }
+
+/* --- Flex formulario */
+
+.flex-linea {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+.flex-columna {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
 
 /* --- formulario */
 form {
@@ -33,3 +70,63 @@ form input {
     padding: 12px 16px ;
 }
 
+input[type=number]::-webkit-inner-spin-button, 
+input[type=number]::-webkit-outer-spin-button { 
+  -webkit-appearance: none; 
+  margin: 0; 
+}
+/* --- Condiciones formulario */
+form input:hover {
+    border: 1px solid #00505F;
+}
+
+form input:focus {
+    outline: none;
+    border: 1px solid #00505F;
+    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+}
+
+form input[type="text"]:not(:placeholder-shown), input[type="password"]:not(:placeholder-shown), input[type="email"]:not(:placeholder-shown){
+    border: 1px solid #4CAF50;
+}
+
+
+
+/* --- selectores */
+select {
+    font-size: 14px;
+    border: 1px solid #B8D6BF ;
+    border-radius: 8px;
+    padding: 12px 16px;
+}
+
+/* --- textarea */
+textarea {
+    height: 80px;
+    border-radius: 8px;
+    padding: 12px;
+    margin-bottom: 12px;
+}
+textarea::placeholder {
+    color: #18515F;
+}
+textarea:hover {
+    border: 1px solid #00505F;
+}
+
+textarea:focus {
+    outline: none;
+    border: 1px solid #00505F;
+    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+}
+
+
+/* --- Media querys */
+@media (min-width: 769px) {
+    .flex-linea {
+        flex-direction: row;
+    }
+    .flex-columna {
+        width: 50%;
+    }
+}
