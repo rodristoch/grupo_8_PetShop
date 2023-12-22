@@ -106,6 +106,7 @@ textarea {
     border-radius: 8px;
     padding: 12px;
     margin-bottom: 12px;
+    resize: none;
 }
 textarea::placeholder {
     color: #18515F;
