@@ -8,7 +8,7 @@ COLABORADORES:
 Nicolas Villamil: Mitad argentino, mitad colombiano. Tengo 26 años. Mi pasión es el fútbol y desde muy chico de alguna manera programar ha sido un hobbie que me ha despertado mucho interés. Además soy periodista. 
 
 Rodrigo Stochetta: de CABA, Buenos Aires, adicto a la tecnología y computación en especial. Arquitecto, diseñador. Muy entusiasmado en el curso y aprendizaje de 
-Programación web full stack. También con experiencia en armado de PCs desde adolescente..
+Programación web full stack. También con experiencia en armado de PCs desde adolescente.
 
 Agustin Macko: Argentino, 37 años, actualmente trabajo como SS UX/UI en Laika (startup colombiana) y como maquetador para la Agencia de Aprendizaje del GCBA.
 
