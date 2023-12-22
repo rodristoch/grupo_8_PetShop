@@ -19,10 +19,10 @@ Seguir siendo abierto a decisiones y elecciones grupales, utilizando votaciones 
 
 4. Hacer menos:
 
-Evitar cualquier cosa que nos aleje del objetivo central de aprendizaje y desarrollo del equipo. 
+Evitar cualquier cosa que nos aleje del objetivo central de aprendizaje y desarrollo del equipo 
 Evitar marcarnos objetivos generales y marcar objetivos mas detallados para poder cumplirlos en espacios cortos de tiempo e ir avanzando progresivamente.
 
 
 5. Dejar de hacer:
 
-Aunque no se haya identificado algo específico para dejar de hacer, mantener la atención a posibles cambios en futuros sprints.
+Aunque no se haya identificado algo específico para dejar de hacer, mantener la atención a posibles cambios en futuros sprints. Prubea de nuevo Commit.
