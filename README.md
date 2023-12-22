@@ -10,7 +10,7 @@ Nicolas Villamil: Mitad argentino, mitad colombiano. Tengo 26 años. Mi pasión 
 Rodrigo Stochetta: de CABA, Buenos Aires, adicto a la tecnología y computación en especial. Arquitecto, diseñador. Muy entusiasmado en el curso y aprendizaje de 
 Programación web full stack. También con experiencia en armado de PCs desde adolescente.
 
-Agustin Macko: Argentino, 37 años, actualmente trabajo como SS UX/UI en Laika (startup colombiana) y como maquetador para la Agencia de Aprendizaje del GCBA
+Agustin Macko: Argentino, 37 años, actualmente trabajo como SS UX/UI en Laika (startup colombiana) y como maquetador para la Agencia de Aprendizaje del GCBA.
 
 Dayana Stefany Guerrero Avendaño: 25 años, valoro muchsismo el tiempo aunque el no me valore a mi, Soy Colombiana y vivo llena de curiosidad.
 
