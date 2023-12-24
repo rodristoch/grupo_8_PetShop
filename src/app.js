@@ -1,19 +1,21 @@
-const express = require("express");                                                  //para requerir express
+const express = require("express"); //para requerir express
 const { get } = require("http");
-
-const path = require("path");                                                        //para requerir path (para hacer un ruteo mas sencillo para express)
+const path = require("path"); 
+const methodOverride = require('method-override');   //para requerir path (para hacer un ruteo mas sencillo para express)
 
 // ************ express()************
 const app = express();                                                               //ejecuto express
 
 // ************ Middlewares ************
+app.use(express.static(path.resolve(__dirname, "../public")));// uso de la carpeta public
+app.use(express.urlencoded({extended: false})) //toma los datos del body
+app.use(express.json()) //analiza si es JSON y lo convierte a objeto de JS
+app.use(methodOverride("_method")) //Para poder usar los métodos PUT y DELETE
+
 
 // ************ Template Engine  ************
 app.set('view engine', 'ejs'); // configuramos ejs como motor de plantilla 
 app.set('views', './src/views') // indicamos a express que los archivos ejs por defecto los debe buscar en la carpeta src-views 
-
-
-app.use(express.static(path.resolve(__dirname, "../public")));     //para hacer uso de la carpeta public
 
 // ************ Route System  ************
 const mainRoutes = require('./routes/mainRoutes.js')

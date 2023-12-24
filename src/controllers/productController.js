@@ -8,7 +8,7 @@ const productController = {
     },
 
     alta : (req, res) => {
-        res.render('alta.ejs');
+        res.render('alta-producto.ejs');
     },
 
     editar : (req, res) => {
