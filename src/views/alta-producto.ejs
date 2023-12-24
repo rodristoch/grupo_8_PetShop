@@ -9,7 +9,7 @@
 <main>
     <h3>Carga tus productos</h3>
     <article class="contenedor-alta">
-        <form action="/?" method="POST">
+        <form action="/productRoutes/alta" method="POST" enctype="multipart/form-data">
 
             <section class="flex-linea">
                 <div class="flex-columna">
@@ -66,6 +66,12 @@
 
             <label for="descripcion">Descripción del producto</label>
             <textarea name="descripcion" id="descripcion" placeholder="Ingresa la información que describa lo mejor posible el producto"></textarea>
+
+            <section class="flex-linea">
+                <label for="imagen-producto">Imagen de producto:</label>
+                <input type="file" name="imagen-producto">
+            </section>
+
             
             <button type="submit">Guardar producto</button>
         </form>

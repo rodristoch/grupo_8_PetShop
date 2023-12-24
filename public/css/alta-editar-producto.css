@@ -25,10 +25,6 @@ button:hover {
     background-color: #216F83 ;
 }
 
-textarea {
-    font-family: roboto;
-    font-size: 16px;
-}
 
 /* --- Contenedor formulario */
 .contenedor-alta {
@@ -80,6 +76,18 @@ input[type=number]::-webkit-outer-spin-button {
   -webkit-appearance: none; 
   margin: 0; 
 }
+
+
+form input[type=file] {
+    border-color: white;
+    padding: 12px 4px;
+}
+
+form input[type=file]:hover {
+    border-color: white;
+}
+
+
 /* --- Condiciones formulario */
 form input:hover {
     border: 1px solid #00505F;
@@ -112,6 +120,8 @@ textarea {
     padding: 12px;
     margin-bottom: 12px;
     resize: none;
+    font-family: roboto;
+    font-size: 16px;
 }
 textarea::placeholder {
     color: #18515F;
