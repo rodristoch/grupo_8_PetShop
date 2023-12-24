@@ -25,4 +25,4 @@ Evitar marcarnos objetivos generales y marcar objetivos mas detallados para pode
 
 5. Dejar de hacer:
 
-Aunque no se haya identificado algo específico para dejar de hacer, mantener la atención a posibles cambios en futuros sprints. Prubea de nuevo Commit.
+Aunque no se haya identificado algo específico para dejar de hacer, mantener la atención a posibles cambios en futuros sprints. Prubea de nuevo.
