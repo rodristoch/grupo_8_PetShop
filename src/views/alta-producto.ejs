@@ -1,25 +1,25 @@
 <!DOCTYPE html>
 <html lang="en">
     <%- include("./partials/head.ejs", {cssSheet: "index_styles", title: "Alta producto"}) %>
-<link rel="stylesheet" href="/css/alta-producto.css">
+<link rel="stylesheet" href="/css/alta-editar-producto.css">
 <body>
 
 <%- include("./partials/header.ejs") %>    
 <%- include("./partials/header2.ejs") %>
 <main>
-    <h3>En esta sección podrás dar de alta tus productos</h3>
+    <h3>Carga tus productos</h3>
     <article class="contenedor-alta">
         <form action="/?" method="POST">
 
             <section class="flex-linea">
                 <div class="flex-columna">
                     <label for="nombre_producto">Nombre del producto</label>
-                    <input type="text" id="nombre_producto" name="nombre_producto" placeholder="Dog chow para perros pequeños" required>
+                    <input type="text" id="nombre_producto" name="nombre_producto" placeholder="Ej: Dog chow para perros pequeños">
                 </div>
 
                 <div class="flex-columna">
                     <label for="precio_producto">Precio del producto</label>
-                    <input type="number" id="precio_producto" name="precio_producto" placeholder="$50000">
+                    <input type="number" id="precio_producto" name="precio_producto" placeholder="Ej: 50000">
                 </div>
                
             </section>
@@ -27,7 +27,7 @@
             <section class="flex-linea">
                 <div class="flex-columna">
                     <label for="cantidad_producto">Cantidad</label>
-                    <input type="number" id="cantidad_producto" name="cantidad_producto" placeholder="2" required>
+                    <input type="number" id="cantidad_producto" name="cantidad_producto" placeholder="Ej: 2">
                 </div>
                 <div class="flex-columna">
                     <label for="mascota">El productos es para:</label>
@@ -54,7 +54,7 @@
                     <!-- Seguramente debamos incorporar una condición según la categoría
                     selecciona porque cada producto tiene sus propias características-->
                     <label for="peso_producto">Ingresa el peso</label>
-                    <input type="number" id="peso_producto" name="peso_producto" placeholder="34">
+                    <input type="number" id="peso_producto" name="peso_producto" placeholder="Ej: 34">
                         </div>
 
             </section>
@@ -62,7 +62,7 @@
             
 
             <label for="color_producto">Ingrese el color</label>
-            <input type="text" id="color_producto" name="peso_producto" placeholder="Negro">
+            <input type="text" id="color_producto" name="peso_producto" placeholder=" Ej: Negro">
 
             <label for="descripcion">Descripción del producto</label>
             <textarea name="descripcion" id="descripcion" placeholder="Ingresa la información que describa lo mejor posible el producto"></textarea>

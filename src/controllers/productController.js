@@ -12,7 +12,7 @@ const productController = {
     },
 
     editar : (req, res) => {
-        res.render('editar.ejs');
+        res.render('editar-producto.ejs');
     },
 
 }

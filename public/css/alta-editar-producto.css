@@ -25,6 +25,11 @@ button:hover {
     background-color: #216F83 ;
 }
 
+textarea {
+    font-family: roboto;
+    font-size: 16px;
+}
+
 /* --- Contenedor formulario */
 .contenedor-alta {
     box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
