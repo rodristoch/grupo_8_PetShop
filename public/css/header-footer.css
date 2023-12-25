@@ -20,7 +20,7 @@ a {
     }
     
     .logo {
-        width: 15%;
+        width: 45%;
         height: 60%;
         margin: 10px;
         margin-right: 1px;
@@ -58,7 +58,7 @@ a {
     }
     
     
-    .mi-cuenta, .mis-compras {
+    .mi-cuenta, .mis-compras, .crear-producto {
         display: none;
     }
     
@@ -180,6 +180,18 @@ footer {
     align-items: center;
 }
 
+.crear-producto {
+    font-family: 'Roboto';
+    display: none;
+    flex-direction: column;
+    text-align: center;
+    margin-right: 10px;
+    margin-left: 50px;
+    margin-top: 40px;
+    margin-bottom: 20px;
+    color: white;
+}
+
 .mis-compras {
     font-family: 'Roboto';
     display: none;
@@ -272,7 +284,7 @@ footer {
     margin-left: 60px;
 }
 
-.carrito, .mis-compras, .mi-cuenta {
+.carrito, .mis-compras, .mi-cuenta, .crear-producto {
     display: block;
 }
 
