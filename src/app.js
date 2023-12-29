@@ -1,3 +1,4 @@
+// ************ Require's ************
 const express = require("express"); //para requerir express
 const { get } = require("http");
 const path = require("path"); 
@@ -26,11 +27,6 @@ app.use("/", mainRoutes);
 app.use("/users", userRoutes); 
 app.use("/productos", productRoutes);
 
-/* app.get("/home", (req, res) => {
-    
-    res.sendFile(path.resolve(__dirname, "./views/home.html"));           
-
-}); */
-
+// ************ Server  ************
 app.listen (3100, () => console.log("Servidor corriendo en puerto 3100"));           //levanto el servidor y lo pongo a escuchar
 
