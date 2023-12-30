@@ -5,7 +5,8 @@
     "description": "Alimento para cachorros de tamaño mediano.",
     "image": "royalcanin-cachorro-medium.jpg",
     "category": "Perro",
-    "price": 24.99
+    "price": 24.99,
+    "in-sale": "No"
   },
   {
     "id": 2,
@@ -13,7 +14,8 @@
     "description": "Alimento para perros adultos de tamaño mini.",
     "image": "royalcanin-adulto-mini.jpg",
     "category": "Perro",
-    "price": 29.99
+    "price": 29.99,
+    "in-sale": "No"
   },
   {
     "id": 3,
@@ -21,7 +23,8 @@
     "description": "Alimento para perros adultos de tamaño mediano.",
     "image": "royalcanin-adulto-mediano.jpg",
     "category": "Perro",
-    "price": 34.99
+    "price": 34.99,
+    "in-sale": "No"
   },
   {
     "id": 4,
@@ -29,7 +32,8 @@
     "description": "Alimento para perros adultos mayores de 10 años de tamaño mediano.",
     "image": "royalcanin-adulto-mas10años-mediano.jpg",
     "category": "Perro",
-    "price": 39.99
+    "price": 39.99,
+    "in-sale": "Si"
   },
   {
     "id": 5,
@@ -37,7 +41,8 @@
     "description": "Alimento para perros adultos mayores de 7 años de tamaño mediano.",
     "image": "royalcanin-adulto-mas7años-mediano.jpg",
     "category": "Perro",
-    "price": 38.99
+    "price": 38.99,
+    "in-sale": "Si"
   },
   {
     "id": 6,
@@ -45,7 +50,8 @@
     "description": "Alimento para cachorros de tamaño grande.",
     "image": "eukanuba-cachorro-grande.jpg",
     "category": "Perro",
-    "price": 42.99
+    "price": 42.99,
+    "in-sale": "No"
   },
   {
     "id": 7,
@@ -53,7 +59,8 @@
     "description": "Alimento para perros adultos de tamaño mediano.",
     "image": "eukanuba-adulto-mediano.jpg",
     "category": "Perro",
-    "price": 36.99
+    "price": 36.99,
+    "in-sale": "No"
   },
   {
     "id": 8,
@@ -61,7 +68,8 @@
     "description": "Alimento para perros adultos de tamaño grande.",
     "image": "eukanuba-adulto-grande.jpg",
     "category": "Perro",
-    "price": 39.99
+    "price": 39.99,
+    "in-sale": "Si"
   },
   {
     "id": 9,
@@ -69,7 +77,8 @@
     "description": "Oferta en alimento para perros adultos de tamaño chico.",
     "image": "eukanuba-adulto-chico-oferta.jpg",
     "category": "Perro",
-    "price": 27.99
+    "price": 27.99,
+    "in-sale": "No"
   },
   {
     "id": 10,
@@ -77,7 +86,8 @@
     "description": "Alimento para perros adultos de tamaño chico.",
     "image": "eukanuba-adulto-chico.jpg",
     "category": "Perro",
-    "price": 32.99
+    "price": 32.99,
+    "in-sale": "No"
   },
   {
     "id": 11,
@@ -85,7 +95,8 @@
     "description": "Alimento húmedo para gatos adultos sabor pollo de la marca Pro Plan.",
     "image": "adulto-pollo-alimento-humedo-frente-pro-plan.jpg",
     "category": "Gato",
-    "price": 18.99
+    "price": 18.99,
+    "in-sale": "No"
   },
   {
     "id": 12,
@@ -93,7 +104,8 @@
     "description": "Alimento húmedo para gatos adultos sabor salmón de la marca Pro Plan.",
     "image": "adulto-salmon-alimento-humedo-frente-pro-plan.jpg",
     "category": "Gato",
-    "price": 20.99
+    "price": 20.99,
+    "in-sale": "Si"
   },
   {
     "id": 13,
@@ -101,7 +113,8 @@
     "description": "Alimento húmedo para gatitos sabor pollo de la marca Pro Plan.",
     "image": "kitten-pollo-alimento-humedo-frente-pro-plan.jpg",
     "category": "Gato",
-    "price": 16.99
+    "price": 16.99,
+    "in-sale": "No"
   },
   {
     "id": 14,
@@ -109,7 +122,8 @@
     "description": "Alimento seco para gatos adultos de la marca Purina Cat Chow.",
     "image": "purina-cat-chow-adulto.jpg",
     "category": "Gato",
-    "price": 22.99
+    "price": 22.99,
+    "in-sale": "No"
   },
   {
     "id": 15,
@@ -117,7 +131,8 @@
     "description": "Alimento seco para gatos sabor pollo y carne de la marca Purina One.",
     "image": "purina-one-polloycarne.jpg",
     "category": "Gato",
-    "price": 26.99
+    "price": 26.99,
+    "in-sale": "No"
   },
   {
     "id": 16,
@@ -125,7 +140,8 @@
     "description": "Alimento seco para gatos sabor pollo y salmón de la marca Purina One.",
     "image": "purina-one-polloysalmon.jpg",
     "category": "Gato",
-    "price": 28.99
+    "price": 28.99,
+    "in-sale": "No"
   },
   {
     "id": 17,
@@ -133,7 +149,8 @@
     "description": "Alimento seco para gatos adultos de la marca Purina Proplan.",
     "image": "Purina-Proplan-adulto.jpg",
     "category": "Gato",
-    "price": 30.99
+    "price": 30.99,
+    "in-sale": "Si"
   },
   {
     "id": 18,
@@ -141,7 +158,8 @@
     "description": "Alimento seco para gatos adultos mayores de 7 años de la marca Purina Proplan.",
     "image": "Purina-Proplan-adulto+7.jpg",
     "category": "Gato",
-    "price": 32.99
+    "price": 32.99,
+    "in-sale": "No"
   },
   {
     "id": 19,
@@ -149,7 +167,8 @@
     "description": "Alimento seco para gatitos de la marca Purina Proplan.",
     "image": "Purina-Proplan-kitten.jpg",
     "category": "Gato",
-    "price": 19.99
+    "price": 19.99,
+    "in-sale": "No"
   },
   {
     "id": 20,
@@ -157,6 +176,7 @@
     "description": "Alimento seco reducido en calorías para gatos de la marca Purina Proplan.",
     "image": "Purina-Proplan",
     "category": "Gato",
-    "price": 39.99
+    "price": 39.99,
+    "in-sale": "Si"
   }
 ]

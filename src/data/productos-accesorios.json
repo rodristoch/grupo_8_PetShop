@@ -6,15 +6,18 @@
         "image": "pechera-verde.jpg",
         "category": "Perro",
         "colors": "Verde",
-        "price": 19.99
+        "price": 19.99,
+        "in-sale": "Si"
       },
-      {
+      { 
         "id": 2,
         "name": "Pechera Perros Chicos",
         "description": "Pechera para perros de tamaño pequeño.",
         "image": "pechera-perros-chicos.jpg",
         "category": "Perro",
-        "colors": ""
+        "colors": "",
+        "price": 27.99,
+        "in-sale": "No"
       },
       {
         "id": 3,
@@ -22,7 +25,9 @@
         "description": "Correa retráctil para paseos cómodos.",
         "image": "correa-retractil.jpg",
         "category": "Perro",
-        "colors": ""
+        "colors": "",
+        "price": 7.99,
+        "in-sale": "No"
       },
       {
         "id": 4,
@@ -30,7 +35,9 @@
         "description": "Correa resistente en color marrón.",
         "image": "correa-marron.jpg",
         "category": "Perro",
-        "colors": "Marrón"
+        "colors": "Marrón",
+        "price": 13.99,
+        "in-sale": "No"
       },
       {
         "id": 5,
@@ -38,7 +45,9 @@
         "description": "Correa doble para caminar con dos perros.",
         "image": "correa-doble.jpg",
         "category": "Perro",
-        "colors": ""
+        "colors": "",
+        "price": 12.99,
+        "in-sale": "No"
       },
       {
         "id": 6,
@@ -46,7 +55,9 @@
         "description": "Collar elegante en color rojo.",
         "image": "collar-rojo.jpg",
         "category": "Perro",
-        "colors": "Rojo"
+        "colors": "Rojo",
+        "price": 19.99,
+        "in-sale": "Si"
       },
       {
         "id": 7,
@@ -54,7 +65,9 @@
         "description": "Collar con diseño de bandana.",
         "image": "collar-bandana.jpg",
         "category": "Perro",
-        "colors": ""
+        "colors": "",
+        "price": 29.99,
+        "in-sale": "No"
       },
       {
         "id": 8,
@@ -62,7 +75,9 @@
         "description": "Collar vibrante con colores del arcoíris.",
         "image": "collar-arcoiris.jpg",
         "category": "Perro",
-        "colors": "Rojo, Naranja, Amarillo, Verde, Azul, Violeta"
+        "colors": "Rojo, Naranja, Amarillo, Verde, Azul, Violeta",
+        "price": 27.99,
+        "in-sale": "Si"
       },
       {
         "id": 9,
@@ -70,7 +85,9 @@
         "description": "Collar en color amarillo con broche especial.",
         "image": "collar-amarillo-broche.jpg",
         "category": "Perro",
-        "colors": "Amarillo"
+        "colors": "Amarillo",
+        "price": 27.99,
+        "in-sale": "No"
       },
       {
         "id": 10,
@@ -78,7 +95,9 @@
         "description": "Cinturón ajustable para perros.",
         "image": "cinturon-para-perros.jpg",
         "category": "Perro",
-        "colors": ""
+        "colors": "",
+        "price": 20.99,
+        "in-sale": "No"
       },
       {
         "id": 11,
@@ -86,7 +105,9 @@
         "description": "Arnés pretal para gatos con sistema anti escape y correa de 10 metros.",
         "image": "arnes-pretalreggatos-anti-escape-correa10m.jpg",
         "category": "Gato",
-        "colors": ""
+        "colors": "",
+        "price": 8.99,
+        "in-sale": "No"
       },
       {
         "id": 12,
@@ -94,7 +115,9 @@
         "description": "Juguete interactivo con cañita y pluma en forma de pez marrón para gatos.",
         "image": "canita-pluma-cancat-pez-marron.jpg",
         "category": "Gato",
-        "colors": "Marrón"
+        "colors": "Marrón",
+        "price": 27.99,
+        "in-sale": "No"
       },
       {
         "id": 13,
@@ -102,7 +125,9 @@
         "description": "Collar elastizado para gatos.",
         "image": "collar-elastizado-gatos.jpg",
         "category": "Gato",
-        "colors": ""
+        "colors": "",
+        "price": 10.99,
+        "in-sale": "No"
       },
       {
         "id": 14,
@@ -110,7 +135,9 @@
         "description": "Collar Mpets Ecozany en colores celeste y negro para gatos.",
         "image": "collar-mpets-ecozany-celesteynegro.jpg",
         "category": "Gato",
-        "colors": "Celeste, Negro"
+        "colors": "Celeste, Negro",
+        "price": 17.99,
+        "in-sale": "No"
       },
       {
         "id": 15,
@@ -118,7 +145,9 @@
         "description": "Comedero para gatos.",
         "image": "comedero-gatos.jpg",
         "category": "Gato",
-        "colors": ""
+        "colors": "",
+        "price": 10.99,
+        "in-sale": "No"
       },
       {
         "id": 16,
@@ -134,7 +163,9 @@
         "description": "Mochila transportadora para gatos.",
         "image": "mochila-transportadora-gatos.jpg",
         "category": "Gato",
-        "colors": ""
+        "colors": "",
+        "price": 24.99,
+        "in-sale": "Si"
       },
       {
         "id": 18,
@@ -142,7 +173,9 @@
         "description": "Peluche cilíndrico para gatos de la marca Cancat.",
         "image": "peluche-cancat-cilindrico.jpg",
         "category": "Gato",
-        "colors": ""
+        "colors": "",
+        "price": 29.99,
+        "in-sale": "No"
       },
       {
         "id": 19,
@@ -150,6 +183,8 @@
         "description": "Peluche cilíndrico para gatos de la marca Cancat.",
         "image": "peluche-cancat-cilindrico.jpg",
         "category": "Gato",
-        "colors": ""
+        "colors": "",
+        "price": 47.99,
+        "in-sale": "Si"
       }
   ]

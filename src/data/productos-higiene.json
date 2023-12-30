@@ -5,7 +5,8 @@
         "description": "Paquete de cepillos para el cuidado diario de tu mascota.",
         "image": "pack-de-cepillos.jpg",
         "category": "Perro",
-        "price": 15.99
+        "price": 15.99,
+        "in-sale": "No"
     },
     {
         "id": 2,
@@ -13,7 +14,8 @@
         "description": "Shampoo antiséptico pH controlado para cachorros.",
         "image": "osspret-shampoo-antiséptico-phcontrolado-cachorro.jpg",
         "category": "Perro",
-        "price": 12.99
+        "price": 12.99,
+        "in-sale": "No"
     },
     {
         "id": 3,
@@ -21,7 +23,8 @@
         "description": "Shampoo antisárnico garrapaticida para perros.",
         "image": "osspret-shampoo-antisárnico-garrapaticida.jpg",
         "category": "Perro",
-        "price": 14.99
+        "price": 14.99,
+        "in-sale": "No"
     },
     {
         "id": 4,
@@ -29,7 +32,8 @@
         "description": "Producto 2 en 1 pulguicida y garrapaticida para perros.",
         "image": "osspret-2en1-pulguicida-garrapaticida.jpg",
         "category": "Perro",
-        "price": 18.99
+        "price": 18.99,
+        "in-sale": "No"
     },
     {
         "id": 5,
@@ -37,7 +41,8 @@
         "description": "Enjuague bucal en spray para adultos y cachorros.",
         "image": "iki-enjuegue-bucal-spray-adulto-y-cachorro.jpg",
         "category": "Perro",
-        "price": 9.99
+        "price": 9.99,
+        "in-sale": "No"
     },
     {
         "id": 6,
@@ -45,7 +50,8 @@
         "description": "Enjuague bucal para mezclar con agua para perros.",
         "image": "enjuague-bucal-para-agua.jpg",
         "category": "Perro",
-        "price": 7.99
+        "price": 7.99,
+        "in-sale": "No"
     },
     {
         "id": 7,
@@ -53,7 +59,8 @@
         "description": "Cortauñas con lima para el cuidado de las uñas de tu mascota.",
         "image": "cortauñas-y-lima.jpg",
         "category": "Perro",
-        "price": 6.99
+        "price": 6.99,
+        "in-sale": "No"
     },
     {
         "id": 8,
@@ -61,7 +68,8 @@
         "description": "Cortauñas para el cuidado de las uñas de tu mascota.",
         "image": "cortauñas.jpg",
         "category": "Perro",
-        "price": 4.99
+        "price": 4.99,
+        "in-sale": "No"
     },
     {
         "id": 9,
@@ -69,7 +77,8 @@
         "description": "Cepillo especial para perros de pelo largo.",
         "image": "cepillo-pelo-largo.jpg",
         "category": "Perro",
-        "price": 11.99
+        "price": 11.99,
+        "in-sale": "Si"
     },
     {
         "id": 10,
@@ -77,21 +86,24 @@
         "description": "Cepillo para perros de pelo corto.",
         "image": "cepillo-pelo-corto.jpg",
         "category": "Perro",
-        "price": 10.99
+        "price": 10.99,
+        "in-sale": "No"
     },
     {
         "id": 11,
         "name": "Arena Aglomerante Sanicat Strong Clumps 7Kg",
         "description": "Arena aglomerante de la marca Sanicat, formato de 7 kg.",
         "category": "Gato",
-        "price": 19.99
+        "price": 19.99,
+        "in-sale": "No"
     },
     {
         "id": 12,
         "name": "Bandeja Sanitaria Litera",
         "description": "Bandeja sanitaria tipo litera para gatos.",
         "category": "Gato",
-        "price": 23.99
+        "price": 23.99,
+        "in-sale": "Si"
     },
     {
         "id": 13,
@@ -99,14 +111,16 @@
         "description": "Bandeja sanitaria tipo litera con baño cerrado para gatos, color gris.",
         "image": "bandeja-sanitaria-litera-bano-cerrada-para-gato-color-gris.jpg",
         "category": "Gato",
-        "price": 29.99
+        "price": 29.99,
+        "in-sale": "No"
     },
     {
         "id": 14,
         "name": "Cardina Cepillo Saca Pelo Mascota Premium Autolimpiante Aseo",
         "description": "Cardina cepillo saca pelo para mascotas premium, autolimpiante para el cuidado del aseo.",
         "category": "Gato",
-        "price": 16.99
+        "price": 16.99,
+        "in-sale": "No"
     },
     {
         "id": 15,
@@ -114,28 +128,32 @@
         "description": "Alfombra para baño sanitario grande de la marca Cat-It, dimensiones 60x90 cm, color gris.",
         "image": "cat-it-alfombra-para-bano-sanitario-grande-60x90cm-color-gris.jpg",
         "category": "Gato",
-        "price": 34.99
+        "price": 34.99,
+        "in-sale": "No"
     },
     {
         "id": 16,
         "name": "Cepillo de Dientes",
         "description": "Cepillo de dientes para gatos.",
         "category": "Gato",
-        "price": 5.99
+        "price": 5.99,
+        "in-sale": "Si"
     },
     {
         "id": 17,
         "name": "Cepillo Peine Rastrillo",
         "description": "Cepillo peine rastrillo para el cuidado del pelaje de tu gato.",
         "category": "Gato",
-        "price": 8.99
+        "price": 8.99,
+        "in-sale": "No"
     },
     {
         "id": 18,
         "name": "Kit Sanitario Gato Bandeja Comedero Palita Piedras Cepillo",
         "description": "Kit sanitario para gatos que incluye bandeja, comedero, palita, piedras y cepillo.",
         "category": "Gato",
-        "price": 42.99
+        "price": 42.99,
+        "in-sale": "No"
     },
     {
         "id": 19,
@@ -143,20 +161,23 @@
          "description": "Litera Catit con filtro anti-olor para baño cerrado, color gris claro.",
          "image": "litera-catit-filtro-anti-olor-bano-cerrado-color-gris-claro.jpg",
          "category": "Gato",
-         "price": 39.99
+         "price": 39.99,
+         "in-sale": "Si"
     },
     {
          "id": 20,
          "name": "Piedras para Gatos Sílica de Gel Neutras Clásica Cancat 3.8 litros",
          "description": "Piedras para gatos de sílica de gel neutras clásica de la marca Cancat, formato de 3.8 litros.",
          "category": "Gato",
-         "price": 15.99
+         "price": 15.99,
+         "in-sale": "No"
     },
     {
         "id": 21,
         "name": "Piedras Sanitarias",
         "description": "Piedras sanitarias para gatos.",
          "category": "Gato",
-         "price": 12.99
+         "price": 12.99,
+         "in-sale": "No"
     }
     ]
