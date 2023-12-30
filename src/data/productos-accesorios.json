@@ -3,11 +3,11 @@
         "id": 1,
         "name": "Pechera Verde",
         "description": "Pechera para perros en color verde.",
-        "image": "pechera-verde.jpg",
+        "image": "pechera-verde.jpeg",
         "category": "Perro",
         "colors": "Verde",
         "price": 19.99,
-        "in-sale": "Si"
+        "discount": "Si"
       },
       { 
         "id": 2,
@@ -17,7 +17,7 @@
         "category": "Perro",
         "colors": "",
         "price": 27.99,
-        "in-sale": "No"
+        "discount": "No"
       },
       {
         "id": 3,
@@ -27,7 +27,7 @@
         "category": "Perro",
         "colors": "",
         "price": 7.99,
-        "in-sale": "No"
+        "discount": "No"
       },
       {
         "id": 4,
@@ -37,7 +37,7 @@
         "category": "Perro",
         "colors": "Marrón",
         "price": 13.99,
-        "in-sale": "No"
+        "discount": "No"
       },
       {
         "id": 5,
@@ -47,17 +47,17 @@
         "category": "Perro",
         "colors": "",
         "price": 12.99,
-        "in-sale": "No"
+        "discount": "No"
       },
       {
         "id": 6,
         "name": "Collar Rojo",
         "description": "Collar elegante en color rojo.",
-        "image": "collar-rojo.jpg",
+        "image": "collar-rojo.jpeg",
         "category": "Perro",
         "colors": "Rojo",
         "price": 19.99,
-        "in-sale": "Si"
+        "discount": "Si"
       },
       {
         "id": 7,
@@ -67,17 +67,17 @@
         "category": "Perro",
         "colors": "",
         "price": 29.99,
-        "in-sale": "No"
+        "discount": "No"
       },
       {
         "id": 8,
         "name": "Collar Arcoíris",
         "description": "Collar vibrante con colores del arcoíris.",
-        "image": "collar-arcoiris.jpg",
+        "image": "collar-arcoiris.webp",
         "category": "Perro",
         "colors": "Rojo, Naranja, Amarillo, Verde, Azul, Violeta",
         "price": 27.99,
-        "in-sale": "Si"
+        "discount": "Si"
       },
       {
         "id": 9,
@@ -87,7 +87,7 @@
         "category": "Perro",
         "colors": "Amarillo",
         "price": 27.99,
-        "in-sale": "No"
+        "discount": "No"
       },
       {
         "id": 10,
@@ -97,7 +97,7 @@
         "category": "Perro",
         "colors": "",
         "price": 20.99,
-        "in-sale": "No"
+        "discount": "No"
       },
       {
         "id": 11,
@@ -107,7 +107,7 @@
         "category": "Gato",
         "colors": "",
         "price": 8.99,
-        "in-sale": "No"
+        "discount": "No"
       },
       {
         "id": 12,
@@ -117,7 +117,7 @@
         "category": "Gato",
         "colors": "Marrón",
         "price": 27.99,
-        "in-sale": "No"
+        "discount": "No"
       },
       {
         "id": 13,
@@ -127,7 +127,7 @@
         "category": "Gato",
         "colors": "",
         "price": 10.99,
-        "in-sale": "No"
+        "discount": "No"
       },
       {
         "id": 14,
@@ -137,7 +137,7 @@
         "category": "Gato",
         "colors": "Celeste, Negro",
         "price": 17.99,
-        "in-sale": "No"
+        "discount": "No"
       },
       {
         "id": 15,
@@ -147,7 +147,7 @@
         "category": "Gato",
         "colors": "",
         "price": 10.99,
-        "in-sale": "No"
+        "discount": "No"
       },
       {
         "id": 16,
@@ -155,17 +155,19 @@
         "description": "Fuente Catit en forma de flor para gatos.",
         "image": "fuente-catit-flor.jpg",
         "category": "Gato",
-        "colors": ""
+        "colors": "",
+        "price": 14.99,
+        "discount": "Si"
       },
       {
         "id": 17,
         "name": "Mochila Transportadora Gatos",
         "description": "Mochila transportadora para gatos.",
-        "image": "mochila-transportadora-gatos.jpg",
+        "image": "mocila-transportadora-gatos.jpg",
         "category": "Gato",
         "colors": "",
         "price": 24.99,
-        "in-sale": "Si"
+        "discount": "Si"
       },
       {
         "id": 18,
@@ -175,16 +177,6 @@
         "category": "Gato",
         "colors": "",
         "price": 29.99,
-        "in-sale": "No"
-      },
-      {
-        "id": 19,
-        "name": "Peluche Cancat Cilíndrico",
-        "description": "Peluche cilíndrico para gatos de la marca Cancat.",
-        "image": "peluche-cancat-cilindrico.jpg",
-        "category": "Gato",
-        "colors": "",
-        "price": 47.99,
-        "in-sale": "Si"
+        "discount": "Si"
       }
   ]

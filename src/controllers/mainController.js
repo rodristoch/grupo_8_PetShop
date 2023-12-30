@@ -33,10 +33,10 @@ const mainController = {
         const juguetesGato = juguetes.filter(product => {return product.category == "Gato"})
 
         //productos con descuentos
-        const accesoriosDescuento = accesorios.filter(product => {return product.in-sale == "Si"})
-		const comidaDescuento = comida.filter(product => {return product.in-sale == "Si"})
-        const higieneDescuento = higiene.filter(product => {return product.in-sale == "Si"})
-        const juguetesDescuento = juguetes.filter(product => {return product.in-sale == "Si"})
+        const accesoriosDescuento = accesorios.filter(product => {return product.discount == "Si"})
+		const comidaDescuento = comida.filter(product => {return product.discount == "Si"})
+        const higieneDescuento = higiene.filter(product => {return product.discount == "Si"})
+        const juguetesDescuento = juguetes.filter(product => {return product.discount == "Si"})
 
 		res.render("index.ejs", {accesoriosPerro, comidaPerro, higienePerro, juguetesPerro, accesoriosGato, comidaGato, higieneGato, juguetesGato, accesoriosDescuento, comidaDescuento, higieneDescuento, juguetesDescuento});
 	},

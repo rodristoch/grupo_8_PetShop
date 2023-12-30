@@ -70,89 +70,24 @@
         <section class="section-productos-descuentos">
             <h2>Productos con descuentos</h2>
             <div class="div-section-productos-descuentos">
-                <article class="articulo-productos-descuentos">
-                    <a href="/productos/detalle"><img class="img-productos-descuentos" src="\img\Producto.webp" alt="imagen_producto"></a>
-                    <div class="descripcion-productos-descuentos">
-                        <h4>Alimento/Producto</h4>
-                        <p class="descripcion">Lorem ipsum dolor sit amet consectetur, adipisicing</p>
-                        <p class="precio-tachado">$10.000</p>
-                        <p class="descuento">20% off</p>
-                        <p class="precio">$10.000</p>
-                        <div class="div-boton-comprar">
-                            <button class="boton-comprar" type="submit">Agregar</button>
-                        </div>
-                    </div>
-                </article>
+                <% for(let accesorio of accesoriosDescuento) { %>
 
-                <article class="articulo-productos-descuentos">
-                    <a href="/productos/detalle"><img class="img-productos-descuentos" src="\img\Producto.webp" alt="imagen_producto"></a>
-                    <div class="descripcion-productos-descuentos">
-                        <h4>Alimento/Producto</h4>
-                        <p class="descripcion">Lorem ipsum dolor sit amet consectetur, adipisicing</p>
-                        <p class="precio-tachado">$10.000</p>
-                        <p class="descuento">20% off</p>
-                        <p class="precio">$10.000</p>
-                        <div class="div-boton-comprar">
-                            <button class="boton-comprar" type="submit">Agregar</button>
+                    <article class="articulo-productos-descuentos">
+                        <a href="/productos/detalle"><img class="img-productos-descuentos" src="/img/productos/<%= accesorio.image %>" alt="imagen_producto"></a>
+                        <div class="descripcion-productos-descuentos">
+                            <h4><%= accesorio.name %></h4>
+                            <p class="descripcion"><%= accesorio.description %></p>
+                            <p class="precio-tachado">$ <%= accesorio.price %></p>
+                            <p class="descuento">20% off</p>
+                            <p class="precio"><%= accesorio.price*0.8 %></p>
+                            <div class="div-boton-comprar">
+                                <button class="boton-comprar" type="submit">Agregar</button>
+                            </div>
                         </div>
-                    </div>
-                </article>
+                    </article>
 
-                <article class="articulo-productos-descuentos">
-                    <a href="/productos/detalle"><img class="img-productos-descuentos" src="\img\Producto.webp" alt="imagen_producto"></a>
-                    <div class="descripcion-productos-descuentos">
-                        <h4>Alimento/Producto</h4>
-                        <p class="descripcion">Lorem ipsum dolor sit amet consectetur, adipisicing</p>
-                        <p class="precio-tachado">$10.000</p>
-                        <p class="descuento">20% off</p>
-                        <p class="precio">$10.000</p>
-                        <div class="div-boton-comprar">
-                            <button class="boton-comprar" type="submit">Agregar</button>
-                        </div>
-                    </div>
-                </article>
+                <% } %>
 
-                <article class="articulo-productos-descuentos">
-                    <a href="/productos/detalle"><img class="img-productos-descuentos" src="\img\Producto.webp" alt="imagen_producto"></a>
-                    <div class="descripcion-productos-descuentos">
-                        <h4>Alimento/Producto</h4>
-                        <p class="descripcion">Lorem ipsum dolor sit amet consectetur, adipisicing</p>
-                        <p class="precio-tachado">$10.000</p>
-                        <p class="descuento">20% off</p>
-                        <p class="precio">$10.000</p>
-                        <div class="div-boton-comprar">
-                            <button class="boton-comprar" type="submit">Agregar</button>
-                        </div>
-                    </div>
-                </article>
-
-                <article class="articulo-productos-descuentos">
-                    <a href="/productos/detalle"><img class="img-productos-descuentos" src="\img\Producto.webp" alt="imagen_producto"></a>
-                    <div class="descripcion-productos-descuentos">
-                        <h4>Alimento/Producto</h4>
-                        <p class="descripcion">Lorem ipsum dolor sit amet consectetur, adipisicing</p>
-                        <p class="precio-tachado">$10.000</p>
-                        <p class="descuento">20% off</p>
-                        <p class="precio">$10.000</p>
-                        <div class="div-boton-comprar">
-                            <button class="boton-comprar" type="submit">Agregar</button>
-                        </div>
-                    </div>
-                </article>
-
-                <article class="articulo-productos-descuentos">
-                    <a href="/productos/detalle"><img class="img-productos-descuentos" src="\img\Producto.webp" alt="imagen_producto"></a>
-                    <div class="descripcion-productos-descuentos">
-                        <h4>Alimento/Producto</h4>
-                        <p class="descripcion">Lorem ipsum dolor sit amet consectetur, adipisicing</p>
-                        <p class="precio-tachado">$10.000</p>
-                        <p class="descuento">20% off</p>
-                        <p class="precio">$10.000</p>
-                        <div class="div-boton-comprar">
-                            <button class="boton-comprar" type="submit">Agregar</button>
-                        </div>
-                    </div>
-                </article>
             </div>
         </section>
 
