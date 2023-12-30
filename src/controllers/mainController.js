@@ -32,7 +32,13 @@ const mainController = {
         const higieneGato = higiene.filter(product => {return product.category == "Gato"})
         const juguetesGato = juguetes.filter(product => {return product.category == "Gato"})
 
-		res.render("index.ejs", {accesoriosPerro, comidaPerro, higienePerro, juguetesPerro, accesoriosGato, comidaGato, higieneGato, juguetesGato});
+        //productos con descuentos
+        const accesoriosDescuento = accesorios.filter(product => {return product.in-sale == "Si"})
+		const comidaDescuento = comida.filter(product => {return product.in-sale == "Si"})
+        const higieneDescuento = higiene.filter(product => {return product.in-sale == "Si"})
+        const juguetesDescuento = juguetes.filter(product => {return product.in-sale == "Si"})
+
+		res.render("index.ejs", {accesoriosPerro, comidaPerro, higienePerro, juguetesPerro, accesoriosGato, comidaGato, higieneGato, juguetesGato, accesoriosDescuento, comidaDescuento, higieneDescuento, juguetesDescuento});
 	},
 
 
