@@ -1,0 +1,92 @@
+[
+  {
+    "id": 11,
+    "name": "Royal Canin Cachorro Medium",
+    "description": "Alimento para cachorros de tamaño mediano.",
+    "image": "royalcanin-cachorro-medium.jpg",
+    "category": "Perro",
+    "colors": [],
+    "price": 24.99
+  },
+  {
+    "id": 12,
+    "name": "Royal Canin Adulto Mini",
+    "description": "Alimento para perros adultos de tamaño mini.",
+    "image": "royalcanin-adulto-mini.jpg",
+    "category": "Perro",
+    "colors": [],
+    "price": 29.99
+  },
+  {
+    "id": 13,
+    "name": "Royal Canin Adulto Mediano",
+    "description": "Alimento para perros adultos de tamaño mediano.",
+    "image": "royalcanin-adulto-mediano.jpg",
+    "category": "Perro",
+    "colors": [],
+    "price": 34.99
+  },
+  {
+    "id": 14,
+    "name": "Royal Canin Adulto Más de 10 Años Mediano",
+    "description": "Alimento para perros adultos mayores de 10 años de tamaño mediano.",
+    "image": "royalcanin-adulto-mas10años-mediano.jpg",
+    "category": "Perro",
+    "colors": [],
+    "price": 39.99
+  },
+  {
+    "id": 15,
+    "name": "Royal Canin Adulto Más de 7 Años Mediano",
+    "description": "Alimento para perros adultos mayores de 7 años de tamaño mediano.",
+    "image": "royalcanin-adulto-mas7años-mediano.jpg",
+    "category": "Perro",
+    "colors": [],
+    "price": 38.99
+  },
+  {
+    "id": 16,
+    "name": "Eukanuba Cachorro Grande",
+    "description": "Alimento para cachorros de tamaño grande.",
+    "image": "eukanuba-cachorro-grande.jpg",
+    "category": "Perro",
+    "colors": [],
+    "price": 42.99
+  },
+  {
+    "id": 17,
+    "name": "Eukanuba Adulto Mediano",
+    "description": "Alimento para perros adultos de tamaño mediano.",
+    "image": "eukanuba-adulto-mediano.jpg",
+    "category": "Perro",
+    "colors": [],
+    "price": 36.99
+  },
+  {
+    "id": 18,
+    "name": "Eukanuba Adulto Grande",
+    "description": "Alimento para perros adultos de tamaño grande.",
+    "image": "eukanuba-adulto-grande.jpg",
+    "category": "Perro",
+    "colors": [],
+    "price": 39.99
+  },
+  {
+    "id": 19,
+    "name": "Eukanuba Adulto Chico Oferta",
+    "description": "Oferta en alimento para perros adultos de tamaño chico.",
+    "image": "eukanuba-adulto-chico-oferta.jpg",
+    "category": "Perro",
+    "colors": [],
+    "price": 27.99
+  },
+  {
+    "id": 20,
+    "name": "Eukanuba Adulto Chico",
+    "description": "Alimento para perros adultos de tamaño chico.",
+    "image": "eukanuba-adulto-chico.jpg",
+    "category": "Perro",
+    "colors": [],
+    "price": 32.99
+  }
+]
