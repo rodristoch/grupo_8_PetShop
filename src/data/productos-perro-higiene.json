@@ -1,0 +1,92 @@
+[
+    {
+      "id": 21,
+      "name": "Pack de Cepillos",
+      "description": "Paquete de cepillos para el cuidado diario de tu mascota.",
+      "image": "pack-de-cepillos.jpg",
+      "category": "Perro",
+      "colors": [],
+      "price": 15.99
+    },
+    {
+      "id": 22,
+      "name": "Osspret Shampoo Antiséptico pH Controlado Cachorro",
+      "description": "Shampoo antiséptico pH controlado para cachorros.",
+      "image": "osspret-shampoo-antiséptico-phcontrolado-cachorro.jpg",
+      "category": "Perro",
+      "colors": [],
+      "price": 12.99
+    },
+    {
+      "id": 23,
+      "name": "Osspret Shampoo Antisárnico Garrapaticida",
+      "description": "Shampoo antisárnico garrapaticida para perros.",
+      "image": "osspret-shampoo-antisárnico-garrapaticida.jpg",
+      "category": "Perro",
+      "colors": [],
+      "price": 14.99
+    },
+    {
+      "id": 24,
+      "name": "Osspret 2 en 1 Pulguicida Garrapaticida",
+      "description": "Producto 2 en 1 pulguicida y garrapaticida para perros.",
+      "image": "osspret-2en1-pulguicida-garrapaticida.jpg",
+      "category": "Perro",
+      "colors": [],
+      "price": 18.99
+    },
+    {
+      "id": 25,
+      "name": "Iki Enjuague Bucal Spray Adulto y Cachorro",
+      "description": "Enjuague bucal en spray para adultos y cachorros.",
+      "image": "iki-enjuegue-bucal-spray-adulto-y-cachorro.jpg",
+      "category": "Perro",
+      "colors": [],
+      "price": 9.99
+    },
+    {
+      "id": 26,
+      "name": "Enjuague Bucal para Agua",
+      "description": "Enjuague bucal para mezclar con agua para perros.",
+      "image": "enjuague-bucal-para-agua.jpg",
+      "category": "Perro",
+      "colors": [],
+      "price": 7.99
+    },
+    {
+      "id": 27,
+      "name": "Cortauñas y Lima",
+      "description": "Cortauñas con lima para el cuidado de las uñas de tu mascota.",
+      "image": "cortauñas-y-lima.jpg",
+      "category": "Perro",
+      "colors": [],
+      "price": 6.99
+    },
+    {
+      "id": 28,
+      "name": "Cortauñas",
+      "description": "Cortauñas para el cuidado de las uñas de tu mascota.",
+      "image": "cortauñas.jpg",
+      "category": "Perro",
+      "colors": [],
+      "price": 4.99
+    },
+    {
+      "id": 29,
+      "name": "Cepillo Pelo Largo",
+      "description": "Cepillo especial para perros de pelo largo.",
+      "image": "cepillo-pelo-largo.jpg",
+      "category": "Perro",
+      "colors": [],
+      "price": 11.99
+    },
+    {
+      "id": 30,
+      "name": "Cepillo Pelo Corto",
+      "description": "Cepillo para perros de pelo corto.",
+      "image": "cepillo-pelo-corto.jpg",
+      "category": "Perro",
+      "colors": [],
+      "price": 10.99
+    }
+  ]

@@ -1,0 +1,92 @@
+[
+    {
+      "id": 31,
+      "name": "Soga Celeste Blanca Negra",
+      "description": "Soga de colores celeste, blanca y negra para juegos divertidos.",
+      "image": "soga-celeste-blanca-negra.jpg",
+      "category": "Juguetes",
+      "colors": ["Celeste", "Blanca", "Negra"],
+      "price": 8.99
+    },
+    {
+      "id": 32,
+      "name": "Soga",
+      "description": "Soga resistente para juegos y ejercicios con tu mascota.",
+      "image": "soga.jpg",
+      "category": "Juguetes",
+      "colors": [],
+      "price": 6.99
+    },
+    {
+      "id": 33,
+      "name": "Juguete Verde",
+      "description": "Juguete de color verde para horas de diversión.",
+      "image": "juguete-verde.jpg",
+      "category": "Juguetes",
+      "colors": ["Verde"],
+      "price": 5.99
+    },
+    {
+      "id": 34,
+      "name": "Hueso Saborizado Carne",
+      "description": "Hueso saborizado con delicioso sabor a carne.",
+      "image": "hueso-saborizado-carne.jpg",
+      "category": "Juguetes",
+      "colors": [],
+      "price": 7.99
+    },
+    {
+      "id": 35,
+      "name": "Hueso Saborizado",
+      "description": "Hueso saborizado para el entretenimiento de tu mascota.",
+      "image": "hueso-saborizado.jpg",
+      "category": "Juguetes",
+      "colors": [],
+      "price": 6.99
+    },
+    {
+      "id": 36,
+      "name": "Hueso Rojo con Comida",
+      "description": "Hueso rojo relleno con deliciosa comida para perros.",
+      "image": "hueso-rojo-con-comida.jpg",
+      "category": "Juguetes",
+      "colors": ["Rojo"],
+      "price": 9.99
+    },
+    {
+      "id": 37,
+      "name": "Hueso Pelota de Tenis",
+      "description": "Hueso con forma de pelota de tenis para juegos divertidos.",
+      "image": "hueso-pelota-de-tenis.jpg",
+      "category": "Juguetes",
+      "colors": [],
+      "price": 8.99
+    },
+    {
+      "id": 38,
+      "name": "Hueso Goma Violeta",
+      "description": "Hueso de goma en color violeta para masticación.",
+      "image": "hueso-goma-violeta.jpg",
+      "category": "Juguetes",
+      "colors": ["Violeta"],
+      "price": 7.99
+    },
+    {
+      "id": 39,
+      "name": "Hueso Goma Rojo",
+      "description": "Hueso de goma en color rojo para masticación.",
+      "image": "hueso-goma-rojo.jpg",
+      "category": "Juguetes",
+      "colors": ["Rojo"],
+      "price": 7.99
+    },
+    {
+      "id": 40,
+      "name": "Hueso Goma Naranja",
+      "description": "Hueso de goma en color naranja para masticación.",
+      "image": "hueso-goma-naranja.jpg",
+      "category": "Juguetes",
+      "colors": ["Naranja"],
+      "price": 7.99
+    }
+  ]
