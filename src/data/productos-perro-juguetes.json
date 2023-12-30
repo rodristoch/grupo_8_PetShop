@@ -1,92 +1,154 @@
 [
     {
-      "id": 31,
+      "id": 1,
       "name": "Soga Celeste Blanca Negra",
       "description": "Soga de colores celeste, blanca y negra para juegos divertidos.",
       "image": "soga-celeste-blanca-negra.jpg",
       "category": "Juguetes",
-      "colors": ["Celeste", "Blanca", "Negra"],
       "price": 8.99
     },
     {
-      "id": 32,
+      "id": 2,
       "name": "Soga",
       "description": "Soga resistente para juegos y ejercicios con tu mascota.",
       "image": "soga.jpg",
       "category": "Juguetes",
-      "colors": [],
       "price": 6.99
     },
     {
-      "id": 33,
+      "id": 3,
       "name": "Juguete Verde",
       "description": "Juguete de color verde para horas de diversión.",
       "image": "juguete-verde.jpg",
       "category": "Juguetes",
-      "colors": ["Verde"],
       "price": 5.99
     },
     {
-      "id": 34,
+      "id": 4,
       "name": "Hueso Saborizado Carne",
       "description": "Hueso saborizado con delicioso sabor a carne.",
       "image": "hueso-saborizado-carne.jpg",
       "category": "Juguetes",
-      "colors": [],
       "price": 7.99
     },
     {
-      "id": 35,
+      "id": 5,
       "name": "Hueso Saborizado",
       "description": "Hueso saborizado para el entretenimiento de tu mascota.",
       "image": "hueso-saborizado.jpg",
       "category": "Juguetes",
-      "colors": [],
       "price": 6.99
     },
     {
-      "id": 36,
+      "id": 6,
       "name": "Hueso Rojo con Comida",
       "description": "Hueso rojo relleno con deliciosa comida para perros.",
       "image": "hueso-rojo-con-comida.jpg",
       "category": "Juguetes",
-      "colors": ["Rojo"],
       "price": 9.99
     },
     {
-      "id": 37,
+      "id": 7,
       "name": "Hueso Pelota de Tenis",
       "description": "Hueso con forma de pelota de tenis para juegos divertidos.",
       "image": "hueso-pelota-de-tenis.jpg",
       "category": "Juguetes",
-      "colors": [],
       "price": 8.99
     },
     {
-      "id": 38,
+      "id": 8,
       "name": "Hueso Goma Violeta",
       "description": "Hueso de goma en color violeta para masticación.",
       "image": "hueso-goma-violeta.jpg",
       "category": "Juguetes",
-      "colors": ["Violeta"],
       "price": 7.99
     },
     {
-      "id": 39,
+      "id": 9,
       "name": "Hueso Goma Rojo",
       "description": "Hueso de goma en color rojo para masticación.",
       "image": "hueso-goma-rojo.jpg",
       "category": "Juguetes",
-      "colors": ["Rojo"],
       "price": 7.99
     },
     {
-      "id": 40,
+      "id": 10,
       "name": "Hueso Goma Naranja",
       "description": "Hueso de goma en color naranja para masticación.",
       "image": "hueso-goma-naranja.jpg",
       "category": "Juguetes",
-      "colors": ["Naranja"],
       "price": 7.99
-    }
-  ]
+    },
+    {
+      "id": 11,
+      "name": "Cañita Alambre Resistente Largo",
+      "description": "Cañita de alambre resistente y largo para juegos con gatos.",
+      "image": "cañita-alambre-resistente-largo.jpg",
+      "category": "Gato",
+      "price": 10.99
+    },
+    {
+      "id": 12,
+      "name": "Juguete Droid para Gatos Doble 3 Sensores Gigwi Movimiento",
+      "description": "Juguete droid interactivo con doble sensor de movimiento para gatos.",
+      "image": "juguete-droid-para-gatos-doble-3-sensores-gigwi-movimiento.jpg",
+      "category": "Gato",
+      "price": 24.99
+    },
+    {
+      "id": 13,
+      "name": "Juguete Interactivo Dispenser de Comida Pelotas",
+      "description": "Juguete interactivo con dispenser de comida y pelotas para gatos.",
+      "image": "juguete-interactivo-dispenser-de-comida-pelotas.jpg",
+      "category": "Gato",
+      "price": 18.99
+    },
+    {
+      "id": 14,
+      "name": "Juguete Interactivo Gatos",
+      "description": "Juguete interactivo para la diversión de los gatos.",
+      "image": "juguete-interactivo-gatos.jpg",
+      "category": "Gato",
+      "price": 14.99
+    },
+    {
+      "id": 15,
+      "name": "Juguete Interactivo Para Gatos Torre Con Pelotas 3 Niveles",
+      "description": "Juguete interactivo para gatos con torre y pelotas en 3 niveles.",
+      "image": "juguete-interactivo-para-gatos-torre-con-pelotas-3-niveles.jpg",
+      "category": "Gato",
+      "price": 29.99
+    },
+    {
+        "id": 16,
+        "name": "Pelota Jaula Con Raton",
+        "description": "Pelota con jaula y ratón para el entretenimiento de tu gato.",
+        "image": "pelota-jaula-con-raton.jpg",
+        "category": "Gato",
+        "price": 9.99
+      },
+      {
+        "id": 17,
+        "name": "Pelota Multicolor Arcoiris Gatos Goma Eva",
+        "description": "Pelota multicolor con diseño de arcoiris para gatos de goma Eva.",
+        "image": "pelota-multicolor-arcoiris-gatos-goma-eva.jpg",
+        "category": "Gato",
+        "price": 7.99
+      },
+      {
+        "id": 18,
+        "name": "Raton a Cuerda",
+        "description": "Ratón de juguete para gatos con cuerda para mayor diversión.",
+        "image": "raton-a-cuerda.jpg",
+        "category": "Gato",
+        "price": 5.99
+      },
+      {
+        "id": 19,
+        "name": "Túnel Interactivo Gatos Plegable Con Cama Vesper Catit Color Gris",
+        "description": "Túnel interactivo para gatos plegable con cama en color gris de la marca Vesper Catit.",
+        "image": "tunel-interactivo-gatos-plegable-con-cama-vesper-catit-color-gris.jpg",
+        "category": "Gato",
+        "price": 19.99
+      }
+    ]
