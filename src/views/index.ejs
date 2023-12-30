@@ -102,77 +102,22 @@
         <section class="section-productos-perro">
             <h2 class="h2-productos">Productos para perro</h2>
             <div class="div-productos-perro">
+                <% for(let accesorioPerro of accesoriosPerro) { %>  
+
                 <article class="articulo-productos-perro">
-                    <a href="/productos/detalle"><img class="img-productos-perro" src="\img\Producto.webp" alt="imagen_producto"></a>
+                    <a href="/productos/detalle"><img class="img-productos-perro" src="/img/productos/<%= accesorioPerro.image %>" alt="imagen_producto"></a>
                     <div class="descripcion-productos-perro">
-                        <h4>Alimento/Producto</h4>
-                        <p class="descripcion">Lorem ipsum dolor sit amet consectetur, adipisicing</p>
-                        <p class="precio">$10.000</p>
+                        <h4><%= accesorioPerro.name %></h4>
+                        <p class="descripcion"><%= accesorioPerro.description %></p>
+                        <p class="precio">$ <%= accesorioPerro.price %></p>
                         <div class="div-boton-comprar">
                             <button class="boton-comprar" type="submit">Agregar</button>
                         </div>
                     </div>
                 </article>
 
-                <article class="articulo-productos-perro">
-                    <a href="/productos/detalle"><img class="img-productos-perro" src="\img\Producto.webp" alt="imagen_producto"></a>
-                    <div class="descripcion-productos-perro">
-                        <h4>Alimento/Producto</h4>
-                        <p class="descripcion">Lorem ipsum dolor sit amet consectetur, adipisicing</p>
-                        <p class="precio">$10.000</p>
-                        <div class="div-boton-comprar">
-                            <button class="boton-comprar" type="submit">Agregar</button>
-                        </div>
-                    </div>
-                </article>
-
-                <article class="articulo-productos-perro">
-                    <a href="/productos/detalle"><img class="img-productos-perro" src="\img\Producto.webp" alt="imagen_producto"></a>
-                    <div class="descripcion-productos-perro">
-                        <h4>Alimento/Producto</h4>
-                        <p class="descripcion">Lorem ipsum dolor sit amet consectetur, adipisicing</p>
-                        <p class="precio">$10.000</p>
-                        <div class="div-boton-comprar">
-                            <button class="boton-comprar" type="submit">Agregar</button>
-                        </div>
-                    </div>
-                </article>
-
-                <article class="articulo-productos-perro">
-                    <a href="/productos/detalle"><img class="img-productos-perro" src="\img\Producto.webp" alt="imagen_producto"></a>
-                    <div class="descripcion-productos-perro">
-                        <h4>Alimento/Producto</h4>
-                        <p class="descripcion">Lorem ipsum dolor sit amet consectetur, adipisicing</p>
-                        <p class="precio">$10.000</p>
-                        <div class="div-boton-comprar">
-                            <button class="boton-comprar" type="submit">Agregar</button>
-                        </div>
-                    </div>
-                </article>
-
-                <article class="articulo-productos-perro">
-                    <a href="/productos/detalle"><img class="img-productos-perro" src="\img\Producto.webp" alt="imagen_producto"></a>
-                    <div class="descripcion-productos-perro">
-                        <h4>Alimento/Producto</h4>
-                        <p class="descripcion">Lorem ipsum dolor sit amet consectetur, adipisicing</p>
-                        <p class="precio">$10.000</p>
-                        <div class="div-boton-comprar">
-                            <button class="boton-comprar" type="submit">Agregar</button>
-                        </div>
-                    </div>
-                </article>
-
-                <article class="articulo-productos-perro">
-                    <a href="/productos/detalle"><img class="img-productos-perro" src="\img\Producto.webp" alt="imagen_producto"></a>
-                    <div class="descripcion-productos-perro">
-                        <h4>Alimento/Producto</h4>
-                        <p class="descripcion">Lorem ipsum dolor sit amet consectetur, adipisicing</p>
-                        <p class="precio">$10.000</p>
-                        <div class="div-boton-comprar">
-                            <button class="boton-comprar" type="submit">Agregar</button>
-                        </div>
-                    </div>
-                </article>
+            <% } %>
+                
             </div>
         </section>
 
