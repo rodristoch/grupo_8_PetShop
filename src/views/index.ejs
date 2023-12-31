@@ -70,7 +70,7 @@
         <section class="section-productos-descuentos">
             <h2>Productos con descuentos</h2>
             <div class="div-section-productos-descuentos">
-                <% for(let accesorio of accesoriosDescuento) { %>
+                <% for(let accesorio of productosPerroConDescuento) { %>
 
                     <article class="articulo-productos-descuentos">
                         <a href="/productos/detalle"><img class="img-productos-descuentos" src="/img/productos/<%= accesorio.image %>" alt="imagen_producto"></a>
@@ -102,7 +102,7 @@
         <section class="section-productos-perro">
             <h2 class="h2-productos">Productos para perro</h2>
             <div class="div-productos-perro">
-                <% for(let accesorioPerro of accesoriosPerro) { %>  
+                <% for(let accesorioPerro of productosPerroAccesorios) { %>  
 
                 <article class="articulo-productos-perro">
                     <a href="/productos/detalle"><img class="img-productos-perro" src="/img/productos/<%= accesorioPerro.image %>" alt="imagen_producto"></a>
@@ -125,7 +125,7 @@
             <h2 class="h2-productos">Productos para gato</h2>
             <div class="div-productos-perro">
 
-                <% for(let accesorio of accesoriosGato) { %>
+                <% for(let accesorio of productosGatoAccesorios) { %>
 
                     <article class="articulo-productos-perro">
                         <a href="/productos/detalle"><img class="img-productos-perro" src="/img/productos/<%= accesorio.image %>" alt="imagen_producto"></a>
