@@ -1,0 +1,15 @@
+[
+ {
+  "id": 1,
+  "name": "Pechera Verde",
+  "description": "Pechera para perros en color verde.",
+  "image": "pechera-verde.jpeg",
+  "pet": "Perro",
+  "category": "accesorio",
+  "colors": "Verde",
+  "weight": "",
+  "price": 19.99,
+  "quantity": 3,
+  "discount": "Si"
+ }
+]

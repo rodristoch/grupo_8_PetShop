@@ -9,7 +9,7 @@
 <main>
     <h3>Carga tus productos</h3>
     <article class="contenedor-alta">
-        <form action="/productRoutes/alta" method="POST" enctype="multipart/form-data">
+        <form action="/productos/alta" method="POST" enctype="multipart/form-data">
 
             <section class="flex-linea">
                 <div class="flex-columna">
@@ -34,7 +34,7 @@
                     <select name="mascota" id="mascota">
                         <option value="">Selecciona la mascota</option>
                         <option value="perro">Perro</option>
-                        <option value="gato">Gatp</option>
+                        <option value="gato">Gato</option>
                     </select>
                 </div>
             </section>
@@ -58,11 +58,10 @@
                         </div>
 
             </section>
-            
-            
 
-            <label for="color_producto">Ingrese el color</label>
-            <input type="text" id="color_producto" name="peso_producto" placeholder=" Ej: Negro">
+
+            <label fo="color_producto">Ingrese el color</label>
+            <input type="text" id="color_producto" name="color_producto" placeholder=" Ej: Negro">
 
             <label for="descripcion">Descripción del producto</label>
             <textarea name="descripcion" id="descripcion" placeholder="Ingresa la información que describa lo mejor posible el producto"></textarea>
