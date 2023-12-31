@@ -75,9 +75,13 @@
                     <div class="descripcion-productos-descuentos">
                         <h4><%= accesorio.name %></h4>
                         <p class="descripcion"><%= accesorio.description %></p>
-                        <p class="precio-tachado">$ <%= accesorio.price %></p>
-                        <p class="descuento">20% off</p>
-                        <p class="precio"><%= accesorio.price*0.8 %></p>
+                        <% if (accesorio.discount=="Si") { %>
+                            <p class="precio-tachado">$ <%= accesorio.price %></p>
+                            <p class="descuento">20% off</p>
+                            <p class="precio"><%= accesorio.price*0.8 %></p>
+                        <% } else { %>
+                            <p class="precio">$ <%= accesorio.price %></p>
+                        <% } %>
                         <div class="div-boton-comprar">
                             <button class="boton-comprar" type="submit">Agregar</button>
                         </div>
