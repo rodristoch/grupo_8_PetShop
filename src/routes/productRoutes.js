@@ -8,7 +8,6 @@ const path = require ("path")
 const productController = require('../controllers/productController.js'); // requerimos el controlador que queremos usar. 
 
 
-<<<<<<< HEAD
 // ************ Multer ************
 const storage = multer.diskStorage({
     destination: function(req, file, cb) {
@@ -22,11 +21,8 @@ const storage = multer.diskStorage({
 });
 const upload = multer({storage: storage});
 
-router.get('/categoria', productController.categoria) 
-=======
 router.get('/categoria-perro', productController.categoriaPerro) 
 router.get('/categoria-gato', productController.categoriaGato) 
->>>>>>> f84ab152284bef685e5b619346fb097ece1ab706
 
 router.get('/detalle/id:/', productController.detalle) 
 
