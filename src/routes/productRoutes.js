@@ -8,7 +8,8 @@ const path = require ("path")
 const productController = require('../controllers/productController.js'); // requerimos el controlador que queremos usar. 
 
 
-router.get('/categoria', productController.categoria) 
+router.get('/categoria-perro', productController.categoriaPerro) 
+router.get('/categoria-gato', productController.categoriaGato) 
 
 router.get('/detalle', productController.detalle) 
 

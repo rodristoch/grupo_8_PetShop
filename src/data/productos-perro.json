@@ -157,7 +157,7 @@
         "id": 17,
         "name": "Eukanuba Adulto Mediano",
         "description": "Alimento para perros adultos de tamaño mediano.",
-        "image": "eukanuba-adulto-mediano.jpg",
+        "image": "eukanuba-adultomeidano.jpg",
         "category": "Comida",
         "price": 36.99,
         "discount": "No"
@@ -211,7 +211,7 @@
         "id": 23,
         "name": "Osspret Shampoo Antisárnico Garrapaticida",
         "description": "Shampoo antisárnico garrapaticida para perros.",
-        "image": "osspret-shampoo-antisárnico-garrapaticida.jpg",
+        "image": "osspret-shampoo-antisárnico-garrapaticida.png",
         "category": "Higiene",
         "price": 14.99,
         "discount": "No"
@@ -238,7 +238,7 @@
         "id": 26,
         "name": "Enjuague Bucal para Agua",
         "description": "Enjuague bucal para mezclar con agua para perros.",
-        "image": "enjuague-bucal-para-agua.jpg",
+        "image": "enjuague-bucal-para-agua.png",
         "category": "Higiene",
         "price": 7.99,
         "discount": "No"
@@ -247,7 +247,7 @@
         "id": 27,
         "name": "Cortauñas y Lima",
         "description": "Cortauñas con lima para el cuidado de las uñas de tu mascota.",
-        "image": "cortauñas-y-lima.jpg",
+        "image": "cortauñas-y-lima.jpeg",
         "category": "Higiene",
         "price": 6.99,
         "discount": "No"
@@ -256,7 +256,7 @@
         "id": 28,
         "name": "Cortauñas",
         "description": "Cortauñas para el cuidado de las uñas de tu mascota.",
-        "image": "cortauñas.jpg",
+        "image": "cortauñas.jpeg",
         "category": "Higiene",
         "price": 4.99,
         "discount": "No"
@@ -274,7 +274,7 @@
         "id": 30,
         "name": "Cepillo Pelo Corto",
         "description": "Cepillo para perros de pelo corto.",
-        "image": "cepillo-pelo-corto.jpg",
+        "image": "cepillo-pelo-corto.jpeg",
         "category": "Higiene",
         "price": 10.99,
         "discount": "No"

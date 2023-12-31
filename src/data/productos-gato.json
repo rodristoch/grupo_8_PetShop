@@ -164,7 +164,7 @@
         "id": 18,
         "name": "Purina Proplan Reducido Calorías",
         "description": "Alimento seco reducido en calorías para gatos de la marca Purina Proplan.",
-        "image": "Purina-Proplan",
+        "image": "Purina-Proplan-reducido-calorias.jpg",
         "category": "Comida",
         "price": 39.99,
         "discount": "Si"
@@ -173,6 +173,7 @@
         "id": 19,
         "name": "Arena Aglomerante Sanicat Strong Clumps 7Kg",
         "description": "Arena aglomerante de la marca Sanicat, formato de 7 kg.",
+        "image": "arena-aglomerante-sanicat-strong-clumps-7Kg.jpg",
         "category": "Higiene",
         "price": 19.99,
         "discount": "No"
@@ -181,6 +182,7 @@
         "id": 20,
         "name": "Bandeja Sanitaria Litera",
         "description": "Bandeja sanitaria tipo litera para gatos.",
+        "image": "Bandeja-Sanitaria-Litera.jpg",
         "category": "Higiene",
         "price": 23.99,
         "discount": "Si"
@@ -189,7 +191,7 @@
         "id": 21,
         "name": "Bandeja Sanitaria Litera Baño Cerrada Para Gato",
         "description": "Bandeja sanitaria tipo litera con baño cerrado para gatos, color gris.",
-        "image": "bandeja-sanitaria-litera-bano-cerrada-para-gato-color-gris.jpg",
+        "image": "Bandeja-Sanitaria-Litera-Baño-Cerrada-Para-Gato-Color-Gris.jpg",
         "category": "Higiene",
         "price": 29.99,
         "discount": "No"
@@ -198,6 +200,7 @@
         "id": 22,
         "name": "Cardina Cepillo Saca Pelo Mascota Premium Autolimpiante Aseo",
         "description": "Cardina cepillo saca pelo para mascotas premium, autolimpiante para el cuidado del aseo.",
+        "image": "cardina-cepillo-saca-pelo-mascota-premium-autolimpiante-aseo.jpg",
         "category": "Higiene",
         "price": 16.99,
         "discount": "No"
@@ -206,7 +209,7 @@
         "id": 23,
         "name": "Cat-It Alfombra Para Baño Sanitario Grande 60x90cm",
         "description": "Alfombra para baño sanitario grande de la marca Cat-It, dimensiones 60x90 cm, color gris.",
-        "image": "cat-it-alfombra-para-bano-sanitario-grande-60x90cm-color-gris.jpg",
+        "image": "Cat-It-Alfombra-Para-Baño-Sanitario-Grande-60x90cm-Color-Gris.jpg",
         "category": "Higiene",
         "price": 34.99,
         "discount": "No"
@@ -215,6 +218,7 @@
         "id": 24,
         "name": "Cepillo de Dientes",
         "description": "Cepillo de dientes para gatos.",
+        "image": "cepillo-de-dientes.jpg",
         "category": "Higiene",
         "price": 5.99,
         "discount": "Si"
@@ -223,6 +227,7 @@
         "id": 25,
         "name": "Cepillo Peine Rastrillo",
         "description": "Cepillo peine rastrillo para el cuidado del pelaje de tu gato.",
+        "image": "cepillo-peine-rastrillo.jpg",
         "category": "Higiene",
         "price": 8.99,
         "discount": "No"
@@ -231,6 +236,7 @@
         "id": 26,
         "name": "Kit Sanitario Gato Bandeja Comedero Palita Piedras Cepillo",
         "description": "Kit sanitario para gatos que incluye bandeja, comedero, palita, piedras y cepillo.",
+        "image": "kit-sanitario-gato-bandeja-comedero-palita-piedras-cepillo.jpg",
         "category": "Higiene",
         "price": 42.99,
         "discount": "No"
@@ -239,7 +245,7 @@
         "id": 27,
         "name": "Litera Catit Filtro Anti-Olor Baño Cerrado Color Gris Claro",
         "description": "Litera Catit con filtro anti-olor para baño cerrado, color gris claro.",
-        "image": "litera-catit-filtro-anti-olor-bano-cerrado-color-gris-claro.jpg",
+        "image": "Litera-Catit-Filtro-Anti-Olor-Baño-Cerrado-Color-Gris-Claro.jpg",
         "category": "Higiene",
         "price": 39.99,
         "discount": "Si"
@@ -248,6 +254,7 @@
         "id": 28,
         "name": "Piedras para Gatos Sílica de Gel Neutras Clásica Cancat 3.8 litros",
         "description": "Piedras para gatos de sílica de gel neutras clásica de la marca Cancat, formato de 3.8 litros.",
+        "image": "Bandeja-Sanitaria-Litera-Baño-Cerrada-Para-Gato-Color-Gris.jpg",
         "category": "Higiene",
         "price": 15.99,
         "discount": "No"
@@ -256,6 +263,7 @@
         "id": 29,
         "name": "Piedras Sanitarias",
         "description": "Piedras sanitarias para gatos.",
+        "image": "Bandeja-Sanitaria-Litera-Baño-Cerrada-Para-Gato-Color-Gris.jpg",
         "category": "Higiene",
         "price": 12.99,
         "discount": "No"
@@ -336,7 +344,7 @@
         "id": 38,
         "name": "Túnel Interactivo Gatos Plegable Con Cama Vesper Catit Color Gris",
         "description": "Túnel interactivo para gatos plegable con cama en color gris de la marca Vesper Catit.",
-        "image": "tunel-interactivo-gatos-plegable-con-cama-vesper-catit-color-gris.jpg",
+        "image": "Túnel-Interactivo-Gatos-Plegable-Con-Cama-Vesper-Catit-Color-Gris.jpg",
         "category": "Juguetes",
         "price": 19.99,
         "discount": "No"
