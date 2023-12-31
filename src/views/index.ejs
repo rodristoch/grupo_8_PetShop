@@ -102,14 +102,20 @@
         <section class="section-productos-perro">
             <h2 class="h2-productos">Productos para perro</h2>
             <div class="div-productos-perro">
-                <% for(let accesorioPerro of productosPerroAccesorios) { %>  
+                <% for(let accesorio of productosPerroAccesorios) { %>  
 
                 <article class="articulo-productos-perro">
-                    <a href="/productos/detalle"><img class="img-productos-perro" src="/img/productos/<%= accesorioPerro.image %>" alt="imagen_producto"></a>
+                    <a href="/productos/detalle"><img class="img-productos-perro" src="/img/productos/<%= accesorio.image %>" alt="imagen_producto"></a>
                     <div class="descripcion-productos-perro">
-                        <h4><%= accesorioPerro.name %></h4>
-                        <p class="descripcion"><%= accesorioPerro.description %></p>
-                        <p class="precio">$ <%= accesorioPerro.price %></p>
+                        <h4><%= accesorio.name %></h4>
+                        <p class="descripcion"><%= accesorio.description %></p>
+                        <% if (accesorio.discount=="Si") { %>
+                            <p class="precio-tachado">$ <%= accesorio.price %></p>
+                            <p class="descuento">20% off</p>
+                            <p class="precio"><%= accesorio.price*0.8 %></p>
+                        <% } else { %>
+                            <p class="precio">$ <%= accesorio.price %></p>
+                        <% } %>
                         <div class="div-boton-comprar">
                             <button class="boton-comprar" type="submit">Agregar</button>
                         </div>
@@ -132,7 +138,13 @@
                         <div class="descripcion-productos-perro">
                             <h4><%= accesorio.name %></h4>
                             <p class="descripcion"><%= accesorio.description %></p>
-                            <p class="precio">$ <%= accesorio.price %></p>
+                            <% if (accesorio.discount=="Si") { %>
+                                <p class="precio-tachado">$ <%= accesorio.price %></p>
+                                <p class="descuento">20% off</p>
+                                <p class="precio"><%= accesorio.price*0.8 %></p>
+                            <% } else { %>
+                                <p class="precio">$ <%= accesorio.price %></p>
+                            <% } %>
                             <div class="div-boton-comprar">
                                 <button class="boton-comprar" type="submit">Agregar</button>
                             </div>
