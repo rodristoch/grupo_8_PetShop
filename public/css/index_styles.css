@@ -207,6 +207,8 @@ width: 100vw;
     border-radius: 5px;
     padding: 15px;
     margin-bottom: 15px;
+    display: flex;
+    flex-wrap: wrap;
 }
 
 h2 {
@@ -214,8 +216,10 @@ h2 {
 }
 
 .img-productos-descuentos {
-    width: 90%;
+    width: 100%;
     border-radius: 5px;
+    
+    
 }
 
 .precio {
