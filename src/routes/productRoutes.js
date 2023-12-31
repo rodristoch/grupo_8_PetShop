@@ -27,10 +27,11 @@ router.get('/categoria-gato', productController.categoriaGato)
 router.get('/detalle/id:/', productController.detalle) 
 
 // Crear producto
-router.get('/alta', productController.alta)
-router.post('/alta', upload.single("imagen-producto"), productController.crearProducto)
+router.get('/alta', productController.alta);
+router.post('/alta', upload.single("imagen-producto"), productController.crearProducto);
 
-router.get('/editar', productController.editar)
+router.get('/editar/:id', productController.editar);
+router.put('/editar/:id', upload.single("imagen-producto"), productController.editarproducto )
 
 
 

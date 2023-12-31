@@ -67,6 +67,10 @@ const productController = {
 
     editar : (req, res) => {
         res.render('editar-producto.ejs');
+    },
+
+    editarproducto: (req, res) => {
+
     }
 
 }
