@@ -30,6 +30,7 @@ router.get('/detalle/id:/', productController.detalle)
 router.get('/alta', productController.alta);
 router.post('/alta', upload.single("imagen-producto"), productController.crearProducto);
 
+// Modificar producto
 router.get('/editar/:id', productController.editar);
 router.put('/editar/:id', upload.single("imagen-producto"), productController.editarproducto )
 

@@ -7,19 +7,19 @@
 <%- include("./partials/header.ejs") %>    
 <%- include("./partials/header2.ejs") %>
 <main>
-    <h3>Carga tus productos</h3>
+    <h3>Vas a editar: <%=editarProducto.name %></h3>
     <article class="contenedor-alta">
-        <form action="/?" method="POST">
+        <form action="/productos/editar <%= editarProducto.id %>?_method=PUT" method="POST" enctype="multipart/form-data">
 
             <section class="flex-linea">
                 <div class="flex-columna">
                     <label for="nombre_producto">Nombre del producto</label>
-                    <input type="text" id="nombre_producto" name="nombre_producto" placeholder="Ej: Dog chow para perros pequeños" value="TRAER PRODUCTO">
+                    <input type="text" id="nombre_producto" name="nombre_producto" placeholder="Ej: Dog chow para perros pequeños" value="<%= editarProducto.name %>">
                 </div>
 
                 <div class="flex-columna">
                     <label for="precio_producto">Precio del producto</label>
-                    <input type="number" id="precio_producto" name="precio_producto" placeholder="Ej: 50000" value="TRAER PRODUCTO">
+                    <input type="number" id="precio_producto" name="precio_producto" placeholder="Ej: 50000" value="<%= editarProducto.price %>">
                 </div>
                
             </section>
@@ -27,14 +27,14 @@
             <section class="flex-linea">
                 <div class="flex-columna">
                     <label for="cantidad_producto">Cantidad</label>
-                    <input type="number" id="cantidad_producto" name="cantidad_producto" placeholder="Ej: 2" value="TRAER PRODUCTO">
+                    <input type="number" id="cantidad_producto" name="cantidad_producto" placeholder="Ej: 2" value="<%= editarProducto.quantity%>">
                 </div>
                 <div class="flex-columna">
                     <label for="mascota">El productos es para:</label>
-                    <select name="mascota" id="mascota">
+                    <select name="mascota" id="mascota" value="<%= editarProducto.id_pet%>">
                         <option value="">Selecciona la mascota</option>
-                        <option value="perro">Perro</option>
-                        <option value="gato">Gatp</option>
+                        <option value="perro" <%= (editarProducto.id_pet === "Perro") ? "selected" : "" %>>Perro</option>
+                        <option value="gato" <%= (editarProducto.id_pet == "Gato") ? "selected" : ""%> >Gato</option>
                     </select>
                 </div>
             </section>
@@ -44,17 +44,17 @@
                  <label for="categoria">Selecciona una categoria:</label>
                 <select name="categoria" id="categoria">
                     <option value="">Selecciona una categoría</option>
-                    <option value="alimento">Alimento</option>
-                    <option value="juguetes">Juguetes</option>
-                    <option value="accesorios">Accesorios</option>
-                    <option value="higiene">higiene</option>
+                    <option value="alimento" <%= (editarProducto.category === "Alimento") ? "selected" : "" %>>Alimento</option>
+                    <option value="juguetes" <%= (editarProducto.category === "Juguete") ? "selected" : "" %>>Juguetes</option>
+                    <option value="accesorios" <%= (editarProducto.category === "Accesorio") ? "selected" : "" %>>Accesorios</option>
+                    <option value="higiene" <%= (editarProducto.category === "Higiene") ? "selected" : "" %>>Higiene</option>
                 </select>
                 </div>
                 <div class="flex-columna">
                     <!-- Seguramente debamos incorporar una condición según la categoría
                     selecciona porque cada producto tiene sus propias características-->
                     <label for="peso_producto">Ingresa el peso</label>
-                    <input type="number" id="peso_producto" name="peso_producto" placeholder="Ej: 34" value="TRAER PRODUCTO">
+                    <input type="number" id="peso_producto" name="peso_producto" placeholder="Ej: 34" value="<%= editarProducto.weight %>">
                         </div>
 
             </section>
@@ -62,14 +62,20 @@
             
 
             <label for="color_producto">Ingrese el color</label>
-            <input type="text" id="color_producto" name="peso_producto" placeholder=" Ej: Negro" value="TRAER PRODUCTO">
+            <input type="text" id="color_producto" name="peso_producto" placeholder=" Ej: Negro" value="<%= editarProducto.colors %>">
 
             <label for="descripcion">Descripción del producto</label>
-            <textarea name="descripcion" id="descripcion" placeholder="Ingresa la información que describa lo mejor posible el producto"></textarea>
+            <textarea name="descripcion" id="descripcion" placeholder="Ingresa la información que describa lo mejor posible el producto" ><%= editarProducto.description %></textarea>
             
             <section class="flex-linea">
-                <label for="imagen-producto">Imagen de producto: TRAER IMAGEN DE PRODUCTO</label>
+                <label for="imagen-producto">Imagen de producto:</label>
                 <input type="file" name="imagen-producto">
+            </section>
+            
+            <section class="flex-linea">
+                <p>imagen actual:</p>
+                <img src="/img/productos/<%= editarProducto.image %>" alt="Imagen actual" class="mostrar_imagen">
+
             </section>
 
             <button type="submit">Guardar producto</button>

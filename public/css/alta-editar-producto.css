@@ -87,6 +87,14 @@ form input[type=file]:hover {
     border-color: white;
 }
 
+.mostrar_imagen {
+    height: 100px;
+    width: 100px;
+    padding: 8px;
+    margin-top: 12px;
+    outline: 1px solid rgb(184, 184, 184);
+    border-radius: 8px;
+}
 
 /* --- Condiciones formulario */
 form input:hover {

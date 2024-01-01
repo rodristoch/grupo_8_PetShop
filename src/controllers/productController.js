@@ -66,7 +66,16 @@ const productController = {
     },
 
     editar : (req, res) => {
-        res.render('editar-producto.ejs');
+
+        // Json con todos los productos
+        let productos = JSON.parse(fs.readFileSync(productsFilepath, "utf-8"));
+
+        // Encontrar producto
+        const editarProducto = productos.find( producto => {
+            return producto.id = req.params.id
+        })
+
+        res.render('editar-producto.ejs', {editarProducto});
     },
 
     editarproducto: (req, res) => {
