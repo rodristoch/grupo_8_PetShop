@@ -105,6 +105,7 @@ input::placeholder {
     margin-top: 16px;
     display: flex;
     align-items: center;
+    justify-content: center;
 }
 
 
@@ -367,13 +368,7 @@ footer {
 
 @media (min-width:361px){
 
-    section.flex-enlinea {
-       flex-direction: column;
-     }
-     article.flex-enlinea {
-        flex-direction: column;
-      }
-
+   
 }
 @media (min-width:769px){
     .tamano-imagen {
@@ -384,7 +379,8 @@ footer {
     }
     section.flex-enlinea {
         flex-direction: row;
-        justify-content: space-between   ;
+        justify-content:flex-start   ;
+        gap: 8px;
       }
 
       article.flex-enlinea {
