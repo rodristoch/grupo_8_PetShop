@@ -19,14 +19,16 @@ const storage = multer.diskStorage({
         cb(null, file.fieldname + "-" + Date.now() + path.extname(file.originalname))
     }
 });
+
 const upload = multer({storage: storage});
 
+// Mostrar paginas de productos por categoria
 router.get('/categoria-perro', productController.categoriaPerro) 
 router.get('/categoria-gato', productController.categoriaGato) 
-
-router.get('/detalle/', productController.detalle) 
-
 router.get('/promociones/', productController.promociones) 
+
+// Mostrar pagina de producto (por id)
+router.get('/detalle/', productController.detalle) 
 
 // Crear producto
 router.get('/alta', productController.alta);
@@ -36,7 +38,7 @@ router.post('/alta', upload.single("imagen-producto"), productController.crearPr
 router.get('/editar/:id', productController.editar);
 router.put('/editar/:id', upload.single("imagen-producto"), productController.editarProducto )
 
-// Modificar producto
+// Eliminar producto
 router.delete("/eliminar/:id", productController.quitarProducto)
 
 module.exports = router; 
