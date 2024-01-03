@@ -24,7 +24,7 @@ const upload = multer({storage: storage});
 router.get('/categoria-perro', productController.categoriaPerro) 
 router.get('/categoria-gato', productController.categoriaGato) 
 
-router.get('/detalle/id:/', productController.detalle) 
+router.get('/detalle/', productController.detalle) 
 
 // Crear producto
 router.get('/alta', productController.alta);
