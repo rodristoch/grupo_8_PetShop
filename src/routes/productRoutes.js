@@ -26,6 +26,8 @@ router.get('/categoria-gato', productController.categoriaGato)
 
 router.get('/detalle/', productController.detalle) 
 
+router.get('/promociones/', productController.promociones) 
+
 // Crear producto
 router.get('/alta', productController.alta);
 router.post('/alta', upload.single("imagen-producto"), productController.crearProducto);
