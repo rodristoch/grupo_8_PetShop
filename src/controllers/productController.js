@@ -127,8 +127,20 @@ const productController = {
        productos[indice] = edicionProducto
 
        //Re-escritura producto
-       fs.writeFileSync(productsFilepath, JSON.stringify(productos, null, ""), "utf-8");
-       res.redirect("/")
+       fs.writeFileSync(productsFilepath, JSON.stringify(productos, null, " "), "utf-8");
+       res.redirect("/") // ¿A donde lo redirigimos?
+    },
+    
+    quitarProducto : (req, res) => {
+        let productos = JSON.parse(fs.readFileSync(productsFilepath, "utf-8"));
+
+        //proceso de eliminación
+        productos = productos.filter(producto => {
+            return producto.id != req.params.id
+        })
+
+        //escribir archivo json
+        fs.writeFileSync(productsFilepath, JSON.stringify(productos, null, " "))
     }
 
 }
