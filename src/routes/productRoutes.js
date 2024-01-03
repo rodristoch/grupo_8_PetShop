@@ -34,7 +34,7 @@ router.post('/alta', upload.single("imagen-producto"), productController.crearPr
 
 // Modificar producto
 router.get('/editar/:id', productController.editar);
-router.put('/editar/:id', upload.single("imagen-producto"), productController.editarproducto )
+router.put('/editar/:id', upload.single("imagen-producto"), productController.editarProducto )
 
 
 
