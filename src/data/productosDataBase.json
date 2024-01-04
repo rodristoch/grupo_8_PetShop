@@ -11,5 +11,17 @@
   "price": 19.99,
   "quantity": 3,
   "discount": "No"
-  }
+ },
+ {
+  "id": 2,
+  "name": "",
+  "description": "",
+  "image": "imagen_producto-1704391042714.jpeg",
+  "pet": "",
+  "category": "",
+  "colors": "",
+  "weight": "",
+  "price": "",
+  "quantity": "67"
+ }
 ]

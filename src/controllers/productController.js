@@ -73,7 +73,7 @@ const productController = {
              colors: req.body.color_producto,
              weight: req.body.peso_producto ,
              price: req.body.precio_producto,
-             quatity: req.body.cantidad_producto,
+             quantity: req.body.cantidad_producto,
              discount: req.body.descuento 
         }
 
