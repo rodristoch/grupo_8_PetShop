@@ -47,6 +47,11 @@ const productController = {
         res.render('promociones.ejs', {productosPerroConDescuento, productosGatoConDescuento});
     },
 
+    marcas: (req, res) => {
+
+        res.render('marcas.ejs');
+    },
+
     alta : (req, res) => {
         res.render('alta-producto.ejs');
     },
