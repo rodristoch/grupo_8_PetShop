@@ -1,7 +1,7 @@
 const fs = require("fs");
 const path = require("path")
 
-//base de datos de produsctos
+//base de datos de productos
 const productsFilepath = path.join(__dirname, "../data/productosDataBase.json")
 
 const productosPerroFilePath = path.join(__dirname, '../data/productos-perro.json');
@@ -9,7 +9,6 @@ const productosPerroFilePath = path.join(__dirname, '../data/productos-perro.jso
 
 const productosGatoFilePath = path.join(__dirname, '../data/productos-gato.json');
 /* const productosGato = JSON.parse(fs.readFileSync(productosGatoFilePath, 'utf-8')); */
-
 
 
 const productController = {
@@ -56,8 +55,7 @@ const productController = {
         // json de productos
         const productos = JSON.parse(fs.readFileSync(productsFilepath, "utf-8"));
 
-        
-        // Tener la info del formulario
+    
 		// Crear el objeto literal (producto) a sumar al array
 
         const nuevoProducto = {
@@ -70,8 +68,8 @@ const productController = {
              colors: req.body.color_producto,
              weight: req.body.peso_producto ,
              price: req.body.precio_producto,
-             quatity: req.body.cantidad_producto
-            // discount: : 
+             quatity: req.body.cantidad_producto,
+             discount: req.body.descuento 
         }
 
         productos.push(nuevoProducto);

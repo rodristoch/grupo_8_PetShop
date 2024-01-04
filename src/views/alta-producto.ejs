@@ -41,34 +41,44 @@
 
             <section class="flex-linea">
                 <div class="flex-columna">    
-                 <label for="categoria">Selecciona una categoria:</label>
-                <select name="categoria" id="categoria">
-                    <option value="">Selecciona una categoría</option>
-                    <option value="alimento">Alimento</option>
-                    <option value="juguetes">Juguetes</option>
-                    <option value="accesorios">Accesorios</option>
-                    <option value="higiene">higiene</option>
-                </select>
+                    <label for="categoria">Selecciona una categoria:</label>
+                    <select name="categoria" id="categoria">
+                        <option value="">Selecciona una categoría</option>
+                        <option value="alimento">Alimento</option>
+                        <option value="juguetes">Juguetes</option>
+                        <option value="accesorios">Accesorios</option>
+                        <option value="higiene">higiene</option>
+                    </select>
                 </div>
+                <div class="flex-columna">
+                    <label for="descuento"> ¿El producto tiene descuento?</label>
+                    <select name="decuento" id="descuento">
+                        <option value="si">Si</option>
+                        <option value="no">No</option>
+
+                    </select>
+                </div>
+            </section>
+
+            <section class="flex-linea">
                 <div class="flex-columna">
                     <!-- Seguramente debamos incorporar una condición según la categoría
                     selecciona porque cada producto tiene sus propias características-->
                     <label for="peso_producto">Ingresa el peso</label>
                     <input type="number" id="peso_producto" name="peso_producto" placeholder="Ej: 34">
-                        </div>
-
+                </div>
+                 <div class="flex-columna">
+                    <label fo="color_producto">Ingrese el color</label>
+                    <input type="text" id="color_producto" name="color_producto" placeholder=" Ej: Negro">
+                 </div>
             </section>
-
-
-            <label fo="color_producto">Ingrese el color</label>
-            <input type="text" id="color_producto" name="color_producto" placeholder=" Ej: Negro">
 
             <label for="descripcion">Descripción del producto</label>
             <textarea name="descripcion" id="descripcion" placeholder="Ingresa la información que describa lo mejor posible el producto"></textarea>
 
             <section class="flex-linea">
                 <label for="imagen-producto">Imagen de producto:</label>
-                <input type="file" name="imagen-producto">
+                <input type="file" name="imagen_producto">
             </section>
 
             

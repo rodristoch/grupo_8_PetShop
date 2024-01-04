@@ -32,7 +32,7 @@ router.get('/detalle/', productController.detalle)
 
 // Crear producto
 router.get('/alta', productController.alta);
-router.post('/alta', upload.single("imagen-producto"), productController.crearProducto);
+router.post('/alta', upload.single("imagen_producto"), productController.crearProducto);
 
 // Modificar producto
 router.get('/editar/:id', productController.editar);
