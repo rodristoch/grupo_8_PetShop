@@ -1,0 +1,43 @@
+* body {
+    margin: 0;
+    font-family: 'Roboto', sans-serif;
+    box-sizing: border-box;
+    width: 100%;
+    background-image: url(/img/bf627441-1caf-4f23-ac20-95b7dd5b2aa3_alta-libre-aspect-ratio_default_0.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+h2 {
+    text-align: center;
+    color: black;
+    font-size: 24px;
+}
+
+a {
+    text-decoration: none;
+    color: black;
+}
+
+p {
+    color: #18515F;
+    font-size: 16px;
+    text-align: center;
+    font-weight: 600;
+    
+}
+
+img {
+    text-align: center;
+    width: 100%;
+} 
+
+div {
+    margin: auto;
+    text-align: center;
+    width: 100%;
+    
+}
+
+
+

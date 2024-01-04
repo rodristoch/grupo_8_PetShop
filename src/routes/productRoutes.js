@@ -6,6 +6,7 @@ const path = require ("path")
 
 // ************ Controller Require ************
 const productController = require('../controllers/productController.js'); // requerimos el controlador que queremos usar. 
+const sitioMantenimiento = require("../middlewares/sitioMantenimiento.js");
 
 
 // ************ Multer ************
@@ -26,6 +27,7 @@ const upload = multer({storage: storage});
 router.get('/categoria-perro', productController.categoriaPerro) 
 router.get('/categoria-gato', productController.categoriaGato) 
 router.get('/promociones/', productController.promociones) 
+router.get('/marcas/', sitioMantenimiento, productController.marcas)
 
 // Mostrar pagina de producto (por id)
 router.get('/detalle/', productController.detalle) 
