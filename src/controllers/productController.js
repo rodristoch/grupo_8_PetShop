@@ -1,3 +1,4 @@
+const { log } = require("console");
 const fs = require("fs");
 const path = require("path")
 
@@ -95,7 +96,7 @@ const productController = {
 
         // Encontrar producto
         const editarProducto = productos.find( producto => {
-            return producto.id = req.params.id
+            return producto.id == req.params.id
         })
 
         res.render('editar-producto.ejs', {editarProducto});
@@ -107,6 +108,7 @@ const productController = {
 
         //identificador de producto
         const id= req.params.id;
+       
         let productoAEditar= productos.find(producto => producto.id == id);
 
         //Reemplazo de prodcuto
@@ -121,7 +123,7 @@ const productController = {
             colors: req.body.color_producto,
             weight: req.body.peso_producto ,
             price: req.body.precio_producto,
-            quatity: req.body.cantidad_producto,
+            quantity: req.body.cantidad_producto,
             discount: req.body.descuento
        }
 
