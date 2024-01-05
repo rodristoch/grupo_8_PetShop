@@ -29,6 +29,9 @@ router.get("/login", userController.login)
 //Carrito
 router.get("/carrito", userController.carrito) 
 
+//Carrito 2 
+router.get("/carrito2", userController.carrito2) 
+
 
 module.exports = router; 
 

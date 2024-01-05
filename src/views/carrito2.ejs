@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+    <%- include("./partials/head.ejs", {cssSheet: "carrito2", title: "Carrito de compras"}) %>
+<body>
+    
+    <%- include("./partials/header.ejs") %>
+    
+    <%- include("./partials/header2.ejs") %>
+
+<main>
+    <div class="all">
+        <section class="contenedor-producto">
+            <h1 class="titulo">Carrito de compra:</h1>
+            <div class="contenedor1">
+                <img src="\img\productos\Cañita-Alambre-Resistente-Largo.jpg" alt="item-foto" class="imagen">
+                 <div class="texto">
+                    <h2 class="subtitulo">Titulo de producto</h2>
+                    <h3 class="subtitulo2">Descripcion de producto: ejemplo ejemplo ejemplo ejemplo ejemplo ejemplo ejemplo ejemplo ejemplo ejemplo ejemplo ejemplo</h3>
+                </div>
+            <div class="cantidad">
+                <form action="/users/carrito2" method="get">   
+                    <select name="cantidad">
+                        <option value="valor1">1</option>
+                        <option value="valor2">2</option>
+                        <option value="valor3">3</option>
+                    </select>
+                    <button type="submit">Agregar</button>
+                    <button class="eliminar-btn" type="reset">Eliminar</button>
+                </form>
+            </div>
+            </div>
+        </section>
+        <section class="contenedor-proceder-pago">
+            <h2>pago</h2>
+        </section>
+    </div>
+</main>
+
+    <%- include("./partials/footer.ejs") %>
+    
+</body>

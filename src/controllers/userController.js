@@ -16,6 +16,10 @@ const userController = {
         res.render('carrito.ejs');
     },
 
+    carrito2 : (req, res) => {
+        res.render('carrito2.ejs');
+    },
+
     register: (req, res) => {
         res.render("register");
     },
