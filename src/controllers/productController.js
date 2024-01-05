@@ -134,7 +134,7 @@ const productController = {
        productos[indice] = edicionProducto
 
        //Re-escritura producto
-       fs.writeFileSync(productsFilepath, JSON.stringify(productos, null, " "), "utf-8");
+       fs.writeFileSync(productsFilePath, JSON.stringify(productos, null, " "), "utf-8");
        res.redirect("/") // ¿A donde lo redirigimos?
     },
     
