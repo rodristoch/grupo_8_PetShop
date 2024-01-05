@@ -1,14 +1,35 @@
-const express = require('express'); // requerimos express
-
-const router = express.Router(); // llamamos al metodo Router de express
+// ************ Require's ************
+const express = require('express');
+const router = express.Router();
+const path = require("path")
+const {body} = require("express-validator");
 
 // ************ User Require ************
 const userController = require('../controllers/userController.js'); // requerimos el controlador que queremos usar. 
 
-router.get("/register", userController.register) // ingresamos al router lo que debe hacer cuando el user ingrese en /
+// ************ Validations ************
+const validaciones = [
+    body("nombre").notEmpty().withMessage("Debes completar un nombre"),
+    body("email").notEmpty().withMessage("Debes completar un email").bail().isEmail().withMessage("El email debe ser valido"),
+    body("password").notEmpty().withMessage("Debes completar con una contraseña").bail().isLength({min: 5}).withMessage("La constraseña debe tener un min de 5 caracteres")
+]
 
-router.get("/login", userController.login) // ingresamos al router lo que debe hacer cuando el user ingrese en /
 
-router.get("/carrito", userController.carrito) // ingresamos al router lo que debe hacer cuando el user ingrese en /
+// Crear un usuario
+router.get("/register", userController.register) 
+router.post("/register", validaciones, userController.processRegister);
+
+// Editar un usuario
+router.get("/edit/:id", userController.edit);
+router.put("/edit/:id", validaciones, userController.processEdit);
+
+//Login
+router.get("/login", userController.login) 
+
+//Carrito
+router.get("/carrito", userController.carrito) 
+
 
 module.exports = router; 
+
+
