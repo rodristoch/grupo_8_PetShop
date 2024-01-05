@@ -7,6 +7,9 @@
 a {
     text-decoration: none;
     color: white;
+    
+   
+    text-align: center;
 }
 
 /* --------------------------header----------------------------------- */
@@ -216,12 +219,23 @@ h2 {
 }
 
 .img-productos-descuentos {
-    width: 100%;
+    width: 80%;
+    height: auto;
+    height: min-content ;
     border-radius: 5px;
-    
-    
+    margin: 0 auto
 }
 
+.contenedor_imagen {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: white;
+    height: 240px;
+   overflow: hidden;
+}
+
+  
 .precio {
     font-weight: 600;
 }
