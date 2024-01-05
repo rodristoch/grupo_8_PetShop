@@ -6,5 +6,13 @@
   "email": "mackoaa@gmail.com",
   "password": "1234567890",
   "category": "Administrador"
+ },
+ {
+  "id": 2,
+  "nombre": "Rodrigo",
+  "apellido": "Stochetta",
+  "email": "rodrigo-eze87@hotmail.com",
+  "password": "4567890",
+  "passwordrepeat": "4567890"
  }
 ]

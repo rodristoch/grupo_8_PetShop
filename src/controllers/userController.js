@@ -32,6 +32,7 @@ const userController = {
             apellido: req.body.apellido,
 			email: req.body.email, 
             password: req.body.password,
+            passwordrepeat: req.body.passwordrepeat,
             category: req.body.category
 		}
 
@@ -85,6 +86,7 @@ const userController = {
             apellido: req.body.apellido,
 			email: req.body.email, 
             password: req.body.password,
+            passwordrepeat: req.body.passwordrepeat,
             category: req.body.category
 		}
 
