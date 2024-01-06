@@ -27,6 +27,8 @@ const upload = multer({storage: storage});
 router.get('/categoria-perro', productController.categoriaPerro) 
 router.get('/categoria-gato', productController.categoriaGato) 
 router.get('/promociones/', productController.promociones) 
+router.get('/promociones-perro/', productController.promocionesPerro) 
+router.get('/promociones-gato/', productController.promocionesGato) 
 router.get('/marcas/', sitioMantenimiento, productController.marcas)
 
 // Mostrar pagina de producto (por id)

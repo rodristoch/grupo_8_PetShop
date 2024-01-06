@@ -49,6 +49,33 @@ const productController = {
         res.render('promociones.ejs', {productosPerroConDescuento, productosGatoConDescuento});
     },
 
+    promocionesPerro : (req, res) => {
+
+        const productos = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'));
+
+        //productos perros
+        const productosPerro = productos.filter(product => {return product.id_pet == "Perro"});
+
+        //productos con descuentos de perros
+        const productosPerroConDescuento = productosPerro.filter(product => {return product.discount == "Si"});
+		
+
+        res.render('promociones-perro.ejs', {productosPerroConDescuento});
+    },
+
+    promocionesGato : (req, res) => {
+
+        const productos = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'));
+
+        //productos gatos
+        const productosGato = productos.filter(product => {return product.id_pet == "Gato"});
+
+		//productos con descuentos de gatos
+		const productosGatoConDescuento = productosGato.filter(product => {return product.discount == "Si"});
+
+        res.render('promociones-gato.ejs', {productosGatoConDescuento});
+    },
+
     marcas: (req, res) => {
 
         res.render('marcas.ejs');
