@@ -112,6 +112,17 @@ button:hover {
     margin-left: 5px;
     width: 34%;
 }
+.textos2 {
+    margin-left: 45px;
+    margin-top: 35px;
+    width: 80%;
+    border-bottom: solid 1px #18515f;
+}
+.botonDePago {
+    /* margin-left: 150px; */
+    margin-top: 50px;
+    text-align: center;
+}
 
 /* ------------------------------------------------ PRODUCTOS CON DESCUENTO ------------------------------------------------------------------- */
 
@@ -125,11 +136,11 @@ button:hover {
 .div-section-productos-descuentos {
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-around;
+    /* justify-content: space-around; */
 }
 
 .articulo-productos-descuentos {
-    width: 40%;
+    width: 20%;
     border: 1px solid rgb(129, 129, 129);
     border-radius: 5px;
     padding: 15px;
