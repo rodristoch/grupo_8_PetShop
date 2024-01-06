@@ -17,7 +17,12 @@ const userController = {
     },
 
     carrito2 : (req, res) => {
-        res.render('carrito2.ejs');
+        const productsFilePath = path.join(__dirname, '../data/productosDataBase.json');
+        const productos = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'));
+        const productosPerro = productos.filter(product => {return product.id_pet == "Perro"});
+        const productosPerroConDescuento = productosPerro.filter(product => {return product.discount == "Si"});
+
+        res.render('carrito2.ejs', {productosPerroConDescuento});
     },
 
     register: (req, res) => {

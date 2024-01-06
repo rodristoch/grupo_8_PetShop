@@ -30,9 +30,8 @@ const mainController = {
 		const productosGatoConDescuento = productosGato.filter(product => {return product.discount == "Si"});
 
 		res.render("index.ejs", {productosPerro, productosGato, productosPerroAccesorios, productosGatoAccesorios, productosPerroConDescuento, productosGatoConDescuento});
-	},
-
-
+        
+	}
 }
 
 module.exports = mainController;
