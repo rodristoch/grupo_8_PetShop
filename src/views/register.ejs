@@ -18,23 +18,24 @@
                     <h2>Crea tu cuenta Patitas</h2>
 
                     <div>
-                        <!-- para mostrar los datos ingresados si hubo -->
-                        <% if(locals.oldData){ %>
-            
-                            <h3 style="color: blue; font-size: 16px;" >Hola <%= oldData.nombre + oldData.apellido%></h3>
-                            <h3 style="color: blue; font-size: 16px;" >Tu email es <%= oldData.email %></h3>
-                            <h3 style="color: blue; font-size: 16px;" >Tu pass es <%= oldData.password %></h3>
-            
-                        <% } %>
-            
+
                         <!-- para mostrar los errores si hubo -->
                         <% if(locals.errors){ %> 
             
                             <% for(let error in errors) { %>
                                 <p style="color: red; font-size: 16px;" > <%= errors[error].msg %> </p> 
                             <% } %>
-                            
+        
+                        <% } else { %>
+
+                            <!-- para mostrar los datos ingresados si hubo -->
+                            <% if(locals.oldData){ %>
+                                <h3 style="color: blue; font-size: 16px;" >Hola <%= oldData.nombre + oldData.apellido%></h3>
+                                <h3 style="color: blue; font-size: 16px;" >Te registraste con el email <%= oldData.email %></h3>
+                            <% } %>
+            
                         <% } %>
+                        
                         
                     </div>
                     
