@@ -108,7 +108,7 @@ const userController = {
         if(validationResults.errors.length > 0){ //si hubo errores de validacion
  
             //renderizo la vista y le mando la info q llega del formulario con los errores y la info bien completada
-            res.render("register", {errors: validationResults.mapped(), oldData: req.body});
+            res.render("edit-user", {errors: validationResults.mapped(), userToEdit: req.body});
 
         } else {
 
