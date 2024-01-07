@@ -14,13 +14,5 @@
   "email": "rodrigo-eze87@hotmail.com",
   "password": "4567890",
   "passwordrepeat": "4567890"
- },
- {
-  "id": 3,
-  "nombre": "Rodrigo",
-  "apellido": "Stochetta",
-  "email": "rodrigo-eze87@hotmail.com",
-  "password": "123456",
-  "passwordrepeat": "123456"
  }
 ]

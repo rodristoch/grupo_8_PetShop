@@ -10,6 +10,7 @@ const userController = require('../controllers/userController.js'); // requerimo
 // ************ Validations ************
 const validaciones = [
     body("nombre").notEmpty().withMessage("Debes completar un nombre"),
+    body("apellido").notEmpty().withMessage("Debes completar un apellido"),
     body("email").notEmpty().withMessage("Debes completar un email").bail().isEmail().withMessage("El email debe ser valido"),
     body("password").notEmpty().withMessage("Debes completar con una contraseña").bail().isLength({min: 5}).withMessage("La constraseña debe tener un min de 5 caracteres")
 ]
