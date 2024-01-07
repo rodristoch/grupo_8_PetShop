@@ -15,7 +15,7 @@
             <!--Registro-->
             <form class="formulario" action="/users/edit/<%= userToEdit.id %>?_method=PUT" method="POST">
                 <div class="centrado">
-                    <h2>Crea tu cuenta Patitas</h2>
+                    <h2>Edita tus datos</h2>
 
                     <div>
                         <!-- para mostrar los datos -->
@@ -23,7 +23,6 @@
             
                             <h3 style="color: blue; font-size: 16px;" >Bienvenido: <%= userToEdit.nombre %> <%= userToEdit.apellido %></h3>
                             <h3 style="color: blue; font-size: 16px;" >Tu email es <%= userToEdit.email %></h3>
-                            <h3 style="color: blue; font-size: 16px;" >Tu pass es <%= userToEdit.password %></h3>
             
                         <% } %>
 
@@ -69,7 +68,7 @@
                         <p>Acepto &nbsp; </p> <a href=""> Leer términos y condiciones</a>
                     </section>
                     
-                    <button type="submit">Crear cuenta</button>
+                    <button type="submit">Guardar cambios</button>
 
 
                 </div>
