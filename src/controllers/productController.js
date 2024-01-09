@@ -76,6 +76,110 @@ const productController = {
         res.render('promociones-gato.ejs', {productosGatoConDescuento});
     },
 
+    comidaPerro : (req, res) => {
+
+        const productos = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'));
+
+        //productos perros
+        const productosPerro = productos.filter(product => {return product.id_pet == "Perro"});
+
+		//productos comida perros
+		const comidaPerro = productosPerro.filter(product => {return product.category == "Comida"});
+
+        res.render('comidaPerro.ejs', {comidaPerro});
+    },
+
+    comidaGato : (req, res) => {
+
+        const productos = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'));
+
+        //productos gatos
+        const productosGato = productos.filter(product => {return product.id_pet == "Gato"});
+
+		//productos comida gatos
+		const comidaGato = productosGato.filter(product => {return product.category == "Comida"});
+
+        res.render('comidaGato.ejs', {comidaGato});
+    },
+
+    accesoriosPerro : (req, res) => {
+
+        const productos = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'));
+
+        //productos perros
+        const productosPerro = productos.filter(product => {return product.id_pet == "Perro"});
+
+		//productos accesorios perros
+		const accesoriosPerro = productosPerro.filter(product => {return product.category == "Accesorio"});
+
+        res.render('accesoriosPerro.ejs', {accesoriosPerro});
+    },
+
+    accesoriosGato : (req, res) => {
+
+        const productos = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'));
+
+        //productos perros
+        const productosGato = productos.filter(product => {return product.id_pet == "Perro"});
+
+		//productos accesorios gatos
+		const accesoriosGato = productosGato.filter(product => {return product.category == "Accesorio"});
+
+        res.render('accesoriosGato.ejs', {accesoriosGato});
+    },
+
+    higienePerro : (req, res) => {
+
+        const productos = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'));
+
+        //productos perros
+        const productosPerro = productos.filter(product => {return product.id_pet == "Perro"});
+
+		//productos higiene perros
+		const higienePerro = productosPerro.filter(product => {return product.category == "Higiene"});
+
+        res.render('higienePerro.ejs', {higienePerro});
+    },
+
+    higieneGato : (req, res) => {
+
+        const productos = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'));
+
+        //productos perros
+        const productosGato = productos.filter(product => {return product.id_pet == "Perro"});
+
+		//productos higiene gatos
+		const higieneGato = productosGato.filter(product => {return product.category == "Higiene"});
+
+        res.render('higieneGato.ejs', {higieneGato});
+    },
+
+    juguetesPerro : (req, res) => {
+
+        const productos = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'));
+
+        //productos perros
+        const productosPerro = productos.filter(product => {return product.id_pet == "Perro"});
+
+		// juguetes perros
+		const juguetesPerro = productosPerro.filter(product => {return product.category == "Juguetes"});
+
+        res.render('juguetesPerro.ejs', {juguetesPerro});
+    },
+
+    juguetesGato : (req, res) => {
+
+        const productos = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'));
+
+        //productos perros
+        const productosGato = productos.filter(product => {return product.id_pet == "Perro"});
+
+		// juguetes gatos
+		const juguetesGato = productosGato.filter(product => {return product.category == "Juguetes"});
+
+        res.render('juguetesGato.ejs', {juguetesGato});
+    },
+
     marcas: (req, res) => {
 
         res.render('marcas.ejs');

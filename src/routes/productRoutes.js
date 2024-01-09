@@ -24,11 +24,23 @@ const storage = multer.diskStorage({
 const upload = multer({storage: storage});
 
 // Mostrar paginas de productos por categoria
-router.get('/categoria-perro', productController.categoriaPerro) 
-router.get('/categoria-gato', productController.categoriaGato) 
+// Productos de perro
+router.get('/perro', productController.categoriaPerro) 
+router.get('/perro/promociones/', productController.promocionesPerro)
+router.get('/perro/comida', productController.comidaPerro) 
+router.get('/perro/accesorios', productController.accesoriosPerro) 
+router.get('/perro/higiene', productController.higienePerro) 
+router.get('/perro/juguetes', productController.juguetesPerro)
+
+// Productos de gato
+router.get('/gato', productController.categoriaGato) 
+router.get('/gato/promociones', productController.promocionesGato) 
+router.get('/gato/comida', productController.comidaGato) 
+router.get('/gato/accesorios', productController.accesoriosGato) 
+router.get('/gato/higiene', productController.higieneGato) 
+router.get('/gato/juguetes', productController.juguetesGato) 
+
 router.get('/promociones/', productController.promociones) 
-router.get('/promociones-perro/', productController.promocionesPerro) 
-router.get('/promociones-gato/', productController.promocionesGato) 
 router.get('/marcas/', sitioMantenimiento, productController.marcas)
 
 // Mostrar pagina de producto (por id)
