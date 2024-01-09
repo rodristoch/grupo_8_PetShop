@@ -80,7 +80,7 @@
                         <% if (accesorio.discount=="Si") { %>
                             <p class="precio-tachado">$ <%= accesorio.price %></p>
                             <p class="descuento">20% off</p>
-                            <p class="precio"><%= accesorio.price*0.8 %></p>
+                            <p class="precio"><%= Number((accesorio.price*0.8).toFixed(2)) %></p>
                         <% } else { %>
                             <p class="precio">$ <%= accesorio.price %></p>
                         <% } %>
@@ -106,7 +106,7 @@
                         <% if (accesorio.discount=="Si") { %>
                             <p class="precio-tachado">$ <%= accesorio.price %></p>
                             <p class="descuento">20% off</p>
-                            <p class="precio"><%= accesorio.price*0.8 %></p>
+                            <p class="precio"><%= Number((accesorio.price*0.8).toFixed(2)) %></p>
                         <% } else { %>
                             <p class="precio">$ <%= accesorio.price %></p>
                         <% } %>
