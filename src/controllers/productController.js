@@ -120,7 +120,7 @@ const productController = {
         const productos = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'));
 
         //productos perros
-        const productosGato = productos.filter(product => {return product.id_pet == "Perro"});
+        const productosGato = productos.filter(product => {return product.id_pet == "Gato"});
 
 		//productos accesorios gatos
 		const accesoriosGato = productosGato.filter(product => {return product.category == "Accesorio"});
@@ -146,7 +146,7 @@ const productController = {
         const productos = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'));
 
         //productos perros
-        const productosGato = productos.filter(product => {return product.id_pet == "Perro"});
+        const productosGato = productos.filter(product => {return product.id_pet == "Gato"});
 
 		//productos higiene gatos
 		const higieneGato = productosGato.filter(product => {return product.category == "Higiene"});
@@ -172,7 +172,7 @@ const productController = {
         const productos = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'));
 
         //productos perros
-        const productosGato = productos.filter(product => {return product.id_pet == "Perro"});
+        const productosGato = productos.filter(product => {return product.id_pet == "Gato"});
 
 		// juguetes gatos
 		const juguetesGato = productosGato.filter(product => {return product.category == "Juguetes"});
