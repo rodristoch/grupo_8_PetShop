@@ -211,6 +211,8 @@ width: 100vw;
     padding: 15px;
     margin-bottom: 15px;
     display: flex;
+    align-items: flex-start;
+    justify-content: center;
     flex-wrap: wrap;
 }
 
@@ -219,22 +221,39 @@ h2 {
 }
 
 .img-productos-descuentos {
-    width: 80%;
-    height: auto;
-    height: min-content ;
-    border-radius: 5px;
-    margin: 0 auto
+margin: auto;
+width: auto;
+  
 }
 
 .contenedor_imagen {
+    padding-top: 12px;
     display: flex;
-    align-items: center;
-    justify-content: center;
+    align-items: flex-start;
+    justify-content:center;
     background-color: white;
-    height: 240px;
+    height: 140px;
    overflow: hidden;
 }
 
+.contenedor_imagen .img-productos-descuentos {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.texto_nombre_arriba {
+    max-height: 38px; 
+    overflow: hidden;
+    text-overflow: ellipsis; 
+}
+.texto_descripcion_arriba {
+    max-height: 38px; 
+    overflow: hidden;
+    text-overflow: ellipsis; 
+}
+
+/* --------------------------header----------------------------------- */
   
 .precio {
     font-weight: 600;
@@ -809,5 +828,15 @@ h4 {
     font-size: 14px;
 }
 
+.texto_nombre_arriba {
+    max-height: 40px; 
+    overflow: hidden;
+    text-overflow: ellipsis; 
+}
+.texto_descripcion_arriba {
+    max-height: 50px; 
+    overflow: hidden;
+    text-overflow: ellipsis; 
+}
 
 }

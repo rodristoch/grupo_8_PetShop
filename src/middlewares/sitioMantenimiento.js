@@ -2,7 +2,7 @@ let enMantenimiento = true;
 
 function sitioMantenimiento(req, res, next) {
 
-    if (enMantenimiento == true){
+    if (enMantenimiento){
         res.render("sitioMantenimiento.ejs")
     }
     next()

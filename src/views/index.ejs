@@ -67,6 +67,41 @@
             
         </section>
 
+       <!--- Seccion productos en javascript para el front podremos limitar la cantidad de caracteres-->
+        <section class="section-productos-descuentos">
+            <h2>Prueba productos</h2>
+            <div class="div-section-productos-descuentos">
+                <% for( let accesorio of productosPerroConDescuento) { %>
+                    <article class="articulo-productos-descuentos">
+                        <a href="">
+                            <div class="contenedor_imagen">
+                                <img class="img-productos-descuentos" src="/img/productos/<%= accesorio.image %>" alt="imagen_producto">
+                            </div>
+                        </a>
+                        <div>
+                            <div class="texto_nombre_arriba"> <!--- Limita la altura del box-->
+                                <h4><%= accesorio.name %></h4>
+                            </div>
+                            
+                            <div class="texto_descripcion_arriba">
+                                <p class="descripcion"><%= accesorio.description %></p>
+                            </div>
+                            <p class="precio-tachado">$ <%= accesorio.price %></p>
+                            <p class="descuento">20% off</p>
+                            <p class="precio"><%= Number((accesorio.price*0.8).toFixed(2)) %></p>
+                            <div class="div-boton-comprar">
+                                <button class="boton-comprar" type="submit">Agregar</button>
+                            </div>
+                        </div>
+
+                    </article>
+                    <% } %> 
+            </div>
+        </section>
+
+
+
+
         <section class="section-productos-descuentos">
             <h2>Productos con descuentos</h2>
             <div class="div-section-productos-descuentos">
