@@ -42,7 +42,6 @@ const userController = {
             apellido: req.body.apellido,
 			email: req.body.email, 
             password: bcrypt.hashSync(req.body.password, 10),
-            passwordrepeat: bcrypt.hashSync(req.body.passwordrepeat, 10),
             category: req.body.category
 		}
 
@@ -96,7 +95,6 @@ const userController = {
             apellido: req.body.apellido,
 			email: req.body.email, 
             password: bcrypt.hashSync(req.body.password, 10),
-            passwordrepeat: bcrypt.hashSync(req.body.passwordrepeat, 10),
             category: req.body.category
 		}
 
