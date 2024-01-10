@@ -108,7 +108,13 @@ input::placeholder {
     justify-content: center;
 }
 
-
+/* --- Inmput imagen -- */
+.input_imagen {
+    border-color: white;
+}
+.input_imagen:hover {
+    border-color: white;
+}
 
 /* --- Condiciones formulario */
 form input:hover {
