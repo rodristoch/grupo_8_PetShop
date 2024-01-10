@@ -1,6 +1,7 @@
 const { validationResult } = require('express-validator');
 const fs = require('fs');
 const path = require('path');
+const bcrypt = require("bcryptjs")
 
 
 const usersFilePath = path.join(__dirname, '../data/usersDataBase.json');
@@ -40,8 +41,8 @@ const userController = {
 			nombre: req.body.nombre,
             apellido: req.body.apellido,
 			email: req.body.email, 
-            password: req.body.password,
-            passwordrepeat: req.body.passwordrepeat,
+            password: bcrypt.hashSync(req.body.password, 10),
+            passwordrepeat: bcrypt.hashSync(req.body.passwordrepeat, 10),
             category: req.body.category
 		}
 
@@ -94,8 +95,8 @@ const userController = {
 			nombre: req.body.nombre,
             apellido: req.body.apellido,
 			email: req.body.email, 
-            password: req.body.password,
-            passwordrepeat: req.body.passwordrepeat,
+            password: bcrypt.hashSync(req.body.password, 10),
+            passwordrepeat: bcrypt.hashSync(req.body.passwordrepeat, 10),
             category: req.body.category
 		}
 
