@@ -9,7 +9,9 @@
         "price": 8.99,
         "discount": "No",
         "id_pet": "Gato",
-        "weight": ""
+        "weight": "",
+        "marca": "Generico"
+
     },
     {
         "id": 2,
@@ -21,7 +23,9 @@
         "price": 27.99,
         "discount": "No",
         "id_pet": "Gato",
-        "weight": ""
+        "weight": "",
+        "marca": "Generico"
+
     },
     {
         "id": 3,
@@ -33,7 +37,9 @@
         "price": 10.99,
         "discount": "No",
         "id_pet": "Gato",
-        "weight": ""
+        "weight": "",
+        "marca": "Generico"
+
     },
     {
         "id": 4,
@@ -45,7 +51,9 @@
         "price": 17.99,
         "discount": "No",
         "id_pet": "Gato",
-        "weight": ""
+        "weight": "",
+        "marca": "Mpets Ecozany"
+
     },
     {
         "id": 5,
@@ -57,7 +65,9 @@
         "price": 10.99,
         "discount": "No",
         "id_pet": "Gato",
-        "weight": ""
+        "weight": "",
+        "marca": "Generico"
+
     },
     {
         "id": 6,
@@ -69,7 +79,9 @@
         "price": 14.99,
         "discount": "Si",
         "id_pet": "Gato",
-        "weight": ""
+        "weight": "",
+        "marca": "Catit"
+
     },
     {
         "id": 7,
@@ -81,7 +93,9 @@
         "price": 24.99,
         "discount": "Si",
         "id_pet": "Gato",
-        "weight": ""
+        "weight": "",
+        "marca": "Generico"
+
     },
     {
         "id": 8,
@@ -93,7 +107,9 @@
         "price": 29.99,
         "discount": "Si",
         "id_pet": "Gato",
-        "weight": ""
+        "weight": "",
+        "marca": "Cancat"
+
     },
     {
         "id": 9,
@@ -104,7 +120,9 @@
         "price": 18.99,
         "discount": "No",
         "id_pet": "Gato",
-        "weight": 1
+        "weight": 1,
+        "marca": "Pro Plan"
+
     },
     {
         "id": 10,
@@ -115,7 +133,9 @@
         "price": 20.99,
         "discount": "Si",
         "id_pet": "Gato",
-        "weight": 1
+        "weight": 1,
+        "marca": "Pro Plan"
+
     },
     {
         "id": 11,
@@ -126,7 +146,9 @@
         "price": 16.99,
         "discount": "No",
         "id_pet": "Gato",
-        "weight": 2
+        "weight": 2,
+        "marca": "Pro Plan"
+
     },
     {
         "id": 12,
@@ -137,7 +159,9 @@
         "price": 22.99,
         "discount": "No",
         "id_pet": "Gato",
-        "weight": 3
+        "weight": 3,
+        "marca": "Cat Chow"
+
     },
     {
         "id": 13,
@@ -148,7 +172,9 @@
         "price": 26.99,
         "discount": "No",
         "id_pet": "Gato",
-        "weight": 1
+        "weight": 1,
+        "marca": "Purina One"
+
     },
     {
         "id": 14,
@@ -159,7 +185,9 @@
         "price": 28.99,
         "discount": "No",
         "id_pet": "Gato",
-        "weight": 1
+        "weight": 1,
+        "marca": "Purina One"
+
     },
     {
         "id": 15,
@@ -170,7 +198,9 @@
         "price": 30.99,
         "discount": "Si",
         "id_pet": "Gato",
-        "weight": 2
+        "weight": 2,
+        "marca": "Pro Plan"
+
     },
     {
         "id": 16,
@@ -181,7 +211,9 @@
         "price": 32.99,
         "discount": "No",
         "id_pet": "Gato",
-        "weight": 2
+        "weight": 2,
+        "marca": "Pro Plan"
+
     },
     {
         "id": 17,
@@ -192,7 +224,9 @@
         "price": 19.99,
         "discount": "No",
         "id_pet": "Gato",
-        "weight": 1
+        "weight": 1,
+        "marca": "Pro Plan"
+
     },
     {
         "id": 18,
@@ -203,7 +237,9 @@
         "price": 39.99,
         "discount": "Si",
         "id_pet": "Gato",
-        "weight": 1
+        "weight": 1,
+        "marca": "Pro Plan"
+
     },
     {
         "id": 19,
@@ -214,7 +250,9 @@
         "price": 19.99,
         "discount": "No",
         "id_pet": "Gato",
-        "weight": ""
+        "weight": "",
+        "marca": "Sanicat"
+
     },
     {
         "id": 20,
@@ -225,7 +263,9 @@
         "price": 23.99,
         "discount": "Si",
         "id_pet": "Gato",
-        "weight": ""
+        "weight": "",
+        "marca": "Generico"
+
     },
     {
         "id": 21,
@@ -236,7 +276,9 @@
         "price": 29.99,
         "discount": "No",
         "id_pet": "Gato",
-        "weight": ""
+        "weight": "",
+        "marca": "Generico"
+
     },
     {
         "id": 22,
@@ -247,7 +289,9 @@
         "price": 16.99,
         "discount": "No",
         "id_pet": "Gato",
-        "weight": ""
+        "weight": "",
+        "marca": "Generico"
+
     },
     {
         "id": 23,
@@ -258,7 +302,9 @@
         "price": 34.99,
         "discount": "No",
         "id_pet": "Gato",
-        "weight": ""
+        "weight": "",
+        "marca": "Cat-It"
+
     },
     {
         "id": 24,
@@ -269,7 +315,9 @@
         "price": 5.99,
         "discount": "Si",
         "id_pet": "Gato",
-        "weight": ""
+        "weight": "",
+        "marca": "Generico"
+
     },
     {
         "id": 25,
@@ -280,7 +328,9 @@
         "price": 8.99,
         "discount": "No",
         "id_pet": "Gato",
-        "weight": ""
+        "weight": "",
+        "marca": "Generico"
+
     },
     {
         "id": 26,
@@ -291,7 +341,9 @@
         "price": 42.99,
         "discount": "No",
         "id_pet": "Gato",
-        "weight": ""
+        "weight": "",
+        "marca": "Generico"
+
     },
     {
         "id": 27,
@@ -302,7 +354,9 @@
         "price": 39.99,
         "discount": "Si",
         "id_pet": "Gato",
-        "weight": ""
+        "weight": "",
+        "marca": "Catit"
+
     },
     {
         "id": 28,
@@ -313,7 +367,9 @@
         "price": 15.99,
         "discount": "No",
         "id_pet": "Gato",
-        "weight": ""
+        "weight": "",
+        "marca": "Cancat"
+
     },
     {
         "id": 29,
@@ -324,7 +380,9 @@
         "price": 12.99,
         "discount": "No",
         "id_pet": "Gato",
-        "weight": ""
+        "weight": "",
+        "marca": "Generico"
+
     },
     {
         "id": 30,
@@ -335,7 +393,9 @@
         "price": 10.99,
         "discount": "Si",
         "id_pet": "Gato",
-        "weight": ""
+        "weight": "",
+        "marca": "Generico"
+
     },
     {
         "id": 31,
@@ -346,7 +406,9 @@
         "price": 24.99,
         "discount": "Si",
         "id_pet": "Gato",
-        "weight": ""
+        "weight": "",
+        "marca": "Gigwi"
+
     },
     {
         "id": 32,
@@ -357,7 +419,9 @@
         "price": 18.99,
         "discount": "No",
         "id_pet": "Gato",
-        "weight": ""
+        "weight": "",
+        "marca": "Generico"
+
     },
     {
         "id": 33,
@@ -368,7 +432,9 @@
         "price": 14.99,
         "discount": "No",
         "id_pet": "Gato",
-        "weight": ""
+        "weight": "",
+        "marca": "Generico"
+
     },
     {
         "id": 34,
@@ -379,7 +445,9 @@
         "price": 29.99,
         "discount": "No",
         "id_pet": "Gato",
-        "weight": ""
+        "weight": "",
+        "marca": "Generico"
+
     },
     {
         "id": 35,
@@ -390,7 +458,9 @@
         "price": 9.99,
         "discount": "No",
         "id_pet": "Gato",
-        "weight": ""
+        "weight": "",
+        "marca": "Generico"
+
     },
     {
         "id": 36,
@@ -401,7 +471,9 @@
         "price": 7.99,
         "discount": "No",
         "id_pet": "Gato",
-        "weight": ""
+        "weight": "",
+        "marca": "Generico"
+
     },
     {
         "id": 37,
@@ -412,7 +484,9 @@
         "price": 5.99,
         "discount": "No",
         "id_pet": "Gato",
-        "weight": ""
+        "weight": "",
+        "marca": "Generico"
+
     },
     {
         "id": 38,
@@ -423,7 +497,9 @@
         "price": 19.99,
         "discount": "No",
         "id_pet": "Gato",
-        "weight": ""
+        "weight": "",
+        "marca": "Catit"
+
     },
     {
         "id": 39,
@@ -435,7 +511,9 @@
         "price": 19.99,
         "discount": "Si",
         "id_pet": "Perro",
-        "weight": ""
+        "weight": "",
+        "marca": "Generico"
+
     },
     { 
         "id": 40,
@@ -447,7 +525,9 @@
         "price": 27.99,
         "discount": "No",
         "id_pet": "Perro",
-        "weight": ""
+        "weight": "",
+        "marca": "Generico"
+
     },
     {
         "id": 41,
@@ -459,7 +539,9 @@
         "price": 7.99,
         "discount": "No",
         "id_pet": "Perro",
-        "weight": ""
+        "weight": "",
+        "marca": "Generico"
+
     },
     {
         "id": 42,
@@ -471,7 +553,9 @@
         "price": 13.99,
         "discount": "No",
         "id_pet": "Perro",
-        "weight": ""
+        "weight": "",
+        "marca": "Generico"
+
     },
     {
         "id": 43,
@@ -483,7 +567,9 @@
         "price": 12.99,
         "discount": "No",
         "id_pet": "Perro",
-        "weight": ""
+        "weight": "",
+        "marca": "Generico"
+
     },
     {
         "id": 44,
@@ -495,7 +581,9 @@
         "price": 19.99,
         "discount": "Si",
         "id_pet": "Perro",
-        "weight": ""
+        "weight": "",
+        "marca": "Generico"
+
     },
     {
         "id": 45,
@@ -507,7 +595,9 @@
         "price": 29.99,
         "discount": "No",
         "id_pet": "Perro",
-        "weight": ""
+        "weight": "",
+        "marca": "Generico"
+
     },
     {
         "id": 46,
@@ -519,7 +609,9 @@
         "price": 27.99,
         "discount": "Si",
         "id_pet": "Perro",
-        "weight": ""
+        "weight": "",
+        "marca": "Generico"
+
     },
     {
         "id": 47,
@@ -531,7 +623,9 @@
         "price": 27.99,
         "discount": "No",
         "id_pet": "Perro",
-        "weight": ""
+        "weight": "",
+        "marca": "Generico"
+
     },
     {
         "id": 48,
@@ -543,7 +637,9 @@
         "price": 20.99,
         "discount": "No",
         "id_pet": "Perro",
-        "weight": ""
+        "weight": "",
+        "marca": "Generico"
+
     },
     {
         "id": 49,
@@ -554,7 +650,9 @@
         "price": 24.99,
         "discount": "No",
         "id_pet": "Perro",
-        "weight": 1
+        "weight": 1,
+        "marca": "Royal Canin"
+
     },
     {
         "id": 50,
@@ -565,7 +663,9 @@
         "price": 29.99,
         "discount": "No",
         "id_pet": "Perro",
-        "weight": 2
+        "weight": 2,
+        "marca": "Royal Canin"
+
     },
     {
         "id": 51,
@@ -576,7 +676,9 @@
         "price": 34.99,
         "discount": "No",
         "id_pet": "Perro",
-        "weight": 2
+        "weight": 2,
+        "marca": "Royal Canin"
+
     },
     {
         "id": 52,
@@ -587,7 +689,9 @@
         "price": 39.99,
         "discount": "Si",
         "id_pet": "Perro",
-        "weight": 2
+        "weight": 2,
+        "marca": "Royal Canin"
+
     },
     {
         "id": 53,
@@ -598,7 +702,9 @@
         "price": 38.99,
         "discount": "Si",
         "id_pet": "Perro",
-        "weight": 1
+        "weight": 1,
+        "marca": "Royal Canin"
+
     },
     {
         "id": 54,
@@ -609,7 +715,10 @@
         "price": 42.99,
         "discount": "No",
         "id_pet": "Perro",
-        "weight": 3
+        "weight": 3,
+        "marca": "Eukanuba"
+
+
     },
     {
         "id": 55,
@@ -620,7 +729,9 @@
         "price": 36.99,
         "discount": "No",
         "id_pet": "Perro",
-        "weight": 2
+        "weight": 2,
+        "marca": "Eukanuba"
+
     },
     {
         "id": 56,
@@ -631,7 +742,9 @@
         "price": 39.99,
         "discount": "Si",
         "id_pet": "Perro",
-        "weight": 3
+        "weight": 3,
+        "marca": "Eukanuba"
+
     },
     {
         "id": 57,
@@ -642,7 +755,9 @@
         "price": 27.99,
         "discount": "No",
         "id_pet": "Perro",
-        "weight": 1
+        "weight": 1,
+        "marca": "Eukanuba"
+
     },
     {
         "id": 58,
@@ -653,7 +768,9 @@
         "price": 32.99,
         "discount": "No",
         "id_pet": "Perro",
-        "weight": 1
+        "weight": 1,
+        "marca": "Eukanuba"
+
     },
     {
         "id": 59,
@@ -664,7 +781,9 @@
         "price": 15.99,
         "discount": "No",
         "id_pet": "Perro",
-        "weight": ""
+        "weight": "",
+        "marca": "Generico"
+
     },
     {
         "id": 60,
@@ -675,7 +794,9 @@
         "price": 12.99,
         "discount": "No",
         "id_pet": "Perro",
-        "weight": ""
+        "weight": "",
+        "marca": "Osspret"
+
     },
     {
         "id": 61,
@@ -686,7 +807,9 @@
         "price": 14.99,
         "discount": "No",
         "id_pet": "Perro",
-        "weight": ""
+        "weight": "",
+        "marca": "Osspret"
+
     },
     {
         "id": 62,
@@ -697,7 +820,9 @@
         "price": 18.99,
         "discount": "No",
         "id_pet": "Perro",
-        "weight": ""
+        "weight": "",
+        "marca": "Osspret"
+
     },
     {
         "id": 63,
@@ -708,7 +833,9 @@
         "price": 9.99,
         "discount": "No",
         "id_pet": "Perro",
-        "weight": ""
+        "weight": "",
+        "marca": "Iki"
+
     },
     {
         "id": 64,
@@ -719,7 +846,10 @@
         "price": 7.99,
         "discount": "No",
         "id_pet": "Perro",
-        "weight": ""
+        "weight": "",
+        "marca": "Generico"
+
+        
     },
     {
         "id": 65,
@@ -730,7 +860,9 @@
         "price": 6.99,
         "discount": "No",
         "id_pet": "Perro",
-        "weight": ""
+        "weight": "",
+        "marca": "Generico"
+
     },
     {
         "id": 66,
@@ -741,7 +873,9 @@
         "price": 4.99,
         "discount": "No",
         "id_pet": "Perro",
-        "weight": ""
+        "weight": "",
+        "marca": "Generico"
+
     },
     {
         "id": 67,
@@ -752,7 +886,9 @@
         "price": 11.99,
         "discount": "No",
         "id_pet": "Perro",
-        "weight": ""
+        "weight": "",
+        "marca": "Generico"
+
     },
     {
         "id": 68,
@@ -763,7 +899,9 @@
         "price": 10.99,
         "discount": "No",
         "id_pet": "Perro",
-        "weight": ""
+        "weight": "",
+        "marca": "Generico"
+
     },
     {
         "id": 69,
@@ -774,7 +912,9 @@
         "price": 8.99,
         "discount": "No",
         "id_pet": "Perro",
-        "weight": ""
+        "weight": "",
+        "marca": "Generico"
+
     },
     {
         "id": 70,
@@ -785,7 +925,9 @@
         "price": 6.99,
         "discount": "No",
         "id_pet": "Perro",
-        "weight": ""
+        "weight": "",
+        "marca": "Generico"
+
     },
     {
         "id": 71,
@@ -796,7 +938,9 @@
         "price": 5.99,
         "discount": "No",
         "id_pet": "Perro",
-        "weight": ""
+        "weight": "",
+        "marca": "Generico"
+
     },
     {
         "id": 72,
@@ -807,7 +951,9 @@
         "price": 7.99,
         "discount": "No",
         "id_pet": "Perro",
-        "weight": ""
+        "weight": "",
+        "marca": "Cancat"
+
     },
     {
         "id": 73,
@@ -818,7 +964,9 @@
         "price": 6.99,
         "discount": "No",
         "id_pet": "Perro",
-        "weight": ""
+        "weight": "",
+        "marca": "Cancat"
+
     },
     {
         "id": 74,
@@ -829,7 +977,9 @@
         "price": 9.99,
         "discount": "No",
         "id_pet": "Perro",
-        "weight": ""
+        "weight": "",
+        "marca": "Generico"
+
     },
     {
         "id": 75,
@@ -840,7 +990,9 @@
         "price": 8.99,
         "discount": "No",
         "id_pet": "Perro",
-        "weight": ""
+        "weight": "",
+        "marca": "King air dog"
+
     },
     {
         "id": 76,
@@ -851,7 +1003,9 @@
         "price": 7.99,
         "discount": "No",
         "id_pet": "Perro",
-        "weight": ""
+        "weight": "",
+        "marca": "Generico"
+
     },
     {
         "id": 77,
@@ -862,7 +1016,9 @@
         "price": 7.99,
         "discount": "No",
         "id_pet": "Perro",
-        "weight": ""
+        "weight": "",
+        "marca": "Generico"
+
     },
     {
         "id": 78,
@@ -873,6 +1029,8 @@
         "price": 7.99,
         "discount": "No",
         "id_pet": "Perro",
-        "weight": ""
+        "weight": "",
+        "marca": "Generico"
+
     }
 ]
