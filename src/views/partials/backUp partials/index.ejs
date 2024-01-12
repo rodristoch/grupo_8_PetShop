@@ -69,7 +69,7 @@
 
        <!--- Seccion productos en javascript para el front podremos limitar la cantidad de caracteres-->
         <section class="section-productos-descuentos">
-            <h2>Productos con descuentos</h2>
+            <h2>Prueba productos</h2>
             <div class="div-section-productos-descuentos">
                 <% for( let accesorio of productosPerroConDescuento) { %>
                     <article class="articulo-productos-descuentos">
@@ -100,7 +100,36 @@
         </section>
 
 
-        <!--- Banner-->
+
+
+        <section class="section-productos-descuentos">
+            <h2>Productos con descuentos</h2>
+            <div class="div-section-productos-descuentos">
+                <% for(let accesorio of productosPerroConDescuento) { %>
+
+                    <article class="articulo-productos-descuentos">
+                        <a href="/productos/detalle">
+                            <div class="contenedor_imagen">
+                                <img class="img-productos-descuentos" src="/img/productos/<%= accesorio.image %>" alt="imagen_producto">
+                            </div>
+                        </a>
+                        <div class="descripcion-productos-descuentos">
+                            <h4><%= accesorio.name %></h4>
+                            <p class="descripcion"><%= accesorio.description %></p>
+                            <p class="precio-tachado">$ <%= accesorio.price %></p>
+                            <p class="descuento">20% off</p>
+                            <p class="precio"><%= Number((accesorio.price*0.8).toFixed(2)) %></p>
+                            <div class="div-boton-comprar">
+                                <button class="boton-comprar" type="submit">Agregar</button>
+                            </div>
+                        </div>
+                    </article>
+
+                <% } %>
+
+            </div>
+        </section>
+
         <section class="section-banner">
             <div class="div-banner">
                 <img class="img-banner" src="\img\img-banner.jpg" alt="banner">
@@ -109,71 +138,62 @@
             </div>
         </section>
 
+        <section class="section-productos-perro">
+            <h2 class="h2-productos">Productos para perro</h2>
+            <div class="div-productos-perro">
+                <% for(let accesorio of productosPerroAccesorios) { %>  
 
-        <!--- Sección productos para perro-->
-        <section class="section-productos-descuentos">
-            <h2>Productos para perro</h2>
-            <div class="div-section-productos-descuentos">
-                <% for( let accesorio of productosPerroAccesorios) { %>
-                    <article class="articulo-productos-descuentos">
-                        <a href="">
-                            <div class="contenedor_imagen">
-                                <img class="img-productos-descuentos" src="/img/productos/<%= accesorio.image %>" alt="imagen_producto">
-                            </div>
-                        </a>
-                        <div>
-                            <div class="texto_nombre_arriba"> <!--- Limita la altura del box-->
-                                <h4><%= accesorio.name %></h4>
-                            </div>
-                            
-                            <div class="texto_descripcion_arriba">
-                                <p class="descripcion"><%= accesorio.description %></p>
-                            </div>
+                <article class="articulo-productos-perro">
+                    <a href="/productos/detalle"><img class="img-productos-perro" src="/img/productos/<%= accesorio.image %>" alt="imagen_producto"></a>
+                    <div class="descripcion-productos-perro">
+                        <h4><%= accesorio.name %></h4>
+                        <p class="descripcion"><%= accesorio.description %></p>
+                        <% if (accesorio.discount=="Si") { %>
                             <p class="precio-tachado">$ <%= accesorio.price %></p>
                             <p class="descuento">20% off</p>
                             <p class="precio"><%= Number((accesorio.price*0.8).toFixed(2)) %></p>
+                        <% } else { %>
+                            <p class="precio">$ <%= accesorio.price %></p>
+                        <% } %>
+                        <div class="div-boton-comprar">
+                            <button class="boton-comprar" type="submit">Agregar</button>
+                        </div>
+                    </div>
+                </article>
+
+            <% } %>
+                
+            </div>
+        </section>
+
+        <section class="section-productos-perro">
+            <h2 class="h2-productos">Productos para gato</h2>
+            <div class="div-productos-perro">
+
+                <% for(let accesorio of productosGatoAccesorios) { %>
+
+                    <article class="articulo-productos-perro">
+                        <a href="/productos/detalle"><img class="img-productos-perro" src="/img/productos/<%= accesorio.image %>" alt="imagen_producto"></a>
+                        <div class="descripcion-productos-perro">
+                            <h4><%= accesorio.name %></h4>
+                            <p class="descripcion"><%= accesorio.description %></p>
+                            <% if (accesorio.discount=="Si") { %>
+                                <p class="precio-tachado">$ <%= accesorio.price %></p>
+                                <p class="descuento">20% off</p>
+                                <p class="precio"><%= Number((accesorio.price*0.8).toFixed(2)) %></p>
+                            <% } else { %>
+                                <p class="precio">$ <%= accesorio.price %></p>
+                            <% } %>
                             <div class="div-boton-comprar">
                                 <button class="boton-comprar" type="submit">Agregar</button>
                             </div>
                         </div>
-
                     </article>
-                    <% } %> 
+
+                <% } %>
+
             </div>
         </section>
-
-
-   <!--- Sección productos para Gato-->
-   <section class="section-productos-descuentos">
-    <h2>Productos para perro</h2>
-    <div class="div-section-productos-descuentos">
-        <% for( let accesorio of productosGatoAccesorios) { %>
-            <article class="articulo-productos-descuentos">
-                <a href="">
-                    <div class="contenedor_imagen">
-                        <img class="img-productos-descuentos" src="/img/productos/<%= accesorio.image %>" alt="imagen_producto">
-                    </div>
-                </a>
-                <div>
-                    <div class="texto_nombre_arriba"> <!--- Limita la altura del box-->
-                        <h4><%= accesorio.name %></h4>
-                    </div>
-                    
-                    <div class="texto_descripcion_arriba">
-                        <p class="descripcion"><%= accesorio.description %></p>
-                    </div>
-                    <p class="precio-tachado">$ <%= accesorio.price %></p>
-                    <p class="descuento">20% off</p>
-                    <p class="precio"><%= Number((accesorio.price*0.8).toFixed(2)) %></p>
-                    <div class="div-boton-comprar">
-                        <button class="boton-comprar" type="submit">Agregar</button>
-                    </div>
-                </div>
-
-            </article>
-            <% } %> 
-    </div>
-</section>
     </main>
 
     <%- include("./partials/footer.ejs") %>
