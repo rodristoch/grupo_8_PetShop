@@ -1,0 +1,776 @@
+html{
+    margin: 0;
+    padding: 0;
+}
+*{
+    box-sizing: border-box;
+}    
+
+    body { 
+        font-family: 'roboto';
+        margin: 0;
+        padding: 0;
+    }
+
+
+@media (min-width: 361px){
+/*----------------------------------MAIN COMIENZO media querie 361----------------------------*/
+
+.producto{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    margin: 30px;
+    flex-wrap: wrap;
+}
+
+.angulos-del-producto{
+    display: none;
+}
+
+.angulo-producto{
+    display:none;
+}
+
+.producto-en-grande{
+    text-align: center;
+}
+
+.img-producto-grande{
+    width: 50%;
+    justify-content: center;
+    padding: 3px;
+}
+
+.detalles {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.nombre{
+    text-align: center;
+    font-size: 20px;
+    font-weight: 800;
+}
+
+.precio{
+    text-align: center;
+    font-size: 20px;
+    color:#18515F;
+    font-weight: 700;
+    margin: 0;
+}
+
+.iconos{
+    display: flex;
+    flex-direction: row;
+    text-align: center;
+    justify-content: space-around;
+    width: 60vw;
+    margin: 20px;
+}
+
+.icono-individual{
+    border: solid #271938 2px;
+    border-radius: 25%;
+    transition: 250ms;
+}
+
+.icono-individual:hover {
+    box-shadow : 0px 0px 10px rgb(140, 140, 140);
+    color: #18515F;
+    border: 2px solid #18515F;
+    cursor: pointer;
+    }
+
+.envio{
+    font-size: 90%;
+    margin: 5px;
+    font-weight: 800;
+    text-align: center;
+}
+
+.fa-car-side, .fa-truck-fast, .fa-truck{
+    padding: 10px;
+    font-size: 30px;
+}
+
+form{
+    text-align: center;
+}
+
+select {
+    border: solid 1px black;
+    border-radius: 8px;
+    padding: 10px 12px;
+    text-align: left;
+    text-decoration: none;
+    font-weight: 700;
+    width: 90%;
+    font-size: 10px;
+    margin: 10px;
+    background-color:  rgba(205, 204, 206, 0.5);
+    cursor: pointer;
+    }  
+
+button {
+    border: none;
+    border-radius: 8px;
+    color: white;
+    background-color: #18515F;
+    padding: 10px 17px;
+    text-align: center;
+    text-decoration: none;
+    width: 90%;
+    font-size: 12px;
+    margin: 15px;
+    cursor: pointer;
+    transition: 250ms;
+}
+
+button:hover{
+    background-color: #0a323c;
+}
+
+.descripcion{
+    display: block;
+    margin: 25px;
+    text-align: justify;
+    background-color: rgba(205, 204, 206, 0.5);
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-top: 7px;
+    padding-bottom: 10px;
+    border-radius: 22px;
+    box-shadow: 0px 0px 5px rgb(140, 140, 140);
+    }
+
+.titulo-descripcion{
+    font-size: 20px;
+    text-align: center;
+    font-weight: 800;
+}
+
+.descripcion-producto{
+    font-size: 13px;
+}
+
+.titulo-relacionados{
+    display: none;
+}
+.relacionados{
+    display: none;
+}
+
+/*----------------------------------MAIN FIN medie querie 361----------------------------*/
+
+/* -----------------------------------HEADER Y FOOTER medie querie 361----------------------  */
+
+/* --------------------------header----------------------------------- */
+.top {
+    background-color: #18515F;
+    height: 20%;
+    width: 100vw;
+    }
+    
+    .flex-top {
+        width: 100vw;
+        height: 20%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+    
+    .logo {
+        width: 15%;
+        height: 60%;
+        margin: 10px;
+        margin-right: 1px;
+    }
+    
+    .titulo-head {
+        display: none;
+        width: 15%;
+        font-family: 'Amatic SC';
+        font-size: 60px;
+        color: white;
+        margin-left: 0.1px;
+        margin-top: 10px;
+        
+    }
+    
+    .logo-titulo-jun {
+        display: none;
+    }
+    
+    .barra {
+        width: 28%;
+        font-family: 'Roboto';
+        font-size: 20px;
+        color: white;
+        margin-right: 10px;
+    }
+    
+    .barra input[type="search"] {
+        border-radius: 10px; 
+        padding: 10px; 
+        width: 200px; 
+        box-sizing: border-box; 
+        border: 1px solid #ccc; 
+    }
+    
+    
+    .mi-cuenta, .mis-compras {
+        display: none;
+    }
+    
+    
+    .menu-top {
+        display: block;
+        text-align: right;
+        margin-right: 40px;
+        margin-top: 10px;
+    
+    }
+    
+    .carrito {
+        display: block;
+    }
+    
+    .logo-carrito-tablet {
+        display: none;
+    }
+    
+    .logo-carrito-mobile {
+        display: block;
+        text-align: right;
+        margin-right: 20px;
+        margin-top: 10px;
+    }
+    
+    .carrito-text {
+        display: none;
+    }
+    
+    .header2 {
+        display: none;
+    }
+    /* --------------------------header----------------------------------- */
+
+
+    /* --------------------------footer----------------------------------- */
+footer {
+    background-color: #18515F;
+    display: flex;
+}
+
+.logo2 {
+    width: 3%;
+    height: 30%;
+    padding: 60px;
+    display: none;
+}
+
+.nosotros {
+    color: white;
+    text-align: justify;
+    margin: auto;
+    font-size: 12px;
+}
+
+.todo-perro {
+    color: white;
+    text-align: justify;
+    margin: auto;
+    font-size: 12px;
+}
+
+.todo-gato {
+    color: white;
+    text-align: justify;
+    margin: auto;
+    font-size: 12px;
+}
+
+.contacto {
+    color: white;
+    text-align: justify;
+    margin: auto;
+    font-size: 12px;
+}
+
+.redes-sociales {
+    color: white;
+    text-align: justify;
+    margin: auto;
+    font-size: 12px;
+}
+
+.facebook-tablet, .twitter-tablet, .instagram-tablet {
+    display: none;
+}
+
+.rrss-iconos {
+    display: flex;
+    justify-content: space-between;
+}
+/* --------------------------footer----------------------------------- */
+
+/* -----------------------------------HEADER Y FOOTER medie querie 361----------------------  */
+
+} /*ESTA LLAVE CIERRA EL MEDIA QUERIE 361*/
+
+
+@media (min-width: 769px){
+    *{
+        box-sizing: border-box;
+    }    
+    
+        body { 
+            font-family: 'roboto';
+        }
+
+/*----------------------------------HEADER COMIENZO medie querie 769----------------------------*/
+.titulo-head {
+    display: none;
+    margin: auto;
+}
+
+.barra {
+    margin-left: 50px;
+    margin-right: 1px;
+}
+
+.barra input[type="search"] {
+    width: 45vw; 
+}
+
+.opciones-top {
+    width: 40%;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+.mis-compras {
+    font-family: 'Roboto';
+    display: none;
+    flex-direction: column;
+    text-align: center;
+    margin-right: 10px;
+    margin-left: 50px;
+    margin-top: 40px;
+    margin-bottom: 20px;
+    color: white;
+}
+
+.mi-cuenta {
+    display: none;
+    flex-direction: column;
+    text-align: center;
+    margin-right: 10px;
+    margin-left: 20px;
+    margin-top: 20px;
+    color: white;
+}
+
+.carrito {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    margin-right: 60px;
+    margin-left: 25px;
+    margin-top: 20px;
+    color: white;
+}
+
+.logo-carrito-tablet {
+    display: block;
+}
+
+.logo-carrito-mobile {
+    display: none;
+}
+
+.carrito-text {
+    display: block;
+}
+
+.fa-bars {
+    display: block;
+}
+
+.header2 {
+    display: flex;
+    height: 35px;
+    background-color: #18515F;
+    border-top: 0.1px solid white;
+    border-bottom: 0.3px solid white;
+}
+
+.header2-opciones {
+    color: white;
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    align-items: center;
+    margin: 20px;
+}
+
+
+
+.fa-circle-arrow-down {
+    margin-left: 10px;
+}
+/*----------------------------------HEADER FIN medie querie 769----------------------------*/
+
+
+/*----------------------------------MAIN COMIENZO medie querie 769----------------------------*/
+.producto{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    margin: 30px;
+    flex-wrap: wrap;
+    border-bottom: solid rgba(205, 204, 206, 0.75) 1px;
+
+}
+
+.img-producto-grande{
+    width: 30vw;
+    justify-content: center;
+    padding: 3px;
+}
+
+.angulos-del-producto{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 10vw;
+}
+
+.angulo-producto{
+    display: block;
+    border: solid 1px;
+    border-color: rgba(0, 0, 0, 0.5);
+    border-radius: 5%;
+    margin: 7px;
+    width: 100%;
+}
+
+.detalles {
+    display: flex;
+    flex-direction: column;
+    width: 35vw;
+    align-items: flex-start;
+}
+
+.nombre{
+    text-align: left;
+    font-size: 30px;
+    font-weight: 1000;
+    margin: 10px;
+}
+
+.precio{
+    text-align: left;
+    margin: 10px;
+}
+
+.iconos{
+    width: 75%;
+    text-align: left;
+    margin: 5px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    justify-content: space-between;
+}
+
+form{
+    text-align: left;
+    margin: 0px;
+}
+
+.select{
+    width: 100%;
+    margin: 10px;
+}
+
+button{
+    margin: 10px;
+    font-weight: 600;
+}
+
+.descripcion{
+    width: 80%;
+    margin: auto;
+    margin-bottom: 20px;
+}
+
+.titulo-relacionados{
+    display: block;
+    font-size: 20px;
+    font-weight: 600;
+    margin: 10px;
+}
+
+.relacionados{
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+.articulo-productos-relacionados {
+    width: 25%;
+    border: 1px solid rgb(129, 129, 129);
+    border-radius: 5px;
+    padding: 15px;
+    margin-bottom: 15px;
+    transition: 450ms;
+}
+
+.articulo-productos-relacionados:hover {
+    box-shadow : 0px 0px 20px rgb(140, 140, 140);
+}
+
+.articulo-productos-relacionados1{
+    display: none;
+}
+
+.img-productos-relacionados {
+    width: 90%;
+    border-radius: 5px;
+}
+
+h4 {
+    font-size: 14px;
+    display: block;
+    margin-block-start: 1.33em;
+    margin-block-end: 1.33em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    font-weight: bold;
+}
+    
+.descripcion-productos-relacionados {
+    font-size: 14px;
+}
+
+.precio-producto-relacionado {
+    font-weight: 600;
+}
+
+.div-boton-comprar {
+    text-align: center;
+    margin: auto;
+}
+
+.boton-comprar {
+    text-align: center;
+    background-color: #1e697b;
+    color: white;
+    width: 90%;
+    height: 40%;
+    border-radius: 5px;
+    border: 1px solid black;
+    font-size: 16px;
+    padding: 5px;
+    transition: 450ms;
+}
+    
+.boton-comprar:hover {
+    background-color: #349fba;
+}
+
+/*main*/
+
+
+/*footer*/
+footer {
+    background-color: #18515F;
+    display: flex;
+}
+
+.logo2 {
+    width: 3%;
+    height: 30%;
+    padding: 60px;
+    display: none;
+}
+
+.nosotros {
+    color: white;
+    text-align: justify;
+    margin: auto;
+    font-size: 12px;
+}
+
+.todo-perro {
+    color: white;
+    text-align: justify;
+    margin: auto;
+    font-size: 12px;
+}
+
+.todo-gato {
+    color: white;
+    text-align: justify;
+    margin: auto;
+    font-size: 12px;
+}
+
+.contacto {
+    color: white;
+    text-align: justify;
+    margin: auto;
+    font-size: 12px;
+}
+
+.redes-sociales {
+    color: white;
+    text-align: justify;
+    margin: auto;
+    font-size: 12px;
+}
+
+.facebook-tablet, .twitter-tablet, .instagram-tablet {
+    display: none;
+}
+
+.rrss-iconos {
+    display: flex;
+    justify-content: space-between;
+}
+/*footer*/
+
+} /*ESTA LLAVE CIERRA EL MEDIA QUERIE 769*/
+
+@media (min-width: 1100px){
+
+/*----------------------------------HEADER COMIENZO media querie 1100----------------------------*/
+/*----------------------------------HEADER FIN media querie 1100----------------------------*/
+
+
+/*----------------------------------MAIN COMIENZO media querie 1100----------------------------*/
+.nombre {
+    font-size: 40px;
+}
+
+.precio {
+    font-size: 35px;
+    margin: 30px 10px 30px 10px;
+}
+
+.iconos {
+    width: 75%;
+    margin-bottom: 30px;
+}
+
+.detalles {
+    align-items: flex-start;
+}
+
+.fa-car-side, .fa-truck-fast, .fa-truck, .fas {
+    font-weight: 900;
+    font-size: 50px;
+}
+
+select {
+    padding: 15px 17px;
+    text-align: left;
+    font-size: 15px;
+    margin: 15px 10px;
+}
+
+button {
+    padding: 15px 23px;
+    font-size: 15px;
+    margin-top: 15px;
+    }
+
+.articulo-productos-relacionados {
+    width: 13%;
+    border: 1px solid rgb(129, 129, 129);
+    border-radius: 5px;
+    padding: 15px;
+    margin-bottom: 15px;
+    transition: 450ms;
+}
+
+
+.articulo-productos-relacionados1 {
+    display:block;
+    width: 13%;
+    border: 1px solid rgb(129, 129, 129);
+    border-radius: 5px;
+    padding: 15px;
+    margin-bottom: 15px;
+    transition: 450ms;
+}
+
+.articulo-productos-relacionados1:hover {
+    box-shadow : 0px 0px 20px rgb(140, 140, 140);
+}
+
+/*----------------------------------MAIN FIN media querie 1100----------------------------*/
+
+/* --------------- header ----------------------------------- */
+
+/* .top {
+    height: 15vh;
+} */
+
+.flex-top {
+    height: 10%;
+}
+
+.menu-top {
+    display: none;
+}
+
+.fa-bars {
+    display: none;
+}
+
+.barra input[type="search"] {
+    width: 35vw; 
+    margin-left: 60px;
+}
+
+.carrito, .mis-compras, .mi-cuenta {
+    display: block;
+}
+
+.logo-titulo-jun {
+    display: block;
+    margin-left: 30px;
+}
+
+.logo, .titulo-head {
+    display: none;
+}
+/* --------------- header ----------------------------------- */
+
+/* --------------------------footer----------------------------------- */
+.logo2 {
+    display: flex;
+}
+/* --------------------------footer----------------------------------- */
+
+} /*ESTA LLAVE CIERRA EL MEDIA QUERIE 1200*/
+
+
+.boton_editar{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: black;
+    background-color: rgb(237, 249, 67);
+    border-radius: 8px;
+    height: 48px;
+    width: 300px;
+    margin-left: 10px;
+
+}
