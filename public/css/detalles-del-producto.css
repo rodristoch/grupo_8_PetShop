@@ -760,3 +760,17 @@ button {
 /* --------------------------footer----------------------------------- */
 
 } /*ESTA LLAVE CIERRA EL MEDIA QUERIE 1200*/
+
+
+.boton_editar{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: black;
+    background-color: rgb(237, 249, 67);
+    border-radius: 8px;
+    height: 48px;
+    width: 300px;
+    margin-left: 10px;
+
+}

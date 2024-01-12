@@ -53,30 +53,36 @@
                         
                     <select name="cantidad">
                         <option value="valor">Seleccionar cantidad</option>
-                        <option value="valor">Value 1</option>
-                        <option value="valor2">Value 2</option>
-                        <option value="valor3">Value 3</option>
+                        <option value="valor">1</option>
+                        <option value="valor2">2</option>
+                        <option value="valor3">3</option>
                     </select>
 
                     <button type="submit">Agregar al carrito</button>
                 </form>
+
+                <a href="/productos/editar/<%= unProducto.id %>" class="boton_editar">
+                    <div class="boton_editar">
+                        EDITAR PRODUCTO
+                    </div>
+                </a>
+                <form action="/productos/eliminar/<%= unProducto.id %>?_method=DELETE" method="POST" style="display: inline-flex">
+                    <button type="submit" class="action-button delete">ELIMINAR</button>
+                </form>
+
             </div>
         </section>
         
         <section>
             <div class="descripcion">
             <p class="titulo-descripcion">Descripción del producto</p>
-                <p class="descripcion-producto">Lorem ipsum dolor sit amet consectetur adipisicing elit. 
-            Reiciendis, animi debitis voluptas voluptate aperiam quia asperiores, sed, et itaque alias optio beatae neque nihil earum excepturi voluptatibus assumenda! 
-            Eum, nisi. Lorem ipsum dolor sit amet consectetur adipisicing elit. 
-            Reiciendis, animi debitis voluptas voluptate aperiam quia asperiores, sed, et itaque alias optio beatae neque nihil earum excepturi voluptatibus assumenda! 
-            Eum, nisi. Lorem ipsum dolor sit amet consectetur adipisicing elit. 
-            Reiciendis, animi debitis voluptas voluptate aperiam quia asperiores, sed, et itaque alias optio beatae neque nihil earum excepturi voluptatibus assumenda! 
-            Eum, nisi.</p>
+                <p class="descripcion-producto"> <%= unProducto.description %></p>
          </div>
         </section> 
        
         
+
+
         <p class="titulo-relacionados">Productos relacionados</p>
         <section>    
         <div class="relacionados">
