@@ -124,7 +124,7 @@ input[type="radio"] {
 }
 .contenedor_menu_desktop {
     width: 24%;
-    border: 1px black solid;
+    border: 1px rgb(180, 180, 180) solid;
     border-radius: 8px;
     height: fit-content;
 }
@@ -135,7 +135,7 @@ input[type="radio"] {
 
 /* --- Lista productos desktop --- */
 .lista_desktop {
-    width: 70%;
+    width: 76%;
     margin: 12px auto;
 }
 
@@ -435,7 +435,9 @@ footer {
     .articulo-productos-descuentos {
         width: 30%;
     }
-
+    .contenedor_menu_productos_desktop {
+        display: none;
+    }
     /* --------------------------header----------------------------------- */
 
 
@@ -537,7 +539,7 @@ footer {
     .flex-enlinea {
         display: none;
     }
-    }
+   
     .boton-comprar {
         transition: 450ms;
     }
@@ -555,6 +557,12 @@ footer {
 
     .contenedor_menu_productos_desktop {
         display: block;
+        display: flex;
+    }
+
+    .contenedor_productos_mobile {
+        display: none;
+       
     }
 
 .flex-top {
@@ -593,3 +601,4 @@ footer {
     display: flex;
 }
 /* --------------------------footer----------------------------------- */
+ }
