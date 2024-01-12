@@ -114,15 +114,50 @@ input[type="radio"] {
     padding: 0 16px;
 }
 
+/* --- Menu Desktop --- */
+.contenedor_menu_productos_desktop {
+ display: flex;
+ flex-direction: row;
+ margin: auto;
+ width: 98%;
 
-/* --- Lista productos --- */
-.lista {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-around;
-    margin-top: 12px;
+}
+.contenedor_menu_desktop {
+    width: 24%;
+    border: 1px black solid;
+    border-radius: 8px;
+    height: fit-content;
+}
+.contenedor_filtros {
+    width: 85%;
+    margin: 12px auto;
 }
 
+/* --- Lista productos desktop --- */
+.lista_desktop {
+    width: 70%;
+    margin: 12px auto;
+}
+
+.lista_flexbox_desktop {
+    display: flex;
+    flex-wrap: wrap ;
+    justify-content: space-around;
+
+}
+
+/* --- Lista productos mobile --- */
+.lista {
+    width: 90%;
+    margin: 12px auto;
+}
+
+.lista_flexbox {
+    display: flex;
+    flex-wrap: wrap ;
+    justify-content: space-around;
+
+}
 /* --- Card producto --- */
 .articulo-productos-descuentos {
     width: 49%;
@@ -130,6 +165,10 @@ input[type="radio"] {
     border-radius: 5px;
     padding: 15px;
     margin-bottom: 15px;
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    flex-wrap: wrap;
 }
 .img-productos-descuentos {
     width: 90%;
@@ -166,6 +205,40 @@ input[type="radio"] {
     padding: 5px;
     text-align: center;
     margin: auto;
+}
+
+
+.contenedor_imagen {
+    padding-top: 12px;
+    display: flex;
+    align-items: flex-start;
+    justify-content:center;
+    background-color: white;
+    height: 140px;
+   overflow: hidden;
+}
+
+.contenedor_imagen .img-productos-descuentos {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.texto_nombre_arriba {
+    max-height: 38px; 
+    overflow: hidden;
+    text-overflow: ellipsis; 
+}
+.texto_descripcion_arriba {
+    max-height: 50px; 
+    overflow: hidden;
+    text-overflow: ellipsis; 
+}
+
+.texto_precio {
+    max-height: 15px; 
+    overflow: hidden;
+    text-overflow: ellipsis; 
 }
 /* --- Media Query --- */
 
@@ -327,9 +400,13 @@ footer {
     .cantidad-producto p {
         display: none;
     }
+    .contenedor_menu_productos_desktop {
+        display: none;
+    }
 }
+
 @media (min-width: 500px) {
-      
+ 
 }
 
 
@@ -356,7 +433,7 @@ footer {
         justify-content: space-between;
     }
     .articulo-productos-descuentos {
-        width: 28%;
+        width: 30%;
     }
 
     /* --------------------------header----------------------------------- */
@@ -473,14 +550,12 @@ footer {
     }
 
     .articulo-productos-descuentos {
-        width: 13%;
+        width: 22%;
     }
 
-    /* --------------- header ----------------------------------- */
-
-/* .top {
-    height: 15vh;
-} */
+    .contenedor_menu_productos_desktop {
+        display: block;
+    }
 
 .flex-top {
     height: 10%;
