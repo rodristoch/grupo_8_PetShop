@@ -8,12 +8,23 @@ const productsFilePath = path.join(__dirname, "../data/productosDataBase.json");
 
 
 const productController = {
+
+    index: (req, res) => {
+        const productos = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'));
+        res.render("productos" , {productos})
+    },
+
     detalle : (req, res) => {
-        res.render('detalles-del-producto.ejs'); 
+       
+        const productos = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'));
+        const unProducto = productos.find (producto => {
+            return producto.id =req.params.id
+        })
+       
+        res.render("detalles-del-producto.ejs", {unProducto}); 
     },
 
     categoriaPerro : (req, res) => {
-
         const productos = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'));
 
         //productos perros
