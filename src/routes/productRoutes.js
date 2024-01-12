@@ -44,7 +44,7 @@ router.get('/promociones/', productController.promociones)
 router.get('/marcas/', sitioMantenimiento, productController.marcas)
 
 // Mostrar pagina de producto (por id)
-router.get('/detalle/:id', productController.detalle) 
+router.get('/detalle/:id/', productController.detalle) 
 
 // Crear producto
 router.get('/alta', productController.alta);

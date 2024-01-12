@@ -18,9 +18,9 @@ const productController = {
        
         const productos = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'));
         const unProducto = productos.find (producto => {
-            return producto.id =req.params.id
+            return producto.id == req.params.id
         })
-       
+        console.log(unProducto)
         res.render("detalles-del-producto.ejs", {unProducto}); 
     },
 
