@@ -63,34 +63,108 @@
             </section>
         </article>
 
-        <!--  armar menú Filtro-->
 
-        <!-- Lista productos-->
-    
+        <!--  Menú desktop + productos-->
+        <section class="contenedor_menu_productos_desktop">
+            <!--  Filtros-->
+            <article class="contenedor_menu_desktop">
+                <div class="contenedor_filtros">
+                    <p>Acá van los filtros</p>
+                    <p>Acá van los filtros</p>
+                    <p>Acá van los filtros</p>
+                </div>
+            </article>
+
+             <!-- Lista productos productos-->
+            <div class="lista_desktop">
+                <div class="lista_flexbox_desktop">
+                    <% for(let accesorio of productosGato) { %>
+                        <article class="articulo-productos-descuentos">
+                            <a href="/productos/detalle">
+                                <div class="contenedor_imagen">
+                                    <img class="img-productos-descuentos" src="/img/productos/<%= accesorio.image %>" alt="imagen_producto">
+                                </div>
+                            </a>
+                            <div>
+                                <div class="texto_nombre_arriba">
+                                    <h4><%= accesorio.name %></h4>
+                                </div>
+                                <div class="texto_descripcion_arriba">
+                                    <p class="descripcion"><%= accesorio.description %></p>
+                                </div>
+                                <% if (accesorio.discount=="Si") { %>
+                                    
+                                    <div class="texto_precio">
+                                        <p class="precio-tachado">$ <%= accesorio.price %></p>
+                                    </div>
+                                
+                                    <div class="texto_precio">
+                                        <p class="descuento">20% off</p>
+                                    </div>
+                                    <div class="texto_precio">
+                                        <p class="precio"><%= Number((accesorio.price*0.8).toFixed(2)) %></p>
+                                    </div>
+                            
+                                <% } else { %>
+                                    <p class="precio">$ <%= accesorio.price %></p>
+                                <% } %>
+                                <div class="div-boton-comprar">
+                                    <button class="boton-comprar" type="submit">Agregar</button>
+                                </div>
+                            </div>
+                        </article>
+            
+                    <% } %>
+                </div>
+            </div>
+
+        </section>
+       
+        
+        <!-- Lista productos productos-->
+     <article class="contenedor_productos_mobile">
         <div class="lista">
-            <% for(let accesorio of productosGato) { %>
-
-                <article class="articulo-productos-descuentos">
-                    <a href="/productos/detalle"><img class="img-productos-descuentos" src="/img/productos/<%= accesorio.image %>" alt="imagen_producto"></a>
-                    <div class="descripcion-productos-descuentos">
-                        <h4><%= accesorio.name %></h4>
-                        <p class="descripcion"><%= accesorio.description %></p>
-                        <% if (accesorio.discount=="Si") { %>
-                            <p class="precio-tachado">$ <%= accesorio.price %></p>
-                            <p class="descuento">20% off</p>
-                            <p class="precio"><%= Number((accesorio.price*0.8).toFixed(2)) %></p>
-                        <% } else { %>
-                            <p class="precio">$ <%= accesorio.price %></p>
-                        <% } %>
-                        <div class="div-boton-comprar">
-                            <button class="boton-comprar" type="submit">Agregar</button>
+            <div class="lista_flexbox">
+                <% for(let accesorio of productosGato) { %>
+                    <article class="articulo-productos-descuentos">
+                        <a href="/productos/detalle">
+                            <div class="contenedor_imagen">
+                                <img class="img-productos-descuentos" src="/img/productos/<%= accesorio.image %>" alt="imagen_producto">
+                            </div>
+                        </a>
+                        <div>
+                            <div class="texto_nombre_arriba">
+                                <h4><%= accesorio.name %></h4>
+                            </div>
+                            <div class="texto_descripcion_arriba">
+                                <p class="descripcion"><%= accesorio.description %></p>
+                            </div>
+                            <% if (accesorio.discount=="Si") { %>
+                                
+                                <div class="texto_precio">
+                                    <p class="precio-tachado">$ <%= accesorio.price %></p>
+                                </div>
+                             
+                                <div class="texto_precio">
+                                    <p class="descuento">20% off</p>
+                                </div>
+                                <div class="texto_precio">
+                                    <p class="precio"><%= Number((accesorio.price*0.8).toFixed(2)) %></p>
+                                </div>
+                           
+                            <% } else { %>
+                                <p class="precio">$ <%= accesorio.price %></p>
+                            <% } %>
+                            <div class="div-boton-comprar">
+                                <button class="boton-comprar" type="submit">Agregar</button>
+                            </div>
                         </div>
-                    </div>
-                </article>
-
-            <% } %>
+                    </article>
+        
+                <% } %>
+            </div>
         </div>
-        <!-- Fin Lista productos-->
+     </article>   
     </main>
 
     <%- include("./partials/footer.ejs") %>
