@@ -117,7 +117,11 @@ const productController = {
 		//productos comida perros
 		const comidaPerro = productosPerro.filter(product => {return product.category == "Comida"});
 
-        res.render('comidaPerro.ejs', {comidaPerro});
+         //ID de producto
+         const unProducto = productos.find (producto => {
+            return producto.id == req.params.id
+        })
+        res.render('comidaPerro.ejs', {comidaPerro, unProducto});
     },
 
     comidaGato : (req, res) => {
@@ -130,7 +134,12 @@ const productController = {
 		//productos comida gatos
 		const comidaGato = productosGato.filter(product => {return product.category == "Comida"});
 
-        res.render('comidaGato.ejs', {comidaGato});
+        //ID de producto
+        const unProducto = productos.find (producto => {
+            return producto.id == req.params.id
+        })
+        
+        res.render('comidaGato.ejs', {comidaGato, unProducto});
     },
 
     accesoriosPerro : (req, res) => {
@@ -143,7 +152,11 @@ const productController = {
 		//productos accesorios perros
 		const accesoriosPerro = productosPerro.filter(product => {return product.category == "Accesorio"});
 
-        res.render('accesoriosPerro.ejs', {accesoriosPerro});
+        //ID de producto
+        const unProducto = productos.find (producto => {
+            return producto.id == req.params.id
+        })
+        res.render('accesoriosPerro.ejs', {accesoriosPerro, unProducto});
     },
 
     accesoriosGato : (req, res) => {
@@ -156,7 +169,12 @@ const productController = {
 		//productos accesorios gatos
 		const accesoriosGato = productosGato.filter(product => {return product.category == "Accesorio"});
 
-        res.render('accesoriosGato.ejs', {accesoriosGato});
+        //ID de producto
+        const unProducto = productos.find (producto => {
+            return producto.id == req.params.id
+        })
+
+        res.render('accesoriosGato.ejs', {accesoriosGato, unProducto});
     },
 
     higienePerro : (req, res) => {
@@ -168,8 +186,12 @@ const productController = {
 
 		//productos higiene perros
 		const higienePerro = productosPerro.filter(product => {return product.category == "Higiene"});
-
-        res.render('higienePerro.ejs', {higienePerro});
+       
+        //ID de producto
+        const unProducto = productos.find (producto => {
+            return producto.id == req.params.id
+        })
+        res.render('higienePerro.ejs', {higienePerro, unProducto});
     },
 
     higieneGato : (req, res) => {
@@ -182,7 +204,11 @@ const productController = {
 		//productos higiene gatos
 		const higieneGato = productosGato.filter(product => {return product.category == "Higiene"});
 
-        res.render('higieneGato.ejs', {higieneGato});
+        //ID de producto
+        const unProducto = productos.find (producto => {
+            return producto.id == req.params.id
+        })
+        res.render('higieneGato.ejs', {higieneGato, unProducto});
     },
 
     juguetesPerro : (req, res) => {
@@ -195,7 +221,12 @@ const productController = {
 		// juguetes perros
 		const juguetesPerro = productosPerro.filter(product => {return product.category == "Juguetes"});
 
-        res.render('juguetesPerro.ejs', {juguetesPerro});
+        //ID de producto
+        const unProducto = productos.find (producto => {
+            return producto.id == req.params.id
+        })
+
+        res.render('juguetesPerro.ejs', {juguetesPerro, unProducto});
     },
 
     juguetesGato : (req, res) => {
@@ -208,7 +239,12 @@ const productController = {
 		// juguetes gatos
 		const juguetesGato = productosGato.filter(product => {return product.category == "Juguetes"});
 
-        res.render('juguetesGato.ejs', {juguetesGato});
+        //ID de producto
+        const unProducto = productos.find (producto => {
+            return producto.id == req.params.id
+        })
+
+        res.render('juguetesGato.ejs', {juguetesGato, unProducto});
     },
 
     marcas: (req, res) => {
