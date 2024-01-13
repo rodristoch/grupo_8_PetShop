@@ -10,7 +10,10 @@ const usersFilePath = path.join(__dirname, '../data/usersDataBase.json');
 const userController = {
     
     login : (req, res) => {
-        res.render('login.ejs');
+        //usuario q se loguea
+        const usuario = req.session.userLogueado
+
+        res.render('login.ejs', {usuario});
     },
 
     processLogin: (req, res) => {
@@ -67,16 +70,23 @@ const userController = {
     },
 
     carrito : (req, res) => {
-        res.render('carrito.ejs');
+
+        //usuario q se loguea
+        const usuario = req.session.userLogueado
+
+        res.render('carrito.ejs', usuario);
     },
 
     carrito2 : (req, res) => {
+        //usuario q se loguea
+        const usuario = req.session.userLogueado
+
         const productsFilePath = path.join(__dirname, '../data/productosDataBase.json');
         const productos = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'));
         const productosPerro = productos.filter(product => {return product.id_pet == "Perro"});
         const productosPerroConDescuento = productosPerro.filter(product => {return product.discount == "Si"});
 
-        res.render('carrito2.ejs', {productosPerroConDescuento});
+        res.render('carrito2.ejs', {productosPerroConDescuento, usuario});
     },
 
     register: (req, res) => {
@@ -123,13 +133,16 @@ const userController = {
 
     edit: (req, res) => {
 
+        //usuario q se loguea
+        const usuario = req.session.userLogueado
+
         //traigo los usuarios
         const users = JSON.parse(fs.readFileSync(usersFilePath, 'utf-8'));
 
         //busco al usuario a editar por id
 		const userToEdit = users.find(user => {return user.id == req.params.id})
 		
-		res.render("edit-user", {userToEdit});
+		res.render("edit-user", {userToEdit, usuario});
 	},
         
 

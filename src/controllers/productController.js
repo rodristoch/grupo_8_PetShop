@@ -10,17 +10,22 @@ const productsFilePath = path.join(__dirname, "../data/productosDataBase.json");
 const productController = {
 
     index: (req, res) => {
+        //usuario q se loguea
+        const usuario = req.session.userLogueado
+
         const productos = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'));
-        res.render("productos" , {productos})
+        res.render("productos" , {productos, usuario})
     },
 
     detalle : (req, res) => {
+        //usuario q se loguea
+        const usuario = req.session.userLogueado
        
         const productos = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'));
         const unProducto = productos.find (producto => {
             return producto.id == req.params.id
         })
-        res.render("detalles-del-producto.ejs", {unProducto}); 
+        res.render("detalles-del-producto.ejs", {unProducto, usuario}); 
     },
 
     categoriaPerro : (req, res) => {
@@ -33,7 +38,11 @@ const productController = {
          const unProducto = productos.find (producto => {
             return producto.id == req.params.id
         })
-        res.render('categoria-perro.ejs', {productosPerro, unProducto});
+
+        //usuario q se loguea
+        const usuario = req.session.userLogueado
+
+        res.render('categoria-perro.ejs', {productosPerro, unProducto, usuario});
     },
 
     categoriaGato : (req, res) => {
@@ -48,10 +57,16 @@ const productController = {
             return producto.id == req.params.id
         })
 
-        res.render('categoria-gato.ejs', {productosGato, unProducto});
+        //usuario q se loguea
+        const usuario = req.session.userLogueado
+
+        res.render('categoria-gato.ejs', {productosGato, unProducto, usuario});
     },
 
     promociones : (req, res) => {
+
+        //usuario q se loguea
+        const usuario = req.session.userLogueado
 
         const productos = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'));
 
@@ -69,10 +84,13 @@ const productController = {
          const unProducto = productos.find (producto => {
             return producto.id == req.params.id
         })
-        res.render('promociones.ejs', {productosPerroConDescuento, productosGatoConDescuento, unProducto});
+        res.render('promociones.ejs', {productosPerroConDescuento, productosGatoConDescuento, unProducto, usuario});
     },
 
     promocionesPerro : (req, res) => {
+
+        //usuario q se loguea
+        const usuario = req.session.userLogueado
 
         const productos = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'));
 
@@ -87,10 +105,13 @@ const productController = {
             return producto.id == req.params.id
         })
 
-        res.render('promociones-perro.ejs', {productosPerroConDescuento, unProducto});
+        res.render('promociones-perro.ejs', {productosPerroConDescuento, unProducto, usuario});
     },
 
     promocionesGato : (req, res) => {
+
+        //usuario q se loguea
+        const usuario = req.session.userLogueado
 
         const productos = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'));
 
@@ -104,10 +125,13 @@ const productController = {
         const unProducto = productos.find (producto => {
             return producto.id == req.params.id
         })
-        res.render('promociones-gato.ejs', {productosGatoConDescuento, unProducto});
+        res.render('promociones-gato.ejs', {productosGatoConDescuento, unProducto, usuario});
     },
 
     comidaPerro : (req, res) => {
+
+        //usuario q se loguea
+        const usuario = req.session.userLogueado
 
         const productos = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'));
 
@@ -121,10 +145,13 @@ const productController = {
          const unProducto = productos.find (producto => {
             return producto.id == req.params.id
         })
-        res.render('comidaPerro.ejs', {comidaPerro, unProducto});
+        res.render('comidaPerro.ejs', {comidaPerro, unProducto, usuario});
     },
 
     comidaGato : (req, res) => {
+
+        //usuario q se loguea
+        const usuario = req.session.userLogueado
 
         const productos = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'));
 
@@ -139,10 +166,13 @@ const productController = {
             return producto.id == req.params.id
         })
         
-        res.render('comidaGato.ejs', {comidaGato, unProducto});
+        res.render('comidaGato.ejs', {comidaGato, unProducto, usuario});
     },
 
     accesoriosPerro : (req, res) => {
+
+        //usuario q se loguea
+        const usuario = req.session.userLogueado
 
         const productos = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'));
 
@@ -156,10 +186,13 @@ const productController = {
         const unProducto = productos.find (producto => {
             return producto.id == req.params.id
         })
-        res.render('accesoriosPerro.ejs', {accesoriosPerro, unProducto});
+        res.render('accesoriosPerro.ejs', {accesoriosPerro, unProducto, usuario});
     },
 
     accesoriosGato : (req, res) => {
+
+        //usuario q se loguea
+        const usuario = req.session.userLogueado
 
         const productos = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'));
 
@@ -174,10 +207,13 @@ const productController = {
             return producto.id == req.params.id
         })
 
-        res.render('accesoriosGato.ejs', {accesoriosGato, unProducto});
+        res.render('accesoriosGato.ejs', {accesoriosGato, unProducto, usuario});
     },
 
     higienePerro : (req, res) => {
+
+        //usuario q se loguea
+        const usuario = req.session.userLogueado
 
         const productos = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'));
 
@@ -191,10 +227,13 @@ const productController = {
         const unProducto = productos.find (producto => {
             return producto.id == req.params.id
         })
-        res.render('higienePerro.ejs', {higienePerro, unProducto});
+        res.render('higienePerro.ejs', {higienePerro, unProducto, usuario});
     },
 
     higieneGato : (req, res) => {
+
+        //usuario q se loguea
+        const usuario = req.session.userLogueado
 
         const productos = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'));
 
@@ -208,10 +247,13 @@ const productController = {
         const unProducto = productos.find (producto => {
             return producto.id == req.params.id
         })
-        res.render('higieneGato.ejs', {higieneGato, unProducto});
+        res.render('higieneGato.ejs', {higieneGato, unProducto, usuario});
     },
 
     juguetesPerro : (req, res) => {
+
+        //usuario q se loguea
+        const usuario = req.session.userLogueado
 
         const productos = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'));
 
@@ -226,10 +268,13 @@ const productController = {
             return producto.id == req.params.id
         })
 
-        res.render('juguetesPerro.ejs', {juguetesPerro, unProducto});
+        res.render('juguetesPerro.ejs', {juguetesPerro, unProducto, usuario});
     },
 
     juguetesGato : (req, res) => {
+
+        //usuario q se loguea
+        const usuario = req.session.userLogueado
 
         const productos = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'));
 
@@ -244,7 +289,7 @@ const productController = {
             return producto.id == req.params.id
         })
 
-        res.render('juguetesGato.ejs', {juguetesGato, unProducto});
+        res.render('juguetesGato.ejs', {juguetesGato, unProducto, usuario});
     },
 
     marcas: (req, res) => {
@@ -291,6 +336,9 @@ const productController = {
 
     editar : (req, res) => {
 
+        //usuario q se loguea
+        const usuario = req.session.userLogueado
+
         // Json con todos los productos
         let productos = JSON.parse(fs.readFileSync(productsFilePath, "utf-8"));
 
@@ -299,7 +347,7 @@ const productController = {
             return producto.id == req.params.id
         })
 
-        res.render('editar-producto.ejs', {editarProducto});
+        res.render('editar-producto.ejs', {editarProducto, usuario});
     },
 
     editarProducto: (req, res) => {

@@ -29,7 +29,10 @@ const mainController = {
         //productos con descuentos de gatos
 		const productosGatoConDescuento = productosGato.filter(product => {return product.discount == "Si"});
 
-		res.render("index.ejs", {productosPerro, productosGato, productosPerroAccesorios, productosGatoAccesorios, productosPerroConDescuento, productosGatoConDescuento});
+        //usuario q se loguea
+        const usuario = req.session.userLogueado
+
+		res.render("index.ejs", {productosPerro, productosGato, productosPerroAccesorios, productosGatoAccesorios, productosPerroConDescuento, productosGatoConDescuento, usuario});
         
 	}
 }
