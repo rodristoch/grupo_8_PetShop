@@ -3,6 +3,7 @@ const express = require('express');
 const router = express.Router();
 const path = require("path")
 const {body} = require("express-validator");
+const authMiddleware = require('../middlewares/authMiddleware.js');
 
 // ************ User Require ************
 const userController = require('../controllers/userController.js'); // requerimos el controlador que queremos usar. 
@@ -26,7 +27,7 @@ router.get("/register", userController.register)
 router.post("/register", validaciones, userController.processRegister);
 
 // Editar un usuario
-router.get("/edit/:id", userController.edit);
+router.get("/edit/:id", authMiddleware, userController.edit);
 router.put("/edit/:id", validaciones, userController.processEdit);
 
 //Login
@@ -37,7 +38,17 @@ router.post("/login", validacionesLogin, userController.processLogin);
 router.get("/carrito", userController.carrito) 
 
 //Carrito 2 
-router.get("/carrito2", userController.carrito2) 
+router.get("/carrito2", userController.carrito2)
+
+//Chequear si estamos logueados
+
+router.get("/check", function(req, res){
+    if(req.session.userLogueado == undefined){
+        res.send("No estas logueado")
+    } else {
+        res.send("El usuario logueado es " + req.session.userLogueado.email)
+    }
+});
 
 
 module.exports = router; 
