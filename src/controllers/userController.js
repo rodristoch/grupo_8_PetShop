@@ -21,7 +21,7 @@ const userController = {
         if(validationResults.errors.length > 0){ //si hubo errores de validacion
 
             //renderizo la vista y le mando la info q llega del formulario con los errores
-            res.render("login", {errors: validationResults.mapped()});
+            res.render("login", {errors: validationResults.mapped(), oldData: req.body});
 
         } else { //si no hubo errores de validacion
 
@@ -61,6 +61,7 @@ const userController = {
             }
 
             res.redirect("/")
+            
 
         }
     },

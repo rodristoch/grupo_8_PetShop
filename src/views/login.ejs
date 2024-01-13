@@ -20,9 +20,19 @@
                         <h2> Bienvenido/a a Patitas</h2>
                     </article>
 
+                    <div>
+                        <% if(locals.errors){ %> 
+        
+                            <% for(let error in errors) { %>
+                                <p style="color: red; font-size: 16px;" > <%= errors[error].msg %> </p> 
+                            <% } %>
+                            
+                        <% } %>
+                    </div>
+
                     <!--Input email-->
                     <p class="titulo">Email</p>
-                    <input type="email" name="email" id="email" placeholder="Ingresa tu mail para el registro" class="input1">
+                    <input type="email" name="email" id="email" placeholder="Ingresa tu mail para el registro" class="input1" value="<%= locals.oldData ? oldData.email : null %>">
                     <label for="email" class="error">El email ingresado no es válido</label>
 
                     <!--Input contraseña-->
