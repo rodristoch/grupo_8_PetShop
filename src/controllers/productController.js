@@ -20,7 +20,6 @@ const productController = {
         const unProducto = productos.find (producto => {
             return producto.id == req.params.id
         })
-        console.log(unProducto)
         res.render("detalles-del-producto.ejs", {unProducto}); 
     },
 
