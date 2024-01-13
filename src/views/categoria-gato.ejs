@@ -80,7 +80,7 @@
                 <div class="lista_flexbox_desktop">
                     <% for(let accesorio of productosGato) { %>
                         <article class="articulo-productos-descuentos">
-                            <a href="/productos/detalle">
+                            <a href="/productos/detalle/<%= accesorio.id %>">
                                 <div class="contenedor_imagen">
                                     <img class="img-productos-descuentos" src="/img/productos/<%= accesorio.image %>" alt="imagen_producto">
                                 </div>

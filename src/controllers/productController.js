@@ -29,7 +29,11 @@ const productController = {
         //productos perros
         const productosPerro = productos.filter(product => {return product.id_pet == "Perro"});
 
-        res.render('categoria-perro.ejs', {productosPerro});
+         //ID de producto
+         const unProducto = productos.find (producto => {
+            return producto.id == req.params.id
+        })
+        res.render('categoria-perro.ejs', {productosPerro, unProducto});
     },
 
     categoriaGato : (req, res) => {
@@ -39,7 +43,12 @@ const productController = {
         //productos gatos
         const productosGato = productos.filter(product => {return product.id_pet == "Gato"});
 
-        res.render('categoria-gato.ejs', {productosGato});
+        //ID de producto
+        const unProducto = productos.find (producto => {
+            return producto.id == req.params.id
+        })
+
+        res.render('categoria-gato.ejs', {productosGato, unProducto});
     },
 
     promociones : (req, res) => {
@@ -56,7 +65,11 @@ const productController = {
 		//productos con descuentos de gatos
 		const productosGatoConDescuento = productosGato.filter(product => {return product.discount == "Si"});
 
-        res.render('promociones.ejs', {productosPerroConDescuento, productosGatoConDescuento});
+         //ID de producto
+         const unProducto = productos.find (producto => {
+            return producto.id == req.params.id
+        })
+        res.render('promociones.ejs', {productosPerroConDescuento, productosGatoConDescuento, unProducto});
     },
 
     promocionesPerro : (req, res) => {
@@ -69,8 +82,12 @@ const productController = {
         //productos con descuentos de perros
         const productosPerroConDescuento = productosPerro.filter(product => {return product.discount == "Si"});
 		
+        //ID de producto
+        const unProducto = productos.find (producto => {
+            return producto.id == req.params.id
+        })
 
-        res.render('promociones-perro.ejs', {productosPerroConDescuento});
+        res.render('promociones-perro.ejs', {productosPerroConDescuento, unProducto});
     },
 
     promocionesGato : (req, res) => {
@@ -83,7 +100,11 @@ const productController = {
 		//productos con descuentos de gatos
 		const productosGatoConDescuento = productosGato.filter(product => {return product.discount == "Si"});
 
-        res.render('promociones-gato.ejs', {productosGatoConDescuento});
+        //ID de producto
+        const unProducto = productos.find (producto => {
+            return producto.id == req.params.id
+        })
+        res.render('promociones-gato.ejs', {productosGatoConDescuento, unProducto});
     },
 
     comidaPerro : (req, res) => {

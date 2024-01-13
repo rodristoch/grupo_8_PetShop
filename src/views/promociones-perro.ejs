@@ -74,7 +74,7 @@
             <% for(let accesorio of productosPerroConDescuento) { %>
 
                 <article class="articulo-productos-descuentos">
-                    <a href="/productos/detalle"><img class="img-productos-descuentos" src="/img/productos/<%= accesorio.image %>" alt="imagen_producto"></a>
+                    <a href="/productos/detalle/<%= accesorio.id %>"><img class="img-productos-descuentos" src="/img/productos/<%= accesorio.image %>" alt="imagen_producto"></a>
                     <div class="descripcion-productos-descuentos">
                         <h4><%= accesorio.name %></h4>
                         <p class="descripcion"><%= accesorio.description %></p>
