@@ -13,6 +13,58 @@ const userController = {
         res.render('login.ejs');
     },
 
+    processLogin: (req, res) => {
+
+        //Validaciones con la info del request
+        const validationResults = validationResult(req); 
+
+        if(validationResults.errors.length > 0){ //si hubo errores de validacion
+
+            //renderizo la vista y le mando la info q llega del formulario con los errores
+            res.render("login", {errors: validationResults.mapped()});
+
+        } else { //si no hubo errores de validacion
+
+            //traigo los usuarios
+            const users = JSON.parse(fs.readFileSync(usersFilePath, 'utf-8'));
+
+            let userALoguearse
+
+            for(let i=0; i < users.length; i++){  //recorremos todos los usuarios
+
+                if(users[i].email == req.body.email){  //preguntamos si el email de ese usuario (el de la posicion i) es igual al email que está poniendo en el campo
+
+                    if(bcrypt.compareSync(req.body.password, users[i].password)){  //y si al comparar si la contraseña de ese usuario (el de la posicion i) es igual a la que está poniendo en el campo
+
+                        userALoguearse = users[i]  //el usuario q se loguea es el q matchea en la posicion i (lo encontró)
+
+                        break;
+                    }
+
+                }
+                      
+            }
+
+            if(userALoguearse == undefined){  //si no encontró al usuario le manda el mensaje de credenciales invalidas
+
+                return res.render("login", {errors: [{msg: "Credenciales invalidas"}]});  
+            
+            } 
+
+            req.session.userLogueado = userALoguearse;  //si encontró al usuario lo guardo en session
+
+            if(req.body.checkbox){ //si el checkbox de recordarme es distinto de undefined (quiere decir si está tildado)
+
+                res.cookie("recordarme", userALoguearse.email, {maxAge: 900000}) 
+                //creamos la cookie recordarme con el valor del email del userALoguearse y una duracion de la cookie de 60seg
+
+            }
+
+            res.redirect("/")
+
+        }
+    },
+
     carrito : (req, res) => {
         res.render('carrito.ejs');
     },

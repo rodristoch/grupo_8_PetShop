@@ -15,6 +15,11 @@ const validaciones = [
     body("password").notEmpty().withMessage("Debes completar con una contraseña").bail().isLength({min: 5}).withMessage("La constraseña debe tener un min de 5 caracteres")
 ]
 
+const validacionesLogin = [
+    body("email").notEmpty().withMessage("Debes completar un email").bail().isEmail().withMessage("El email debe ser valido"),
+    body("password").notEmpty().withMessage("Debes completar con una contraseña").bail().isLength({min: 5}).withMessage("La constraseña debe tener un min de 5 caracteres")
+]
+
 
 // Crear un usuario
 router.get("/register", userController.register) 
@@ -26,6 +31,7 @@ router.put("/edit/:id", validaciones, userController.processEdit);
 
 //Login
 router.get("/login", userController.login) 
+router.post("/login", validacionesLogin, userController.processLogin);
 
 //Carrito
 router.get("/carrito", userController.carrito) 
