@@ -43,7 +43,7 @@ a {
 }
 
 .img-productos-descuentos {
-    width: 100vw;
+    width: 90vw;
 }
 
 button {
@@ -78,6 +78,22 @@ button:hover {
     margin-top: 50px;
     text-align: center;
     margin-bottom: 20px;
+}
+
+.section-productos-descuentos {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.articulo-productos-descuentos {
+    width: 100%;
+    border: 1px solid rgb(129, 129, 129);
+    border-radius: 5px;
+    padding: 15px;
+    margin-bottom: 15px;
+    display: flex;
+    flex-wrap: wrap;
 }
 
 /* --------------------------------------------- tablet ----------------------------------------------------------------- */
