@@ -38,7 +38,7 @@ router.post("/login", validacionesLogin, userController.processLogin);
 router.get("/carrito", userController.carrito) 
 
 //Carrito 2 
-router.get("/carrito2", authMiddleware, userController.carrito2)
+router.get("/carrito2", /* authMiddleware */ userController.carrito2)
 
 //Chequear si estamos logueados
 

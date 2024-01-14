@@ -96,6 +96,9 @@ button:hover {
     flex-wrap: wrap;
 }
 
+.descripcion-productos-descuentos {
+    text-align: center;
+}
 /* --------------------------------------------- tablet ----------------------------------------------------------------- */
 
 @media (min-width: 768px) {
