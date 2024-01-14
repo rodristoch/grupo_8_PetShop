@@ -18,13 +18,16 @@ const userController = {
 
     processLogin: (req, res) => {
 
+        //usuario q se loguea
+        const usuario = req.session.userLogueado
+
         //Validaciones con la info del request
         const validationResults = validationResult(req); 
 
         if(validationResults.errors.length > 0){ //si hubo errores de validacion
 
             //renderizo la vista y le mando la info q llega del formulario con los errores
-            res.render("login", {errors: validationResults.mapped(), oldData: req.body});
+            res.render("login", {errors: validationResults.mapped(), oldData: req.body, usuario});
 
         } else { //si no hubo errores de validacion
 
@@ -97,6 +100,9 @@ const userController = {
 
     processRegister: (req, res) => {
 
+        //usuario q se loguea
+        const usuario = req.session.userLogueado
+
         //traigo los usuarios
         const users = JSON.parse(fs.readFileSync(usersFilePath, 'utf-8'));
 
@@ -116,7 +122,7 @@ const userController = {
         if(validationResults.errors.length > 0){ //si hubo errores de validacion
 
             //renderizo la vista y le mando la info q llega del formulario con los errores y la info bien completada
-            res.render("register", {errors: validationResults.mapped(), oldData: req.body});
+            res.render("register", {errors: validationResults.mapped(), oldData: req.body, usuario});
 
         } else {  //si no hubo errores de validacion
 
@@ -127,7 +133,7 @@ const userController = {
 		    fs.writeFileSync(usersFilePath, JSON.stringify(users, null, " "));
 
             //renderizo la vista con la info bien
-            res.render("register", {oldData: req.body});
+            res.render("register", {oldData: req.body, usuario});
         }
 
     },
@@ -149,6 +155,9 @@ const userController = {
         
 
     processEdit: (req, res) => {
+
+        //usuario q se loguea
+        const usuario = req.session.userLogueado
 
         //traigo los usuarios
         const users = JSON.parse(fs.readFileSync(usersFilePath, 'utf-8'));
@@ -175,7 +184,7 @@ const userController = {
         if(validationResults.errors.length > 0){ //si hubo errores de validacion
  
             //renderizo la vista y le mando la info q llega del formulario con los errores y la info bien completada
-            res.render("edit-user", {errors: validationResults.mapped(), userToEdit: req.body});
+            res.render("edit-user", {errors: validationResults.mapped(), userToEdit: req.body, usuario});
 
         } else {
 
