@@ -298,7 +298,11 @@ const productController = {
     },
 
     alta : (req, res) => {
-        res.render('alta-producto.ejs');
+
+        //usuario q se loguea
+        const usuario = req.session.userLogueado
+
+        res.render('alta-producto.ejs', {usuario});
     },
 
     crearProducto: (req, res) => {
