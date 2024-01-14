@@ -92,7 +92,7 @@ const userController = {
         //usuario q se loguea
         const usuario = req.session.userLogueado
 
-        res.render("register", {usuario});
+        res.render("register.ejs", {usuario});
     },
 
     processRegister: (req, res) => {
