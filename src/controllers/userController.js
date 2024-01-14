@@ -40,7 +40,6 @@ const userController = {
                     if(bcrypt.compareSync(req.body.password, users[i].password)){  //y si al comparar si la contraseña de ese usuario (el de la posicion i) es igual a la que está poniendo en el campo
 
                         userALoguearse = users[i]  //el usuario q se loguea es el q matchea en la posicion i (lo encontró)
-
                         break;
                     }
 
@@ -90,7 +89,10 @@ const userController = {
     },
 
     register: (req, res) => {
-        res.render("register");
+        //usuario q se loguea
+        const usuario = req.session.userLogueado
+
+        res.render("register", {usuario});
     },
 
     processRegister: (req, res) => {
