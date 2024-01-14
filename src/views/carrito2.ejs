@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
     <%- include("./partials/head.ejs", {cssSheet: "carrito2", title: "Carrito de compras"}) %>
+    <link rel="stylesheet" href="/css/index_styles.css">
 <body>
     
     <%- include("./partials/header.ejs") %>
@@ -46,31 +47,36 @@
     </div>
 
     <section class="section-productos-descuentos">
-    <h2>Productos con descuentos</h2>
-    <div class="div-section-productos-descuentos">
-        <% for(let accesorio of productosPerroConDescuento) { %>
-
-            <article class="articulo-productos-descuentos">
-                <a href="/productos/detalle">
-                    <div class="contenedor_imagen">
-                        <img class="img-productos-descuentos" src="/img/productos/<%= accesorio.image %>" alt="imagen_producto">
+        <h2>Productos con descuentos</h2>
+        <div class="div-section-productos-descuentos">
+            <% productosPerroConDescuento.forEach(producto => {%>
+                <article class="articulo-productos-descuentos">
+                    <a href="/productos/detalle/<%= producto.id %>">
+                        <div class="contenedor_imagen">
+                            <img class="img-productos-descuentos" src="/img/productos/<%= producto.image %>" alt="imagen_producto">
+                        </div>
+                    </a>
+                    <div>
+                        <div class="texto_nombre_arriba">
+                            <h4><%= producto.name %></h4>
+                        </div>
+                        
+                        <div class="texto_descripcion_arriba">
+                            <p class="descripcion"><%= producto.description %></p>
+                        </div>
+                        <p class="precio-tachado">$ <%= producto.price %></p>
+                        <p class="descuento">20% off</p>
+                        <p class="precio"><%= Number((producto.price*0.8).toFixed(2)) %></p>
+                        <div class="div-boton-comprar">
+                            <button class="boton-comprar" type="submit">Agregar</button>
+                        </div>
                     </div>
-                </a>
-                <div class="descripcion-productos-descuentos">
-                    <h4><%= accesorio.name %></h4>
-                    <p class="descripcion"><%= accesorio.description %></p>
-                    <p class="precio-tachado">$ <%= accesorio.price %></p>
-                    <p class="descuento">20% off</p>
-                    <p class="precio"><%= accesorio.price*0.8 %></p>
-                    <div class="div-boton-comprar">
-                        <button class="boton-comprar" type="submit">Agregar</button>
-                    </div>
-                </div>
-            </article>
 
-        <% } %>
-
-    </div>
+                </article>
+                <%})%>
+           
+        </div>
+    </section>
 </main>
 
     <%- include("./partials/footer.ejs") %>
