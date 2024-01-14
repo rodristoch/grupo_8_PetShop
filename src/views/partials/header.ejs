@@ -25,12 +25,14 @@
        </form>
        <div class="opciones-top">
 
-            <div class="crear-producto">
-                <a href="/productos/alta">
-                <i class="fa-solid fa-plus" style="color: #ffffff;"></i>
-                <p>Crear Producto</p>
-                </a>
-            </div>
+            <% if(usuario && usuario.category == "Administrador"){ %>
+                <div class="crear-producto">
+                    <a href="/productos/alta">
+                    <i class="fa-solid fa-plus" style="color: #ffffff;"></i>
+                    <p>Crear Producto</p>
+                    </a>
+                </div>
+            <% } %>
 
            <div class="mis-compras">
                <a href="/users/login">
