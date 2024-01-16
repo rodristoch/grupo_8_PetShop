@@ -133,7 +133,7 @@ const userController = {
 		    fs.writeFileSync(usersFilePath, JSON.stringify(users, null, " "));
 
             //renderizo la vista con la info bien
-            res.render("register", {oldData: req.body, usuario});
+            res.redirect("/users/login");
         }
 
     },
