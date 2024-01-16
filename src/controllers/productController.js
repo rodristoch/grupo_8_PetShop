@@ -20,7 +20,7 @@ const productController = {
     detalle : (req, res) => {
         //usuario q se loguea
         const usuario = req.session.userLogueado
-       
+       console.log(usuario)
         const productos = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'));
         const unProducto = productos.find (producto => {
             return producto.id == req.params.id

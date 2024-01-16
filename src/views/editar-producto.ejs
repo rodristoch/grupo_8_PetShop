@@ -7,9 +7,9 @@
 <%- include("./partials/header.ejs") %>    
 <%- include("./partials/header2.ejs") %>
 <main>
-    <h3>Vas a editar: <%=editarProducto.name %></h3>
+    <h3>Vas a editar: <%= editarProducto.name %></h3>
     <article class="contenedor-alta">
-        <form action="/productos/editar <%= editarProducto.id %>?_method=PUT" method="POST" enctype="multipart/form-data">
+        <form action="/productos/editar/<%= editarProducto.id %>?_method=PUT" method="POST" enctype="multipart/form-data">
 
             <section class="flex-linea">
                 <div class="flex-columna">
