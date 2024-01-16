@@ -12,12 +12,28 @@ body {
 * {
   box-sizing: border-box;
 }
+h4 {
+    margin-top: 12px;
+    margin-bottom: 0px;
+}
 
 .flex-enlinea {
     margin-top: 16px;
     display: flex;
     align-items: center;
     justify-content: space-around;
+}
+
+.flex_enlinea_menu {
+    display: flex;
+    padding-left: 12px;
+    margin-bottom: -20px; 
+}
+
+/* --- cantidad productos --- */
+.cantidad_productos {
+    margin-left: 24px;
+    margin-top: 40px;
 }
 
 /* --- botones iconos --- */
@@ -131,6 +147,13 @@ input[type="radio"] {
 .contenedor_filtros {
     width: 85%;
     margin: 12px auto;
+}
+
+.lista_filtros_desktop {
+    margin-top: 12px;
+    margin-bottom: 22px;
+    display: flex;
+    flex-direction: column;
 }
 
 /* --- Lista productos desktop --- */
