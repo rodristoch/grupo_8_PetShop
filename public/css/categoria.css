@@ -255,7 +255,7 @@ input[type="radio"] {
 }
 
 .texto_nombre_arriba {
-    max-height: 38px; 
+    max-height: 50px; 
     overflow: hidden;
     text-overflow: ellipsis; 
 }
