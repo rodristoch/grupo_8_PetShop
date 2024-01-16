@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+    <%- include("./partials/head.ejs", {cssSheet: "registerLogin_style", title: "Página Register"}) %>
+<body>
+
+    <%- include("./partials/header.ejs") %>
+    
+    <%- include("./partials/header2.ejs") %>
+
+    <main>
+        
+        <article class="contenedor">
+            <!--Imagen hardcodeada-->
+                <img src="/img/Imagen_register.png" alt="Imagen de perro y gato" class="tamano-imagen">
+            <!--Registro-->
+            <form class="formulario" action="/users/edit/<%= userToEdit.id %>?_method=PUT" method="POST">
+                <div class="centrado">
+                    <h2>Edita tus datos</h2>
+
+                    <div>
+                        <!-- para mostrar los datos -->
+                        <% if(locals.userToEdit){ %>
+            
+                            <h3 style="color: blue; font-size: 16px;" >Bienvenido: <%= userToEdit.nombre %> <%= userToEdit.apellido %></h3>
+                            <h3 style="color: blue; font-size: 16px;" >Tu email es <%= userToEdit.email %></h3>
+            
+                        <% } %>
+
+                        <!-- para mostrar los errores si hubo -->
+                        <% if(locals.errors){ %> 
+            
+                            <% for(let error in errors) { %>
+                                <p style="color: red; font-size: 16px;" > <%= errors[error].msg %> </p> 
+                            <% } %>
+                            
+                        <% } %>
+            
+                    </div>
+                    
+                    <!--Input Nombre-->
+                    <p class="titulo">Nombre:</p>
+                    <input type="text" name="nombre" id="nombre" placeholder="Ingresa tu nombre" value="<%= userToEdit.nombre %>">
+                    <label for="nombre" class="error">Debes ingresar mas de 4 letras</label>
+
+                     <!--Input Apellido-->
+                     <p class="titulo">Apellido</p>
+                     <input type="text" name="apellido" id="apellido" placeholder="Ingresa tu apellido" value="<%= userToEdit.apellido %>">
+                     <label for="nombre" class="error">Debes ingresar mas de 4 letras</label>
+                    
+                    <!--Input email-->
+                    <p class="titulo">Email</p>
+                    <input type="email" name="email" id="email" placeholder="Ingresa tu mail para el registro" class="input1" value="<%= userToEdit.email %>">
+                    <label for="email" class="error">El email ingresado no es válido</label>
+
+                    <!--Input contraseña-->
+                    <p class="titulo">Contraseña</p>
+                    <input type="password" name="password" id="password" placeholder="Ingresa una contraseña" class="input1" value="<%= userToEdit.password %>">
+                    <label for="password" class="error">La contraseña ingresada debe tener mas de 8 caracteres</label>
+
+                     <!--Input -->
+                    <p class="titulo">Reingresar contraseña</p>
+                    <input type="password" name="passwordrepeat" id="password" placeholder="Reingresa la contraseña" class="input1" value="<%= userToEdit.passwordrepeat %>">
+                    <label for="password" class="error">La contraseña debe coincidir con la ingresada antes</label>
+
+                    <button type="submit">Guardar cambios</button>
+
+
+                </div>
+            </form>
+        </article>
+
+    </main>
+
+    <%- include("./partials/footer.ejs") %>
+    
+</body>
+</html>
