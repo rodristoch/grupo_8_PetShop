@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+    <%- include("./partials/head.ejs", {cssSheet: "registerLogin_style", title: "Página Register"}) %>
+<body>
+
+    <%- include("./partials/header.ejs") %>
+    
+    <%- include("./partials/header2.ejs") %>
+
+    <main>
+        
+        <article class="contenedor">
+            <!--Imagen hardcodeada-->
+                <img src="/img/Imagen_register.png" alt="Imagen de perro y gato" class="tamano-imagen">
+            <!--Registro-->
+            <form class="formulario" action="/users/register" method="POST">
+                <div class="centrado">
+                    <h2>Crea tu cuenta Patitas</h2>
+
+                    <div>
+
+                        <!-- para mostrar los errores si hubo -->
+                        <% if(locals.errors){ %> 
+            
+                            <% for(let error in errors) { %>
+                                <p style="color: red; font-size: 16px;" > <%= errors[error].msg %> </p> 
+                            <% } %>
+        
+                        <% } else { %>
+
+                            <!-- para mostrar los datos ingresados si hubo -->
+                            <% if(locals.oldData){ %>
+                                <h3 style="color: blue; font-size: 16px;" >Hola <%= oldData.nombre %> <%= oldData.apellido%></h3>
+                                <h3 style="color: blue; font-size: 16px;" >Te registraste con el email <%= oldData.email %></h3>
+                            <% } %>
+            
+                        <% } %>
+                        
+                        
+                    </div>
+                    
+                    <!--Input Nombre-->
+                    <p class="titulo">Nombre:</p>
+                    <input type="text" name="nombre" id="nombre" placeholder="Ingresa tu nombre" value="<%= locals.oldData ? oldData.nombre : null %>">
+                    <label for="nombre" class="error">Debes ingresar mas de 4 letras</label>
+                    
+
+                     <!--Input Apellido-->
+                     <p class="titulo">Apellido</p>
+                     <input type="text" name="apellido" id="apellido" placeholder="Ingresa tu apellido" value="<%= locals.oldData ? oldData.apellido : null %>">
+                     <label for="nombre" class="error">Debes ingresar mas de 4 letras</label>
+
+                     <!--Input imagen-->
+                     <p class="titulo" for="">Sube una foto de perfil</p>
+                     <input type="file" name="imagen_producto" class="input_imagen">
+                     
+                    
+                    <!--Input email-->
+                    <p class="titulo">Email</p>
+                    <input type="email" name="email" id="email" placeholder="Ingresa tu mail para el registro" class="input1" value="<%= locals.oldData ? oldData.email : null %>">
+                    <label for="email" class="error">El email ingresado no es válido</label>
+
+                    <!--Input contraseña-->
+                    <p class="titulo">Contraseña</p>
+                    <input type="password" name="password" id="password" placeholder="Ingresa una contraseña" class="input1" value="<%= locals.oldData ? oldData.password : null %>">
+                    <label for="password" class="error">La contraseña ingresada debe tener mas de 8 caracteres</label>
+
+                     <!--Input -->
+                    <p class="titulo">Reingresar contraseña</p>
+                    <input type="password" name="passwordrepeat" id="password" placeholder="Reingresa la contraseña" class="input1" value="<%= locals.oldData ? oldData.passwordrepeat : null %>">
+                    <label for="password" class="error">La contraseña debe coincidir con la ingresada antes</label>
+
+                     <!--checkbox + términos y condiciones -->
+                    <section class="flex-enlinea">
+                        <input type="checkbox" name="terminos" id="terminos">
+                        <p>Aceptar términos y condiciones</p>
+                        <a href="">Leer términos y condiciones</a>
+                    </section>
+                    
+                    <button type="submit">Crear cuenta</button>
+
+
+                </div>
+            </form>
+        </article>
+
+    </main>
+
+    <%- include("./partials/footer.ejs") %>
+    
+</body>
+</html>
