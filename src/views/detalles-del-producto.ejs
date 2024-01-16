@@ -19,7 +19,7 @@
             </div>
             <!--detalle de producto -->
             <section class=" detalle">
-                <p class="nombre"> <%= unProducto.name %></p>
+                <p class="titulo_nombre"> <%= unProducto.name %></p>
                 <p class="precio">$ <%= unProducto.price %></p>
 
             </section>
@@ -45,13 +45,46 @@
             </a>
             <!-- CTA eliminar producto -->
             <form action="/productos/eliminar/<%= unProducto.id %>?_method=DELETE" method="POST">
-                <button type="submit" class="action-button delete">Eliminar producto</button>
+                <button type="submit" class="boton_eliminar">Eliminar producto</button>
             </form>
 
             <hr>
 
-            <p>Descripción de producto</p>
+            <p class="titulo_descripción">Descripción de producto</p>
             <p class="descripcion-producto"> <%= unProducto.description %></p>
+
+
+            <!--- Reel de productos -->
+            <hr>
+            <p>Productos relacionados</p>
+             <!--- Sección productos para perro-->
+            <div class="div-section-productos-descuentos">
+                <% productosRecomendados.forEach(producto => {%>
+                    <article class="articulo-productos-descuentos">
+                        <a href="/productos/detalle/<%= producto.id %>">
+                            <div class="contenedor_imagen">
+                                <img class="img-productos-descuentos" src="/img/productos/<%= producto.image %>" alt="imagen_producto">
+                            </div>
+                        </a>
+                        <div>
+                            <div class="texto_nombre_arriba"> <!--- Limita la altura del box-->
+                                <h4><%= producto.name %></h4>
+                            </div>
+                            
+                            <div class="texto_descripcion_arriba">
+                                <p class="descripcion"><%= producto.description %></p>
+                            </div>
+                            <p class="precio">$ <%= producto.price %></p>
+                            <div class="div-boton-comprar">
+                                <button class="boton-comprar" type="submit">Agregar</button>
+                            </div>
+                        </div>
+
+                    </article>
+                    <%})%>
+               
+            </div>
+        
         </article>
 
 

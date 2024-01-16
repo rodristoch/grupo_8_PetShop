@@ -25,7 +25,23 @@ const productController = {
         const unProducto = productos.find (producto => {
             return producto.id == req.params.id
         })
-        res.render("detalles-del-producto.ejs", {unProducto, usuario}); 
+
+        // filtro de productos perro o gato
+        const productosPerro = productos.filter(product => {return product.id_pet == "Perro"});
+        const productosGato = productos.filter(product => { return product.id_pet == "Gato"});
+
+        //Conozco el producto que vino por id
+        const detalleDeProductoActual = unProducto.id_pet;
+          
+        //Se envian productos según id_pet
+        let productosRecomendados = [];
+        if (detalleDeProductoActual == "Perro") {
+            productosRecomendados = productosPerro
+        } else if (detalleDeProductoActual == "Gato") {
+            productosRecomendados = productosGato
+        }
+        console.log(productosRecomendados)
+        res.render("detalles-del-producto.ejs", {unProducto, usuario, productosRecomendados}); 
     },
 
     categoriaPerro : (req, res) => {
