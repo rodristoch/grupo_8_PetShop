@@ -108,6 +108,12 @@ input::placeholder {
     justify-content: center;
 }
 
+/* --- error form input -- */
+
+.input_error {
+    border: 1px solid #E00007 ;
+}
+
 /* --- Inmput imagen -- */
 .input_imagen {
     border-color: white;
@@ -133,10 +139,9 @@ form input[type="text"]:not(:placeholder-shown), input[type="password"]:not(:pla
 
 
 /* ------------------------------------------------------------ */
- /* --- Labels */
+ /* --- Labels de error */
 
  .error {
-    display: none;
     color: #E00007 ;
     font-size: 13px;
  }
