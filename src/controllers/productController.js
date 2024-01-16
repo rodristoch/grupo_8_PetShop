@@ -33,14 +33,53 @@ const productController = {
         //Conozco el producto que vino por id
         const detalleDeProductoActual = unProducto.id_pet;
           
-        //Se envian productos según id_pet
+       // Función para encontrar 6 productos distintos para recomendados
         let productosRecomendados = [];
         if (detalleDeProductoActual == "Perro") {
-            productosRecomendados = productosPerro
-        } else if (detalleDeProductoActual == "Gato") {
-            productosRecomendados = productosGato
+            
+            //Ecuento el id maximo del json
+            let maxID = Math.max(...productosPerro.map(item => item.id));
+
+            //Set de 6 numeros aleatorios no repetidos
+            let randomIDs = new Set();
+            while (randomIDs.size < 6) {
+                randomIDs.add(Math.floor(Math.random() * (maxID - 1)) + 1);
+            }
+        
+            // Convierte los randomIDS a array
+            randomIDs = Array.from(randomIDs);
+        
+            // Filtra los productosPerro según en los IDs aleatorios
+            productosRecomendados = productosPerro.filter(item => randomIDs.includes(item.id));
+            
+            // Si la cantidad de productos recomendados es menor que 6, agrega productos adicionales
+            while (productosRecomendados.length < 6) {
+                productosRecomendados.push(productosPerro[Math.floor(Math.random() * productosPerro.length)])
         }
-        console.log(productosRecomendados)
+
+    } else if (detalleDeProductoActual == "Gato") {
+        
+        //encuentro el id máximo en el json
+        let maxID= Math.max(...productosGato.map(item => item.id));
+
+        //set de 6 numeros aleatorios no repetidos
+
+        let randomIDS= new Set();
+        while(randomIDS <6) {
+            randomIDS.add(Math.floor(Math.random() * (maxID - 1)) + 1);
+        }
+
+        //Convierto el set en array
+        randomIDS = Array.from(randomIDS);
+
+        //filtro los productosGato según los IDS aleatorios
+        productosRecomendados = productosGato.filter(item => randomIDS.includes(item.id));
+
+        // Si la cantidad de productos recomendados es menor que 6, agrega productos adicionales
+        while (productosRecomendados.length <6)
+            productosRecomendados.push(productosGato[Math.floor(Math.random() * productosGato.length)])
+
+        }
         res.render("detalles-del-producto.ejs", {unProducto, usuario, productosRecomendados}); 
     },
 
