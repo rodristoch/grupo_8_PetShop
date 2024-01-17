@@ -99,7 +99,7 @@ hr {
 
 form input {
     font-size: 16px;
-    border: 1px solid #B8D6BF ;
+    border: 2px solid #B8D6BF ;
     border-radius: 8px;
     padding: 12px 16px ;
     height:48px;
@@ -134,17 +134,17 @@ input::placeholder {
 
 /* --- Condiciones formulario */
 form input:hover {
-    border: 1px solid #00505F;
+    border: 2px solid #00505F;
 }
 
 form input:focus {
     outline: none;
-    border: 1px solid #00505F;
+    border: 2px solid #00505F;
     box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
 }
 
 form input[type="text"]:not(:placeholder-shown), input[type="password"]:not(:placeholder-shown), input[type="email"]:not(:placeholder-shown){
-    border: 1px solid #4CAF50;
+    border: 2px solid #4CAF50;
 }
 
 
