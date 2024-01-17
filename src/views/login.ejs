@@ -21,10 +21,10 @@
                     </article>
 
                     <div>
-                        <% if(locals.errors){ %> 
+                        <% if(locals.errorsCredencialesInvalidas){ %> 
         
-                            <% for(let error in errors) { %>
-                                <p style="color: red; font-size: 16px;" > <%= errors[error].msg %> </p> 
+                            <% for(let error in errorsCredencialesInvalidas) { %>
+                                <p style="color: red; font-size: 16px;" > <%= errorsCredencialesInvalidas[error].msg %> </p> 
                             <% } %>
                             
                         <% } %>
@@ -32,13 +32,19 @@
 
                     <!--Input email-->
                     <p class="titulo">Email</p>
-                    <input type="email" name="email" id="email" placeholder="Ingresa tu mail para el registro" class="input1" value="<%= locals.oldData ? oldData.email : null %>">
+                    <input type="email" name="email" id="email" placeholder="Ingresa tu mail para el registro" class="<%= (locals.errors && locals.errors.email) ? 'input_error' : '' %>" value="<%= locals.oldData ? oldData.email : null %>">
                     <label for="email" class="error"></label>
+                    <% if (locals.errors && locals.errors.email) { %>
+                        <label class="error" ><%= errors.email.msg %></label>
+                    <% } %>
 
                     <!--Input contraseña-->
                     <p class="titulo">Contraseña</p>
-                    <input type="password" name="password" id="password" placeholder="Ingresa una contraseña" class="input1">
+                    <input type="password" name="password" id="password" placeholder="Ingresa una contraseña" class="<%= (locals.errors && locals.errors.password) ? 'input_error' : '' %>">
                     <label for="password" class="error"></label>
+                    <% if (locals.errors && locals.errors.password) { %>
+                        <label class="error" ><%= errors.password.msg %></label>
+                    <% } %>
 
                     <!--Recuerdame -->
                     <section class="flex-enlinea2">

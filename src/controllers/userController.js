@@ -52,7 +52,7 @@ const userController = {
 
             if(userALoguearse == undefined){  //si no encontró al usuario le manda el mensaje de credenciales invalidas
 
-                return res.render("login", {errors: [{msg: "Credenciales invalidas"}], usuario});  
+                return res.render("login", {errorsCredencialesInvalidas: [{msg: "Credenciales invalidas"}], usuario});  
             
             } 
 
