@@ -14,6 +14,7 @@ const validaciones = [
     body("apellido").notEmpty().withMessage("Debes completar un apellido"),
     body("email").notEmpty().withMessage("Debes completar un email").bail().isEmail().withMessage("El email debe ser valido"),
     body("password").notEmpty().withMessage("Debes completar con una contraseña").bail().isLength({min: 5}).withMessage("La constraseña debe tener un min de 5 caracteres"),
+    body("passwordrepeat").notEmpty().withMessage("Debes reingresar tu contraseña").bail().isLength({min: 5}).withMessage("La constraseña debe tener un min de 5 caracteres"),
     body("terminos").notEmpty().withMessage("Debes aceptar los términos y condiciones")
 ]
 

@@ -46,15 +46,15 @@
             <!--Input contraseña-->
             <p class="titulo">Contraseña</p>
             <input class="<%= (locals.errors && locals.errors.password) ? 'input_error' : '' %>" type="password" name="password" id="password" placeholder="Ingresa una contraseña" class="input1" value="<%= locals.oldData ? oldData.password : null %>">
-            <% if (locals.errors && locals.errors.email) { %>
+            <% if (locals.errors && locals.errors.password) { %>
                 <label class="error" ><%= errors.password.msg %></label>
             <% } %>
 
                 <!--Input -->
             <p class="titulo">Reingresar contraseña</p>
             <input class="<%= (locals.errors && locals.errors.password) ? 'input_error' : '' %>" type="password" name="passwordrepeat" id="password" placeholder="Reingresa la contraseña" class="input1" value="<%= locals.oldData ? oldData.passwordrepeat : null %>">
-            <% if (locals.errors && locals.errors.email) { %>
-                <label class="error" ><%= errors.password.msg %></label>
+            <% if (locals.errors && locals.errors.passwordrepeat) { %>
+                <label class="error" ><%= errors.passwordrepeat.msg %></label>
             <% } %>
 
                 <!--checkbox + términos y condiciones -->
