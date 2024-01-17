@@ -41,12 +41,10 @@
                 </a>
             </div>
             <div class="mi-cuenta">
-                <div>
-                    <i class="fa-solid fa-circle-user" style="color: #ffffff;"></i>
-                </div>
                     <% if(usuario){ %>
                         <div class="dropdown">
-                            <a href="/users/edit/<%= usuario.id %>"><p style="color: #FECF53; font-size: 16px;"><%= usuario.nombre %></p></a>
+                            <i class="fa-solid fa-circle-user" style="color: #FECF53;"></i>
+                            <a href="/users/edit/<%= usuario.id %>"><p style="color: #FECF53; font-size: 16px; font-weight: 500;"><%= usuario.nombre %></p></a>
                            
                             <div class="dropdown-content">
                                 <a href="/users/edit/<%= usuario.id %>">Editar usuario</a>
@@ -54,6 +52,7 @@
                             </div>
                         </div>
                     <% } else { %>
+                        <i class="fa-solid fa-circle-user" style="color: #ffffff;"></i>
                         <a href="/users/login"><p >Mi cuenta</p></a>
                     <% } %>
             </div>
