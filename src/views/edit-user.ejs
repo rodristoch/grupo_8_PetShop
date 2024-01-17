@@ -21,46 +21,46 @@
                 <!-- muestra los datos del usuario -->
                 <% if(locals.userToEdit){ %>
     
-                    <h3 style="color: blue; font-size: 16px;" >Bienvenido: <%= userToEdit.nombre %> <%= userToEdit.apellido %></h3>
-                    <h3 style="color: blue; font-size: 16px;" >Tu email es <%= userToEdit.email %></h3>
+                    <h3 style="color: blue; font-size: 16px; font-weight: 500;" >Bienvenido: <%= userToEdit.nombre %> <%= userToEdit.apellido %></h3>
+                    <h3 style="color: blue; font-size: 16px; font-weight: 500;" >Tu email es <%= userToEdit.email %></h3>
     
                 <% } %>
 
             </div>
             
            <!--Input Nombre-->
-           <p class="titulo">Nombre:</p>
+           <p class="<%= (locals.errors && locals.errors.nombre) ? 'titulo-error' : 'titulo' %>">Nombre:</p>
            <input class="<%= (locals.errors && locals.errors.nombre) ? 'input_error' : '' %>" type="text" name="nombre" id="nombre" placeholder="Ingresa tu nombre" value="<%= userToEdit.nombre %>%>">
            <% if (locals.errors && locals.errors.nombre) { %>
-               <label class="error" ><%= errors.nombre.msg %></label>
+               <label class="error"><i style="color: red; font-size: 16px; margin-right: 5px; margin-left: 5px;" class="fa-sharp fa-solid fa-circle-exclamation"></i><%= errors.nombre.msg %></label>
            <% } %>
 
             <!--Input Apellido-->
-            <p class="titulo">Apellido</p>
+            <p class="<%= (locals.errors && locals.errors.apellido) ? 'titulo-error' : 'titulo' %>">Apellido</p>
             <input class="<%= (locals.errors && locals.errors.apellido) ? 'input_error' : '' %>"type="text" name="apellido" id="apellido" placeholder="Ingresa tu apellido" value="<%= userToEdit.apellido %>">
             <% if (locals.errors && locals.errors.apellido) { %>
-                <label class="error" ><%= errors.apellido.msg %></label>
+                <label class="error"><i style="color: red; font-size: 16px; margin-right: 5px; margin-left: 5px;" class="fa-sharp fa-solid fa-circle-exclamation"></i><%= errors.apellido.msg %></label>
             <% } %>
             
             <!--Input email-->
-            <p class="titulo">Email</p>
+            <p class="<%= (locals.errors && locals.errors.email) ? 'titulo-error' : 'titulo' %>">Email</p>
             <input class="<%= (locals.errors && locals.errors.email) ? 'input_error' : '' %>" type="email" name="email" id="email" placeholder="Ingresa tu mail para el registro" class="input1" value="<%= userToEdit.email %>">
             <% if (locals.errors && locals.errors.email) { %>
-                <label class="error" ><%= errors.email.msg %></label>
+                <label class="error"><i style="color: red; font-size: 16px; margin-right: 5px; margin-left: 5px;" class="fa-sharp fa-solid fa-circle-exclamation"></i><%= errors.email.msg %></label>
             <% } %>
 
             <!--Input contraseña-->
-            <p class="titulo">Contraseña</p>
+            <p class="<%= (locals.errors && locals.errors.password) ? 'titulo-error' : 'titulo' %>">Contraseña</p>
             <input class="<%= (locals.errors && locals.errors.password) ? 'input_error' : '' %>" type="password" name="password" id="password" placeholder="Ingresa una contraseña" class="input1" value="<%= userToEdit.password %>">
             <% if (locals.errors && locals.errors.email) { %>
-                <label class="error" ><%= errors.password.msg %></label>
+                <label class="error"><i style="color: red; font-size: 16px; margin-right: 5px; margin-left: 5px;" class="fa-sharp fa-solid fa-circle-exclamation"></i><%= errors.password.msg %></label>
             <% } %>
 
                 <!--Input -->
-            <p class="titulo">Reingresar contraseña</p>
-            <input class="<%= (locals.errors && locals.errors.password) ? 'input_error' : '' %>" type="password" name="passwordrepeat" id="password" placeholder="Reingresa la contraseña" class="input1" value="<%= userToEdit.passwordrepeat %>">
-            <% if (locals.errors && locals.errors.email) { %>
-                <label class="error" ><%= errors.password.msg %></label>
+            <p class="<%= (locals.errors && locals.errors.passwordrepeat) ? 'titulo-error' : 'titulo' %>">Reingresar contraseña</p>
+            <input class="<%= (locals.errors && locals.errors.passwordrepeat) ? 'input_error' : '' %>" type="password" name="passwordrepeat" id="password" placeholder="Reingresa la contraseña" class="input1" value="<%= userToEdit.passwordrepeat %>">
+            <% if (locals.errors && locals.errors.passwordrepeat) { %>
+                <label class="error"><i style="color: red; font-size: 16px; margin-right: 5px; margin-left: 5px;" class="fa-sharp fa-solid fa-circle-exclamation"></i><%= errors.passwordrepeat.msg %></label>
             <% } %>
 
             <button type="submit">Guardar cambios</button>

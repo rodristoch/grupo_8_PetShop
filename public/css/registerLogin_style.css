@@ -78,6 +78,15 @@ hr {
     line-height: 100%;
     margin-bottom: 8px;
 }
+
+.titulo-error {
+    font-size: 16px;
+    font-weight: 300;
+    line-height: 100%;
+    margin-bottom: 8px;
+    color: red;
+}
+
 .formulario {
     flex: 1;
     padding: 0px;
@@ -111,7 +120,8 @@ input::placeholder {
 /* --- error form input -- */
 
 .input_error {
-    border: 1px solid #E00007 ;
+    border: 1px solid red;
+    margin-bottom: 8px;
 }
 
 /* --- Inmput imagen -- */
@@ -142,8 +152,9 @@ form input[type="text"]:not(:placeholder-shown), input[type="password"]:not(:pla
  /* --- Labels de error */
 
  .error {
-    color: #E00007 ;
-    font-size: 13px;
+    color: red ;
+    font-size: 16px;
+    font-weight: 500;
  }
 
 /* ------------------------------------------------------------ */
