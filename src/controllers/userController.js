@@ -70,27 +70,6 @@ const userController = {
 
         }
     },
-
-    carrito : (req, res) => {
-
-        //usuario q se loguea
-        const usuario = req.session.userLogueado
-
-        res.render('carrito.ejs', usuario);
-    },
-
-    carrito2 : (req, res) => {
-        //usuario q se loguea
-        const usuario = req.session.userLogueado
-
-        const productsFilePath = path.join(__dirname, '../data/productosDataBase.json');
-        const productos = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'));
-        const productosPerro = productos.filter(product => {return product.id_pet == "Perro"});
-        const productosPerroConDescuento = productosPerro.filter(product => {return product.discount == "Si"});
-
-        res.render('carrito2.ejs', {productosPerroConDescuento, usuario});
-    },
-
     register: (req, res) => {
         //usuario q se loguea
         const usuario = req.session.userLogueado
@@ -196,6 +175,29 @@ const userController = {
 
         }
        
+    },
+    logout: (req, res) => {
+        req.session.destroy(),
+        res.redirect("/")
+    },
+    carrito : (req, res) => {
+
+        //usuario q se loguea
+        const usuario = req.session.userLogueado
+
+        res.render('carrito.ejs', usuario);
+    },
+
+    carrito2 : (req, res) => {
+        //usuario q se loguea
+        const usuario = req.session.userLogueado
+
+        const productsFilePath = path.join(__dirname, '../data/productosDataBase.json');
+        const productos = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'));
+        const productosPerro = productos.filter(product => {return product.id_pet == "Perro"});
+        const productosPerroConDescuento = productosPerro.filter(product => {return product.discount == "Si"});
+
+        res.render('carrito2.ejs', {productosPerroConDescuento, usuario});
     },
 
 

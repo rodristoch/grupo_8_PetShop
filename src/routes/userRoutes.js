@@ -36,6 +36,9 @@ router.put("/edit/:id", validaciones, userController.processEdit);
 router.get("/login", userController.login) 
 router.post("/login", validacionesLogin, userController.processLogin);
 
+//Logout
+router.get("/logout", userController.logout)
+
 //Carrito
 router.get("/carrito", userController.carrito) 
 
