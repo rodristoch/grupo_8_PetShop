@@ -11,15 +11,15 @@ const userController = {
     
     login : (req, res) => {
         //usuario q se loguea
-        const usuario = req.session.userLogueado
+        const userALoguearse = req.session.userLogueado
 
-        res.render('login.ejs', {usuario});
+        res.render('login.ejs', {userALoguearse});
     },
 
     processLogin: (req, res) => {
 
         //usuario q se loguea
-        const usuario = req.session.userLogueado
+        const userALoguearse = req.session.userLogueado
 
         //Validaciones con la info del request
         const validationResults = validationResult(req); 
@@ -27,7 +27,7 @@ const userController = {
         if(validationResults.errors.length > 0){ //si hubo errores de validacion
 
             //renderizo la vista y le mando la info q llega del formulario con los errores
-            res.render("login", {errors: validationResults.mapped(), oldData: req.body, usuario});
+            res.render("login", {errors: validationResults.mapped(), oldData: req.body, userALoguearse});
 
         } else { //si no hubo errores de validacion
 
@@ -58,9 +58,9 @@ const userController = {
 
             req.session.userLogueado = userALoguearse;  //si encontró al usuario lo guardo en session
 
-            if(req.body.checkbox){ //si el checkbox de recordarme es distinto de undefined (quiere decir si está tildado)
-                
-                res.cookie("recordarme", userALoguearse.email, {maxAge: 900000}) 
+            if(req.body.recordarme){ //si el checkbox de recordarme es distinto de undefined (quiere decir si está tildado)
+
+                res.cookie("recordarme", userALoguearse.email, {maxAge: 90000}) 
                 //creamos la cookie recordarme con el valor del email del userALoguearse y una duracion de la cookie de 60seg
 
             } else {
@@ -74,15 +74,15 @@ const userController = {
     },
     register: (req, res) => {
         //usuario q se loguea
-        const usuario = req.session.userLogueado
+        const userALoguearse = req.session.userLogueado
 
-        res.render("register.ejs", {usuario});
+        res.render("register.ejs", {userALoguearse});
     },
 
     processRegister: (req, res) => {
 
         //usuario q se loguea
-        const usuario = req.session.userLogueado
+        const userALoguearse = req.session.userLogueado
 
         //traigo los usuarios
         const users = JSON.parse(fs.readFileSync(usersFilePath, 'utf-8'));
@@ -103,7 +103,7 @@ const userController = {
         if(validationResults.errors.length > 0){ //si hubo errores de validacion
 
             //renderizo la vista y le mando la info q llega del formulario con los errores y la info bien completada
-            res.render("register", {errors: validationResults.mapped(), oldData: req.body, usuario});
+            res.render("register", {errors: validationResults.mapped(), oldData: req.body, userALoguearse});
 
         } else {  //si no hubo errores de validacion
 
@@ -123,7 +123,7 @@ const userController = {
     edit: (req, res) => {
 
         //usuario q se loguea
-        const usuario = req.session.userLogueado
+        const userALoguearse = req.session.userLogueado
 
         //traigo los usuarios
         const users = JSON.parse(fs.readFileSync(usersFilePath, 'utf-8'));
@@ -131,14 +131,14 @@ const userController = {
         //busco al usuario a editar por id
 		const userToEdit = users.find(user => {return user.id == req.params.id})
 		
-		res.render("edit-user", {userToEdit, usuario});
+		res.render("edit-user", {userToEdit, userALoguearse});
 	},
         
 
     processEdit: (req, res) => {
 
         //usuario q se loguea
-        const usuario = req.session.userLogueado
+        const userALoguearse = req.session.userLogueado
 
         //traigo los usuarios
         const users = JSON.parse(fs.readFileSync(usersFilePath, 'utf-8'));
@@ -165,7 +165,7 @@ const userController = {
         if(validationResults.errors.length > 0){ //si hubo errores de validacion
  
             //renderizo la vista y le mando la info q llega del formulario con los errores y la info bien completada
-            res.render("edit-user", {errors: validationResults.mapped(), userToEdit: req.body, usuario});
+            res.render("edit-user", {errors: validationResults.mapped(), userToEdit: req.body, userALoguearse});
 
         } else {
 
@@ -197,14 +197,14 @@ const userController = {
 
     carrito2 : (req, res) => {
         //usuario q se loguea
-        const usuario = req.session.userLogueado
+        const userALoguearse = req.session.userLogueado
 
         const productsFilePath = path.join(__dirname, '../data/productosDataBase.json');
         const productos = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'));
         const productosPerro = productos.filter(product => {return product.id_pet == "Perro"});
         const productosPerroConDescuento = productosPerro.filter(product => {return product.discount == "Si"});
 
-        res.render('carrito2.ejs', {productosPerroConDescuento, usuario});
+        res.render('carrito2.ejs', {productosPerroConDescuento, userALoguearse});
     },
 
 

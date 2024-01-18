@@ -25,7 +25,7 @@
        </form>
        <div class="opciones-top">
 
-            <% if(usuario && usuario.category == "Administrador"){ %>
+            <% if(userALoguearse && userALoguearse.category == "Administrador"){ %>
                 <div class="crear-producto">
                     <a href="/productos/alta">
                     <i class="fa-solid fa-plus" style="color: #ffffff;"></i>
@@ -41,22 +41,21 @@
                 </a>
             </div>
             <div class="mi-cuenta">
-                <i class="fa-solid fa-circle-user" style="color: #ffffff;"></i>
-                    <% if(usuario){ %>
+                    <% if(userALoguearse){ %>
                         <div class="dropdown">
-                            <a href="/users/edit/<%= usuario.id %>"><p style="color: #FECF53; font-size: 16px;"><%= usuario.nombre %></p></a>
+                            <i class="fa-solid fa-circle-user" style="color: #FECF53;"></i>
+                            <a href="/users/edit/<%= userALoguearse.id %>"><p style="color: #FECF53; font-size: 16px; font-weight: 500;"><%= userALoguearse.nombre %></p></a>
                            
                             <div class="dropdown-content">
-                                <a href="/users/edit/<%= usuario.id %>">Editar usuario</a>
+                                <a href="/users/edit/<%= userALoguearse.id %>">Editar usuario</a>
                                 <a href="/users/logout">Cerrar sesión</a>
                             </div>
                         </div>
-
-                        
                     <% } else { %>
+                        <i class="fa-solid fa-circle-user" style="color: #ffffff;"></i>
                         <a href="/users/login"><p >Mi cuenta</p></a>
                     <% } %>
-               </div>
+            </div>
            <div class="carrito">
                <a href="/users/carrito2">  
                 <div class="logo-carrito-tablet"><i class="fa-solid fa-cart-shopping" style="color: #ffffff;"></i></div>
