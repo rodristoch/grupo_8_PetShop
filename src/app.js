@@ -6,9 +6,11 @@ const methodOverride = require('method-override');   //para requerir path (para 
 const session = require("express-session");
 const cookieParser = require("cookie-parser")
 
+// *********** Middleware recordarme module *************
+const recordarme = require("./middlewares/recordarme.js");
+
 // ************ express()************
 const app = express();                                                               //ejecuto express
-const recordarme = require("./middlewares/recordarme.js");
 
 // ************ Middlewares ************
 app.use(express.static(path.resolve(__dirname, "../public")));// uso de la carpeta public
