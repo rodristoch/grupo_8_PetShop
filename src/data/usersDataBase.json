@@ -22,5 +22,13 @@
   "email": "nicolasvillamil1997@gmail.com",
   "password": "$2a$10$CyufKAyWsgou1V5rhNG2BuolTNWoA5FRYORxcvDdA64vKELqgnDQa",
   "category": "Administrador"
+ },
+ {
+  "id": 4,
+  "nombre": "as",
+  "apellido": "as",
+  "image": "imagen_user-1705601492432.jpeg",
+  "email": "maria.osorio@laika.pet",
+  "password": "$2a$10$0sE7BGOPtXsDkEcga3juieFcioOoXBpPbH8bD0fLA7nQ8GgW55EUu"
  }
 ]

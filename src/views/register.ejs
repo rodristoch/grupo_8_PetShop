@@ -13,7 +13,7 @@
     <!--Imagen hardcodeada-->
         <img src="/img/Imagen_register.png" alt="Imagen de perro y gato" class="tamano-imagen">
     <!--Registro-->
-    <form class="formulario" action="/users/register" method="POST">
+    <form class="formulario" action="/users/register" method="POST" enctype="multipart/form-data" >
         <div class="centrado">
             <h2>Crea tu cuenta Patitas</h2>
             
@@ -33,7 +33,7 @@
 
             <!--Input imagen-->
             <p class="titulo" for="">Sube una foto de perfil (Opcional)</p>
-            <input type="file" name="imagen_producto" class="input_imagen">
+            <input type="file" name="imagen_user" class="input_imagen">
             
         
             <!--Input email-->

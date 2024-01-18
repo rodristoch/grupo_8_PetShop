@@ -92,6 +92,7 @@ const userController = {
 			id: users[users.length - 1].id + 1,
 			nombre: req.body.nombre,
             apellido: req.body.apellido,
+            image: req.file.filename,
 			email: req.body.email, 
             password: bcrypt.hashSync(req.body.password, 10),
             category: req.body.category
