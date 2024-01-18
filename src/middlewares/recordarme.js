@@ -6,8 +6,6 @@ const usersFilePath = path.join(__dirname, '../data/usersDataBase.json');
 
 function recordarme(req, res, next){
 
-    next();
-
     if(req.cookies.recordarme != undefined && req.session.userLogueado == undefined){ //si esta cookie existe (el nombre de la cookie debe ser el de la cookie creada en el controller) y a su vez, no está el user en sesion...
         //traigo los usuarios
         const users = JSON.parse(fs.readFileSync(usersFilePath, 'utf-8'));
@@ -30,10 +28,8 @@ function recordarme(req, res, next){
         
     } 
 
-    
-    
-
-
+    next();
+ 
 }
 
 module.exports = recordarme;
