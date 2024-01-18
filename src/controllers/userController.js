@@ -182,30 +182,30 @@ const userController = {
     },
 
     logout: (req, res) => {
-        // Limpiar cookie si existe
-        if (req.cookies.recordarme) {
-            res.clearCookie("recordarme");
-        }
-    
-        console.log(req.session.userLogueado);
-    
-        // Si existe elimino la sesión
-        if (req.session && req.session.userLogueado) {
-            // Elimino los datos de la sesión
-            req.session.destroy(err => {
-                if (!err) {
-                    res.redirect("/");
-                } else {
-                    console.error("Error al cerrar sesión", err);
-                    res.redirect("/");
-                }
-            });
-        } else {
-            // Si no hay sesión, simplemente redirige a la página de inicio
-            res.redirect("/");
-        };
-    
-    },
+       // Limpiar cookie si existe
+       if (req.cookies.recordarme) {
+        res.clearCookie("recordarme");
+    }
+    //debug que devuelve correcto el usuario
+    //console.log(req.session.userLogueado);
+
+    // Si existe elimino la sesión
+    if (req.session && req.session.userLogueado) {
+        // Elimino los datos de la sesión
+        req.session.destroy(err => {
+            if (!err) {
+                res.redirect("/");
+            } else {
+                console.error("Error al cerrar sesión", err);
+                res.redirect("/");
+            }
+        });
+    } else {
+        // Si no hay sesión, redirige
+        res.redirect("/");
+    };
+
+},
 
     
     carrito : (req, res) => {
