@@ -59,10 +59,12 @@ const userController = {
             req.session.userLogueado = userALoguearse;  //si encontró al usuario lo guardo en session
 
             if(req.body.checkbox){ //si el checkbox de recordarme es distinto de undefined (quiere decir si está tildado)
-
+                
                 res.cookie("recordarme", userALoguearse.email, {maxAge: 900000}) 
                 //creamos la cookie recordarme con el valor del email del userALoguearse y una duracion de la cookie de 60seg
 
+            } else {
+                res.clearCookie("recordarme");
             }
 
             res.redirect("/")
