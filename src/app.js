@@ -8,6 +8,7 @@ const cookieParser = require("cookie-parser")
 
 // ************ express()************
 const app = express();                                                               //ejecuto express
+const recordarme = require("./middlewares/recordarme.js");
 
 // ************ Middlewares ************
 app.use(express.static(path.resolve(__dirname, "../public")));// uso de la carpeta public
@@ -16,6 +17,7 @@ app.use(express.json()) //analiza si es JSON y lo convierte a objeto de JS
 app.use(methodOverride("_method")) //Para poder usar los métodos PUT y DELETE
 app.use(session({secret: "Es secreto!!"}));
 app.use(cookieParser())
+app.use(recordarme)
 
 
 // ************ Template Engine  ************
@@ -26,6 +28,7 @@ app.set('views', './src/views') // indicamos a express que los archivos ejs por 
 const mainRoutes = require('./routes/mainRoutes.js')
 const userRoutes = require('./routes/userRoutes.js')
 const productRoutes = require('./routes/productRoutes.js')
+
 
 app.use("/", mainRoutes); 
 app.use("/users", userRoutes); 

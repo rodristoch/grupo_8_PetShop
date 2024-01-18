@@ -34,9 +34,9 @@ const mainController = {
 		const productosGatoConDescuento = productosGato.filter(product => {return product.discount == "Si"});
 
         //usuario que se loguea
-        const usuario = req.session.userLogueado
+        const userALoguearse = req.session.userLogueado
 
-		res.render("index.ejs", {productosPerro, productosGato, productosPerroAccesorios, productosGatoAccesorios, productosPerroConDescuento, productosGatoConDescuento, accesoriosPerroSinDescuento, accesoriosGatoSinDescuento, usuario});
+		res.render("index.ejs", {productosPerro, productosGato, productosPerroAccesorios, productosGatoAccesorios, productosPerroConDescuento, productosGatoConDescuento, accesoriosPerroSinDescuento, accesoriosGatoSinDescuento, userALoguearse});
         
 	}
 }
