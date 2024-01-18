@@ -182,14 +182,12 @@ const userController = {
     },
 
     logout: (req, res) => {
-        req.session.destroy( err => {
-            if (!err) {
-                res.redirect("/")
-            }else {
-                console.error("Error al cerrar sesión")
-            }
-        })
+        req.session.destroy()
+
+        return res.redirect("/")
+            
     },
+    
     carrito : (req, res) => {
 
         //usuario q se loguea
