@@ -50,7 +50,7 @@ const userController = {
                       
             }
 
-            if(userALoguearse == undefined){  //si no encontró al usuario le manda el mensaje de credenciales invalidas
+            if(!userALoguearse){  //si no encontró al usuario le manda el mensaje de credenciales invalidas
 
                 return res.render("login", {errorsCredencialesInvalidas: [{msg: "Credenciales invalidas"}], usuario});  
             
@@ -58,14 +58,11 @@ const userController = {
 
             req.session.userLogueado = userALoguearse;  //si encontró al usuario lo guardo en session
 
-            if(req.body.recordarme){ //si el checkbox de recordarme es distinto de undefined (quiere decir si está tildado)
-
-                res.cookie("recordarme", userALoguearse.email, {maxAge: 90000}) 
-                //creamos la cookie recordarme con el valor del email del userALoguearse y una duracion de la cookie de 60seg
-
-            } else {
-                res.clearCookie("recordarme");
-            }
+            if (req.body.recordarme) {
+                req.session.user = userALoguearse;
+                res.cookie('recordarme', userALoguearse.email, { maxAge: 90000 });
+              }
+              
 
             res.redirect("/")
             
