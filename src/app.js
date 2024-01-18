@@ -1,6 +1,5 @@
 // ************ Require's ************
 const express = require("express"); //para requerir express
-// ¿que es esta linea? const { get } = require("http");
 const path = require("path"); 
 const methodOverride = require('method-override');   //para requerir path (para hacer un ruteo mas sencillo para express)
 const session = require("express-session");
@@ -17,12 +16,7 @@ app.use(express.static(path.resolve(__dirname, "../public")));// uso de la carpe
 app.use(express.urlencoded({extended: false})) //toma los datos del body
 app.use(express.json()) //analiza si es JSON y lo convierte a objeto de JS
 app.use(methodOverride("_method")) //Para poder usar los métodos PUT y DELETE
-app.use(session({
-    secret: '1234567890',
-    resave: false,
-    saveUninitialized: false
-  }));
-  
+app.use(session({secret: "Es secreto!!"}));
 app.use(cookieParser())
 app.use(recordarme)
 

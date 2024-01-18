@@ -80,7 +80,7 @@ const productController = {
             productosRecomendados.push(productosGato[Math.floor(Math.random() * productosGato.length)])
 
         }
-        res.render("detalles-del-producto.ejs", {unProducto, userALoguearse, productosRecomendados}); 
+        res.render("detalles-del-producto.ejs", {unProducto, productosRecomendados, userALoguearse}); 
     },
 
     categoriaPerro : (req, res) => {
