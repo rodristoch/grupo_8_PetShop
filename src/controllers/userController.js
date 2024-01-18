@@ -34,23 +34,16 @@ const userController = {
             //traigo los usuarios
             const users = JSON.parse(fs.readFileSync(usersFilePath, 'utf-8'));
 
-            let userALoguearse
-
-            for(let i=0; i < users.length; i++){  //recorremos todos los usuarios
-
-                if(users[i].email == req.body.email){  //preguntamos si el email de ese usuario (el de la posicion i) es igual al email que está poniendo en el campo
-
-                    if(bcrypt.compareSync(req.body.password, users[i].password)){  //y si al comparar si la contraseña de ese usuario (el de la posicion i) es igual a la que está poniendo en el campo
-
-                        userALoguearse = users[i]  //el usuario q se loguea es el q matchea en la posicion i (lo encontró)
-                        break;
-                    }
-
+            // function para encontrar usuario y 
+            let userALoguearse = null
+            users.forEach(user => {
+                if (user.email === req.body.email && bcrypt.compareSync(req.body.password, user.password)) {
+                    userALoguearse = user;
                 }
-                      
-            }
+            });
 
-            if(!userALoguearse){  //si no encontró al usuario le manda el mensaje de credenciales invalidas
+            // Condición si no encuentra usuario envía los errores
+            if(!userALoguearse){
 
                 return res.render("login", {errorsCredencialesInvalidas: [{msg: "Credenciales invalidas"}], usuario});  
             
