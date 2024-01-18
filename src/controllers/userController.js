@@ -4,8 +4,9 @@ const path = require('path');
 const bcrypt = require("bcryptjs")
 
 
+// Json de usuarios
 const usersFilePath = path.join(__dirname, '../data/usersDataBase.json');
-// const users = JSON.parse(fs.readFileSync(usersFilePath, 'utf-8'));
+const users = JSON.parse(fs.readFileSync(usersFilePath, 'utf-8'));
 
 const userController = {
     
@@ -32,7 +33,7 @@ const userController = {
         } else { //si no hubo errores de validacion
 
             //traigo los usuarios
-            const users = JSON.parse(fs.readFileSync(usersFilePath, 'utf-8'));
+           
 
             // function para encontrar usuario y 
             let userALoguearse = null
@@ -74,9 +75,6 @@ const userController = {
         //usuario q se loguea
         const userALoguearse = req.session.userLogueado
 
-        //traigo los usuarios
-        const users = JSON.parse(fs.readFileSync(usersFilePath, 'utf-8'));
-
         //creo uno nuevo
         const newUser = {
 			id: users[users.length - 1].id + 1,
@@ -115,9 +113,6 @@ const userController = {
         //usuario q se loguea
         const userALoguearse = req.session.userLogueado
 
-        //traigo los usuarios
-        const users = JSON.parse(fs.readFileSync(usersFilePath, 'utf-8'));
-
         //busco al usuario a editar por id
 		const userToEdit = users.find(user => {return user.id == req.params.id})
 		
@@ -129,9 +124,6 @@ const userController = {
 
         //usuario q se loguea
         const userALoguearse = req.session.userLogueado
-
-        //traigo los usuarios
-        const users = JSON.parse(fs.readFileSync(usersFilePath, 'utf-8'));
 
         //busco al usuario a editar por id
 		let userToEdit = users.find(user => {return user.id == req.params.id}) 
