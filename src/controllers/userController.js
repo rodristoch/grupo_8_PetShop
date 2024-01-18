@@ -125,13 +125,13 @@ const userController = {
 
         //usuario q se loguea
         const userALoguearse = req.session.userLogueado
-
+       
         //traigo los usuarios
         const users = JSON.parse(fs.readFileSync(usersFilePath, 'utf-8'));
 
         //busco al usuario a editar por id
 		const userToEdit = users.find(user => {return user.id == req.params.id})
-		
+
 		res.render("edit-user", {userToEdit, userALoguearse});
 	},
         
@@ -152,6 +152,7 @@ const userController = {
 			id: userToEdit.id,
 			nombre: req.body.nombre,
             apellido: req.body.apellido,
+            image: req.file.filename,
 			email: req.body.email, 
             password: bcrypt.hashSync(req.body.password, 10),
             category: req.body.category

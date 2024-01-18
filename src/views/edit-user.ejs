@@ -42,6 +42,17 @@
                 <label class="error"><i style="color: red; font-size: 16px; margin-right: 5px; margin-left: 5px;" class="fa-sharp fa-solid fa-circle-exclamation"></i><%= errors.apellido.msg %></label>
             <% } %>
             
+            <!--Imagen actual-->
+            <article class="flex-enlinea-imagen">
+                <p class="titulo" for="">Imagen actual:   </p>
+                <img src="/img/usersImage/<%= userToEdit.image %>" alt="imagen actual" class="imagen_actual">
+            </article>
+
+
+            <!--Input subir imagen-->
+            <p class="titulo" for="">Sube una foto de perfil (Opcional)</p>
+            <input type="file" name="imagen_user" class="input_imagen">
+            
             <!--Input email-->
             <p class="<%= (locals.errors && locals.errors.email) ? 'titulo-error' : 'titulo' %>">Email</p>
             <input class="<%= (locals.errors && locals.errors.email) ? 'input_error' : '' %>" type="email" name="email" id="email" placeholder="Ingresa tu mail para el registro" class="input1" value="<%= userToEdit.email %>">
