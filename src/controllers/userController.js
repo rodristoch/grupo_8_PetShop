@@ -92,7 +92,7 @@ const userController = {
 			id: users[users.length - 1].id + 1,
 			nombre: req.body.nombre,
             apellido: req.body.apellido,
-            image: req.file.filename,
+            image: req.file!= undefined ? req.file.filename : "No se subió imagen de usuario",
 			email: req.body.email, 
             password: bcrypt.hashSync(req.body.password, 10),
             category: req.body.category
@@ -152,7 +152,7 @@ const userController = {
 			id: userToEdit.id,
 			nombre: req.body.nombre,
             apellido: req.body.apellido,
-            image: req.file.filename,
+            image:  req.file!= undefined ? req.file.filename : "No se subió imagen de usuario",
 			email: req.body.email, 
             password: bcrypt.hashSync(req.body.password, 10),
             category: req.body.category

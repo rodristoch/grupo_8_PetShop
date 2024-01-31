@@ -9,6 +9,20 @@ const authMiddleware = require('../middlewares/authMiddleware.js');
 // ************ User Require ************
 const userController = require('../controllers/userController.js'); // requerimos el controlador que queremos usar. 
 
+
+// ************ Multer ************
+const storage = multer.diskStorage ({
+    destination: function(req, file, cb) {
+        cb(null, 'public/img/usersImage')
+    },
+    filename: function(req, file, cb){
+        cb(null, file.fieldname + "-" + Date.now() + path.extname(file.originalname))
+    }
+})
+
+const upload = multer({storage: storage});
+
+
 // ************ Validations ************
 const validaciones = [
     body("nombre").notEmpty().withMessage("Debes completar un nombre"),
@@ -24,21 +38,10 @@ const validacionesLogin = [
     body("password").notEmpty().withMessage("Ingresa tu contraseña").bail().isLength({min: 5}).withMessage("La constraseña debe tener un min de 5 caracteres")
 ]
 
-// ************ Multer ************
-const storage = multer.diskStorage ({
-    destination: function(req, res, cb) {
-        cb(null, 'public/img/usersImage')
-    },
-    filename: function(req, file, cb){
-        cb(null, file.fieldname + "-" + Date.now() + path.extname(file.originalname))
-    }
-})
-
-const upload = multer({storage: storage});
 
 // Crear un usuario
 router.get("/register", userController.register) 
-router.post("/register",upload.single("imagen_user"),validaciones, userController.processRegister);
+router.post("/register", upload.single("imagen_user"), validaciones, userController.processRegister);
 
 // Editar un usuario
 router.get("/edit/:id", authMiddleware, userController.edit);
