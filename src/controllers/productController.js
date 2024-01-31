@@ -372,7 +372,7 @@ const productController = {
              id: productos [productos.length - 1].id +1,
              name: req.body.nombre_producto,
              description: req.body.descripcion ,
-             image: req.file.filename,
+             image: req.file!= undefined ? req.file.filename : "No se subió imagen de producto",
              pet: req.body.mascota,
              category: req.body.categoria,
              colors: req.body.color_producto,

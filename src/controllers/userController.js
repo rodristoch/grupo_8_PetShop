@@ -152,7 +152,7 @@ const userController = {
 			id: userToEdit.id,
 			nombre: req.body.nombre,
             apellido: req.body.apellido,
-            image:  req.file!= undefined ? req.file.filename : "No se subió imagen de usuario",
+            image:  req.file!= undefined ? req.file.filename : userToEdit.image,
 			email: req.body.email, 
             password: bcrypt.hashSync(req.body.password, 10),
             category: req.body.category
