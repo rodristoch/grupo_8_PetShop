@@ -76,46 +76,8 @@
             </article>
 
              <!-- Lista productos productos-->
-            <div class="lista_desktop">
+             <div class="lista_desktop">
                 <div class="lista_flexbox_desktop">
-                    <% for(let accesorio of productosPerroConDescuento) { %>
-                        <article class="articulo-productos-descuentos">
-                            <a href="/productos/detalle/<%= accesorio.id %>">
-                                <div class="contenedor_imagen">
-                                    <img class="img-productos-descuentos" src="/img/productos/<%= accesorio.image %>" alt="imagen_producto">
-                                </div>
-                            </a>
-                            <div>
-                                <div class="texto_nombre_arriba">
-                                    <h4><%= accesorio.name %></h4>
-                                </div>
-                                <div class="texto_descripcion_arriba">
-                                    <p class="descripcion"><%= accesorio.description %></p>
-                                </div>
-                                <% if (accesorio.discount=="Si") { %>
-                                    
-                                    <div class="texto_precio">
-                                        <p class="precio-tachado">$ <%= accesorio.price %></p>
-                                    </div>
-                                
-                                    <div class="texto_precio">
-                                        <p class="descuento">20% off</p>
-                                    </div>
-                                    <div class="texto_precio">
-                                        <p class="precio"><%= Number((accesorio.price*0.8).toFixed(2)) %></p>
-                                    </div>
-                            
-                                <% } else { %>
-                                    <p class="precio">$ <%= accesorio.price %></p>
-                                <% } %>
-                                <div class="div-boton-comprar">
-                                    <button class="boton-comprar" type="submit">Agregar</button>
-                                </div>
-                            </div>
-                        </article>
-            
-                    <% } %>
-
                     <% for(let accesorio of productosGatoConDescuento) { %>
                         <article class="articulo-productos-descuentos">
                             <a href="/productos/detalle/<%= accesorio.id %>">
@@ -132,19 +94,69 @@
                                 </div>
                                 <% if (accesorio.discount=="Si") { %>
                                     
-                                    <div class="texto_precio">
+                                    <div>
                                         <p class="precio-tachado">$ <%= accesorio.price %></p>
                                     </div>
                                 
-                                    <div class="texto_precio">
+                                    <div>
                                         <p class="descuento">20% off</p>
                                     </div>
-                                    <div class="texto_precio">
+                                    <div>
                                         <p class="precio"><%= Number((accesorio.price*0.8).toFixed(2)) %></p>
                                     </div>
                             
                                 <% } else { %>
-                                    <p class="precio">$ <%= accesorio.price %></p>
+                                    <div class="espacio_precio"></div>
+                                
+                                    <div class="espacio_descuento"></div>
+                                    <div>
+                                        <p class="precio">$ <%= accesorio.price %></p>
+                                    </div>
+                                    
+                                <% } %>
+                                <div class="div-boton-comprar">
+                                    <button class="boton-comprar" type="submit">Agregar</button>
+                                </div>
+                            </div>
+                        </article>
+            
+                    <% } %>
+
+                    <% for(let accesorio of productosPerroConDescuento) { %>
+                        <article class="articulo-productos-descuentos">
+                            <a href="/productos/detalle/<%= accesorio.id %>">
+                                <div class="contenedor_imagen">
+                                    <img class="img-productos-descuentos" src="/img/productos/<%= accesorio.image %>" alt="imagen_producto">
+                                </div>
+                            </a>
+                            <div>
+                                <div class="texto_nombre_arriba">
+                                    <h4><%= accesorio.name %></h4>
+                                </div>
+                                <div class="texto_descripcion_arriba">
+                                    <p class="descripcion"><%= accesorio.description %></p>
+                                </div>
+                                <% if (accesorio.discount=="Si") { %>
+                                    
+                                    <div>
+                                        <p class="precio-tachado">$ <%= accesorio.price %></p>
+                                    </div>
+                                
+                                    <div>
+                                        <p class="descuento">20% off</p>
+                                    </div>
+                                    <div>
+                                        <p class="precio"><%= Number((accesorio.price*0.8).toFixed(2)) %></p>
+                                    </div>
+                            
+                                <% } else { %>
+                                    <div class="espacio_precio"></div>
+                                
+                                    <div class="espacio_descuento"></div>
+                                    <div>
+                                        <p class="precio">$ <%= accesorio.price %></p>
+                                    </div>
+                                    
                                 <% } %>
                                 <div class="div-boton-comprar">
                                     <button class="boton-comprar" type="submit">Agregar</button>
