@@ -76,7 +76,7 @@
             </article>
 
              <!-- Lista productos productos-->
-            <div class="lista_desktop">
+             <div class="lista_desktop">
                 <div class="lista_flexbox_desktop">
                     <% for(let accesorio of higienePerro) { %>
                         <article class="articulo-productos-descuentos">
@@ -94,19 +94,25 @@
                                 </div>
                                 <% if (accesorio.discount=="Si") { %>
                                     
-                                    <div class="texto_precio">
+                                    <div>
                                         <p class="precio-tachado">$ <%= accesorio.price %></p>
                                     </div>
                                 
-                                    <div class="texto_precio">
+                                    <div>
                                         <p class="descuento">20% off</p>
                                     </div>
-                                    <div class="texto_precio">
+                                    <div>
                                         <p class="precio"><%= Number((accesorio.price*0.8).toFixed(2)) %></p>
                                     </div>
                             
                                 <% } else { %>
-                                    <p class="precio">$ <%= accesorio.price %></p>
+                                    <div class="espacio_precio"></div>
+                                
+                                    <div class="espacio_descuento"></div>
+                                    <div>
+                                        <p class="precio">$ <%= accesorio.price %></p>
+                                    </div>
+                                    
                                 <% } %>
                                 <div class="div-boton-comprar">
                                     <button class="boton-comprar" type="submit">Agregar</button>
