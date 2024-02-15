@@ -1,17 +1,16 @@
 [
- {
-  "id": 44,
-  "name": "Collar Rojo",
-  "description": "Collar elegante en color rojo.s",
-  "image": "collar-rojo.jpeg",
-  "pet": "perro",
-  "category": "accesorios",
-  "weight": [
-   "",
-   "Rojo"
-  ],
-  "price": "19.99",
-  "quantity": ""
+{
+   "id": 1,
+   "name": "Arnes Pretalreggatos Anti Escape + Correa 10m",
+   "description": "Arnés pretal para gatos con sistema anti escape y correa de 10 metros.",
+   "image": "arnes-pretalreggatos-anti-escape+correa10m.jpg",
+   "colors": "",
+   "category": "Accesorio",
+   "price": 8.99,
+   "discount": "No",
+   "id_pet": "Gato",
+   "weight": "",
+   "marca": "Generico"
  },
  {
   "id": 2,
