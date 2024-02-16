@@ -19,10 +19,10 @@ module.exports = (sequelize, DataTypes) => {
         deletedAt: false 
     }
 
-    const tipos_marcas = sequelize.define (alias, cols, config)
+    const tiposMarcas = sequelize.define (alias, cols, config)
 
     // Relación uno a uno con el modelo Productos
-    tipos_marcas.hasone(model.products, {
+    tiposMarcas.hasone(model.producto, {
         as: 'productos',
         foreignKey: 'tipo_mascota_id'
     })

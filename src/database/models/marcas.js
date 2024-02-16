@@ -21,7 +21,7 @@ module.exports = (sequelize, DataTypes) => {
     const marcas = sequelize.define(alias, cols, config);
 
     // Relación uno a uno con el modelo Productos
-    marcas.hasone(models.products, {
+    marcas.hasone(models.producto, {
         as: 'productos',
         foreignKey: 'marca_id'
     });
