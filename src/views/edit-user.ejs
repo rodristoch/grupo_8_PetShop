@@ -45,15 +45,8 @@
                 <label class="error"><i style="color: red; font-size: 16px; margin-right: 5px; margin-left: 5px;" class="fa-sharp fa-solid fa-circle-exclamation"></i><%= errors.apellido.msg %></label>
             <% } %>
             
-            <!--Imagen actual-->
-            <article class="flex-enlinea-imagen">
-                <p class="titulo" for="">Imagen actual:   </p>
-                <img src="/img/usersImage/<%= userToEdit.image %>" alt="imagen actual" class="imagen_actual">
-            </article>
-
-
             <!--Input subir imagen-->
-            <p class="titulo" for="">Sube una foto de perfil (Opcional)</p>
+            <p class="titulo" for="">Foto de perfil</p>
             <input type="file" name="imagen_user" class="input_imagen">
             
             <!--Input email-->
