@@ -1,0 +1,34 @@
+[
+    {
+     "id": 1,
+     "nombre": "Agustin",
+     "apellido": "Macko",
+     "email": "mackoaa@gmail.com",
+     "password": "$2a$10$05/5nMBCj5udyfv/Yk3CF.QIMUF.aqSAbp/E8q67TUMczXBKM7Erq",
+     "category": "Administrador"
+    },
+    {
+     "id": 2,
+     "nombre": "Rodrigo",
+     "apellido": "Stochetta",
+     "email": "rodrigo-eze87@hotmail.com",
+     "password": "$2a$10$MDwItBJrEKgheu44iCLI0eKUJoy3E5gmKlxFNe2XJANf9..Y7K0Sa",
+     "category": "Administrador"
+    },
+    {
+     "id": 3,
+     "nombre": "Nicolas",
+     "apellido": "Villamil ",
+     "email": "nicolasvillamil1997@gmail.com",
+     "password": "$2a$10$CyufKAyWsgou1V5rhNG2BuolTNWoA5FRYORxcvDdA64vKELqgnDQa",
+     "category": "Administrador"
+    },
+    {
+     "id": 4,
+     "nombre": "asas",
+     "apellido": "asas",
+     "image": "imagen_user-1705602486557.jpeg",
+     "email": "maria.osorio@laika.pet",
+     "password": "$2a$10$86QatMDoYGH0DS9toq1Fd.mpil5kLVlZk8BWZLg5sSPPluJ3qg7BO"
+    }
+   ]
