@@ -15,18 +15,20 @@
     <!--Registro-->
     <form class="formulario" action="/users/edit/<%= userToEdit.id %>?_method=PUT" method="POST">
         <div class="centrado">
-            <h2>Edita tus datos</h2>
+            <h2>Mi perfil</h2>
 
             <div>
                 <!-- muestra los datos del usuario -->
                 <% if(locals.userToEdit){ %>
     
-                    <h3 style="color: blue; font-size: 16px; font-weight: 500;" >Bienvenido: <%= userToEdit.nombre %> <%= userToEdit.apellido %></h3>
-                    <h3 style="color: blue; font-size: 16px; font-weight: 500;" >Tu email es <%= userToEdit.email %></h3>
+                    <h3 style="color: black; font-size: 20px; font-weight: 600;" ><%= userToEdit.nombre %> <%= userToEdit.apellido %></h3>
+                    <h3 style="color: black; font-size: 18px; font-weight: 400;" ><%= userToEdit.email %></h3>
     
                 <% } %>
 
             </div>
+
+            <h3 class="editar-titulo">Edita tus datos</h3>
             
            <!--Input Nombre-->
            <p class="<%= (locals.errors && locals.errors.nombre) ? 'titulo-error' : 'titulo' %>">Nombre:</p>

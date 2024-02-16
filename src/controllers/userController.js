@@ -115,7 +115,7 @@ const userController = {
 		    fs.writeFileSync(usersFilePath, JSON.stringify(users, null, " "));
 
             //renderizo la vista con la info bien
-            res.redirect("/users/login");
+            res.redirect("/");
         }
 
     },

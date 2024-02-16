@@ -27,6 +27,13 @@ h2{
     text-align: center;
 }
 
+.editar-titulo{
+    margin-top: 40px;
+    line-height: 20px;
+    color: #18515F;
+    text-align: left;
+}
+
 a {
     color: #18515F;
 }

@@ -30,5 +30,37 @@
   "image": "imagen_user-1705602486557.jpeg",
   "email": "maria.osorio@laika.pet",
   "password": "$2a$10$86QatMDoYGH0DS9toq1Fd.mpil5kLVlZk8BWZLg5sSPPluJ3qg7BO"
+ },
+ {
+  "id": 5,
+  "nombre": "Rodrigo",
+  "apellido": "Stochetta",
+  "image": "No se subió imagen de usuario",
+  "email": "rodrigo-eze87@hotmail.com",
+  "password": "$2a$10$ElfZaIlgO72qHQqr/rpugOkZwIJwzUNxtbSr2X1p5boWQ1sjHVqAa"
+ },
+ {
+  "id": 6,
+  "nombre": "Rodrigo",
+  "apellido": "Stochetta",
+  "image": "No se subió imagen de usuario",
+  "email": "rodrigo-eze87@hotmail.com",
+  "password": "$2a$10$SKGDej7d2XTcTYjRe9ibzuny6cS047J5zbKKUhAnVHlQLr2OD4RV2"
+ },
+ {
+  "id": 7,
+  "nombre": "juan",
+  "apellido": "mmmm",
+  "image": "No se subió imagen de usuario",
+  "email": "rodrigo-eze87@hotmail.com",
+  "password": "$2a$10$Bg1ftVzJDeyn8agODsW1uOR1VGSY/J3F78V2cM/YIS9ihw/qAimSu"
+ },
+ {
+  "id": 8,
+  "nombre": "Rodrigo",
+  "apellido": "Stochetta",
+  "image": "No se subió imagen de usuario",
+  "email": "rodrigo-eze87@hotmail.com",
+  "password": "$2a$10$94zO9LxzDlAiKI3s0DvenuXm3bkC6trwTey4NRNtUPeQrpgBRFez6"
  }
 ]
