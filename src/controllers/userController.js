@@ -92,7 +92,7 @@ const userController = {
 			id: users[users.length - 1].id + 1,
 			nombre: req.body.nombre,
             apellido: req.body.apellido,
-            image: req.file!= undefined ? req.file.filename : "/img/IMG-20240215-WA0003.jpg",
+            image: req.file!= undefined ? req.file.filename : "/img/default.jpg",
 			email: req.body.email, 
             password: bcrypt.hashSync(req.body.password, 10),
             category: "Invitado"

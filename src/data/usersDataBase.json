@@ -3,7 +3,7 @@
   "id": 1,
   "nombre": "Agustin",
   "apellido": "Macko",
-  "image": "/img/IMG-20240215-WA0003.jpg",
+  "image": "/img/default.jpg",
   "email": "mackoaa@gmail.com",
   "password": "$2a$10$05/5nMBCj5udyfv/Yk3CF.QIMUF.aqSAbp/E8q67TUMczXBKM7Erq",
   "category": "Administrador"
@@ -12,7 +12,7 @@
   "id": 2,
   "nombre": "Rodrigo",
   "apellido": "Stochetta",
-  "image": "/img/IMG-20240215-WA0003.jpg",
+  "image": "/img/default.jpg",
   "email": "rodrigo-eze87@hotmail.com",
   "password": "$2a$10$MDwItBJrEKgheu44iCLI0eKUJoy3E5gmKlxFNe2XJANf9..Y7K0Sa",
   "category": "Administrador"
@@ -21,7 +21,7 @@
   "id": 3,
   "nombre": "Nicolas",
   "apellido": "Villamil ",
-  "image": "/img/IMG-20240215-WA0003.jpg",
+  "image": "/img/default.jpg",
   "email": "nicolasvillamil1997@gmail.com",
   "password": "$2a$10$CyufKAyWsgou1V5rhNG2BuolTNWoA5FRYORxcvDdA64vKELqgnDQa",
   "category": "Administrador"
@@ -30,7 +30,7 @@
   "id": 4,
   "nombre": "Rodrigo",
   "apellido": "Stochetta",
-  "image": "/img/IMG-20240215-WA0003.jpg",
+  "image": "/img/default.jpg",
   "email": "rodrigo-eze87@hotmail.com",
   "password": "$2a$10$8CE7gHB6Bpm3qNKVMtHpquKBR/3.LL1xzswiohVjx13Y8r7QFC2Wa",
   "category": "Invitado"
