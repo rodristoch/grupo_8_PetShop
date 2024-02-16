@@ -1,0 +1,9 @@
+[
+    {
+        "id" : 1,
+        "nombre" : "oferta",
+        "descripcion" : "Aprovecha el descuento, por tiempo limitado!", 
+        "fecha_inicio" : "04/03/2024",
+        "fecha_final" : "27/03/2024"
+    }
+]
