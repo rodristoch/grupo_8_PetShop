@@ -23,15 +23,15 @@ module.exports =(sequelize, DataTypes) => {
 
         //Relación con tabla de productos
         productoCategoria.belongsTo(models.productos, {
-            foreignKey: 'productoID',
-            as: 'productos' 
+            foreignKey: 'productoId',
+            as: 'productos'
         });
 
         //Relación con la tabla de categorias
-        productoCategoria.belongsTo(model.categorias, {
-            foreignKey: 'categoriaID',
+        productoCategoria.belongsTo(models.categorias, {
+            foreignKey: 'categoriaId',
             as: 'categorias'
-        });      
+        });
     };
 
     return productoCategoria
