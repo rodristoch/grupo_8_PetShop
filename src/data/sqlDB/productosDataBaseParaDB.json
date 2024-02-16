@@ -49,7 +49,7 @@
       "discount": "No",
       "id_pet": "Gato",
       "weight": "",
-      "marca": "Mpets Ecozany"
+      "marca": 2
      },
      {
       "id": 5,
@@ -75,7 +75,7 @@
       "discount": "No",
       "id_pet": "Gato",
       "weight": "",
-      "marca": "Catit"
+      "marca": 3
      },
      {
       "id": 7,
@@ -101,7 +101,7 @@
       "discount": "Si",
       "id_pet": "Gato",
       "weight": "",
-      "marca": "Cancat"
+      "marca": 4
      },
      {
       "id": 9,
@@ -113,7 +113,7 @@
       "discount": "No",
       "id_pet": "Gato",
       "weight": 1,
-      "marca": "Pro Plan"
+      "marca": 5
      },
      {
       "id": 10,
@@ -125,7 +125,7 @@
       "discount": "Si",
       "id_pet": "Gato",
       "weight": 1,
-      "marca": "Pro Plan"
+      "marca": 5
      },
      {
       "id": 11,
@@ -137,7 +137,7 @@
       "discount": "No",
       "id_pet": "Gato",
       "weight": 2,
-      "marca": "Pro Plan"
+      "marca": 5
      },
      {
       "id": 12,
@@ -149,7 +149,7 @@
       "discount": "No",
       "id_pet": "Gato",
       "weight": 3,
-      "marca": "Purina Cat Chow"
+      "marca": 6
      },
      {
       "id": 13,
@@ -161,7 +161,7 @@
       "discount": "No",
       "id_pet": "Gato",
       "weight": 1,
-      "marca": "Purina one"
+      "marca": 7
      },
      {
       "id": 14,
@@ -173,7 +173,7 @@
       "discount": "No",
       "id_pet": "Gato",
       "weight": 1,
-      "marca": "Purina one"
+      "marca": 7
      },
      {
       "id": 15,
@@ -185,7 +185,7 @@
       "discount": "Si",
       "id_pet": "Gato",
       "weight": 2,
-      "marca": "Pro Plan"
+      "marca": 5
      },
      {
       "id": 16,
@@ -197,7 +197,7 @@
       "discount": "No",
       "id_pet": "Gato",
       "weight": 2,
-      "marca": "Pro Plan"
+      "marca": 5
      },
      {
       "id": 17,
@@ -209,7 +209,7 @@
       "discount": "No",
       "id_pet": "Gato",
       "weight": 1,
-      "marca": "Pro Plan"
+      "marca": 5
      },
      {
       "id": 18,
@@ -221,7 +221,7 @@
       "discount": "Si",
       "id_pet": "Gato",
       "weight": 1,
-      "marca": "Pro Plan"
+      "marca": 5
      },
      {
       "id": 19,
@@ -233,7 +233,7 @@
       "discount": "No",
       "id_pet": "Gato",
       "weight": "",
-      "marca": "Sanicat"
+      "marca": 8
      },
      {
       "id": 20,
@@ -281,7 +281,7 @@
       "discount": "No",
       "id_pet": "Gato",
       "weight": "",
-      "marca": "Cat-It"
+      "marca": 16
      },
      {
       "id": 24,
@@ -341,7 +341,7 @@
       "discount": "No",
       "id_pet": "Gato",
       "weight": "",
-      "marca": "Cancat"
+      "marca": 4
      },
      {
       "id": 29,
@@ -377,7 +377,7 @@
       "discount": "Si",
       "id_pet": "Gato",
       "weight": "",
-      "marca": "Gigwi"
+      "marca": 10
      },
      {
       "id": 32,
@@ -461,7 +461,7 @@
       "discount": "No",
       "id_pet": "Gato",
       "weight": "",
-      "marca": "Vesper Catit"
+      "marca": 9
      },
      {
       "id": 39,
@@ -590,7 +590,7 @@
       "discount": "No",
       "id_pet": "Perro",
       "weight": 1,
-      "marca": "Royal Canin"
+      "marca": 11
      },
      {
       "id": 50,
@@ -602,7 +602,7 @@
       "discount": "No",
       "id_pet": "Perro",
       "weight": 2,
-      "marca": "Royal Canin"
+      "marca": 11
      },
      {
       "id": 51,
@@ -614,7 +614,7 @@
       "discount": "No",
       "id_pet": "Perro",
       "weight": 2,
-      "marca": "Royal Canin"
+      "marca": 11
      },
      {
       "id": 52,
@@ -626,7 +626,7 @@
       "discount": "Si",
       "id_pet": "Perro",
       "weight": 2,
-      "marca": "Royal Canin"
+      "marca": 11
      },
      {
       "id": 53,
@@ -638,7 +638,7 @@
       "discount": "Si",
       "id_pet": "Perro",
       "weight": 1,
-      "marca": "Royal Canin"
+      "marca": 11
      },
      {
       "id": 54,
@@ -650,7 +650,7 @@
       "discount": "No",
       "id_pet": "Perro",
       "weight": 3,
-      "marca": "Eukanuba"
+      "marca": 12
      },
      {
       "id": 55,
@@ -662,7 +662,7 @@
       "discount": "No",
       "id_pet": "Perro",
       "weight": 2,
-      "marca": "Eukanuba"
+      "marca": 12
      },
      {
       "id": 56,
@@ -674,7 +674,7 @@
       "discount": "Si",
       "id_pet": "Perro",
       "weight": 3,
-      "marca": "Eukanuba"
+      "marca": 12
      },
      {
       "id": 57,
@@ -686,7 +686,7 @@
       "discount": "No",
       "id_pet": "Perro",
       "weight": 1,
-      "marca": "Eukanuba"
+      "marca": 12
      },
      {
       "id": 58,
@@ -698,7 +698,7 @@
       "discount": "No",
       "id_pet": "Perro",
       "weight": 1,
-      "marca": "Eukanuba"
+      "marca": 12
      },
      {
       "id": 59,
@@ -722,7 +722,7 @@
       "discount": "No",
       "id_pet": "Perro",
       "weight": "",
-      "marca": "Osspret"
+      "marca": 13
      },
      {
       "id": 61,
@@ -734,7 +734,7 @@
       "discount": "No",
       "id_pet": "Perro",
       "weight": "",
-      "marca": "Osspret"
+      "marca": 13
      },
      {
       "id": 62,
@@ -746,7 +746,7 @@
       "discount": "No",
       "id_pet": "Perro",
       "weight": "",
-      "marca": "Osspret"
+      "marca": 13
      },
      {
       "id": 63,
@@ -758,7 +758,7 @@
       "discount": "No",
       "id_pet": "Perro",
       "weight": "",
-      "marca": "Iki"
+      "marca": 15
      },
      {
       "id": 64,
@@ -866,7 +866,7 @@
       "discount": "No",
       "id_pet": "Perro",
       "weight": "",
-      "marca": "Cancat"
+      "marca": 4
      },
      {
       "id": 73,
@@ -878,7 +878,7 @@
       "discount": "No",
       "id_pet": "Perro",
       "weight": "",
-      "marca": "Cancat"
+      "marca": 4
      },
      {
       "id": 74,
@@ -902,7 +902,7 @@
       "discount": "No",
       "id_pet": "Perro",
       "weight": "",
-      "marca": "King air dog"
+      "marca": 14
      },
      {
       "id": 76,

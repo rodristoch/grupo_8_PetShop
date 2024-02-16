@@ -1,0 +1,18 @@
+[
+    {"id": 1, "nombre": "Generico"},
+    {"id": 2, "nombre": "Mpets Ecozany"},
+    {"id": 3, "nombre": "Catit"},
+    {"id": 4, "nombre": "Cancat"},
+    {"id": 5, "nombre": "Pro Plan"},
+    {"id": 6, "nombre": "Purina Cat Chow"},
+    {"id": 7, "nombre": "Purina One"},
+    {"id": 8, "nombre": "Sanicat"},
+    {"id": 9, "nombre": "Vesper Catit"},
+    {"id": 10, "nombre": "Gigwi"},
+    {"id": 11, "nombre": "Royal Canin"},
+    {"id": 12, "nombre": "Eukanuba"},
+    {"id": 13, "nombre": "Osspret"},
+    {"id": 14, "nombre": "King air dog"},
+    {"id": 15, "nombre": "Iki"},
+    {"id": 16, "nombre": "Cat-It"}
+  ]
