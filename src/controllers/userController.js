@@ -92,10 +92,10 @@ const userController = {
 			id: users[users.length - 1].id + 1,
 			nombre: req.body.nombre,
             apellido: req.body.apellido,
-            image: req.file!= undefined ? req.file.filename : "No se subió imagen de usuario",
+            image: req.file!= undefined ? req.file.filename : "/img/IMG-20240215-WA0003.jpg",
 			email: req.body.email, 
             password: bcrypt.hashSync(req.body.password, 10),
-            category: req.body.category
+            category: "Invitado"
 		}
 
         //Validaciones con la info del request
