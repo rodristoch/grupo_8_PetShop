@@ -114,7 +114,7 @@ const userController = {
             //escribo el json
 		    fs.writeFileSync(usersFilePath, JSON.stringify(users, null, " "));
 
-            res.redirect("/")
+            res.redirect("/users/perfil/:id")
 
             
         }

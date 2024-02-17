@@ -15,23 +15,34 @@
     <!--Registro-->
     <form class="formulario" action="" method="POST">
         <div class="centrado">
-            <h2>Mi perfil</h2>
-
+            
             <div>
                 <!-- muestra los datos del usuario -->
-                <% if(locals.userToEdit){ %>
+                <% if(locals.userToEdit && locals.userALoguearse){ %>
+
+                    <h2>Mi perfil</h2>
     
                     <h3 style="color: black; font-size: 20px; font-weight: 600;" ><%= userToEdit.nombre %> <%= userToEdit.apellido %></h3>
                     <h3 style="color: black; font-size: 18px; font-weight: 400;" ><%= userToEdit.email %></h3>
                     <img src="<%= userToEdit.image %>" alt="">
+
+                    <a href="/users/edit/<%= userToEdit.id %>">
+                        <button type="button" class="btn-secundario">Editá tus datos</button>
+                    </a>
     
-                <% } %>
+                <% } else { %>
+
+                    <h3 class="editar-titulo">Ya podés loguearte</h3>
+
+                    <a href="/users/login">
+                        <button type="button" class="btn-secundario">Login</button>
+                    </a>
+
+                <% }  %>
 
             </div>
 
-            <a href="/users/edit/<%= userToEdit.id %>">
-                <button type="button" class="btn-secundario">Editá tus datos</button>
-            </a>
+            
             
         </div>
     </form>
