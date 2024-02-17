@@ -43,6 +43,9 @@ const validacionesLogin = [
 router.get("/register", userController.register) 
 router.post("/register", upload.single("imagen_user"), validaciones, userController.processRegister);
 
+// Perfil de usuario
+router.get("/perfil/:id", userController.perfil);
+
 // Editar un usuario
 router.get("/edit/:id", authMiddleware, userController.edit);
 router.put("/edit/:id", validaciones, userController.processEdit);

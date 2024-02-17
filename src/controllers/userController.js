@@ -114,11 +114,26 @@ const userController = {
             //escribo el json
 		    fs.writeFileSync(usersFilePath, JSON.stringify(users, null, " "));
 
-            //renderizo la vista con la info bien
-            res.redirect("/");
+            res.redirect("/")
+
+            
         }
 
     },
+
+    perfil: (req, res) => {
+
+        //usuario q se loguea
+        const userALoguearse = req.session.userLogueado
+       
+        //traigo los usuarios
+        const users = JSON.parse(fs.readFileSync(usersFilePath, 'utf-8'));
+
+        //busco al usuario a editar por id
+		const userToEdit = users.find(user => {return user.id == req.params.id})
+
+		res.render("perfil-user", {userToEdit, userALoguearse});
+	},
 
 
     edit: (req, res) => {

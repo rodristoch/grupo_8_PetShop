@@ -15,19 +15,6 @@
     <!--Registro-->
     <form class="formulario" action="/users/edit/<%= userToEdit.id %>?_method=PUT" method="POST">
         <div class="centrado">
-            <h2>Mi perfil</h2>
-
-            <div>
-                <!-- muestra los datos del usuario -->
-                <% if(locals.userToEdit){ %>
-    
-                    <h3 style="color: black; font-size: 20px; font-weight: 600;" ><%= userToEdit.nombre %> <%= userToEdit.apellido %></h3>
-                    <h3 style="color: black; font-size: 18px; font-weight: 400;" ><%= userToEdit.email %></h3>
-                    <img src="<%= userToEdit.image %>" alt="">
-    
-                <% } %>
-
-            </div>
 
             <h3 class="editar-titulo">Edita tus datos</h3>
             

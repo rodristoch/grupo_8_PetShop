@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+    <%- include("./partials/head.ejs", {cssSheet: "registerLogin_style", title: "Página Register"}) %>
+<body>
+
+    <%- include("./partials/header.ejs") %>
+    
+    <%- include("./partials/header2.ejs") %>
+
+<main>
+    
+<article class="contenedor">
+    <!--Imagen hardcodeada-->
+        <img src="/img/Imagen_register.png" alt="Imagen de perro y gato" class="tamano-imagen">
+    <!--Registro-->
+    <form class="formulario" action="" method="POST">
+        <div class="centrado">
+            <h2>Mi perfil</h2>
+
+            <div>
+                <!-- muestra los datos del usuario -->
+                <% if(locals.userToEdit){ %>
+    
+                    <h3 style="color: black; font-size: 20px; font-weight: 600;" ><%= userToEdit.nombre %> <%= userToEdit.apellido %></h3>
+                    <h3 style="color: black; font-size: 18px; font-weight: 400;" ><%= userToEdit.email %></h3>
+                    <img src="<%= userToEdit.image %>" alt="">
+    
+                <% } %>
+
+            </div>
+
+            <a href="/users/edit/<%= userToEdit.id %>">
+                <button type="button" class="btn-secundario">Editá tus datos</button>
+            </a>
+            
+        </div>
+    </form>
+</article>
+
+</main>
+
+<%- include("./partials/footer.ejs") %>
+    
+</body>
+</html>
