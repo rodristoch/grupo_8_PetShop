@@ -1,6 +1,13 @@
 [
     {
         "id" : 1,
+        "nombre" : null,
+        "descripcion" : null, 
+        "fecha_inicio" : null,
+        "fecha_final" : null
+    },
+    {
+        "id" : 2,
         "nombre" : "oferta",
         "descripcion" : "Aprovecha el descuento, por tiempo limitado!", 
         "fecha_inicio" : "04/03/2024",

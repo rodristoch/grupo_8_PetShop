@@ -8,7 +8,6 @@
        "precio": 8.99,
        "imagen": "arnes-pretalreggatos-anti-escape+correa10m.jpg",
        "tipo_mascota_id": 1,
-       "descuento_id": 1,
        "marca_id": 1
      },
      {
@@ -20,7 +19,6 @@
       "precio": 27.99,
       "imagen": "cañita-pluma-cancat-pez-marron.jpg",
       "tipo_mascota_id": 1,
-      "descuento_id": 1,
       "marca_id": 1
      },
      {
@@ -32,7 +30,6 @@
       "precio": 10.99,
       "imagen": "collar-elastizado-gatos.jpg",
       "tipo_mascota_id": 1,
-      "descuento_id": 1,
       "marca_id": 1
      },
      {
@@ -44,7 +41,6 @@
       "precio": 17.99,
       "imagen": "collar-mpets-ecozany-celesteynegro.jpg",
       "tipo_mascota_id": 1,
-      "descuento_id": 1,
       "marca_id": 2
      },
      {
@@ -56,7 +52,6 @@
       "precio": 10.99,
       "imagen": "comedero-gatos.jpg",
       "tipo_mascota_id": 1,
-      "descuento_id": 1,
       "marca_id": 1
      },
      {
@@ -68,7 +63,6 @@
       "precio": 14.99,
       "imagen": "fuente-catit-flor.jpg",
       "tipo_mascota_id": 1,
-      "descuento_id": 1,
       "marca_id": 3
      },
      {
@@ -79,7 +73,6 @@
       "peso": null,
       "precio": 24.99,
       "imagen": "mocila-transportadora-gatos.jpg",
-      "descuento_id": 2,
       "tipo_mascota_id": 1,
       "marca_id": 1
      },
@@ -91,7 +84,6 @@
       "peso": null,
       "precio": 29.99,
       "imagen": "peluche-cancat-cilindrico.jpg",
-      "descuento_id": 2,
       "tipo_mascota_id": 1,
       "marca_id": 4
      },
@@ -104,7 +96,6 @@
       "precio": 18.99,
       "imagen": "adulto-pollo-alimento-humedo-frente-pro-plan.jpg",
       "tipo_mascota_id": 1,
-      "descuento_id": 1,
       "marca_id": 5
      },
      {
@@ -115,7 +106,6 @@
       "peso": 1,
       "precio": 20.99,
       "imagen": "adulto-salmon-alimento-humedo-frente-pro-plan.jpg",
-      "descuento_id": 2,
       "tipo_mascota_id": 1,
       "marca_id": 5
      },
@@ -128,7 +118,6 @@
       "precio": 16.99,
       "imagen": "kitten-pollo-alimento-humedo-frente-pro-plan.jpg",
       "tipo_mascota_id": 1,
-      "descuento_id": 1,
       "marca_id": 5
      },
      {
@@ -140,7 +129,6 @@
       "precio": 22.99,
       "imagen": "purina-cat-chow-adulto.jpg",
       "tipo_mascota_id": 1,
-      "descuento_id": 1,
       "marca_id": 6
      },
      {
@@ -152,7 +140,6 @@
       "precio": 26.99,
       "imagen": "purina-one-polloycarne.jpg",
       "tipo_mascota_id": 1,
-      "descuento_id": 1,
       "marca_id": 7
      },
      {
@@ -164,7 +151,6 @@
       "precio": 28.99,
       "imagen": "purina-one-polloysalmon.jpg",
       "tipo_mascota_id": 1,
-      "descuento_id": 1,
       "marca_id": 7
      },
      {
@@ -175,7 +161,6 @@
       "peso": 2,
       "precio": 30.99,
       "imagen": "Purina-Proplan-adulto.jpg",
-      "descuento_id": 2,
       "tipo_mascota_id": 1,
       "marca_id": 5
      },
@@ -188,7 +173,6 @@
       "precio": 32.99,
       "imagen": "Purina-Proplan-adulto+7.jpg",
       "tipo_mascota_id": 1,
-      "descuento_id": 1,
       "marca_id": 5
      },
      {
@@ -200,7 +184,6 @@
       "precio": 19.99,
       "imagen": "Purina-Proplan-kitten.jpg",
       "tipo_mascota_id": 1,
-      "descuento_id": 1,
       "marca_id": 5
      },
      {
@@ -211,7 +194,6 @@
       "peso": 1,
       "precio": 39.99,
       "imagen": "Purina-Proplan-reducido-calorias.jpg",
-      "descuento_id": 2,
       "tipo_mascota_id": 1,
       "marca_id": 5
      },
@@ -224,7 +206,6 @@
       "precio": 19.99,
       "tipo_mascota_id": 1,
       "imagen": "arena-aglomerante-sanicat-strong-clumps-7Kg.jpg",
-      "descuento_id": 1,
       "marca_id": 8
      },
      {
@@ -235,7 +216,6 @@
       "peso": null,
       "precio": 23.99,
       "imagen": "Bandeja-Sanitaria-Litera.jpg",
-      "descuento_id": 2,
       "tipo_mascota_id": 1,
       "marca_id": 1
      },
@@ -248,7 +228,6 @@
       "precio": 29.99,
       "imagen": "Bandeja-Sanitaria-Litera-Baño-Cerrada-Para-Gato-Color-Gris.jpg",
       "tipo_mascota_id": 1,
-      "descuento_id": 1,
       "marca_id": 1
      },
      {
@@ -260,7 +239,6 @@
       "precio": 16.99,
       "imagen": "cardina-cepillo-saca-pelo-mascota-premium-autolimpiante-aseo.jpg",
       "tipo_mascota_id": 1,
-      "descuento_id": 1,
       "marca_id": 1
      },
      {
@@ -272,7 +250,6 @@
       "precio": 34.99,
       "imagen": "Cat-It-Alfombra-Para-Baño-Sanitario-Grande-60x90cm-Color-Gris.jpg",
       "tipo_mascota_id": 1,
-      "descuento_id": 1,
       "marca_id": 16
      },
      {
@@ -283,7 +260,6 @@
       "peso": null,
       "precio": 5.99,
       "imagen": "cepillo-de-dientes.jpg",
-      "descuento_id": 2,
       "tipo_mascota_id": 1,
       "marca_id": 1
      },
@@ -296,7 +272,6 @@
       "precio": 8.99,
       "imagen": "cepillo-peine-rastrillo.jpg",
       "tipo_mascota_id": 1,
-      "descuento_id": 1,
       "marca_id": 1
      },
      {
@@ -308,7 +283,6 @@
       "precio": 42.99,
       "imagen": "kit-sanitario-gato-bandeja-comedero-palita-piedras-cepillo.jpg",
       "tipo_mascota_id": 1,
-      "descuento_id": 1,
       "marca_id": 1
      },
      {
@@ -319,7 +293,6 @@
       "peso": null,
       "precio": 39.99,
       "imagen": "Litera-Catit-Filtro-Anti-Olor-Baño-Cerrado-Color-Gris-Claro.jpg",
-      "descuento_id": 2,
       "tipo_mascota_id": 1,
       "marca_id": 1
      },
@@ -332,7 +305,6 @@
       "precio": 15.99,
       "imagen": "Bandeja-Sanitaria-Litera-Baño-Cerrada-Para-Gato-Color-Gris.jpg",
       "tipo_mascota_id": 1,
-      "descuento_id": 1,
       "marca_id": 4
      },
      {
@@ -344,7 +316,6 @@
       "precio": 12.99,
       "imagen": "Bandeja-Sanitaria-Litera-Baño-Cerrada-Para-Gato-Color-Gris.jpg",
       "tipo_mascota_id": 1,
-      "descuento_id": 1,
       "marca_id": 1
      },
      {
@@ -355,7 +326,6 @@
       "peso": null,
       "precio": 10.99,
       "imagen": "cañita-alambre-resistente-largo.jpg",
-      "descuento_id": 2,
       "tipo_mascota_id": 1,
       "marca_id": 1
      },
@@ -367,7 +337,6 @@
       "peso": null,
       "precio": 24.99,
       "imagen": "juguete-droid-para-gatos-doble-3-sensores-gigwi-movimiento.jpg",
-      "descuento_id": 2,
       "tipo_mascota_id": 1,
       "marca_id": 10
      },
@@ -380,7 +349,6 @@
       "precio": 18.99,
       "imagen": "juguete-interactivo-dispenser-de-comida-pelotas.jpg",
       "tipo_mascota_id": 1,
-      "descuento_id": 1,
       "marca_id": 1
      },
      {
@@ -392,7 +360,6 @@
       "precio": 14.99,
       "imagen": "juguete-interactivo-gatos.jpg",
       "tipo_mascota_id": 1,
-      "descuento_id": 1,
       "marca_id": 1
      },
      {
@@ -404,7 +371,6 @@
       "precio": 29.99,
       "imagen": "juguete-interactivo-para-gatos-torre-con-pelotas-3-niveles.jpg",
       "tipo_mascota_id": 1,
-      "descuento_id": 1,
       "marca_id": 1
      },
      {
@@ -416,7 +382,6 @@
       "precio": 9.99,
       "imagen": "pelota-jaula-con-raton.jpg",
       "tipo_mascota_id": 1,
-      "descuento_id": 1,
       "marca_id": 1
      },
      {
@@ -428,7 +393,6 @@
       "precio": 7.99,
       "imagen": "pelota-multicolor-arcoiris-gatos-goma-eva.jpg",
       "tipo_mascota_id": 1,
-      "descuento_id": 1,
       "marca_id": 1
      },
      {
@@ -440,7 +404,6 @@
       "precio": 5.99,
       "imagen": "raton-a-cuerda.jpg",
       "tipo_mascota_id": 1,
-      "descuento_id": 1,
       "marca_id": 1
      },
      {
@@ -452,7 +415,6 @@
       "precio": 19.99,
       "imagen": "Túnel-Interactivo-Gatos-Plegable-Con-Cama-Vesper-Catit-Color-Gris.jpg",
       "tipo_mascota_id": 1,
-      "descuento_id": 1,
       "marca_id": 9
      },
      {
@@ -463,7 +425,6 @@
       "peso": null,
       "precio": 19.99,
       "imagen": "pechera-verde.jpeg",
-      "descuento_id": 2,
       "tipo_mascota_id": 2,
       "marca_id": 1
      },
@@ -476,7 +437,6 @@
       "precio": 27.99,
       "imagen": "pechera-perros-chicos.jpg",
       "tipo_mascota_id": 2,
-      "descuento_id": 1,
       "marca_id": 1
      },
      {
@@ -488,7 +448,6 @@
       "precio": 7.99,
       "imagen": "correa-retractil.jpg",
       "tipo_mascota_id": 2,
-      "descuento_id": 1,
       "marca_id": 1
      },
      {
@@ -500,7 +459,6 @@
       "precio": 13.99,
       "imagen": "correa-marron.png",
       "tipo_mascota_id": 2,
-      "descuento_id": 1,
       "marca_id": 1
      },
      {
@@ -511,7 +469,6 @@
       "peso": null,
       "precio": 19.99,
       "imagen": "collar-rojo.jpeg",
-      "descuento_id": 2,
       "tipo_mascota_id": 2,
       "marca_id": 1
      },
@@ -524,7 +481,6 @@
       "precio": 29.99,
       "imagen": "collar-bandana.jpg",
       "tipo_mascota_id": 2,
-      "descuento_id": 1,
       "marca_id": 1
      },
      {
@@ -535,7 +491,6 @@
       "peso": null,
       "precio": 27.99,
       "imagen": "collar-arcoiris.webp",
-      "descuento_id": 2,
       "tipo_mascota_id": 2,
       "marca_id": 1
      },
@@ -548,7 +503,6 @@
       "precio": 27.99,
       "imagen": "collar-amarillo-broche.jpg",
       "tipo_mascota_id": 2,
-      "descuento_id": 1,
       "marca_id": 1
      },
      {
@@ -560,7 +514,6 @@
       "precio": 20.99,
       "imagen": "cinturon-para-perros.jpeg",
       "tipo_mascota_id": 2,
-      "descuento_id": 1,
       "marca_id": 1
      },
      {
@@ -572,7 +525,6 @@
       "precio": 24.99,
       "imagen": "royalcanin-cachorro-medium.jpg",
       "tipo_mascota_id": 2,
-      "descuento_id": 1,
       "marca_id": 11
      },
      {
@@ -584,7 +536,6 @@
       "precio": 29.99,
       "imagen": "royalcanin-adulto-mini.jpg",
       "tipo_mascota_id": 2,
-      "descuento_id": 1,
       "marca_id": 11
      },
      {
@@ -596,7 +547,6 @@
       "precio": 34.99,
       "imagen": "royalcanin-adulto-mediano.jpg",
       "tipo_mascota_id": 2,
-      "descuento_id": 1,
       "marca_id": 11
      },
      {
@@ -607,7 +557,6 @@
       "peso": 2,
       "precio": 39.99,
       "imagen": "royalcanin-adulto-mas10años-mediano.jpg",
-      "descuento_id": 2,
       "tipo_mascota_id": 2,
       "marca_id": 11
      },
@@ -619,7 +568,6 @@
       "peso": 1,
       "precio": 38.99,
       "imagen": "royalcanin-adulto-mas7años-mediano.jpg",
-      "descuento_id": 2,
       "tipo_mascota_id": 2,
       "marca_id": 11
      },
@@ -632,7 +580,6 @@
       "precio": 42.99,
       "imagen": "eukanuba-cachorro-grande.jpg",
       "tipo_mascota_id": 2,
-      "descuento_id": 1,
       "marca_id": 12
      },
      {
@@ -644,7 +591,6 @@
       "precio": 36.99,
       "imagen": "eukanuba-adultomeidano.jpg",
       "tipo_mascota_id": 2,
-      "descuento_id": 1,
       "marca_id": 12
      },
      {
@@ -655,7 +601,6 @@
       "peso": 3,
       "precio": 39.99,
       "imagen": "eukanuba-adulto-grande.jpg",
-      "descuento_id": 2,
       "tipo_mascota_id": 2,
       "marca_id": 12
      },
@@ -668,7 +613,6 @@
       "precio": 27.99,
       "imagen": "eukanuba-adulto-chico-oferta.jpg",
       "tipo_mascota_id": 2,
-      "descuento_id": 1,
       "marca_id": 12
      },
      {
@@ -680,7 +624,6 @@
       "precio": 32.99,
       "imagen": "eukanuba-adulto-chico.jpg",
       "tipo_mascota_id": 2,
-      "descuento_id": 1,
       "marca_id": 12
      },
      {
@@ -692,7 +635,6 @@
       "precio": 15.99,
       "imagen": "pack-de-cepillos.jpg",
       "tipo_mascota_id": 2,
-      "descuento_id": 1,
       "marca_id": 1
      },
      {
@@ -704,7 +646,6 @@
       "precio": 12.99,
       "imagen": "osspret-shampoo-antiséptico-phcontrolado-cachorro.jpg",
       "tipo_mascota_id": 2,
-      "descuento_id": 1,
       "marca_id": 13
      },
      {
@@ -716,7 +657,6 @@
       "precio": 14.99,
       "imagen": "osspret-shampoo-antisárnico-garrapaticida.png",
       "tipo_mascota_id": 2,
-      "descuento_id": 1,
       "marca_id": 13
      },
      {
@@ -728,7 +668,6 @@
       "precio": 18.99,
       "imagen": "osspret-2en1-pulguicida-garrapaticida.jpg",
       "tipo_mascota_id": 2,
-      "descuento_id": 1,
       "marca_id": 13
      },
      {
@@ -740,7 +679,6 @@
       "precio": 9.99,
       "imagen": "iki-enjuegue-bucal-spray-adulto-y-cachorro.jpg",
       "tipo_mascota_id": 2,
-      "descuento_id": 1,
       "marca_id": 15
      },
      {
@@ -752,7 +690,6 @@
       "precio": 7.99,
       "imagen": "enjuague-bucal-para-agua.png",
       "tipo_mascota_id": 2,
-      "descuento_id": 1,
       "marca_id": 1
      },
      {
@@ -764,7 +701,6 @@
       "precio": 6.99,
       "imagen": "cortauñas-y-lima.jpeg",
       "tipo_mascota_id": 2,
-      "descuento_id": 1,
       "marca_id": 1
      },
      {
@@ -776,7 +712,6 @@
       "precio": 4.99,
       "imagen": "cortauñas.jpeg",
       "tipo_mascota_id": 2,
-      "descuento_id": 1,
       "marca_id": 1
      },
      {
@@ -788,7 +723,6 @@
       "precio": 11.99,
       "imagen": "cepillo-pelo-largo.jpg",
       "tipo_mascota_id": 2,
-      "descuento_id": 1,
       "marca_id": 1
      },
      {
@@ -800,7 +734,6 @@
       "precio": 10.99,
       "imagen": "cepillo-pelo-corto.jpeg",
       "tipo_mascota_id": 2,
-      "descuento_id": 1,
       "marca_id": 1
      },
      {
@@ -812,7 +745,6 @@
       "precio": 8.99,
       "imagen": "soga-celeste-blanca-negra.jpg",
       "tipo_mascota_id": 2,
-      "descuento_id": 1,
       "marca_id": 1
      },
      {
@@ -824,7 +756,6 @@
       "precio": 6.99,
       "imagen": "soga.jpg",
       "tipo_mascota_id": 2,
-      "descuento_id": 1,
       "marca_id": 1
      },
      {
@@ -836,7 +767,6 @@
       "precio": 5.99,
       "imagen": "juguete-verde.jpg",
       "tipo_mascota_id": 2,
-      "descuento_id": 1,
       "marca_id": 1
      },
      {
@@ -848,7 +778,6 @@
       "precio": 7.99,
       "imagen": "hueso-saborizado-carne.jpg",
       "tipo_mascota_id": 2,
-      "descuento_id": 1,
       "marca_id": 4
      },
      {
@@ -860,7 +789,6 @@
       "precio": 6.99,
       "imagen": "hueso-saborizado.jpg",
       "tipo_mascota_id": 2,
-      "descuento_id": 1,
       "marca_id": 4
      },
      {
@@ -872,7 +800,6 @@
       "precio": 9.99,
       "imagen": "hueso-rojo-con-comida.jpg",
       "tipo_mascota_id": 2,
-      "descuento_id": 1,
       "marca_id": 1
      },
      {
@@ -884,7 +811,6 @@
       "precio": 8.99,
       "imagen": "hueso-pelota-de-tenis.jpg",
       "tipo_mascota_id": 2,
-      "descuento_id": 1,
       "marca_id": 14
      },
      {
@@ -896,7 +822,6 @@
       "precio": 7.99,
       "imagen": "hueso-goma-violeta.jpg",
       "tipo_mascota_id": 2,
-      "descuento_id": 1,
       "marca_id": 1
      },
      {
@@ -908,7 +833,6 @@
       "precio": 7.99,
       "imagen": "hueso-goma-rojo.jpg",
       "tipo_mascota_id": 2,
-      "descuento_id": 1,
       "marca_id": 1
      },
      {
@@ -920,7 +844,6 @@
       "precio": 7.99,
       "imagen": "hueso-goma-naranja.jpg",
       "tipo_mascota_id": 2,
-      "descuento_id": 1,
       "marca_id": 1
      }
     ]
