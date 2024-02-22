@@ -462,6 +462,17 @@
       "marca_id": 1
      },
      {
+      "id": 43,
+      "nombre": "Correa Marrón 2",
+      "descripcion": "Correa resistente en color marrón.",
+      "color": "Marrón",
+      "peso": null,
+      "precio": 13.99,
+      "imagen": "correa-marron.png",
+      "tipo_mascota_id": 2,
+      "marca_id": 1
+     },
+     {
       "id": 44,
       "nombre": "Collar Rojo",
       "descripcion": "Collar elegante en color rojo.",
