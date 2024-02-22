@@ -2,21 +2,17 @@
     {
         "id" : 1,
         "categoria": "comida"
-
     },
     {
         "id" : 2,
         "categoria": "accesorio"
-
     },
     {
         "id" : 3,
         "categoria": "higiene"
-
     },
     {
         "id" : 4,
         "categoria": "juguete"
-
     }
 ]
