@@ -63,6 +63,9 @@ router.get("/carrito", userController.carrito)
 //Carrito 2 
 router.get("/carrito2", /* authMiddleware */ userController.carrito2)
 
+//Prueba de DB
+router.get("/pruebaDb", userController.pruebaDb)
+
 //Chequear si estamos logueados
 
 router.get("/check", function(req, res){

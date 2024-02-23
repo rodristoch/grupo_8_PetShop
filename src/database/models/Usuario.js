@@ -1,5 +1,5 @@
 module.exports = (sequelize, dataTypes) => {
-    let alias = 'Usuarios';  // Alias para la asociacion
+    let alias = 'Usuario';  // Alias para la asociacion
     let cols = {
         id: {
             type: dataTypes.INTEGER,
@@ -34,14 +34,14 @@ module.exports = (sequelize, dataTypes) => {
         tableName: "usuarios",
         timestamps: false
     }
-    const Usuarios = sequelize.define(alias,cols,config);
+    const Usuario = sequelize.define(alias,cols,config);
 
     Usuario.associate = (models) => {
-        Usuario.belongsTo(models.Permisos, {   //un Usuario tiene un permiso, pero un permiso tiene varios usuarios
+        Usuario.belongsTo(models.Permiso, {   //un Usuario tiene un permiso, pero un permiso tiene varios usuarios
             as: "permisos",   // Alias para controlador y vistas
             foreignKey: "permiso_id"
         })
     }
 
-    return Usuarios
+    return Usuario
 };

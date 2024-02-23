@@ -2,6 +2,9 @@ const { validationResult } = require('express-validator');
 const fs = require('fs');
 const path = require('path');
 const bcrypt = require("bcryptjs")
+const db = require('../database/models');
+const sequelize = db.sequelize;
+const Op = db.Sequelize.Op;
 
 
 // Json de usuarios
@@ -9,6 +12,15 @@ const usersFilePath = path.join(__dirname, '../data/usersDataBase.json');
 //const users = JSON.parse(fs.readFileSync(usersFilePath, 'utf-8'));
 
 const userController = {
+
+    pruebaDb: (req, res) => {
+
+        db.Usuario.findAll()
+        .then(function(usuarios){
+            res.render("prueba.ejs", {usuarios})
+        })
+        
+    },
     
     login : (req, res) => {
         //usuario q se loguea
