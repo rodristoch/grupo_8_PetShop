@@ -19,7 +19,7 @@ module.exports = (sequelize, dataTypes) => {
     const Permiso = sequelize.define(alias,cols,config);
 
     Permiso.associate = function (models) {
-        Permiso.belongsTo(models.Usuario, { 
+        Permiso.hasMany(models.Usuario, {  //un Usuario tiene un permiso, pero un permiso tiene varios usuarios
             as: "usuarios",
             foreignKey: "permiso_id"
         })
