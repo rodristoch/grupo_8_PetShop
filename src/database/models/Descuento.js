@@ -1,23 +1,23 @@
-module.exports = (sequelize, DataTypes) => {
-    let alias = 'Descuentos';
+module.exports = (sequelize, dataTypes) => {
+    let alias = 'Descuento';  // Alias para la asociacion
     cols = {
         id : {
-            type: DataTypes.INTEGER,
+            type: dataTypes.INTEGER,
             allowNull: false,
             autoIncrement: true,
             primaryKey: true,
         },
         nombre : {
-            type: DataTypes.STRING(100),
+            type: dataTypes.STRING(100),
         },
         descripcion : {
-            type: DataTypes.TEXT,
+            type: dataTypes.TEXT,
         },
         fechaInicio : {
-            type: DataTypes.DATE,
+            type: dataTypes.DATE,
         },
         fechaFinal : {
-            type: DataTypes.DATE,
+            type: dataTypes.DATE,
         }
     };
     let config = {
@@ -26,11 +26,11 @@ module.exports = (sequelize, DataTypes) => {
     };
 
     // Definición del modelo
-    const Descuentos = sequelize.define(alias, cols, config);
+    const Descuento = sequelize.define(alias, cols, config);
 
     // Relación muchos a muchos con la tabla intermedia producto_descuento
-    Descuentos.associate = function(models) {
-        Descuentos.belongsToMany(models.Productos, {
+    Descuento.associate = function(models) {
+        Descuento.belongsToMany(models.Producto, {   // Alias del otro modelo
             through: 'producto_descuento',
             foreignKey: 'descuentosId',
             otherKey: 'productoId',
@@ -38,5 +38,5 @@ module.exports = (sequelize, DataTypes) => {
         });
     };
 
-    return Descuentos;
+    return Descuento;
 };

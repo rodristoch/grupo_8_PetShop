@@ -1,26 +1,24 @@
-module.exports = (sequelize, DataTypes) => {
-    let alias = 'Marcas' ;
+module.exports = (sequelize, dataTypes) => {
+    let alias = 'Marca';  // Alias para la asociacion
     let cols = {
         id : {
-            type: DataTypes.INTEGER,
+            type: dataTypes.INTEGER,
             autoIncrement: true,
             primaryKey: true,
         },
         marca : {
-            type: DataTypes.STRING(100),
+            type: dataTypes.STRING(100),
             allowNull: false
         }
     };
     let config = {
-        timestamps: true,
-        createdAt: 'created_at',
-        updatedAt: 'update_at', 
-        deletedAt: false 
+        tableName: "marcas",
+        timestamps: false
     }
 
-    const Marcas = sequelize.define(alias, cols, config);
+    const Marca = sequelize.define(alias, cols, config);
 
     
     
-    return Marcas
+    return Marca
 };

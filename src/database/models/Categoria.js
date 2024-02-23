@@ -1,14 +1,14 @@
-module.exports = (sequelize, Datatypes) => {
-    let alias = 'Categorias';
+module.exports = (sequelize, dataTypes) => {
+    let alias = 'Categoria';  // Alias para la asociacion
     cols = {
         id : {
-            type: DataTypes.INTEGER,
+            type: dataTypes.INTEGER,
             allowNull: false,
             autoIncrement: true,
             primaryKey: true,
         },
         categoria : {
-            type: Datatypes.STRING(255),
+            type: dataTypes.STRING(255),
             allowNull: false
         }
     };
@@ -19,11 +19,11 @@ module.exports = (sequelize, Datatypes) => {
 
 
 
-    const Categorias = sequelize.define(alias, cols, config);
+    const Categoria = sequelize.define(alias, cols, config);
 
     // Relación muchos a muchos con la tabla intermedia producto_categoria
-    Categorias.associate = function(models) {
-        Categorias.belongsToMany(models.Productos, {
+    Categoria.associate = function(models) {
+        Categoria.belongsToMany(models.Producto, {  // Alias del otro modelo
             through: 'producto_categoria',
             foreignKey: 'categoriaId',
             otherKey: 'productoId',
@@ -31,5 +31,5 @@ module.exports = (sequelize, Datatypes) => {
         });
     };
 
-    return Categorias;
+    return Categoria;
 };

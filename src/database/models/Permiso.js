@@ -1,5 +1,5 @@
 module.exports = (sequelize, dataTypes) => {
-    let alias = 'Permiso'; 
+    let alias = 'Permiso';  // Alias para la asociacion
     let cols = {
         id: {
             type: dataTypes.INTEGER,
@@ -20,7 +20,7 @@ module.exports = (sequelize, dataTypes) => {
 
     Permiso.associate = function (models) {
         Permiso.hasMany(models.Usuario, {  //un Usuario tiene un permiso, pero un permiso tiene varios usuarios
-            as: "usuarios",
+            as: "usuarios",      // Alias para controlador y vistas
             foreignKey: "permiso_id"
         })
     }

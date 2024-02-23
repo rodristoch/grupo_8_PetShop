@@ -1,14 +1,14 @@
-module.exports = (sequelize, DataTypes) => {
-    let alias = 'tipos_mascotas' ;
+module.exports = (sequelize, dataTypes) => {
+    let alias = 'TipoMascota';  // Alias para la asociacion
     let cols = {
         id : {
-            type: DataTypes.INTEGER,
+            type: dataTypes.INTEGER,
             allowNull: false,
             autoIncrement: true,
             primaryKey: true,
         },
         mascota : {
-            type:DataTypes.STRING(50),
+            type: dataTypes.STRING(50),
             allowNull: false
         }
     };
@@ -18,16 +18,16 @@ module.exports = (sequelize, DataTypes) => {
         timestamps: false
     }
 
-    const TiposMarcas = sequelize.define (alias, cols, config)
+    const TipoMascota = sequelize.define (alias, cols, config)
 
     // Asocaciones
-    TiposMarcas.associate = function(models) {
+    TipoMascota.associate = function(models) {
         // Relación uno a uno con el modelo Productos
-        TiposMarcas.hasOne(models.Producto, {
-            as: 'productos',
+        TipoMascota.hasOne(models.Producto, {   // Alias del otro modelo
+            as: 'productos',   // Alias para controlador y vistas
             foreignKey: 'tipo_mascota_id'
         });
     };
 
-    return TiposMarcas;
+    return TipoMascota;
 };
