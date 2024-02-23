@@ -8,6 +8,7 @@ const authMiddleware = require('../middlewares/authMiddleware.js');
 
 // ************ User Require ************
 const userController = require('../controllers/userController.js'); // requerimos el controlador que queremos usar. 
+const productController = require('../controllers/productController.js');
 
 
 // ************ Multer ************
@@ -65,6 +66,7 @@ router.get("/carrito2", /* authMiddleware */ userController.carrito2)
 
 //Prueba de DB
 router.get("/pruebaDb", userController.pruebaDb)
+router.get("/pruebasParaDb", productController.comidaPerro)
 
 //Chequear si estamos logueados
 

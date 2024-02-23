@@ -1,6 +1,9 @@
 const { log } = require("console");
 const fs = require("fs");
 const path = require("path")
+const db = require('../database/models');
+const sequelize = db.sequelize;
+const Op = db.Sequelize.Op;
 
 //base de datos de productos
 const productsFilePath = path.join(__dirname, "../data/productosDataBase.json");
@@ -185,7 +188,7 @@ const productController = {
 
     comidaPerro : (req, res) => {
 
-        //usuario q se loguea
+        /* //usuario q se loguea
         const userALoguearse = req.session.userLogueado
 
         const productos = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'));
@@ -200,7 +203,24 @@ const productController = {
          const unProducto = productos.find (producto => {
             return producto.id == req.params.id
         })
-        res.render('comidaPerro.ejs', {comidaPerro, unProducto, userALoguearse});
+        res.render('comidaPerro.ejs', {comidaPerro, unProducto, userALoguearse}); */
+
+        // usuario que se loguea
+
+        const userALoguearse = req.session.userLogueado
+         
+        db.Producto.findAll({
+            where : {
+                tipo_mascota_id: 2
+            }
+        })
+        .then(function(productos){
+            res.render('comidaPerro.ejs', {productos, userALoguearse});
+        })
+        .catch(function (error){
+            console.error('Error al recuperar productos', error)
+        })
+        
     },
 
     comidaGato : (req, res) => {
