@@ -4,7 +4,8 @@ module.exports = (sequelize, dataTypes) => {
         id: {
             type: dataTypes.INTEGER,
             primaryKey: true,
-            autoIncrement: true
+            autoIncrement: true,
+            allowNull: false
         },
         nombre: {
             type: dataTypes.STRING(100),
@@ -22,6 +23,9 @@ module.exports = (sequelize, dataTypes) => {
             type: dataTypes.STRING(255),
             allowNull: false
         },
+        imagen: {
+            type: dataTypes.STRING(255),
+        },
         permiso_id: {
             type: dataTypes.INTEGER,
         }
@@ -32,7 +36,7 @@ module.exports = (sequelize, dataTypes) => {
     }
     const Usuario = sequelize.define(alias,cols,config);
 
-    Usuario.associate = function (models) {
+    Usuario.associate = (models) => {
         Usuario.belongsTo(models.Permiso, { 
             as: "permisos",
             foreignKey: "permiso_id"
