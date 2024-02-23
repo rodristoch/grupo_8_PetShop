@@ -30,7 +30,7 @@ INSERT INTO `tipos_mascota` VALUES (1,'Gato'),(2,'Perro');
 CREATE TABLE `descuentos` (
    `id` INT NOT NULL AUTO_INCREMENT,
    `nombre` VARCHAR(100),
-   `descripcion` VARCHAR(255),
+   `descripcion` TEXT, 
    `fecha_inicio` DATE,
    `fecha_final` DATE,
    PRIMARY KEY (`id`)
