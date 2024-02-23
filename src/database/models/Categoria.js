@@ -2,9 +2,10 @@ module.exports = (sequelize, Datatypes) => {
     let alias = 'Categorias';
     cols = {
         id : {
-            type: Datatypes.BIGINT(10).UNSIGNED,
-            primaryKey: true,
+            type: DataTypes.INTEGER,
+            allowNull: false,
             autoIncrement: true,
+            primaryKey: true,
         },
         categoria : {
             type: Datatypes.STRING(255),
@@ -12,10 +13,8 @@ module.exports = (sequelize, Datatypes) => {
         }
     };
     let config = {
-        timestamps: true,
-        createdAt: 'created_at',
-        updatedAt: 'update_at', 
-        deletedAt: false 
+        tableName: "categorias",
+        timestamps: false,
     }
 
 

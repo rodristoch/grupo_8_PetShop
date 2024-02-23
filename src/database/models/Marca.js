@@ -2,9 +2,9 @@ module.exports = (sequelize, DataTypes) => {
     let alias = 'Marcas' ;
     let cols = {
         id : {
-            type: DataTypes.BIGINT(10).UNSIGNED,
+            type: DataTypes.INTEGER,
+            autoIncrement: true,
             primaryKey: true,
-            autoIncrement: true
         },
         marca : {
             type: DataTypes.STRING(100),

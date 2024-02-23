@@ -2,32 +2,27 @@ module.exports = (sequelize, DataTypes) => {
     let alias = 'Descuentos';
     cols = {
         id : {
-            type: DataTypes.BIGINT(10).UNSIGNED,
-            primaryKey: true,
+            type: DataTypes.INTEGER,
+            allowNull: false,
             autoIncrement: true,
+            primaryKey: true,
         },
         nombre : {
             type: DataTypes.STRING(100),
-            allowNull: false
         },
         descripcion : {
             type: DataTypes.TEXT,
-            allowNull: false
         },
         fechaInicio : {
-            type: DataTypes.DATE ,
-            allowNull: false,
+            type: DataTypes.DATE,
         },
         fechaFinal : {
-            type: DataTypes.DATE ,
-            allowNull: false
+            type: DataTypes.DATE,
         }
     };
     let config = {
-        timestamps: true,
-        createdAt: 'created_at',
-        updatedAt: 'updated_at', 
-        deletedAt: false 
+        tableName: "descuentos",
+        timestamps: false,  
     };
 
     // Definición del modelo

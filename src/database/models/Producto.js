@@ -2,9 +2,10 @@ module.exports = (sequelize, DataTypes) => {
     let alias = 'Productos';
     let cols = {
         id : {
-            type: DataTypes.BIGINT(10).UNSIGNED,
-            primaryKey: true,
+            type: DataTypes.INTEGER,
+            allowNull: false,
             autoIncrement: true,
+            primaryKey: true,
         },
         nombre : {
             type: DataTypes.STRING(100),
@@ -12,19 +13,16 @@ module.exports = (sequelize, DataTypes) => {
         },
         descripcion : {
             type: DataTypes.TEXT,
-            allowNull: false
         },
         color : {
             type: DataTypes.STRING(50),
-            allowNull: false
         },
         precio : {
-            type: DataTypes.DECIMAL(6,2),
+            type: DataTypes.DECIMAL,
             allowNull: false
         },
         imagen :{
             type: DataTypes.STRING(100), 
-            allowNull: false
         },
         tipo_mascota_id : {
             type: DataTypes.INTEGER,
@@ -36,10 +34,8 @@ module.exports = (sequelize, DataTypes) => {
         }
     };
     let config = {
-        timestamps: true,
-        createdAt: 'created_at',
-        updatedAt: 'update_at', 
-        deletedAt: false 
+        tableName: "productos",
+        timestamps: false, 
     }
    
     const Productos = sequelize.define(alias, cols, config);

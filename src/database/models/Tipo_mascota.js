@@ -2,9 +2,10 @@ module.exports = (sequelize, DataTypes) => {
     let alias = 'tipos_mascotas' ;
     let cols = {
         id : {
-            type: DataTypes.BIGINT(10).UNSIGNED,
-            primaryKey: true,
+            type: DataTypes.INTEGER,
+            allowNull: false,
             autoIncrement: true,
+            primaryKey: true,
         },
         mascota : {
             type:DataTypes.STRING(50),
@@ -13,10 +14,8 @@ module.exports = (sequelize, DataTypes) => {
     };
 
     let config = {
-        timestamps: true,
-        createdAt: 'created_at',
-        updatedAt: 'update_at', 
-        deletedAt: false 
+        tableName: "tipos_mascota",
+        timestamps: false
     }
 
     const TiposMarcas = sequelize.define (alias, cols, config)
