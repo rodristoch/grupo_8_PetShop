@@ -210,16 +210,19 @@ const productController = {
         const userALoguearse = req.session.userLogueado
          
         db.Producto.findAll({
+            /* include: ['descuentos'], */ // VER ESTO CON LOS CHICOS, ME DA ERROR, PUEDE HABER PROBLEMAS CON LAS TABLAS INTERMEDIAS 
             where : {
-                tipo_mascota_id: 2
+                tipo_mascota_id: 2,
             }
         })
-        .then(function(productos){
-            res.render('comidaPerro.ejs', {productos, userALoguearse});
+        .then(function(productosPerro){
+            res.render('comidaPerro.ejs', {productosPerro, /* productosConDescuentoPerro, */ userALoguearse});
         })
         .catch(function (error){
             console.error('Error al recuperar productos', error)
         })
+
+    
         
     },
 

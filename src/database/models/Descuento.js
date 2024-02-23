@@ -13,10 +13,10 @@ module.exports = (sequelize, dataTypes) => {
         descripcion : {
             type: dataTypes.TEXT,
         },
-        fechaInicio : {
+        fecha_Inicio : {
             type: dataTypes.DATE,
         },
-        fechaFinal : {
+        fecha_Final : {
             type: dataTypes.DATE,
         }
     };
