@@ -21,9 +21,9 @@ module.exports = (sequelize, dataTypes) => {
     const TipoMascota = sequelize.define (alias, cols, config)
 
     // Asocaciones
-    TipoMascota.associate = function(models) {
+    TipoMascota.associate = (models) => {
         // Relación uno a uno con el modelo Productos
-        TipoMascota.hasOne(models.Producto, {   // Alias del otro modelo
+        TipoMascota.hasMany(models.Producto, {   // Alias del otro modelo
             as: 'productos',   // Alias para controlador y vistas
             foreignKey: 'tipo_mascota_id'
         });

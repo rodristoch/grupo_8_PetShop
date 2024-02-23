@@ -22,12 +22,12 @@ module.exports = (sequelize, dataTypes) => {
     const Categoria = sequelize.define(alias, cols, config);
 
     // Relación muchos a muchos con la tabla intermedia producto_categoria
-    Categoria.associate = function(models) {
+    Categoria.associate = (models) => {
         Categoria.belongsToMany(models.Producto, {  // Alias del otro modelo
+            as: 'productos',
             through: 'producto_categoria',
-            foreignKey: 'categoriaId',
-            otherKey: 'productoId',
-            as: 'productos'
+            foreignKey: 'categoria_id',
+            otherKey: 'producto_id'
         });
     };
 

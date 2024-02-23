@@ -29,12 +29,12 @@ module.exports = (sequelize, dataTypes) => {
     const Descuento = sequelize.define(alias, cols, config);
 
     // Relación muchos a muchos con la tabla intermedia producto_descuento
-    Descuento.associate = function(models) {
+    Descuento.associate = (models) => {
         Descuento.belongsToMany(models.Producto, {   // Alias del otro modelo
+            as: 'productos',
             through: 'producto_descuento',
-            foreignKey: 'descuentosId',
-            otherKey: 'productoId',
-            as: 'productos'
+            foreignKey: 'descuento_id',
+            otherKey: 'producto_id'
         });
     };
 
