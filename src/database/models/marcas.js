@@ -1,5 +1,5 @@
 module.exports = (sequelize, DataTypes) => {
-    let alias = 'marcas' ;
+    let alias = 'Marcas' ;
     let cols = {
         id : {
             type: DataTypes.BIGINT(10).UNSIGNED,
@@ -18,13 +18,9 @@ module.exports = (sequelize, DataTypes) => {
         deletedAt: false 
     }
 
-    const marcas = sequelize.define(alias, cols, config);
+    const Marcas = sequelize.define(alias, cols, config);
 
-    // Relación uno a uno con el modelo Productos
-    marcas.hasone(models.producto, {
-        as: 'productos',
-        foreignKey: 'marca_id'
-    });
     
-    return marcas
+    
+    return Marcas
 };

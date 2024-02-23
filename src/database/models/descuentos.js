@@ -1,45 +1,47 @@
-module.exports = (sequelize, Datatypes) => {
-    let alias = 'descuentos';
+module.exports = (sequelize, DataTypes) => {
+    let alias = 'Descuentos';
     cols = {
         id : {
-            type: Datatypes.BIGINT(10).UNSIGNED,
+            type: DataTypes.BIGINT(10).UNSIGNED,
             primaryKey: true,
             autoIncrement: true,
         },
         nombre : {
-            type: Datatypes.STRING(100),
+            type: DataTypes.STRING(100),
             allowNull: false
         },
         descripcion : {
-            type: Datatypes.TEXT,
+            type: DataTypes.TEXT,
             allowNull: false
         },
         fechaInicio : {
-            type: Datatypes.DATE ,
+            type: DataTypes.DATE ,
             allowNull: false,
         },
         fechaFinal : {
-            type: Datatypes.DATE ,
+            type: DataTypes.DATE ,
             allowNull: false
         }
     };
     let config = {
         timestamps: true,
         createdAt: 'created_at',
-        updatedAt: 'update_at', 
+        updatedAt: 'updated_at', 
         deletedAt: false 
-    }
+    };
 
-    const categorias = sequelize.define (alias, cols, config);
+    // Definición del modelo
+    const Descuentos = sequelize.define(alias, cols, config);
 
-    const Categorias = sequelize.define(alias, cols, config);
+    // Relación muchos a muchos con la tabla intermedia producto_descuento
+    Descuentos.associate = function(models) {
+        Descuentos.belongsToMany(models.Productos, {
+            through: 'producto_descuento',
+            foreignKey: 'descuentosId',
+            otherKey: 'productoId',
+            as: 'productos'
+        });
+    };
 
-    // Relación muchos a muchos con la tabla intermedia producto_categoria
-    Categorias.belongsToMany(models.productos, {
-        through: 'producto_descuento',
-        foreignKey: 'descuentosId',
-        otherKey: 'productoId',
-        as: 'productos'
-    });
-
-}
+    return Descuentos;
+};

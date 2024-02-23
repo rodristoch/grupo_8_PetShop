@@ -3,7 +3,7 @@ module.exports = (sequelize, DataTypes) => {
     let cols = {
         id : {
             type: DataTypes.BIGINT(10).UNSIGNED,
-            primaryKEy: true,
+            primaryKey: true,
             autoIncrement: true,
         },
         mascota : {
@@ -19,13 +19,16 @@ module.exports = (sequelize, DataTypes) => {
         deletedAt: false 
     }
 
-    const tiposMarcas = sequelize.define (alias, cols, config)
+    const TiposMarcas = sequelize.define (alias, cols, config)
 
-    // Relación uno a uno con el modelo Productos
-    tiposMarcas.hasone(model.producto, {
-        as: 'productos',
-        foreignKey: 'tipo_mascota_id'
-    })
+    // Asocaciones
+    TiposMarcas.associate = function(models) {
+        // Relación uno a uno con el modelo Productos
+        TiposMarcas.hasOne(models.Producto, {
+            as: 'productos',
+            foreignKey: 'tipo_mascota_id'
+        });
+    };
 
-    return tipos_marcas
+    return TiposMarcas;
 };

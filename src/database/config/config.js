@@ -1,8 +1,8 @@
 module.exports = {
   "development": {
     "username": "root",
-    "password": null,
-    "database": "patitas_db",
+    "password": "macko32475716",
+    "database": "patitasDB",
     "host": "127.0.0.1",
     "dialect": "mysql"
   },

@@ -1,5 +1,5 @@
 module.exports =(sequelize, DataTypes) => {
-    let alias = 'producto_descuento';
+    let alias = 'Productos_descuentos';
     let cols = {
         id : {
             type: DataTypes.BIGINT(10).UNSIGNED,
@@ -16,23 +16,24 @@ module.exports =(sequelize, DataTypes) => {
         }
     };
 
-    const productoCategoria = sequelize.define(alias, cols)
+    // Definición del modelo
+    const ProductoCategoria = sequelize.define(alias, cols);
 
-    //Se define la relación entre productos y categorias
-    productoCategoria.associate = function (models) {
+    // Se define la relación entre productos y categorías
+    ProductoCategoria.associate = function(models) {
 
-        //Relación con tabla de productos
-        productoCategoria.belongsTo(models.productos, {
+        // Relación con la tabla de productos
+        ProductoCategoria.belongsTo(models.Productos, {
             foreignKey: 'productoId',
             as: 'productos'
         });
 
-        //Relación con la tabla de categorias
-        productoCategoria.belongsTo(models.categorias, {
+        // Relación con la tabla de categorías
+        ProductoCategoria.belongsTo(models.Categorias, {
             foreignKey: 'descuentosId',
             as: 'descuentos'
         });
     };
 
-    return productoCategoria
+    return ProductoCategoria
 }

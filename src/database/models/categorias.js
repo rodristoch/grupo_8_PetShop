@@ -1,5 +1,5 @@
 module.exports = (sequelize, Datatypes) => {
-    let alias = 'categorias';
+    let alias = 'Categorias';
     cols = {
         id : {
             type: Datatypes.BIGINT(10).UNSIGNED,
@@ -18,16 +18,19 @@ module.exports = (sequelize, Datatypes) => {
         deletedAt: false 
     }
 
-    const categorias = sequelize.define (alias, cols, config);
+
 
     const Categorias = sequelize.define(alias, cols, config);
 
     // Relación muchos a muchos con la tabla intermedia producto_categoria
-    Categorias.belongsToMany(models.productos, {
-        through: 'producto_categoria',
-        foreignKey: 'categoriaId',
-        otherKey: 'productoId',
-        as: 'productos'
-    });
+    Categorias.associate = function(models) {
+        Categorias.belongsToMany(models.Productos, {
+            through: 'producto_categoria',
+            foreignKey: 'categoriaId',
+            otherKey: 'productoId',
+            as: 'productos'
+        });
+    };
 
-}
+    return Categorias;
+};

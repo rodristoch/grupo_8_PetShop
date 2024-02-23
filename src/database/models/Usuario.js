@@ -7,19 +7,19 @@ module.exports = (sequelize, dataTypes) => {
             autoIncrement: true
         },
         nombre: {
-            type: dataTypes.VARCHAR(100),
+            type: dataTypes.STRING(100),
             allowNull: false
         },
         apellido: {
-            type: dataTypes.VARCHAR(100),
+            type: dataTypes.STRING(100),
             allowNull: false
         },
         email: {
-            type: dataTypes.VARCHAR(150),
+            type: dataTypes.STRING(150),
             allowNull: false
         },
         password: {
-            type: dataTypes.VARCHAR(255),
+            type: dataTypes.STRING(255),
             allowNull: false
         },
         permiso_id: {

@@ -1,5 +1,5 @@
 module.exports = (sequelize, DataTypes) => {
-    let alias = 'productos';
+    let alias = 'Productos';
     let cols = {
         id : {
             type: DataTypes.BIGINT(10).UNSIGNED,
@@ -10,16 +10,20 @@ module.exports = (sequelize, DataTypes) => {
             type: DataTypes.STRING(100),
             allowNull: false
         },
-        precio : {
-            type: DataTypes.DECIMAL(6,2),
+        descripcion : {
+            type: DataTypes.TEXT,
             allowNull: false
         },
         color : {
             type: DataTypes.STRING(50),
             allowNull: false
         },
-        descripcion : {
-            type: DataTypes.TEXT,
+        precio : {
+            type: DataTypes.DECIMAL(6,2),
+            allowNull: false
+        },
+        imagen :{
+            type: DataTypes.STRING(100), 
             allowNull: false
         },
         tipo_mascota_id : {
@@ -38,19 +42,23 @@ module.exports = (sequelize, DataTypes) => {
         deletedAt: false 
     }
    
-    const productos = sequelize.define(alias, cols, config);
+    const Productos = sequelize.define(alias, cols, config);
 
-    // Relación de uno a muchos con el modelo TipoMascota
-    productos.belongsTo(TipoMascota, {
-        foreignKey: 'tipo_mascota_id',
-        as: 'tipoMascota' // Alias para la asociación
-    });
+    // Asociación con el modelo TipoMascota
+    Productos.associate = function(models) {
+        Productos.belongsTo(models.TipoMascota, {
+            foreignKey: 'tipo_mascota_id',
+            as: 'tipoMascota' // Alias para la asociación
+        });
+    };
 
-    // Relación de uno a muchos con el modelo Marca
-    productos.belongsTo(Marca, {
-        foreignKey: 'marca_id',
-        as: 'marca' // Alias para la asociación
-    });
+    // Asociación con el modelo Marca
+    Productos.associate = function(models) {
+        Productos.belongsTo(models.Marca, {
+            foreignKey: 'marca_id',
+            as: 'marca' // Alias para la asociación
+        });
+    };
 
-    return productos;
+    return Productos;
 };
