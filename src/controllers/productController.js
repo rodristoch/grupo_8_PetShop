@@ -12,23 +12,6 @@ const productsFilePath = path.join(__dirname, "../data/productosDataBase.json");
 
 const productController = {
 
-    index: (req, res) => {
-        
-        // Usuario que se ha iniciado sesión
-        const userALoguearse = req.session.userLogueado;
-      
-        db.Producto.findAll()
-            .then(function(productos) {
-                res.render("productos", { productos, userALoguearse });
-            })
-            .catch(function(error) {
-                res.send(error);
-            });
-
-        //const productos = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'));
-        //res.render("productos" , {productos, userALoguearse})
-    },
-
     detalle : (req, res) => {
         //usuario q se loguea
         const userALoguearse = req.session.userLogueado
@@ -40,7 +23,7 @@ const productController = {
 
         // filtro de productos perro o gato
         const productosPerro = productos.filter(product => {return product.id_pet == "Perro"});
-        const productosGato = productos.filter(product => { return product.id_pet == "Gato"});
+        const productosGato = productos.filter(product => {return product.id_pet == "Gato"});
 
         //Conozco el producto que vino por id
         const detalleDeProductoActual = unProducto.id_pet;

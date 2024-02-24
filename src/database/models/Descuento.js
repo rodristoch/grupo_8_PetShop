@@ -1,22 +1,22 @@
 module.exports = (sequelize, dataTypes) => {
     let alias = 'Descuento';  // Alias para la asociacion
     cols = {
-        id : {
+        id: {
             type: dataTypes.INTEGER,
             allowNull: false,
             autoIncrement: true,
             primaryKey: true,
         },
-        nombre : {
+        nombre: {
             type: dataTypes.STRING(100),
         },
-        descripcion : {
+        descripcion: {
             type: dataTypes.TEXT,
         },
-        fecha_Inicio : {
+        fecha_inicio: {
             type: dataTypes.DATE,
         },
-        fecha_Final : {
+        fecha_final: {
             type: dataTypes.DATE,
         }
     };

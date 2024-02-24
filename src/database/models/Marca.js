@@ -1,12 +1,12 @@
 module.exports = (sequelize, dataTypes) => {
     let alias = 'Marca';  // Alias para la asociacion
     let cols = {
-        id : {
+        id: {
             type: dataTypes.INTEGER,
             autoIncrement: true,
             primaryKey: true,
         },
-        marca : {
+        marca: {
             type: dataTypes.STRING(100),
             allowNull: false
         }
@@ -19,10 +19,10 @@ module.exports = (sequelize, dataTypes) => {
     const Marca = sequelize.define(alias, cols, config);
 
     // Asociación con el modelo Producto
-    Marca.associate = (models) => {
+    Marca.associate = models => {
         Marca.hasMany(models.Producto, {  // Alias del otro modelo
-            foreignKey: 'marca_id',
-            as: 'productos' // Alias para las vistas
+            as: 'productos', // Alias para las vistas
+            foreignKey: 'marca_id'
         });
     }
 

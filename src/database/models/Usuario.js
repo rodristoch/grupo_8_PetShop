@@ -36,7 +36,7 @@ module.exports = (sequelize, dataTypes) => {
     }
     const Usuario = sequelize.define(alias,cols,config);
 
-    Usuario.associate = (models) => {
+    Usuario.associate = models => {
         Usuario.belongsTo(models.Permiso, {   //un Usuario tiene un permiso, pero un permiso tiene varios usuarios
             as: "permisos",   // Alias para controlador y vistas
             foreignKey: "permiso_id"

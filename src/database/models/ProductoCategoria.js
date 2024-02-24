@@ -1,17 +1,17 @@
 module.exports = (sequelize, dataTypes) => {
     let alias = 'ProductoCategoria';  // Alias para la asociacion
     cols = {
-        id : {
+        id: {
             type: dataTypes.INTEGER,
             allowNull: false,
             autoIncrement: true,
             primaryKey: true,
         },
-        producto_id : {
+        producto_id: {
             type: dataTypes.INTEGER,
             allowNull: false
         },
-        categoria_id : {
+        categoria_id: {
             type: dataTypes.INTEGER,
             allowNull: false
         }
@@ -21,25 +21,22 @@ module.exports = (sequelize, dataTypes) => {
         timestamps: false
     }
 
-
-
     const ProductoCategoria = sequelize.define(alias, cols, config);
 
-   // Asociación con el modelo Producto
-   ProductoCategoria.associate = function (models) {
-    ProductoCategoria.belongsTo(models.Producto, {
-        foreignKey: 'producto_id',
-        as: 'producto',
+    
+    ProductoCategoria.associate = models => {
+        // Asociación con el modelo Producto
+        ProductoCategoria.belongsTo(models.Producto, {
+            as: 'producto',
+            foreignKey: 'producto_id'
+        });
+
+        // Asociación con el modelo Categoria
+        ProductoCategoria.belongsTo(models.Categoria, {
+            as: 'categoria',
+            foreignKey: 'categoria_id'
         });
     };
-
-// Asociación con el modelo Categoria
-    ProductoCategoria.associate = function (models) {
-    ProductoCategoria.belongsTo(models.Categoria, {
-        foreignKey: 'categoria_id',
-        as: 'categoria',
-        });
-    };
-
+    
     return ProductoCategoria;
 };
