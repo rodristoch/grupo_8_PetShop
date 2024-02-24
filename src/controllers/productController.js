@@ -474,6 +474,23 @@ const productController = {
 
     },
 
+    royal: (req, res) => {
+
+        //usuario q se loguea
+        const userALoguearse = req.session.userLogueado
+
+        db.Producto.findAll({
+            include: ["marcas"],
+            where: {
+                marca_id: 11
+            }
+        })
+
+        .then(ProductosRoyal => {return res.render("marcasRoyal.ejs", {userALoguearse, ProductosRoyal})})
+
+    },
+
+
     alta : (req, res) => {
 
         //usuario q se loguea
