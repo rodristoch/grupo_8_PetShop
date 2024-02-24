@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
-    <%- include("./partials/head.ejs", {cssSheet: "categoria", title: "Página Categoría"}) %>
+    <%- include("./partials/head.ejs", {cssSheet: "categoria", title: "Productos Eukanuba"}) %>
 <body>
 
     <%- include("./partials/header.ejs") %>
@@ -8,6 +8,7 @@
     <%- include("./partials/header2.ejs") %>
     
     <main>
+        <h2>Productos Eukanuba</h2>
         <!-- Odenar y filtros para celular-->
         <article class="cantidad-producto">
             <p>1.090 resultados</p>
@@ -78,7 +79,7 @@
              <!-- Lista productos productos-->
              <div class="lista_desktop">
                 <div class="lista_flexbox_desktop">
-                    <% for(let producto of productosPerro) { %>
+                    <% for(let producto of ProductosEukanuba) { %>
                         <article class="articulo-productos-descuentos">
                             <a href="/productos/detalle/<%= producto.id %>">
                                 <div class="contenedor_imagen">

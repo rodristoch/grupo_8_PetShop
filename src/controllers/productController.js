@@ -201,28 +201,24 @@ const productController = {
 
         const userALoguearse = req.session.userLogueado
          
-            
-
-           let productoConDescuento = db.Producto.findAll({
+        let productoConDescuento = db.Producto.findAll({
                 include: [{
                     model: db.Descuento, 
                     as: 'descuentos',
                     attributes: ['id'],
-                    through: { attributes: []}
+                    through: {attributes: []}
                 }]
             })
             /* .then(function(productosPerro2){
                 res.render('comidaPerro.ejs', {productosPerro2, userALoguearse});
             }) */
 
-
-
         let productos = db.Producto.findAll({
             include: [{
                 model: db.Categoria,
                 as: 'categorias',
                 attributes: ['id', 'categoria'], // La unica manera de resolver el problema del CreateAt es definir que columna quiero usar en la relacion
-                through: { attributes: [] }, // Esto vita incluir automáticamente las columnas de la tabla intermedia
+                through: {attributes: [] }, // Esto vita incluir automáticamente las columnas de la tabla intermedia
                 where : { 
                     id: 1
                 }
@@ -239,7 +235,7 @@ const productController = {
         Promise.all([productoConDescuento, productos])
         .then(([productosPerro2, productosPerro]) => {
             const userALoguearse = req.session.userLogueado;
-             res.render('comidaPerro.ejs', { productosPerro, productosPerro2, userALoguearse });
+            res.render('comidaPerro.ejs', { productosPerro, productosPerro2, userALoguearse });
          })
         .catch(function (error){
             console.error('Error al recuperar productos', error);
@@ -432,7 +428,34 @@ const productController = {
 
     marcas: (req, res) => {
 
-        res.render('marcas.ejs');
+        //usuario q se loguea
+        const userALoguearse = req.session.userLogueado
+
+        db.Producto.findAll({
+            include: ["marcas"],
+            where: {
+                marca_id: 12
+            }
+        })
+
+        .then(ProductosEukanuba => {return res.render("marcasEukanuba.ejs", {userALoguearse, ProductosEukanuba})})
+
+    },
+
+    eukanuba: (req, res) => {
+
+        //usuario q se loguea
+        const userALoguearse = req.session.userLogueado
+
+        db.Producto.findAll({
+            include: ["marcas"],
+            where: {
+                marca_id: 12
+            }
+        })
+
+        .then(ProductosEukanuba => {return res.render("marcasEukanuba.ejs", {userALoguearse, ProductosEukanuba})})
+
     },
 
     alta : (req, res) => {
