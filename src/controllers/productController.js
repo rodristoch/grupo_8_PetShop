@@ -215,7 +215,9 @@ const productController = {
                 as: 'categorias',
                 attributes: ['id', 'categoria'], // La unica manera de resolver el problema del CreateAt es definir que columna quiero usar en la relacion
                 through: { attributes: [] }, // Esto vita incluir automáticamente las columnas de la tabla intermedia
-                where : { id: 1}
+                where : { 
+                    id: 1
+                }
             }],
             where: {
                 tipo_mascota_id: 2,
@@ -232,23 +234,46 @@ const productController = {
 
     comidaGato : (req, res) => {
 
-        //usuario q se loguea
-        const userALoguearse = req.session.userLogueado
+
+    /*     const userALoguearse = req.session.userLogueado
 
         const productos = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'));
 
-        //productos gatos
         const productosGato = productos.filter(product => {return product.id_pet == "Gato"});
 
-		//productos comida gatos
+
 		const comidaGato = productosGato.filter(product => {return product.category == "Comida"});
 
-        //ID de producto
         const unProducto = productos.find (producto => {
             return producto.id == req.params.id
-        })
+        }) */
         
-        res.render('comidaGato.ejs', {comidaGato, unProducto, userALoguearse});
+/*         res.render('comidaGato.ejs', {comidaGato, unProducto, userALoguearse}); */
+
+
+        const userALoguearse = req.session.userLogueado
+
+        db.Producto.findAll({
+            include: [{
+                model: db.Categoria,
+                as: 'categorias',
+                attributes: ['id', 'categoria'], // La unica manera de resolver el problema del CreateAt es definir que columna quiero usar en la relacion
+                through: { attributes: [] }, // Esto vita incluir automáticamente las columnas de la tabla intermedia
+                where : { 
+                    id: 1
+                }
+            }],
+            where: {
+                tipo_mascota_id: 1,
+            }
+        })
+        .then(function(productosGato){
+            res.render('comidaGato.ejs', {productosGato, userALoguearse});
+        })
+        .catch(function (error){
+            console.error('Error al recuperar productos', error);
+        });
+
     },
 
     accesoriosPerro : (req, res) => {
