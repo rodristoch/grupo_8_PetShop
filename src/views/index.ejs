@@ -80,11 +80,11 @@
         <section class="section-productos-descuentos">
             <h2>Productos con descuentos</h2>
             <div class="div-section-productos-descuentos">
-                <% productosPerroConDescuento.forEach(producto => {%>
+                <% productosGatoAccesorios.forEach(producto => {%>
                     <article class="articulo-productos-descuentos">
                         <a href="/productos/detalle/<%= producto.id %>">
                             <div class="contenedor_imagen">
-                                <img class="img-productos-descuentos" src="/img/productos/<%= producto.image %>" alt="imagen_producto">
+                                <img class="img-productos-descuentos" src="/img/productos/<%= producto.imagen %>" alt="imagen_producto">
                             </div>
                         </a>
                         <div>
@@ -124,22 +124,22 @@
         <section class="section-productos-descuentos">
             <h2>Productos para perro</h2>
             <div class="div-section-productos-descuentos">
-                <% accesoriosPerroSinDescuento.forEach(producto => {%>
+                <% productosPerro.forEach(producto => {%>
                     <article class="articulo-productos-descuentos">
                         <a href="/productos/detalle/<%= producto.id %>">
                             <div class="contenedor_imagen">
-                                <img class="img-productos-descuentos" src="/img/productos/<%= producto.image %>" alt="imagen_producto">
+                                <img class="img-productos-descuentos" src="/img/productos/<%= producto.imagen %>" alt="imagen_producto">
                             </div>
                         </a>
                         <div>
                             <div class="texto_nombre_arriba"> <!--- Limita la altura del box-->
-                                <h4><%= producto.name %></h4>
+                                <h4><%= producto.nombre %></h4>
                             </div>
                             
                             <div class="texto_descripcion_arriba">
-                                <p class="descripcion"><%= producto.description %></p>
+                                <p class="descripcion"><%= producto.descripcion %></p>
                             </div>
-                            <p class="precio">$ <%= producto.price %></p>
+                            <p class="precio">$ <%= producto.precio %></p>
                             <div class="div-boton-comprar">
                                 <button class="boton-comprar" type="submit">Agregar</button>
                             </div>
@@ -157,22 +157,22 @@
    <section class="section-productos-descuentos">
     <h2>Productos para gato</h2>
     <div class="div-section-productos-descuentos">
-        <% accesoriosGatoSinDescuento.forEach(producto => {%>
+        <% productosGato.forEach(producto => {%>
             <article class="articulo-productos-descuentos">
                 <a href="/productos/detalle/<%= producto.id %>">
                     <div class="contenedor_imagen">
-                        <img class="img-productos-descuentos" src="/img/productos/<%= producto.image %>" alt="imagen_producto">
+                        <img class="img-productos-descuentos" src="/img/productos/<%= producto.imagen %>" alt="imagen_producto">
                     </div>
                 </a>
                 <div>
                     <div class="texto_nombre_arriba"> <!--- Limita la altura del box-->
-                        <h4><%= producto.name %></h4>
+                        <h4><%= producto.nombre %></h4>
                     </div>
                     
                     <div class="texto_descripcion_arriba">
-                        <p class="descripcion"><%= producto.description %></p>
+                        <p class="descripcion"><%= producto.descripcion %></p>
                     </div>
-                    <p class="precio">$ <%= producto.price %></p>
+                    <p class="precio">$ <%= producto.precio %></p>
                     <div class="div-boton-comprar">
                         <button class="boton-comprar" type="submit">Agregar</button>
                     </div>

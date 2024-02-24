@@ -13,11 +13,20 @@ const productsFilePath = path.join(__dirname, "../data/productosDataBase.json");
 const productController = {
 
     index: (req, res) => {
-        //usuario q se loguea
-        const userALoguearse = req.session.userLogueado
+        
+        // Usuario que se ha iniciado sesión
+        const userALoguearse = req.session.userLogueado;
+      
+        db.Producto.findAll()
+            .then(function(productos) {
+                res.render("productos", { productos, userALoguearse });
+            })
+            .catch(function(error) {
+                res.send(error);
+            });
 
-        const productos = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'));
-        res.render("productos" , {productos, userALoguearse})
+        //const productos = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'));
+        //res.render("productos" , {productos, userALoguearse})
     },
 
     detalle : (req, res) => {
