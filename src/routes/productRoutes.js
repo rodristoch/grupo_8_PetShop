@@ -47,6 +47,7 @@ router.get('/marcas/', productController.marcas)
 router.get('/marcas/eukanuba', productController.eukanuba)
 router.get('/marcas/proplan', productController.proplan)
 router.get('/marcas/royal', productController.royal)
+router.get('/marcas/cancat', productController.cancat)
 
 // Mostrar pagina de producto (por id)
 router.get('/detalle/:id/', productController.detalle) 

@@ -490,6 +490,22 @@ const productController = {
 
     },
 
+    cancat: (req, res) => {
+
+        //usuario q se loguea
+        const userALoguearse = req.session.userLogueado
+
+        db.Producto.findAll({
+            include: ["marcas"],
+            where: {
+                marca_id: 4
+            }
+        })
+
+        .then(ProductosCancat => {return res.render("marcasCancat.ejs", {userALoguearse, ProductosCancat})})
+
+    },
+
 
     alta : (req, res) => {
 
