@@ -434,7 +434,7 @@ const productController = {
         db.Producto.findAll({
             include: ["marcas"],
             where: {
-                marca_id: 12
+                marca_id: [12, 5, 11, 4, 16]
             }
         })
 
@@ -503,6 +503,22 @@ const productController = {
         })
 
         .then(ProductosCancat => {return res.render("marcasCancat.ejs", {userALoguearse, ProductosCancat})})
+
+    },
+
+    catit: (req, res) => {
+
+        //usuario q se loguea
+        const userALoguearse = req.session.userLogueado
+
+        db.Producto.findAll({
+            include: ["marcas"],
+            where: {
+                marca_id: 16
+            }
+        })
+
+        .then(ProductosCatit => {return res.render("marcasCatit.ejs", {userALoguearse, ProductosCatit})})
 
     },
 
