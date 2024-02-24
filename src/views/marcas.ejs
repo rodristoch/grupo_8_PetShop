@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
-    <%- include("./partials/head.ejs", {cssSheet: "categoria", title: "Página Categoría"}) %>
+    <%- include("./partials/head.ejs", {cssSheet: "categoria", title: "Marcas"}) %>
 <body>
 
     <%- include("./partials/header.ejs") %>
@@ -69,41 +69,160 @@
             <!--  Filtros-->
             <article class="contenedor_menu_desktop">
                 <div class="contenedor_filtros">
-                    <p>Acá van los filtros</p>
-                    <p>Acá van los filtros</p>
-                    <p>Acá van los filtros</p>
+                    <p>Eukanuba</p>
+                    <p>Proplan</p>
+                    <p>Royal</p>
+                    <p>Cancat</p>
+                    <p>Catit</p>
                 </div>
             </article>
 
              <!-- Lista productos productos-->
-             <div class="lista_desktop">
-                <div class="lista_flexbox_desktop">
-                    <% for(let producto of productosPerro) { %>
-                        <article class="articulo-productos-descuentos">
-                            <a href="/productos/detalle/<%= producto.id %>">
-                                <div class="contenedor_imagen">
-                                    <img class="img-productos-descuentos" src="/img/productos/<%= producto.imagen %>" alt="imagen_producto">
-                                </div>
-                            </a>
-                            <div>
-                                <div class="texto_nombre_arriba">
-                                    <h4><%= producto.nombre %></h4>
-                                </div>
-                                <div class="texto_description_arriba">
-                                    <P><%= producto.descripcion %></P>
-                                </div>
+            <div class="lista_desktop">
+                <div>
+                    <h2>Productos Eukanuba</h2>
+                    <div class="lista_flexbox_desktop">
+                        <% for(let producto of eukanuba) { %>
+                            <article class="articulo-productos-descuentos">
+                                <a href="/productos/detalle/<%= producto.id %>">
+                                    <div class="contenedor_imagen">
+                                        <img class="img-productos-descuentos" src="/img/productos/<%= producto.imagen %>" alt="imagen_producto">
+                                    </div>
+                                </a>
                                 <div>
-                                    <h3 class="precio">$ <%= producto.precio %></h3>
-                                </div>
-                                <div class="div-boton-comprar">
-                                    <button class="boton-comprar" type="submit">Agregar</button>
-                                </div>
-                        </article>
-                                
-                    <% } %>
-                </div>
-            </div>
+                                    <div class="texto_nombre_arriba">
+                                        <h4><%= producto.nombre %></h4>
+                                    </div>
+                                    <div class="texto_description_arriba">
+                                        <P><%= producto.descripcion %></P>
+                                    </div>
+                                    <div>
+                                        <h3 class="precio">$ <%= producto.precio %></h3>
+                                    </div>
+                                    <div class="div-boton-comprar">
+                                        <button class="boton-comprar" type="submit">Agregar</button>
+                                    </div>
+                            </article>
+                                    
+                        <% } %>
+                    </div>
+                <div>
 
+                <div>
+                    <h2>Productos Pro Plan</h2>
+                    <div class="lista_flexbox_desktop">
+                        <% for(let producto of proplan) { %>
+                            <article class="articulo-productos-descuentos">
+                                <a href="/productos/detalle/<%= producto.id %>">
+                                    <div class="contenedor_imagen">
+                                        <img class="img-productos-descuentos" src="/img/productos/<%= producto.imagen %>" alt="imagen_producto">
+                                    </div>
+                                </a>
+                                <div>
+                                    <div class="texto_nombre_arriba">
+                                        <h4><%= producto.nombre %></h4>
+                                    </div>
+                                    <div class="texto_description_arriba">
+                                        <P><%= producto.descripcion %></P>
+                                    </div>
+                                    <div>
+                                        <h3 class="precio">$ <%= producto.precio %></h3>
+                                    </div>
+                                    <div class="div-boton-comprar">
+                                       <button class="boton-comprar" type="submit">Agregar</button>
+                                    </div>
+                                
+                            </article>
+                            
+                        <% } %>
+                    </div>
+                </div>
+                <div>
+                    <h2>Productos Royal</h2>
+                    <div class="lista_flexbox_desktop">
+                        <% for(let producto of royal) { %>
+                            <article class="articulo-productos-descuentos">
+                                <a href="/productos/detalle/<%= producto.id %>">
+                                    <div class="contenedor_imagen">
+                                        <img class="img-productos-descuentos" src="/img/productos/<%= producto.imagen %>" alt="imagen_producto">
+                                    </div>
+                                </a>
+                                <div>
+                                    <div class="texto_nombre_arriba">
+                                        <h4><%= producto.nombre %></h4>
+                                    </div>
+                                    <div class="texto_description_arriba">
+                                        <P><%= producto.descripcion %></P>
+                                    </div>
+                                    <div>
+                                        <h3 class="precio">$ <%= producto.precio %></h3>
+                                    </div>
+                                    <div class="div-boton-comprar">
+                                        <button class="boton-comprar" type="submit">Agregar</button>
+                                    </div>
+                            </article>
+                                    
+                        <% } %>
+                    </div>
+                <div>
+                <div>
+                    <h2>Productos Cancat</h2>
+                    <div class="lista_flexbox_desktop">
+                        <% for(let producto of cancat) { %>
+                            <article class="articulo-productos-descuentos">
+                                <a href="/productos/detalle/<%= producto.id %>">
+                                    <div class="contenedor_imagen">
+                                        <img class="img-productos-descuentos" src="/img/productos/<%= producto.imagen %>" alt="imagen_producto">
+                                    </div>
+                                </a>
+                                <div>
+                                    <div class="texto_nombre_arriba">
+                                        <h4><%= producto.nombre %></h4>
+                                    </div>
+                                    <div class="texto_description_arriba">
+                                        <P><%= producto.descripcion %></P>
+                                    </div>
+                                    <div>
+                                        <h3 class="precio">$ <%= producto.precio %></h3>
+                                    </div>
+                                    <div class="div-boton-comprar">
+                                        <button class="boton-comprar" type="submit">Agregar</button>
+                                    </div>
+                            </article>
+                                        
+                        <% } %>
+                    </div>
+                <div>
+                <div>
+                    <h2>Productos Catit</h2>
+                    <div class="lista_flexbox_desktop">
+                        <% for(let producto of catit) { %>
+                            <article class="articulo-productos-descuentos">
+                                <a href="/productos/detalle/<%= producto.id %>">
+                                    <div class="contenedor_imagen">
+                                        <img class="img-productos-descuentos" src="/img/productos/<%= producto.imagen %>" alt="imagen_producto">
+                                    </div>
+                                </a>
+                                <div>
+                                    <div class="texto_nombre_arriba">
+                                        <h4><%= producto.nombre %></h4>
+                                    </div>
+                                    <div class="texto_description_arriba">
+                                        <P><%= producto.descripcion %></P>
+                                    </div>
+                                    <div>
+                                        <h3 class="precio">$ <%= producto.precio %></h3>
+                                    </div>
+                                    <div class="div-boton-comprar">
+                                        <button class="boton-comprar" type="submit">Agregar</button>
+                                    </div>
+                            </article>
+                                        
+                        <% } %>
+                    </div>
+                <div>
+                
+            </div>
         </section>  
     </main>
 

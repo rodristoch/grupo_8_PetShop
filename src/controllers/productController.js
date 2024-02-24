@@ -130,16 +130,14 @@ const productController = {
 		//productos con descuentos de gatos
 		const productosGatoConDescuento = productosGato.filter(product => {return product.discount == "Si"});
 
-         //ID de producto
-         const unProducto = productos.find (producto => {
-            return producto.id == req.params.id
-        })
-        res.render('promociones.ejs', {productosPerroConDescuento, productosGatoConDescuento, unProducto, userALoguearse});
+        res.render('promociones.ejs', {productosPerroConDescuento, productosGatoConDescuento, userALoguearse});
     },
 
     promocionesPerro : (req, res) => {
 
-        //usuario q se loguea
+
+
+        /* //usuario q se loguea
         const userALoguearse = req.session.userLogueado
 
         const productos = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'));
@@ -155,7 +153,7 @@ const productController = {
             return producto.id == req.params.id
         })
 
-        res.render('promociones-perro.ejs', {productosPerroConDescuento, unProducto, userALoguearse});
+        res.render('promociones-perro.ejs', {productosPerroConDescuento, unProducto, userALoguearse}); */
     },
 
     promocionesGato : (req, res) => {
@@ -431,14 +429,44 @@ const productController = {
         //usuario q se loguea
         const userALoguearse = req.session.userLogueado
 
-        db.Producto.findAll({
+        let eukanuba = db.Producto.findAll({
             include: ["marcas"],
             where: {
-                marca_id: [12, 5, 11, 4, 16]
+                marca_id: 12
             }
         })
 
-        .then(ProductosEukanuba => {return res.render("marcasEukanuba.ejs", {userALoguearse, ProductosEukanuba})})
+        let proplan = db.Producto.findAll({
+            include: ["marcas"],
+            where: {
+                marca_id: 5
+            }
+        })
+
+        let royal = db.Producto.findAll({
+            include: ["marcas"],
+            where: {
+                marca_id: 11
+            }
+        })
+
+        let cancat = db.Producto.findAll({
+            include: ["marcas"],
+            where: {
+                marca_id: 4
+            }
+        })
+
+        let catit = db.Producto.findAll({
+            include: ["marcas"],
+            where: {
+                marca_id: 16
+            }
+        })
+
+        Promise.all([eukanuba, proplan, royal, cancat, catit])
+
+        .then(([eukanuba, proplan, royal, cancat, catit]) => {return res.render("marcas.ejs", {userALoguearse, eukanuba, proplan, royal, cancat, catit})})
 
     },
 
