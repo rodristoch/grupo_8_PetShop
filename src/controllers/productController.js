@@ -458,6 +458,22 @@ const productController = {
 
     },
 
+    proplan: (req, res) => {
+
+        //usuario q se loguea
+        const userALoguearse = req.session.userLogueado
+
+        db.Producto.findAll({
+            include: ["marcas"],
+            where: {
+                marca_id: 5
+            }
+        })
+
+        .then(ProductosProplan => {return res.render("marcasProplan.ejs", {userALoguearse, ProductosProplan})})
+
+    },
+
     alta : (req, res) => {
 
         //usuario q se loguea
