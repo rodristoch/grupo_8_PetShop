@@ -40,41 +40,6 @@ module.exports = (sequelize, dataTypes) => {
    
     const Producto = sequelize.define(alias, cols, config);
 
-/*     // Asociación con el modelo TipoMascota
-    Producto.associate = function(models) {
-        Producto.belongsTo(models.TipoMascota, {  // Alias del otro modelo
-            foreignKey: 'tipo_mascota_id',
-            as: 'tipos_mascota' // Alias para las vistas
-        });
-    };
-
-    // Asociación con el modelo Marca
-    Producto.associate = (models) => {
-        Producto.belongsTo(models.Marca, {  // Alias del otro modelo
-            foreignKey: 'marca_id',
-            as: 'marcas' // Alias para las vistas
-        });
-    };
-    
-    // Asociación con tabla intermedia producto_categoria
-    Producto.associate = (models) => {
-        Producto.belongsToMany(models.Categoria, {  // Alias del otro modelo
-            as: 'categorias',
-            through: 'producto_categoria',
-            foreignKey: 'producto_id',
-            otherKey: 'categoria_id'
-        });    
-    };
-
-    // Asociación con tabla intermedia producto_descuento
-    Producto.associate = (models) => {
-        Producto.belongsToMany(models.Descuento, {  // Alias del otro modelo
-            as: 'descuentos',
-            through: 'producto_descuento',
-            foreignKey: 'producto_id',
-            otherKey: 'descuento_id'
-        }); */
-
         Producto.associate = function (models) {
             // Asociación con el modelo Tipo_Mascota
             Producto.belongsTo(models.TipoMascota, {
