@@ -655,8 +655,9 @@ const productController = {
 		
     },
 
-    editar : (req, res) => {
+    /* editar : (req, res) => {
 
+        //CON LOS JSONS
         //usuario q se loguea
         const userALoguearse = req.session.userLogueado
 
@@ -669,9 +670,30 @@ const productController = {
         })
 
         res.render('editar-producto.ejs', {editarProducto, userALoguearse});
+    }, */
+
+    editar : (req, res) => {
+
+        //usuario q se loguea
+        const userALoguearse = req.session.userLogueado
+
+        let productoId = req.params.id;
+
+        let productos = db.Producto.findByPk(productoId, 
+            {include: ['tipos_mascota','marcas', 'categorias', 'descuentos']
+        });
+        let tipos = db.TipoMascota.findAll();
+        let marcas = db.Marca.findAll();
+        let categorias = db.Categoria.findAll();
+        let descuentos = db.Descuento.findAll();
+
+        Promise.all([productos, tipos, marcas, categorias, descuentos])
+        .then(([editarProducto, tipos, marcas, categorias, descuentos]) => {
+            return res.render("editar-producto.ejs", {editarProducto, tipos, marcas, categorias, descuentos, userALoguearse})})
+        .catch(error => res.send(error))
     },
 
-    editarProducto: (req, res) => {
+    /* editarProducto: (req, res) => {
         // json de productos
         const productos = JSON.parse(fs.readFileSync(productsFilePath, "utf-8"));
 
@@ -703,6 +725,31 @@ const productController = {
        //Re-escritura producto
        fs.writeFileSync(productsFilePath, JSON.stringify(productos, null, " "), "utf-8");
        res.redirect("/") // ¿A donde lo redirigimos?
+    }, */
+
+    editarProducto: function (req,res) {
+
+         //usuario q se loguea
+        const userALoguearse = req.session.userLogueado
+
+        let productoId = req.params.id;
+        db.Producto.update(
+            {
+                nombre: req.body.nombre_producto,
+                descripcion: req.body.descripcion,
+                color: req.body.color_producto,
+                peso: req.body.peso_producto,
+                precio: req.body.precio_producto,
+                imagen: req.file !=undefined ? req.file.filename : productoId.image,
+                tipo_mascota_id: req.body.tipo_mascota_id,
+                marca_id: req.body.marca_id
+            },
+            {
+                where: {id: productoId}
+            })
+        .then(()=> {
+            return res.redirect("/")})            
+        .catch(error => res.send(error))
     },
     
     detalle: (req, res) => {
@@ -733,6 +780,8 @@ const productController = {
     },
 
     /* quitarProducto : (req, res) => {
+
+        //CON LOS JSONS
         let productos = JSON.parse(fs.readFileSync(productsFilePath, "utf-8"));
 
         //proceso de eliminación
