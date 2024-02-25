@@ -115,7 +115,32 @@ const productController = {
 
     promociones : (req, res) => {
 
+        //CON DB SQL
         //usuario q se loguea
+        const userALoguearse = req.session.userLogueado
+
+        let productosPerroConDescuento = db.Producto.findAll({
+            include: ["tipos_mascota", "descuentos"],
+            where: {
+                tipo_mascota_id: 2,
+                //falta indicar que tenga descuento == si
+            }
+        })
+
+        let productosGatoConDescuento = db.Producto.findAll({
+            include: ["tipos_mascota", "descuentos"],
+            where: {
+                tipo_mascota_id: 1,
+                //falta indicar que tenga descuento == si
+            }
+        })
+
+        Promise.all([productosPerroConDescuento, productosGatoConDescuento])
+
+        .then( ([productosPerroConDescuento, productosGatoConDescuento]) => {return res.render("promociones.ejs", {userALoguearse, productosPerroConDescuento, productosGatoConDescuento})})
+
+        //CON LOS JSONS
+        /* //usuario q se loguea
         const userALoguearse = req.session.userLogueado
 
         const productos = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'));
@@ -130,25 +155,26 @@ const productController = {
 		//productos con descuentos de gatos
 		const productosGatoConDescuento = productosGato.filter(product => {return product.discount == "Si"});
 
-        res.render('promociones.ejs', {productosPerroConDescuento, productosGatoConDescuento, userALoguearse});
+        res.render('promociones.ejs', {productosPerroConDescuento, productosGatoConDescuento, userALoguearse}); */
     },
 
     promocionesPerro : (req, res) => {
 
+        //CON DB SQL
         //usuario q se loguea
         const userALoguearse = req.session.userLogueado
 
         db.Producto.findAll({
-            include: [{association: "tipos_mascota"},{association: "descuentos"}],
+            include: ["tipos_mascota", "descuentos"],
             where: {
                 tipo_mascota_id: 2,
+                //falta indicar que tenga descuento == si
             }
         })
 
         .then(productosPerroConDescuento => {return res.render("promociones-perro.ejs", {userALoguearse, productosPerroConDescuento})})
 
-
-
+        //CON LOS JSONS
         /* //usuario q se loguea
         const userALoguearse = req.session.userLogueado
 
@@ -170,7 +196,23 @@ const productController = {
 
     promocionesGato : (req, res) => {
 
+        //CON DB SQL
         //usuario q se loguea
+        const userALoguearse = req.session.userLogueado
+
+        db.Producto.findAll({
+            include: ["tipos_mascota", "descuentos"],
+            where: {
+                tipo_mascota_id: 1,
+                //falta indicar que tenga descuento == si
+            }
+        })
+ 
+        .then(productosGatoConDescuento => {return res.render("promociones-gato.ejs", {userALoguearse, productosGatoConDescuento})})
+
+
+        //CON LOS JSONS
+        /* //usuario q se loguea
         const userALoguearse = req.session.userLogueado
 
         const productos = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'));
@@ -185,7 +227,7 @@ const productController = {
         const unProducto = productos.find (producto => {
             return producto.id == req.params.id
         })
-        res.render('promociones-gato.ejs', {productosGatoConDescuento, unProducto, userALoguearse});
+        res.render('promociones-gato.ejs', {productosGatoConDescuento, unProducto, userALoguearse}); */
     },
 
     comidaPerro : (req, res) => {

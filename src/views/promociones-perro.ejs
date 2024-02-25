@@ -77,37 +77,40 @@
 
              <!-- Lista productos productos-->
              <div class="lista_desktop">
-                <div class="lista_flexbox_desktop">
-                    <% for(let producto of productosPerroConDescuento) { %>
-                        <article class="articulo-productos-descuentos">
-                            <a href="/productos/detalle/<%= producto.id %>">
-                                <div class="contenedor_imagen">
-                                    <img class="img-productos-descuentos" src="/img/productos/<%= producto.imagen %>" alt="imagen_producto">
-                                </div>
-                            </a>
-                            <div>
-                                <div class="texto_nombre_arriba">
-                                    <h4><%= producto.nombre %></h4>
-                                </div>
-                                <div class="texto_description_arriba">
-                                    <P><%= producto.descripcion %></P>
-                                </div>
+                <div>
+                    <h2 style="margin-left: 20px;">Promociones Perro</h2>
+                    <div class="lista_flexbox_desktop">
+                        <% for(let producto of productosPerroConDescuento) { %>
+                            <article class="articulo-productos-descuentos">
+                                <a href="/productos/detalle/<%= producto.id %>">
+                                    <div class="contenedor_imagen">
+                                        <img class="img-productos-descuentos" src="/img/productos/<%= producto.imagen %>" alt="imagen_producto">
+                                    </div>
+                                </a>
                                 <div>
-                                    <p class="precio-tachado">$ <%= producto.precio %></p>
-                                </div>
-                                <div>
-                                    <p class="descuento">20% off</p>
-                                </div>
-                                <div>
-                                    <p class="precio"><%= Number((producto.precio*0.8).toFixed(2)) %></p>
-                                </div>
-                                <div class="div-boton-comprar">
-                                    <button class="boton-comprar" type="submit">Agregar</button>
-                                </div>
-                        </article>
-            
-                    <% } %>
-                </div>
+                                    <div class="texto_nombre_arriba">
+                                        <h4><%= producto.nombre %></h4>
+                                    </div>
+                                    <div class="texto_description_arriba">
+                                        <P><%= producto.descripcion %></P>
+                                    </div>
+                                    <div>
+                                        <p class="precio-tachado">$ <%= producto.precio %></p>
+                                    </div>
+                                    <div>
+                                        <p class="descuento">20% off</p>
+                                    </div>
+                                    <div>
+                                        <p class="precio"><%= Number((producto.precio*0.8).toFixed(2)) %></p>
+                                    </div>
+                                    <div class="div-boton-comprar">
+                                        <button class="boton-comprar" type="submit">Agregar</button>
+                                    </div>
+                            </article>
+                                        
+                        <% } %>
+                    </div>
+                <div>
             </div>
 
         </section>  
