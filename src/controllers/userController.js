@@ -133,7 +133,9 @@ const userController = {
 
     },
 
-    perfil: (req, res) => {
+    /* perfil: (req, res) => {
+
+        //METODO CON JSONS
 
         //usuario q se loguea
         const userALoguearse = req.session.userLogueado
@@ -145,6 +147,20 @@ const userController = {
 		const userToEdit = users.find(user => {return user.id == req.params.id})
 
 		res.render("perfil-user", {userToEdit, userALoguearse});
+	}, */
+
+    perfil: (req, res) => {
+
+        //usuario q se loguea
+        const userALoguearse = req.session.userLogueado
+       
+        let userId = req.params.id
+
+        db.Usuario.findByPk(userId)
+        .then(usuario => {
+            return res.render("perfil-user.ejs", {usuario, userALoguearse})})
+        .catch(error => res.send(error))
+
 	},
 
 

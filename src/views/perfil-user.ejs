@@ -18,15 +18,15 @@
             
             <div>
                 <!-- muestra los datos del usuario -->
-                <% if(locals.userToEdit && locals.userALoguearse){ %>
+                <% if(locals.usuario && locals.userALoguearse){ %>
 
                     <h2>Mi perfil</h2>
     
-                    <h3 style="color: black; font-size: 20px; font-weight: 600;" ><%= userToEdit.nombre %> <%= userToEdit.apellido %></h3>
-                    <h3 style="color: black; font-size: 18px; font-weight: 400;" ><%= userToEdit.email %></h3>
-                    <img src="<%= userToEdit.image %>" alt="">
+                    <h3 style="color: black; font-size: 20px; font-weight: 600;" ><%= usuario.nombre %> <%= usuario.apellido %></h3>
+                    <h3 style="color: black; font-size: 18px; font-weight: 400;" ><%= usuario.email %></h3>
+                    <img src="<%= usuario.imagen %>" alt="">
 
-                    <a href="/users/edit/<%= userToEdit.id %>">
+                    <a href="/users/edit/<%= usuario.id %>">
                         <button type="button" class="btn-secundario">Editá tus datos</button>
                     </a>
     
