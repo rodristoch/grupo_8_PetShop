@@ -12,7 +12,7 @@ const productsFilePath = path.join(__dirname, "../data/productosDataBase.json");
 
 const productController = {
 
-    detalle : (req, res) => {
+    detalleConJson : (req, res) => {
         //usuario q se loguea
         const userALoguearse = req.session.userLogueado
        /* console.log(usuario) */
@@ -705,7 +705,34 @@ const productController = {
        res.redirect("/") // ¿A donde lo redirigimos?
     },
     
-    quitarProducto : (req, res) => {
+    detalle: (req, res) => {
+
+        const userALoguearse = req.session.userLogueado
+
+        let productoId = req.params.id;
+
+        db.Producto.findByPk(productoId)
+        .then(producto => {
+            return res.render("detalle.ejs", {producto, userALoguearse})})
+        .catch(error => res.send(error))
+    },
+
+    destroy: (req, res) => {
+
+        let productoId = req.params.id;
+
+        db.Producto.destroy({
+            where: {
+                id: productoId
+            },
+            force: true
+        }) // force: true es para asegurar que se ejecute la acción
+        .then(()=>{
+            return res.redirect('/')})
+        .catch(error => res.send(error)) 
+    },
+
+    /* quitarProducto : (req, res) => {
         let productos = JSON.parse(fs.readFileSync(productsFilePath, "utf-8"));
 
         //proceso de eliminación
@@ -715,8 +742,7 @@ const productController = {
 
         //escribir archivo json
         fs.writeFileSync(productsFilePath, JSON.stringify(productos, null, " "))
-    }
-
+    }, */
 }
 
 module.exports = productController;

@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+    <%- include("./partials/head.ejs", {cssSheet: "detalles-del-producto", title: "Detalles del Producto"}) %>
+<body>
+
+    <%- include("./partials/header.ejs") %>
+    
+    <%- include("./partials/header2.ejs") %>
+
+    <main>
+      
+        <article class="contenedor_mobile">
+            <!--Bread cumb -->
+            <p><%= "localhost:3100/productos/detalle/" + producto.id %></p>
+
+             <!--imagen -->
+            <div class="contenedor_imagen_mobile">
+                <img src="/img/productos/<%= producto.imagen %>" alt="Producto Comida" class="imagen_producto_mobile">
+            </div>
+            <!--detalle de producto -->
+            <section class=" detalle">
+                <p class="titulo_nombre"> <%= producto.nombre %></p>
+                <p class="precio">$ <%= producto.precio %></p>
+
+            </section>
+
+            <!-- Selector unidades -->
+            <form action="/users/carrito" method="get">
+
+                <select name="cantidad">
+                    <option value="valor">Seleccionar cantidad</option>
+                    <option value="valor">1</option>
+                    <option value="valor2">2</option>
+                    <option value="valor3">3</option>
+                </select>
+            </form>
+
+            <!--CTA princcipal -->
+            <button type="submit">Agregar al carrito</button>
+
+            <!-- CTA edición de producto -->
+            <% if(userALoguearse && userALoguearse.category == "Administrador"){ %>
+                <a href="/productos/editar/<%= producto.id %>" class="boton_editar">
+                    <p class="texto_boton">Editar producto</p>
+                 </a>
+                 <!-- CTA eliminar producto -->
+                 <form action="/productos/eliminar/<%= producto.id %>?_method=DELETE" method="POST">
+                     <button type="submit" class="boton_eliminar">Eliminar producto</button>
+            <% } %>
+            
+            </form>
+
+            <hr>
+
+            <p class="titulo_descripción">Descripción de producto</p>
+            <p class="descripcion-producto"> <%= producto.descripcion %></p>
+
+
+        </article>
+
+
+
+    </main>
+
+    <%- include("./partials/footer.ejs") %>
+
+</body>
+</html>
