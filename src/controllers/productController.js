@@ -12,72 +12,6 @@ const productsFilePath = path.join(__dirname, "../data/productosDataBase.json");
 
 const productController = {
 
-    detalleConJson : (req, res) => {
-        //usuario q se loguea
-        const userALoguearse = req.session.userLogueado
-       /* console.log(usuario) */
-        const productos = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'));
-        const unProducto = productos.find (producto => {
-            return producto.id == req.params.id
-        })
-
-        // filtro de productos perro o gato
-        const productosPerro = productos.filter(product => {return product.id_pet == "Perro"});
-        const productosGato = productos.filter(product => {return product.id_pet == "Gato"});
-
-        //Conozco el producto que vino por id
-        const detalleDeProductoActual = unProducto.id_pet;
-          
-       // Función para encontrar 6 productos distintos para recomendados
-        let productosRecomendados = [];
-        if (detalleDeProductoActual == "Perro") {
-            
-            //Ecuento el id maximo del json
-            let maxID = Math.max(...productosPerro.map(item => item.id));
-
-            //Set de 6 numeros aleatorios no repetidos
-            let randomIDs = new Set();
-            while (randomIDs.size < 6) {
-                randomIDs.add(Math.floor(Math.random() * (maxID - 1)) + 1);
-            }
-        
-            // Convierte los randomIDS a array
-            randomIDs = Array.from(randomIDs);
-        
-            // Filtra los productosPerro según en los IDs aleatorios
-            productosRecomendados = productosPerro.filter(item => randomIDs.includes(item.id));
-            
-            // Si la cantidad de productos recomendados es menor que 6, agrega productos adicionales
-            while (productosRecomendados.length < 6) {
-                productosRecomendados.push(productosPerro[Math.floor(Math.random() * productosPerro.length)])
-        }
-
-    } else if (detalleDeProductoActual == "Gato") {
-        
-        //encuentro el id máximo en el json
-        let maxID= Math.max(...productosGato.map(item => item.id));
-
-        //set de 6 numeros aleatorios no repetidos
-
-        let randomIDS= new Set();
-        while(randomIDS <6) {
-            randomIDS.add(Math.floor(Math.random() * (maxID - 1)) + 1);
-        }
-
-        //Convierto el set en array
-        randomIDS = Array.from(randomIDS);
-
-        //filtro los productosGato según los IDS aleatorios
-        productosRecomendados = productosGato.filter(item => randomIDS.includes(item.id));
-
-        // Si la cantidad de productos recomendados es menor que 6, agrega productos adicionales
-        while (productosRecomendados.length <6)
-            productosRecomendados.push(productosGato[Math.floor(Math.random() * productosGato.length)])
-
-        }
-        res.render("detalles-del-producto.ejs", {unProducto, productosRecomendados, userALoguearse}); 
-    },
-
     categoriaPerro : (req, res) => {
         const productos = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'));
 
@@ -139,25 +73,10 @@ const productController = {
 
         Promise.all([productosPerroConDescuento, productosGatoConDescuento])
 
-        .then( ([productosPerroConDescuento, productosGatoConDescuento]) => {return res.render("promociones.ejs", {userALoguearse, productosPerroConDescuento, productosGatoConDescuento})})
+        .then(([productosPerroConDescuento, productosGatoConDescuento]) => {
+            return res.render("promociones.ejs", {userALoguearse, productosPerroConDescuento, productosGatoConDescuento})
+        })
 
-        //CON LOS JSONS
-        /* //usuario q se loguea
-        const userALoguearse = req.session.userLogueado
-
-        const productos = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'));
-
-        //productos perros
-        const productosPerro = productos.filter(product => {return product.id_pet == "Perro"});
-        //productos gatos
-        const productosGato = productos.filter(product => {return product.id_pet == "Gato"});
-
-        //productos con descuentos de perros
-        const productosPerroConDescuento = productosPerro.filter(product => {return product.discount == "Si"});
-		//productos con descuentos de gatos
-		const productosGatoConDescuento = productosGato.filter(product => {return product.discount == "Si"});
-
-        res.render('promociones.ejs', {productosPerroConDescuento, productosGatoConDescuento, userALoguearse}); */
     },
 
     promocionesPerro : (req, res) => {
@@ -175,26 +94,9 @@ const productController = {
             limit: 12
         })
 
-        .then(productosPerroConDescuento => {return res.render("promociones-perro.ejs", {userALoguearse, productosPerroConDescuento})})
-
-        //CON LOS JSONS
-        /* //usuario q se loguea
-        const userALoguearse = req.session.userLogueado
-
-        const productos = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'));
-
-        //productos perros
-        const productosPerro = productos.filter(product => {return product.id_pet == "Perro"});
-
-        //productos con descuentos de perros
-        const productosPerroConDescuento = productosPerro.filter(product => {return product.discount == "Si"});
-		
-        //ID de producto
-        const unProducto = productos.find (producto => {
-            return producto.id == req.params.id
+        .then(productosPerroConDescuento => {
+            return res.render("promociones-perro.ejs", {userALoguearse, productosPerroConDescuento})
         })
-
-        res.render('promociones-perro.ejs', {productosPerroConDescuento, unProducto, userALoguearse}); */
     },
 
     promocionesGato : (req, res) => {
@@ -212,26 +114,10 @@ const productController = {
             limit: 8
         })
  
-        .then(productosGatoConDescuento => {return res.render("promociones-gato.ejs", {userALoguearse, productosGatoConDescuento})})
-
-
-        //CON LOS JSONS
-        /* //usuario q se loguea
-        const userALoguearse = req.session.userLogueado
-
-        const productos = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'));
-
-        //productos gatos
-        const productosGato = productos.filter(product => {return product.id_pet == "Gato"});
-
-		//productos con descuentos de gatos
-		const productosGatoConDescuento = productosGato.filter(product => {return product.discount == "Si"});
-
-        //ID de producto
-        const unProducto = productos.find (producto => {
-            return producto.id == req.params.id
+        .then(productosGatoConDescuento => {
+            return res.render("promociones-gato.ejs", {userALoguearse, productosGatoConDescuento})
         })
-        res.render('promociones-gato.ejs', {productosGatoConDescuento, unProducto, userALoguearse}); */
+
     },
 
     comidaPerro : (req, res) => {
@@ -529,7 +415,9 @@ const productController = {
 
         Promise.all([eukanuba, proplan, royal, cancat, catit])
 
-        .then(([eukanuba, proplan, royal, cancat, catit]) => {return res.render("marcas.ejs", {userALoguearse, eukanuba, proplan, royal, cancat, catit})})
+        .then(([eukanuba, proplan, royal, cancat, catit]) => {
+            return res.render("marcas.ejs", {userALoguearse, eukanuba, proplan, royal, cancat, catit})
+        })
 
     },
 
@@ -655,23 +543,6 @@ const productController = {
 		
     },
 
-    /* editar : (req, res) => {
-
-        //CON LOS JSONS
-        //usuario q se loguea
-        const userALoguearse = req.session.userLogueado
-
-        // Json con todos los productos
-        let productos = JSON.parse(fs.readFileSync(productsFilePath, "utf-8"));
-
-        // Encontrar producto
-        const editarProducto = productos.find( producto => {
-            return producto.id == req.params.id
-        })
-
-        res.render('editar-producto.ejs', {editarProducto, userALoguearse});
-    }, */
-
     editar : (req, res) => {
 
         //usuario q se loguea
@@ -692,40 +563,6 @@ const productController = {
             return res.render("editar-producto.ejs", {editarProducto, tipos, marcas, categorias, descuentos, userALoguearse})})
         .catch(error => res.send(error))
     },
-
-    /* editarProducto: (req, res) => {
-        // json de productos
-        const productos = JSON.parse(fs.readFileSync(productsFilePath, "utf-8"));
-
-        //identificador de producto
-        const id= req.params.id;
-       
-        let productoAEditar= productos.find(producto => producto.id == id);
-
-        //Reemplazo de prodcuto
-
-        const edicionProducto = {
-            id: productoAEditar.id,
-            name: req.body.nombre_producto,
-            description: req.body.descripcion ,
-            image: req.file !=undefined ? req.file.filename : productoAEditar.image,
-            pet: req.body.mascota,
-            category: req.body.categoria,
-            colors: req.body.color_producto,
-            weight: req.body.peso_producto ,
-            price: req.body.precio_producto,
-            quantity: req.body.cantidad_producto,
-            discount: req.body.descuento
-       }
-
-       //Posicion producto editar y reemplazo
-       let indice = productos.findIndex(producto => {return producto.id});
-       productos[indice] = edicionProducto
-
-       //Re-escritura producto
-       fs.writeFileSync(productsFilePath, JSON.stringify(productos, null, " "), "utf-8");
-       res.redirect("/") // ¿A donde lo redirigimos?
-    }, */
 
     editarProducto: function (req,res) {
 
@@ -792,6 +629,187 @@ const productController = {
         //escribir archivo json
         fs.writeFileSync(productsFilePath, JSON.stringify(productos, null, " "))
     }, */
+
+    /* detalle : (req, res) => {
+        //usuario q se loguea
+        const userALoguearse = req.session.userLogueado */
+       /* console.log(usuario) */
+        /* const productos = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'));
+        const unProducto = productos.find (producto => {
+            return producto.id == req.params.id */
+        /* })
+
+        // filtro de productos perro o gato
+        const productosPerro = productos.filter(product => {return product.id_pet == "Perro"});
+        const productosGato = productos.filter(product => {return product.id_pet == "Gato"});
+
+        //Conozco el producto que vino por id
+        const detalleDeProductoActual = unProducto.id_pet; */
+          
+       /* // Función para encontrar 6 productos distintos para recomendados
+        let productosRecomendados = [];
+        if (detalleDeProductoActual == "Perro") {
+            
+            //Ecuento el id maximo del json
+            let maxID = Math.max(...productosPerro.map(item => item.id));
+
+            //Set de 6 numeros aleatorios no repetidos
+            let randomIDs = new Set();
+            while (randomIDs.size < 6) {
+                randomIDs.add(Math.floor(Math.random() * (maxID - 1)) + 1);
+            }
+        
+            // Convierte los randomIDS a array
+            randomIDs = Array.from(randomIDs); */
+        
+            /* // Filtra los productosPerro según en los IDs aleatorios
+            productosRecomendados = productosPerro.filter(item => randomIDs.includes(item.id));
+            
+            // Si la cantidad de productos recomendados es menor que 6, agrega productos adicionales
+            while (productosRecomendados.length < 6) {
+                productosRecomendados.push(productosPerro[Math.floor(Math.random() * productosPerro.length)])
+        }
+
+    } else if (detalleDeProductoActual == "Gato") { */
+        
+       /*  //encuentro el id máximo en el json
+        let maxID= Math.max(...productosGato.map(item => item.id));
+
+        //set de 6 numeros aleatorios no repetidos
+
+        let randomIDS= new Set();
+        while(randomIDS <6) {
+            randomIDS.add(Math.floor(Math.random() * (maxID - 1)) + 1);
+        }
+
+        //Convierto el set en array
+        randomIDS = Array.from(randomIDS);
+
+        //filtro los productosGato según los IDS aleatorios
+        productosRecomendados = productosGato.filter(item => randomIDS.includes(item.id));
+
+        // Si la cantidad de productos recomendados es menor que 6, agrega productos adicionales
+        while (productosRecomendados.length <6)
+            productosRecomendados.push(productosGato[Math.floor(Math.random() * productosGato.length)])
+
+        }
+        res.render("detalles-del-producto.ejs", {unProducto, productosRecomendados, userALoguearse}); 
+    }, */
+
+    /* editarProducto: (req, res) => {
+        // json de productos
+        const productos = JSON.parse(fs.readFileSync(productsFilePath, "utf-8"));
+
+        //identificador de producto
+        const id= req.params.id;
+       
+        let productoAEditar= productos.find(producto => producto.id == id);
+
+        //Reemplazo de prodcuto
+
+        const edicionProducto = {
+            id: productoAEditar.id,
+            name: req.body.nombre_producto,
+            description: req.body.descripcion ,
+            image: req.file !=undefined ? req.file.filename : productoAEditar.image,
+            pet: req.body.mascota,
+            category: req.body.categoria,
+            colors: req.body.color_producto,
+            weight: req.body.peso_producto ,
+            price: req.body.precio_producto,
+            quantity: req.body.cantidad_producto,
+            discount: req.body.descuento
+       }
+
+       //Posicion producto editar y reemplazo
+       let indice = productos.findIndex(producto => {return producto.id});
+       productos[indice] = edicionProducto
+
+       //Re-escritura producto
+       fs.writeFileSync(productsFilePath, JSON.stringify(productos, null, " "), "utf-8");
+       res.redirect("/") // ¿A donde lo redirigimos?
+    }, */
+
+    /* editar : (req, res) => {
+
+        //CON LOS JSONS
+        //usuario q se loguea
+        const userALoguearse = req.session.userLogueado
+
+        // Json con todos los productos
+        let productos = JSON.parse(fs.readFileSync(productsFilePath, "utf-8"));
+
+        // Encontrar producto
+        const editarProducto = productos.find( producto => {
+            return producto.id == req.params.id
+        })
+
+        res.render('editar-producto.ejs', {editarProducto, userALoguearse});
+    }, */
+
+    /* promocionesGato: (req, res) => {
+
+        //CON LOS JSONS
+        //usuario q se loguea
+        const userALoguearse = req.session.userLogueado
+
+        const productos = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'));
+
+        //productos gatos
+        const productosGato = productos.filter(product => {return product.id_pet == "Gato"});
+
+		//productos con descuentos de gatos
+		const productosGatoConDescuento = productosGato.filter(product => {return product.discount == "Si"});
+
+        //ID de producto
+        const unProducto = productos.find (producto => {
+            return producto.id == req.params.id
+        })
+        res.render('promociones-gato.ejs', {productosGatoConDescuento, unProducto, userALoguearse});
+    }, */
+
+    /* promocionesPerro: (req, res) => { */
+
+        //CON LOS JSONS
+        /* //usuario q se loguea
+        const userALoguearse = req.session.userLogueado
+
+        const productos = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'));
+
+        //productos perros
+        const productosPerro = productos.filter(product => {return product.id_pet == "Perro"});
+
+        //productos con descuentos de perros
+        const productosPerroConDescuento = productosPerro.filter(product => {return product.discount == "Si"});
+		
+        //ID de producto
+        const unProducto = productos.find (producto => {
+            return producto.id == req.params.id
+        })
+
+        res.render('promociones-perro.ejs', {productosPerroConDescuento, unProducto, userALoguearse});
+    }, */
+
+    /* promociones: (req, res) => {
+
+        //CON LOS JSONS
+        //usuario q se loguea
+        const userALoguearse = req.session.userLogueado
+
+        const productos = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'));
+
+        //productos perros
+        const productosPerro = productos.filter(product => {return product.id_pet == "Perro"});
+        //productos gatos
+        const productosGato = productos.filter(product => {return product.id_pet == "Gato"});
+
+        //productos con descuentos de perros
+        const productosPerroConDescuento = productosPerro.filter(product => {return product.discount == "Si"});
+		//productos con descuentos de gatos
+		const productosGatoConDescuento = productosGato.filter(product => {return product.discount == "Si"});
+
+        res.render('promociones.ejs', {productosPerroConDescuento, productosGatoConDescuento, userALoguearse});
+    } */
 }
 
 module.exports = productController;
