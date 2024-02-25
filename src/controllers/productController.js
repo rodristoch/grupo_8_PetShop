@@ -135,6 +135,18 @@ const productController = {
 
     promocionesPerro : (req, res) => {
 
+        //usuario q se loguea
+        const userALoguearse = req.session.userLogueado
+
+        db.Producto.findAll({
+            include: ["tipos_mascota"],
+            where: {
+                tipo_mascota_id: 2,
+            }
+        })
+
+        .then(productosPerroConDescuento => {return res.render("promociones-perro.ejs", {userALoguearse, productosPerroConDescuento})})
+
 
 
         /* //usuario q se loguea
