@@ -139,7 +139,7 @@ const productController = {
         const userALoguearse = req.session.userLogueado
 
         db.Producto.findAll({
-            include: ["tipos_mascota"],
+            include: [{association: "tipos_mascota"},{association: "descuentos"}],
             where: {
                 tipo_mascota_id: 2,
             }
