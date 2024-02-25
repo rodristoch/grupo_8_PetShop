@@ -124,7 +124,8 @@ const productController = {
             where: {
                 tipo_mascota_id: 2,
                 //falta indicar que tenga descuento == si
-            }
+            },
+            limit: 12
         })
 
         let productosGatoConDescuento = db.Producto.findAll({
@@ -132,7 +133,8 @@ const productController = {
             where: {
                 tipo_mascota_id: 1,
                 //falta indicar que tenga descuento == si
-            }
+            },
+            limit: 8
         })
 
         Promise.all([productosPerroConDescuento, productosGatoConDescuento])
@@ -169,7 +171,8 @@ const productController = {
             where: {
                 tipo_mascota_id: 2,
                 //falta indicar que tenga descuento == si
-            }
+            },
+            limit: 12
         })
 
         .then(productosPerroConDescuento => {return res.render("promociones-perro.ejs", {userALoguearse, productosPerroConDescuento})})
@@ -205,7 +208,8 @@ const productController = {
             where: {
                 tipo_mascota_id: 1,
                 //falta indicar que tenga descuento == si
-            }
+            },
+            limit: 8
         })
  
         .then(productosGatoConDescuento => {return res.render("promociones-gato.ejs", {userALoguearse, productosGatoConDescuento})})
@@ -487,35 +491,40 @@ const productController = {
             include: ["marcas"],
             where: {
                 marca_id: 12
-            }
+            },
+            limit: 4
         })
 
         let proplan = db.Producto.findAll({
             include: ["marcas"],
             where: {
                 marca_id: 5
-            }
+            },
+            limit: 4
         })
 
         let royal = db.Producto.findAll({
             include: ["marcas"],
             where: {
                 marca_id: 11
-            }
+            },
+            limit: 4
         })
 
         let cancat = db.Producto.findAll({
             include: ["marcas"],
             where: {
                 marca_id: 4
-            }
+            },
+            limit: 4
         })
 
         let catit = db.Producto.findAll({
             include: ["marcas"],
             where: {
                 marca_id: 16
-            }
+            },
+            limit: 4
         })
 
         Promise.all([eukanuba, proplan, royal, cancat, catit])
@@ -532,7 +541,7 @@ const productController = {
         db.Producto.findAll({
             include: ["marcas"],
             where: {
-                marca_id: 12
+                marca_id: 12,
             }
         })
 
