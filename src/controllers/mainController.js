@@ -17,39 +17,54 @@ const mainController = {
 
             const productosGato = productos.filter(producto => producto.tipo_mascota_id === 1).slice(0, 6);
 
-           
-             // Accesorios perros
-        const productosPerroAccesorios = await db.Producto.findAll({
-            include: [{
-                model: db.Categoria,
-                as: 'categorias',
-                attributes: ['id', 'categoria'], // La unica manera de resolver el problema del CreateAt es definir que columna quiero usar en la relacion
-                through: { attributes: [] }, // Esto vita incluir automáticamente las columnas de la tabla intermedia
-                where : { 
-                    id: 2
+// Accesorios perros
+             let productosPerroAccesorios
+        try {
+            
+                productosPerroAccesorios = await db.Producto.findAll({
+                include: [{
+                    model: db.Categoria,
+                    as: 'categorias',
+                    attributes: ['id', 'categoria'],
+                    through: { attributes: [] },
+                    where: {
+                        id: 2
+                    }
+                }],
+                where: {
+                    tipo_mascota_id: 2
                 }
-            }],
-            where: {
-                tipo_mascota_id: 2
-            }
-        });
+            });
+            // mostrar N productos
+            productosPerroAccesorios = productosPerroAccesorios.slice(0, 6);
+        } catch (error) {
+            console.error('Error al consultar los accesorios para perros:', error);
+        }
         
-        // Accesorios gato
-        const productosGatoAccesorios = await db.Producto.findAll({
-            include: [{
-                model: db.Categoria,
-                as: 'categorias',
-                attributes: ['id', 'categoria'], // La unica manera de resolver el problema del CreateAt es definir que columna quiero usar en la relacion
-                through: { attributes: [] }, // Esto vita incluir automáticamente las columnas de la tabla intermedia
-                where : { 
-                    id: 2 // ID descuento de SQL
+  // Accesorios gato
+                let productosGatoAccesorios
+        try {
+          
+                productosGatoAccesorios = await db.Producto.findAll({
+                include: [{
+                    model: db.Categoria,
+                    as: 'categorias',
+                    attributes: ['id', 'categoria'],
+                    through: { attributes: [] },
+                    where: {
+                        id: 2
+                    }
+                }],
+                where: {
+                    tipo_mascota_id: 1
                 }
-            }],
-            where: {
-                tipo_mascota_id: 2
-            }
-        });
-
+            });
+            // mostrar N productos
+            productosGatoAccesorios = productosGatoAccesorios.slice(0, 6);
+        } catch (error) {
+            console.error('Error al consultar los accesorios para gatos:', error);
+        }
+            
 
 
         //PERRO productos con descuento 
@@ -71,6 +86,9 @@ const mainController = {
                 }
             });
 
+            // mostrar N productos
+            productosConDescuentoPerro = productosConDescuentoPerro.slice(0, 6);
+            
             // comprobación de que trae productos con descuento
             //console.log(productosConDescuentoPerro.length); 
         } catch (error) {
@@ -101,6 +119,9 @@ const mainController = {
                     tipo_mascota_id: 1 // Filtrar por el tipo de mascota 
                 }
             });
+            // mostrar N productos
+            productosConDescuentoGato = productosConDescuentoGato.slice(0, 6);
+
             // comprobación de que trae productos con descuento
             //console.log(productosConDescuentoGato.length); 
         } catch (error) {
