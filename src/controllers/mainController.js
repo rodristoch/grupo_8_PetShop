@@ -41,7 +41,7 @@ const mainController = {
             console.error('Error al consultar los accesorios para perros:', error);
         }
         
-  // Accesorios gato
+// Accesorios gato
                 let productosGatoAccesorios
         try {
           
@@ -67,7 +67,7 @@ const mainController = {
             
 
 
-        //PERRO productos con descuento 
+//PERRO productos con descuento 
         let productosConDescuentoPerro;
         try {
             // Busca los productos con descuento id 2
@@ -99,7 +99,7 @@ const mainController = {
 
 
 
-        //GATO productos con descuento
+//GATO productos con descuento
         let productosConDescuentoGato;
         try {
             // Busca los productos con descuento id 2
@@ -130,7 +130,7 @@ const mainController = {
         }
 
 
-        //GATO productos con descuento
+//GATO productos con descuento
         let productosConDescuentoRandom;
         try {
             // Busca los productos con descuento id 2
@@ -160,7 +160,7 @@ const mainController = {
             
         }
 
-        // Obtener usuario que ha iniciado sesión
+// Obtener usuario que ha iniciado sesión
         const userALoguearse = req.session.userLogueado;
 
 
