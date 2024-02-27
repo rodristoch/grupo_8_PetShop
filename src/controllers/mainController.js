@@ -50,16 +50,6 @@ const mainController = {
             }
         });
 
-            // Filtrar accesorios sin descuento de perros y gatos
-            const accesoriosPerroSinDescuento = productosPerroAccesorios.filter(producto => producto.discount === 'No');
-            const accesoriosGatoSinDescuento = productosGatoAccesorios.filter(producto => producto.discount === 'No');
-
-            // Filtrar productos con descuento de perros y gatos
-            const productosPerroConDescuento = productosPerro.filter(producto => producto.discount === 'Si');
-            const productosGatoConDescuento = productosGato.filter(producto => producto.discount === 'Si');
-
-            // Obtener usuario que ha iniciado sesión
-            const userALoguearse = req.session.userLogueado;
 
 
         //PERRO productos con descuento 
@@ -117,6 +107,12 @@ const mainController = {
             console.error('Error al buscar productos con el descuento ID 2:', error);
             
         }
+
+
+
+        // Obtener usuario que ha iniciado sesión
+        const userALoguearse = req.session.userLogueado;
+
 
             // Renderizar la vista con los datos obtenidos
             res.render("index.ejs", {
