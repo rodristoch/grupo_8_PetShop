@@ -42,11 +42,11 @@ const mainController = {
                 attributes: ['id', 'categoria'], // La unica manera de resolver el problema del CreateAt es definir que columna quiero usar en la relacion
                 through: { attributes: [] }, // Esto vita incluir automáticamente las columnas de la tabla intermedia
                 where : { 
-                    id: 2
+                    id: 2 // ID descuento de SQL
                 }
             }],
             where: {
-                tipo_mascota_id: 1
+                tipo_mascota_id: 2
             }
         });
 
@@ -61,17 +61,72 @@ const mainController = {
             // Obtener usuario que ha iniciado sesión
             const userALoguearse = req.session.userLogueado;
 
+
+        //PERRO productos con descuento 
+        let productosConDescuentoPerro;
+        try {
+            // Busca los productos con descuento id 2
+            productosConDescuentoPerro = await db.Producto.findAll({
+                include: [{
+                    model: db.Descuento,
+                    as: 'descuentos',
+                    attributes: ['id', 'nombre', 'descripcion', 'fecha_inicio', 'fecha_final'],
+                    through: { attributes: [] }, // Evita incluir automáticamente las columnas de la tabla intermedia
+                    where: {
+                        id: 2 // ID descuento de SQL
+                    }
+                }],
+                where: {
+                    tipo_mascota_id: 2 // Filtrar por el tipo de mascota 
+                }
+            });
+
+            // comprobación de que trae productos con descuento
+            //console.log(productosConDescuentoPerro.length); 
+        } catch (error) {
+            console.error('Error al buscar productos con el descuento ID 2:', error);
+           
+        }
+
+
+
+
+        //GATO productos con descuento
+        let productosConDescuentoGato;
+        try {
+            // Busca los productos con descuento id 2
+            productosConDescuentoGato = await db.Producto.findAll({
+                include: [{
+                    model: db.Descuento,
+                    as: 'descuentos',
+                    attributes: ['id', 'nombre', 'descripcion', 'fecha_inicio', 'fecha_final'],
+                    through: { attributes: [] }, // Evita incluir automáticamente las columnas de la tabla intermedia
+                    where: {
+                        id: 2 // Filtrar por el ID del descuento que quieres (en este caso, ID 2)
+                    }
+                }]
+                // Si se quiere filtra el descuento por mas mascota 2= perro 1= gato
+                ,
+                where: {
+                    tipo_mascota_id: 1 // Filtrar por el tipo de mascota 
+                }
+            });
+            // comprobación de que trae productos con descuento
+            //console.log(productosConDescuentoGato.length); 
+        } catch (error) {
+            console.error('Error al buscar productos con el descuento ID 2:', error);
+            
+        }
+
             // Renderizar la vista con los datos obtenidos
             res.render("index.ejs", {
                 productosPerro,
                 productosGato,
                 productosPerroAccesorios,
                 productosGatoAccesorios,
-                productosPerroConDescuento,
-                productosGatoConDescuento,
-                accesoriosPerroSinDescuento,
-                accesoriosGatoSinDescuento,
-                userALoguearse
+                productosConDescuentoPerro,
+                productosConDescuentoGato,
+                userALoguearse, 
             });
         } catch (error) {
             res.send(error);
