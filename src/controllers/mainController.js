@@ -88,7 +88,7 @@ const mainController = {
 
             // mostrar N productos
             productosConDescuentoPerro = productosConDescuentoPerro.slice(0, 6);
-            
+
             // comprobación de que trae productos con descuento
             //console.log(productosConDescuentoPerro.length); 
         } catch (error) {
@@ -130,6 +130,35 @@ const mainController = {
         }
 
 
+        //GATO productos con descuento
+        let productosConDescuentoRandom;
+        try {
+            // Busca los productos con descuento id 2
+            productosConDescuentoRandom = await db.Producto.findAll({
+                include: [{
+                    model: db.Descuento,
+                    as: 'descuentos',
+                    attributes: ['id', 'nombre', 'descripcion', 'fecha_inicio', 'fecha_final'],
+                    through: { attributes: [] }, // Evita incluir automáticamente las columnas de la tabla intermedia
+                    where: {
+                        id: 2 // Filtrar por el ID del descuento que quieres (en este caso, ID 2)
+                    }
+                }]
+                // Si se quiere filtra el descuento por mas mascota 2= perro 1= gato
+                ,
+                where: {
+                    tipo_mascota_id: 1 // Filtrar por el tipo de mascota 
+                }
+            });
+            // mostrar N productos
+            productosConDescuentoRandom = productosConDescuentoRandom.slice(0, 12);
+
+            // comprobación de que trae productos con descuento
+            //console.log(productosConDescuentoGato.length); 
+        } catch (error) {
+            console.error('Error al buscar productos con el descuento ID 2:', error);
+            
+        }
 
         // Obtener usuario que ha iniciado sesión
         const userALoguearse = req.session.userLogueado;
@@ -143,6 +172,7 @@ const mainController = {
                 productosGatoAccesorios,
                 productosConDescuentoPerro,
                 productosConDescuentoGato,
+                productosConDescuentoRandom,
                 userALoguearse, 
             });
         } catch (error) {
