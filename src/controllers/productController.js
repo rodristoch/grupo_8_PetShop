@@ -54,21 +54,33 @@ const productController = {
         const userALoguearse = req.session.userLogueado
 
         let productosPerroConDescuento = db.Producto.findAll({
-            include: ["tipos_mascota", "descuentos"],
+            include: ["tipos_mascota"],
             where: {
-                tipo_mascota_id: 2,
-                //falta indicar que tenga descuento == si
+                tipo_mascota_id: 2,   // ID de perro de SQL
             },
-            limit: 12
+            include: [{
+                model: db.Descuento,
+                as: 'descuentos',
+                where: {
+                    id: 2 // ID descuento de SQL
+                }
+            }],
+            limit: 4
         })
 
         let productosGatoConDescuento = db.Producto.findAll({
-            include: ["tipos_mascota", "descuentos"],
+            include: ["tipos_mascota"],
             where: {
-                tipo_mascota_id: 1,
-                //falta indicar que tenga descuento == si
+                tipo_mascota_id: 1,  // ID de gato de SQL
             },
-            limit: 8
+            include: [{
+                model: db.Descuento,
+                as: 'descuentos',
+                where: {
+                    id: 2 // ID descuento de SQL
+                }
+            }],
+            limit: 4
         })
 
         Promise.all([productosPerroConDescuento, productosGatoConDescuento])
@@ -81,22 +93,28 @@ const productController = {
 
     promocionesPerro : (req, res) => {
 
-        //CON DB SQL
         //usuario q se loguea
         const userALoguearse = req.session.userLogueado
 
+        //Productos con descuento de perro
         db.Producto.findAll({
-            include: ["tipos_mascota", "descuentos"],
+            include: ["tipos_mascota"],
             where: {
-                tipo_mascota_id: 2,
-                //falta indicar que tenga descuento == si
+                tipo_mascota_id: 2,  // ID de perro de SQL
             },
-            limit: 12
+            include: [{
+                model: db.Descuento,
+                as: 'descuentos',
+                where: {
+                    id: 2 // ID descuento de SQL
+                }
+            }],
         })
 
         .then(productosPerroConDescuento => {
-            return res.render("promociones-perro.ejs", {userALoguearse, productosPerroConDescuento})
+                return res.render("promociones-perro.ejs", {userALoguearse, productosPerroConDescuento})
         })
+        
     },
 
     promocionesGato : (req, res) => {
@@ -106,12 +124,17 @@ const productController = {
         const userALoguearse = req.session.userLogueado
 
         db.Producto.findAll({
-            include: ["tipos_mascota", "descuentos"],
+            include: ["tipos_mascota"],
             where: {
-                tipo_mascota_id: 1,
-                //falta indicar que tenga descuento == si
+                tipo_mascota_id: 1,   // ID de gato de SQL
             },
-            limit: 8
+            include: [{
+                model: db.Descuento,
+                as: 'descuentos',
+                where: {
+                    id: 2 // ID descuento de SQL
+                }
+            }],
         })
  
         .then(productosGatoConDescuento => {
