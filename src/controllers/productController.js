@@ -469,7 +469,11 @@ const productController = {
             include: ["marcas"],
             where: {
                 marca_id: 5
-            }
+            },
+            include: [{
+                model: db.Descuento,
+                as: 'descuentos',
+            }],
         })
 
         .then(ProductosProplan => {return res.render("marcasProplan.ejs", {userALoguearse, ProductosProplan})})
@@ -619,7 +623,7 @@ const productController = {
         let productoId = req.params.id;
 
         db.Producto.findByPk(productoId)
-        .then(producto => {
+        .then((producto) => {
             return res.render("detalle.ejs", {producto, userALoguearse})})
         .catch(error => res.send(error))
     },
@@ -629,6 +633,15 @@ const productController = {
         let productoId = req.params.id;
 
         db.Producto.destroy({
+            include: ["tipos_mascota", "marcas"],
+            include: [{
+                model: db.Descuento,
+                as: 'descuentos',
+            }],
+            include: [{
+                model: db.Categoria,
+                as: 'categorias',
+            }],
             where: {
                 id: productoId
             },

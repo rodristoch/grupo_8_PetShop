@@ -95,16 +95,16 @@ CREATE TABLE `usuarios` (
 
 INSERT INTO `usuarios` VALUES (1,'Agustin','Macko','mackoaa@gmail.com','$2a$10$05/5nMBCj5udyfv/Yk3CF.QIMUF.aqSAbp/E8q67TUMczXBKM7Erq','/img/default.jpg',1),(2,'Rodrigo','Stochetta','rodrigo-eze87@hotmail.com','$2a$10$MDwItBJrEKgheu44iCLI0eKUJoy3E5gmKlxFNe2XJANf9..Y7K0Sa','/img/default.jpg',1),(3,'Nicolas','Villamil','nicolasvillamil1997@gmail.com','$2a$10$CyufKAyWsgou1V5rhNG2BuolTNWoA5FRYORxcvDdA64vKELqgnDQa','/img/default.jpg',1),(4,'Rodrigo','Stochetta','rodrigo-eze87@hotmail.com','$2a$10$8CE7gHB6Bpm3qNKVMtHpquKBR/3.LL1xzswiohVjx13Y8r7QFC2Wa','/img/default.jpg',2);
 
-ALTER TABLE `productos` ADD CONSTRAINT `FK_2cff834f-b3d1-4694-b500-66d714c4bc44` FOREIGN KEY (`tipo_mascota_id`) REFERENCES `tipos_mascota`(`id`)  ;
+ALTER TABLE `productos` ADD CONSTRAINT `FK_2cff834f-b3d1-4694-b500-66d714c4bc44` FOREIGN KEY (`tipo_mascota_id`) REFERENCES `tipos_mascota`(`id`) ON DELETE CASCADE ;
 
-ALTER TABLE `productos` ADD CONSTRAINT `FK_dbf4426e-0efc-4b3c-8894-164bfaea40fd` FOREIGN KEY (`marca_id`) REFERENCES `marcas`(`id`)  ;
+ALTER TABLE `productos` ADD CONSTRAINT `FK_dbf4426e-0efc-4b3c-8894-164bfaea40fd` FOREIGN KEY (`marca_id`) REFERENCES `marcas`(`id`) ON DELETE CASCADE ;
 
-ALTER TABLE `usuarios` ADD CONSTRAINT `FK_0825a258-5f1a-453c-a63c-bfbdc7e318c7` FOREIGN KEY (`permiso_id`) REFERENCES `permisos`(`id`)  ;
+ALTER TABLE `usuarios` ADD CONSTRAINT `FK_0825a258-5f1a-453c-a63c-bfbdc7e318c7` FOREIGN KEY (`permiso_id`) REFERENCES `permisos`(`id`) ON DELETE CASCADE ;
 
-ALTER TABLE `producto_categoria` ADD CONSTRAINT `FK_5e1f8f3c-9818-4f83-ae8a-c3e6c63118ce` FOREIGN KEY (`producto_id`) REFERENCES `productos`(`id`)  ;
+ALTER TABLE `producto_categoria` ADD CONSTRAINT `FK_5e1f8f3c-9818-4f83-ae8a-c3e6c63118ce` FOREIGN KEY (`producto_id`) REFERENCES `productos`(`id`) ON DELETE CASCADE ;
 
-ALTER TABLE `producto_categoria` ADD CONSTRAINT `FK_22701410-6247-49d0-934c-92a0c4929cbb` FOREIGN KEY (`categoria_id`) REFERENCES `categorias`(`id`)  ;
+ALTER TABLE `producto_categoria` ADD CONSTRAINT `FK_22701410-6247-49d0-934c-92a0c4929cbb` FOREIGN KEY (`categoria_id`) REFERENCES `categorias`(`id`) ON DELETE CASCADE ;
 
-ALTER TABLE `producto_descuento` ADD CONSTRAINT `FK_1d60b8c7-db2f-44a3-b073-32a5c22d4fee` FOREIGN KEY (`producto_id`) REFERENCES `productos`(`id`)  ;
+ALTER TABLE `producto_descuento` ADD CONSTRAINT `FK_1d60b8c7-db2f-44a3-b073-32a5c22d4fee` FOREIGN KEY (`producto_id`) REFERENCES `productos` (`id`) ON DELETE CASCADE ;
 
-ALTER TABLE `producto_descuento` ADD CONSTRAINT `FK_02a688fc-bdec-4f12-bc80-7a59fa846c6c` FOREIGN KEY (`descuento_id`) REFERENCES `descuentos`(`id`)  ;
+ALTER TABLE `producto_descuento` ADD CONSTRAINT `FK_02a688fc-bdec-4f12-bc80-7a59fa846c6c` FOREIGN KEY (`descuento_id`) REFERENCES `descuentos`(`id`) ON DELETE CASCADE ;
