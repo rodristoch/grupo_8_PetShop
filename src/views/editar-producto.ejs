@@ -14,12 +14,12 @@
             <section class="flex-linea">
                 <div class="flex-columna">
                     <label for="nombre_producto">Nombre del producto</label>
-                    <input type="text" id="nombre_producto" name="nombre_producto" placeholder="Ej: Dog chow para perros pequeños" value="<%= editarProducto.name %>">
+                    <input type="text" id="nombre_producto" name="nombre_producto" placeholder="Ej: Dog chow para perros pequeños" value="<%= editarProducto.nombre %>">
                 </div>
 
                 <div class="flex-columna">
                     <label for="precio_producto">Precio del producto</label>
-                    <input type="number" id="precio_producto" name="precio_producto" placeholder="Ej: 50000" value="<%= editarProducto.price %>">
+                    <input type="number" id="precio_producto" name="precio_producto" placeholder="Ej: 50000" value="<%= editarProducto.precio %>">
                 </div>
                
             </section>
@@ -27,14 +27,14 @@
             <section class="flex-linea">
                 <div class="flex-columna">
                     <label for="cantidad_producto">Cantidad</label>
-                    <input type="number" id="cantidad_producto" name="cantidad_producto" placeholder="Ej: 2" value="<%= editarProducto.quantity%>">
+                    <input type="number" id="cantidad_producto" name="cantidad_producto" placeholder="Ej: 2" value="<%= editarProducto.cantidad %>">
                 </div>
                 <div class="flex-columna">
                     <label for="mascota">El productos es para:</label>
-                    <select name="mascota" id="mascota" value="<%= editarProducto.id_pet%>">
+                    <select name="mascota" id="mascota" value="<%= editarProducto.tipo_mascota_id %>">
                         <option value="">Selecciona la mascota</option>
-                        <option value="perro" <%= (editarProducto.id_pet === "Perro") ? "selected" : "" %>>Perro</option>
-                        <option value="gato" <%= (editarProducto.id_pet == "Gato") ? "selected" : ""%> >Gato</option>
+                        <option value="perro" <%= (editarProducto.tipo_mascota_id == 2) ? "selected" : "" %>>Perro</option>
+                        <option value="gato" <%= (editarProducto.tipo_mascota_id == 1) ? "selected" : ""%> >Gato</option>
                     </select>
                 </div>
             </section>
@@ -54,8 +54,8 @@
                     <label for="descuento"> ¿El producto tiene descuento?</label>
                     <select name="decuento" id="descuento">
                         <option value="">Selecciona una opción</option>
-                        <option value="si" <%= (editarProducto.discount === "Si") ? "selected" : "" %>> Si</option>
-                        <option value="no" <%= (editarProducto.discount === "No") ? "selected" : "" %>> No</option>
+                        <option value="si" <%= (editarProducto.descuentos.id == 1) ? "selected" : "" %>> Si</option>
+                        <option value="no" <%= (editarProducto.descuentos.id == 2) ? "selected" : "" %>> No</option>
                     </select>
                 </div>
 
@@ -66,11 +66,11 @@
                     <!-- Seguramente debamos incorporar una condición según la categoría
                     selecciona porque cada producto tiene sus propias características-->
                     <label for="peso_producto">Ingresa el peso</label>
-                    <input type="number" id="peso_producto" name="peso_producto" placeholder="Ej: 34" value="<%= editarProducto.weight %>">
+                    <input type="number" id="peso_producto" name="peso_producto" placeholder="Ej: 34" value="<%= editarProducto.peso %>">
                 </div>
                 <div class="flex-columna">
                     <label for="color_producto">Ingrese el color</label>
-                    <input type="text" id="color_producto" name="peso_producto" placeholder=" Ej: Negro" value="<%= editarProducto.colors %>">
+                    <input type="text" id="color_producto" name="peso_producto" placeholder=" Ej: Negro" value="<%= editarProducto.color %>">
                 </div>
             </section>
            

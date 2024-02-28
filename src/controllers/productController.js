@@ -577,8 +577,17 @@ const productController = {
 
         let productoId = req.params.id;
 
-        let productos = db.Producto.findByPk(productoId, 
-            {include: ['tipos_mascota','marcas', 'categorias', 'descuentos']
+        let productos = db.Producto.findByPk(productoId, {
+            include: ['tipos_mascota','marcas'],
+            include: [{
+                model: db.Categoria,
+                as: 'categorias',
+            }],
+            include: [{
+                model: db.Descuento,
+                as: 'descuentos',
+            }],
+
         });
         let tipos = db.TipoMascota.findAll();
         let marcas = db.Marca.findAll();
@@ -633,15 +642,6 @@ const productController = {
         let productoId = req.params.id;
 
         db.Producto.destroy({
-            include: ["tipos_mascota", "marcas"],
-            include: [{
-                model: db.Descuento,
-                as: 'descuentos',
-            }],
-            include: [{
-                model: db.Categoria,
-                as: 'categorias',
-            }],
             where: {
                 id: productoId
             },
