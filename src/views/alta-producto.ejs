@@ -28,18 +28,18 @@
             <section class="flex-linea">
                 <div class="flex-columna">
                     <label for="mascota">Selecciona una marca:</label>
-                    <select name="tipo_mascota_id" id="mascota">
-                        <option value="Eukanuba">Selecciona la mascota</option>
-                        <option value="perro">Perro</option>
-                        <option value="gato">Gato</option>
+                    <select name="marca_id" id="">
+                        <% marcas.forEach(marca => { %> 
+                            <option value="<%= marca.id %>"><%= marca.marca %></option>
+                        <% }) %>
                     </select>
                 </div>
                 <div class="flex-columna">
                     <label for="mascota">El productos es para:</label>
                     <select name="tipo_mascota_id" id="mascota">
-                        <option value="">Selecciona la mascota</option>
-                        <option value="perro">Perro</option>
-                        <option value="gato">Gato</option>
+                        <% tipos.forEach(tipo => { %> 
+                            <option value="<%= tipo.id %>"><%= tipo.mascota %></option>
+                        <% }) %>
                     </select>
                 </div>
             </section>

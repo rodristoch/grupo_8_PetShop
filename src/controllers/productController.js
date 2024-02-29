@@ -568,12 +568,10 @@ const productController = {
                peso: req.body.peso_producto,
                precio: req.body.precio_producto,
                imagen: req.file != undefined ? req.file.filename : "/img/Producto.webp",
-               tipo_mascota_id: 1,
-               marca_id: 2
+               tipo_mascota_id: req.body.tipo_mascota_id,
+               marca_id: req.body.marca_id
             })
-       .then(() => {
-           return res.redirect("/")})            
-       .catch(error => res.send(error))
+        res.redirect("/")
    },
 
 
