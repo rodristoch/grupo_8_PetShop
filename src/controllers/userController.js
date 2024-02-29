@@ -225,41 +225,59 @@ const userController = {
     },
 
     logout: (req, res) => {
-       // Limpiar cookie si existe
-       if (req.cookies.recordarme) {
-        res.clearCookie("recordarme");
-    }
-    //debug que devuelve correcto el usuario
-    //console.log(req.session.userLogueado);
+        // Limpiar cookie si existe
+        if (req.cookies.recordarme) {
+            res.clearCookie("recordarme");
+        }
+        //debug que devuelve correcto el usuario
+        //console.log(req.session.userLogueado);
 
-    // Si existe elimino la sesión
-    if (req.session && req.session.userLogueado) {
-        // Elimino los datos de la sesión
-        req.session.destroy(err => {
-            if (!err) {
-                res.redirect("/");
-            } else {
-                console.error("Error al cerrar sesión", err);
-                res.redirect("/");
-            }
-        });
-    } else {
-        // Si no hay sesión, redirige
-        res.redirect("/");
-    };
+        // Si existe elimino la sesión
+        if (req.session && req.session.userLogueado) {
+            // Elimino los datos de la sesión
+            req.session.destroy(err => {
+                if (!err) {
+                   res.redirect("/");
+                } else {
+                   console.error("Error al cerrar sesión", err);
+                   res.redirect("/");
+                }
+            });
+        } else {
+            // Si no hay sesión, redirige
+            res.redirect("/");
+        };
 
-},
-
-    
-    carrito : (req, res) => {
-
-        //usuario q se loguea
-        const usuario = req.session.userLogueado
-
-        res.render('carrito.ejs', usuario);
     },
 
-    carrito2 : (req, res) => {
+    carrito2: (req, res) => {
+
+        //usuario q se loguea
+        const userALoguearse = req.session.userLogueado
+
+        //Productos con descuento de perro
+        db.Producto.findAll({
+            include: ["tipos_mascota"],
+            where: {
+                tipo_mascota_id: 1,  // ID de perro de SQL
+            },
+            include: [{
+                model: db.Descuento,
+                as: 'descuentos',
+                where: {
+                    id: 2 // ID descuento de SQL
+                }
+            }],
+            limit: 6
+        })
+
+        .then(productosConDescuentoGato => {
+                return res.render('carrito2.ejs', {userALoguearse, productosConDescuentoGato})
+        })
+
+    },
+
+    /* carrito : (req, res) => {
         //usuario q se loguea
         const userALoguearse = req.session.userLogueado
 
@@ -269,7 +287,7 @@ const userController = {
         const productosPerroConDescuento = productosPerro.filter(product => {return product.discount == "Si"});
 
         res.render('carrito2.ejs', {productosPerroConDescuento, userALoguearse});
-    },
+    }, */
 
 
 }

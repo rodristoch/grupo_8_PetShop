@@ -58,9 +58,6 @@ router.post("/login", validacionesLogin, userController.processLogin);
 //Logout
 router.get("/logout", userController.logout)
 
-//Carrito
-router.get("/carrito", userController.carrito) 
-
 //Carrito 2 
 router.get("/carrito2", /* authMiddleware */ userController.carrito2)
 

@@ -449,14 +449,21 @@ const productController = {
         //usuario q se loguea
         const userALoguearse = req.session.userLogueado
 
-        db.Producto.findAll({
+        let productos = db.Producto.findAll({
             include: ["marcas"],
             where: {
                 marca_id: 12,
-            }
+            },
+            include: [{
+                model: db.Descuento,
+                as: 'descuentos',
+            }],
         })
 
-        .then(ProductosEukanuba => {return res.render("marcasEukanuba.ejs", {userALoguearse, ProductosEukanuba})})
+        let descuentos = db.Descuento.findAll();
+
+        Promise.all([productos, descuentos])
+        .then(([ProductosEukanuba, descuentos]) => {return res.render("marcasEukanuba.ejs", {userALoguearse, ProductosEukanuba, descuentos})})
 
     },
 
