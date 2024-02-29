@@ -26,15 +26,19 @@
 
             <section class="flex-linea">
                 <div class="flex-columna">
-                    <label for="cantidad_producto">Cantidad</label>
-                    <input type="number" id="cantidad_producto" name="cantidad_producto" placeholder="Ej: 2" value="<%= editarProducto.cantidad %>">
+                    <label for="mascota">Selecciona una marca:</label>
+                    <select name="marca_id" id="">
+                        <% marcas.forEach(marca => { %> 
+                            <option value="<%= marca.id %>"><%= marca.marca %></option>
+                        <% }) %>
+                    </select>
                 </div>
                 <div class="flex-columna">
                     <label for="mascota">El productos es para:</label>
-                    <select name="mascota" id="mascota" value="<%= editarProducto.tipo_mascota_id %>">
-                        <option value="">Selecciona la mascota</option>
-                        <option value="perro" <%= (editarProducto.tipo_mascota_id == 2) ? "selected" : "" %>>Perro</option>
-                        <option value="gato" <%= (editarProducto.tipo_mascota_id == 1) ? "selected" : ""%> >Gato</option>
+                    <select name="tipo_mascota_id" id="mascota">
+                        <% tipos.forEach(tipo => { %> 
+                            <option value="<%= tipo.id %>"><%= tipo.mascota %></option>
+                        <% }) %>
                     </select>
                 </div>
             </section>

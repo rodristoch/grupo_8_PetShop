@@ -528,15 +528,6 @@ const productController = {
 
     },
 
-
-    alta : (req, res) => {
-
-        //usuario q se loguea
-        const userALoguearse = req.session.userLogueado
-
-        res.render('alta-producto.ejs', {userALoguearse});
-    },
-
     alta2: (req, res) => {
 
         //usuario q se loguea
@@ -572,40 +563,6 @@ const productController = {
                marca_id: req.body.marca_id
             })
         res.redirect("/")
-   },
-
-
-    crearProducto: (req, res) => {
-
-        // json de productos
-        const productos = JSON.parse(fs.readFileSync(productsFilePath, "utf-8"));
-
-    
-		// Crear el objeto literal (producto) a sumar al array
-
-        const nuevoProducto = {
-             id: productos [productos.length - 1].id +1,
-             name: req.body.nombre_producto,
-             description: req.body.descripcion ,
-             image: req.file!= undefined ? req.file.filename : "No se subió imagen de producto",
-             pet: req.body.mascota,
-             category: req.body.categoria,
-             colors: req.body.color_producto,
-             weight: req.body.peso_producto ,
-             price: req.body.precio_producto,
-             quantity: req.body.cantidad_producto,
-             discount: req.body.descuento 
-        }
-
-        productos.push(nuevoProducto);
-        
-       // Sobreescribir el archivo JSON
-        fs.writeFileSync(productsFilePath, JSON.stringify(productos, null, " "));
-
-        // Mostrar poducto creado
-
-        res.redirect("/grupo_8_PetShop/src/views/detalles-del-producto.ejs" + nuevoProducto.id)
-		
     },
 
     editar : (req, res) => {
@@ -651,6 +608,7 @@ const productController = {
         const userALoguearse = req.session.userLogueado
 
         let productoId = req.params.id;
+
         db.Producto.update(
             {
                 nombre: req.body.nombre_producto,
@@ -696,6 +654,47 @@ const productController = {
             return res.redirect('/')})
         .catch(error => res.send(error)) 
     },
+
+    /* alta : (req, res) => {
+
+        //usuario q se loguea
+        const userALoguearse = req.session.userLogueado
+
+        res.render('alta-producto.ejs', {userALoguearse});
+    }, */
+
+    /* crearProducto: (req, res) => {
+
+        // json de productos
+        const productos = JSON.parse(fs.readFileSync(productsFilePath, "utf-8"));
+
+    
+		// Crear el objeto literal (producto) a sumar al array
+
+        const nuevoProducto = {
+             id: productos [productos.length - 1].id +1,
+             name: req.body.nombre_producto,
+             description: req.body.descripcion ,
+             image: req.file!= undefined ? req.file.filename : "No se subió imagen de producto",
+             pet: req.body.mascota,
+             category: req.body.categoria,
+             colors: req.body.color_producto,
+             weight: req.body.peso_producto ,
+             price: req.body.precio_producto,
+             quantity: req.body.cantidad_producto,
+             discount: req.body.descuento 
+        }
+
+        productos.push(nuevoProducto);
+        
+       // Sobreescribir el archivo JSON
+        fs.writeFileSync(productsFilePath, JSON.stringify(productos, null, " "));
+
+        // Mostrar poducto creado
+
+        res.redirect("/grupo_8_PetShop/src/views/detalles-del-producto.ejs" + nuevoProducto.id)
+		
+    }, */
 
     /* quitarProducto : (req, res) => {
 
