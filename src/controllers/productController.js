@@ -578,14 +578,26 @@ const productController = {
         let productoId = req.params.id;
 
         let productos = db.Producto.findByPk(productoId, {
-            include: ['tipos_mascota','marcas'],
             include: [{
+                model: db.TipoMascota,
+                as: 'tipos_mascota',
+            },
+            {
+                model: db.Marca,
+                as: 'marcas',
+            },
+            {
                 model: db.Categoria,
                 as: 'categorias',
-            }],
-            include: [{
+            },
+            {
                 model: db.Descuento,
                 as: 'descuentos',
+                through: {
+
+                model: db.ProductoDescuento,
+                
+            }
             }],
 
         });
