@@ -47,21 +47,18 @@
             <section class="flex-linea">
                 <div class="flex-columna">    
                     <label for="categoria">Selecciona una categoria:</label>
-                    <select name="categoria" id="categoria">
-                        <option value="">Selecciona una categoría</option>
-                        <option value="alimento">Alimento</option>
-                        <option value="juguetes">Juguetes</option>
-                        <option value="accesorios">Accesorios</option>
-                        <option value="higiene">higiene</option>
+                    <select name="categoria_id" id="categoria">
+                        <% categorias.forEach(categoria => { %> 
+                            <option value="<%= categoria.id %>"><%= categoria.categoria %></option>
+                        <% }) %>
                     </select>
                 </div>
                 <div class="flex-columna">
                     <label for="descuento"> ¿El producto tiene descuento?</label>
-                    <select name="decuento" id="descuento">
-                        <option value="">Selecciona una opción</option>
-                        <option value="si">Si</option>
-                        <option value="no">No</option>
-
+                    <select name="decuento_id" id="descuento">
+                        <% descuentos.forEach(descuento => { %> 
+                            <option value="<%= descuento.id %>"><%= descuento.nombre %></option>
+                        <% }) %>
                     </select>
                 </div>
             </section>
