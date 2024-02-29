@@ -27,12 +27,16 @@
 
             <section class="flex-linea">
                 <div class="flex-columna">
-                    <label for="cantidad_producto">Cantidad</label>
-                    <input type="number" id="cantidad_producto" name="cantidad_producto" placeholder="Ej: 2">
+                    <label for="mascota">Selecciona una marca:</label>
+                    <select name="tipo_mascota_id" id="mascota">
+                        <option value="Eukanuba">Selecciona la mascota</option>
+                        <option value="perro">Perro</option>
+                        <option value="gato">Gato</option>
+                    </select>
                 </div>
                 <div class="flex-columna">
                     <label for="mascota">El productos es para:</label>
-                    <select name="mascota" id="mascota">
+                    <select name="tipo_mascota_id" id="mascota">
                         <option value="">Selecciona la mascota</option>
                         <option value="perro">Perro</option>
                         <option value="gato">Gato</option>

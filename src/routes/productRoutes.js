@@ -54,8 +54,8 @@ router.get('/marcas/catit', productController.catit)
 router.get('/detalle/:id/', productController.detalle) 
 
 // Crear producto
-router.get('/alta', productController.alta);
-router.post('/alta', upload.single("imagen_producto"), productController.crearProducto);
+router.get('/alta', productController.alta2);
+router.post('/alta', upload.single("imagen_producto"), productController.crearProducto2);
 
 // Modificar producto
 router.get('/editar/:id', productController.editar);

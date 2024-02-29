@@ -537,6 +537,46 @@ const productController = {
         res.render('alta-producto.ejs', {userALoguearse});
     },
 
+    alta2: (req, res) => {
+
+        //usuario q se loguea
+        const userALoguearse = req.session.userLogueado
+
+        //Productos con descuento de perro
+        let productos = db.Producto.findAll();
+        let tipos = db.TipoMascota.findAll();
+        let marcas = db.Marca.findAll();
+        let categorias = db.Categoria.findAll();
+        let descuentos = db.Descuento.findAll();
+
+        Promise.all([productos, tipos, marcas, categorias, descuentos])
+        .then(([editarProducto, tipos, marcas, categorias, descuentos]) => {
+                return res.render('alta-producto.ejs', {editarProducto, tipos, marcas, categorias, descuentos, userALoguearse})
+        })
+    },
+
+    crearProducto2: function (req,res) {
+
+       //usuario q se loguea
+       const userALoguearse = req.session.userLogueado
+
+       db.Producto.create(
+           {
+               nombre: req.body.nombre_producto,
+               descripcion: req.body.descripcion,
+               color: req.body.color_producto,
+               peso: req.body.peso_producto,
+               precio: req.body.precio_producto,
+               imagen: req.file != undefined ? req.file.filename : "/img/Producto.webp",
+               tipo_mascota_id: 1,
+               marca_id: 2
+            })
+       .then(() => {
+           return res.redirect("/")})            
+       .catch(error => res.send(error))
+   },
+
+
     crearProducto: (req, res) => {
 
         // json de productos
@@ -593,11 +633,6 @@ const productController = {
             {
                 model: db.Descuento,
                 as: 'descuentos',
-                through: {
-
-                model: db.ProductoDescuento,
-                
-            }
             }],
 
         });
@@ -625,7 +660,7 @@ const productController = {
                 color: req.body.color_producto,
                 peso: req.body.peso_producto,
                 precio: req.body.precio_producto,
-                imagen: req.file !=undefined ? req.file.filename : productoId.image,
+                imagen: req.file !=undefined ? req.file.filename : productoId.imagen,
                 tipo_mascota_id: req.body.tipo_mascota_id,
                 marca_id: req.body.marca_id
             },
