@@ -53,7 +53,7 @@ router.put("/edit/:id", validaciones, userController.processEdit);
 
 //Login
 router.get("/login", userController.login) 
-router.post("/login", validacionesLogin, userController.processLogin);
+router.post("/login", validacionesLogin, userController.processLogin2);
 
 //Logout
 router.get("/logout", userController.logout)

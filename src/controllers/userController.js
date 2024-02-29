@@ -29,61 +29,65 @@ const userController = {
         res.render('login.ejs', {userALoguearse});
     },
 
-    processLogin: (req, res) => {
+    processLogin2: (req, res) => {
 
         //usuario q se loguea
         const userALoguearse = req.session.userLogueado
 
         //Validaciones con la info del request
-        const validationResults = validationResult(req); 
+        const validationResults = validationResult(req);
 
         if(validationResults.errors.length > 0){ //si hubo errores de validacion
 
             //renderizo la vista y le mando la info q llega del formulario con los errores
             res.render("login", {errors: validationResults.mapped(), oldData: req.body, userALoguearse});
 
-        } else { //si no hubo errores de validacion
+        } else {
 
-            //traigo los usuarios
-            const users = JSON.parse(fs.readFileSync(usersFilePath, 'utf-8'));
+            let users = db.Usuario.findAll({
+                include: ["permisos"],
+            })
 
-            let userALoguearse
+            .then(users => {
 
-            for(let i=0; i < users.length; i++){  //recorremos todos los usuarios
+                let userALoguearse
 
-                if(users[i].email == req.body.email){  //preguntamos si el email de ese usuario (el de la posicion i) es igual al email que está poniendo en el campo
+                for(let i=0; i < users.length; i++){  //recorremos todos los usuarios
 
-                    if(bcrypt.compareSync(req.body.password, users[i].password)){  //y si al comparar si la contraseña de ese usuario (el de la posicion i) es igual a la que está poniendo en el campo
-
-                        userALoguearse = users[i]  //el usuario q se loguea es el q matchea en la posicion i (lo encontró)
-
-                        break;
+                    if(users[i].email == req.body.email){  //preguntamos si el email de ese usuario (el de la posicion i) es igual al email que está poniendo en el campo
+    
+                        if(bcrypt.compareSync(req.body.password, users[i].password)){  //y si al comparar si la contraseña de ese usuario (el de la posicion i) es igual a la que está poniendo en el campo
+    
+                            userALoguearse = users[i]  //el usuario q se loguea es el q matchea en la posicion i (lo encontró)
+    
+                            break;
+                        }
+    
                     }
-
+                          
                 }
-                      
-            }
-
-            if(userALoguearse == undefined){  //si no encontró al usuario le manda el mensaje de credenciales invalidas
-
-                return res.render("login", {errors: [{msg: "Credenciales invalidas"}], userALoguearse});  
-            
-            } 
-
-            req.session.userLogueado = userALoguearse;  //si encontró al usuario lo guardo en session
-
-            if(req.body.recordarme){ //si el checkbox de recordarme es distinto de undefined (quiere decir si está tildado)
-
-                res.cookie("recordarme", userALoguearse.email, {maxAge: 90000}) 
-                //creamos la cookie recordarme con el valor del email del userALoguearse y una duracion de la cookie de 60seg
-
-            }
-
-            res.redirect("/")
-
+    
+                if(userALoguearse == undefined){  //si no encontró al usuario le manda el mensaje de credenciales invalidas
+    
+                    return res.render("login", {errors: [{msg: "Credenciales invalidas"}], userALoguearse});  
+                
+                } 
+    
+                req.session.userLogueado = userALoguearse;  //si encontró al usuario lo guardo en session
+    
+                if(req.body.recordarme){ //si el checkbox de recordarme es distinto de undefined (quiere decir si está tildado)
+    
+                    res.cookie("recordarme", userALoguearse.email, {maxAge: 90000}) 
+                    //creamos la cookie recordarme con el valor del email del userALoguearse y una duracion de la cookie de 60seg
+    
+                }
+    
+                res.redirect("/")
+            })
         }
-
     },
+
+    
     register: (req, res) => {
         //usuario q se loguea
         const userALoguearse = req.session.userLogueado
@@ -133,22 +137,6 @@ const userController = {
 
     },
 
-    /* perfil: (req, res) => {
-
-        //METODO CON JSONS
-
-        //usuario q se loguea
-        const userALoguearse = req.session.userLogueado
-       
-        //traigo los usuarios
-        const users = JSON.parse(fs.readFileSync(usersFilePath, 'utf-8'));
-
-        //busco al usuario a editar por id
-		const userToEdit = users.find(user => {return user.id == req.params.id})
-
-		res.render("perfil-user", {userToEdit, userALoguearse});
-	}, */
-
     perfil: (req, res) => {
 
         //usuario q se loguea
@@ -157,8 +145,10 @@ const userController = {
         let userId = req.params.id
 
         db.Usuario.findByPk(userId)
+
         .then(usuario => {
             return res.render("perfil-user.ejs", {usuario, userALoguearse})})
+
         .catch(error => res.send(error))
 
 	},
@@ -278,6 +268,9 @@ const userController = {
     },
 
     /* carrito : (req, res) => {
+
+        //METODO CON JSONS
+
         //usuario q se loguea
         const userALoguearse = req.session.userLogueado
 
@@ -287,6 +280,80 @@ const userController = {
         const productosPerroConDescuento = productosPerro.filter(product => {return product.discount == "Si"});
 
         res.render('carrito2.ejs', {productosPerroConDescuento, userALoguearse});
+    }, */
+
+    /* perfil: (req, res) => {
+
+        //METODO CON JSONS
+
+        //usuario q se loguea
+        const userALoguearse = req.session.userLogueado
+       
+        //traigo los usuarios
+        const users = JSON.parse(fs.readFileSync(usersFilePath, 'utf-8'));
+
+        //busco al usuario a editar por id
+		const userToEdit = users.find(user => {return user.id == req.params.id})
+
+		res.render("perfil-user", {userToEdit, userALoguearse});
+	}, */
+
+    /* processLogin: (req, res) => {
+
+        //METODO CON JSONS
+
+        //usuario q se loguea
+        const userALoguearse = req.session.userLogueado
+
+        //Validaciones con la info del request
+        const validationResults = validationResult(req); 
+
+        if(validationResults.errors.length > 0){ //si hubo errores de validacion
+
+            //renderizo la vista y le mando la info q llega del formulario con los errores
+            res.render("login", {errors: validationResults.mapped(), oldData: req.body, userALoguearse});
+
+        } else { //si no hubo errores de validacion
+
+            //traigo los usuarios
+            const users = JSON.parse(fs.readFileSync(usersFilePath, 'utf-8'));
+
+            let userALoguearse
+
+            for(let i=0; i < users.length; i++){  //recorremos todos los usuarios
+
+                if(users[i].email == req.body.email){  //preguntamos si el email de ese usuario (el de la posicion i) es igual al email que está poniendo en el campo
+
+                    if(bcrypt.compareSync(req.body.password, users[i].password)){  //y si al comparar si la contraseña de ese usuario (el de la posicion i) es igual a la que está poniendo en el campo
+
+                        userALoguearse = users[i]  //el usuario q se loguea es el q matchea en la posicion i (lo encontró)
+
+                        break;
+                    }
+
+                }
+                      
+            }
+
+            if(userALoguearse == undefined){  //si no encontró al usuario le manda el mensaje de credenciales invalidas
+
+                return res.render("login", {errors: [{msg: "Credenciales invalidas"}], userALoguearse});  
+            
+            } 
+
+            req.session.userLogueado = userALoguearse;  //si encontró al usuario lo guardo en session
+
+            if(req.body.recordarme){ //si el checkbox de recordarme es distinto de undefined (quiere decir si está tildado)
+
+                res.cookie("recordarme", userALoguearse.email, {maxAge: 90000}) 
+                //creamos la cookie recordarme con el valor del email del userALoguearse y una duracion de la cookie de 60seg
+
+            }
+
+            res.redirect("/")
+
+        }
+
     }, */
 
 
