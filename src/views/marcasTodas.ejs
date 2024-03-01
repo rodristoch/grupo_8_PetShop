@@ -76,27 +76,30 @@
                 </div>
             </article>
 
-             <!-- Lista productos productos-->
-             <div class="lista_desktop">
-                <h2 style="margin-left: 20px;">Productos Eukanuba</h2>
-                <div class="lista_flexbox_desktop">
+            <!-- Lista productos productos-->
+            <div class="lista_desktop">
+                
+                <div>
 
                     <% if(locals.ProductosEukanuba){ %>
 
-                        <% for(let producto of ProductosEukanuba) { %>
-                            <article class="articulo-productos-descuentos">
-                                <a href="/productos/detalle/<%= producto.id %>">
-                                    <div class="contenedor_imagen">
-                                        <img class="img-productos-descuentos" src="/img/productos/<%= producto.imagen %>" alt="imagen_producto">
-                                    </div>
-                                </a>
-                                <div>
-                                    <div class="texto_nombre_arriba">
-                                        <h4><%= producto.nombre %></h4>
-                                    </div>
-                                    <div class="texto_description_arriba">
-                                        <P><%= producto.descripcion %></P>
-                                    </div>
+                        <h2 style="margin-left: 20px;">Productos Eukanuba</h2>
+
+                        <div class="lista_flexbox_desktop">
+                            <% for(let producto of ProductosEukanuba) { %>
+                                <article class="articulo-productos-descuentos">
+                                    <a href="/productos/detalle/<%= producto.id %>">
+                                        <div class="contenedor_imagen">
+                                            <img class="img-productos-descuentos" src="/img/productos/<%= producto.imagen %>" alt="imagen_producto">
+                                        </div>
+                                    </a>
+                                    <div>
+                                        <div class="texto_nombre_arriba">
+                                            <h4><%= producto.nombre %></h4>
+                                        </div>
+                                        <div class="texto_description_arriba">
+                                            <P><%= producto.descripcion %></P>
+                                        </div>
                                         <div>
                                             <p class="precio-tachado">$ <%= producto.descuentos? producto.precio : null %></p>
                                         </div>
@@ -106,32 +109,34 @@
                                         <div>
                                             <p class="precio">$ <%= Number((producto.precio*0.8).toFixed(2)) %></p>
                                         </div>
-                            
-                                    
-                                    <div class="div-boton-comprar">
-                                        <button class="boton-comprar" type="submit">Agregar</button>
-                                    </div>
-                                </div>   
-                            </article>
-                        <% } %>
+                                        <div class="div-boton-comprar">
+                                            <button class="boton-comprar" type="submit">Agregar</button>
+                                        </div>
+                                    </div>   
+                                </article>
+                            <% } %>
+                        </div>
                     <% } %>
 
-                    <% if(locals.ProductosProplan){ %> 
+                    <% if(locals.ProductosProplan){ %>
 
-                        <% for(let producto of ProductosProplan) { %>
-                            <article class="articulo-productos-descuentos">
-                                <a href="/productos/detalle/<%= producto.id %>">
-                                    <div class="contenedor_imagen">
-                                        <img class="img-productos-descuentos" src="/img/productos/<%= producto.imagen %>" alt="imagen_producto">
-                                    </div>
-                                </a>
-                                <div>
-                                    <div class="texto_nombre_arriba">
-                                        <h4><%= producto.nombre %></h4>
-                                    </div>
-                                    <div class="texto_description_arriba">
-                                        <P><%= producto.descripcion %></P>
-                                    </div>
+                        <h2 style="margin-left: 20px;">Productos Pro Plan</h2>
+
+                        <div class="lista_flexbox_desktop">
+                            <% for(let producto of ProductosProplan) { %>
+                                <article class="articulo-productos-descuentos">
+                                    <a href="/productos/detalle/<%= producto.id %>">
+                                        <div class="contenedor_imagen">
+                                            <img class="img-productos-descuentos" src="/img/productos/<%= producto.imagen %>" alt="imagen_producto">
+                                        </div>
+                                    </a>
+                                    <div>
+                                        <div class="texto_nombre_arriba">
+                                            <h4><%= producto.nombre %></h4>
+                                        </div>
+                                        <div class="texto_description_arriba">
+                                            <P><%= producto.descripcion %></P>
+                                        </div>
                                         <div>
                                             <p class="precio-tachado">$ <%= producto.descuentos? producto.precio : null %></p>
                                         </div>
@@ -141,32 +146,34 @@
                                         <div>
                                             <p class="precio">$ <%= Number((producto.precio*0.8).toFixed(2)) %></p>
                                         </div>
-                            
-                                    
-                                    <div class="div-boton-comprar">
-                                        <button class="boton-comprar" type="submit">Agregar</button>
-                                    </div>
-                                </div>
-                            </article>     
-                        <% } %>
+                                        <div class="div-boton-comprar">
+                                            <button class="boton-comprar" type="submit">Agregar</button>
+                                        </div>
+                                    </div>   
+                                </article>
+                            <% } %>
+                        </div>
                     <% } %>
 
-                    <% if(locals.ProductosRoyal){ %> 
+                    <% if(locals.ProductosRoyal){ %>
 
-                        <% for(let producto of ProductosRoyal) { %>
-                            <article class="articulo-productos-descuentos">
-                                <a href="/productos/detalle/<%= producto.id %>">
-                                    <div class="contenedor_imagen">
-                                        <img class="img-productos-descuentos" src="/img/productos/<%= producto.imagen %>" alt="imagen_producto">
-                                    </div>
-                                </a>
-                                <div>
-                                    <div class="texto_nombre_arriba">
-                                        <h4><%= producto.nombre %></h4>
-                                    </div>
-                                    <div class="texto_description_arriba">
-                                        <P><%= producto.descripcion %></P>
-                                    </div>
+                        <h2 style="margin-left: 20px;">Productos Royal</h2>
+
+                        <div class="lista_flexbox_desktop">
+                            <% for(let producto of ProductosRoyal) { %>
+                                <article class="articulo-productos-descuentos">
+                                    <a href="/productos/detalle/<%= producto.id %>">
+                                        <div class="contenedor_imagen">
+                                            <img class="img-productos-descuentos" src="/img/productos/<%= producto.imagen %>" alt="imagen_producto">
+                                        </div>
+                                    </a>
+                                    <div>
+                                        <div class="texto_nombre_arriba">
+                                            <h4><%= producto.nombre %></h4>
+                                        </div>
+                                        <div class="texto_description_arriba">
+                                            <P><%= producto.descripcion %></P>
+                                        </div>
                                         <div>
                                             <p class="precio-tachado">$ <%= producto.descuentos? producto.precio : null %></p>
                                         </div>
@@ -176,32 +183,34 @@
                                         <div>
                                             <p class="precio">$ <%= Number((producto.precio*0.8).toFixed(2)) %></p>
                                         </div>
-                            
-                                    
-                                    <div class="div-boton-comprar">
-                                        <button class="boton-comprar" type="submit">Agregar</button>
-                                    </div>
-                                </div>
-                            </article>     
-                        <% } %>
+                                        <div class="div-boton-comprar">
+                                            <button class="boton-comprar" type="submit">Agregar</button>
+                                        </div>
+                                    </div>   
+                                </article>
+                            <% } %>
+                        </div>
                     <% } %>
 
-                    <% if(locals.ProductosCancat){ %> 
+                    <% if(locals.ProductosCancat){ %>
 
-                        <% for(let producto of ProductosCancat) { %>
-                            <article class="articulo-productos-descuentos">
-                                <a href="/productos/detalle/<%= producto.id %>">
-                                    <div class="contenedor_imagen">
-                                        <img class="img-productos-descuentos" src="/img/productos/<%= producto.imagen %>" alt="imagen_producto">
-                                    </div>
-                                </a>
-                                <div>
-                                    <div class="texto_nombre_arriba">
-                                        <h4><%= producto.nombre %></h4>
-                                    </div>
-                                    <div class="texto_description_arriba">
-                                        <P><%= producto.descripcion %></P>
-                                    </div>
+                        <h2 style="margin-left: 20px;">Productos Cancat</h2>
+
+                        <div class="lista_flexbox_desktop">
+                            <% for(let producto of ProductosCancat) { %>
+                                <article class="articulo-productos-descuentos">
+                                    <a href="/productos/detalle/<%= producto.id %>">
+                                        <div class="contenedor_imagen">
+                                            <img class="img-productos-descuentos" src="/img/productos/<%= producto.imagen %>" alt="imagen_producto">
+                                        </div>
+                                    </a>
+                                    <div>
+                                        <div class="texto_nombre_arriba">
+                                            <h4><%= producto.nombre %></h4>
+                                        </div>
+                                        <div class="texto_description_arriba">
+                                            <P><%= producto.descripcion %></P>
+                                        </div>
                                         <div>
                                             <p class="precio-tachado">$ <%= producto.descuentos? producto.precio : null %></p>
                                         </div>
@@ -211,32 +220,34 @@
                                         <div>
                                             <p class="precio">$ <%= Number((producto.precio*0.8).toFixed(2)) %></p>
                                         </div>
-                            
-                                    
-                                    <div class="div-boton-comprar">
-                                        <button class="boton-comprar" type="submit">Agregar</button>
-                                    </div>
-                                </div>
-                            </article>     
-                        <% } %>
+                                        <div class="div-boton-comprar">
+                                            <button class="boton-comprar" type="submit">Agregar</button>
+                                        </div>
+                                    </div>   
+                                </article>
+                            <% } %>
+                        </div>
                     <% } %>
 
-                    <% if(locals.ProductosCatit){ %> 
+                    <% if(locals.ProductosCatit){ %>
 
-                        <% for(let producto of ProductosCatit) { %>
-                            <article class="articulo-productos-descuentos">
-                                <a href="/productos/detalle/<%= producto.id %>">
-                                    <div class="contenedor_imagen">
-                                        <img class="img-productos-descuentos" src="/img/productos/<%= producto.imagen %>" alt="imagen_producto">
-                                    </div>
-                                </a>
-                                <div>
-                                    <div class="texto_nombre_arriba">
-                                        <h4><%= producto.nombre %></h4>
-                                    </div>
-                                    <div class="texto_description_arriba">
-                                        <P><%= producto.descripcion %></P>
-                                    </div>
+                        <h2 style="margin-left: 20px;">Productos Catit</h2>
+
+                        <div class="lista_flexbox_desktop">
+                            <% for(let producto of ProductosCatit) { %>
+                                <article class="articulo-productos-descuentos">
+                                    <a href="/productos/detalle/<%= producto.id %>">
+                                        <div class="contenedor_imagen">
+                                            <img class="img-productos-descuentos" src="/img/productos/<%= producto.imagen %>" alt="imagen_producto">
+                                        </div>
+                                    </a>
+                                    <div>
+                                        <div class="texto_nombre_arriba">
+                                            <h4><%= producto.nombre %></h4>
+                                        </div>
+                                        <div class="texto_description_arriba">
+                                            <P><%= producto.descripcion %></P>
+                                        </div>
                                         <div>
                                             <p class="precio-tachado">$ <%= producto.descuentos? producto.precio : null %></p>
                                         </div>
@@ -246,15 +257,18 @@
                                         <div>
                                             <p class="precio">$ <%= Number((producto.precio*0.8).toFixed(2)) %></p>
                                         </div>
-                            
-                                    
-                                    <div class="div-boton-comprar">
-                                        <button class="boton-comprar" type="submit">Agregar</button>
-                                    </div>
-                                </div>
-                            </article>     
-                        <% } %>
+                                        <div class="div-boton-comprar">
+                                            <button class="boton-comprar" type="submit">Agregar</button>
+                                        </div>
+                                    </div>   
+                                </article>
+                            <% } %>
+                        </div>
                     <% } %>
+                
+                       
+
+                    
                 </div>
             </div>
 
