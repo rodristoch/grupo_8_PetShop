@@ -25,7 +25,7 @@
        </form>
        <div class="opciones-top">
 
-            <% if(userALoguearse && userALoguearse.category == "Administrador"){ %>
+            <% if(userALoguearse && userALoguearse.permiso_id == 1){ %>
                 <div class="crear-producto">
                     <a href="/productos/alta">
                     <i class="fa-solid fa-plus" style="color: #ffffff;"></i>

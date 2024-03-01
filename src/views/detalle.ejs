@@ -39,7 +39,7 @@
             <button type="submit">Agregar al carrito</button>
 
             <!-- CTA edición de producto -->
-            <% if(userALoguearse && userALoguearse.category == "Administrador"){ %>
+            <% if(userALoguearse && userALoguearse.permiso_id == 1){ %>
                 <a href="/productos/editar/<%= producto.id %>" class="boton_editar">
                     <p class="texto_boton">Editar producto</p>
                  </a>
