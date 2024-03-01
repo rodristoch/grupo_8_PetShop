@@ -1,16 +1,16 @@
 <!DOCTYPE html>
 <html lang="en">
-    <%- include("./partials/head.ejs", {cssSheet: "index_styles", title: "Alta producto"}) %>
-<link rel="stylesheet" href="/css/alta-editar-producto.css">
+    <%- include("./partials/head.ejs", {cssSheet: "alta-editar", title: "Alta producto"}) %>
+    <link rel="stylesheet" href="/css/header-footer.css">
 <body>
 
     <%- include("./partials/header.ejs") %>  
       
     <%- include("./partials/header2.ejs") %>
 <main>
-    <h3>Carga tus productos</h3>
+    <h3 class="titulo-ppal">Carga tus productos</h3>
     <article class="contenedor-alta">
-        <form action="/productos/alta" method="POST" enctype="multipart/form-data">
+        <form class="formu" action="/productos/alta" method="POST" enctype="multipart/form-data">
 
             <section class="flex-linea">
                 <div class="flex-columna">

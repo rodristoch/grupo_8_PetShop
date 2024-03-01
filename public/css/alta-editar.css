@@ -1,0 +1,502 @@
+* body {
+    margin: 0;
+    font-family: 'Roboto', sans-serif;
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+a {
+    text-decoration: none;
+    color: white;
+    text-align: center;
+}
+
+/* --------------------------header----------------------------------- */
+.top {
+    background-color: #18515F;
+    height: 20%;
+    width: 100vw;
+}
+
+.flex-top {
+    width: 100vw;
+    height: 20%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    width: 15%;
+    height: 60%;
+    margin: 10px;
+    margin-right: 1px;
+}
+
+.titulo-head {
+    display: none;
+    width: 15%;
+    font-family: 'Amatic SC';
+    font-size: 60px;
+    color: white;
+    margin-left: 0.1px;
+    margin-top: 10px;
+    
+}
+
+.logo-titulo-jun {
+    display: none;
+}
+
+.barra {
+    width: 28%;
+    font-family: 'Roboto';
+    font-size: 20px;
+    color: white;
+    margin-right: 10px;
+}
+
+.barra input[type="search"] {
+    border-radius: 10px; 
+    padding: 10px; 
+    width: 200px; 
+    box-sizing: border-box; 
+    border: 1px solid #ccc; 
+}
+
+
+.mi-cuenta, .mis-compras {
+    display: none;
+}
+
+
+.menu-top {
+    display: block;
+    text-align: right;
+    margin-right: 40px;
+    margin-top: 10px;
+
+}
+
+.carrito {
+    display: block;
+}
+
+.logo-carrito-tablet {
+    display: none;
+}
+
+.logo-carrito-mobile {
+    display: block;
+    text-align: right;
+    margin-right: 20px;
+    margin-top: 10px;
+}
+
+.carrito-text {
+    display: none;
+}
+
+.header2 {
+    display: none;
+}
+/* --------------------------header----------------------------------- */
+
+/* --------------------------Main----------------------------------- */
+
+h2{
+    line-height: 28px;
+    color: #18515F;
+    text-align: center;
+}
+
+.editar-titulo{
+    margin-top: 40px;
+    line-height: 20px;
+    color: #18515F;
+    text-align: left;
+}
+
+hr {
+    margin-top: 24px;
+}
+
+.contenedor {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+}
+
+/* --- Generales */
+.titulo-ppal {
+    width: 90%;
+    margin: 24px auto;
+}
+
+/* p {
+    margin: 12px 0px 4px 0px;
+} */
+
+button {
+    border: none;
+    border-radius: 8px;
+    color: white;
+    background-color: #18515F;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    width: 100%;
+    font-size: 18px;
+    margin: 16px 0px 16px 0px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #216F83 ;
+}
+
+
+/* --- Contenedor formulario */
+.contenedor-alta {
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    width: 90%;
+    margin: 20px auto;
+    border-radius: 12px;
+}
+
+/* --- Flex formulario */
+
+.flex-linea {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.flex-columna {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+
+/* --- formulario */
+.formu {
+    display: flex;
+    flex-direction: column;
+    width: 90%;
+    margin: 0 auto;
+}
+
+label {
+    font-size: 16px;
+    padding-top: 12px;
+    padding-bottom: 2px;
+}
+
+input::placeholder {
+    color: #18515F;
+}
+
+form input {
+    font-size: 14px;
+    border: 1px solid #B8D6BF ;
+    border-radius: 8px;
+    padding: 12px 16px ;
+}
+
+input[type=number]::-webkit-inner-spin-button, 
+input[type=number]::-webkit-outer-spin-button { 
+  -webkit-appearance: none; 
+  margin: 0; 
+}
+
+
+form input[type=file] {
+    border-color: white;
+    padding: 12px 4px;
+}
+
+form input[type=file]:hover {
+    border-color: white;
+}
+
+.mostrar_imagen {
+    height: 100px;
+    width: 100px;
+    padding: 8px;
+    margin-top: 12px;
+    outline: 1px solid rgb(184, 184, 184);
+    border-radius: 8px;
+}
+
+/* --- Condiciones formulario */
+form input:hover {
+    border: 1px solid #00505F;
+}
+
+form input:focus {
+    outline: none;
+    border: 1px solid #00505F;
+    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+}
+
+form input[type="text"]:not(:placeholder-shown), [type="number"]:not(:placeholder-shown), input[type="password"]:not(:placeholder-shown), input[type="email"]:not(:placeholder-shown){
+    border: 1px solid #4CAF50;
+}
+
+textarea:not(:placeholder-shown){
+    border: 1px solid #4CAF50;
+}
+
+
+/* --- selectores */
+select {
+    font-size: 14px;
+    border: 1px solid #B8D6BF ;
+    border-radius: 8px;
+    padding: 12px 16px;
+}
+
+/* --- textarea */
+textarea {
+    height: 80px;
+    border-radius: 8px;
+    padding: 12px;
+    margin-bottom: 12px;
+    resize: none;
+    font-family: roboto;
+    font-size: 16px;
+}
+textarea::placeholder {
+    color: #18515F;
+}
+textarea:hover {
+    border: 1px solid #00505F;
+}
+
+textarea:focus {
+    outline: none;
+    border: 1px solid #00505F;
+    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+}
+
+/* --------------------------Main----------------------------------- */
+
+
+/* --------------------------footer----------------------------------- */
+footer {
+    background-color: #18515F;
+    display: flex;
+}
+
+.logo2 {
+    width: 3%;
+    height: 30%;
+    padding: 60px;
+    display: none;
+}
+
+.nosotros {
+    color: white;
+    text-align: justify;
+    margin: auto;
+    font-size: 12px;
+}
+
+.todo-perro {
+    color: white;
+    text-align: justify;
+    margin: auto;
+    font-size: 12px;
+}
+
+.todo-gato {
+    color: white;
+    text-align: justify;
+    margin: auto;
+    font-size: 12px;
+}
+
+.contacto {
+    color: white;
+    text-align: justify;
+    margin: auto;
+    font-size: 12px;
+}
+
+.redes-sociales {
+    color: white;
+    text-align: justify;
+    margin: auto;
+    font-size: 12px;
+}
+
+.facebook-tablet, .twitter-tablet, .instagram-tablet {
+    display: none;
+}
+
+.rrss-iconos {
+    display: flex;
+    justify-content: space-between;
+}
+/* --------------------------footer----------------------------------- */
+
+@media (min-width: 768px) {
+
+/* --------------------------header----------------------------------- */
+
+
+.titulo-head {
+    display: none;
+    margin: auto;
+}
+
+.barra {
+    margin-left: 50px;
+    margin-right: 1px;
+}
+
+.barra input[type="search"] {
+    width: 45vw; 
+}
+
+.opciones-top {
+    width: 40%;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+.mis-compras {
+    font-family: 'Roboto';
+    display: none;
+    flex-direction: column;
+    text-align: center;
+    margin-right: 10px;
+    margin-left: 50px;
+    margin-top: 40px;
+    margin-bottom: 20px;
+    color: white;
+}
+
+.mi-cuenta {
+    display: none;
+    flex-direction: column;
+    text-align: center;
+    margin-right: 10px;
+    margin-left: 20px;
+    margin-top: 20px;
+    color: white;
+}
+
+.carrito {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    margin-right: 60px;
+    margin-left: 25px;
+    margin-top: 20px;
+    color: white;
+}
+
+.logo-carrito-tablet {
+    display: block;
+}
+
+.logo-carrito-mobile {
+    display: none;
+}
+
+.carrito-text {
+    display: block;
+}
+
+.fa-bars {
+    display: block;
+}
+
+.header2 {
+    display: flex;
+    height: 35px;
+    background-color: #18515F;
+    border-top: 0.1px solid white;
+    border-bottom: 0.3px solid white;
+}
+
+.header2-opciones {
+    color: white;
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    align-items: center;
+    margin: 20px;
+}
+
+
+
+.fa-circle-arrow-down {
+    margin-left: 10px;
+}
+/* --------------------------header----------------------------------- */
+
+/* --------------------------Main----------------------------------- */
+
+.flex-linea {
+    flex-direction: row;
+}
+.flex-columna {
+    width: 50%;
+}
+
+/* --------------------------Main----------------------------------- */
+
+}
+
+@media (min-width: 1024px) {
+/* --------------- header ----------------------------------- */
+
+/* .top {
+    height: 15vh;
+} */
+
+.flex-top {
+    height: 10%;
+}
+
+.fa-bars {
+    display: none;
+}
+
+.barra input[type="search"] {
+    width: 35vw; 
+    margin-left: 60px;
+}
+
+.carrito, .mis-compras, .mi-cuenta {
+    display: block;
+}
+
+.logo-titulo-jun {
+    display: block;
+    margin-left: 30px;
+}
+
+.logo, .titulo-head {
+    display: none;
+}
+/* --------------- header ----------------------------------- */
+
+/* --------------- main ----------------------------------- */
+
+
+/* --------------- main ----------------------------------- */
+
+/* --------------------------footer----------------------------------- */
+
+.logo2 {
+    display: block;
+}
+/* --------------------------footer----------------------------------- */
+}
+

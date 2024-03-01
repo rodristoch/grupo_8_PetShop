@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
-    <%- include("./partials/head.ejs", {cssSheet: "detalles-del-producto", title: "Detalles del Producto"}) %>
+    <%- include("./partials/head.ejs", {cssSheet: "detalle", title: "Detalles del Producto"}) %>
+    <link rel="stylesheet" href="/css/header-footer.css">
 <body>
 
     <%- include("./partials/header.ejs") %>
@@ -46,9 +47,10 @@
                  <!-- CTA eliminar producto -->
                  <form action="/productos/eliminar/<%= producto.id %>?_method=DELETE" method="POST">
                     <button type="submit" class="boton_eliminar">Eliminar producto</button>
+                </form>
             <% } %>
             
-            </form>
+            
 
             <hr>
 

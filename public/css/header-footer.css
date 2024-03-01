@@ -10,28 +10,40 @@ a:hover {
     color: #cdd4d6 ;
 }
 
+.nombre-usuario {
+    color: #FECF53; 
+    font-size: 16px; 
+    font-weight: 500;
+    transition: 250ms;
+}
+
+.nombre-usuario:hover {
+    color: #cda840; 
+}
+
 .top {
     background-color: #18515F;
     height: 20%;
     width: 100vw;
     }
     
-    .flex-top {
-        width: 100vw;
-        height: 20%;
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-    }
+.flex-top {
+    width: 100vw;
+    height: 20%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
     
-    .logo {
-        width: 45%;
-        height: 60%;
-        margin: 10px;
-        margin-right: 1px;
-    }
+.logo {
+    width: 45%;
+    height: 60%;
+    margin: 10px;
+    margin-right: 1px;
+    transition: 250ms;
+}
     
-    .titulo-head {
+.titulo-head {
         display: none;
         width: 15%;
         font-family: 'Amatic SC';
@@ -39,7 +51,23 @@ a:hover {
         color: white;
         margin-left: 0.1px;
         margin-top: 10px;
-        
+        transition: 250ms;
+    }
+
+    .isologo {
+        transition: 250ms;
+    }
+
+    .isologo:hover {
+        color: #cdd4d6
+    }
+
+    .logo:hover {
+        color: #cdd4d6
+    }
+    
+    .titulo-head:hover {
+        color: #cdd4d6
     }
     
     .logo-titulo-jun {
