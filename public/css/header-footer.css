@@ -133,6 +133,7 @@ a:hover {
         font-size: 16px;
         border: none;
         cursor: pointer;
+        border-radius: 8px;
       }
       
       .dropdown {
@@ -147,6 +148,7 @@ a:hover {
         min-width: 160px;
         box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
         z-index: 1;
+        border-radius: 8px;
       }
       
       .dropdown-content a {
@@ -156,15 +158,17 @@ a:hover {
         display: block;
       }
       
-      .dropdown-content a:hover {background-color: #FECF53}
+      .dropdown-content a:hover {
+        background-color: #cda840;
+        border-radius: 8px;
+    }
       
       .dropdown:hover .dropdown-content {
         display: block;
       }
       
       .dropdown:hover .dropbtn {
-        background-color: #FECF53;
-        border-radius: 8px;
+        background-color: #cda840;
       }
 
     /* --------------------------header----------------------------------- */
@@ -318,9 +322,9 @@ footer {
 .header2 {
     display: flex;
     height: 35px;
-    background-color: #18515F;
-    border-top: 0.1px solid #18515F;
-    border-bottom: 0.1px solid #18515F;
+    background-color: #154551;
+    border-top: 0.1px solid #154551;
+    border-bottom: 0.1px solid #154551;
 }
 
 .header2-opciones {
