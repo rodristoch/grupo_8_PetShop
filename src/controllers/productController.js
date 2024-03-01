@@ -463,7 +463,7 @@ const productController = {
         let descuentos = db.Descuento.findAll();
 
         Promise.all([productos, descuentos])
-        .then(([ProductosEukanuba, descuentos]) => {return res.render("marcasEukanuba.ejs", {userALoguearse, ProductosEukanuba, descuentos})})
+        .then(([ProductosEukanuba, descuentos]) => {return res.render("marcasTodas.ejs", {userALoguearse, ProductosEukanuba, descuentos})})
 
     },
 
@@ -483,7 +483,7 @@ const productController = {
             }],
         })
 
-        .then(ProductosProplan => {return res.render("marcasProplan.ejs", {userALoguearse, ProductosProplan})})
+        .then(ProductosProplan => {return res.render("marcasTodas.ejs", {userALoguearse, ProductosProplan})})
 
     },
 
@@ -499,7 +499,7 @@ const productController = {
             }
         })
 
-        .then(ProductosRoyal => {return res.render("marcasRoyal.ejs", {userALoguearse, ProductosRoyal})})
+        .then(ProductosRoyal => {return res.render("marcasTodas.ejs", {userALoguearse, ProductosRoyal})})
 
     },
 
@@ -515,7 +515,7 @@ const productController = {
             }
         })
 
-        .then(ProductosCancat => {return res.render("marcasCancat.ejs", {userALoguearse, ProductosCancat})})
+        .then(ProductosCancat => {return res.render("marcasTodas.ejs", {userALoguearse, ProductosCancat})})
 
     },
 
@@ -531,7 +531,7 @@ const productController = {
             }
         })
 
-        .then(ProductosCatit => {return res.render("marcasCatit.ejs", {userALoguearse, ProductosCatit})})
+        .then(ProductosCatit => {return res.render("marcasTodas.ejs", {userALoguearse, ProductosCatit})})
 
     },
 
