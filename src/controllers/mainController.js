@@ -5,7 +5,7 @@ const sequelize = db.sequelize;
 const Op = db.Sequelize.Op;
 
 const productsFilePath = path.join(__dirname, '../data/productosDataBase.json');
-/* const productos = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8')); */
+/* const productos = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8')); agregoo*/
 
 const mainController = {
     index: async (req, res) => {
