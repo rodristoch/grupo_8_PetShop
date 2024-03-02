@@ -22,8 +22,8 @@
 
                     <h2>Mi perfil</h2>
     
-                    <h3 style="color: black; font-size: 20px; font-weight: 600;" ><%= usuario.nombre %> <%= usuario.apellido %></h3>
-                    <h3 style="color: black; font-size: 18px; font-weight: 400;" ><%= usuario.email %></h3>
+                    <h3 style="color: black; font-size: 20px; font-weight: 600;" > Usuario: <%= usuario.nombre %> <%= usuario.apellido %></h3>
+                    <h3 style="color: black; font-size: 18px; font-weight: 400;" >Email:<%= usuario.email %></h3>
                     <img src="<%= usuario.imagen %>" alt="">
 
                     <a href="/users/edit/<%= usuario.id %>">
