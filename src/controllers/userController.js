@@ -187,23 +187,10 @@ const userController = {
             {
                 where: {id: userToEdit}
             })
-        .then(() => {
-
-            //Validaciones con la info del request
-            const validationResults = validationResult(req); 
-
-            if(validationResults.errors.length > 0){ //si hubo errores de validacion
- 
-                //renderizo la vista y le mando la info q llega del formulario con los errores y la info bien completada
-                res.render("edit-user", {errors: validationResults.mapped(), userToEdit: req.body, userALoguearse});
-
-            } else {
-
-                res.redirect("/");
-
-            }
-        })            
-        .catch(error => res.send(error))
+            
+            .then(() => {
+                return res.redirect("/")})            
+            .catch(error => res.send(error))
 
     },
     
