@@ -5,7 +5,7 @@ const sequelize = db.sequelize;
 const Op = db.Sequelize.Op;
 
 const productsFilePath = path.join(__dirname, '../data/productosDataBase.json');
-/* const productos = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8')); 333*/
+/* const productos = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8')); 3333*/
 
 const mainController = {
     index: async (req, res) => {
