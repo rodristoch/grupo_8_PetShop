@@ -95,47 +95,27 @@ const userController = {
         res.render("register.ejs", {userALoguearse});
     },
 
-    processRegister: (req, res) => {
-
-        //usuario q se loguea
-        const userALoguearse = req.session.userLogueado
-
-        //traigo los usuarios
-        const users = JSON.parse(fs.readFileSync(usersFilePath, 'utf-8'));
-
-        //creo uno nuevo
-        const newUser = {
-			id: users[users.length - 1].id + 1,
-			nombre: req.body.nombre,
-            apellido: req.body.apellido,
-            image: req.file!= undefined ? req.file.filename : "/img/default.jpg",
-			email: req.body.email, 
-            password: bcrypt.hashSync(req.body.password, 10),
-            category: "Invitado"
-		}
-
-        //Validaciones con la info del request
-        const validationResults = validationResult(req); 
-
-        if(validationResults.errors.length > 0){ //si hubo errores de validacion
-
-            //renderizo la vista y le mando la info q llega del formulario con los errores y la info bien completada
-            res.render("register", {errors: validationResults.mapped(), oldData: req.body, userALoguearse});
-
-        } else {  //si no hubo errores de validacion
-
-            //lo pusheo al array al nuevo
-            users.push(newUser);
-
-            //escribo el json
-		    fs.writeFileSync(usersFilePath, JSON.stringify(users, null, " "));
-
-            res.redirect("/users/perfil/" + newUser.id) 
-
-            
+    processRegister: async (req, res) => {
+        try {
+            const userALoguearse = req.session.userLogueado;
+    
+            // Crear el usuario en la base de datos utilizando Sequelize
+            const usuarioCreado = await db.Usuario.create({
+                nombre: req.body.nombre,
+                apellido: req.body.apellido,
+                imagen: req.file ? req.file.filename : "/img/default.jpg",
+                email: req.body.email,
+                password: bcrypt.hashSync(req.body.password, 10),
+                permiso_id: 2 // Asegúrate de establecer el permiso_id aquí
+            });
+    
+            res.redirect("/users/perfil/" + usuarioCreado.id);
+        } catch (error) {
+            console.error("Error al crear el usuario:", error);
+            res.status(500).send("Error interno del servidor");
         }
-
     },
+    
 
     perfil: (req, res) => {
 

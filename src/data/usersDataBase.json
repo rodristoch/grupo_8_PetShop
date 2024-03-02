@@ -34,14 +34,5 @@
   "email": "rodrigo-eze87@hotmail.com",
   "password": "$2a$10$8CE7gHB6Bpm3qNKVMtHpquKBR/3.LL1xzswiohVjx13Y8r7QFC2Wa",
   "category": "Invitado"
- },
- {
-  "id": 5,
-  "nombre": "ws",
-  "apellido": "ewds",
-  "image": "/img/default.jpg",
-  "email": "maria.osorio@laika.pet",
-  "password": "$2a$10$27oYufzU7.S.809NlgSt0uR/adFaawQTfqTFcgbOTfpzgfVDohM4K",
-  "category": "Administrador"
  }
 ]
