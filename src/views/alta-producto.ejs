@@ -27,8 +27,8 @@
 
             <section class="flex-linea">
                 <div class="flex-columna">
-                    <label for="mascota">Selecciona una marca:</label>
-                    <select name="marca_id" id="">
+                    <label for="marca">Selecciona una marca:</label>
+                    <select name="marca_id" id="marca">
                         <% marcas.forEach(marca => { %> 
                             <option value="<%= marca.id %>"><%= marca.marca %></option>
                         <% }) %>
@@ -80,8 +80,8 @@
             <textarea name="descripcion" id="descripcion" placeholder="Ingresa la información que describa lo mejor posible el producto"></textarea>
 
             <section class="flex-linea">
-                <label for="imagen-producto">Imagen de producto:</label>
-                <input type="file" name="imagen_producto">
+                <label for="imagen">Imagen de producto:</label>
+                <input type="file" name="imagen">
             </section>
 
             

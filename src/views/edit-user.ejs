@@ -57,6 +57,15 @@
                 <label class="error"><i style="color: red; font-size: 16px; margin-right: 5px; margin-left: 5px;" class="fa-sharp fa-solid fa-circle-exclamation"></i><%= errors.passwordrepeat.msg %></label>
             <% } %>
 
+            
+            <p class="<%= (locals.errors && locals.errors.passwordrepeat) ? 'titulo-error' : 'titulo' %>">Permisos:</p>
+            <label for="permisos">Selecciona un permiso:</label>
+                    <select name="permiso_id" id="permisos">
+                        <% permisos.forEach(permiso => { %> 
+                            <option value="<%= permiso.id %>"><%= permiso.titulo %></option>
+                        <% }) %>
+                    </select>
+
             <button type="submit">Guardar cambios</button>
 
 

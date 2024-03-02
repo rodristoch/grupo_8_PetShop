@@ -13,15 +13,6 @@ const usersFilePath = path.join(__dirname, '../data/usersDataBase.json');
 
 const userController = {
 
-    pruebaDb: (req, res) => {
-
-        db.Usuario.findAll()
-        .then(function(usuarios){
-            res.render("prueba.ejs", {usuarios})
-        })
-        
-    },
-    
     login : (req, res) => {
         //usuario q se loguea
         const userALoguearse = req.session.userLogueado
@@ -103,13 +94,25 @@ const userController = {
             const usuarioCreado = await db.Usuario.create({
                 nombre: req.body.nombre,
                 apellido: req.body.apellido,
-                imagen: req.file ? req.file.filename : "/img/default.jpg",
                 email: req.body.email,
                 password: bcrypt.hashSync(req.body.password, 10),
-                permiso_id: 2 // Asegúrate de establecer el permiso_id aquí
+                imagen: req.file ? req.file.filename : "/img/default.jpg",
+                permiso_id: 2  //ID de invitado
             });
-    
-            res.redirect("/users/perfil/" + usuarioCreado.id);
+
+            //Validaciones con la info del request
+            const validationResults = validationResult(req); 
+
+            if(validationResults.errors.length > 0){ //si hubo errores de validacion
+
+            //renderizo la vista y le mando la info q llega del formulario con los errores y la info bien completada
+            res.render("register", {errors: validationResults.mapped(), oldData: req.body, userALoguearse});
+
+            } else {  //si no hubo errores de validacion
+
+                res.redirect("/users/perfil/" + usuarioCreado.id);
+            }
+
         } catch (error) {
             console.error("Error al crear el usuario:", error);
             res.status(500).send("Error interno del servidor");
@@ -140,14 +143,20 @@ const userController = {
             const userALoguearse = req.session.userLogueado;
     
             // Traer los usuarios desde la base de datos
-            db.Usuario.findByPk(req.params.id)
-                .then(userToEdit => {
-                    if (!userToEdit) {
+            let usuarios = db.Usuario.findByPk(req.params.id, {
+                include: ["permisos"]
+            })
+
+            let permisos = db.Permiso.findAll();
+
+            Promise.all([usuarios, permisos])
+                .then(([userToEdit, permisos]) => {
+                    if (!userToEdit) { //si no encuentra al usuario
                         return res.status(404).send("Usuario no encontrado");
+                    } else {
+                        // Renderizar la vista de edición con los datos del usuario y el usuario logueado
+                        res.render("edit-user", { userToEdit, permisos, userALoguearse });
                     }
-    
-                    // Renderizar la vista de edición con los datos del usuario y el usuario logueado
-                    res.render("edit-user", { userToEdit, userALoguearse });
                 })
                 .catch(error => {
                     console.error("Error al buscar el usuario:", error);
@@ -158,8 +167,46 @@ const userController = {
             res.status(500).send("Error interno del servidor");
         }
     },
+
+    processEdit2: (req, res) => {
+
+        // Usuario que se ha logueado
+        const userALoguearse = req.session.userLogueado;
+
+        let userToEdit = req.params.id;
+
+        db.Usuario.update(
+            {
+                nombre: req.body.nombre,
+                apellido: req.body.apellido,
+                email: req.body.email,
+                password: bcrypt.hashSync(req.body.password, 10),
+                imagen: req.file ? req.file.filename : userToEdit.imagen,
+                permiso_id: req.body.permiso_id
+            },
+            {
+                where: {id: userToEdit}
+            })
+        .then(() => {
+
+            //Validaciones con la info del request
+            const validationResults = validationResult(req); 
+
+            if(validationResults.errors.length > 0){ //si hubo errores de validacion
+ 
+                //renderizo la vista y le mando la info q llega del formulario con los errores y la info bien completada
+                res.render("edit-user", {errors: validationResults.mapped(), userToEdit: req.body, userALoguearse});
+
+            } else {
+
+                res.redirect("/");
+
+            }
+        })            
+        .catch(error => res.send(error))
+
+    },
     
-        
     processEdit: async (req, res) => {
         try {
             // Usuario que se ha logueado
@@ -252,6 +299,60 @@ const userController = {
 
     },
 
+    /* register: (req, res) => {
+
+        //METODO CON JSONS
+
+        //usuario q se loguea
+        const userALoguearse = req.session.userLogueado
+
+        res.render("register.ejs", {userALoguearse});
+    },
+
+    processRegister: (req, res) => {
+
+        //METODO CON JSONS
+
+        //usuario q se loguea
+        const userALoguearse = req.session.userLogueado
+
+        //traigo los usuarios
+        const users = JSON.parse(fs.readFileSync(usersFilePath, 'utf-8'));
+
+        //creo uno nuevo
+        const newUser = {
+			id: users[users.length - 1].id + 1,
+			nombre: req.body.nombre,
+            apellido: req.body.apellido,
+            image: req.file!= undefined ? req.file.filename : "/img/default.jpg",
+			email: req.body.email, 
+            password: bcrypt.hashSync(req.body.password, 10),
+            category: "Invitado"
+		}
+
+        //Validaciones con la info del request
+        const validationResults = validationResult(req); 
+
+        if(validationResults.errors.length > 0){ //si hubo errores de validacion
+
+            //renderizo la vista y le mando la info q llega del formulario con los errores y la info bien completada
+            res.render("register", {errors: validationResults.mapped(), oldData: req.body, userALoguearse});
+
+        } else {  //si no hubo errores de validacion
+
+            //lo pusheo al array al nuevo
+            users.push(newUser);
+
+            //escribo el json
+		    fs.writeFileSync(usersFilePath, JSON.stringify(users, null, " "));
+
+            res.redirect("/users/perfil/" + newUser.id) 
+
+            
+        }
+
+    }, */
+
     /* carrito : (req, res) => {
 
         //METODO CON JSONS
@@ -339,6 +440,70 @@ const userController = {
 
         }
 
+    }, */
+
+    /* edit: (req, res) => {
+
+        //METODO CON JSONS
+
+        //usuario q se loguea
+        const userALoguearse = req.session.userLogueado
+       
+        //traigo los usuarios
+        const users = JSON.parse(fs.readFileSync(usersFilePath, 'utf-8'));
+
+        //busco al usuario a editar por id
+		const userToEdit = users.find(user => {return user.id == req.params.id})
+
+		res.render("edit-user", {userToEdit, userALoguearse});
+	}, */
+        
+
+    /* processEdit: (req, res) => {
+
+        //METODO CON JSONS
+
+        //usuario q se loguea
+        const userALoguearse = req.session.userLogueado
+
+        //traigo los usuarios
+        const users = JSON.parse(fs.readFileSync(usersFilePath, 'utf-8'));
+
+        //busco al usuario a editar por id
+		let userToEdit = users.find(user => {return user.id == req.params.id}) 
+
+        // Creamos el usuario "nuevo" que va a reemplazar al anterior
+        userToEdit = {
+			id: userToEdit.id,
+			nombre: req.body.nombre,
+            apellido: req.body.apellido,
+            image:  req.file!= undefined ? req.file.filename : userToEdit.image,
+			email: req.body.email, 
+            password: bcrypt.hashSync(req.body.password, 10),
+            category: req.body.category
+		}
+
+        // Buscamos la posicion del user a editar
+		let indice = users.findIndex(user => {return user.id == req.params.id})
+
+        //Validaciones con la info del request
+        const validationResults = validationResult(req); 
+
+        if(validationResults.errors.length > 0){ //si hubo errores de validacion
+ 
+            //renderizo la vista y le mando la info q llega del formulario con los errores y la info bien completada
+            res.render("edit-user", {errors: validationResults.mapped(), userToEdit: req.body, userALoguearse});
+
+        } else {
+
+            users[indice] = userToEdit;
+
+            fs.writeFileSync(usersFilePath, JSON.stringify(users, null, " "));
+    
+            res.redirect("/");
+
+        }
+       
     }, */
 
 

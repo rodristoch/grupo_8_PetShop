@@ -569,7 +569,8 @@ const productController = {
                tipo_mascota_id: req.body.tipo_mascota_id,
                marca_id: req.body.marca_id
             })
-        res.redirect("/")
+            
+        .then(() => {res.redirect("/")})
     },
 
     editar : (req, res) => {
@@ -630,7 +631,7 @@ const productController = {
             {
                 where: {id: productoId}
             })
-        .then(()=> {
+        .then(() => {
             return res.redirect("/")})            
         .catch(error => res.send(error))
     },
@@ -655,9 +656,9 @@ const productController = {
             where: {
                 id: productoId
             },
-            force: true
-        }) // force: true es para asegurar que se ejecute la acción
-        .then(()=>{
+            force: true   // force: true es para asegurar que se ejecute la acción
+        }) 
+        .then(() => {
             return res.redirect('/')})
         .catch(error => res.send(error)) 
     },

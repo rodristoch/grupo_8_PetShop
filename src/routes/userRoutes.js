@@ -49,7 +49,7 @@ router.get("/perfil/:id", userController.perfil);
 
 // Editar un usuario
 router.get("/edit/:id", authMiddleware, userController.edit);
-router.put("/edit/:id", validaciones, userController.processEdit);
+router.put("/edit/:id", validaciones, userController.processEdit2);
 
 //Login
 router.get("/login", userController.login) 
@@ -61,12 +61,7 @@ router.get("/logout", userController.logout)
 //Carrito 2 
 router.get("/carrito2", /* authMiddleware */ userController.carrito2)
 
-//Prueba de DB
-router.get("/pruebaDb", userController.pruebaDb)
-router.get("/pruebasParaDb", productController.comidaPerro)
-
 //Chequear si estamos logueados
-
 router.get("/check", function(req, res){
     if(req.session.userLogueado == undefined){
         res.send("No estas logueado")
