@@ -650,6 +650,14 @@ const productController = {
         .catch(error => res.send(error)) 
     },
 
+    buscar: (req, res) => {
+
+        const userALoguearse = req.session.userLogueado
+
+        db.Producto.findAll()
+        .then(Productos => {return res.render("busqueda.ejs", {userALoguearse, Productos})})
+    }
+
     /* alta : (req, res) => {
 
         //usuario q se loguea

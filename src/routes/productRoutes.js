@@ -64,4 +64,8 @@ router.put('/editar/:id', upload.single("imagen_producto"), productController.ed
 // Eliminar producto
 router.delete("/eliminar/:id", productController.destroy)
 
+// Buscar prdocuto
+router.get('/buscar', productController.buscar)
+router.post('/buscar', productController.buscar)
+
 module.exports = router; 
