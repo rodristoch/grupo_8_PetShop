@@ -650,12 +650,26 @@ const productController = {
         .catch(error => res.send(error)) 
     },
 
-    buscar: (req, res) => {
-
-        const userALoguearse = req.session.userLogueado
-
-        db.Producto.findAll()
-        .then(Productos => {return res.render("busqueda.ejs", {userALoguearse, Productos})})
+    buscar: async (req, res) => {
+        const userALoguearse = req.session.userLogueado;
+    
+        try {
+            const nombreProducto = req.body.producto;
+            const Productos = await db.Producto.findAll({
+                where: {
+                    nombre: {
+                        [Op.iLike]: `%${nombreProducto}%`
+                    }
+                }
+            });
+    
+            Productos
+                ? res.render("busqueda.ejs", { userALoguearse, Productos })
+                : res.render("busqueda.ejs", { userALoguearse, Productos: [] });
+        } catch (error) {
+            console.error('Error en la búsqueda de productos:', error);
+            res.status(500).send('Error en la búsqueda de productos.');
+        }
     }
 
     /* alta : (req, res) => {

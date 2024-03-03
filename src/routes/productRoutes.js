@@ -66,6 +66,16 @@ router.delete("/eliminar/:id", productController.destroy)
 
 // Buscar prdocuto
 router.get('/buscar', productController.buscar)
-router.post('/buscar', productController.buscar)
+/* router.post('/buscar', productController.buscar) */
+router.post('/buscar', async (req, res) => {
+    try {
+        const { producto } = req.body;
+        const resultados = await productController.buscar(producto);
+        res.render('busqueda.ejs', { resultados });
+    } catch (error) {
+        console.error(error);
+        res.status(404).send('Error en la búsqueda de productos.');
+    }
+})
 
 module.exports = router; 

@@ -8,7 +8,29 @@
     <%- include("./partials/header2.ejs") %>
     
     <main>
-        <p>prueba</p>
+        <% for(let producto of Productos) { %>
+            <article class="articulo-productos-descuentos">
+                <a href="/productos/detalle/<%= producto.id %>">
+                    <div class="contenedor_imagen">
+                        <img class="img-productos-descuentos" src="/img/productos/<%= producto.imagen %>" alt="imagen_producto">
+                    </div>
+                </a>
+                <div>
+                    <div class="texto_nombre_arriba">
+                        <h4><%= producto.nombre %></h4>
+                    </div>
+                    <div class="texto_description_arriba">
+                        <P><%= producto.descripcion %></P>
+                    </div>
+                    <div>
+                        <h3 class="precio">$ <%= producto.precio %></h3>
+                    </div>
+                    <div class="div-boton-comprar">
+                        <button class="boton-comprar" type="submit">Agregar</button>
+                    </div>
+            </article>
+                    
+        <% } %>
     </main>
 
     <%- include("./partials/footer.ejs") %>
