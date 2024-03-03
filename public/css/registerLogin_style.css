@@ -235,7 +235,13 @@ button:hover {
     border: 1px solid #ffffff;
 }
 
+.semibold {
+    font-weight: 400;
+    text-align: left;
+}
+
 .btn-secundario {
+    margin-top: -2px;
     height: 48px;
     color: #18515F;
     background-color: white;
