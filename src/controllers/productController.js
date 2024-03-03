@@ -13,7 +13,7 @@ const productsFilePath = path.join(__dirname, "../data/productosDataBase.json");
 const productController = {
 
     categoriaPerro : (req, res) => {
-        const productos = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'));
+        /* const productos = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'));
 
         //productos perros
         const productosPerro = productos.filter(product => {return product.id_pet == "Perro"});
@@ -26,7 +26,23 @@ const productController = {
         //usuario q se loguea
         const userALoguearse = req.session.userLogueado
 
-        res.render('categoria-perro.ejs', {productosPerro, unProducto, userALoguearse});
+        res.render('categoria-perro.ejs', {productosPerro, unProducto, userALoguearse}); */
+
+        const userALoguearse = req.session.userLogueado
+
+        db.Producto.findAll({
+            where: {
+                tipo_mascota_id: 2,
+            }
+        })
+        .then(function(productosPerro){
+            res.render('categoria-perro.ejs', {productosPerro, userALoguearse});
+        })
+        .catch(function (error){
+            console.error('Error al recuperar productos', error);
+        });
+
+
     },
 
     categoriaGato : (req, res) => {
