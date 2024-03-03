@@ -13,20 +13,7 @@ const productsFilePath = path.join(__dirname, "../data/productosDataBase.json");
 const productController = {
 
     categoriaPerro : (req, res) => {
-        /* const productos = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'));
 
-        //productos perros
-        const productosPerro = productos.filter(product => {return product.id_pet == "Perro"});
-
-         //ID de producto
-         const unProducto = productos.find (producto => {
-            return producto.id == req.params.id
-        })
-
-        //usuario q se loguea
-        const userALoguearse = req.session.userLogueado
-
-        res.render('categoria-perro.ejs', {productosPerro, unProducto, userALoguearse}); */
 
         const userALoguearse = req.session.userLogueado
 
@@ -47,20 +34,22 @@ const productController = {
 
     categoriaGato : (req, res) => {
 
-        const productos = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'));
 
-        //productos gatos
-        const productosGato = productos.filter(product => {return product.id_pet == "Gato"});
-
-        //ID de producto
-        const unProducto = productos.find (producto => {
-            return producto.id == req.params.id
-        })
-
-        //usuario q se loguea
         const userALoguearse = req.session.userLogueado
 
-        res.render('categoria-gato.ejs', {productosGato, unProducto, userALoguearse});
+        db.Producto.findAll({
+            where: {
+                tipo_mascota_id: 1,
+            }
+        })
+        .then(function(productosGato){
+            res.render('categoria-gato.ejs', {productosGato, userALoguearse});
+        })
+        .catch(function (error){
+            console.error('Error al recuperar productos', error);
+        });
+
+
     },
 
     promociones : (req, res) => {
@@ -161,24 +150,6 @@ const productController = {
 
     comidaPerro : (req, res) => {
 
-        /* //usuario q se loguea
-        const userALoguearse = req.session.userLogueado
-
-        const productos = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'));
-
-        //productos perros
-        const productosPerro = productos.filter(product => {return product.id_pet == "Perro"});
-
-		//productos comida perros
-		const comidaPerro = productosPerro.filter(product => {return product.category == "Comida"});
-
-         //ID de producto
-         const unProducto = productos.find (producto => {
-            return producto.id == req.params.id
-        })
-        res.render('comidaPerro.ejs', {comidaPerro, unProducto, userALoguearse}); */
-
-        // usuario que se loguea
 
         const userALoguearse = req.session.userLogueado
          
