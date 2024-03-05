@@ -37,16 +37,18 @@
             </form>
 
             <!--CTA princcipal -->
-            <button type="submit">Agregar al carrito</button>
+            <button class="boton_agregar" type="submit">Agregar al carrito</button>
 
             <!-- CTA edición de producto -->
             <% if(userALoguearse && userALoguearse.permiso_id == 1){ %>
-                <a href="/productos/editar/<%= producto.id %>" class="boton_editar">
-                    <p class="texto_boton">Editar producto</p>
-                 </a>
+                <button class="boton_editar">
+                    <a class="editar" href="/productos/editar/<%= producto.id %>">
+                        Editar producto
+                    </a>
+                </button>
                  <!-- CTA eliminar producto -->
                  <form action="/productos/eliminar/<%= producto.id %>?_method=DELETE" method="POST">
-                    <button type="submit" class="boton_eliminar">Eliminar producto</button>
+                    <button type="submit" class="boton_eliminar" >Eliminar producto</button>
                 </form>
             <% } %>
             

@@ -130,6 +130,7 @@ a {
     flex-direction: column;
     align-items: left;
 }
+
 .titulo_nombre {
     font-size: 22px;
     font-weight: 400;
@@ -148,37 +149,79 @@ a {
 }
 
 /* --- Botones ---  */
-button {
-    border: none;
-    border-radius: 8px;
-    color: white;
-    background-color: #18515F;
-    padding: 10px 17px;
-    text-align: center;
-    text-decoration: none;
-    width: 90%;
-    font-size: 12px;
-    margin: 15px;
-    cursor: pointer;
-    transition: 250ms;
-}
 
-button:hover{
-    background-color: #0a323c;
-}
+.boton_agregar{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    font-size: 16px;
+    padding: 10px;
+    background-color: #1e697b;
+    border-radius: 8px;
+    width: 70%;
+    margin: auto;
+    margin-top: 20px;
+    text-align: center;
+    cursor: pointer;
+    transition: 350ms;
+    border: 1px solid black;
+}   
 
 .boton_editar{
     display: flex;
     justify-content: center;
     align-items: center;
     color: black;
-    background-color: rgb(237, 249, 67);
+    font-size: 16px;
+    padding: 10px;
+    background-color: rgb(246, 246, 88);
     border-radius: 8px;
-    height: 32px;
-    width: 50%;
-    margin: 0 auto;
+    width: 70%;
+    margin: auto;
+    margin-top: 10px;
+    margin-bottom: 10px;
     text-align: center;
-}   
+    cursor: pointer;
+    transition: 350ms;
+    border: 1px solid #88702c;
+} 
+
+.boton_eliminar{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    font-size: 16px;
+    padding: 10px;
+    background-color: rgb(190, 8, 8);
+    border-radius: 8px;
+    width: 70%;
+    margin: auto;
+    margin-bottom: 15px;
+    text-align: center;
+    cursor: pointer;
+    transition: 350ms;
+    border: 1px solid black;
+} 
+
+ 
+
+.boton_agregar:hover{
+    background-color: #349fba;
+}
+
+.boton_editar:hover{
+    background-color: #cda840;
+}
+
+.boton_eliminar:hover{
+    background-color: rgb(132, 11, 11);
+}
+
+.editar {
+    color: black;
+}
 
 .texto_boton {
     font-size: 13px;
@@ -187,21 +230,6 @@ button:hover{
 /* form {
     width: 90%;
 } */
-
-.boton_eliminar{
-    border: none;
-    border-radius: 8px;
-    color: white;
-    background-color: #da342c;
-    padding: 10px 17px;
-    text-align: center;
-    text-decoration: none;
-    width: 50%;
-    font-size: 12px;
-    margin: 15px;
-    cursor: pointer;
-    transition: 250ms;
-}
 
 /* --- Reel productos ---  */
 .section-productos-descuentos {
@@ -256,6 +284,7 @@ button:hover{
     overflow: hidden;
     text-overflow: ellipsis; 
 }
+
 
 
 /* --------------------------Main----------------------------------- */

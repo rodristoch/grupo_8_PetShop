@@ -630,7 +630,8 @@ const productController = {
         let productoId = req.params.id;
 
         db.Producto.findByPk(productoId)
-        .then((producto) => {
+        
+        .then(producto => {
             return res.render("detalle.ejs", {producto, userALoguearse})})
         .catch(error => res.send(error))
     },
