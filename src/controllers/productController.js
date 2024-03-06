@@ -397,6 +397,10 @@ const productController = {
             where: {
                 marca_id: 12
             },
+            include: [{
+                model: db.Descuento,
+                as: 'descuentos',
+            }],
             limit: 4
         })
 
@@ -405,6 +409,10 @@ const productController = {
             where: {
                 marca_id: 5
             },
+            include: [{
+                model: db.Descuento,
+                as: 'descuentos',
+            }],
             limit: 4
         })
 
@@ -413,6 +421,10 @@ const productController = {
             where: {
                 marca_id: 11
             },
+            include: [{
+                model: db.Descuento,
+                as: 'descuentos',
+            }],
             limit: 4
         })
 
@@ -421,6 +433,10 @@ const productController = {
             where: {
                 marca_id: 4
             },
+            include: [{
+                model: db.Descuento,
+                as: 'descuentos',
+            }],
             limit: 4
         })
 
@@ -429,6 +445,10 @@ const productController = {
             where: {
                 marca_id: 16
             },
+            include: [{
+                model: db.Descuento,
+                as: 'descuentos',
+            }],
             limit: 4
         })
 
@@ -445,7 +465,7 @@ const productController = {
         //usuario q se loguea
         const userALoguearse = req.session.userLogueado
 
-        let productos = db.Producto.findAll({
+        db.Producto.findAll({
             include: ["marcas"],
             where: {
                 marca_id: 12,
@@ -456,10 +476,7 @@ const productController = {
             }],
         })
 
-        let descuentos = db.Descuento.findAll();
-
-        Promise.all([productos, descuentos])
-        .then(([ProductosEukanuba, descuentos]) => {return res.render("marcasTodas.ejs", {userALoguearse, ProductosEukanuba, descuentos})})
+        .then(ProductosEukanuba => {return res.render("marcasTodas.ejs", {userALoguearse, ProductosEukanuba})})
 
     },
 
@@ -476,7 +493,7 @@ const productController = {
             include: [{
                 model: db.Descuento,
                 as: 'descuentos',
-            }],
+            }]
         })
 
         .then(ProductosProplan => {return res.render("marcasTodas.ejs", {userALoguearse, ProductosProplan})})
@@ -492,7 +509,11 @@ const productController = {
             include: ["marcas"],
             where: {
                 marca_id: 11
-            }
+            },
+            include: [{
+                model: db.Descuento,
+                as: 'descuentos',
+            }]
         })
 
         .then(ProductosRoyal => {return res.render("marcasTodas.ejs", {userALoguearse, ProductosRoyal})})
@@ -508,7 +529,11 @@ const productController = {
             include: ["marcas"],
             where: {
                 marca_id: 4
-            }
+            },
+            include: [{
+                model: db.Descuento,
+                as: 'descuentos',
+            }]
         })
 
         .then(ProductosCancat => {return res.render("marcasTodas.ejs", {userALoguearse, ProductosCancat})})
@@ -524,7 +549,11 @@ const productController = {
             include: ["marcas"],
             where: {
                 marca_id: 16
-            }
+            },
+            include: [{
+                model: db.Descuento,
+                as: 'descuentos',
+            }]
         })
 
         .then(ProductosCatit => {return res.render("marcasTodas.ejs", {userALoguearse, ProductosCatit})})
