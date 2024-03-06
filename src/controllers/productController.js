@@ -20,7 +20,11 @@ const productController = {
         db.Producto.findAll({
             where: {
                 tipo_mascota_id: 2,
-            }
+            },
+            include: [{
+                model: db.Descuento,
+                as: 'descuentos',
+            }],
         })
         .then(function(productosPerro){
             res.render('categoria-perro.ejs', {productosPerro, userALoguearse});
@@ -40,7 +44,11 @@ const productController = {
         db.Producto.findAll({
             where: {
                 tipo_mascota_id: 1,
-            }
+            },
+            include: [{
+                model: db.Descuento,
+                as: 'descuentos',
+            }],
         })
         .then(function(productosGato){
             res.render('categoria-gato.ejs', {productosGato, userALoguearse});
@@ -117,6 +125,7 @@ const productController = {
         })
 
         .then(productosPerroConDescuento => {
+            /* res.send(productosPerroConDescuento) */
                 return res.render("promociones-perro.ejs", {userALoguearse, productosPerroConDescuento})
         })
         

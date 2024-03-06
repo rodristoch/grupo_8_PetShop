@@ -98,6 +98,7 @@
                                         <p class="precio-tachado">$ <%= producto.precio %></p>
                                     </div>
                                     <div>
+                                        <p class="descuento"><%= producto.descuentos[0].descripcion %></p>
                                         <p class="descuento">20% off</p>
                                     </div>
                                     <div>
@@ -106,6 +107,7 @@
                                     <div class="div-boton-comprar">
                                         <button class="boton-comprar" type="submit">Agregar</button>
                                     </div>
+                                </div>
                             </article>
                                         
                         <% } %>
