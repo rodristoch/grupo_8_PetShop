@@ -27,7 +27,7 @@ const productController = {
             }],
         })
         .then(function(productosPerro){
-            res.render('categoria-perro.ejs', {productosPerro, userALoguearse});
+            res.render('categoria.ejs', {productosPerro, userALoguearse});
         })
         .catch(function (error){
             console.error('Error al recuperar productos', error);
@@ -51,7 +51,7 @@ const productController = {
             }],
         })
         .then(function(productosGato){
-            res.render('categoria-gato.ejs', {productosGato, userALoguearse});
+            res.render('categoria.ejs', {productosGato, userALoguearse});
         })
         .catch(function (error){
             console.error('Error al recuperar productos', error);
