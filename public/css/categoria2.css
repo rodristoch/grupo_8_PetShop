@@ -1,0 +1,634 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap');
+
+
+/* --- Estilos generales --- */
+
+body {
+    font-family:'Roboto';
+    margin: 0;
+    padding: 0;
+}
+
+* {
+  box-sizing: border-box;
+}
+h4 {
+    margin-top: 12px;
+    margin-bottom: 0px;
+}
+
+.flex-enlinea {
+    margin-top: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.flex_enlinea_menu {
+    display: flex;
+    padding-left: 12px;
+    margin-bottom: -20px; 
+}
+
+/* --- cantidad productos --- */
+.cantidad_productos {
+    margin-left: 24px;
+    margin-top: 40px;
+}
+
+/* --- botones iconos --- */
+
+button {
+    border: none;
+    width: 80%;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    width: 100%;
+    font-size: 18px;
+    margin: 16px 0px 16px 0px;
+    cursor: pointer;
+}
+
+
+.btn-icon {
+    display: flex;
+    width: 160px;
+    height: 40px;
+    align-items: center;
+    justify-content:center;
+    color: #1b1b1b;
+    background-color: rgb(238, 238, 238);
+    cursor: pointer;
+    gap: 12px;
+    border-radius: 12px;
+}
+
+.btn-icon:hover{
+    background-color: rgb(241, 241, 241) ;
+}
+
+svg {
+    height: 20px;
+    width: 20px;
+    color: #18515F;
+}
+
+
+
+/* --- Menu Ordenar --- */
+.seccion-menu-ordenar {
+    display: none;
+    background-color: white;
+    position: absolute;
+    width: 100%;
+    top: 0;
+    left: 0;
+
+}
+.flex-linea-close svg {
+    height: 36px;
+    width: 36px;
+    color: #18515F;
+
+}
+.contendor_opciones {
+    display: flex;
+    justify-content: center;
+    background-color: rgb(234, 234, 234);
+    padding: 24px 0px ;
+    height: 90vh;
+   }
+.ordenar {
+    display: flex;
+    align-items: flex-start;
+    flex-direction: column;
+    background-color: white;
+    width: 90%;
+    height: fit-content;
+    border-radius: 8px;
+}
+.opciones {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding-left: 12px;
+}
+input[type="radio"] {
+    height: 24px;
+    width: 24px;
+}
+
+.input[type="radio"]:checked {
+    border: none;
+    border: 1px solid #18515F;
+}
+.flex-linea-close {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 16px;
+}
+
+/* --- Menu Desktop --- */
+.contenedor_menu_productos_desktop {
+ display: flex;
+ flex-direction: row;
+ margin: auto;
+ width: 98%;
+
+}
+.contenedor_menu_desktop {
+    width: 24%;
+    border: 1px rgb(180, 180, 180) solid;
+    border-radius: 8px;
+    height: fit-content;
+}
+.contenedor_filtros {
+    width: 85%;
+    margin: 12px auto;
+}
+
+.lista_filtros_desktop {
+    margin-top: 12px;
+    margin-bottom: 22px;
+    display: flex;
+    flex-direction: column;
+}
+
+/* --- Lista productos desktop --- */
+.lista_desktop {
+    width: 76%;
+    margin: 12px auto;
+}
+
+.lista_flexbox_desktop {
+    display: flex;
+    flex-wrap: wrap ;
+    justify-content: space-around;
+
+}
+
+/* --- Lista productos mobile --- */
+.lista {
+    width: 90%;
+    margin: 12px auto;
+}
+
+.lista_flexbox {
+    display: flex;
+    flex-wrap: wrap ;
+    justify-content: space-around;
+
+}
+/* --- Card producto --- */
+.articulo-productos-descuentos {
+    width: 49%;
+    border: 1px solid rgb(129, 129, 129);
+    border-radius: 5px;
+    padding: 15px;
+    margin-bottom: 15px;
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+.img-productos-descuentos {
+    width: 90%;
+    border-radius: 5px;
+}
+
+.descripcion {
+    font-size: 14px;
+}
+.precio-tachado {
+    font-weight: 300;
+    text-decoration: line-through;
+}
+
+.descuento {
+    margin-top: -10px;
+    color: #24768b;
+    font-weight: 400;
+    font-size: 14px;
+}
+.precio {
+    font-weight: 600;
+}
+
+.espacio_precio {
+    height: 28px;
+}
+.espacio_descuento {
+    height: 28px;
+}
+
+.boton-comprar {
+    text-align: center;
+    background-color: #1e697b;
+    color: white;
+    width: 90%;
+    height: 40px;
+    border-radius: 5px;
+    border: none;
+    font-size: 16px;
+    padding: 5px;
+    text-align: center;
+    margin: auto;
+}
+
+
+.contenedor_imagen {
+    padding-top: 12px;
+    display: flex;
+    align-items: flex-start;
+    justify-content:center;
+    background-color: white;
+    height: 140px;
+   overflow: hidden;
+}
+
+.contenedor_imagen .img-productos-descuentos {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.texto_nombre_arriba {
+    max-height: 50px; 
+    overflow: hidden;
+    text-overflow: ellipsis; 
+}
+.texto_descripcion_arriba {
+    max-height: 50px; 
+    overflow: hidden;
+    text-overflow: ellipsis; 
+}
+
+.texto_precio {
+    max-height: 15px; 
+    overflow: hidden;
+    text-overflow: ellipsis; 
+}
+/* --- Media Query --- */
+
+/* --------------------------header----------------------------------- */
+.top {
+    background-color: #18515F;
+    height: 20%;
+    width: 100vw;
+    }
+    
+    .flex-top {
+        width: 100vw;
+        height: 20%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+    
+    .logo {
+        width: 15%;
+        height: 60%;
+        margin: 10px;
+        margin-right: 1px;
+    }
+    
+    .titulo-head {
+        display: none;
+        width: 15%;
+        font-family: 'Amatic SC';
+        font-size: 60px;
+        color: white;
+        margin-left: 0.1px;
+        margin-top: 10px;
+        
+    }
+    
+    .logo-titulo-jun {
+        display: none;
+    }
+    
+    .barra {
+        width: 28%;
+        font-family: 'Roboto';
+        font-size: 20px;
+        color: white;
+        margin-right: 10px;
+    }
+    
+    .barra input[type="search"] {
+        border-radius: 10px; 
+        padding: 10px; 
+        width: 200px; 
+        box-sizing: border-box; 
+        border: 1px solid #ccc; 
+    }
+    
+    
+    .mi-cuenta, .mis-compras {
+        display: none;
+    }
+    
+    
+    .menu-top {
+        display: block;
+        text-align: right;
+        margin-right: 40px;
+        margin-top: 10px;
+    
+    }
+    
+    .carrito {
+        display: block;
+    }
+    
+    .logo-carrito-tablet {
+        display: none;
+    }
+    
+    .logo-carrito-mobile {
+        display: block;
+        text-align: right;
+        margin-right: 20px;
+        margin-top: 10px;
+    }
+    
+    .carrito-text {
+        display: none;
+    }
+    
+    .header2 {
+        display: none;
+    }
+    /* --------------------------header----------------------------------- */
+
+
+    /* --------------------------footer----------------------------------- */
+footer {
+    background-color: #18515F;
+    display: flex;
+}
+
+.logo2 {
+    width: 3%;
+    height: 30%;
+    padding: 60px;
+    display: none;
+}
+
+.nosotros {
+    color: white;
+    text-align: justify;
+    margin: auto;
+    font-size: 12px;
+}
+
+.todo-perro {
+    color: white;
+    text-align: justify;
+    margin: auto;
+    font-size: 12px;
+}
+
+.todo-gato {
+    color: white;
+    text-align: justify;
+    margin: auto;
+    font-size: 12px;
+}
+
+.contacto {
+    color: white;
+    text-align: justify;
+    margin: auto;
+    font-size: 12px;
+}
+
+.redes-sociales {
+    color: white;
+    text-align: justify;
+    margin: auto;
+    font-size: 12px;
+}
+
+.facebook-tablet, .twitter-tablet, .instagram-tablet {
+    display: none;
+}
+
+.rrss-iconos {
+    display: flex;
+    justify-content: space-between;
+}
+/* --------------------------footer----------------------------------- */
+
+@media (min-width:361px){
+    .flex-enlinea {
+        justify-content: space-around;
+    }
+    
+    .cantidad-producto p {
+        display: none;
+    }
+    .contenedor_menu_productos_desktop {
+        display: none;
+    }
+}
+
+@media (min-width: 500px) {
+ 
+}
+
+
+@media (min-width: 769px) {
+    .flex-enlinea {
+        justify-content:flex-end;
+        gap: 12px;
+        padding-right: 12px ;
+    }
+    .ordenar {
+        width: 70%;
+    }
+    .cantidad-producto p {
+        display: block;
+        padding-top: 12px;
+    }
+    .cantidad-producto {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        
+    }
+    .div-section-productos-descuentos {
+        justify-content: space-between;
+    }
+    .articulo-productos-descuentos {
+        width: 30%;
+    }
+    .contenedor_menu_productos_desktop {
+        display: none;
+    }
+    /* --------------------------header----------------------------------- */
+
+
+.titulo-head {
+    display: none;
+    margin: auto;
+}
+
+.barra {
+    margin-left: 50px;
+    margin-right: 1px;
+}
+
+.barra input[type="search"] {
+    width: 45vw; 
+}
+
+.opciones-top {
+    width: 40%;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+.mis-compras {
+    font-family: 'Roboto';
+    display: none;
+    flex-direction: column;
+    text-align: center;
+    margin-right: 10px;
+    margin-left: 50px;
+    margin-top: 40px;
+    margin-bottom: 20px;
+    color: white;
+}
+
+.mi-cuenta {
+    display: none;
+    flex-direction: column;
+    text-align: center;
+    margin-right: 10px;
+    margin-left: 20px;
+    margin-top: 20px;
+    color: white;
+}
+
+.carrito {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    margin-right: 60px;
+    margin-left: 25px;
+    margin-top: 20px;
+    color: white;
+}
+
+.logo-carrito-tablet {
+    display: block;
+}
+
+.logo-carrito-mobile {
+    display: none;
+}
+
+.carrito-text {
+    display: block;
+}
+
+.fa-bars {
+    display: block;
+}
+
+.header2 {
+    display: flex;
+    height: 35px;
+    background-color: #18515F;
+    border-top: 0.1px solid white;
+    border-bottom: 0.3px solid white;
+}
+
+.header2-opciones {
+    color: white;
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    align-items: center;
+    margin: 20px;
+}
+
+
+
+.fa-circle-arrow-down {
+    margin-left: 10px;
+}
+/* --------------------------header----------------------------------- */
+}
+
+@media (min-width: 1024px) {
+    .flex-enlinea {
+        display: none;
+    }
+   
+    .boton-comprar {
+        transition: 450ms;
+    }
+
+    .boton-comprar:hover {
+        background-color: #349fba;
+    }
+    .articulo-productos-descuentos:hover {
+        box-shadow : 0px 0px 20px rgb(140, 140, 140);
+    }
+
+    .articulo-productos-descuentos {
+        width: 22%;
+    }
+
+    .contenedor_menu_productos_desktop {
+        display: block;
+        display: flex;
+    }
+
+    .contenedor_productos_mobile {
+        display: none;
+       
+    }
+
+.flex-top {
+    height: 10%;
+}
+
+.menu-top {
+    display: none;
+}
+
+.fa-bars {
+    display: none;
+}
+
+.barra input[type="search"] {
+    width: 35vw; 
+    margin-left: 60px;
+}
+
+.carrito, .mis-compras, .mi-cuenta {
+    display: block;
+}
+
+.logo-titulo-jun {
+    display: block;
+    margin-left: 30px;
+}
+
+.logo, .titulo-head {
+    display: none;
+}
+/* --------------- header ----------------------------------- */
+
+/* --------------------------footer----------------------------------- */
+.logo2 {
+    display: flex;
+}
+/* --------------------------footer----------------------------------- */
+ }
