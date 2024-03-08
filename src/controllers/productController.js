@@ -126,7 +126,7 @@ const productController = {
 
         .then(productosPerroConDescuento => {
             /* res.send(productosPerroConDescuento) */
-                return res.render("promociones-perro.ejs", {userALoguearse, productosPerroConDescuento})
+                return res.render("promocionesTodas.ejs", {userALoguearse, productosPerroConDescuento})
         })
         
     },
@@ -152,7 +152,7 @@ const productController = {
         })
  
         .then(productosGatoConDescuento => {
-            return res.render("promociones-gato.ejs", {userALoguearse, productosGatoConDescuento})
+            return res.render("promocionesTodas.ejs", {userALoguearse, productosGatoConDescuento})
         })
 
     },
