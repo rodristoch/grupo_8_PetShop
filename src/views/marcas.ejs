@@ -84,40 +84,64 @@
                     <div class="lista_flexbox_desktop">
                         <% for(let producto of eukanuba) { %>
                             <article class="articulo-productos-descuentos">
-                                <a href="/productos/detalle/<%= producto.id %>">
-                                    <div class="contenedor_imagen">
+                                <div class="contenedor_imagen">
+                                    <a href="/productos/detalle/<%= producto.id %>">
                                         <img class="img-productos-descuentos" src="/img/productos/<%= producto.imagen %>" alt="imagen_producto">
-                                    </div>
-                                </a>
-                                <div>
-                                    <div class="texto_nombre_arriba">
-                                        <h4><%= producto.nombre %></h4>
-                                    </div>
-                                    <div class="texto_description_arriba">
-                                        <P><%= producto.descripcion %></P>
-                                    </div>
-                                    <% if(producto.descuentos[0].id == 2) { %>
-                                        <div>
-                                            <p class="precio-tachado">$ <%= producto.precio %></p>
-                                        </div>
-                                        <div>
-                                            <p class="descuento"><%= producto.descuentos[0].descripcion %></p>
-                                            <p class="descuento">20% off</p>
-                                        </div>
-                                        <div>
-                                            <p class="precio"><%= Number((producto.precio*0.8).toFixed(2)) %></p>
-                                        </div>
-                                    <% } else { %>
-                                        <div>
-                                            <p class="precio">$ <%= producto.precio %></p>
-                                        </div>
-                                    <% } %>
-                                    <div class="div-boton-comprar">
-                                        <button class="boton-comprar" type="submit">Agregar</button>
-                                    </div>
+                                    </a>
                                 </div>
-                            </article>
-                                    
+                                <% if(producto.descuentos[0].id == 2) { %>
+                                    <div class="div-card">
+                                        <div class="div-uno">
+                                            <div class="texto_nombre_arriba">
+                                                <h4><%= producto.nombre %></h4>
+                                            </div>
+                                            <div class="texto_description_arriba">
+                                                <P class="descripcion"><%= producto.descripcion %></P>
+                                            </div>
+                                        </div>
+                                        <div class="div-dos">
+                                            <div>
+                                                <p class="descuento"><%= producto.descuentos[0].descripcion %></p>
+                                                <p class="descuento">20% off</p>
+                                            </div>
+                                        </div>
+                                        <div class="div-tres">
+                                            <div class="div-tres-int">
+                                                <p class="precio-tachado">$ <%= producto.precio %></p>
+                                                <p class="precio">$ <%= Number((producto.precio*0.8).toFixed(2)) %></p>
+                                            </div>
+                                            <div class="div-boton-comprar">
+                                                <button class="boton-comprar" type="submit">Agregar</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                <% } else { %>
+                                    <div class="div-card">
+                                        <div class="div-uno">
+                                            <div class="texto_nombre_arriba">
+                                                <h4><%= producto.nombre %></h4>
+                                            </div>
+                                            <div class="texto_description_arriba">
+                                                <P class="descripcion"><%= producto.descripcion %></P>
+                                            </div>
+                                        </div>
+                                        <div class="div-dos">
+                                            <div>
+                                                <p class="descuento" style="color: white;">Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+                                                <p class="descuento" style="color: white;">20% off</p>
+                                            </div>
+                                        </div>
+                                        <div class="div-tres-b">
+                                            <div>
+                                                <p class="precio">$ <%= producto.precio %></p>
+                                            </div>
+                                            <div class="div-boton-comprar">
+                                                <button class="boton-comprar" type="submit">Agregar</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                <% } %>
+                            </article>      
                         <% } %>
                     </div>
                     <h3><a href="/productos/marcas/eukanuba" style="color: #18515F; margin-left: 20px;">Ver todos</a></h3>
@@ -128,40 +152,64 @@
                     <div class="lista_flexbox_desktop">
                         <% for(let producto of proplan) { %>
                             <article class="articulo-productos-descuentos">
-                                <a href="/productos/detalle/<%= producto.id %>">
-                                    <div class="contenedor_imagen">
+                                <div class="contenedor_imagen">
+                                    <a href="/productos/detalle/<%= producto.id %>">
                                         <img class="img-productos-descuentos" src="/img/productos/<%= producto.imagen %>" alt="imagen_producto">
-                                    </div>
-                                </a>
-                                <div>
-                                    <div class="texto_nombre_arriba">
-                                        <h4><%= producto.nombre %></h4>
-                                    </div>
-                                    <div class="texto_description_arriba">
-                                        <P><%= producto.descripcion %></P>
-                                    </div>
-                                    <% if(producto.descuentos[0].id == 2) { %>
-                                        <div>
-                                            <p class="precio-tachado">$ <%= producto.precio %></p>
-                                        </div>
-                                        <div>
-                                            <p class="descuento"><%= producto.descuentos[0].descripcion %></p>
-                                            <p class="descuento">20% off</p>
-                                        </div>
-                                        <div>
-                                            <p class="precio"><%= Number((producto.precio*0.8).toFixed(2)) %></p>
-                                        </div>
-                                    <% } else { %>
-                                        <div>
-                                            <p class="precio">$ <%= producto.precio %></p>
-                                        </div>
-                                    <% } %>
-                                    <div class="div-boton-comprar">
-                                       <button class="boton-comprar" type="submit">Agregar</button>
-                                    </div>
+                                    </a>
                                 </div>
-                            </article>
-                            
+                                <% if(producto.descuentos[0].id == 2) { %>
+                                    <div class="div-card">
+                                        <div class="div-uno">
+                                            <div class="texto_nombre_arriba">
+                                                <h4><%= producto.nombre %></h4>
+                                            </div>
+                                            <div class="texto_description_arriba">
+                                                <P class="descripcion"><%= producto.descripcion %></P>
+                                            </div>
+                                        </div>
+                                        <div class="div-dos">
+                                            <div>
+                                                <p class="descuento"><%= producto.descuentos[0].descripcion %></p>
+                                                <p class="descuento">20% off</p>
+                                            </div>
+                                        </div>
+                                        <div class="div-tres">
+                                            <div class="div-tres-int">
+                                                <p class="precio-tachado">$ <%= producto.precio %></p>
+                                                <p class="precio">$ <%= Number((producto.precio*0.8).toFixed(2)) %></p>
+                                            </div>
+                                            <div class="div-boton-comprar">
+                                                <button class="boton-comprar" type="submit">Agregar</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                <% } else { %>
+                                    <div class="div-card">
+                                        <div class="div-uno">
+                                            <div class="texto_nombre_arriba">
+                                                <h4><%= producto.nombre %></h4>
+                                            </div>
+                                            <div class="texto_description_arriba">
+                                                <P class="descripcion"><%= producto.descripcion %></P>
+                                            </div>
+                                        </div>
+                                        <div class="div-dos">
+                                            <div>
+                                                <p class="descuento" style="color: white;">Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+                                                <p class="descuento" style="color: white;">20% off</p>
+                                            </div>
+                                        </div>
+                                        <div class="div-tres-b">
+                                            <div>
+                                                <p class="precio">$ <%= producto.precio %></p>
+                                            </div>
+                                            <div class="div-boton-comprar">
+                                                <button class="boton-comprar" type="submit">Agregar</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                <% } %>
+                            </article>      
                         <% } %>
                     </div>
                     <h3><a href="/productos/marcas/proplan" style="color: #18515F; margin-left: 20px;">Ver todos</a></h3>
@@ -171,40 +219,64 @@
                     <div class="lista_flexbox_desktop">
                         <% for(let producto of royal) { %>
                             <article class="articulo-productos-descuentos">
-                                <a href="/productos/detalle/<%= producto.id %>">
-                                    <div class="contenedor_imagen">
+                                <div class="contenedor_imagen">
+                                    <a href="/productos/detalle/<%= producto.id %>">
                                         <img class="img-productos-descuentos" src="/img/productos/<%= producto.imagen %>" alt="imagen_producto">
-                                    </div>
-                                </a>
-                                <div>
-                                    <div class="texto_nombre_arriba">
-                                        <h4><%= producto.nombre %></h4>
-                                    </div>
-                                    <div class="texto_description_arriba">
-                                        <P><%= producto.descripcion %></P>
-                                    </div>
-                                    <% if(producto.descuentos[0].id == 2) { %>
-                                        <div>
-                                            <p class="precio-tachado">$ <%= producto.precio %></p>
-                                        </div>
-                                        <div>
-                                            <p class="descuento"><%= producto.descuentos[0].descripcion %></p>
-                                            <p class="descuento">20% off</p>
-                                        </div>
-                                        <div>
-                                            <p class="precio"><%= Number((producto.precio*0.8).toFixed(2)) %></p>
-                                        </div>
-                                    <% } else { %>
-                                        <div>
-                                            <p class="precio">$ <%= producto.precio %></p>
-                                        </div>
-                                    <% } %>
-                                    <div class="div-boton-comprar">
-                                        <button class="boton-comprar" type="submit">Agregar</button>
-                                    </div>
+                                    </a>
                                 </div>
-                            </article>
-                                    
+                                <% if(producto.descuentos[0].id == 2) { %>
+                                    <div class="div-card">
+                                        <div class="div-uno">
+                                            <div class="texto_nombre_arriba">
+                                                <h4><%= producto.nombre %></h4>
+                                            </div>
+                                            <div class="texto_description_arriba">
+                                                <P class="descripcion"><%= producto.descripcion %></P>
+                                            </div>
+                                        </div>
+                                        <div class="div-dos">
+                                            <div>
+                                                <p class="descuento"><%= producto.descuentos[0].descripcion %></p>
+                                                <p class="descuento">20% off</p>
+                                            </div>
+                                        </div>
+                                        <div class="div-tres">
+                                            <div class="div-tres-int">
+                                                <p class="precio-tachado">$ <%= producto.precio %></p>
+                                                <p class="precio">$ <%= Number((producto.precio*0.8).toFixed(2)) %></p>
+                                            </div>
+                                            <div class="div-boton-comprar">
+                                                <button class="boton-comprar" type="submit">Agregar</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                <% } else { %>
+                                    <div class="div-card">
+                                        <div class="div-uno">
+                                            <div class="texto_nombre_arriba">
+                                                <h4><%= producto.nombre %></h4>
+                                            </div>
+                                            <div class="texto_description_arriba">
+                                                <P class="descripcion"><%= producto.descripcion %></P>
+                                            </div>
+                                        </div>
+                                        <div class="div-dos">
+                                            <div>
+                                                <p class="descuento" style="color: white;">Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+                                                <p class="descuento" style="color: white;">20% off</p>
+                                            </div>
+                                        </div>
+                                        <div class="div-tres-b">
+                                            <div>
+                                                <p class="precio">$ <%= producto.precio %></p>
+                                            </div>
+                                            <div class="div-boton-comprar">
+                                                <button class="boton-comprar" type="submit">Agregar</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                <% } %>
+                            </article>      
                         <% } %>
                     </div>
                     <h3><a href="/productos/marcas/royal" style="color: #18515F; margin-left: 20px;">Ver todos</a></h3>
@@ -214,40 +286,64 @@
                     <div class="lista_flexbox_desktop">
                         <% for(let producto of cancat) { %>
                             <article class="articulo-productos-descuentos">
-                                <a href="/productos/detalle/<%= producto.id %>">
-                                    <div class="contenedor_imagen">
+                                <div class="contenedor_imagen">
+                                    <a href="/productos/detalle/<%= producto.id %>">
                                         <img class="img-productos-descuentos" src="/img/productos/<%= producto.imagen %>" alt="imagen_producto">
-                                    </div>
-                                </a>
-                                <div>
-                                    <div class="texto_nombre_arriba">
-                                        <h4><%= producto.nombre %></h4>
-                                    </div>
-                                    <div class="texto_description_arriba">
-                                        <P><%= producto.descripcion %></P>
-                                    </div>
-                                    <% if(producto.descuentos[0].id == 2) { %>
-                                        <div>
-                                            <p class="precio-tachado">$ <%= producto.precio %></p>
-                                        </div>
-                                        <div>
-                                            <p class="descuento"><%= producto.descuentos[0].descripcion %></p>
-                                            <p class="descuento">20% off</p>
-                                        </div>
-                                        <div>
-                                            <p class="precio"><%= Number((producto.precio*0.8).toFixed(2)) %></p>
-                                        </div>
-                                    <% } else { %>
-                                        <div>
-                                            <p class="precio">$ <%= producto.precio %></p>
-                                        </div>
-                                    <% } %>
-                                    <div class="div-boton-comprar">
-                                        <button class="boton-comprar" type="submit">Agregar</button>
-                                    </div>
+                                    </a>
                                 </div>
-                            </article>
-                                        
+                                <% if(producto.descuentos[0].id == 2) { %>
+                                    <div class="div-card">
+                                        <div class="div-uno">
+                                            <div class="texto_nombre_arriba">
+                                                <h4><%= producto.nombre %></h4>
+                                            </div>
+                                            <div class="texto_description_arriba">
+                                                <P class="descripcion"><%= producto.descripcion %></P>
+                                            </div>
+                                        </div>
+                                        <div class="div-dos">
+                                            <div>
+                                                <p class="descuento"><%= producto.descuentos[0].descripcion %></p>
+                                                <p class="descuento">20% off</p>
+                                            </div>
+                                        </div>
+                                        <div class="div-tres">
+                                            <div class="div-tres-int">
+                                                <p class="precio-tachado">$ <%= producto.precio %></p>
+                                                <p class="precio">$ <%= Number((producto.precio*0.8).toFixed(2)) %></p>
+                                            </div>
+                                            <div class="div-boton-comprar">
+                                                <button class="boton-comprar" type="submit">Agregar</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                <% } else { %>
+                                    <div class="div-card">
+                                        <div class="div-uno">
+                                            <div class="texto_nombre_arriba">
+                                                <h4><%= producto.nombre %></h4>
+                                            </div>
+                                            <div class="texto_description_arriba">
+                                                <P class="descripcion"><%= producto.descripcion %></P>
+                                            </div>
+                                        </div>
+                                        <div class="div-dos">
+                                            <div>
+                                                <p class="descuento" style="color: white;">Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+                                                <p class="descuento" style="color: white;">20% off</p>
+                                            </div>
+                                        </div>
+                                        <div class="div-tres-b">
+                                            <div>
+                                                <p class="precio">$ <%= producto.precio %></p>
+                                            </div>
+                                            <div class="div-boton-comprar">
+                                                <button class="boton-comprar" type="submit">Agregar</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                <% } %>
+                            </article>      
                         <% } %>
                     </div>
                     <h3><a href="/productos/marcas/cancat" style="color: #18515F; margin-left: 20px;">Ver todos</a></h3>
@@ -257,40 +353,64 @@
                     <div class="lista_flexbox_desktop">
                         <% for(let producto of catit) { %>
                             <article class="articulo-productos-descuentos">
-                                <a href="/productos/detalle/<%= producto.id %>">
-                                    <div class="contenedor_imagen">
+                                <div class="contenedor_imagen">
+                                    <a href="/productos/detalle/<%= producto.id %>">
                                         <img class="img-productos-descuentos" src="/img/productos/<%= producto.imagen %>" alt="imagen_producto">
-                                    </div>
-                                </a>
-                                <div>
-                                    <div class="texto_nombre_arriba">
-                                        <h4><%= producto.nombre %></h4>
-                                    </div>
-                                    <div class="texto_description_arriba">
-                                        <P><%= producto.descripcion %></P>
-                                    </div>
-                                    <% if(producto.descuentos[0].id == 2) { %>
-                                        <div>
-                                            <p class="precio-tachado">$ <%= producto.precio %></p>
-                                        </div>
-                                        <div>
-                                            <p class="descuento"><%= producto.descuentos[0].descripcion %></p>
-                                            <p class="descuento">20% off</p>
-                                        </div>
-                                        <div>
-                                            <p class="precio"><%= Number((producto.precio*0.8).toFixed(2)) %></p>
-                                        </div>
-                                    <% } else { %>
-                                        <div>
-                                            <p class="precio">$ <%= producto.precio %></p>
-                                        </div>
-                                    <% } %>
-                                    <div class="div-boton-comprar">
-                                        <button class="boton-comprar" type="submit">Agregar</button>
-                                    </div>
+                                    </a>
                                 </div>
-                            </article>
-                                        
+                                <% if(producto.descuentos[0].id == 2) { %>
+                                    <div class="div-card">
+                                        <div class="div-uno">
+                                            <div class="texto_nombre_arriba">
+                                                <h4><%= producto.nombre %></h4>
+                                            </div>
+                                            <div class="texto_description_arriba">
+                                                <P class="descripcion"><%= producto.descripcion %></P>
+                                            </div>
+                                        </div>
+                                        <div class="div-dos">
+                                            <div>
+                                                <p class="descuento"><%= producto.descuentos[0].descripcion %></p>
+                                                <p class="descuento">20% off</p>
+                                            </div>
+                                        </div>
+                                        <div class="div-tres">
+                                            <div class="div-tres-int">
+                                                <p class="precio-tachado">$ <%= producto.precio %></p>
+                                                <p class="precio">$ <%= Number((producto.precio*0.8).toFixed(2)) %></p>
+                                            </div>
+                                            <div class="div-boton-comprar">
+                                                <button class="boton-comprar" type="submit">Agregar</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                <% } else { %>
+                                    <div class="div-card">
+                                        <div class="div-uno">
+                                            <div class="texto_nombre_arriba">
+                                                <h4><%= producto.nombre %></h4>
+                                            </div>
+                                            <div class="texto_description_arriba">
+                                                <P class="descripcion"><%= producto.descripcion %></P>
+                                            </div>
+                                        </div>
+                                        <div class="div-dos">
+                                            <div>
+                                                <p class="descuento" style="color: white;">Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+                                                <p class="descuento" style="color: white;">20% off</p>
+                                            </div>
+                                        </div>
+                                        <div class="div-tres-b">
+                                            <div>
+                                                <p class="precio">$ <%= producto.precio %></p>
+                                            </div>
+                                            <div class="div-boton-comprar">
+                                                <button class="boton-comprar" type="submit">Agregar</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                <% } %>
+                            </article>      
                         <% } %>
                     </div>
                     <h3><a href="/productos/marcas/catit" style="color: #18515F; margin-left: 20px;">Ver todos</a></h3>
