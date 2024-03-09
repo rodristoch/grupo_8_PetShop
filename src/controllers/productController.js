@@ -229,25 +229,31 @@ const productController = {
         const userALoguearse = req.session.userLogueado
 
         db.Producto.findAll({
-            include: [{
-                model: db.Categoria,
-                as: 'categorias',
-                attributes: ['id', 'categoria'], // La unica manera de resolver el problema del CreateAt es definir que columna quiero usar en la relacion
-                through: { attributes: [] }, // Esto vita incluir automáticamente las columnas de la tabla intermedia
-                where : { 
-                    id: 2
+            include: [
+                {
+                    model: db.Categoria,
+                    as: 'categorias',
+                    attributes: ['id', 'categoria'],
+                    through: { attributes: [] },
+                    where: {
+                        id: 2
+                    }
+                },
+                {
+                    model: db.Descuento,
+                    as: 'descuentos',
                 }
-            }],
+            ],
             where: {
                 tipo_mascota_id: 2,
             }
         })
-        .then(function(productosPerro){
-            res.render('accesoriosPerro.ejs', {productosPerro, userALoguearse});
-        })
-        .catch(function (error){
-            console.error('Error al recuperar productos', error);
-        });
+            .then(function (productosPerro) {
+                res.render('categoria.ejs', { productosPerro, userALoguearse });
+            })
+            .catch(function (error) {
+                console.error('Error al recuperar productos', error);
+            });
     },
 
     accesoriosGato : (req, res) => {
@@ -255,25 +261,31 @@ const productController = {
         const userALoguearse = req.session.userLogueado
 
         db.Producto.findAll({
-            include: [{
-                model: db.Categoria,
-                as: 'categorias',
-                attributes: ['id', 'categoria'], // La unica manera de resolver el problema del CreateAt es definir que columna quiero usar en la relacion
-                through: { attributes: [] }, // Esto vita incluir automáticamente las columnas de la tabla intermedia
-                where : { 
-                    id: 2
+            include: [
+                {
+                    model: db.Categoria,
+                    as: 'categorias',
+                    attributes: ['id', 'categoria'],
+                    through: { attributes: [] },
+                    where: {
+                        id: 2
+                    }
+                },
+                {
+                    model: db.Descuento,
+                    as: 'descuentos',
                 }
-            }],
+            ],
             where: {
                 tipo_mascota_id: 1,
             }
         })
-        .then(function(productosGato){
-            res.render('accesoriosGato.ejs', {productosGato, userALoguearse});
-        })
-        .catch(function (error){
+            .then(function(productosGato){
+            res.render('comidaGato.ejs', {productosGato, userALoguearse});
+            })
+            .catch(function (error){
             console.error('Error al recuperar productos', error);
-        });
+            });
     },
 
     higienePerro : (req, res) => {
@@ -281,25 +293,31 @@ const productController = {
         const userALoguearse = req.session.userLogueado
 
         db.Producto.findAll({
-            include: [{
-                model: db.Categoria,
-                as: 'categorias',
-                attributes: ['id', 'categoria'], // La unica manera de resolver el problema del CreateAt es definir que columna quiero usar en la relacion
-                through: { attributes: [] }, // Esto vita incluir automáticamente las columnas de la tabla intermedia
-                where : { 
-                    id: 3
+            include: [
+                {
+                    model: db.Categoria,
+                    as: 'categorias',
+                    attributes: ['id', 'categoria'],
+                    through: { attributes: [] },
+                    where: {
+                        id: 3
+                    }
+                },
+                {
+                    model: db.Descuento,
+                    as: 'descuentos',
                 }
-            }],
+            ],
             where: {
                 tipo_mascota_id: 2,
             }
         })
-        .then(function(productosPerro){
-            res.render('higienePerro.ejs', {productosPerro, userALoguearse});
-        })
-        .catch(function (error){
-            console.error('Error al recuperar productos', error);
-        });
+            .then(function (productosPerro) {
+                res.render('categoria.ejs', { productosPerro, userALoguearse });
+            })
+            .catch(function (error) {
+                console.error('Error al recuperar productos', error);
+            });
     },
 
     higieneGato : (req, res) => {
@@ -307,25 +325,31 @@ const productController = {
         const userALoguearse = req.session.userLogueado
 
         db.Producto.findAll({
-            include: [{
-                model: db.Categoria,
-                as: 'categorias',
-                attributes: ['id', 'categoria'], // La unica manera de resolver el problema del CreateAt es definir que columna quiero usar en la relacion
-                through: { attributes: [] }, // Esto vita incluir automáticamente las columnas de la tabla intermedia
-                where : { 
-                    id: 3
+            include: [
+                {
+                    model: db.Categoria,
+                    as: 'categorias',
+                    attributes: ['id', 'categoria'],
+                    through: { attributes: [] },
+                    where: {
+                        id: 3
+                    }
+                },
+                {
+                    model: db.Descuento,
+                    as: 'descuentos',
                 }
-            }],
+            ],
             where: {
                 tipo_mascota_id: 1,
             }
         })
-        .then(function(productosGato){
-            res.render('higieneGato.ejs', {productosGato, userALoguearse});
-        })
-        .catch(function (error){
+            .then(function(productosGato){
+            res.render('comidaGato.ejs', {productosGato, userALoguearse});
+            })
+            .catch(function (error){
             console.error('Error al recuperar productos', error);
-        });
+            });
     },
 
     juguetesPerro : (req, res) => {
@@ -333,25 +357,31 @@ const productController = {
         const userALoguearse = req.session.userLogueado
 
         db.Producto.findAll({
-            include: [{
-                model: db.Categoria,
-                as: 'categorias',
-                attributes: ['id', 'categoria'], // La unica manera de resolver el problema del CreateAt es definir que columna quiero usar en la relacion
-                through: { attributes: [] }, // Esto vita incluir automáticamente las columnas de la tabla intermedia
-                where : { 
-                    id: 4
+            include: [
+                {
+                    model: db.Categoria,
+                    as: 'categorias',
+                    attributes: ['id', 'categoria'],
+                    through: { attributes: [] },
+                    where: {
+                        id: 4
+                    }
+                },
+                {
+                    model: db.Descuento,
+                    as: 'descuentos',
                 }
-            }],
+            ],
             where: {
                 tipo_mascota_id: 2,
             }
         })
-        .then(function(productosPerro){
-            res.render('juguetesPerro.ejs', {productosPerro, userALoguearse});
-        })
-        .catch(function (error){
-            console.error('Error al recuperar productos', error);
-        });
+            .then(function (productosPerro) {
+                res.render('categoria.ejs', { productosPerro, userALoguearse });
+            })
+            .catch(function (error) {
+                console.error('Error al recuperar productos', error);
+            });
     },
 
     juguetesGato : (req, res) => {
@@ -359,25 +389,31 @@ const productController = {
         const userALoguearse = req.session.userLogueado
 
         db.Producto.findAll({
-            include: [{
-                model: db.Categoria,
-                as: 'categorias',
-                attributes: ['id', 'categoria'], // La unica manera de resolver el problema del CreateAt es definir que columna quiero usar en la relacion
-                through: { attributes: [] }, // Esto vita incluir automáticamente las columnas de la tabla intermedia
-                where : { 
-                    id: 4
+            include: [
+                {
+                    model: db.Categoria,
+                    as: 'categorias',
+                    attributes: ['id', 'categoria'],
+                    through: { attributes: [] },
+                    where: {
+                        id: 4
+                    }
+                },
+                {
+                    model: db.Descuento,
+                    as: 'descuentos',
                 }
-            }],
+            ],
             where: {
                 tipo_mascota_id: 1,
             }
         })
-        .then(function(productosGato){
-            res.render('juguetesGato.ejs', {productosGato, userALoguearse});
-        })
-        .catch(function (error){
+            .then(function(productosGato){
+            res.render('comidaGato.ejs', {productosGato, userALoguearse});
+            })
+            .catch(function (error){
             console.error('Error al recuperar productos', error);
-        });
+            });
     },
 
     marcas: (req, res) => {

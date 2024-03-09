@@ -92,8 +92,9 @@
                                 <div class="texto_description_arriba">
                                     <P><%= producto.descripcion %></P>
                                 </div>
-                                <div>
-                                    <h3 class="precio">$ <%= producto.precio %></h3>
+                                <div class="div-tres-int">
+                                    <p class="precio-tachado">$ <%= producto.precio %></p>
+                                    <p class="precio">$ <%= Number((producto.precio*0.8).toFixed(2)) %></p>
                                 </div>
                                 <div class="div-boton-comprar">
                                     <button class="boton-comprar" type="submit">Agregar</button>
