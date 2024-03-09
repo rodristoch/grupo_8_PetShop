@@ -159,48 +159,35 @@ const productController = {
 
     comidaPerro : (req, res) => {
 
-
         const userALoguearse = req.session.userLogueado
-         
-        let productoConDescuento = db.Producto.findAll({
-                include: [{
-                    model: db.Descuento, 
-                    as: 'descuentos',
-                    attributes: ['id'],
-                    through: {attributes: []}
-                }]
-            })
-            /* .then(function(productosPerro2){
-                res.render('comidaPerro.ejs', {productosPerro2, userALoguearse});
-            }) */
 
-        let productos = db.Producto.findAll({
-            include: [{
-                model: db.Categoria,
-                as: 'categorias',
-                attributes: ['id', 'categoria'], // La unica manera de resolver el problema del CreateAt es definir que columna quiero usar en la relacion
-                through: {attributes: [] }, // Esto vita incluir automáticamente las columnas de la tabla intermedia
-                where : { 
-                    id: 1
+        db.Producto.findAll({
+            include: [
+                {
+                    model: db.Categoria,
+                    as: 'categorias',
+                    attributes: ['id', 'categoria'],
+                    through: { attributes: [] },
+                    where: {
+                        id: 1
+                    }
+                },
+                {
+                    model: db.Descuento,
+                    as: 'descuentos',
                 }
-            }],
+            ],
             where: {
                 tipo_mascota_id: 2,
             }
         })
+            .then(function (productosPerro) {
+                res.render('categoria.ejs', { productosPerro, userALoguearse });
+            })
+            .catch(function (error) {
+                console.error('Error al recuperar productos', error);
+            });
         
-        /* .then(function(productosPerro){
-            res.render('comidaPerro.ejs', {productosPerro, userALoguearse});
-        }) */
-
-        Promise.all([productoConDescuento, productos])
-        .then(([productosPerro2, productosPerro]) => {
-            const userALoguearse = req.session.userLogueado;
-            res.render('comidaPerro.ejs', { productosPerro, productosPerro2, userALoguearse });
-         })
-        .catch(function (error){
-            console.error('Error al recuperar productos', error);
-        });
         
     },
 
