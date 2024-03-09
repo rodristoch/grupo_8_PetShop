@@ -244,6 +244,7 @@ input[type="radio"] {
     font-weight: 300;
     text-decoration: line-through;
     width: 20%;
+    font-size: 18px;
 }
 
 .descuento {
@@ -256,6 +257,7 @@ input[type="radio"] {
 .precio {
     font-weight: 600;
     width: 35%;
+    font-size: 18px;
 }
 
 .espacio_precio {

@@ -267,7 +267,7 @@ width: auto;
     justify-content:center;
     background-color: white;
     height: 140px;
-   overflow: hidden;
+    overflow: hidden;
 }
 
 .contenedor_imagen .img-productos-descuentos {
@@ -291,23 +291,36 @@ width: auto;
   
 .precio {
     font-weight: 600;
+    width: 35%;
+    font-size: 15px;
 }
 
 .precio-tachado {
     font-weight: 300;
     text-decoration: line-through;
+    width: 100%;
+    margin-bottom: -5px;
 }
 
 .descuento {
     margin-top: -10px;
     color: #24768b;
-    font-weight: 400;
-    font-size: 14px;
+    font-weight: 500;
+    font-size: 15px;
+    width: 40%;
 }
 
 .div-boton-comprar {
     text-align: center;
     margin-top: 10px;
+    width: 100%;
+}
+
+.div-precios {
+    display: flex;
+    align-items: end;
+    justify-content: flex-start;
+    flex-wrap: wrap;
 }
 
 
@@ -316,7 +329,7 @@ width: auto;
     text-align: center;
     background-color: #1e697b;
     color: white;
-    width: 90%;
+    width: 100%;
     height: 40%;
     border-radius: 5px;
     border: 1px solid black;

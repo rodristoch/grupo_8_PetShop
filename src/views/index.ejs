@@ -95,9 +95,11 @@
                             <div class="texto_descripcion_arriba">
                                 <p class="descripcion"><%= producto.descripcion %></p>
                             </div>
-                            <p class="precio-tachado">$ <%= producto.precio %></p>
-                            <p class="descuento">20% off</p>
-                            <p class="precio"><%= Number((producto.precio*0.8).toFixed(2)) %></p>
+                            <div class="div-precios">
+                                <p class="precio-tachado">$ <%= producto.precio %></p>
+                                <p class="precio">$ <%= Number((producto.precio*0.8).toFixed(2)) %></p>
+                                <p class="descuento">20% off</p>
+                            </div>
                             <div class="div-boton-comprar">
                                 <button class="boton-comprar" type="submit">Agregar</button>
                             </div>
