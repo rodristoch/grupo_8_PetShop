@@ -166,8 +166,6 @@ const productController = {
                 {
                     model: db.Categoria,
                     as: 'categorias',
-                    attributes: ['id', 'categoria'],
-                    through: { attributes: [] },
                     where: {
                         id: 1
                     }
@@ -181,12 +179,13 @@ const productController = {
                 tipo_mascota_id: 2,
             }
         })
-            .then(function (productosPerro) {
-                res.render('categoria.ejs', { productosPerro, userALoguearse });
-            })
-            .catch(function (error) {
-                console.error('Error al recuperar productos', error);
-            });
+            
+        .then(comidaPerro => {
+            return res.render('categoria.ejs', {comidaPerro, userALoguearse});
+        })
+        .catch(error => {
+            console.error('Error al recuperar productos', error);
+        });
         
         
     },
@@ -200,8 +199,6 @@ const productController = {
                 {
                     model: db.Categoria,
                     as: 'categorias',
-                    attributes: ['id', 'categoria'],
-                    through: { attributes: [] },
                     where: {
                         id: 1
                     }
@@ -215,12 +212,13 @@ const productController = {
                 tipo_mascota_id: 1,
             }
         })
-            .then(function(productosGato){
-            res.render('comidaGato.ejs', {productosGato, userALoguearse});
-            })
-            .catch(function (error){
+            
+        .then(comidaGato => {
+            return res.render('categoria.ejs', {comidaGato, userALoguearse});
+        })
+        .catch(error => {
             console.error('Error al recuperar productos', error);
-            });
+        });
 
     },
 
@@ -233,8 +231,6 @@ const productController = {
                 {
                     model: db.Categoria,
                     as: 'categorias',
-                    attributes: ['id', 'categoria'],
-                    through: { attributes: [] },
                     where: {
                         id: 2
                     }
@@ -248,12 +244,13 @@ const productController = {
                 tipo_mascota_id: 2,
             }
         })
-            .then(function (productosPerro) {
-                res.render('categoria.ejs', { productosPerro, userALoguearse });
-            })
-            .catch(function (error) {
-                console.error('Error al recuperar productos', error);
-            });
+
+        .then(accesoriosPerro => {
+            return res.render('categoria.ejs', {accesoriosPerro, userALoguearse});
+        })
+        .catch(error => {
+            console.error('Error al recuperar productos', error);
+        });
     },
 
     accesoriosGato : (req, res) => {
@@ -265,8 +262,6 @@ const productController = {
                 {
                     model: db.Categoria,
                     as: 'categorias',
-                    attributes: ['id', 'categoria'],
-                    through: { attributes: [] },
                     where: {
                         id: 2
                     }
@@ -280,12 +275,13 @@ const productController = {
                 tipo_mascota_id: 1,
             }
         })
-            .then(function(productosGato){
-            res.render('comidaGato.ejs', {productosGato, userALoguearse});
-            })
-            .catch(function (error){
+
+        .then(accesoriosGato => {
+            return res.render('categoria.ejs', {accesoriosGato, userALoguearse});
+        })
+        .catch(function (error){
             console.error('Error al recuperar productos', error);
-            });
+        });
     },
 
     higienePerro : (req, res) => {
@@ -297,8 +293,6 @@ const productController = {
                 {
                     model: db.Categoria,
                     as: 'categorias',
-                    attributes: ['id', 'categoria'],
-                    through: { attributes: [] },
                     where: {
                         id: 3
                     }
@@ -312,12 +306,13 @@ const productController = {
                 tipo_mascota_id: 2,
             }
         })
-            .then(function (productosPerro) {
-                res.render('categoria.ejs', { productosPerro, userALoguearse });
-            })
-            .catch(function (error) {
-                console.error('Error al recuperar productos', error);
-            });
+
+        .then(higienePerro => {
+            return res.render('categoria.ejs', {higienePerro, userALoguearse});
+        })
+        .catch(error => {
+            console.error('Error al recuperar productos', error);
+        });
     },
 
     higieneGato : (req, res) => {
@@ -329,8 +324,6 @@ const productController = {
                 {
                     model: db.Categoria,
                     as: 'categorias',
-                    attributes: ['id', 'categoria'],
-                    through: { attributes: [] },
                     where: {
                         id: 3
                     }
@@ -344,12 +337,13 @@ const productController = {
                 tipo_mascota_id: 1,
             }
         })
-            .then(function(productosGato){
-            res.render('comidaGato.ejs', {productosGato, userALoguearse});
-            })
-            .catch(function (error){
+
+        .then(higieneGato => {
+            return res.render('categoria.ejs', {higieneGato, userALoguearse});
+        })
+        .catch(error => {
             console.error('Error al recuperar productos', error);
-            });
+        });
     },
 
     juguetesPerro : (req, res) => {
@@ -361,8 +355,6 @@ const productController = {
                 {
                     model: db.Categoria,
                     as: 'categorias',
-                    attributes: ['id', 'categoria'],
-                    through: { attributes: [] },
                     where: {
                         id: 4
                     }
@@ -376,12 +368,13 @@ const productController = {
                 tipo_mascota_id: 2,
             }
         })
-            .then(function (productosPerro) {
-                res.render('categoria.ejs', { productosPerro, userALoguearse });
-            })
-            .catch(function (error) {
-                console.error('Error al recuperar productos', error);
-            });
+
+        .then(juguetesPerro => {
+            return res.render('categoria.ejs', {juguetesPerro, userALoguearse});
+        })
+        .catch(error => {
+            console.error('Error al recuperar productos', error);
+        });
     },
 
     juguetesGato : (req, res) => {
@@ -393,8 +386,6 @@ const productController = {
                 {
                     model: db.Categoria,
                     as: 'categorias',
-                    attributes: ['id', 'categoria'],
-                    through: { attributes: [] },
                     where: {
                         id: 4
                     }
@@ -408,12 +399,13 @@ const productController = {
                 tipo_mascota_id: 1,
             }
         })
-            .then(function(productosGato){
-            res.render('comidaGato.ejs', {productosGato, userALoguearse});
-            })
-            .catch(function (error){
+
+        .then(juguetesGato => {
+            return res.render('categoria.ejs', {juguetesGato, userALoguearse});
+        })
+        .catch(error => {
             console.error('Error al recuperar productos', error);
-            });
+        });
     },
 
     marcas: (req, res) => {
