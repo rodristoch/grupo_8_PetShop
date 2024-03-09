@@ -139,6 +139,7 @@ input[type="radio"] {
 
 }
 .contenedor_menu_desktop {
+    margin-top: 80px;
     width: 24%;
     border: 1px rgb(180, 180, 180) solid;
     border-radius: 8px;
