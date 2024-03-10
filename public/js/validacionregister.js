@@ -22,20 +22,32 @@ window.addEventListener("load", () => {
         
         let errores = {};
 
+        let reg = /^\w+([.-_+]?\w+)*@\w+([.-]?\w+)*(\.\w{2,10})+$/;
+
         if (nombre.value.length < 1) {
             errores.nombre = 'Este campo debe estar completo'
+        } else if (nombre.value.length < 2) {
+            errores.nombre = 'El nombre debe tener al menos 2 caracteres'
         }
         if (apellido.value.length < 1) {
             errores.apellido = 'Este campo debe estar completo'
+        } else if (apellido.value.length < 2) {
+            errores.apellido = 'El nombre debe tener al menos 2 caracteres'
         }
         if (email.value.length < 1) {
             errores.email = 'Este campo debe estar completo'
+        } else if (!reg.test(email.value)) {
+            errores.email = 'El email introducido no es válido'
         }
         if (password.value.length < 1) {
             errores.password = 'Este campo debe estar completo'
+        } else if (password.value.length < 8) {
+            errores.password = 'La cantraseña debe tener al menos 8 caracteres'
         }
         if (passwordrepeat.value.length < 1) {
             errores.passwordrepeat = 'Este campo debe estar completo'
+        } else if (passwordrepeat.value != password.value) {
+            errores.passwordrepeat = 'Las contraseñas no coinciden'
         }
         if (Object.keys(errores).length >= 1) {
             
