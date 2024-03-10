@@ -166,7 +166,7 @@ input[type="radio"] {
 .lista_flexbox_desktop {
     display: flex;
     flex-wrap: wrap ;
-    justify-content: space-around;
+    justify-content: flex-start;
 
 }
 
@@ -632,6 +632,7 @@ footer {
 
     .articulo-productos-descuentos {
         width: 22%;
+        margin-left: 2.5%;
     }
 
     .contenedor_menu_productos_desktop {
