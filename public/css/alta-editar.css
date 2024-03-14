@@ -163,6 +163,9 @@ button:hover {
     width: 90%;
     margin: 20px auto;
     border-radius: 12px;
+    margin-bottom: 20px;
+    height: 100%;
+    
 }
 
 /* --- Flex formulario */
@@ -186,6 +189,7 @@ button:hover {
     flex-direction: column;
     width: 90%;
     margin: 0 auto;
+    height: max-content;
 }
 
 label {
@@ -249,7 +253,13 @@ textarea:not(:placeholder-shown){
     border: 1px solid #4CAF50;
 }
 
+.errores {
 
+        color: red ;
+        font-size: 16px;
+        font-weight: 500;
+
+}
 /* --- selectores */
 select {
     font-size: 14px;
