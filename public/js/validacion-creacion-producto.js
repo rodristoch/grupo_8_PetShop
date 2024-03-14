@@ -5,9 +5,9 @@ window.addEventListener('load', () => {
     let name        = document.getElementById ('nombre_producto');
     let price       = document.getElementById ('precio_producto');
     let brand       = document.getElementById ('marca_id');
-    let pet         = document.getElementById ('mascota')
-    let category    = document.getElementById ('categoria');
-    let discount    = document.getElementById ('descuento');
+    let pet         = document.getElementById ('tipo_mascota_id')
+    let category    = document.getElementById ('categoria_id');
+    let discount    = document.getElementById ('decuento_id');
     let description = document.getElementById ('descripcion');
     let image       = document.getElementById ('imagen');
 
@@ -53,14 +53,31 @@ window.addEventListener('load', () => {
 
 
         //validaciones marca
-        
-        //     if (brand.value === 'marcas'){
-        //     errores.brand = 'Selecciona una marca';
-        //  }
+         const id_brand = parseInt(brand.value)
+        if (id_brand == -1){
+            errores.brand = 'Selecciona una marca';
+             }
+
+        // Validación mascota
+        const id_pet = parseInt(pet.value)
+        if (id_pet == -1) {
+            errores.pet = 'Selecciona una mascota'
+        }
+
+        //Validación categoria
+        const id_category = parseInt(category.value)
+        if(id_category == -1) {
+            errores.category = 'Selecciona una categoria'
+        }
+
+        // validación descuento
+        const id_discount = parseInt(discount.value)
+        if (id_discount == -1) {
+            errores.discount = "Selecciona una opción de descuento"
+        }
 
 
          //validación descripción
-
          if (description.value.length <1) {
             errores.description = 'Este campo debe estar completo'
          } else if (description.value. length <100) {
@@ -84,7 +101,9 @@ window.addEventListener('load', () => {
             marcaError.innerText          = (errores.brand) ? errores.brand : '' ;
             descripcionError.innerText    = (errores.description) ? errores.description : ''; 
             imagenError.innerText         = (errores.image) ? errores.image : ''; 
-
+            petError.innerText            = (errores.pet) ? errores.pet : '';
+            categoriaError.innerText      = (errores.category) ? errores.category : '';
+            descuentoError.innerText      = (errores.discount) ? errores.discount : '';
        
         } else {
             form.submit();

@@ -38,9 +38,9 @@
 
                 <div class="flex-columna">
                     <label for="marca">Selecciona una marca:</label>
-                    <select name="marca_id" id="marca">
+                    <select name="marca_id" id="marca_id">
                         
-                        <option value="marca">marcas</option>
+                        <option value="-1">Seleccionar ...</option>
                         <% marcas.forEach(marca => { %> 
                             <option value="<%= marca.id %>"><%= marca.marca %></option>
                         <% }) %>
@@ -55,7 +55,8 @@
 
                 <div class="flex-columna">
                     <label for="mascota">El productos es para:</label>
-                    <select name="tipo_mascota_id" id="mascota">
+                    <select name="tipo_mascota_id" id="tipo_mascota_id">
+                        <option value="-1">Seleccionar ...</option>
                         <% tipos.forEach(tipo => { %> 
                             <option value="<%= tipo.id %>"><%= tipo.mascota %></option>
                         <% }) %>
@@ -74,7 +75,8 @@
             <section class="flex-linea">
                 <div class="flex-columna">    
                     <label for="categoria">Selecciona una categoria:</label>
-                    <select name="categoria_id" id="categoria">
+                    <select name="categoria_id" id="categoria_id">
+                        <option value="-1">Seleccionar ...</option>
                         <% categorias.forEach(categoria => { %> 
                             <option value="<%= categoria.id %>"><%= categoria.categoria %></option>
                         <% }) %>
@@ -89,7 +91,8 @@
                 </div>
                 <div class="flex-columna">
                     <label for="descuento"> ¿El producto tiene descuento?</label>
-                    <select name="decuento_id" id="descuento">
+                    <select name="decuento_id" id="decuento_id">
+                        <option value="-1">Seleccionar ...</option>
                         <% descuentos.forEach(descuento => { %> 
                             <option value="<%= descuento.id %>"><%= descuento.nombre %></option>
                         <% }) %>
