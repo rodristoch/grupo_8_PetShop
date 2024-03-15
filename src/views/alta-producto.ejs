@@ -10,56 +10,99 @@
 <main>
     <h3 class="titulo-ppal">Carga tus productos</h3>
     <article class="contenedor-alta">
-        <form class="formu" action="/productos/alta" method="POST" enctype="multipart/form-data">
+        <form class="formu" id="formulario" action="/productos/alta" method="POST" enctype="multipart/form-data">
 
             <section class="flex-linea">
                 <div class="flex-columna">
                     <label for="nombre_producto">Nombre del producto</label>
                     <input type="text" id="nombre_producto" name="nombre_producto" placeholder="Ej: Dog chow para perros pequeños">
+
+                    <!-- Validación JS front de nombre-->
+                    <span class="errores" id="nombre_producto_error"></span>
+
                 </div>
 
                 <div class="flex-columna">
                     <label for="precio_producto">Precio del producto</label>
                     <input type="number" id="precio_producto" name="precio_producto" placeholder="Ej: 50000">
+                    
+                     <!-- Validación JS front de precio-->
+                    <span class="errores" id="precio_error"></span>
+                   
+                
                 </div>
                
             </section>
 
             <section class="flex-linea">
+
                 <div class="flex-columna">
                     <label for="marca">Selecciona una marca:</label>
-                    <select name="marca_id" id="marca">
+                    <select name="marca_id" id="marca_id">
+                        
+                        <option value="-1">Seleccionar ...</option>
                         <% marcas.forEach(marca => { %> 
                             <option value="<%= marca.id %>"><%= marca.marca %></option>
                         <% }) %>
                     </select>
+
+                    <!-- Validación JS front de marca-->
+                    <span class="errores" id="marca_error"></span>
+                    
+                    
+
                 </div>
+
                 <div class="flex-columna">
                     <label for="mascota">El productos es para:</label>
-                    <select name="tipo_mascota_id" id="mascota">
+                    <select name="tipo_mascota_id" id="tipo_mascota_id">
+                        <option value="-1">Seleccionar ...</option>
                         <% tipos.forEach(tipo => { %> 
                             <option value="<%= tipo.id %>"><%= tipo.mascota %></option>
                         <% }) %>
                     </select>
+
+                    
+
+                    <!-- Validación JS front de mascota-->
+                    <span class="errores" id="pet_error"></span>
+
+                    
+
                 </div>
             </section>
 
             <section class="flex-linea">
                 <div class="flex-columna">    
                     <label for="categoria">Selecciona una categoria:</label>
-                    <select name="categoria_id" id="categoria">
+                    <select name="categoria_id" id="categoria_id">
+                        <option value="-1">Seleccionar ...</option>
                         <% categorias.forEach(categoria => { %> 
                             <option value="<%= categoria.id %>"><%= categoria.categoria %></option>
                         <% }) %>
                     </select>
+
+
+                    <!-- Validación JS front de categoria-->
+                    <span class="errores" id="categoria_error"></span>
+
+
+
                 </div>
                 <div class="flex-columna">
                     <label for="descuento"> ¿El producto tiene descuento?</label>
-                    <select name="decuento_id" id="descuento">
+                    <select name="decuento_id" id="decuento_id">
+                        <option value="-1">Seleccionar ...</option>
                         <% descuentos.forEach(descuento => { %> 
                             <option value="<%= descuento.id %>"><%= descuento.nombre %></option>
                         <% }) %>
                     </select>
+
+
+                    <!-- Validación JS front de descuentos-->
+                    <span class="errores" id="descuento_error"></span>
+
+
                 </div>
             </section>
 
@@ -75,17 +118,23 @@
                     <input type="text" id="color_producto" name="color_producto" placeholder=" Ej: Negro">
                  </div>
             </section>
-
+            
             <label for="descripcion">Descripción del producto</label>
             <textarea name="descripcion" id="descripcion" placeholder="Ingresa la información que describa lo mejor posible el producto"></textarea>
+            
+                    <!-- Validación JS front de descripción-->
+                    <span class="errores" id="desripcion_error"></span>
+            <br>
 
             <section class="flex-linea">
                 <label for="imagen">Imagen de producto:</label>
-                <input type="file" name="imagen">
+                <input type="file" name="imagen" id = "imagen">
             </section>
+            <!-- Validación JS front de imagen-->
+            <span class="errores" id="imagen_error"></span>
 
             
-            <button type="submit">Guardar producto</button>
+            <button id="sumbit" type="submit">Guardar producto</button>
         </form>
 
     </article>
@@ -93,5 +142,7 @@
 </main>
 
 <%- include("./partials/footer.ejs") %>
+
+<script src="/js/validacion-creacion-producto.js"></script>
 </body>
 </html>
