@@ -12,9 +12,10 @@ body {
 * {
   box-sizing: border-box;
 }
+
 h4 {
-    margin-top: 12px;
-    margin-bottom: 0px;
+    margin-top: 0;
+    margin-bottom: 0;
 }
 
 .flex-enlinea {
@@ -193,12 +194,35 @@ input[type="radio"] {
     align-items: center;
     justify-content: center;
     flex-wrap: wrap;
-    height: 450px;
+    height: 500px;
+}
+
+.contenedor_imagen {
+    background-color: white;
+    height: 40%;
+    overflow: hidden;
+    border: 1px solid white;
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    text-align: center;
+    
+}
+
+.img-productos-descuentos {
+    border-radius: 5px;
+    border: 1px solid white;
+    width: 100%;
+    height: 80%;
+    margin-top: 10%;
+
 }
 
 .div-card {
     width: 100%;
-    height: 65%;
+    height: 60%;
+    padding: 0;
+    margin: 0;
 }
 
 .div-uno {
@@ -207,70 +231,105 @@ input[type="radio"] {
     padding: 0;
 }
 
+.texto_nombre_arriba {
+    font-size: 17px;
+    overflow: hidden;
+    text-overflow: ellipsis; 
+    display: flex;
+    justify-content: start;
+    align-items: flex-start;
+    border: 1px solid white;
+    padding: 0;
+    height: 50%;
+}
+
+.texto_description_arriba {
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    border: 1px solid white;
+    height: 50%;
+}
+
+.descripcion {
+    font-size: 14px;
+    border: 1px solid white;
+    height: 100%;
+}
+
 .div-dos {
     border: 1px solid white;
     height: 28%;
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    flex-wrap: wrap;
+    width: 100%;
+}
+
+.descuento {
+    color: #24768b;
+    font-weight: 500;
+    font-size: 14px;
+    border: 1px solid white;
+    width: 100%;
+    margin: 0;
     padding: 0;
-    
 }
 
 .div-tres {
     border: 1px solid white;
-    max-height: 35%;
+    height: 35%;
+    margin: 0;
     padding: 0;
-    display: flex;
-    flex-wrap: wrap;
-
+    
 }
 
 .div-tres-b {
     border: 1px solid white;
-    max-height: 35%;
+    height: 35%;
+    margin: 0;
     padding: 0;
-
 }
 
 .div-tres-int {
     width: 100%;
     display: flex;
     flex-wrap: wrap;
-    align-items: baseline;
+    align-items: center;
+    border: 1px solid white;
+    height: 60%;
+    margin: 0;
+    padding: 0;
 }
 
-.descripcion {
-    font-size: 14px;
-    
-}
 .precio-tachado {
+    color: rgb(56, 56, 56);
     font-weight: 300;
     text-decoration: line-through;
-    width: 20%;
-    font-size: 18px;
-}
-
-.descuento {
-    font-size: 13px;
-    color: #24768b;
-    font-weight: 500;
-    font-size: 14px;
+    width: 15%;
+    font-size: 16px;
+    border: 1px solid white;
+    margin: 0;
+    padding: 0;
 }
 
 .precio {
     font-weight: 600;
-    width: 35%;
+    width: 85%;
     font-size: 18px;
-}
-
-.espacio_precio {
-    height: 28px;
-}
-.espacio_descuento {
-    height: 28px;
+    border: 1px solid white;
+    margin: 0;
+    padding: 0;
+    text-align: left;
 }
 
 .div-boton-comprar {
     text-align: center;
     width: 100%;
+    border: 1px solid white;
+    height: 40%;
+    
 }
 
 .boton-comprar {
@@ -278,7 +337,7 @@ input[type="radio"] {
     background-color: #1e697b;
     color: white;
     width: 100%;
-    height: 40px;
+    height: 100%;
     border-radius: 5px;
     border: 1px solid black;
     font-size: 16px;
@@ -288,30 +347,13 @@ input[type="radio"] {
 }
 
 
-.contenedor_imagen {
-    background-color: white;
-    height: 35%;
-    overflow: hidden;
-    border: 1px solid white;
+
+.espacio_precio {
+    height: 28px;
 }
 
-.img-productos-descuentos {
-
-    border-radius: 5px;
-    border: 1px solid white;
-    width: 100%;
-    height: 100%;
-}
-
-.texto_nombre_arriba {
-    font-size: 17px;
-    overflow: hidden;
-    text-overflow: ellipsis; 
-}
-
-.texto_descripcion_arriba {
-    overflow: hidden;
-    text-overflow: ellipsis; 
+.espacio_descuento {
+    height: 28px;
 }
 
 .texto_precio {
