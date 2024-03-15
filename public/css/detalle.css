@@ -116,7 +116,7 @@ a {
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 30%;
+    width: 60%;
     margin: 0px auto;
 
 }
@@ -159,7 +159,7 @@ a {
     padding: 10px;
     background-color: #1e697b;
     border-radius: 8px;
-    width: 70%;
+    width: 100%;
     margin: auto;
     margin-top: 20px;
     text-align: center;
@@ -177,7 +177,7 @@ a {
     padding: 10px;
     background-color: rgb(246, 246, 88);
     border-radius: 8px;
-    width: 70%;
+    width: 100%;
     margin: auto;
     margin-top: 10px;
     margin-bottom: 10px;
@@ -196,7 +196,7 @@ a {
     padding: 10px;
     background-color: rgb(190, 8, 8);
     border-radius: 8px;
-    width: 70%;
+    width: 100%;
     margin: auto;
     margin-bottom: 15px;
     text-align: center;
@@ -414,36 +414,7 @@ footer {
     display: none;
 }
 
-.carrito-text {
-    display: block;
-}
 
-.fa-bars {
-    display: block;
-}
-
-.header2 {
-    display: flex;
-    height: 35px;
-    background-color: #18515F;
-    border-top: 0.1px solid white;
-    border-bottom: 0.3px solid white;
-}
-
-.header2-opciones {
-    color: white;
-    display: flex;
-    width: 100%;
-    justify-content: space-between;
-    align-items: center;
-    margin: 20px;
-}
-
-
-
-.fa-circle-arrow-down {
-    margin-left: 10px;
-}
 /* --------------------------header----------------------------------- */
 
 /* --------------------------Main----------------------------------- */
@@ -460,6 +431,37 @@ footer {
 /* .top {
     height: 15vh;
 } */
+
+.carrito-text {
+    display: block;
+}
+
+.fa-bars {
+    display: block;
+}
+
+.header2 {
+    display: flex;
+    height: 35px;
+    background-color: #154551;
+    border-top: 0.1px solid #154551;
+    border-bottom: 0.1px solid #154551;
+}
+
+.header2-opciones {
+    color: white;
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    align-items: center;
+    margin: 20px;
+}
+
+
+
+.fa-circle-arrow-down {
+    margin-left: 10px;
+}
 
 .flex-top {
     height: 10%;
@@ -489,6 +491,27 @@ footer {
 /* --------------- header ----------------------------------- */
 
 /* --------------- main ----------------------------------- */
+
+.contenedor_imagen_mobile {
+    width: 30%;
+}
+
+.boton_agregar{
+    width: 70%;
+}  
+
+.boton_editar{
+    width: 70%;
+} 
+
+.boton_eliminar{
+    width: 70%;
+} 
+
+.titulo_nombre {
+    font-weight: 500;
+    font-size: 18px;
+}
 
 /* --------------- main ----------------------------------- */
 

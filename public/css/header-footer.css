@@ -289,7 +289,7 @@ footer {
     text-align: center;
     margin-right: 10px;
     margin-left: 20px;
-    margin-top: 20px;
+    margin-top: 15px;
     color: white;
 }
 
@@ -299,8 +299,9 @@ footer {
     text-align: center;
     margin-right: 60px;
     margin-left: 25px;
-    margin-top: 20px;
+    margin-top: 10px;
     color: white;
+    scale: 170%;
 }
 
 .logo-carrito-tablet {
@@ -310,6 +311,19 @@ footer {
 .logo-carrito-mobile {
     display: none;
 }
+
+
+/* --------------------------header----------------------------------- */
+}
+
+/*     ----------------------------------------------------------------------------------- desktop 1024 px --------------------------------------------------------------------------------------- */
+@media(min-width:1024px){
+
+/* --------------- header ----------------------------------- */
+
+/* .top {
+    height: 15vh;
+} */
 
 .carrito-text {
     display: block;
@@ -336,22 +350,11 @@ footer {
     margin: 20px;
 }
 
-
-
 .fa-circle-arrow-down {
     margin-left: 10px;
 }
-/* --------------------------header----------------------------------- */
-}
 
-/*     ----------------------------------------------------------------------------------- desktop 1024 px --------------------------------------------------------------------------------------- */
-@media(min-width:1024px){
 
-/* --------------- header ----------------------------------- */
-
-/* .top {
-    height: 15vh;
-} */
 
 .flex-top {
     height: 10%;
@@ -383,6 +386,11 @@ footer {
 /* --------------------------footer----------------------------------- */
 .logo2 {
     display: block;
+}
+
+.carrito {
+    margin-top: 20px;
+    scale: 100%;
 }
 /* --------------------------footer----------------------------------- */
 }
