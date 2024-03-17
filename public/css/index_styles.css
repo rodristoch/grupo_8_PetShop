@@ -105,48 +105,66 @@ width: 100vw;
 
 /* --------------------------Main----------------------------------- */
 
-.section-carrusel {
+/* carrusel */
+.carrusel {
+    display: none;
     width: 100%;
+    max-width: 120em;
+    margin-bottom: -40px;
+    overflow: hidden;
+    z-index: 0;
+    
 }
 
-.img-carrusel1 {
-    width: 100%;
-}
+.grande {
+    width: 200%;
 
-/* .carousel-container {
-    position: relative;
-    width: 100%;
-    max-width: 800px;
-    margin: auto;
-  }
-  
-  .carousel {
     display: flex;
-    transition: transform 0.5s ease-in-out;
-  }
-  
-  img {
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: nowrap;
+
+    transition: all .5s ease;
+    transform: translateX(0%);
+
+}
+
+.img-carrusel {
+    width: calc(100% / 2);
+    min-height: 10vh;
+    position: relative;
+
+}
+
+.puntos {
     width: 100%;
-    height: auto;
-  }
-  
-  button {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    font-size: 18px;
-    padding: 10px;
-    cursor: pointer;
-  }
-  
-  .prev {
-    left: 10px;
-  }
-  
-  .next {
-    right: 10px;
-  }
- */
+    padding: 0.4em;
+    margin: 1em 0 0;
+    position: relative;
+    top: -3em;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: nowrap;
+
+    list-style-type: none;
+
+}
+
+.punto {
+    width: 0.8em;
+    height: 0.8em;
+    margin: 0.2em;
+    border-radius: 50%;
+    background-color: #a1d6e3;
+}
+
+.punto.activo {
+    background-color: #18515F;
+}
+
+
 .section-servicios {
     width: 90%;
     margin: auto;
@@ -236,6 +254,7 @@ width: 100vw;
     display: flex;
     flex-wrap: wrap;
     justify-content: space-around;
+    align-items: center;
 }
 
 .articulo-productos-descuentos {
@@ -693,6 +712,10 @@ h2 {
 /* --------------- header ----------------------------------- */
 
 /* --------------- main ----------------------------------- */
+.carrusel {
+    display: block;
+}
+
 .section-servicios {
     display: block;
 }

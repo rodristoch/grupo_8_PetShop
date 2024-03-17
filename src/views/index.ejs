@@ -8,19 +8,16 @@
     <%- include("./partials/header2.ejs") %>
 
     <main>
-        <section class="section-carrusel">
-            
-            <img class="img-carrusel1" src="\img\Imagen_carrusel.png" alt="Imagen_carrusel">
-             <!-- <div class="carousel-container">
-                <div class="carousel" id="carousel">
-                  <img src="\img\Imagen_carrusel.png" alt="Imagen 1">
-                  <img src="\img\Imagen_carrusel2.jpg" alt="Imagen 2">
-                </div>
-                <button class="prev" onclick="prevSlide()">Anterior</button>
-                <button class="next" onclick="nextSlide()">Siguiente</button>
-              </div>
-              
-              <script src="script.js"></script> -->
+        <section class="carrusel">
+            <div class="grande">
+                <img class="img-carrusel" src="/img/Imagen_carrusel.png" alt="Imagen_carrusel">
+                <img class="img-carrusel" src="/img/Imagen_carrusel2.jpg" alt="Imagen_carrusel2">
+            </div>
+
+            <ul class="puntos">
+                <li class="punto activo"></li>
+                <li class="punto"></li>
+            </ul>
         </section>
 
         <section class="section-servicios">
@@ -152,46 +149,42 @@
                
             </div>
         </section>
-       
 
-
-   <!--- Sección productos para Gato-->
-   <section class="section-productos-descuentos">
-    <h2>Productos para gato</h2>
-    <div class="div-section-productos-descuentos">
-        <% productosGato.forEach(producto => {%>
-            <article class="articulo-productos-descuentos">
-                <a href="/productos/detalle/<%= producto.id %>">
-                    <div class="contenedor_imagen">
-                        <img class="img-productos-descuentos" src="/img/productos/<%= producto.imagen %>" alt="imagen_producto">
-                    </div>
-                </a>
-                <div>
-                    <div class="texto_nombre_arriba"> <!--- Limita la altura del box-->
-                        <h4><%= producto.nombre %></h4>
-                    </div>
-                    
-                    <div class="texto_descripcion_arriba">
-                        <p class="descripcion"><%= producto.descripcion %></p>
-                    </div>
-                    <p class="precio">$ <%= producto.precio %></p>
-                    <div class="div-boton-comprar">
-                        <button class="boton-comprar" type="submit">Agregar</button>
-                    </div>
-                </div>
-
-            </article>
-            <%})%>
-       
-    </div>
-</section>
+        <!--- Sección productos para Gato-->
+        <section class="section-productos-descuentos">
+            <h2>Productos para gato</h2>
+            <div class="div-section-productos-descuentos">
+                <% productosGato.forEach(producto => {%>
+                    <article class="articulo-productos-descuentos">
+                        <a href="/productos/detalle/<%= producto.id %>">
+                            <div class="contenedor_imagen">
+                                <img class="img-productos-descuentos" src="/img/productos/<%= producto.imagen %>" alt="imagen_producto">
+                            </div>
+                        </a>
+                        <div>
+                            <div class="texto_nombre_arriba"> <!--- Limita la altura del box-->
+                                <h4><%= producto.nombre %></h4>
+                            </div>
+                                
+                            <div class="texto_descripcion_arriba">
+                                <p class="descripcion"><%= producto.descripcion %></p>
+                            </div>
+                            <p class="precio">$ <%= producto.precio %></p>
+                            <div class="div-boton-comprar">
+                                <button class="boton-comprar" type="submit">Agregar</button>
+                            </div>
+                        </div>
+            
+                    </article>
+                <%})%>
+            </div>
+        </section>
    
     </main>
 
     <%- include("./partials/footer.ejs") %>
 
-
-
+    <script src="/js/carrusel.js"></script>
     
 </body>
 </html>
