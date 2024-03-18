@@ -1,5 +1,6 @@
 * body {
     margin: 0;
+    padding: 0;
     font-family: 'Roboto', sans-serif;
     box-sizing: border-box;
 }
@@ -107,22 +108,21 @@ width: 100vw;
 
 /* carrusel */
 .carrusel {
-    display: none;
     width: 100%;
     max-width: 120em;
-    margin-bottom: -40px;
+    margin-bottom: -25px;
     overflow: hidden;
     z-index: 0;
-    
 }
 
 .grande {
+    /* diseño */
     width: 200%;
-
+    /* posicionamiento hijos*/
     display: flex;
-    justify-content: space-between;
+    justify-content: flex-start;
     align-items: center;
-    flex-wrap: nowrap;
+    flex-wrap: wrap;
 
     transition: all .5s ease;
     transform: translateX(0%);
@@ -131,39 +131,107 @@ width: 100vw;
 
 .img-carrusel {
     width: calc(100% / 2);
-    min-height: 10vh;
-    position: relative;
+    height: 100%;
+    /* position: relative; */
 
 }
 
-.puntos {
+.div-btns {
+    opacity: 0;
     width: 100%;
-    padding: 0.4em;
-    margin: 1em 0 0;
-    position: relative;
-    top: -3em;
-
+    height: 100%;
+    text-align: center;
     display: flex;
     justify-content: center;
     align-items: center;
-    flex-wrap: nowrap;
+    flex-wrap: wrap;
+    margin: 0;
+    padding: 0;
+    position: relative;
+}
 
+.uno {
+    opacity: 0;
+    width: 50%;
+    text-align: start;
+    margin: 0;
+    padding: 0;
+}
+
+.dos {
+    opacity: 0;
+    width: 50%;
+    text-align: end;
+    margin: 0;
+    padding: 0;
+}
+
+.btn-carrusel-der {
+    /* diseño */
+    opacity: 0;
+    border-radius: 50%;
+    border: none;
+    background-color: #1e697b;
+    margin-left: 2%;
+    /* posicionamiento */
+    /* position: relative;
+    left: 2em;   */
+    
+}
+
+.btn-carrusel-izq {
+    /* diseño */
+    opacity: 0;
+    border-radius: 50%;
+    border: none;
+    background-color: #1e697b;
+    margin-right: 2.1%;
+    /* posicionamiento */
+    /* position: relative;
+    right: -122.7em; */
+    
+}
+
+.puntos {
+    /* diseño */
+    display: none;
+    width: 100%;
+    position: relative;
+    text-align: center;
     list-style-type: none;
-
+    /* posicionamiento hijos*/
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    margin: 0;
+    padding: 0;
 }
 
 .punto {
-    width: 0.8em;
-    height: 0.8em;
+    /* diseño */
+    width: 0.5em;
+    height: 0.5em;
     margin: 0.2em;
     border-radius: 50%;
     background-color: #a1d6e3;
+    border: 1px solid rgb(255, 255, 255);
 }
 
 .punto.activo {
+    /* diseño */
     background-color: #18515F;
+    border: 1px solid rgb(85, 81, 81);
 }
 
+.fa-solid.fa-angle-left {
+    color: white;
+    font-size: 150%;
+}
+
+.fa-solid.fa-angle-right {
+    color: white;
+    font-size: 150%;
+}
 
 .section-servicios {
     width: 90%;
@@ -253,7 +321,7 @@ width: 100vw;
 .div-section-productos-descuentos {
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-around;
+    justify-content: space-between;
     align-items: center;
 }
 
@@ -673,16 +741,19 @@ h2 {
     width: 28%;
 }
 
+.puntos {
+    display: none;
+    top: -3em;
+}
 
+.carrusel {
+    margin-bottom: -10px;
+}
 
 }
 
 @media (min-width: 1024px) {
 /* --------------- header ----------------------------------- */
-
-/* .top {
-    height: 15vh;
-} */
 
 .flex-top {
     height: 10%;
@@ -712,8 +783,66 @@ h2 {
 /* --------------- header ----------------------------------- */
 
 /* --------------- main ----------------------------------- */
+
+.img-carrusel, .puntos {
+    cursor: pointer;
+}
+
+.div-btns, .uno, .dos {
+    opacity: 1;
+    top: -8em
+}
+
+.btn-carrusel-der {
+    opacity: 0;
+    transition: 150ms;
+    width: 3em;
+    height: 3em;
+}
+
+.btn-carrusel-izq {
+    opacity: 0;
+    transition: 150ms;
+    width: 3em;
+    height: 3em;
+}
+
+.btn-carrusel-der {
+    box-shadow : 0px 0px 20px rgb(189, 147, 38);
+    transition: 200ms;
+}
+
+.btn-carrusel-izq {
+    box-shadow : 0px 0px 20px rgb(189, 147, 38);
+    transition: 200ms;
+}
+
+.btn-carrusel-der:hover {
+    box-shadow : 0px 0px 20px rgb(145, 111, 24);
+}
+
+.btn-carrusel-izq:hover {
+    box-shadow : 0px 0px 20px rgb(145, 111, 24);
+}
+
+.carrusel:hover {
+    .btn-carrusel-der {
+        opacity: 1;
+    }
+
+    .btn-carrusel-izq {
+        opacity: 1;
+    }
+}
+
+
 .carrusel {
-    display: block;
+    margin-bottom: -40px;
+}
+
+.puntos {
+    display: flex;
+    top: -4em;
 }
 
 .section-servicios {
@@ -801,6 +930,10 @@ h4 {
 .section-servicios, .div-section-filtro-perro-gato, .section-productos-descuentos, .section-productos-perro, .div-productos-perro {
     max-width: 1200px;
     margin: auto;
+}
+
+.header2, .flex-top, .carrusel {
+    max-width: 100vw;
 }
 
 .section-servicios {
@@ -939,5 +1072,27 @@ h4 {
     overflow: hidden;
     text-overflow: ellipsis; 
 }
+
+.div-btns, .uno, .dos {
+    top: -9em
+}
+
+.btn-carrusel-der, .btn-carrusel-izq {
+    width: 4em;
+    height: 4em;
+}
+
+.puntos {
+    top: -5em;
+}
+
+}
+
+@media (min-width: 1600px) {
+
+    .div-btns, .uno, .dos {
+        top: -11.5em
+    }
+
 
 }

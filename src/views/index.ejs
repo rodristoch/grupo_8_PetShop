@@ -14,10 +14,20 @@
                 <img class="img-carrusel" src="/img/Imagen_carrusel2.jpg" alt="Imagen_carrusel2">
             </div>
 
+            <div class="div-btns">
+                <div class="uno">
+                    <button class="btn-carrusel-der" id="btn"><i class="fa-solid fa-angle-left"></i></button>
+                </div>
+                <div class="dos">
+                    <button class="btn-carrusel-izq" id="btn"><i class="fa-solid fa-angle-right"></i></button>
+                </div>
+            </div>
+
             <ul class="puntos">
                 <li class="punto activo"></li>
                 <li class="punto"></li>
             </ul>
+
         </section>
 
         <section class="section-servicios">
@@ -94,7 +104,7 @@
                             </div>
                             <div class="div-precios">
                                 <p class="precio-tachado">$ <%= producto.precio %></p>
-                                <p class="precio-d">$ <%= Number((producto.precio*0.8).toFixed(2)) %></p>
+                                <p class="precio-d">$ <%= Number((producto.precio*0.8).toFixed(0)) %></p>
                                 <p class="descuento">20% OFF</p>
                             </div>
                             <div class="div-boton-comprar">
@@ -103,8 +113,7 @@
                         </div>
 
                     </article>
-                    <%})%>
-               
+                <%})%>
             </div>
         </section>
 
