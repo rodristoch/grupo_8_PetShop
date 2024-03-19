@@ -754,6 +754,15 @@ h2 {
 
 }
 
+@media (min-width: 993px){
+
+    .articulo-productos-descuentos {
+        width: 85%;
+    }
+
+
+}
+
 @media (min-width: 1024px) {
 /* --------------- header ----------------------------------- */
 
