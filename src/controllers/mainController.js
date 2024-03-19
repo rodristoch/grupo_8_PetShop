@@ -13,9 +13,9 @@ const mainController = {
             const productos = await db.Producto.findAll();
            
             // Filtrar y mostrar 6 productos de perros y gatos 
-            const productosPerro = productos.filter(producto => producto.tipo_mascota_id === 2).slice(0, 6);
+            const productosPerro = productos.filter(producto => producto.tipo_mascota_id === 2).slice(0, 10);
 
-            const productosGato = productos.filter(producto => producto.tipo_mascota_id === 1).slice(0, 6);
+            const productosGato = productos.filter(producto => producto.tipo_mascota_id === 1).slice(0, 10);
 
 // Accesorios perros
              let productosPerroAccesorios
@@ -60,7 +60,7 @@ const mainController = {
                 }
             });
             // mostrar N productos
-            productosGatoAccesorios = productosGatoAccesorios.slice(0, 6);
+            productosGatoAccesorios = productosGatoAccesorios.slice(0, 10);
         } catch (error) {
             console.error('Error al consultar los accesorios para gatos:', error);
         }
@@ -87,7 +87,7 @@ const mainController = {
             });
 
             // mostrar N productos
-            productosConDescuentoPerro = productosConDescuentoPerro.slice(0, 6);
+            productosConDescuentoPerro = productosConDescuentoPerro.slice(0, 10);
 
             // comprobación de que trae productos con descuento
             //console.log(productosConDescuentoPerro.length); 
@@ -120,7 +120,7 @@ const mainController = {
                 }
             });
             // mostrar N productos
-            productosConDescuentoGato = productosConDescuentoGato.slice(0, 6);
+            productosConDescuentoGato = productosConDescuentoGato.slice(0, 10);
 
             // comprobación de que trae productos con descuento
             //console.log(productosConDescuentoGato.length); 
@@ -151,7 +151,7 @@ const mainController = {
                 }
             });
             // mostrar N productos
-            productosConDescuentoRandom = productosConDescuentoRandom.slice(0, 12);
+            productosConDescuentoRandom = productosConDescuentoRandom.slice(0, 10);
 
             // comprobación de que trae productos con descuento
             //console.log(productosConDescuentoGato.length); 
@@ -212,5 +212,4 @@ const mainController = {
 };
 
 module.exports = mainController;
-
 

@@ -1,6 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
     <%- include("./partials/head.ejs", {cssSheet: "index_styles", title: "Home - PATITAS"}) %>
+    
+    
 <body>
 
     <%- include("./partials/header.ejs") %>
@@ -8,27 +10,21 @@
     <%- include("./partials/header2.ejs") %>
 
     <main>
-        <section class="carrusel">
-            <div class="grande">
-                <img class="img-carrusel" src="/img/Imagen_carrusel.png" alt="Imagen_carrusel">
-                <img class="img-carrusel" src="/img/Imagen_carrusel2.jpg" alt="Imagen_carrusel2">
-            </div>
-
-            <div class="div-btns">
-                <div class="uno">
-                    <button class="btn-carrusel-der" id="btn"><i class="fa-solid fa-angle-left"></i></button>
-                </div>
-                <div class="dos">
-                    <button class="btn-carrusel-izq" id="btn"><i class="fa-solid fa-angle-right"></i></button>
-                </div>
-            </div>
-
-            <ul class="puntos">
-                <li class="punto activo"></li>
-                <li class="punto"></li>
+        <div class="swiffy-slider slider-indicators-round">
+            <ul class="slider-container">
+                <li><a href="/productos/promociones"><img src="/img/Imagen_carrusel.png" style="max-width: 100%;height: auto;"></a></li>
+                <li><a href="/productos/promociones"><img src="/img/Imagen_carrusel2.jpg" style="max-width: 100%;height: auto;"></a></li>
             </ul>
-
-        </section>
+        
+            <button type="button" class="slider-nav"></button>
+            <button type="button" class="slider-nav slider-nav-next"></button>
+        
+            <div class="slider-indicators">
+                <button class="active"></button>
+                <button></button>
+                
+            </div>
+        </div>
 
         <section class="section-servicios">
             <div class="div-section-servicios">
@@ -83,37 +79,51 @@
             
         </section>
 
-       <!--- Seccion productos en javascript para el front podremos limitar la cantidad de caracteres-->
+        <!--- Seccion productos en javascript para el front podremos limitar la cantidad de caracteres-->
         <section class="section-productos-descuentos">
-            <h2>Productos con descuentos</h2>
-            <div class="div-section-productos-descuentos">
-                <% productosConDescuentoGato.forEach(producto => {%>
-                    <article class="articulo-productos-descuentos">
-                        <a href="/productos/detalle/<%= producto.id %>">
-                            <div class="contenedor_imagen">
-                                <img class="img-productos-descuentos" src="/img/productos/<%= producto.imagen %>" alt="imagen_producto">
-                            </div>
-                        </a>
-                        <div>
-                            <div class="texto_nombre_arriba"> <!--- Limita la altura del box-->
-                                <h4><%= producto.nombre %></h4>
-                            </div>
-                            
-                            <div class="texto_descripcion_arriba">
-                                <p class="descripcion"><%= producto.descripcion %></p>
-                            </div>
-                            <div class="div-precios">
-                                <p class="precio-tachado">$ <%= producto.precio %></p>
-                                <p class="precio-d">$ <%= Number((producto.precio*0.8).toFixed(0)) %></p>
-                                <p class="descuento">20% OFF</p>
-                            </div>
-                            <div class="div-boton-comprar">
-                                <button class="boton-comprar" type="submit">Agregar</button>
-                            </div>
-                        </div>
-
-                    </article>
-                <%})%>
+            <div class="swiffy-slider slider-item-show6 slider-item-show2-sm slider-item-reveal slider-item-snapstart slider-nav-dark slider-indicators-round slider-indicators-dark">
+                <h2>Productos con descuentos</h2>
+                <div class="div-section-productos-descuentos">
+                    <ul class="slider-container">
+                        <% productosConDescuentoGato.forEach(producto => {%>
+                            <article class="articulo-productos-descuentos">
+                                <a href="/productos/detalle/<%= producto.id %>">
+                                    <div class="contenedor_imagen">
+                                        <img class="img-productos-descuentos" src="/img/productos/<%= producto.imagen %>" alt="imagen_producto">
+                                    </div>
+                                </a>
+                                <div>
+                                    <div class="texto_nombre_arriba"> <!--- Limita la altura del box-->
+                                        <h4><%= producto.nombre %></h4>
+                                    </div>
+                                        
+                                    <div class="texto_descripcion_arriba">
+                                        <p class="descripcion"><%= producto.descripcion %></p>
+                                    </div>
+                                    <div class="div-precios">
+                                        <p class="precio-tachado">$ <%= producto.precio %></p>
+                                        <p class="precio-d">$ <%= Number((producto.precio*0.8).toFixed(0)) %></p>
+                                        <p class="descuento">20% OFF</p>
+                                    </div>
+                                    <div class="div-boton-comprar">
+                                        <button class="boton-comprar" type="submit">Agregar</button>
+                                    </div>
+                                </div>
+                            </article>
+                        <%})%>
+                    </ul>
+                
+                    <button type="button" class="slider-nav"></button>
+                    <button type="button" class="slider-nav slider-nav-next"></button>
+                
+                    <ul class="slider-indicators">
+                        <li class=""></li>
+                        <li class=""></li>
+                        <li class=""></li>
+                        <li class=""></li>
+                        <li class="active"></li>
+                    </ul>
+                </div>
             </div>
         </section>
 
@@ -130,62 +140,89 @@
 
         <!--- Sección productos para perro-->
         <section class="section-productos-descuentos">
-            <h2>Productos para perro</h2>
-            <div class="div-section-productos-descuentos">
-                <% productosPerro.forEach(producto => {%>
-                    <article class="articulo-productos-descuentos">
-                        <a href="/productos/detalle/<%= producto.id %>">
-                            <div class="contenedor_imagen">
-                                <img class="img-productos-descuentos" src="/img/productos/<%= producto.imagen %>" alt="imagen_producto">
-                            </div>
-                        </a>
-                        <div>
-                            <div class="texto_nombre_arriba"> <!--- Limita la altura del box-->
-                                <h4><%= producto.nombre %></h4>
-                            </div>
-                            
-                            <div class="texto_descripcion_arriba">
-                                <p class="descripcion"><%= producto.descripcion %></p>
-                            </div>
-                            <p class="precio">$ <%= producto.precio %></p>
-                            <div class="div-boton-comprar">
-                                <button class="boton-comprar" type="submit">Agregar</button>
-                            </div>
-                        </div>
-
-                    </article>
-                    <%})%>
-               
+            <div class="swiffy-slider slider-item-show6 slider-item-show2-sm slider-item-reveal slider-item-snapstart slider-nav-dark slider-indicators-round slider-indicators-dark">
+                <h2>Productos para perro</h2>
+                <div class="div-section-productos-descuentos">
+                    <ul class="slider-container">
+                        <% productosPerro.forEach(producto => {%>
+                            <article class="articulo-productos-descuentos">
+                                <a href="/productos/detalle/<%= producto.id %>">
+                                    <div class="contenedor_imagen">
+                                        <img class="img-productos-descuentos" src="/img/productos/<%= producto.imagen %>" alt="imagen_producto">
+                                    </div>
+                                </a>
+                                <div>
+                                    <div class="texto_nombre_arriba"> <!--- Limita la altura del box-->
+                                        <h4><%= producto.nombre %></h4>
+                                    </div>
+                                        
+                                    <div class="texto_descripcion_arriba">
+                                        <p class="descripcion"><%= producto.descripcion %></p>
+                                    </div>
+                                    <p class="precio">$ <%= producto.precio %></p>
+                                    <div class="div-boton-comprar">
+                                        <button class="boton-comprar" type="submit">Agregar</button>
+                                    </div>
+                                </div>
+                            </article>
+                        <%})%>
+                    </ul>
+                
+                    <button type="button" class="slider-nav"></button>
+                    <button type="button" class="slider-nav slider-nav-next"></button>
+                
+                    <ul class="slider-indicators">
+                        <li class=""></li>
+                        <li class=""></li>
+                        <li class=""></li>
+                        <li class=""></li>
+                        <li class="active"></li>
+                    </ul>
+                </div>
             </div>
         </section>
 
         <!--- Sección productos para Gato-->
         <section class="section-productos-descuentos">
-            <h2>Productos para gato</h2>
-            <div class="div-section-productos-descuentos">
-                <% productosGato.forEach(producto => {%>
-                    <article class="articulo-productos-descuentos">
-                        <a href="/productos/detalle/<%= producto.id %>">
-                            <div class="contenedor_imagen">
-                                <img class="img-productos-descuentos" src="/img/productos/<%= producto.imagen %>" alt="imagen_producto">
-                            </div>
-                        </a>
-                        <div>
-                            <div class="texto_nombre_arriba"> <!--- Limita la altura del box-->
-                                <h4><%= producto.nombre %></h4>
-                            </div>
-                                
-                            <div class="texto_descripcion_arriba">
-                                <p class="descripcion"><%= producto.descripcion %></p>
-                            </div>
-                            <p class="precio">$ <%= producto.precio %></p>
-                            <div class="div-boton-comprar">
-                                <button class="boton-comprar" type="submit">Agregar</button>
-                            </div>
-                        </div>
-            
-                    </article>
-                <%})%>
+            <div class="swiffy-slider slider-item-show6 slider-item-show2-sm slider-item-reveal slider-item-snapstart slider-nav-dark slider-indicators-round slider-indicators-dark">
+                <h2>Productos para gato</h2>
+                <div class="div-section-productos-descuentos">
+                    <ul class="slider-container">
+                        <% productosGato.forEach(producto => {%>
+                            <article class="articulo-productos-descuentos">
+                                <a href="/productos/detalle/<%= producto.id %>">
+                                    <div class="contenedor_imagen">
+                                        <img class="img-productos-descuentos" src="/img/productos/<%= producto.imagen %>" alt="imagen_producto">
+                                    </div>
+                                </a>
+                                <div>
+                                    <div class="texto_nombre_arriba"> <!--- Limita la altura del box-->
+                                        <h4><%= producto.nombre %></h4>
+                                    </div>
+                                        
+                                    <div class="texto_descripcion_arriba">
+                                        <p class="descripcion"><%= producto.descripcion %></p>
+                                    </div>
+                                    <p class="precio">$ <%= producto.precio %></p>
+                                    <div class="div-boton-comprar">
+                                        <button class="boton-comprar" type="submit">Agregar</button>
+                                    </div>
+                                </div>
+                            </article>
+                        <%})%>
+                    </ul>
+                
+                    <button type="button" class="slider-nav"></button>
+                    <button type="button" class="slider-nav slider-nav-next"></button>
+                
+                    <ul class="slider-indicators">
+                        <li class=""></li>
+                        <li class=""></li>
+                        <li class=""></li>
+                        <li class=""></li>
+                        <li class="active"></li>
+                    </ul>
+                </div>
             </div>
         </section>
    
@@ -193,7 +230,7 @@
 
     <%- include("./partials/footer.ejs") %>
 
-    <script src="/js/carrusel.js"></script>
+    <!-- <script src="/js/carrusel.js"></script> -->
     
 </body>
 </html>

@@ -21,6 +21,7 @@
     "mysql2": "^3.9.1",
     "nodemon": "^3.0.1",
     "sequelize": "^6.36.0",
-    "sequelize-cli": "^6.6.2"
+    "sequelize-cli": "^6.6.2",
+    "swiffy-slider": "^1.6.0"
   }
 }
