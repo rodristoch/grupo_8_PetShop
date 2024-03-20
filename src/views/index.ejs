@@ -1,12 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
+
     <%- include("./partials/head.ejs", {cssSheet: "index_styles", title: "Home - PATITAS"}) %>
-    
+    <link rel="stylesheet" href="/css/header-footer.css">
     
 <body>
 
     <%- include("./partials/header.ejs") %>
-
     <%- include("./partials/header2.ejs") %>
 
     <main>
@@ -76,7 +76,6 @@
                     </a>
                 </article>
             </div>
-            
         </section>
 
         <!--- Seccion productos en javascript para el front podremos limitar la cantidad de caracteres-->
@@ -92,7 +91,7 @@
                                         <img class="img-productos-descuentos" src="/img/productos/<%= producto.imagen %>" alt="imagen_producto">
                                     </div>
                                 </a>
-                                <div>
+                                <div class="div-card">
                                     <div class="texto_nombre_arriba"> <!--- Limita la altura del box-->
                                         <h4><%= producto.nombre %></h4>
                                     </div>
@@ -151,7 +150,7 @@
                                         <img class="img-productos-descuentos" src="/img/productos/<%= producto.imagen %>" alt="imagen_producto">
                                     </div>
                                 </a>
-                                <div>
+                                <div class="div-card">
                                     <div class="texto_nombre_arriba"> <!--- Limita la altura del box-->
                                         <h4><%= producto.nombre %></h4>
                                     </div>
@@ -195,7 +194,7 @@
                                         <img class="img-productos-descuentos" src="/img/productos/<%= producto.imagen %>" alt="imagen_producto">
                                     </div>
                                 </a>
-                                <div>
+                                <div class="div-card">
                                     <div class="texto_nombre_arriba"> <!--- Limita la altura del box-->
                                         <h4><%= producto.nombre %></h4>
                                     </div>
