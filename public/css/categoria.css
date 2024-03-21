@@ -316,7 +316,7 @@ input[type="radio"] {
     color: rgb(56, 56, 56);
     font-weight: 300;
     text-decoration: line-through;
-    width: 15%;
+    width: 17%;
     font-size: 16px;
     border: 1px solid white;
     margin: 0;
@@ -325,7 +325,7 @@ input[type="radio"] {
 
 .precio {
     font-weight: 600;
-    width: 85%;
+    width: 83%;
     font-size: 18px;
     border: 1px solid white;
     margin: 0;
@@ -455,10 +455,18 @@ input[type="radio"] {
         justify-content: flex-start;
     }
 
+    .contenedor-filtros-desktop { /* el contenedor del box de los filtros */
+        width: 15%;
+        border: 1px solid rgb(226, 226, 226);
+        padding: 5px;
+        display: flex;
+        align-items: flex-start;
+    }
+
     .contenedor_menu_desktop { /* el box de los filtros */
         display: block;
-        margin-left: 10px;
-        width: 15%;
+        /* margin-left: 10px; */
+        width: 100%;
         background-color: white;
         border: 1px solid rgb(159, 159, 159);
     }
@@ -478,7 +486,7 @@ input[type="radio"] {
         border: 1px solid white;
     }
 
-    .lista_flexbox_desktop {
+    .lista_flexbox_desktop { 
         border: 1px solid white;
         display: flex;
         flex-wrap: wrap;
@@ -488,10 +496,17 @@ input[type="radio"] {
 
 @media (min-width: 1200px) { /* desde acá se muestran 4 cards a lo ancho */
 
+    .contenedor-filtros-desktop { /* el contenedor del box de los filtros */
+        width: 17%;
+        border: 1px solid rgb(226, 226, 226);
+        padding: 5px;
+        display: flex;
+        align-items: flex-start;
+    }
+
     .contenedor_menu_desktop { /* el box de los filtros */
-        margin-left: 7px;
-        max-width: 300px;
-        width: 15%;
+        /* margin-left: 7px; */
+        width: 100%;
         background-color: white;
     }
 
@@ -511,15 +526,23 @@ input[type="radio"] {
 
 @media (min-width: 1600px) {
 
+    .contenedor-filtros-desktop { /* el contenedor del box de los filtros */
+        width: 18%;
+        border: 1px solid rgb(226, 226, 226);
+        padding: 5px;
+        display: flex;
+        align-items: flex-start;
+    }
+
     .contenedor_menu_desktop { /* el box de los filtros */
-        margin-left: 12px;
+        /* margin-left: 12px; */
         max-width: 300px;
-        width: 15%;
+        width: 100%;
     }
 
     .lista_desktop { /* el box de los productos */
-        max-width: 1400px;
-        width: 85%;
+        max-width: 1300px;
+        width: 82%;
         padding-left: 10px;
         padding-right: 10px;
     }

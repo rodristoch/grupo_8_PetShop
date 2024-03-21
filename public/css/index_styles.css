@@ -419,6 +419,7 @@ h2 {
 
 @media (min-width: 768px) {
 
+    /* seccion servicios */
     .articulo-servicio {
         width: 30%;
         margin: 10px;
@@ -446,28 +447,32 @@ h2 {
         font-size: 16px;
         margin-bottom: -5px;
     }
-    
+
+    /* seccion botones perro/gato */
     .articulo-filtro-perro-gato {
         width: 49%;
         margin-top: -15px;
     }
     
-    .div-section-productos-descuentos {
-        justify-content: space-between;
-    }
-    
+    /* seccion productos */
     .section-productos-descuentos {
         margin-top: -30px;
     }
-    
+
+    .div-section-productos-descuentos {
+        justify-content: space-between;
+    }
+
     h2 {
         margin-bottom: 10px;
     }
     
+    /* card producto */
     .articulo-productos-descuentos {
         width: 80%;
     }
     
+    /* seccion banner */
     .h2-banner-1ra-linea {
         top: 5px;
         left: 20px;
@@ -480,34 +485,19 @@ h2 {
         font-size: 27px; 
     }
     
-    .h2-productos {
-        margin-top: 40px;
-    }
-    
-    .div-productos-perro {
-        justify-content: space-between;
-    }
-    
-    .section-productos-perro {
-        margin-top: -30px;
-    }
-    
-    .articulo-productos-perro {
-        width: 28%;
-    }
-    
-    .puntos {
+    /* .puntos {
         display: none;
         top: -3em;
     }
     
     .carrusel {
         margin-bottom: -10px;
-    }
+    } */
 }
 
 @media (min-width: 993px){
 
+    /* card producto */
     .articulo-productos-descuentos {
         width: 85%;
         height: auto;
@@ -669,7 +659,7 @@ h2 {
 
 @media (min-width: 1200px) {
 
-    .section-servicios, .div-section-filtro-perro-gato, .section-productos-descuentos, .section-productos-perro, .div-productos-perro {
+    .section-servicios, .div-section-filtro-perro-gato, .section-productos-descuentos {
         max-width: 1200px;
         margin: auto;
     }
@@ -708,7 +698,8 @@ h2 {
         font-size: 40px;
         cursor: pointer;
     }
-    
+
+    /* seccion productos */
     .articulo-productos-descuentos {
         width: 80%;
     }
@@ -722,19 +713,6 @@ h2 {
         cursor: pointer;
     }
 
-    /* seccion banner */
-    .h2-banner-1ra-linea {
-        top: 70px;
-        left: 45px;
-        font-size: 40px;
-    }
-    
-    .h2-banner-2da-linea {
-        top: 140px;
-        left: 45px;
-        font-size: 40px;
-    }
-    
     /* card producto */
     h4 { /* producto.nombre */
         font-size: 16px;
@@ -756,6 +734,17 @@ h2 {
         text-overflow: ellipsis; 
     }
 
+    /* seccion banner */
+    .h2-banner-1ra-linea {
+        top: 70px;
+        left: 45px;
+        font-size: 40px;
+    }
+    
+    .h2-banner-2da-linea {
+        top: 140px;
+        left: 45px;
+        font-size: 40px;
+    }
+
 }
-
-

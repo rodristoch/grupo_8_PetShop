@@ -264,12 +264,8 @@ const userController = {
         //usuario q se loguea
         const userALoguearse = req.session.userLogueado
 
-        //Productos con descuento de perro
+        //Productos con descuento
         db.Producto.findAll({
-            include: ["tipos_mascota"],
-            where: {
-                tipo_mascota_id: 1,  // ID de perro de SQL
-            },
             include: [{
                 model: db.Descuento,
                 as: 'descuentos',
@@ -277,7 +273,7 @@ const userController = {
                     id: 2 // ID descuento de SQL
                 }
             }],
-            limit: 6
+            limit: 16
         })
 
         .then(productosConDescuentoGato => {

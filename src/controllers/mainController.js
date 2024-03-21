@@ -160,6 +160,32 @@ const mainController = {
             
         }
 
+//AMBOS productos con descuento 
+let productosConDescuento;
+try {
+    // Busca los productos con descuento id 2
+    productosConDescuento = await db.Producto.findAll({
+        include: [{
+            model: db.Descuento,
+            as: 'descuentos',
+            attributes: ['id', 'nombre', 'descripcion', 'fecha_inicio', 'fecha_final'],
+            through: { attributes: [] }, // Evita incluir automáticamente las columnas de la tabla intermedia
+            where: {
+                id: 2 // ID descuento de SQL
+            }
+        }]
+    });
+
+    // mostrar N productos
+    productosConDescuento = productosConDescuento.slice(0, 16);
+
+    // comprobación de que trae productos con descuento
+    //console.log(productosConDescuentoPerro.length); 
+} catch (error) {
+    console.error('Error al buscar productos con el descuento ID 2:', error);
+   
+}
+
 // Obtener usuario que ha iniciado sesión
         const userALoguearse = req.session.userLogueado;
 
@@ -173,6 +199,7 @@ const mainController = {
                 productosConDescuentoPerro,
                 productosConDescuentoGato,
                 productosConDescuentoRandom,
+                productosConDescuento,
                 userALoguearse, 
             });
         } catch (error) {

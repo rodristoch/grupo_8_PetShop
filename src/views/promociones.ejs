@@ -1,10 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
+
     <%- include("./partials/head.ejs", {cssSheet: "categoria", title: "Página Categoría"}) %>
+    <link rel="stylesheet" href="/css/header-footer.css">
+
 <body>
 
     <%- include("./partials/header.ejs") %>
-
     <%- include("./partials/header2.ejs") %>
     
     <main>
@@ -65,41 +67,43 @@
 
         <!--  Menú desktop + productos-->
         <section class="contenedor_menu_productos_desktop">
-            <!--  Filtros-->
-            <article class="contenedor_menu_desktop">
-                <div class="contenedor_filtros">
-                    <section class="lista_filtros_desktop">
-                        <h4>Promociones</h4>
-                        <div class="flex_enlinea_menu">
-                            <p>Promociones para perro</p><input type="checkbox">
-                        </div>
-                        <div class="flex_enlinea_menu">
-                            <p>Promociones para gato</p><input type="checkbox">
-                        </div>
-                    </section>
-
-                    <section class="lista_filtros_desktop">
-                        <h4>Precio</h4>
-                        <div class="flex_enlinea_menu">
-                            <p>0 a 100</p><input type="checkbox">
-                        </div>
-                        <div class="flex_enlinea_menu">
-                            <p>100 a 200</p><input type="checkbox">
-                        </div>
-                        <div class="flex_enlinea_menu">
-                            <p>200 a 300</p><input type="checkbox">
-                        </div>
-                        <div class="flex_enlinea_menu">
-                            <p>Más de 400</p><input type="checkbox">
-                        </div>
-                    </section>
-                </div>
-            </article>
-
+            <div class="contenedor-filtros-desktop">
+                <!--  Filtros-->
+                <article class="contenedor_menu_desktop">
+                    <div class="contenedor_filtros">
+                        <section class="lista_filtros_desktop">
+                            <h4>Promociones</h4>
+                            <div class="flex_enlinea_menu">
+                                <p>Promociones para perro</p><input type="checkbox">
+                            </div>
+                            <div class="flex_enlinea_menu">
+                                <p>Promociones para gato</p><input type="checkbox">
+                            </div>
+                        </section>
+    
+                        <section class="lista_filtros_desktop">
+                            <h4>Precio</h4>
+                            <div class="flex_enlinea_menu">
+                                <p>0 a 100</p><input type="checkbox">
+                            </div>
+                            <div class="flex_enlinea_menu">
+                                <p>100 a 200</p><input type="checkbox">
+                            </div>
+                            <div class="flex_enlinea_menu">
+                                <p>200 a 300</p><input type="checkbox">
+                            </div>
+                            <div class="flex_enlinea_menu">
+                                <p>Más de 400</p><input type="checkbox">
+                            </div>
+                        </section>
+                    </div>
+                </article>
+            </div>
+            
              <!-- Lista productos productos-->
              <div class="lista_desktop">
                 <div>
-                    <h2 style="margin-left: 2.5%;">Promociones Perro</h2>
+                    <h2 style="margin-left: 2%; margin-top: 2.5%;">Promociones Perro</h2>
                     <div class="lista_flexbox_desktop">
                         <% for(let producto of productosPerroConDescuento) { %>
                             <article class="articulo-productos-descuentos">
@@ -164,7 +168,7 @@
                 <div>
 
                 <div>
-                    <h2 style="margin-left: 2.5%; margin-top: 30px;">Promociones Gato</h2>
+                    <h2 style="margin-left: 2%; margin-top: 2.5%;">Promociones Gato</h2>
                     <div class="lista_flexbox_desktop">
                         <% for(let producto of productosGatoConDescuento) { %>
                             <article class="articulo-productos-descuentos">
