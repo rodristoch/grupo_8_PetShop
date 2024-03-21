@@ -12,8 +12,45 @@ const productsFilePath = path.join(__dirname, "../data/productosDataBase.json");
 
 const productController = {
 
-    categoriaPerro : (req, res) => {
+    productos : (req, res) => {
 
+        const userALoguearse = req.session.userLogueado
+
+        let productosPerro = db.Producto.findAll({
+            where: {
+                tipo_mascota_id: 2,
+            },
+            include: [{
+                model: db.Descuento,
+                as: 'descuentos',
+            }],
+            limit: 4
+        })
+
+        let productosGato = db.Producto.findAll({
+            where: {
+                tipo_mascota_id: 1,
+            },
+            include: [{
+                model: db.Descuento,
+                as: 'descuentos',
+            }],
+            limit: 4
+        })
+
+        Promise.all([productosPerro, productosGato])
+
+        .then(([productosPerro, productosGato]) =>{
+            res.render('productos.ejs', {productosPerro, productosGato, userALoguearse});
+        })
+        .catch(function (error){
+            console.error('Error al recuperar productos', error);
+        });
+
+
+    },
+
+    categoriaPerro : (req, res) => {
 
         const userALoguearse = req.session.userLogueado
 
@@ -37,7 +74,6 @@ const productController = {
     },
 
     categoriaGato : (req, res) => {
-
 
         const userALoguearse = req.session.userLogueado
 
@@ -688,7 +724,13 @@ const productController = {
 
         let productoId = req.params.id;
 
-        db.Producto.findByPk(productoId)
+        db.Producto.findByPk(productoId, {
+            include: ['tipos_mascota'],
+            include: [{
+                model: db.Descuento,
+                as: 'descuentos',
+            }]
+        })
         
         .then(producto => {
             return res.render("detalle.ejs", {producto, userALoguearse})})
@@ -803,8 +845,9 @@ const productController = {
         //Conozco el producto que vino por id
         const detalleDeProductoActual = unProducto.id_pet; */
           
-       /* // Función para encontrar 6 productos distintos para recomendados
-        let productosRecomendados = [];
+       // Función para encontrar 6 productos distintos para recomendados
+       /*  let productosRecomendados = [];
+
         if (detalleDeProductoActual == "Perro") {
             
             //Ecuento el id maximo del json
@@ -817,9 +860,9 @@ const productController = {
             }
         
             // Convierte los randomIDS a array
-            randomIDs = Array.from(randomIDs); */
+            randomIDs = Array.from(randomIDs);
         
-            /* // Filtra los productosPerro según en los IDs aleatorios
+            // Filtra los productosPerro según en los IDs aleatorios
             productosRecomendados = productosPerro.filter(item => randomIDs.includes(item.id));
             
             // Si la cantidad de productos recomendados es menor que 6, agrega productos adicionales
@@ -827,9 +870,9 @@ const productController = {
                 productosRecomendados.push(productosPerro[Math.floor(Math.random() * productosPerro.length)])
         }
 
-    } else if (detalleDeProductoActual == "Gato") { */
+    } else if (detalleDeProductoActual == "Gato") {
         
-       /*  //encuentro el id máximo en el json
+       //encuentro el id máximo en el json
         let maxID= Math.max(...productosGato.map(item => item.id));
 
         //set de 6 numeros aleatorios no repetidos
@@ -851,7 +894,7 @@ const productController = {
 
         }
         res.render("detalles-del-producto.ejs", {unProducto, productosRecomendados, userALoguearse}); 
-    }, */
+    },  */
 
     /* editarProducto: (req, res) => {
         // json de productos

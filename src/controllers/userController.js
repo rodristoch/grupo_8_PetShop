@@ -276,8 +276,8 @@ const userController = {
             limit: 16
         })
 
-        .then(productosConDescuentoGato => {
-                return res.render('carrito2.ejs', {userALoguearse, productosConDescuentoGato})
+        .then(productosConDescuento => {
+                return res.render('carrito2.ejs', {userALoguearse, productosConDescuento})
         })
 
     },

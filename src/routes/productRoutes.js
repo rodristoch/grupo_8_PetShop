@@ -41,6 +41,7 @@ router.get('/gato/higiene', productController.higieneGato)
 router.get('/gato/juguetes', productController.juguetesGato) 
 
 router.get('/promociones/', productController.promociones) 
+router.get('/', productController.productos) 
 
 // Marcas
 router.get('/marcas/', productController.marcas)
