@@ -92,10 +92,9 @@
                                     </div>
                                 </a>
                                 <div class="div-card">
-                                    <div class="texto_nombre_arriba"> <!--- Limita la altura del box-->
+                                    <div class="texto_nombre_arriba">
                                         <h4><%= producto.nombre %></h4>
-                                    </div>
-                                        
+                                    </div>               
                                     <div class="texto_descripcion_arriba">
                                         <p class="descripcion"><%= producto.descripcion %></p>
                                     </div>
@@ -157,14 +156,25 @@
                                     </div>
                                 </a>
                                 <div class="div-card">
-                                    <div class="texto_nombre_arriba"> <!--- Limita la altura del box-->
+                                    <div class="texto_nombre_arriba">
                                         <h4><%= producto.nombre %></h4>
-                                    </div>
-                                        
+                                    </div>  
                                     <div class="texto_descripcion_arriba">
                                         <p class="descripcion"><%= producto.descripcion %></p>
                                     </div>
-                                    <p class="precio">$ <%= producto.precio %></p>
+                                    <% if(producto.descuentos[0].id == 2) { %> <!-- y si tiene descuentos los productos (perro) -->
+                                        <div class="div-precios">
+                                            <p class="precio-tachado">$ <%= producto.precio %></p>
+                                            <p class="precio-d">$ <%= Number((producto.precio*0.8).toFixed(0)) %></p>
+                                            <p class="descuento">20% OFF</p>
+                                        </div>
+                                    <%} else { %> <!-- si no tienen descuentos los productos (perro) -->
+                                        <div class="div-precios">
+                                            <p class="precio-tachado" style="color: white;">$ <%= producto.precio %></p>
+                                            <p class="precio-d">$ <%= producto.precio %></p>
+                                            <p class="descuento" style="color: white;">20% OFF</p>
+                                        </div>
+                                    <% } %>
                                     <div class="div-boton-comprar">
                                         <button class="boton-comprar" type="submit">Agregar</button>
                                     </div>
@@ -201,14 +211,25 @@
                                     </div>
                                 </a>
                                 <div class="div-card">
-                                    <div class="texto_nombre_arriba"> <!--- Limita la altura del box-->
+                                    <div class="texto_nombre_arriba">
                                         <h4><%= producto.nombre %></h4>
-                                    </div>
-                                        
+                                    </div>       
                                     <div class="texto_descripcion_arriba">
                                         <p class="descripcion"><%= producto.descripcion %></p>
                                     </div>
-                                    <p class="precio">$ <%= producto.precio %></p>
+                                    <% if(producto.descuentos[0].id == 2) { %> <!-- y si tiene descuentos los productos (perro) -->
+                                        <div class="div-precios">
+                                            <p class="precio-tachado">$ <%= producto.precio %></p>
+                                            <p class="precio-d">$ <%= Number((producto.precio*0.8).toFixed(0)) %></p>
+                                            <p class="descuento">20% OFF</p>
+                                        </div>
+                                    <%} else { %> <!-- si no tienen descuentos los productos (perro) -->
+                                        <div class="div-precios">
+                                            <p class="precio-tachado" style="color: white;">$ <%= producto.precio %></p>
+                                            <p class="precio-d">$ <%= producto.precio %></p>
+                                            <p class="descuento" style="color: white;">20% OFF</p>
+                                        </div>
+                                    <% } %>
                                     <div class="div-boton-comprar">
                                         <button class="boton-comprar" type="submit">Agregar</button>
                                     </div>

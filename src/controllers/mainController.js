@@ -10,13 +10,30 @@ const productsFilePath = path.join(__dirname, '../data/productosDataBase.json');
 const mainController = {
     index: async (req, res) => {
         try {
-            const productos = await db.Producto.findAll();
+            let productosPerro = await db.Producto.findAll({
+                include: [{
+                    model: db.Descuento,
+                    as: 'descuentos',
+                }],
+                where: {
+                    tipo_mascota_id: 2,
+                },
+                limit: 12
+            })
+    
+            let productosGato = await db.Producto.findAll({
+                include: [{
+                    model: db.Descuento,
+                    as: 'descuentos',
+                }],
+                where: {
+                    tipo_mascota_id: 1,
+                },
+                limit: 12
+            })
            
-            // Filtrar y mostrar 6 productos de perros y gatos 
-            const productosPerro = productos.filter(producto => producto.tipo_mascota_id === 2).slice(0, 10);
-
-            const productosGato = productos.filter(producto => producto.tipo_mascota_id === 1).slice(0, 10);
-
+            Promise.all([productosPerro, productosGato])
+            
 // Accesorios perros
              let productosPerroAccesorios
         try {
@@ -239,4 +256,3 @@ try {
 };
 
 module.exports = mainController;
-

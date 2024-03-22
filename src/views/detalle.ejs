@@ -12,23 +12,35 @@
     <main>
       
         <article class="contenedor_mobile">
-            <!--Bread cumb -->
-            <p><a class="ruta" href="/">localhost:3100></a><a class="ruta" href="/productos">productos></a><a class="ruta" href="/productos/detalle/<%= producto.id %>">detalle/<%= producto.id %></a>
+            <!-- Ruta -->
+            <p><a class="ruta" href="/">localhost:3100</a> > <a class="ruta" href="/productos">productos</a> > <a class="ruta" href="/productos/detalle/<%= producto.id %>">detalle/<%= producto.id %></a>
 
-             <!--imagen -->
+             <!-- Imagen -->
             <div class="contenedor_imagen_mobile">
                 <img src="/img/productos/<%= producto.imagen %>" alt="Producto Comida" class="imagen_producto_mobile">
             </div>
-            <!--detalle de producto -->
+            <!-- Detalle de producto -->
             <section class=" detalle">
-                <p class="titulo_nombre"> <%= producto.nombre %></p>
-                <p class="precio">$ <%= producto.precio %></p>
-
+                <h2 class="titulo_nombre-detalle"> <%= producto.nombre %></h2>
+                <% if(producto.descuentos[0].id == 2) { %>
+                    <div class="div-dos">
+                        <p class="precio-normal">Precio normal</p>
+                        <p class="precio-tachado-detalle">$ <%= producto.precio %></p>
+                        <p class="descuento-detalle"><%= producto.descuentos[0].descripcion %></p>
+                    </div>
+                    <div class="div-tres">
+                        <p class="precio-oferta">Precio oferta</p>
+                        <p class="precio-detalle">$ <%= Number((producto.precio*0.8).toFixed(2)) %></p>
+                        <p class="descuento-precio">20% OFF</p>
+                    </div>
+                    
+                <% } else { %>
+                    <p class="precio-detalle">$ <%= producto.precio %></p>
+                <% } %>
             </section>
 
             <!-- Selector unidades -->
             <form action="/users/carrito" method="get">
-
                 <select name="cantidad">
                     <option value="valor">Seleccionar cantidad</option>
                     <option value="valor">1</option>
@@ -37,27 +49,122 @@
                 </select>
             </form>
 
-            <!--CTA princcipal -->
+            <!-- Botones -->
+            <!-- Boton Agregar al carrito -->
             <button class="boton_agregar" type="submit">Agregar al carrito</button>
 
-            <!-- CTA edición de producto -->
+            <!-- Boton Editar producto -->
             <% if(userALoguearse && userALoguearse.permiso_id == 1){ %>
                 <a class="editar" href="/productos/editar/<%= producto.id %>">
                     <button class="boton_editar">Editar producto</button>
                 </a>
-                 <!-- CTA eliminar producto -->
-                 <form action="/productos/eliminar/<%= producto.id %>?_method=DELETE" method="POST">
+                 <!-- Boton Eliminar producto -->
+                <form action="/productos/eliminar/<%= producto.id %>?_method=DELETE" method="POST">
                     <button type="submit" class="boton_eliminar" >Eliminar producto</button>
                 </form>
             <% } %>
             
-            <hr>
+            <hr class="linea">
 
             <p class="titulo_descripción">Descripción de producto</p>
-            <p class="descripcion-producto"> <%= producto.descripcion %></p>
+            <p class="descripcion-detalle"> <%= producto.descripcion %></p>
 
         </article>
 
+        <!-- seccion q muestra los productos en base al tipo de mascota q llega por id -->
+        <section class="section-productos-descuentos">
+            <div class="swiffy-slider slider-item-show6 slider-item-show2-sm slider-item-reveal slider-item-snapstart slider-nav-dark slider-indicators-round slider-indicators-dark">
+                <h2 class="titulo-section-productos-descuentos">Productos relacionados</h2>
+                <div class="div-section-productos-descuentos">
+                    <ul class="slider-container">
+                        <% if(producto.tipo_mascota_id == 2) { %> <!-- si el tipo de mascota es perro -->
+                            <% productosPerro.forEach(producto => { %>
+                                <article class="articulo-productos-descuentos">
+                                    <a href="/productos/detalle/<%= producto.id %>">
+                                        <div class="contenedor_imagen">
+                                            <img class="img-productos-descuentos" src="/img/productos/<%= producto.imagen %>" alt="imagen_producto">
+                                        </div>
+                                    </a>
+                                    <div class="div-card">
+                                        <div class="texto_nombre_arriba">
+                                            <h4><%= producto.nombre %></h4>
+                                        </div>
+                                        <div class="texto_descripcion_arriba">
+                                            <p class="descripcion"><%= producto.descripcion %></p>
+                                        </div>
+                                        <% if(producto.descuentos[0].id == 2) { %> <!-- y si tiene descuentos los productos (perro) -->
+                                            <div class="div-precios">
+                                                <p class="precio-tachado">$ <%= producto.precio %></p>
+                                                <p class="precio-d">$ <%= Number((producto.precio*0.8).toFixed(0)) %></p>
+                                                <p class="descuento">20% OFF</p>
+                                            </div>
+                                        <%} else { %> <!-- si no tienen descuentos los productos (perro) -->
+                                            <div class="div-precios">
+                                                <p class="precio-tachado" style="color: white;">$ <%= producto.precio %></p>
+                                                <p class="precio-d">$ <%= producto.precio %></p>
+                                                <p class="descuento" style="color: white;">20% OFF</p>
+                                            </div>
+                                        <% } %>
+                                            <div class="div-boton-comprar">
+                                                <button class="boton-comprar" type="submit">Agregar</button>
+                                            </div>
+                                    </div>
+                                </article>
+                            <% }) %>
+                        <% } else { %> <!-- si el tipo de mascota es Gato -->
+                            <% productosGato.forEach(producto => {%>
+                                <article class="articulo-productos-descuentos">
+                                    <a href="/productos/detalle/<%= producto.id %>">
+                                        <div class="contenedor_imagen">
+                                            <img class="img-productos-descuentos" src="/img/productos/<%= producto.imagen %>" alt="imagen_producto">
+                                        </div>
+                                    </a>
+                                    <div class="div-card">
+                                        <div class="texto_nombre_arriba">
+                                            <h4><%= producto.nombre %></h4>
+                                        </div>
+                                            
+                                        <div class="texto_descripcion_arriba">
+                                            <p class="descripcion"><%= producto.descripcion %></p>
+                                        </div>
+                                        <% if(producto.descuentos[0].id == 2) { %> <!-- y si tiene descuentos los productos (gato) -->
+                                            <div class="div-precios">
+                                                <p class="precio-tachado">$ <%= producto.precio %></p>
+                                                <p class="precio-d">$ <%= Number((producto.precio*0.8).toFixed(0)) %></p>
+                                                <p class="descuento">20% OFF</p>
+                                            </div>
+                                        <%} else { %> <!-- si no tienen descuentos los productos (gato) -->
+                                            <div class="div-precios">
+                                                <p class="precio-tachado" style="color: white;">$ <%= producto.precio %></p>
+                                                <p class="precio-d">$ <%= producto.precio %></p>
+                                                <p class="descuento" style="color: white;">20% OFF</p>
+                                            </div>
+                                        <% } %>
+                                            <div class="div-boton-comprar">
+                                                <button class="boton-comprar" type="submit">Agregar</button>
+                                            </div>
+                                    </div>
+                                </article>
+                            <% }) %>
+                        <% } %>
+                    </ul>
+                </div>
+            
+                <button type="button" class="slider-nav"></button>
+                <button type="button" class="slider-nav slider-nav-next"></button>
+                
+                <ul class="slider-indicators">
+                    <li class=""></li>
+                    <li class=""></li>
+                    <li class=""></li>
+                    <li class=""></li>
+                    <li class=""></li>
+                    <li class=""></li>
+                    <li class="active"></li>
+                </ul>
+            </div>
+        </section>
+        
     </main>
 
     <%- include("./partials/footer.ejs") %>

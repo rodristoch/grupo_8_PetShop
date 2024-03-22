@@ -724,16 +724,40 @@ const productController = {
 
         let productoId = req.params.id;
 
-        db.Producto.findByPk(productoId, {
+        let producto = db.Producto.findByPk(productoId, {
             include: ['tipos_mascota'],
             include: [{
                 model: db.Descuento,
                 as: 'descuentos',
             }]
         })
-        
-        .then(producto => {
-            return res.render("detalle.ejs", {producto, userALoguearse})})
+
+        let productosPerro = db.Producto.findAll({
+            include: [{
+                model: db.Descuento,
+                as: 'descuentos',
+            }],
+            where: {
+                tipo_mascota_id: 2,
+            },
+            limit: 12
+        })
+
+        let productosGato = db.Producto.findAll({
+            include: [{
+                model: db.Descuento,
+                as: 'descuentos',
+            }],
+            where: {
+                tipo_mascota_id: 1,
+            },
+            limit: 12
+        })
+
+        Promise.all([producto, productosPerro, productosGato])
+
+        .then(([producto, productosPerro, productosGato]) => {
+            return res.render("detalle.ejs", {producto, productosPerro, productosGato, userALoguearse})})
         .catch(error => res.send(error))
     },
 

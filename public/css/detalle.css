@@ -8,7 +8,7 @@
 
 a {
     text-decoration: none;
-    color: white;
+    /* color: white; */
     text-align: center;
 }
 
@@ -27,19 +27,20 @@ a {
     align-items: center;
     width: 60%;
     margin: 0px auto;
-
 }
-.imagen_producto_mobile{
+
+.imagen_producto_mobile {
     width: 80%;
 }
 
 .ruta {
-    color: black;
-    transition: 450ms;
+    opacity: 0;
+    color: rgb(86, 86, 86);
+    
 }
 
 .ruta:hover {
-    color: rgb(0, 0, 176);
+    color: black;
 }
 
 /* --- detalles de producto ---  */
@@ -49,21 +50,70 @@ a {
     align-items: left;
 }
 
-.titulo_nombre {
+.titulo_nombre-detalle {
     font-size: 22px;
-    font-weight: 400;
-    margin-bottom: 0px;
+    font-weight: 500;
+    margin-bottom: 5px;
 }
 
-.precio {
-    font-size: 20px;
-    font-weight: 600;
-    margin-top: 8px;
+.precio-normal {
+    display: none;
+}
+
+.precio-oferta {
+    display: none;
+}
+
+.precio-tachado-detalle {
+    color: rgb(56, 56, 56);
+    font-weight: 300;
+    text-decoration: line-through;
+    font-size: 18px; 
+}
+
+.precio-detalle {
+    font-size: 22px;
+    font-weight: 500;
+}
+
+.descuento-detalle {
+    color: #24768b;
+    font-weight: 400;
+    font-size: 14px;
+    margin-left: 15px;
+    font-style: oblique;
+}
+
+.descuento-precio {
+    color: #1e697b;
+    font-weight: 500;
+    font-size: 18px;
+    margin-left: 15px;
 }
 
 .titulo_descripción {
     text-decoration: underline;
     text-decoration-color: rgb(156, 156, 156);
+    font-size: 18px;
+    color: rgb(86, 86, 86);
+}
+
+.div-dos {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    border: 1px solid white;
+    justify-content: flex-start;
+    height: 40px;
+}
+
+.div-tres {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    border: 1px solid white;
+    justify-content: flex-start;
+    height: 70px;
 }
 
 /* --- Botones ---  */
@@ -139,11 +189,17 @@ a {
     font-size: 13px;
 }
 
+.linea {
+    margin-top: 30px;
+    margin-bottom: 20px;
+}
+
 /* form {
     width: 90%;
 } */
 
 /* --- Reel productos ---  */
+/* seccion producto */
 .section-productos-descuentos {
     width: 90%;
     margin: auto;
@@ -151,24 +207,30 @@ a {
     margin-top: -15px;
 }
 
+.titulo-section-productos-descuentos { /* titulo "Productos relacionados" */
+    margin-bottom: 10px;
+}
+
 .div-section-productos-descuentos {
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-around;
+    justify-content: center;
+    align-items: center;
 }
 
+/* card producto */
 .articulo-productos-descuentos {
-    width: 40%;
+    width: 80%;
+    height: auto;
     border: 1px solid rgb(129, 129, 129);
     border-radius: 5px;
     padding: 15px;
     margin-bottom: 15px;
     display: flex;
     align-items: flex-start;
-    justify-content: center;
+    justify-content: space-between;
     flex-wrap: wrap;
 }
-
 
 .contenedor_imagen {
     padding-top: 12px;
@@ -177,7 +239,19 @@ a {
     justify-content:center;
     background-color: white;
     height: 140px;
-   overflow: hidden;
+    overflow: hidden;
+}
+
+.div-card {
+    width: 100%;
+    padding: 0;
+    margin: 0;
+
+}
+
+.img-productos-descuentos {
+    margin: auto;
+    width: auto;
 }
 
 .contenedor_imagen .img-productos-descuentos {
@@ -191,39 +265,283 @@ a {
     overflow: hidden;
     text-overflow: ellipsis; 
 }
+
 .texto_descripcion_arriba {
     max-height: 38px; 
     overflow: hidden;
     text-overflow: ellipsis; 
 }
 
+.precio-d {
+    padding: 0;
+    margin: 0;
+    font-weight: 600;
+    width: 30%;
+    font-size: 16px;
+}
+
+.precio {
+    font-weight: 600;
+    width: 30%;
+    font-size: 16px;
+}
+
+.precio-tachado {
+    padding: 0;
+    margin: 0;
+    font-size: 15px;
+    font-weight: 300;
+    text-decoration: line-through;
+    width: 100%;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.descuento {
+    padding: 0;
+    margin: 0;
+    margin-top: -10px;
+    color: #24768b;
+    font-weight: 500;
+    font-size: 14px;
+    width: 60%;
+    text-align: left;
+    margin-left: 5px;
+    
+}
+
+.div-precios {
+    padding: 0;
+    margin: 0;
+    display: flex;
+    align-items: end;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+}
+
+.div-boton-comprar {
+    text-align: center;
+    margin-top: 10px;
+    width: 100%;
+}
+
+.boton-comprar {
+    text-align: center;
+    background-color: #1e697b;
+    color: white;
+    width: 100%;
+    height: 40%;
+    border-radius: 5px;
+    border: 1px solid black;
+    font-size: 16px;
+    padding: 5px;
+}
+/* hasta aca card producto */
+
+
 @media (min-width: 768px) {
 
+    .titulo_nombre-detalle {
+        font-size: 28px;
+    }
 
+    .precio-tachado-detalle {
+        font-size: 20px; 
+    }
+
+    .descuento-detalle {
+        font-size: 18px;
+    }
+
+    .descuento-precio {
+        font-weight: 500;
+        font-size: 20px;
+    }
+
+    /* seccion productos */
+    .section-productos-descuentos {
+        margin-top: -30px;
+    }
+
+    .div-section-productos-descuentos {
+        justify-content: space-between;
+    }
+
+    .titulo-section-productos-descuentos { /* titulo "Productos relacionados" */
+        margin-bottom: 10px;
+    }
+    
+    /* card producto */
+    .articulo-productos-descuentos {
+        width: 80%;
+    }
+
+}
+
+@media (min-width: 993px){
+
+    /* card producto */
+    .articulo-productos-descuentos {
+        width: 85%;
+        height: auto;
+    }
 }
 
 @media (min-width: 1024px) {
 
-.contenedor_imagen_mobile {
-    width: 30%;
+    .ruta {
+        opacity: 1;
+    }
+
+    .contenedor_imagen_mobile {
+        width: 30%;
+    }
+    
+    .boton_agregar {
+        width: 70%;
+    }  
+    
+    .boton_editar {
+        width: 70%;
+    } 
+    
+    .boton_eliminar {
+        width: 70%;
+    } 
+    
+    .titulo_nombre-detalle {
+        font-weight: 500;
+        font-size: 24px;
+    }
+
+    .precio-normal {
+        display: block;
+        color: rgb(56, 56, 56);
+        font-weight: 300;
+        font-size: 16px; 
+    }
+
+    .precio-oferta {
+        display: block;
+        font-weight: 400;
+        font-size: 22px; 
+    }
+    
+    .precio-tachado-detalle {
+        font-weight: 300;
+        font-size: 18px; 
+        margin-left: 15px;
+    }
+    
+    .precio-detalle {
+        font-size: 24px;
+        font-weight: 500;
+        margin-left: 15px;
+    }
+    
+    .descuento-detalle {
+        font-weight: 400;
+        font-size: 16px;
+        margin-left: 15px;
+    }
+    
+    .descuento-precio {
+        color: white;
+        font-weight: 500;
+        font-size: 16px;
+        padding: 5px;
+        border: 1px solid #349fba;
+        border-radius: 6px;
+        margin-left: 15px;
+        background-color: #349fba;
+    
+    }
+    
+    .titulo_descripción {
+        font-size: 22px;
+    }
+    
+    .descripcion-detalle {
+        font-size: 18px;
+    }
+
+    /* card producto */
+    .articulo-productos-descuentos {
+        width: 85%;
+        transition: 450ms;
+    }
+    
+    .articulo-productos-descuentos:hover {
+        box-shadow : 0px 0px 20px rgb(140, 140, 140);
+    }
+    
+    button {
+        cursor: pointer;
+    }
+    
+    .boton-comprar {
+        transition: 450ms;
+    }
+    
+    .boton-comprar:hover {
+        background-color: #349fba;
+    }
+    
+    h4 { /* producto.nombre */
+        font-size: 14px;
+    }
+    
+    .descripcion {
+        font-size: 12px;
+    }
+
 }
 
-.boton_agregar{
-    width: 70%;
-}  
+@media (min-width: 1200px) {
 
-.boton_editar{
-    width: 70%;
-} 
+    .titulo_nombre-detalle {
+        font-size: 26px;
+    }
 
-.boton_eliminar{
-    width: 70%;
-} 
+    /* seccion productos */
+    .section-productos-descuentos {
+        max-width: 1200px;
+        margin: auto;
+    }
 
-.titulo_nombre {
-    font-weight: 500;
-    font-size: 18px;
+    .articulo-productos-descuentos {
+        width: 80%;
+    }
+    
+    .titulo-section-productos-descuentos { /* titulo "Productos relacionados" */
+        margin-top: -10px;
+        margin-bottom: 15px;
+    }
+    
+    button {
+        cursor: pointer;
+    }
+
+    /* card producto */
+    h4 { /* producto.nombre */
+        font-size: 16px;
+    }
+    
+    .descripcion {
+        font-size: 14px;
+    }
+    
+    .texto_nombre_arriba {
+        max-height: 40px; 
+        overflow: hidden;
+        text-overflow: ellipsis; 
+    }
+    
+    .texto_descripcion_arriba {
+        max-height: 50px; 
+        overflow: hidden;
+        text-overflow: ellipsis; 
+    }
 }
 
-}
 
