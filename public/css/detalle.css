@@ -116,6 +116,46 @@ a {
     height: 70px;
 }
 
+.etiqueta-comida-bicho, .etiqueta-accesorio-bicho, .etiqueta-higiene-bicho, .etiqueta-juguete-bicho {
+    font-weight: 500;
+    font-size: 12px;
+    padding: 5px;
+    border-radius: 6px;
+    width: 17%;
+    text-align: center;
+}
+
+.etiqueta-comida-bicho {
+    color: #5746d7;
+    border: 1px solid #5746d7;
+}
+
+.etiqueta-accesorio-bicho {
+    color: #29d5de;
+    border: 1px solid #29d5de;
+}
+
+.etiqueta-higiene-bicho {
+    color: #e8a62b;
+    border: 1px solid #e8a62b;
+}
+
+.etiqueta-juguete-bicho {
+    color: #9b46d7;
+    border: 1px solid #9b46d7;
+}
+
+.descuento-precio {
+    color: white;
+    font-weight: 500;
+    font-size: 14px;
+    padding: 5px;
+    border: 1px solid #349fba;
+    border-radius: 6px;
+    margin-left: 15px;
+    background-color: #349fba;
+}
+
 /* --- Botones ---  */
 
 .boton_agregar{
@@ -228,7 +268,7 @@ a {
     margin-bottom: 15px;
     display: flex;
     align-items: flex-start;
-    justify-content: space-between;
+    justify-content: center;
     flex-wrap: wrap;
 }
 
@@ -236,17 +276,17 @@ a {
     padding-top: 12px;
     display: flex;
     align-items: flex-start;
-    justify-content:center;
+    justify-content: center;
     background-color: white;
     height: 140px;
     overflow: hidden;
+    width: 100%;
 }
 
 .div-card {
     width: 100%;
     padding: 0;
     margin: 0;
-
 }
 
 .img-productos-descuentos {
@@ -307,7 +347,6 @@ a {
     width: 60%;
     text-align: left;
     margin-left: 5px;
-    
 }
 
 .div-precios {
@@ -336,6 +375,37 @@ a {
     font-size: 16px;
     padding: 5px;
 }
+
+.etiqueta-comida-bicho-card, .etiqueta-accesorio-bicho-card, .etiqueta-higiene-bicho-card, .etiqueta-juguete-bicho-card {
+    font-weight: 500;
+    font-size: 11px;
+    padding: 4px;
+    border-radius: 5px;
+    width: 70%;
+    text-align: center;
+    margin: 0;
+}
+
+.etiqueta-comida-bicho-card {
+    color: #5746d7;
+    border: 1px solid #5746d7;
+}
+
+.etiqueta-accesorio-bicho-card {
+    color: #29d5de;
+    border: 1px solid #29d5de;
+}
+
+.etiqueta-higiene-bicho-card {
+    color: #e8a62b;
+    border: 1px solid #e8a62b;
+}
+
+.etiqueta-juguete-bicho-card {
+    color: #9b46d7;
+    border: 1px solid #9b46d7;
+}
+
 /* hasta aca card producto */
 
 
@@ -367,6 +437,11 @@ a {
         justify-content: space-between;
     }
 
+    .etiqueta-comida-bicho, .etiqueta-accesorio-bicho, .etiqueta-higiene-bicho, .etiqueta-juguete-bicho {
+        font-size: 12px;
+        width: 13%;
+    }
+    
     .titulo-section-productos-descuentos { /* titulo "Productos relacionados" */
         margin-bottom: 10px;
     }
@@ -376,6 +451,9 @@ a {
         width: 80%;
     }
 
+    .etiqueta-comida-bicho-card, .etiqueta-accesorio-bicho-card, .etiqueta-higiene-bicho-card, .etiqueta-juguete-bicho-card {
+        font-size: 10px;
+    }
 }
 
 @media (min-width: 993px){
@@ -444,17 +522,42 @@ a {
         font-size: 16px;
         margin-left: 15px;
     }
+
+    .etiqueta-comida-bicho, .etiqueta-accesorio-bicho, .etiqueta-higiene-bicho, .etiqueta-juguete-bicho {
+        color: white;
+        font-size: 14px;
+        width: 10%;
+    }
+
+    .etiqueta-comida-bicho {
+        border: 1px solid #5746d7;
+        background-color: #5746d7;
+    }
+
+    .etiqueta-accesorio-bicho {
+        border: 1px solid #29d5de;
+        background-color: #29d5de;
+    }
+
+    .etiqueta-higiene-bicho {
+        border: 1px solid #e8a62b;
+        background-color: #e8a62b;
+    }
+
+    .etiqueta-juguete-bicho {
+        border: 1px solid #9b46d7;
+        background-color: #9b46d7;
+    }
     
     .descuento-precio {
         color: white;
         font-weight: 500;
-        font-size: 16px;
+        font-size: 14px;
         padding: 5px;
         border: 1px solid #349fba;
         border-radius: 6px;
         margin-left: 15px;
         background-color: #349fba;
-    
     }
     
     .titulo_descripción {
@@ -495,6 +598,35 @@ a {
         font-size: 12px;
     }
 
+    .etiqueta-comida-bicho-card, .etiqueta-accesorio-bicho-card, .etiqueta-higiene-bicho-card, .etiqueta-juguete-bicho-card {
+        font-size: 10.5px;
+        padding: 4px;
+    }
+    
+    .etiqueta-comida-bicho-card {
+        color: white;
+        border: 1px solid #5746d7;
+        background-color: #5746d7;
+    }
+    
+    .etiqueta-accesorio-bicho-card {
+        color: white;
+        border: 1px solid #29d5de;
+        background-color: #29d5de;
+    }
+    
+    .etiqueta-higiene-bicho-card {
+        color: white;
+        border: 1px solid #e8a62b;
+        background-color: #e8a62b;
+    }
+    
+    .etiqueta-juguete-bicho-card {
+        color: white;
+        border: 1px solid #9b46d7;
+        background-color: #9b46d7;
+    }
+
 }
 
 @media (min-width: 1200px) {
@@ -522,6 +654,11 @@ a {
         cursor: pointer;
     }
 
+    .etiqueta-comida-bicho, .etiqueta-accesorio-bicho, .etiqueta-higiene-bicho, .etiqueta-juguete-bicho {
+        font-size: 15px;
+        width: 11%;
+    }
+
     /* card producto */
     h4 { /* producto.nombre */
         font-size: 16px;
@@ -542,6 +679,10 @@ a {
         overflow: hidden;
         text-overflow: ellipsis; 
     }
-}
 
+    .etiqueta-comida-bicho-card, .etiqueta-accesorio-bicho-card, .etiqueta-higiene-bicho-card, .etiqueta-juguete-bicho-card {
+        font-size: 12px;
+        padding: 5px;
+    }
+}
 

@@ -11,27 +11,21 @@ const mainController = {
     index: async (req, res) => {
         try {
             let productosPerro = await db.Producto.findAll({
-                include: [{
-                    model: db.Descuento,
-                    as: 'descuentos',
-                }],
+                include: ['descuentos', "categorias", "tipos_mascota"],
                 where: {
                     tipo_mascota_id: 2,
                 },
-                limit: 12
+                limit: 16
             })
     
             let productosGato = await db.Producto.findAll({
-                include: [{
-                    model: db.Descuento,
-                    as: 'descuentos',
-                }],
+                include: ['descuentos', "categorias", "tipos_mascota"],
                 where: {
                     tipo_mascota_id: 1,
                 },
-                limit: 12
+                limit: 16
             })
-           
+
             Promise.all([productosPerro, productosGato])
             
 // Accesorios perros
@@ -42,8 +36,6 @@ const mainController = {
                 include: [{
                     model: db.Categoria,
                     as: 'categorias',
-                    attributes: ['id', 'categoria'],
-                    through: { attributes: [] },
                     where: {
                         id: 2
                     }
@@ -66,8 +58,6 @@ const mainController = {
                 include: [{
                     model: db.Categoria,
                     as: 'categorias',
-                    attributes: ['id', 'categoria'],
-                    through: { attributes: [] },
                     where: {
                         id: 2
                     }
@@ -92,8 +82,6 @@ const mainController = {
                 include: [{
                     model: db.Descuento,
                     as: 'descuentos',
-                    attributes: ['id', 'nombre', 'descripcion', 'fecha_inicio', 'fecha_final'],
-                    through: { attributes: [] }, // Evita incluir automáticamente las columnas de la tabla intermedia
                     where: {
                         id: 2 // ID descuento de SQL
                     }
@@ -124,8 +112,6 @@ const mainController = {
                 include: [{
                     model: db.Descuento,
                     as: 'descuentos',
-                    attributes: ['id', 'nombre', 'descripcion', 'fecha_inicio', 'fecha_final'],
-                    through: { attributes: [] }, // Evita incluir automáticamente las columnas de la tabla intermedia
                     where: {
                         id: 2 // Filtrar por el ID del descuento que quieres (en este caso, ID 2)
                     }
@@ -155,8 +141,6 @@ const mainController = {
                 include: [{
                     model: db.Descuento,
                     as: 'descuentos',
-                    attributes: ['id', 'nombre', 'descripcion', 'fecha_inicio', 'fecha_final'],
-                    through: { attributes: [] }, // Evita incluir automáticamente las columnas de la tabla intermedia
                     where: {
                         id: 2 // Filtrar por el ID del descuento que quieres (en este caso, ID 2)
                     }
@@ -185,11 +169,17 @@ try {
         include: [{
             model: db.Descuento,
             as: 'descuentos',
-            attributes: ['id', 'nombre', 'descripcion', 'fecha_inicio', 'fecha_final'],
-            through: { attributes: [] }, // Evita incluir automáticamente las columnas de la tabla intermedia
             where: {
                 id: 2 // ID descuento de SQL
             }
+        },
+        {
+            model: db.Categoria,
+            as: 'categorias',
+        },
+        {
+            model: db.TipoMascota,
+            as: 'tipos_mascota',
         }]
     });
 
@@ -256,3 +246,5 @@ try {
 };
 
 module.exports = mainController;
+
+

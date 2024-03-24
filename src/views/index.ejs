@@ -12,8 +12,8 @@
     <main>
         <div class="swiffy-slider slider-indicators-round">
             <ul class="slider-container">
-                <li><a href="/productos/promociones"><img src="/img/Imagen_carrusel.png" style="max-width: 100%;height: auto;"></a></li>
-                <li><a href="/productos/promociones"><img src="/img/Imagen_carrusel2.jpg" style="max-width: 100%;height: auto;"></a></li>
+                <li><a href="/productos/perro/promociones"><img src="/img/Imagen_carrusel.png" style="max-width: 100%;height: auto;"></a></li>
+                <li><a href="/productos/gato/promociones"><img src="/img/Imagen_carrusel2.jpg" style="max-width: 100%;height: auto;"></a></li>
             </ul>
         
             <button type="button" class="slider-nav"></button>
@@ -86,6 +86,15 @@
                     <ul class="slider-container">
                         <% productosConDescuento.forEach(producto => {%>
                             <article class="articulo-productos-descuentos">
+                                <% if(producto.categorias[0].id == 1) { %>
+                                    <p class="etiqueta-comida-bicho-card"><%= producto.categorias[0].categoria %> <%= producto.tipos_mascota.mascota %></p>
+                                <% } else if(producto.categorias[0].id == 2) { %>
+                                    <p class="etiqueta-accesorio-bicho-card"><%= producto.categorias[0].categoria %> <%= producto.tipos_mascota.mascota %></p>
+                                <% } else if(producto.categorias[0].id == 3) { %>
+                                    <p class="etiqueta-higiene-bicho-card"><%= producto.categorias[0].categoria %> <%= producto.tipos_mascota.mascota %></p>
+                                <% } else if(producto.categorias[0].id == 4) { %>
+                                    <p class="etiqueta-juguete-bicho-card"><%= producto.categorias[0].categoria %> <%= producto.tipos_mascota.mascota %></p>
+                                <% } %>
                                 <a href="/productos/detalle/<%= producto.id %>">
                                     <div class="contenedor_imagen">
                                         <img class="img-productos-descuentos" src="/img/productos/<%= producto.imagen %>" alt="imagen_producto">
@@ -129,6 +138,7 @@
                     </ul>
                 </div>
             </div>
+            <h3><a href="/productos/promociones" style="color: #18515F;">Ver todos</a></h3>
         </section>
 
 
@@ -150,6 +160,15 @@
                     <ul class="slider-container">
                         <% productosPerro.forEach(producto => {%>
                             <article class="articulo-productos-descuentos">
+                                <% if(producto.categorias[0].id == 1) { %>
+                                    <p class="etiqueta-comida-bicho-card" style="width: 45%"><%= producto.categorias[0].categoria %></p>
+                                <% } else if(producto.categorias[0].id == 2) { %>
+                                    <p class="etiqueta-accesorio-bicho-card" style="width: 45%"><%= producto.categorias[0].categoria %></p>
+                                <% } else if(producto.categorias[0].id == 3) { %>
+                                    <p class="etiqueta-higiene-bicho-card" style="width: 45%"><%= producto.categorias[0].categoria %></p>
+                                <% } else if(producto.categorias[0].id == 4) { %>
+                                    <p class="etiqueta-juguete-bicho-card" style="width: 45%"><%= producto.categorias[0].categoria %></p>
+                                <% } %>
                                 <a href="/productos/detalle/<%= producto.id %>">
                                     <div class="contenedor_imagen">
                                         <img class="img-productos-descuentos" src="/img/productos/<%= producto.imagen %>" alt="imagen_producto">
@@ -191,10 +210,17 @@
                         <li class=""></li>
                         <li class=""></li>
                         <li class=""></li>
+                        <li class=""></li>
+                        <li class=""></li>
+                        <li class=""></li>
+                        <li class=""></li>
+                        <li class=""></li>
+                        <li class=""></li>
                         <li class="active"></li>
                     </ul>
                 </div>
             </div>
+            <h3><a href="/productos/perro" style="color: #18515F;">Ver todos</a></h3>
         </section>
 
         <!--- Sección productos para Gato-->
@@ -205,6 +231,15 @@
                     <ul class="slider-container">
                         <% productosGato.forEach(producto => {%>
                             <article class="articulo-productos-descuentos">
+                                <% if(producto.categorias[0].id == 1) { %>
+                                    <p class="etiqueta-comida-bicho-card" style="width: 45%"><%= producto.categorias[0].categoria %></p>
+                                <% } else if(producto.categorias[0].id == 2) { %>
+                                    <p class="etiqueta-accesorio-bicho-card" style="width: 45%"><%= producto.categorias[0].categoria %></p>
+                                <% } else if(producto.categorias[0].id == 3) { %>
+                                    <p class="etiqueta-higiene-bicho-card" style="width: 45%"><%= producto.categorias[0].categoria %></p>
+                                <% } else if(producto.categorias[0].id == 4) { %>
+                                    <p class="etiqueta-juguete-bicho-card" style="width: 45%"><%= producto.categorias[0].categoria %></p>
+                                <% } %>
                                 <a href="/productos/detalle/<%= producto.id %>">
                                     <div class="contenedor_imagen">
                                         <img class="img-productos-descuentos" src="/img/productos/<%= producto.imagen %>" alt="imagen_producto">
@@ -246,10 +281,17 @@
                         <li class=""></li>
                         <li class=""></li>
                         <li class=""></li>
+                        <li class=""></li>
+                        <li class=""></li>
+                        <li class=""></li>
+                        <li class=""></li>
+                        <li class=""></li>
+                        <li class=""></li>
                         <li class="active"></li>
                     </ul>
                 </div>
             </div>
+            <h3><a href="/productos/gato" style="color: #18515F;">Ver todos</a></h3>
         </section>
    
     </main>

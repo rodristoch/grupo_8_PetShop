@@ -272,6 +272,14 @@ const userController = {
                 where: {
                     id: 2 // ID descuento de SQL
                 }
+            },
+            {
+                model: db.Categoria,
+                as: 'categorias',
+            },
+            {
+                model: db.TipoMascota,
+                as: 'tipos_mascota',
             }],
             limit: 16
         })

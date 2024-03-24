@@ -725,39 +725,173 @@ const productController = {
         let productoId = req.params.id;
 
         let producto = db.Producto.findByPk(productoId, {
-            include: ['tipos_mascota'],
-            include: [{
-                model: db.Descuento,
-                as: 'descuentos',
-            }]
+            include: ["tipos_mascota", 'descuentos', 'categorias']
         })
 
-        let productosPerro = db.Producto.findAll({
-            include: [{
-                model: db.Descuento,
-                as: 'descuentos',
-            }],
-            where: {
-                tipo_mascota_id: 2,
-            },
+        let comidaPerro = db.Producto.findAll({
+            include: [
+                {
+                    model: db.Categoria,
+                    as: 'categorias',
+                    where: {id: 1}
+                },
+                {
+                    model: db.Descuento,
+                    as: 'descuentos',
+                },
+                {
+                    model: db.TipoMascota,
+                    as: 'tipos_mascota',
+                }
+            ],
+            where: {tipo_mascota_id: 2},
             limit: 12
         })
 
-        let productosGato = db.Producto.findAll({
-            include: [{
-                model: db.Descuento,
-                as: 'descuentos',
-            }],
-            where: {
-                tipo_mascota_id: 1,
-            },
+        let comidaGato = db.Producto.findAll({
+            include: [
+                {
+                    model: db.Categoria,
+                    as: 'categorias',
+                    where: {id: 1}
+                },
+                {
+                    model: db.Descuento,
+                    as: 'descuentos',
+                },
+                {
+                    model: db.TipoMascota,
+                    as: 'tipos_mascota',
+                }
+            ],
+            where: {tipo_mascota_id: 1},
             limit: 12
         })
 
-        Promise.all([producto, productosPerro, productosGato])
+        let higienePerro = db.Producto.findAll({
+            include: [
+                {
+                    model: db.Categoria,
+                    as: 'categorias',
+                    where: {id: 3}
+                },
+                {
+                    model: db.Descuento,
+                    as: 'descuentos',
+                },
+                {
+                    model: db.TipoMascota,
+                    as: 'tipos_mascota',
+                }
+            ],
+            where: {tipo_mascota_id: 2},
+            limit: 12
+        })
 
-        .then(([producto, productosPerro, productosGato]) => {
-            return res.render("detalle.ejs", {producto, productosPerro, productosGato, userALoguearse})})
+        let higieneGato = db.Producto.findAll({
+            include: [
+                {
+                    model: db.Categoria,
+                    as: 'categorias',
+                    where: {id: 3}
+                },
+                {
+                    model: db.Descuento,
+                    as: 'descuentos',
+                },
+                {
+                    model: db.TipoMascota,
+                    as: 'tipos_mascota',
+                }
+            ],
+            where: {tipo_mascota_id: 1},
+            limit: 12
+        })
+
+        let accesorioPerro = db.Producto.findAll({
+            include: [
+                {
+                    model: db.Categoria,
+                    as: 'categorias',
+                    where: {id: 2}
+                },
+                {
+                    model: db.Descuento,
+                    as: 'descuentos',
+                },
+                {
+                    model: db.TipoMascota,
+                    as: 'tipos_mascota',
+                }
+            ],
+            where: {tipo_mascota_id: 2},
+            limit: 12
+        })
+
+        let accesorioGato = db.Producto.findAll({
+            include: [
+                {
+                    model: db.Categoria,
+                    as: 'categorias',
+                    where: {id: 2}
+                },
+                {
+                    model: db.Descuento,
+                    as: 'descuentos',
+                },
+                {
+                    model: db.TipoMascota,
+                    as: 'tipos_mascota',
+                }
+            ],
+            where: {tipo_mascota_id: 1},
+            limit: 12
+        })
+
+        let juguetePerro = db.Producto.findAll({
+            include: [
+                {
+                    model: db.Categoria,
+                    as: 'categorias',
+                    where: {id: 4}
+                },
+                {
+                    model: db.Descuento,
+                    as: 'descuentos',
+                },
+                {
+                    model: db.TipoMascota,
+                    as: 'tipos_mascota',
+                }
+            ],
+            where: {tipo_mascota_id: 2},
+            limit: 12
+        })
+
+        let jugueteGato = db.Producto.findAll({
+            include: [
+                {
+                    model: db.Categoria,
+                    as: 'categorias',
+                    where: {id: 4}
+                },
+                {
+                    model: db.Descuento,
+                    as: 'descuentos',
+                },
+                {
+                    model: db.TipoMascota,
+                    as: 'tipos_mascota',
+                }
+            ],
+            where: {tipo_mascota_id: 1},
+            limit: 12
+        })
+          
+        Promise.all([producto, comidaPerro, comidaGato, higienePerro, higieneGato, accesorioPerro, accesorioGato, juguetePerro, jugueteGato])
+
+        .then(([producto, comidaPerro, comidaGato, higienePerro, higieneGato, accesorioPerro, accesorioGato, juguetePerro, jugueteGato]) => {
+            return res.render("detalle.ejs", {producto, comidaPerro, comidaGato, higienePerro, higieneGato, accesorioPerro, accesorioGato, juguetePerro, jugueteGato, userALoguearse})})
         .catch(error => res.send(error))
     },
 

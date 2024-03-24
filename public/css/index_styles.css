@@ -249,7 +249,7 @@ h2 {
     margin-bottom: 15px;
     display: flex;
     align-items: flex-start;
-    justify-content: space-between;
+    justify-content: center;
     flex-wrap: wrap;
 }
 
@@ -261,6 +261,7 @@ h2 {
     background-color: white;
     height: 140px;
     overflow: hidden;
+    width: 100%;
 }
 
 .div-card {
@@ -356,6 +357,36 @@ h2 {
     border: 1px solid black;
     font-size: 16px;
     padding: 5px;
+}
+
+.etiqueta-comida-bicho-card, .etiqueta-accesorio-bicho-card, .etiqueta-higiene-bicho-card, .etiqueta-juguete-bicho-card {
+    font-weight: 500;
+    font-size: 11px;
+    padding: 4px;
+    border-radius: 5px;
+    width: 50%;
+    text-align: center;
+    margin: 0;
+}
+
+.etiqueta-comida-bicho-card {
+    color: #5746d7;
+    border: 1px solid #5746d7;
+}
+
+.etiqueta-accesorio-bicho-card {
+    color: #29d5de;
+    border: 1px solid #29d5de;
+}
+
+.etiqueta-higiene-bicho-card {
+    color: #e8a62b;
+    border: 1px solid #e8a62b;
+}
+
+.etiqueta-juguete-bicho-card {
+    color: #9b46d7;
+    border: 1px solid #9b46d7;
 }
 /* hasta aca card producto */
 
@@ -470,6 +501,11 @@ h2 {
     /* card producto */
     .articulo-productos-descuentos {
         width: 80%;
+    }
+
+    .etiqueta-comida-bicho-card, .etiqueta-accesorio-bicho-card, .etiqueta-higiene-bicho-card, .etiqueta-juguete-bicho-card {
+        font-size: 10px;
+        width: 65%;
     }
     
     /* seccion banner */
@@ -594,22 +630,22 @@ h2 {
 
     .img-boton-izq {
         cursor: pointer;
-        transition: 300ms;
+        transition: 400ms;
     }
     
     .img-boton-izq:hover {
         box-shadow : 0px 0px 20px rgb(140, 140, 140);
-        opacity: 0.85;
+        opacity: 0.6;
     }
     
     .img-boton-der {
         cursor: pointer;
-        transition: 300ms;
+        transition: 400ms;
     }
     
     .img-boton-der:hover {
         box-shadow : 0px 0px 20px rgb(140, 140, 140);
-        opacity: 0.85;
+        opacity: 0.6;
     }
     
     /* seccion banner */
@@ -653,6 +689,36 @@ h2 {
     
     .descripcion {
         font-size: 12px;
+    }
+
+    .etiqueta-comida-bicho-card, .etiqueta-accesorio-bicho-card, .etiqueta-higiene-bicho-card, .etiqueta-juguete-bicho-card {
+        font-size: 10.5px;
+        padding: 4px;
+        width: 67%;
+    }
+    
+    .etiqueta-comida-bicho-card {
+        color: white;
+        border: 1px solid #5746d7;
+        background-color: #5746d7;
+    }
+    
+    .etiqueta-accesorio-bicho-card {
+        color: white;
+        border: 1px solid #29d5de;
+        background-color: #29d5de;
+    }
+    
+    .etiqueta-higiene-bicho-card {
+        color: white;
+        border: 1px solid #e8a62b;
+        background-color: #e8a62b;
+    }
+    
+    .etiqueta-juguete-bicho-card {
+        color: white;
+        border: 1px solid #9b46d7;
+        background-color: #9b46d7;
     }
 
 }
@@ -734,6 +800,12 @@ h2 {
         text-overflow: ellipsis; 
     }
 
+    .etiqueta-comida-bicho-card, .etiqueta-accesorio-bicho-card, .etiqueta-higiene-bicho-card, .etiqueta-juguete-bicho-card {
+        font-size: 12px;
+        padding: 5px;
+        width: 68%;
+    }
+
     /* seccion banner */
     .h2-banner-1ra-linea {
         top: 70px;
@@ -748,3 +820,4 @@ h2 {
     }
 
 }
+

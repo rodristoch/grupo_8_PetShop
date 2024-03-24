@@ -55,13 +55,22 @@
                     <ul class="slider-container">
                         <% productosConDescuento.forEach(producto => {%>
                             <article class="articulo-productos-descuentos">
+                                <% if(producto.categorias[0].id == 1) { %>
+                                    <p class="etiqueta-comida-bicho-card"><%= producto.categorias[0].categoria %> <%= producto.tipos_mascota.mascota %></p>
+                                <% } else if(producto.categorias[0].id == 2) { %>
+                                    <p class="etiqueta-accesorio-bicho-card"><%= producto.categorias[0].categoria %> <%= producto.tipos_mascota.mascota %></p>
+                                <% } else if(producto.categorias[0].id == 3) { %>
+                                    <p class="etiqueta-higiene-bicho-card"><%= producto.categorias[0].categoria %> <%= producto.tipos_mascota.mascota %></p>
+                                <% } else if(producto.categorias[0].id == 4) { %>
+                                    <p class="etiqueta-juguete-bicho-card"><%= producto.categorias[0].categoria %> <%= producto.tipos_mascota.mascota %></p>
+                                <% } %>
                                 <a href="/productos/detalle/<%= producto.id %>">
                                     <div class="contenedor_imagen">
                                         <img class="img-productos-descuentos" src="/img/productos/<%= producto.imagen %>" alt="imagen_producto">
                                     </div>
                                 </a>
                                 <div class="div-card">
-                                    <div class="texto_nombre_arriba"> <!--- Limita la altura del box-->
+                                    <div class="texto_nombre_arriba">
                                         <h4><%= producto.nombre %></h4>
                                     </div>
                                         
