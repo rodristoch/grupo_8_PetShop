@@ -13,7 +13,33 @@
       
         <article class="contenedor_mobile">
             <!-- Ruta -->
-            <p><a class="ruta" href="/">localhost:3100</a> > <a class="ruta" href="/productos">productos</a> > <a class="ruta" href="/productos/detalle/<%= producto.id %>">detalle/<%= producto.id %></a>
+            <% if(producto.tipo_mascota_id == 2) { %> <!-- si el tipo de mascota es perro -->
+                <p>
+                    <a class="ruta" href="/">localhost:3100</a> > <a class="ruta" href="/productos">productos</a> > <a class="ruta" href="/productos/perro">perro</a> > 
+                    <% if(producto.categorias[0].categoria == "comida"){ %>
+                        <a class="ruta" href="/productos/perro/comida">comida</a> > <a class="ruta" href="/productos/perro/comida/<%= producto.id %>"><%= producto.id %></a>
+                    <% } else if(producto.categorias[0].categoria == "accesorio"){ %>
+                        <a class="ruta" href="/productos/perro/accesorios">accesorios</a> > <a class="ruta" href="/productos/perro/accesorios/<%= producto.id %>"><%= producto.id %></a>
+                    <% } else if(producto.categorias[0].categoria == "higiene"){ %>
+                        <a class="ruta" href="/productos/perro/higiene">higiene</a> > <a class="ruta" href="/productos/perro/higiene/<%= producto.id %>"><%= producto.id %></a>
+                    <% } else if(producto.categorias[0].categoria == "juguete"){ %>
+                        <a class="ruta" href="/productos/perro/juguetes">juguetes</a> > <a class="ruta" href="/productos/perro/juguetes/<%= producto.id %>"><%= producto.id %></a>
+                    <% } %>
+                </p>
+            <% } else { %> <!-- si el tipo de mascota es gato -->
+                <p>
+                    <a class="ruta" href="/">localhost:3100</a> > <a class="ruta" href="/productos">productos</a> > <a class="ruta" href="/productos/gato">gato</a> > 
+                    <% if(producto.categorias[0].categoria == "comida"){ %>
+                        <a class="ruta" href="/productos/gato/comida">comida</a> > <a class="ruta" href="/productos/gato/comida/<%= producto.id %>"><%= producto.id %></a>
+                    <% } else if(producto.categorias[0].categoria == "accesorio"){ %>
+                        <a class="ruta" href="/productos/gato/accesorios">accesorios</a> > <a class="ruta" href="/productos/gato/accesorios/<%= producto.id %>"><%= producto.id %></a>
+                    <% } else if(producto.categorias[0].categoria == "higiene"){ %>
+                        <a class="ruta" href="/productos/gato/higiene">higiene</a> > <a class="ruta" href="/productos/gato/higiene/<%= producto.id %>"><%= producto.id %></a>
+                    <% } else if(producto.categorias[0].categoria == "juguete"){ %>
+                        <a class="ruta" href="/productos/gato/juguetes">juguetes</a> > <a class="ruta" href="/productos/gato/juguetes/<%= producto.id %>"><%= producto.id %></a>
+                    <% } %>
+                </p>
+            <% } %>
 
              <!-- Imagen -->
             <div class="contenedor_imagen_mobile">
@@ -21,6 +47,7 @@
             </div>
             <!-- Detalle de producto -->
             <section class=" detalle">
+                <!-- para saber el contenido de la etiqueta -->
                 <% if(producto.categorias[0].categoria == "comida"){ %>
                     <p class="etiqueta-comida-bicho"><%= producto.categorias[0].categoria %> <%= producto.tipos_mascota.mascota %></p>
                 <% } else if(producto.categorias[0].categoria == "accesorio"){ %>
@@ -92,7 +119,7 @@
                                 <% comidaPerro.forEach(producto => { %>
                                     <article class="articulo-productos-descuentos">
                                         <p class="etiqueta-comida-bicho-card"><%= producto.categorias[0].categoria %> <%= producto.tipos_mascota.mascota %></p>
-                                        <a href="/productos/detalle/<%= producto.id %>">
+                                        <a href="/productos/perro/comida/<%= producto.id %>">
                                             <div class="contenedor_imagen">
                                                 <img class="img-productos-descuentos" src="/img/productos/<%= producto.imagen %>" alt="imagen_producto">
                                             </div>
@@ -127,7 +154,7 @@
                                 <% accesorioPerro.forEach(producto => { %>
                                     <article class="articulo-productos-descuentos">
                                         <p class="etiqueta-accesorio-bicho-card"><%= producto.categorias[0].categoria %> <%= producto.tipos_mascota.mascota %></p>
-                                        <a href="/productos/detalle/<%= producto.id %>">
+                                        <a href="/productos/perro/accesorios/<%= producto.id %>">
                                             <div class="contenedor_imagen">
                                                 <img class="img-productos-descuentos" src="/img/productos/<%= producto.imagen %>" alt="imagen_producto">
                                             </div>
@@ -162,7 +189,7 @@
                                 <% higienePerro.forEach(producto => { %>
                                     <article class="articulo-productos-descuentos">
                                         <p class="etiqueta-higiene-bicho-card"><%= producto.categorias[0].categoria %> <%= producto.tipos_mascota.mascota %></p>
-                                        <a href="/productos/detalle/<%= producto.id %>">
+                                        <a href="/productos/perro/higiene/<%= producto.id %>">
                                             <div class="contenedor_imagen">
                                                 <img class="img-productos-descuentos" src="/img/productos/<%= producto.imagen %>" alt="imagen_producto">
                                             </div>
@@ -197,7 +224,7 @@
                                 <% juguetePerro.forEach(producto => { %>
                                     <article class="articulo-productos-descuentos">
                                         <p class="etiqueta-juguete-bicho-card"><%= producto.categorias[0].categoria %> <%= producto.tipos_mascota.mascota %></p>
-                                        <a href="/productos/detalle/<%= producto.id %>">
+                                        <a href="/productos/perro/juguetes/<%= producto.id %>">
                                             <div class="contenedor_imagen">
                                                 <img class="img-productos-descuentos" src="/img/productos/<%= producto.imagen %>" alt="imagen_producto">
                                             </div>
@@ -234,7 +261,7 @@
                                 <% comidaGato.forEach(producto => { %>
                                     <article class="articulo-productos-descuentos">
                                         <p class="etiqueta-comida-bicho-card"><%= producto.categorias[0].categoria %> <%= producto.tipos_mascota.mascota %></p>
-                                        <a href="/productos/detalle/<%= producto.id %>">
+                                        <a href="/productos/gato/comida/<%= producto.id %>">
                                             <div class="contenedor_imagen">
                                                 <img class="img-productos-descuentos" src="/img/productos/<%= producto.imagen %>" alt="imagen_producto">
                                             </div>
@@ -269,7 +296,7 @@
                                 <% accesorioGato.forEach(producto => { %>
                                     <article class="articulo-productos-descuentos">
                                         <p class="etiqueta-accesorio-bicho-card"><%= producto.categorias[0].categoria %> <%= producto.tipos_mascota.mascota %></p>
-                                        <a href="/productos/detalle/<%= producto.id %>">
+                                        <a href="/productos/gato/accesorios/<%= producto.id %>">
                                             <div class="contenedor_imagen">
                                                 <img class="img-productos-descuentos" src="/img/productos/<%= producto.imagen %>" alt="imagen_producto">
                                             </div>
@@ -304,7 +331,7 @@
                                 <% higieneGato.forEach(producto => { %>
                                     <article class="articulo-productos-descuentos">
                                         <p class="etiqueta-higiene-bicho-card"><%= producto.categorias[0].categoria %> <%= producto.tipos_mascota.mascota %></p>
-                                        <a href="/productos/detalle/<%= producto.id %>">
+                                        <a href="/productos/gato/higiene/<%= producto.id %>">
                                             <div class="contenedor_imagen">
                                                 <img class="img-productos-descuentos" src="/img/productos/<%= producto.imagen %>" alt="imagen_producto">
                                             </div>
@@ -339,7 +366,7 @@
                                 <% jugueteGato.forEach(producto => { %>
                                     <article class="articulo-productos-descuentos">
                                         <p class="etiqueta-juguete-bicho-card"><%= producto.categorias[0].categoria %> <%= producto.tipos_mascota.mascota %></p>
-                                        <a href="/productos/detalle/<%= producto.id %>">
+                                        <a href="/productos/gato/juguetes/<%= producto.id %>">
                                             <div class="contenedor_imagen">
                                                 <img class="img-productos-descuentos" src="/img/productos/<%= producto.imagen %>" alt="imagen_producto">
                                             </div>

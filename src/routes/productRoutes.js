@@ -23,25 +23,35 @@ const storage = multer.diskStorage({
 
 const upload = multer({storage: storage});
 
+// TODOS los productos
+router.get('/', productController.productos) 
+// Pagina de productos con descuentos
+router.get('/promociones/', productController.promociones) 
+
 // Mostrar paginas de productos por categoria
 // Productos de perro
 router.get('/perro', productController.categoriaPerro) 
-router.get('/perro/promociones/', productController.promocionesPerro)
+router.get('/perro/promociones', productController.promocionesPerro)
 router.get('/perro/comida', productController.comidaPerro) 
+router.get('/perro/comida/:id', productController.DetalleProductosPerro)
 router.get('/perro/accesorios', productController.accesoriosPerro) 
+router.get('/perro/accesorios/:id', productController.DetalleProductosPerro)
 router.get('/perro/higiene', productController.higienePerro) 
+router.get('/perro/higiene/:id', productController.DetalleProductosPerro)
 router.get('/perro/juguetes', productController.juguetesPerro)
+router.get('/perro/juguetes/:id', productController.DetalleProductosPerro)
 
 // Productos de gato
 router.get('/gato', productController.categoriaGato) 
 router.get('/gato/promociones', productController.promocionesGato) 
 router.get('/gato/comida', productController.comidaGato) 
+router.get('/gato/comida/:id', productController.DetalleProductosGato)
 router.get('/gato/accesorios', productController.accesoriosGato) 
+router.get('/gato/accesorios/:id', productController.DetalleProductosGato)
 router.get('/gato/higiene', productController.higieneGato) 
+router.get('/gato/higiene/:id', productController.DetalleProductosGato)
 router.get('/gato/juguetes', productController.juguetesGato) 
-
-router.get('/promociones/', productController.promociones) 
-router.get('/', productController.productos) 
+router.get('/gato/juguetes/:id', productController.DetalleProductosGato)
 
 // Marcas
 router.get('/marcas/', productController.marcas)
@@ -52,7 +62,7 @@ router.get('/marcas/cancat', productController.cancat)
 router.get('/marcas/catit', productController.catit)
 
 // Mostrar pagina de producto (por id)
-router.get('/detalle/:id/', productController.detalle) 
+/* router.get('/detalle/:id/', productController.detalle) */ 
 
 // Crear producto
 router.get('/alta', productController.alta2);

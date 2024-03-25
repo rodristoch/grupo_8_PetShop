@@ -166,21 +166,22 @@ let productosConDescuento;
 try {
     // Busca los productos con descuento id 2
     productosConDescuento = await db.Producto.findAll({
-        include: [{
-            model: db.Descuento,
-            as: 'descuentos',
-            where: {
-                id: 2 // ID descuento de SQL
-            }
-        },
-        {
-            model: db.Categoria,
-            as: 'categorias',
-        },
-        {
-            model: db.TipoMascota,
-            as: 'tipos_mascota',
-        }]
+        include: [
+            {
+                model: db.Descuento,
+                as: 'descuentos',
+                where: {
+                    id: 2 // ID descuento de SQL
+                }
+            },
+            {
+                model: db.Categoria,
+                as: 'categorias',
+            },
+            {
+                model: db.TipoMascota,
+                as: 'tipos_mascota',
+            }]
     });
 
     // mostrar N productos

@@ -118,9 +118,15 @@
                         <% for(let producto of eukanuba) { %>
                             <article class="articulo-productos-descuentos">
                                 <div class="contenedor_imagen">
-                                    <a href="/productos/detalle/<%= producto.id %>">
-                                        <img class="img-productos-descuentos" src="/img/productos/<%= producto.imagen %>" alt="imagen_producto">
-                                    </a>
+                                    <% if(producto.tipo_mascota_id == 2) { %> <!-- si el tipo de mascota es perro -->
+                                        <a href="/productos/perro/comida/<%= producto.id %>">
+                                            <img class="img-productos-descuentos" src="/img/productos/<%= producto.imagen %>" alt="imagen_producto">
+                                        </a>
+                                    <% } else { %> <!-- y si el tipo de mascota es gato -->
+                                        <a href="/productos/gato/comida/<%= producto.id %>">
+                                            <img class="img-productos-descuentos" src="/img/productos/<%= producto.imagen %>" alt="imagen_producto">
+                                        </a>
+                                    <% } %>
                                 </div>
                                 <% if(producto.descuentos[0].id == 2) { %>
                                     <div class="div-card">
@@ -182,9 +188,15 @@
                         <% for(let producto of proplan) { %>
                             <article class="articulo-productos-descuentos">
                                 <div class="contenedor_imagen">
-                                    <a href="/productos/detalle/<%= producto.id %>">
-                                        <img class="img-productos-descuentos" src="/img/productos/<%= producto.imagen %>" alt="imagen_producto">
-                                    </a>
+                                    <% if(producto.tipo_mascota_id == 2) { %> <!-- si el tipo de mascota es perro -->
+                                        <a href="/productos/perro/comida/<%= producto.id %>">
+                                            <img class="img-productos-descuentos" src="/img/productos/<%= producto.imagen %>" alt="imagen_producto">
+                                        </a>
+                                    <% } else { %> <!-- y si el tipo de mascota es gato -->
+                                        <a href="/productos/gato/comida/<%= producto.id %>">
+                                            <img class="img-productos-descuentos" src="/img/productos/<%= producto.imagen %>" alt="imagen_producto">
+                                        </a>
+                                    <% } %>
                                 </div>
                                 <% if(producto.descuentos[0].id == 2) { %>
                                     <div class="div-card">
@@ -245,9 +257,15 @@
                         <% for(let producto of royal) { %>
                             <article class="articulo-productos-descuentos">
                                 <div class="contenedor_imagen">
-                                    <a href="/productos/detalle/<%= producto.id %>">
-                                        <img class="img-productos-descuentos" src="/img/productos/<%= producto.imagen %>" alt="imagen_producto">
-                                    </a>
+                                    <% if(producto.tipo_mascota_id == 2) { %> <!-- si el tipo de mascota es perro -->
+                                        <a href="/productos/perro/comida/<%= producto.id %>">
+                                            <img class="img-productos-descuentos" src="/img/productos/<%= producto.imagen %>" alt="imagen_producto">
+                                        </a>
+                                    <% } else { %> <!-- y si el tipo de mascota es gato -->
+                                        <a href="/productos/gato/comida/<%= producto.id %>">
+                                            <img class="img-productos-descuentos" src="/img/productos/<%= producto.imagen %>" alt="imagen_producto">
+                                        </a>
+                                    <% } %>
                                 </div>
                                 <% if(producto.descuentos[0].id == 2) { %>
                                     <div class="div-card">
@@ -308,9 +326,15 @@
                         <% for(let producto of cancat) { %>
                             <article class="articulo-productos-descuentos">
                                 <div class="contenedor_imagen">
-                                    <a href="/productos/detalle/<%= producto.id %>">
-                                        <img class="img-productos-descuentos" src="/img/productos/<%= producto.imagen %>" alt="imagen_producto">
-                                    </a>
+                                    <% if(producto.tipo_mascota_id == 2) { %> <!-- si el tipo de mascota es perro -->
+                                        <a href="/productos/perro/comida/<%= producto.id %>">
+                                            <img class="img-productos-descuentos" src="/img/productos/<%= producto.imagen %>" alt="imagen_producto">
+                                        </a>
+                                    <% } else { %> <!-- y si el tipo de mascota es gato -->
+                                        <a href="/productos/gato/comida/<%= producto.id %>">
+                                            <img class="img-productos-descuentos" src="/img/productos/<%= producto.imagen %>" alt="imagen_producto">
+                                        </a>
+                                    <% } %>
                                 </div>
                                 <% if(producto.descuentos[0].id == 2) { %>
                                     <div class="div-card">
@@ -371,9 +395,15 @@
                         <% for(let producto of catit) { %>
                             <article class="articulo-productos-descuentos">
                                 <div class="contenedor_imagen">
-                                    <a href="/productos/detalle/<%= producto.id %>">
-                                        <img class="img-productos-descuentos" src="/img/productos/<%= producto.imagen %>" alt="imagen_producto">
-                                    </a>
+                                    <% if(producto.tipo_mascota_id == 2) { %> <!-- si el tipo de mascota es perro -->
+                                        <a href="/productos/perro/comida/<%= producto.id %>">
+                                            <img class="img-productos-descuentos" src="/img/productos/<%= producto.imagen %>" alt="imagen_producto">
+                                        </a>
+                                    <% } else { %> <!-- y si el tipo de mascota es gato -->
+                                        <a href="/productos/gato/comida/<%= producto.id %>">
+                                            <img class="img-productos-descuentos" src="/img/productos/<%= producto.imagen %>" alt="imagen_producto">
+                                        </a>
+                                    <% } %>
                                 </div>
                                 <% if(producto.descuentos[0].id == 2) { %>
                                     <div class="div-card">

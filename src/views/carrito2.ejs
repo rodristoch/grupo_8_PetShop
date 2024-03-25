@@ -55,6 +55,7 @@
                     <ul class="slider-container">
                         <% productosConDescuento.forEach(producto => {%>
                             <article class="articulo-productos-descuentos">
+                                <!-- para saber el contenido de la etiqueta -->
                                 <% if(producto.categorias[0].id == 1) { %>
                                     <p class="etiqueta-comida-bicho-card"><%= producto.categorias[0].categoria %> <%= producto.tipos_mascota.mascota %></p>
                                 <% } else if(producto.categorias[0].id == 2) { %>
@@ -64,11 +65,60 @@
                                 <% } else if(producto.categorias[0].id == 4) { %>
                                     <p class="etiqueta-juguete-bicho-card"><%= producto.categorias[0].categoria %> <%= producto.tipos_mascota.mascota %></p>
                                 <% } %>
-                                <a href="/productos/detalle/<%= producto.id %>">
-                                    <div class="contenedor_imagen">
-                                        <img class="img-productos-descuentos" src="/img/productos/<%= producto.imagen %>" alt="imagen_producto">
-                                    </div>
-                                </a>
+
+                                <% if(producto.tipo_mascota_id == 2) { %> <!-- si el tipo de mascota es perro -->
+                                    <% if(producto.categorias[0].categoria == "comida") { %> 
+                                        <a href="/productos/perro/comida/<%= producto.id %>">
+                                            <div class="contenedor_imagen">
+                                                <img class="img-productos-descuentos" src="/img/productos/<%= producto.imagen %>" alt="imagen_producto">
+                                            </div>
+                                        </a>
+                                    <% } else if (producto.categorias[0].categoria == "accesorio") { %>
+                                        <a href="/productos/perro/accesorios/<%= producto.id %>">
+                                            <div class="contenedor_imagen">
+                                                <img class="img-productos-descuentos" src="/img/productos/<%= producto.imagen %>" alt="imagen_producto">
+                                            </div>
+                                        </a>
+                                    <% } else if (producto.categorias[0].categoria == "higiene") { %>
+                                        <a href="/productos/perro/higiene/<%= producto.id %>">
+                                            <div class="contenedor_imagen">
+                                                <img class="img-productos-descuentos" src="/img/productos/<%= producto.imagen %>" alt="imagen_producto">
+                                            </div>
+                                        </a>
+                                    <% } else if (producto.categorias[0].categoria == "juguete") { %>
+                                        <a href="/productos/perro/juguetes/<%= producto.id %>">
+                                            <div class="contenedor_imagen">
+                                                <img class="img-productos-descuentos" src="/img/productos/<%= producto.imagen %>" alt="imagen_producto">
+                                            </div>
+                                        </a>
+                                    <% } %>
+                                <% } else { %> <!-- y si el tipo de mascota es gato -->
+                                    <% if(producto.categorias[0].categoria == "comida") { %> 
+                                        <a href="/productos/gato/comida/<%= producto.id %>">
+                                            <div class="contenedor_imagen">
+                                                <img class="img-productos-descuentos" src="/img/productos/<%= producto.imagen %>" alt="imagen_producto">
+                                            </div>
+                                        </a>
+                                    <% } else if (producto.categorias[0].categoria == "accesorio") { %>
+                                        <a href="/productos/gato/accesorios/<%= producto.id %>">
+                                            <div class="contenedor_imagen">
+                                                <img class="img-productos-descuentos" src="/img/productos/<%= producto.imagen %>" alt="imagen_producto">
+                                            </div>
+                                        </a>
+                                    <% } else if (producto.categorias[0].categoria == "higiene") { %>
+                                        <a href="/productos/gato/higiene/<%= producto.id %>">
+                                            <div class="contenedor_imagen">
+                                                <img class="img-productos-descuentos" src="/img/productos/<%= producto.imagen %>" alt="imagen_producto">
+                                            </div>
+                                        </a>
+                                    <% } else if (producto.categorias[0].categoria == "juguete") { %>
+                                        <a href="/productos/gato/juguetes/<%= producto.id %>">
+                                            <div class="contenedor_imagen">
+                                                <img class="img-productos-descuentos" src="/img/productos/<%= producto.imagen %>" alt="imagen_producto">
+                                            </div>
+                                        </a>
+                                    <% } %>
+                                <% } %>  
                                 <div class="div-card">
                                     <div class="texto_nombre_arriba">
                                         <h4><%= producto.nombre %></h4>
@@ -110,8 +160,6 @@
             </div>
         </section>
     </main>
-
-
 
     <%- include("./partials/footer.ejs") %>
     
