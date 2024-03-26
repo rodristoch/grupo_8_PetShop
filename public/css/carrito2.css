@@ -15,49 +15,163 @@ a {
     justify-content: space-between;
     padding: 12px;
     flex-direction: column;
+    text-align: center;
 }
 
-.contenedor-producto {
-    width: 100%;
-    background-color: #FECF53;
+.contenedor-producto {  /* contenedor padre */
+    width: 95%;
+    background-color: #fede87;
+    border: 1px solid #FECF53;
     display: flex;
     border-radius: 8px;
     display: flex;
     flex-direction: column;
+    padding: 10px;
+    margin-bottom: 10px;
+}
+
+.contenedor1 {  /* contenedor padre: contenedor-producto  */
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    align-items: center;
+    margin: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.contenedor-img {   /* contenedor padre: contenedor1  */
+    width: 20%;
+    margin: 0;
+}
+
+.imagen {   /* contenedor padre: contenedor-img  */
+    width: 90%;
+    height: 100%;
+}
+
+.texto {   /* contenedor padre: contenedor1  */
+    width: 75%;
     padding: 5px;
 }
 
+.precio-con-descto {   /* contenedor padre: texto  */
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    align-items: flex-end;
+    margin: 0;
+}
+
+/* 2do contenedor */
 .contenedor-proceder-pago {
-    background-color: #FECF53;
+    background-color: #fede87;
+    border: 1px solid #FECF53;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: flex-start;
     border-radius: 8px;
+    margin: 0;
+    padding: 10px;
+    width: 95%;
+}
+
+.textos2 {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: flex-start;
     width: 100%;
-    margin-top: 20px;
+    margin: 0;
+    height: 100%;
 }
 
-.imagen {
-    width: 20%;
-    height: 20%;
+/* textos del 2do contenedor */
+.resumen-compra {
+    font-size: 14px;
+    width: 100%;
+    text-align: left;
+    font-weight: 300;
+    margin-top: 0;
+    text-decoration: underline;
+    color: rgb(57, 57, 57);;
 }
 
-.img-productos-descuentos {
-    width: 90vw;
+.subtotal-titulo {
+    font-size: 14px;
+    width: 30%;
+    margin: 0;
+    text-align: left;
+    margin-bottom: 10px;
+}
+
+.subtotal {
+    font-size: 14px;
+    width: 50%;
+    text-align: right;
+    margin: 0;
+    margin-bottom: 10px;
+}
+
+.gratis-titulo {
+    font-size: 12px;
+    width: 30%;
+    margin: 0;
+    text-align: left;
+    margin-bottom: 10px;
+}
+
+.gratis {
+    font-size: 12px;
+    color: #1e697b;
+    width: 50%;
+    text-align: right;
+    margin: 0;
+    margin-bottom: 10px;
+}
+
+.total-titulo {
+    font-size: 16px;
+    width: 30%;
+    margin: 0;
+    text-align: left;
+    font-weight: 500;
+}
+
+.total {
+    font-size: 16px;
+    width: 50%;
+    text-align: right;
+    margin: 0;
+    font-weight: 500;
+}
+
+/* boton de pago */
+.botonDePago {
+    text-align: center;
+    width: 100%;
+    margin: 0;
+    margin-top: 15px;
 }
 
 .btn {
     padding: 10px 20px;
     font-size: 16px;
-    background-color: #18515f;
+    background-color: #1e697b;
     color: #fff;
     border: none;
     border-radius: 4px;
     cursor: pointer;
+    transition: 450ms;
+    border: 1px solid #18515f;
 }
 
 .btn:hover {
-    background-color: #45a049;
+    background-color: #349fba;
 }
 
-.eliminar-btn {
+/* .eliminar-btn {
     padding: 8px 12px;
     font-size: 14px;
     background-color: #ff5555;
@@ -65,20 +179,94 @@ a {
     border: none;
     border-radius: 4px;
     cursor: pointer;
-}
+} */
 
-.eliminar-btn:hover {
+/* .eliminar-btn:hover {
     background-color: #ff0000;
+} */
+
+/* textos del 1er contenedor */
+.titulo-nombre-producto {  /* titulo */
+    font-size: 17px;
+    font-weight: 500;
+    margin: 0;
+    margin-bottom: 12px;
+    text-align: left;
 }
 
-.botonDePago {
-    /* margin-left: 150px; */
-    margin-top: 50px;
-    text-align: center;
-    margin-bottom: 20px;
+.titulo-descrip {  /* titulo descripcion */
+    font-size: 14px;
+    text-decoration: underline;
+    color: rgb(57, 57, 57);
+    font-weight: 300;
+    margin: 0;
+    margin-bottom: 8px;
+    text-align: left;
 }
 
-/* seccion producto */
+.descrip {   /* descripcion producto */
+    font-size: 14px;
+    font-weight: 300;
+    margin: 0;
+    margin-bottom: 25px;
+    text-align: left;
+}
+
+.precio-tachado-detalle {  /* precio tachado */
+    text-decoration: line-through;
+    font-size: 12px;
+    font-weight: 300;
+    margin: 0;
+    margin-bottom: 15px;
+    margin-left: 8px;
+    width: 65%;
+    text-align: left;
+}
+
+.precio-oferta {   /* texto de precio en oferta!! */
+    color: #18515f;
+    font-style: italic;
+    font-weight: 300;
+    font-size: 13px;
+    margin: 0;
+    text-align: left;
+}
+
+.precio-detalle {   /* el precio final */
+    font-size: 15px;
+    font-weight: 500;
+    margin: 0;
+    margin-left: 5px;
+    text-align: left;
+}
+
+.descuento-precio {   /* el texto del 20 OFF */
+    color: #18515f;
+    font-weight: 400;
+    font-size: 13px;
+    margin: 0;
+    margin-left: 5px;
+    width: 25%;
+    text-align: left;
+}
+
+.precio-regular {   /* El div del precio regular */
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    align-items: center;
+    text-align: left;
+}
+
+.precio-normal {   /* texto de precio regular y precio */
+    font-weight: 300;
+    font-size: 12px;
+    margin: 0;
+    margin-bottom: 15px;
+    text-align: left;
+}
+
+/* seccion productos */
 .section-productos-descuentos {
     width: 90%;
     margin: auto;
@@ -126,7 +314,6 @@ h2 {
     width: 100%;
     padding: 0;
     margin: 0;
-
 }
 
 .img-productos-descuentos {
@@ -247,9 +434,80 @@ h2 {
     border: 1px solid #9b46d7;
 }
 /* hasta aca card producto */
+
 /* --------------------------------------------- tablet ----------------------------------------------------------------- */
 
 @media (min-width: 768px) {
+
+    .cantidad {
+        border: 1px solid blue;
+    }
+
+    .titulo-nombre-producto {
+        font-size: 14px;
+        font-weight: 500;
+        margin: 0;
+        margin-bottom: 15px;
+    }
+
+    .titulo-descrip {
+        font-size: 12px;
+        text-decoration: underline;
+        font-weight: 400;
+        margin: 0;
+        margin-bottom: 10px;
+    }
+
+    .descrip {
+        font-size: 11px;
+        font-weight: 300;
+        margin: 0;
+        margin-bottom: 25px;
+    }
+
+    .precio-regular {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: flex-start;
+        align-items: center;
+    }
+
+    .precio-detalle {
+        font-size: 13px;
+        font-weight: 500;
+        margin: 0;
+        margin-left: 5px;
+    }
+
+    .precio-tachado-detalle {
+        font-size: 10px;
+        font-weight: 300;
+        margin: 0;
+        margin-bottom: 15px;
+        margin-left: 8px;
+        width: 70%;
+    }
+
+    .precio-normal {
+        font-weight: 300;
+        font-size: 10px;
+        margin: 0;
+        margin-bottom: 15px;
+    }
+
+    .precio-oferta {
+        font-weight: 300;
+        font-size: 10px;
+        margin: 0;
+    }
+
+    .descuento-precio {
+        font-weight: 400;
+        font-size: 10px;
+        margin: 0;
+        margin-left: 5px;
+        width: 25%;
+    }
 
     .all {
         display: flex;
@@ -260,12 +518,11 @@ h2 {
     
     .contenedor-producto {
         width: 65%;
-        background-color: #FECF53;
         display: flex;
         border-radius: 8px;
         display: flex;
         flex-direction: column;
-        padding: 5px;
+        margin: 0;
     }
     
     .titulo {
@@ -274,28 +531,9 @@ h2 {
         border-bottom: solid 1px #18515f;
     }
     
-    .contenedor1 {
-        display: flex;
-    }
-    
-    .imagen {
-        width: 15%;
-        height: 60%;
-        padding: 20px;
-        border-radius: 8px;
-    }
-    
-    .texto  {
-        display: flex;
-        flex-direction: column;
-        width: 50%;
-    }
-    
     .subtitulo2, .precio {
         margin-top: 1px;
     }
-    
-    
     
     .titulo, .subtitulo, .subtitulo2 {
         color: #18515f;
@@ -305,7 +543,7 @@ h2 {
         display: flex;
         justify-content: flex-end; 
         align-items: center;
-        margin-top: 20px;
+        /* margin-top: 20px; */
         padding-left: 90px;
     }
     
@@ -317,50 +555,60 @@ h2 {
         margin-right: 10px;
     }
     
-    /* button {
-        padding: 10px 20px;
-        font-size: 16px;
-        background-color: #18515f;
-        color: #fff;
-        border: none;
-        border-radius: 4px;
-        cursor: pointer;
-    }
-    
-    button:hover {
-        background-color: #45a049;
-    }
-    .eliminar-btn {
-        padding: 8px 12px;
-        font-size: 14px;
-        background-color: #ff5555;
-        color: #fff;
-        border: none;
-        border-radius: 4px;
-        cursor: pointer;
-    }
-    
-    .eliminar-btn:hover {
-        background-color: #ff0000;
-    } */
-    
     .contenedor-proceder-pago {
-        background-color: #FECF53;
-        border-radius: 8px;
-        margin-left: 5px;
         width: 34%;
+        margin-left: 5px;
+        padding: 15px;
     }
+
     .textos2 {
-        margin-left: 45px;
-        margin-top: 35px;
-        width: 80%;
-        border-bottom: solid 1px #18515f;
+        height: auto;
     }
-    
+
+    /* textos del 2do contenedor */
+    .resumen-compra {
+        font-size: 12px;
+    }
+
+    .subtotal-titulo {
+        font-size: 12px;
+        margin-bottom: 10px;
+    }
+
+    .subtotal {
+        font-size: 12px;
+        margin-bottom: 10px;
+    }
+
+    .gratis-titulo {
+        font-size: 11px;
+        margin-bottom: 10px;
+    }
+
+    .gratis {
+        font-size: 11px;
+        margin-bottom: 10px;
+    }
+
+    .total-titulo {
+        font-size: 14px;
+    }
+
+    .total {
+        font-size: 14px;
+    }
+
+    /* boton de pago */
     .botonDePago {
-        /* margin-left: 150px; */
-        margin-top: 50px;
-        text-align: center;
+        width: 100%;
+        margin: 0;
+        margin-top: 40px;
+    }
+
+    .btn {
+        padding: 8px 16px;
+        font-size: 14px;
+        border-radius: 4px;
     }
     
     /* seccion productos */
@@ -400,6 +648,117 @@ h2 {
 
 
 @media (min-width: 1024px) {
+
+    .contenedor-proceder-pago, .contenedor-producto {
+        transition: 450ms;
+    }
+
+    .contenedor-proceder-pago:hover  {
+        background-color: #ffd151;
+    }
+    
+    .contenedor-producto:hover {
+        background-color: #ffd151;
+    }
+
+    .titulo-nombre-producto {
+        font-size: 18px;
+    }
+
+    .titulo-descrip {
+        font-size: 15px;
+        font-weight: 400;
+        margin: 0;
+        margin-bottom: 10px;
+    }
+
+    .descrip {
+        font-size: 14px;
+        font-weight: 400;
+        margin: 0;
+        margin-bottom: 25px;
+    }
+
+    .precio-detalle {
+        font-size: 15px;
+        font-weight: 600;
+        margin: 0;
+        margin-left: 10px;
+    }
+
+    .precio-tachado-detalle {
+        font-size: 14px;
+        font-weight: 400;
+        margin: 0;
+        margin-bottom: 15px;
+        margin-left: 8px;
+        width: 70%;
+    }
+
+    .precio-normal {
+        font-weight: 400;
+        font-size: 14px;
+        margin: 0;
+        margin-bottom: 15px;
+    }
+
+    .precio-oferta {
+        font-weight: 400;
+        font-size: 14px;
+        margin: 0;
+    }
+
+    .descuento-precio {
+        font-weight: 500;
+        font-size: 13px;
+        margin: 0;
+        margin-left: 10px;
+        width: 30%;
+    }
+
+    /* textos del 2do contenedor */
+    .resumen-compra {
+        font-size: 14px;
+    }
+
+    .subtotal-titulo {
+        font-size: 14px;
+        margin-bottom: 10px;
+    }
+
+    .subtotal {
+        font-size: 14px;
+        margin-bottom: 10px;
+    }
+
+    .gratis-titulo {
+        font-size: 13px;
+        margin-bottom: 10px;
+    }
+
+    .gratis {
+        font-size: 13px;
+        margin-bottom: 10px;
+    }
+
+    .total-titulo {
+        font-size: 16px;
+    }
+
+    .total {
+        font-size: 16px;
+    }
+
+    /* boton de pago */
+    .botonDePago {
+        margin: 0;
+        margin-top: 40px;
+    }
+
+    .btn {
+        padding: 8px 16px;
+        font-size: 14px;
+    }
 
     /* card producto */
     .articulo-productos-descuentos {
@@ -465,12 +824,116 @@ h2 {
 
 @media (min-width: 1200px) {
 
+    .titulo-nombre-producto {
+        font-size: 20px;
+        margin-bottom: 15px;
+    }
+
+    .titulo-descrip {
+        font-size: 16px;
+        margin-bottom: 10px;
+    }
+
+    .descrip {
+        font-size: 16px;
+        margin-bottom: 25px;
+    }
+
+    .precio-detalle {
+        font-size: 18px;
+        margin-left: 12px;
+    }
+
+    .precio-tachado-detalle {
+        font-size: 16px;
+        margin-bottom: 15px;
+        margin-left: 10px;
+        width: 80%;
+    }
+
+    .precio-normal {
+        font-size: 16px;
+        margin-bottom: 15px;
+    }
+
+    .precio-oferta {
+        font-size: 16px;
+    }
+
+    .descuento-precio {
+        font-size: 15px;
+        margin-left: 10px;
+        width: 40%;
+    }
+
+    /* textos 2do contenedor */
+    .resumen-compra {
+        font-size: 16px;
+    }
+
+    .subtotal {
+        font-size: 16px;
+        width: 50%;
+        text-align: right;
+        margin: 0;
+        margin-bottom: 15px;
+    }
+
+    .total {
+        font-size: 18px;
+        width: 50%;
+        text-align: right;
+        margin: 0;
+        margin-bottom: 15px;
+    }
+
+    .gratis {
+        font-size: 14px;
+        color: #1e697b;
+        width: 50%;
+        text-align: right;
+        margin: 0;
+        margin-bottom: 15px;
+    }
+
+    .subtotal-titulo {
+        font-size: 16px;
+        width: 30%;
+        margin: 0;
+        margin-bottom: 15px;
+    }
+
+    .total-titulo {
+        font-size: 18px;
+        width: 30%;
+        margin: 0;
+        margin-bottom: 15px;
+    }
+
+    .gratis-titulo {
+        font-size: 14px;
+        width: 30%;
+        margin: 0;
+        margin-bottom: 15px;
+    }
+
+    /* boton de pago */
+    .botonDePago {
+        margin: 0;
+        margin-top: 40px;
+    }
+
+    .btn {
+        padding: 10px 18px;
+        font-size: 16px;
+    }
+
+    /* seccion productos */
     .section-productos-descuentos {
         max-width: 1200px;
         margin: auto;
     }
 
-    /* seccion productos */
     .articulo-productos-descuentos {
         width: 80%;
     }
