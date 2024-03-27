@@ -34,7 +34,7 @@ const productController = {
 
         Promise.all([productosPerro, productosGato])
 
-        .then(([productosPerro, productosGato]) =>{
+        .then(([productosPerro, productosGato]) => {
             res.render('productos.ejs', {productosPerro, productosGato, userALoguearse});
         })
         .catch(function (error){
@@ -48,14 +48,26 @@ const productController = {
 
         const userALoguearse = req.session.userLogueado
 
-        db.Producto.findAll({
+        let perroVisible = db.Producto.findAll({
             include: ["descuentos", "categorias"],
             where: {
                 tipo_mascota_id: 2,
             },
+            limit: 4
         })
-        .then(function(productosPerro){
-            res.render('categoria.ejs', {productosPerro, userALoguearse});
+
+        let perroInvisible = db.Producto.findAll({
+            include: ["descuentos", "categorias"],
+            where: {
+                tipo_mascota_id: 2,
+                id: {[Op.gt]: 42}
+            },
+        })
+
+        Promise.all([perroVisible, perroInvisible])
+
+        .then(([perroVisible, perroInvisible]) => {
+            res.render('categoria.ejs', {perroVisible, perroInvisible, userALoguearse});
         })
         .catch(function (error){
             console.error('Error al recuperar productos', error);
@@ -68,14 +80,26 @@ const productController = {
 
         const userALoguearse = req.session.userLogueado
 
-        db.Producto.findAll({
+        let gatoVisible = db.Producto.findAll({
             include: ["descuentos", "categorias"],
             where: {
                 tipo_mascota_id: 1,
             },
+            limit: 4
         })
-        .then(function(productosGato){
-            res.render('categoria.ejs', {productosGato, userALoguearse});
+
+        let gatoInvisible = db.Producto.findAll({
+            include: ["descuentos", "categorias"],
+            where: {
+                tipo_mascota_id: 1,
+                id: {[Op.gt]: 4}
+            },
+        })
+
+        Promise.all([gatoVisible, gatoInvisible])
+
+        .then(([gatoVisible, gatoInvisible]) => {
+            res.render('categoria.ejs', {gatoVisible, gatoInvisible, userALoguearse});
         })
         .catch(function (error){
             console.error('Error al recuperar productos', error);

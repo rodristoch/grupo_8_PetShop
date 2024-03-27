@@ -30,7 +30,7 @@
         </article>
     
 
-        <!-- menú ordenar-->
+        <!-- menú ordenar -->
         <article class="seccion-menu-ordenar">
             <section class="menu-ordenar">
                 <section class="flex-linea-close">
@@ -138,12 +138,70 @@
             <div class="lista_desktop">
                 <div class="div-lista-desktop">
 
-                    <% if(locals.productosPerro){ %>
+                    <% if(locals.perroVisible && locals.perroInvisible){ %>
 
                         <h2 style="margin-left: 2%; margin-top: 2.5%;">Productos Perro</h2>
 
                         <div class="lista_flexbox_desktop">
-                            <% for(let producto of productosPerro) { %>
+                            <% for(let producto of perroVisible) { %>
+                                <article class="articulo-productos-descuentos">
+                                    <div class="contenedor_imagen">
+                                        <% if(producto.categorias[0].categoria == "comida") { %> 
+                                            <a href="/productos/perro/comida/<%= producto.id %>">
+                                        <% } else if (producto.categorias[0].categoria == "accesorio") { %>  
+                                            <a href="/productos/perro/accesorios/<%= producto.id %>">
+                                        <% } else if (producto.categorias[0].categoria == "higiene") { %>
+                                            <a href="/productos/perro/higiene/<%= producto.id %>">
+                                        <% } else if (producto.categorias[0].categoria == "juguete") { %>
+                                            <a href="/productos/perro/juguetes/<%= producto.id %>">
+                                        <% } %>
+                                                <img class="img-productos-descuentos" src="/img/productos/<%= producto.imagen %>" alt="imagen_producto">
+                                            </a>
+                                    </div>
+                                    <div class="div-card">
+                                        <div class="div-uno">
+                                            <div class="texto_nombre_arriba">
+                                                <h4><%= producto.nombre %></h4>
+                                            </div>
+                                            <div class="texto_description_arriba">
+                                                <P class="descripcion"><%= producto.descripcion %></P>
+                                            </div>
+                                        </div>
+                                        <% if(producto.descuentos[0].id == 2) { %>
+                                            <div class="div-dos">
+                                                <p class="descuento"><%= producto.descuentos[0].descripcion %></p>
+                                                <p class="descuento" style="font-weight: 600;">20% OFF</p>
+                                            </div>
+                                            <div class="div-tres">
+                                                <div class="div-tres-int">
+                                                    <p class="precio-tachado">$ <%= producto.precio %></p>
+                                                    <p class="precio">$ <%= Number((producto.precio*0.8).toFixed(2)) %></p>
+                                                </div>
+                                        <% } else { %>  
+                                            <div class="div-dos">                                           
+                                                <p class="descuento" style="color: white;">Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+                                                <p class="descuento" style="color: white;">20% off</p> 
+                                            </div>
+                                            <div class="div-tres-b">
+                                                <div class="div-tres-int">
+                                                    <p class="precio">$ <%= producto.precio %></p>
+                                                </div>
+                                        <% } %>
+                                                <div class="div-boton-comprar">
+                                                    <button class="boton-comprar" type="submit">Agregar</button>
+                                                </div>
+                                            </div>
+                                    </div>
+                                </article>
+                            <% } %>
+
+                            <div class="div-btnver" style="width: 100%; margin: 0; text-align: center;">
+                                <button class="btnver" id="btnver">Mostrar mas</button>
+                            </div>
+                        </div>
+                    
+                        <div class="lista_flexbox_desktop---invisible">
+                            <% for(let producto of perroInvisible) { %>
                                 <article class="articulo-productos-descuentos">
                                     <div class="contenedor_imagen">
                                         <% if(producto.categorias[0].categoria == "comida") { %> 
@@ -195,15 +253,73 @@
                                 </article>
                             <% } %>
                         </div>
-                    
-                    <% } %>
 
-                    <% if(locals.productosGato){ %>
+                    <% } %>
+                    
+                    <% if(locals.gatoVisible && locals.gatoInvisible){ %>
 
                         <h2 style="margin-left: 2%; margin-top: 2.5%;">Productos Gato</h2>
 
                         <div class="lista_flexbox_desktop">
-                            <% for(let producto of productosGato) { %>
+                            <% for(let producto of gatoVisible) { %>
+                                <article class="articulo-productos-descuentos">
+                                    <div class="contenedor_imagen">
+                                        <% if(producto.categorias[0].categoria == "comida") { %> 
+                                            <a href="/productos/gato/comida/<%= producto.id %>">
+                                        <% } else if (producto.categorias[0].categoria == "accesorio") { %>  
+                                            <a href="/productos/gato/accesorios/<%= producto.id %>">
+                                        <% } else if (producto.categorias[0].categoria == "higiene") { %>
+                                            <a href="/productos/gato/higiene/<%= producto.id %>">
+                                        <% } else if (producto.categorias[0].categoria == "juguete") { %>
+                                            <a href="/productos/gato/juguetes/<%= producto.id %>">
+                                        <% } %>
+                                                <img class="img-productos-descuentos" src="/img/productos/<%= producto.imagen %>" alt="imagen_producto">
+                                            </a>
+                                    </div>
+                                    <div class="div-card">
+                                        <div class="div-uno">
+                                            <div class="texto_nombre_arriba">
+                                                <h4><%= producto.nombre %></h4>
+                                            </div>
+                                            <div class="texto_description_arriba">
+                                                <P class="descripcion"><%= producto.descripcion %></P>
+                                            </div>
+                                        </div>
+                                        <% if(producto.descuentos[0].id == 2) { %>
+                                            <div class="div-dos">
+                                                <p class="descuento"><%= producto.descuentos[0].descripcion %></p>
+                                                <p class="descuento" style="font-weight: 600;">20% OFF</p>
+                                            </div>
+                                            <div class="div-tres">
+                                                <div class="div-tres-int">
+                                                    <p class="precio-tachado">$ <%= producto.precio %></p>
+                                                    <p class="precio">$ <%= Number((producto.precio*0.8).toFixed(2)) %></p>
+                                                </div>
+                                        <% } else { %>  
+                                            <div class="div-dos">                                           
+                                                <p class="descuento" style="color: white;">Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+                                                <p class="descuento" style="color: white;">20% off</p> 
+                                            </div>
+                                            <div class="div-tres-b">
+                                                <div class="div-tres-int">
+                                                    <p class="precio">$ <%= producto.precio %></p>
+                                                </div>
+                                        <% } %>
+                                                <div class="div-boton-comprar">
+                                                    <button class="boton-comprar" type="submit">Agregar</button>
+                                                </div>
+                                            
+                                    </div>
+                                </article>     
+                            <% } %>
+
+                            <div class="div-btnver" style="width: 100%; margin: 0; text-align: center;">
+                                <button class="btnver" id="btnver">Mostrar mas</button>
+                            </div>
+                        </div>
+
+                        <div class="lista_flexbox_desktop---invisible">
+                            <% for(let producto of gatoInvisible) { %>
                                 <article class="articulo-productos-descuentos">
                                     <div class="contenedor_imagen">
                                         <% if(producto.categorias[0].categoria == "comida") { %> 
@@ -671,6 +787,8 @@
     </main>
 
     <%- include("./partials/footer.ejs") %>
+
+    <script src="/js/vermas.js"></script>
 
 </body>
 </html>
