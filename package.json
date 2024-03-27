@@ -12,6 +12,7 @@
   "dependencies": {
     "bcryptjs": "^2.4.3",
     "cookie-parser": "^1.4.6",
+    "cors": "^2.8.5",
     "ejs": "^3.1.9",
     "express": "^4.18.2",
     "express-session": "^1.17.3",
@@ -21,6 +22,7 @@
     "mysql2": "^3.9.1",
     "nodemon": "^3.0.1",
     "sequelize": "^6.36.0",
-    "sequelize-cli": "^6.6.2"
+    "sequelize-cli": "^6.6.2",
+    "swiffy-slider": "^1.6.0"
   }
 }

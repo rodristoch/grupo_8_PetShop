@@ -1,27 +1,30 @@
 <!DOCTYPE html>
 <html lang="en">
+
     <%- include("./partials/head.ejs", {cssSheet: "index_styles", title: "Home - PATITAS"}) %>
+    <link rel="stylesheet" href="/css/header-footer.css">
+    
 <body>
 
     <%- include("./partials/header.ejs") %>
-
     <%- include("./partials/header2.ejs") %>
 
     <main>
-        <section class="section-carrusel">
-            
-            <img class="img-carrusel1" src="\img\Imagen_carrusel.png" alt="Imagen_carrusel">
-             <!-- <div class="carousel-container">
-                <div class="carousel" id="carousel">
-                  <img src="\img\Imagen_carrusel.png" alt="Imagen 1">
-                  <img src="\img\Imagen_carrusel2.jpg" alt="Imagen 2">
-                </div>
-                <button class="prev" onclick="prevSlide()">Anterior</button>
-                <button class="next" onclick="nextSlide()">Siguiente</button>
-              </div>
-              
-              <script src="script.js"></script> -->
-        </section>
+        <div class="swiffy-slider slider-indicators-round">
+            <ul class="slider-container">
+                <li><a href="/productos/perro/promociones"><img src="/img/Imagen_carrusel.png" style="max-width: 100%;height: auto;"></a></li>
+                <li><a href="/productos/gato/promociones"><img src="/img/Imagen_carrusel2.jpg" style="max-width: 100%;height: auto;"></a></li>
+            </ul>
+        
+            <button type="button" class="slider-nav"></button>
+            <button type="button" class="slider-nav slider-nav-next"></button>
+        
+            <div class="slider-indicators">
+                <button class="active"></button>
+                <button></button>
+                
+            </div>
+        </div>
 
         <section class="section-servicios">
             <div class="div-section-servicios">
@@ -73,42 +76,95 @@
                     </a>
                 </article>
             </div>
-            
         </section>
 
-       <!--- Seccion productos en javascript para el front podremos limitar la cantidad de caracteres-->
+        <!--- Seccion productos con descuentos -->
         <section class="section-productos-descuentos">
-            <h2>Productos con descuentos</h2>
-            <div class="div-section-productos-descuentos">
-                <% productosConDescuentoGato.forEach(producto => {%>
-                    <article class="articulo-productos-descuentos">
-                        <a href="/productos/detalle/<%= producto.id %>">
-                            <div class="contenedor_imagen">
-                                <img class="img-productos-descuentos" src="/img/productos/<%= producto.imagen %>" alt="imagen_producto">
-                            </div>
-                        </a>
-                        <div>
-                            <div class="texto_nombre_arriba"> <!--- Limita la altura del box-->
-                                <h4><%= producto.nombre %></h4>
-                            </div>
-                            
-                            <div class="texto_descripcion_arriba">
-                                <p class="descripcion"><%= producto.descripcion %></p>
-                            </div>
-                            <div class="div-precios">
-                                <p class="precio-tachado">$ <%= producto.precio %></p>
-                                <p class="precio">$ <%= Number((producto.precio*0.8).toFixed(2)) %></p>
-                                <p class="descuento">20% off</p>
-                            </div>
-                            <div class="div-boton-comprar">
-                                <button class="boton-comprar" type="submit">Agregar</button>
-                            </div>
-                        </div>
+            <div class="swiffy-slider slider-item-show6 slider-item-show2-sm slider-item-reveal slider-item-snapstart slider-nav-dark slider-indicators-round slider-indicators-dark">
+                <h2>Productos con descuentos</h2>
+                <div class="div-section-productos-descuentos">
+                    <ul class="slider-container">
+                        <% productosConDescuento.forEach(producto => { %>
+                            <article class="articulo-productos-descuentos">
+                                <!-- para saber el contenido de la etiqueta -->
+                                <% if(producto.categorias[0].id == 1) { %>
+                                    <p class="etiqueta-comida-bicho-card"><%= producto.categorias[0].categoria %> <%= producto.tipos_mascota.mascota %></p>
+                                <% } else if(producto.categorias[0].id == 2) { %>
+                                    <p class="etiqueta-accesorio-bicho-card"><%= producto.categorias[0].categoria %> <%= producto.tipos_mascota.mascota %></p>
+                                <% } else if(producto.categorias[0].id == 3) { %>
+                                    <p class="etiqueta-higiene-bicho-card"><%= producto.categorias[0].categoria %> <%= producto.tipos_mascota.mascota %></p>
+                                <% } else if(producto.categorias[0].id == 4) { %>
+                                    <p class="etiqueta-juguete-bicho-card"><%= producto.categorias[0].categoria %> <%= producto.tipos_mascota.mascota %></p>
+                                <% } %>
 
-                    </article>
-                    <%})%>
-               
+                                <% if(producto.tipo_mascota_id == 2) { %> <!-- si el tipo de mascota es perro -->
+                                    <% if(producto.categorias[0].categoria == "comida") { %> 
+                                        <a href="/productos/perro/comida/<%= producto.id %>">
+                                    <% } else if (producto.categorias[0].categoria == "accesorio") { %>  
+                                        <a href="/productos/perro/accesorios/<%= producto.id %>">
+                                    <% } else if (producto.categorias[0].categoria == "higiene") { %>
+                                        <a href="/productos/perro/higiene/<%= producto.id %>">
+                                    <% } else if (producto.categorias[0].categoria == "juguete") { %>
+                                        <a href="/productos/perro/juguetes/<%= producto.id %>">
+                                    <% } %>
+                                            <div class="contenedor_imagen">
+                                                <img class="img-productos-descuentos" src="/img/productos/<%= producto.imagen %>" alt="imagen_producto">
+                                            </div>
+                                        </a>
+                                <% } else { %> <!-- y si el tipo de mascota es gato -->
+                                    <% if(producto.categorias[0].categoria == "comida") { %> 
+                                        <a href="/productos/gato/comida/<%= producto.id %>">
+                                    <% } else if (producto.categorias[0].categoria == "accesorio") { %>  
+                                        <a href="/productos/gato/accesorios/<%= producto.id %>">
+                                    <% } else if (producto.categorias[0].categoria == "higiene") { %>
+                                        <a href="/productos/gato/higiene/<%= producto.id %>">
+                                    <% } else if (producto.categorias[0].categoria == "juguete") { %>
+                                        <a href="/productos/gato/juguetes/<%= producto.id %>">
+                                    <% } %>
+                                            <div class="contenedor_imagen">
+                                                <img class="img-productos-descuentos" src="/img/productos/<%= producto.imagen %>" alt="imagen_producto">
+                                            </div>
+                                        </a>
+                                <% } %>  
+                                <div class="div-card">
+                                    <div class="texto_nombre_arriba">
+                                        <h4><%= producto.nombre %></h4>
+                                    </div>               
+                                    <div class="texto_descripcion_arriba">
+                                        <p class="descripcion"><%= producto.descripcion %></p>
+                                    </div>
+                                    <div class="div-precios">
+                                        <p class="precio-tachado">$ <%= producto.precio %></p>
+                                        <p class="precio-d">$ <%= Number((producto.precio*0.8).toFixed(0)) %></p>
+                                        <p class="descuento">20% OFF</p>
+                                    </div>
+                                    <div class="div-boton-comprar">
+                                        <button class="boton-comprar" id="comprar" type="submit">Agregar</button>
+                                    </div>
+                                </div>
+                            </article>
+                        <% }) %>
+                    </ul>
+                
+                    <button type="button" class="slider-nav"></button>
+                    <button type="button" class="slider-nav slider-nav-next"></button>
+                
+                    <ul class="slider-indicators">
+                        <li class=""></li>
+                        <li class=""></li>
+                        <li class=""></li>
+                        <li class=""></li>
+                        <li class=""></li>
+                        <li class=""></li>
+                        <li class=""></li>
+                        <li class=""></li>
+                        <li class=""></li>
+                        <li class=""></li>
+                        <li class="active"></li>
+                    </ul>
+                </div>
             </div>
+            <h3><a href="/productos/promociones" style="color: #18515F;">Ver todos</a></h3>
         </section>
 
 
@@ -124,74 +180,171 @@
 
         <!--- Sección productos para perro-->
         <section class="section-productos-descuentos">
-            <h2>Productos para perro</h2>
-            <div class="div-section-productos-descuentos">
-                <% productosPerro.forEach(producto => {%>
-                    <article class="articulo-productos-descuentos">
-                        <a href="/productos/detalle/<%= producto.id %>">
-                            <div class="contenedor_imagen">
-                                <img class="img-productos-descuentos" src="/img/productos/<%= producto.imagen %>" alt="imagen_producto">
-                            </div>
-                        </a>
-                        <div>
-                            <div class="texto_nombre_arriba"> <!--- Limita la altura del box-->
-                                <h4><%= producto.nombre %></h4>
-                            </div>
-                            
-                            <div class="texto_descripcion_arriba">
-                                <p class="descripcion"><%= producto.descripcion %></p>
-                            </div>
-                            <p class="precio">$ <%= producto.precio %></p>
-                            <div class="div-boton-comprar">
-                                <button class="boton-comprar" type="submit">Agregar</button>
-                            </div>
-                        </div>
+            <div class="swiffy-slider slider-item-show6 slider-item-show2-sm slider-item-reveal slider-item-snapstart slider-nav-dark slider-indicators-round slider-indicators-dark">
+                <h2>Productos para perro</h2>
+                <div class="div-section-productos-descuentos">
+                    <ul class="slider-container">
+                        <% productosPerro.forEach(producto => { %>
+                            <article class="articulo-productos-descuentos">
+                                <!-- para saber el contenido de la etiqueta -->
+                                <% if(producto.categorias[0].id == 1) { %>
+                                    <p class="etiqueta-comida-bicho-card" style="width: 45%"><%= producto.categorias[0].categoria %></p>
+                                <% } else if(producto.categorias[0].id == 2) { %>
+                                    <p class="etiqueta-accesorio-bicho-card" style="width: 45%"><%= producto.categorias[0].categoria %></p>
+                                <% } else if(producto.categorias[0].id == 3) { %>
+                                    <p class="etiqueta-higiene-bicho-card" style="width: 45%"><%= producto.categorias[0].categoria %></p>
+                                <% } else if(producto.categorias[0].id == 4) { %>
+                                    <p class="etiqueta-juguete-bicho-card" style="width: 45%"><%= producto.categorias[0].categoria %></p>
+                                <% } %>
 
-                    </article>
-                    <%})%>
-               
-            </div>
-        </section>
-       
-
-
-   <!--- Sección productos para Gato-->
-   <section class="section-productos-descuentos">
-    <h2>Productos para gato</h2>
-    <div class="div-section-productos-descuentos">
-        <% productosGato.forEach(producto => {%>
-            <article class="articulo-productos-descuentos">
-                <a href="/productos/detalle/<%= producto.id %>">
-                    <div class="contenedor_imagen">
-                        <img class="img-productos-descuentos" src="/img/productos/<%= producto.imagen %>" alt="imagen_producto">
-                    </div>
-                </a>
-                <div>
-                    <div class="texto_nombre_arriba"> <!--- Limita la altura del box-->
-                        <h4><%= producto.nombre %></h4>
-                    </div>
-                    
-                    <div class="texto_descripcion_arriba">
-                        <p class="descripcion"><%= producto.descripcion %></p>
-                    </div>
-                    <p class="precio">$ <%= producto.precio %></p>
-                    <div class="div-boton-comprar">
-                        <button class="boton-comprar" type="submit">Agregar</button>
-                    </div>
+                                <% if(producto.categorias[0].categoria == "comida") { %> 
+                                    <a href="/productos/perro/comida/<%= producto.id %>">
+                                <% } else if (producto.categorias[0].categoria == "accesorio") { %>  
+                                    <a href="/productos/perro/accesorios/<%= producto.id %>">
+                                <% } else if (producto.categorias[0].categoria == "higiene") { %>
+                                    <a href="/productos/perro/higiene/<%= producto.id %>">
+                                <% } else if (producto.categorias[0].categoria == "juguete") { %>
+                                    <a href="/productos/perro/juguetes/<%= producto.id %>">
+                                <% } %>
+                                        <div class="contenedor_imagen">
+                                            <img class="img-productos-descuentos" src="/img/productos/<%= producto.imagen %>" alt="imagen_producto">
+                                        </div>
+                                    </a>
+                                <div class="div-card">
+                                    <div class="texto_nombre_arriba">
+                                        <h4><%= producto.nombre %></h4>
+                                    </div>  
+                                    <div class="texto_descripcion_arriba">
+                                        <p class="descripcion"><%= producto.descripcion %></p>
+                                    </div>
+                                    <% if(producto.descuentos[0].id == 2) { %> <!-- y si tiene descuentos los productos (perro) -->
+                                        <div class="div-precios">
+                                            <p class="precio-tachado">$ <%= producto.precio %></p>
+                                            <p class="precio-d">$ <%= Number((producto.precio*0.8).toFixed(0)) %></p>
+                                            <p class="descuento">20% OFF</p>
+                                        </div>
+                                    <%} else { %> <!-- si no tienen descuentos los productos (perro) -->
+                                        <div class="div-precios">
+                                            <p class="precio-tachado" style="color: white;">$ <%= producto.precio %></p>
+                                            <p class="precio-d">$ <%= producto.precio %></p>
+                                            <p class="descuento" style="color: white;">20% OFF</p>
+                                        </div>
+                                    <% } %>
+                                    <div class="div-boton-comprar">
+                                        <button class="boton-comprar" id="comprar" type="submit">Agregar</button>
+                                    </div>
+                                </div>
+                            </article>
+                        <% }) %>
+                    </ul>
+                
+                    <button type="button" class="slider-nav"></button>
+                    <button type="button" class="slider-nav slider-nav-next"></button>
+                
+                    <ul class="slider-indicators">
+                        <li class=""></li>
+                        <li class=""></li>
+                        <li class=""></li>
+                        <li class=""></li>
+                        <li class=""></li>
+                        <li class=""></li>
+                        <li class=""></li>
+                        <li class=""></li>
+                        <li class=""></li>
+                        <li class=""></li>
+                        <li class="active"></li>
+                    </ul>
                 </div>
+            </div>
+            <h3><a href="/productos/perro" style="color: #18515F;">Ver todos</a></h3>
+        </section>
 
-            </article>
-            <%})%>
-       
-    </div>
-</section>
+        <!--- Sección productos para Gato-->
+        <section class="section-productos-descuentos">
+            <div class="swiffy-slider slider-item-show6 slider-item-show2-sm slider-item-reveal slider-item-snapstart slider-nav-dark slider-indicators-round slider-indicators-dark">
+                <h2>Productos para gato</h2>
+                <div class="div-section-productos-descuentos">
+                    <ul class="slider-container">
+                        <% productosGato.forEach(producto => { %>
+                            <article class="articulo-productos-descuentos">
+                                <!-- para saber el contenido de la etiqueta -->
+                                <% if(producto.categorias[0].id == 1) { %>
+                                    <p class="etiqueta-comida-bicho-card" style="width: 45%"><%= producto.categorias[0].categoria %></p>
+                                <% } else if(producto.categorias[0].id == 2) { %>
+                                    <p class="etiqueta-accesorio-bicho-card" style="width: 45%"><%= producto.categorias[0].categoria %></p>
+                                <% } else if(producto.categorias[0].id == 3) { %>
+                                    <p class="etiqueta-higiene-bicho-card" style="width: 45%"><%= producto.categorias[0].categoria %></p>
+                                <% } else if(producto.categorias[0].id == 4) { %>
+                                    <p class="etiqueta-juguete-bicho-card" style="width: 45%"><%= producto.categorias[0].categoria %></p>
+                                <% } %>
+
+                                <% if(producto.categorias[0].categoria == "comida") { %> 
+                                    <a href="/productos/gato/comida/<%= producto.id %>">
+                                <% } else if (producto.categorias[0].categoria == "accesorio") { %>  
+                                    <a href="/productos/gato/accesorios/<%= producto.id %>">
+                                <% } else if (producto.categorias[0].categoria == "higiene") { %>
+                                    <a href="/productos/gato/higiene/<%= producto.id %>">
+                                <% } else if (producto.categorias[0].categoria == "juguete") { %>
+                                    <a href="/productos/gato/juguetes/<%= producto.id %>">
+                                <% } %>
+                                        <div class="contenedor_imagen">
+                                            <img class="img-productos-descuentos" src="/img/productos/<%= producto.imagen %>" alt="imagen_producto">
+                                        </div>
+                                    </a>
+                                <div class="div-card">
+                                    <div class="texto_nombre_arriba">
+                                        <h4><%= producto.nombre %></h4>
+                                    </div>       
+                                    <div class="texto_descripcion_arriba">
+                                        <p class="descripcion"><%= producto.descripcion %></p>
+                                    </div>
+                                    <% if(producto.descuentos[0].id == 2) { %> <!-- y si tiene descuentos los productos (perro) -->
+                                        <div class="div-precios">
+                                            <p class="precio-tachado">$ <%= producto.precio %></p>
+                                            <p class="precio-d">$ <%= Number((producto.precio*0.8).toFixed(0)) %></p>
+                                            <p class="descuento">20% OFF</p>
+                                        </div>
+                                    <%} else { %> <!-- si no tienen descuentos los productos (perro) -->
+                                        <div class="div-precios">
+                                            <p class="precio-tachado" style="color: white;">$ <%= producto.precio %></p>
+                                            <p class="precio-d">$ <%= producto.precio %></p>
+                                            <p class="descuento" style="color: white;">20% OFF</p>
+                                        </div>
+                                    <% } %>
+                                    <div class="div-boton-comprar">
+                                        <button class="boton-comprar" id="comprar" type="submit">Agregar</button>
+                                    </div>
+                                </div>
+                            </article>
+                        <% }) %>
+                    </ul>
+                
+                    <button type="button" class="slider-nav"></button>
+                    <button type="button" class="slider-nav slider-nav-next"></button>
+                
+                    <ul class="slider-indicators">
+                        <li class=""></li>
+                        <li class=""></li>
+                        <li class=""></li>
+                        <li class=""></li>
+                        <li class=""></li>
+                        <li class=""></li>
+                        <li class=""></li>
+                        <li class=""></li>
+                        <li class=""></li>
+                        <li class=""></li>
+                        <li class="active"></li>
+                    </ul>
+                </div>
+            </div>
+            <h3><a href="/productos/gato" style="color: #18515F;">Ver todos</a></h3>
+        </section>
    
     </main>
 
     <%- include("./partials/footer.ejs") %>
 
-
-
+    <!-- <script src="/js/carrusel.js"></script> -->
     
 </body>
 </html>

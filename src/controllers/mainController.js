@@ -10,13 +10,24 @@ const productsFilePath = path.join(__dirname, '../data/productosDataBase.json');
 const mainController = {
     index: async (req, res) => {
         try {
-            const productos = await db.Producto.findAll();
-           
-            // Filtrar y mostrar 6 productos de perros y gatos 
-            const productosPerro = productos.filter(producto => producto.tipo_mascota_id === 2).slice(0, 6);
+            let productosPerro = await db.Producto.findAll({
+                include: ['descuentos', "categorias", "tipos_mascota"],
+                where: {
+                    tipo_mascota_id: 2,
+                },
+                limit: 16
+            })
+    
+            let productosGato = await db.Producto.findAll({
+                include: ['descuentos', "categorias", "tipos_mascota"],
+                where: {
+                    tipo_mascota_id: 1,
+                },
+                limit: 16
+            })
 
-            const productosGato = productos.filter(producto => producto.tipo_mascota_id === 1).slice(0, 6);
-
+            Promise.all([productosPerro, productosGato])
+            
 // Accesorios perros
              let productosPerroAccesorios
         try {
@@ -25,8 +36,6 @@ const mainController = {
                 include: [{
                     model: db.Categoria,
                     as: 'categorias',
-                    attributes: ['id', 'categoria'],
-                    through: { attributes: [] },
                     where: {
                         id: 2
                     }
@@ -49,8 +58,6 @@ const mainController = {
                 include: [{
                     model: db.Categoria,
                     as: 'categorias',
-                    attributes: ['id', 'categoria'],
-                    through: { attributes: [] },
                     where: {
                         id: 2
                     }
@@ -60,7 +67,7 @@ const mainController = {
                 }
             });
             // mostrar N productos
-            productosGatoAccesorios = productosGatoAccesorios.slice(0, 6);
+            productosGatoAccesorios = productosGatoAccesorios.slice(0, 10);
         } catch (error) {
             console.error('Error al consultar los accesorios para gatos:', error);
         }
@@ -75,8 +82,6 @@ const mainController = {
                 include: [{
                     model: db.Descuento,
                     as: 'descuentos',
-                    attributes: ['id', 'nombre', 'descripcion', 'fecha_inicio', 'fecha_final'],
-                    through: { attributes: [] }, // Evita incluir automáticamente las columnas de la tabla intermedia
                     where: {
                         id: 2 // ID descuento de SQL
                     }
@@ -87,7 +92,7 @@ const mainController = {
             });
 
             // mostrar N productos
-            productosConDescuentoPerro = productosConDescuentoPerro.slice(0, 6);
+            productosConDescuentoPerro = productosConDescuentoPerro.slice(0, 10);
 
             // comprobación de que trae productos con descuento
             //console.log(productosConDescuentoPerro.length); 
@@ -107,8 +112,6 @@ const mainController = {
                 include: [{
                     model: db.Descuento,
                     as: 'descuentos',
-                    attributes: ['id', 'nombre', 'descripcion', 'fecha_inicio', 'fecha_final'],
-                    through: { attributes: [] }, // Evita incluir automáticamente las columnas de la tabla intermedia
                     where: {
                         id: 2 // Filtrar por el ID del descuento que quieres (en este caso, ID 2)
                     }
@@ -120,7 +123,7 @@ const mainController = {
                 }
             });
             // mostrar N productos
-            productosConDescuentoGato = productosConDescuentoGato.slice(0, 6);
+            productosConDescuentoGato = productosConDescuentoGato.slice(0, 10);
 
             // comprobación de que trae productos con descuento
             //console.log(productosConDescuentoGato.length); 
@@ -138,8 +141,6 @@ const mainController = {
                 include: [{
                     model: db.Descuento,
                     as: 'descuentos',
-                    attributes: ['id', 'nombre', 'descripcion', 'fecha_inicio', 'fecha_final'],
-                    through: { attributes: [] }, // Evita incluir automáticamente las columnas de la tabla intermedia
                     where: {
                         id: 2 // Filtrar por el ID del descuento que quieres (en este caso, ID 2)
                     }
@@ -151,7 +152,7 @@ const mainController = {
                 }
             });
             // mostrar N productos
-            productosConDescuentoRandom = productosConDescuentoRandom.slice(0, 12);
+            productosConDescuentoRandom = productosConDescuentoRandom.slice(0, 10);
 
             // comprobación de que trae productos con descuento
             //console.log(productosConDescuentoGato.length); 
@@ -159,6 +160,39 @@ const mainController = {
             console.error('Error al buscar productos con el descuento ID 2:', error);
             
         }
+
+//AMBOS productos con descuento 
+let productosConDescuento;
+try {
+    // Busca los productos con descuento id 2
+    productosConDescuento = await db.Producto.findAll({
+        include: [
+            {
+                model: db.Descuento,
+                as: 'descuentos',
+                where: {
+                    id: 2 // ID descuento de SQL
+                }
+            },
+            {
+                model: db.Categoria,
+                as: 'categorias',
+            },
+            {
+                model: db.TipoMascota,
+                as: 'tipos_mascota',
+            }]
+    });
+
+    // mostrar N productos
+    productosConDescuento = productosConDescuento.slice(0, 16);
+
+    // comprobación de que trae productos con descuento
+    //console.log(productosConDescuentoPerro.length); 
+} catch (error) {
+    console.error('Error al buscar productos con el descuento ID 2:', error);
+   
+}
 
 // Obtener usuario que ha iniciado sesión
         const userALoguearse = req.session.userLogueado;
@@ -173,6 +207,7 @@ const mainController = {
                 productosConDescuentoPerro,
                 productosConDescuentoGato,
                 productosConDescuentoRandom,
+                productosConDescuento,
                 userALoguearse, 
             });
         } catch (error) {

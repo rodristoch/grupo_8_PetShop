@@ -12,19 +12,47 @@ const productsFilePath = path.join(__dirname, "../data/productosDataBase.json");
 
 const productController = {
 
-    categoriaPerro : (req, res) => {
+    productos : (req, res) => {
 
+        const userALoguearse = req.session.userLogueado
+
+        let productosPerro = db.Producto.findAll({
+            include: ["descuentos", "categorias"],
+            where: {
+                tipo_mascota_id: 2,
+            },
+            limit: 4
+        })
+
+        let productosGato = db.Producto.findAll({
+            include: ["descuentos", "categorias"],
+            where: {
+                tipo_mascota_id: 1,
+            },
+            limit: 4
+        })
+
+        Promise.all([productosPerro, productosGato])
+
+        .then(([productosPerro, productosGato]) =>{
+            res.render('productos.ejs', {productosPerro, productosGato, userALoguearse});
+        })
+        .catch(function (error){
+            console.error('Error al recuperar productos', error);
+        });
+
+
+    },
+
+    categoriaPerro : (req, res) => {
 
         const userALoguearse = req.session.userLogueado
 
         db.Producto.findAll({
+            include: ["descuentos", "categorias"],
             where: {
                 tipo_mascota_id: 2,
             },
-            include: [{
-                model: db.Descuento,
-                as: 'descuentos',
-            }],
         })
         .then(function(productosPerro){
             res.render('categoria.ejs', {productosPerro, userALoguearse});
@@ -38,17 +66,13 @@ const productController = {
 
     categoriaGato : (req, res) => {
 
-
         const userALoguearse = req.session.userLogueado
 
         db.Producto.findAll({
+            include: ["descuentos", "categorias"],
             where: {
                 tipo_mascota_id: 1,
             },
-            include: [{
-                model: db.Descuento,
-                as: 'descuentos',
-            }],
         })
         .then(function(productosGato){
             res.render('categoria.ejs', {productosGato, userALoguearse});
@@ -67,32 +91,42 @@ const productController = {
         const userALoguearse = req.session.userLogueado
 
         let productosPerroConDescuento = db.Producto.findAll({
-            include: ["tipos_mascota"],
+            include: [
+                {
+                    model: db.Descuento,
+                    as: 'descuentos',
+                    where: {
+                        id: 2 // ID descuento de SQL
+                    }
+                },
+                {
+                    model: db.Categoria,
+                    as: 'categorias',
+                },
+            ],
             where: {
-                tipo_mascota_id: 2,   // ID de perro de SQL
+                tipo_mascota_id: 2,  // ID de perro de SQL
             },
-            include: [{
-                model: db.Descuento,
-                as: 'descuentos',
-                where: {
-                    id: 2 // ID descuento de SQL
-                }
-            }],
             limit: 4
         })
 
         let productosGatoConDescuento = db.Producto.findAll({
-            include: ["tipos_mascota"],
+            include: [
+                {
+                    model: db.Descuento,
+                    as: 'descuentos',
+                    where: {
+                        id: 2 // ID descuento de SQL
+                    }
+                },
+                {
+                    model: db.Categoria,
+                    as: 'categorias',
+                },
+            ],
             where: {
                 tipo_mascota_id: 1,  // ID de gato de SQL
             },
-            include: [{
-                model: db.Descuento,
-                as: 'descuentos',
-                where: {
-                    id: 2 // ID descuento de SQL
-                }
-            }],
             limit: 4
         })
 
@@ -111,19 +145,24 @@ const productController = {
 
         //Productos con descuento de perro
         db.Producto.findAll({
-            include: ["tipos_mascota"],
+            include: [
+                {
+                    model: db.Descuento,
+                    as: 'descuentos',
+                    where: {
+                        id: 2 // ID descuento de SQL
+                    }
+                },
+                {
+                    model: db.Categoria,
+                    as: 'categorias',
+                },
+            ],
             where: {
                 tipo_mascota_id: 2,  // ID de perro de SQL
-            },
-            include: [{
-                model: db.Descuento,
-                as: 'descuentos',
-                where: {
-                    id: 2 // ID descuento de SQL
-                }
-            }],
+            }
         })
-
+            
         .then(productosPerroConDescuento => {
             /* res.send(productosPerroConDescuento) */
                 return res.render("promocionesTodas.ejs", {userALoguearse, productosPerroConDescuento})
@@ -138,17 +177,22 @@ const productController = {
         const userALoguearse = req.session.userLogueado
 
         db.Producto.findAll({
-            include: ["tipos_mascota"],
+            include: [
+                {
+                    model: db.Descuento,
+                    as: 'descuentos',
+                    where: {
+                        id: 2 // ID descuento de SQL
+                    }
+                },
+                {
+                    model: db.Categoria,
+                    as: 'categorias',
+                },
+            ],
             where: {
-                tipo_mascota_id: 1,   // ID de gato de SQL
-            },
-            include: [{
-                model: db.Descuento,
-                as: 'descuentos',
-                where: {
-                    id: 2 // ID descuento de SQL
-                }
-            }],
+                tipo_mascota_id: 1,  // ID de perro de SQL
+            }
         })
  
         .then(productosGatoConDescuento => {
@@ -414,7 +458,7 @@ const productController = {
         const userALoguearse = req.session.userLogueado
 
         let eukanuba = db.Producto.findAll({
-            include: ["marcas"],
+            include: ["tipos_mascota", "marcas"],
             where: {
                 marca_id: 12
             },
@@ -426,7 +470,7 @@ const productController = {
         })
 
         let proplan = db.Producto.findAll({
-            include: ["marcas"],
+            include: ["tipos_mascota", "marcas"],
             where: {
                 marca_id: 5
             },
@@ -438,7 +482,7 @@ const productController = {
         })
 
         let royal = db.Producto.findAll({
-            include: ["marcas"],
+            include: ["tipos_mascota", "marcas"],
             where: {
                 marca_id: 11
             },
@@ -450,7 +494,7 @@ const productController = {
         })
 
         let cancat = db.Producto.findAll({
-            include: ["marcas"],
+            include: ["tipos_mascota", "marcas"],
             where: {
                 marca_id: 4
             },
@@ -462,7 +506,7 @@ const productController = {
         })
 
         let catit = db.Producto.findAll({
-            include: ["marcas"],
+            include: ["tipos_mascota", "marcas"],
             where: {
                 marca_id: 16
             },
@@ -487,7 +531,7 @@ const productController = {
         const userALoguearse = req.session.userLogueado
 
         db.Producto.findAll({
-            include: ["marcas"],
+            include: ["tipos_mascota", "marcas"],
             where: {
                 marca_id: 12,
             },
@@ -507,7 +551,7 @@ const productController = {
         const userALoguearse = req.session.userLogueado
 
         db.Producto.findAll({
-            include: ["marcas"],
+            include: ["tipos_mascota", "marcas"],
             where: {
                 marca_id: 5
             },
@@ -527,7 +571,7 @@ const productController = {
         const userALoguearse = req.session.userLogueado
 
         db.Producto.findAll({
-            include: ["marcas"],
+            include: ["tipos_mascota", "marcas"],
             where: {
                 marca_id: 11
             },
@@ -547,7 +591,7 @@ const productController = {
         const userALoguearse = req.session.userLogueado
 
         db.Producto.findAll({
-            include: ["marcas"],
+            include: ["tipos_mascota", "marcas"],
             where: {
                 marca_id: 4
             },
@@ -567,7 +611,7 @@ const productController = {
         const userALoguearse = req.session.userLogueado
 
         db.Producto.findAll({
-            include: ["marcas"],
+            include: ["tipos_mascota", "marcas"],
             where: {
                 marca_id: 16
             },
@@ -681,6 +725,240 @@ const productController = {
             return res.redirect("/")})            
         .catch(error => res.send(error))
     },
+
+    DetalleProductosPerro: (req, res) => {
+
+        const userALoguearse = req.session.userLogueado
+
+        let productoId = req.params.id;
+
+        let producto = db.Producto.findByPk(productoId, {
+            include: ["tipos_mascota", 'descuentos', 'categorias']
+        })
+
+        let productosPerro = db.Producto.findAll({
+            include: [
+                {
+                    model: db.Categoria,
+                    as: 'categorias',
+                },
+                {
+                    model: db.Descuento,
+                    as: 'descuentos',
+                },
+                {
+                    model: db.TipoMascota,
+                    as: 'tipos_mascota',
+                }
+            ],
+            where: {tipo_mascota_id: 2},
+            limit: 12
+        })
+
+        let comidaPerro = db.Producto.findAll({
+            include: [
+                {
+                    model: db.Categoria,
+                    as: 'categorias',
+                    where: {id: 1}
+                },
+                {
+                    model: db.Descuento,
+                    as: 'descuentos',
+                },
+                {
+                    model: db.TipoMascota,
+                    as: 'tipos_mascota',
+                }
+            ],
+            where: {tipo_mascota_id: 2},
+            limit: 12
+        })
+
+        let higienePerro = db.Producto.findAll({
+            include: [
+                {
+                    model: db.Categoria,
+                    as: 'categorias',
+                    where: {id: 3}
+                },
+                {
+                    model: db.Descuento,
+                    as: 'descuentos',
+                },
+                {
+                    model: db.TipoMascota,
+                    as: 'tipos_mascota',
+                }
+            ],
+            where: {tipo_mascota_id: 2},
+            limit: 12
+        })
+
+        let accesorioPerro = db.Producto.findAll({
+            include: [
+                {
+                    model: db.Categoria,
+                    as: 'categorias',
+                    where: {id: 2}
+                },
+                {
+                    model: db.Descuento,
+                    as: 'descuentos',
+                },
+                {
+                    model: db.TipoMascota,
+                    as: 'tipos_mascota',
+                }
+            ],
+            where: {tipo_mascota_id: 2},
+            limit: 12
+        })
+
+        let juguetePerro = db.Producto.findAll({
+            include: [
+                {
+                    model: db.Categoria,
+                    as: 'categorias',
+                    where: {id: 4}
+                },
+                {
+                    model: db.Descuento,
+                    as: 'descuentos',
+                },
+                {
+                    model: db.TipoMascota,
+                    as: 'tipos_mascota',
+                }
+            ],
+            where: {tipo_mascota_id: 2},
+            limit: 12
+        })
+          
+        Promise.all([producto, productosPerro, comidaPerro, higienePerro, accesorioPerro, juguetePerro])
+
+        .then(([producto, productosPerro, comidaPerro, higienePerro, accesorioPerro, juguetePerro]) => {
+            return res.render("detalle.ejs", {producto, productosPerro, comidaPerro, higienePerro, accesorioPerro, juguetePerro, userALoguearse})})
+        .catch(error => res.send(error))
+
+    },
+
+    DetalleProductosGato: (req, res) => {
+
+        const userALoguearse = req.session.userLogueado
+
+        let productoId = req.params.id;
+
+        let producto = db.Producto.findByPk(productoId, {
+            include: ["tipos_mascota", 'descuentos', 'categorias']
+        })
+
+        let productosGato = db.Producto.findAll({
+            include: [
+                {
+                    model: db.Categoria,
+                    as: 'categorias',
+                },
+                {
+                    model: db.Descuento,
+                    as: 'descuentos',
+                },
+                {
+                    model: db.TipoMascota,
+                    as: 'tipos_mascota',
+                }
+            ],
+            where: {tipo_mascota_id: 1},
+            limit: 12
+        })
+
+        let comidaGato = db.Producto.findAll({
+            include: [
+                {
+                    model: db.Categoria,
+                    as: 'categorias',
+                    where: {id: 1}
+                },
+                {
+                    model: db.Descuento,
+                    as: 'descuentos',
+                },
+                {
+                    model: db.TipoMascota,
+                    as: 'tipos_mascota',
+                }
+            ],
+            where: {tipo_mascota_id: 1},
+            limit: 12
+        })
+
+        let higieneGato = db.Producto.findAll({
+            include: [
+                {
+                    model: db.Categoria,
+                    as: 'categorias',
+                    where: {id: 3}
+                },
+                {
+                    model: db.Descuento,
+                    as: 'descuentos',
+                },
+                {
+                    model: db.TipoMascota,
+                    as: 'tipos_mascota',
+                }
+            ],
+            where: {tipo_mascota_id: 1},
+            limit: 12
+        })
+
+        let accesorioGato = db.Producto.findAll({
+            include: [
+                {
+                    model: db.Categoria,
+                    as: 'categorias',
+                    where: {id: 2}
+                },
+                {
+                    model: db.Descuento,
+                    as: 'descuentos',
+                },
+                {
+                    model: db.TipoMascota,
+                    as: 'tipos_mascota',
+                }
+            ],
+            where: {tipo_mascota_id: 1},
+            limit: 12
+        })
+
+        let jugueteGato = db.Producto.findAll({
+            include: [
+                {
+                    model: db.Categoria,
+                    as: 'categorias',
+                    where: {id: 4}
+                },
+                {
+                    model: db.Descuento,
+                    as: 'descuentos',
+                },
+                {
+                    model: db.TipoMascota,
+                    as: 'tipos_mascota',
+                }
+            ],
+            where: {tipo_mascota_id: 1},
+            limit: 12
+        })
+          
+        Promise.all([producto, productosGato, comidaGato, higieneGato, accesorioGato, jugueteGato])
+
+        .then(([producto, productosGato, comidaGato, higieneGato, accesorioGato, jugueteGato]) => {
+            return res.render("detalle.ejs", {producto, productosGato, comidaGato, higieneGato, accesorioGato, jugueteGato, userALoguearse})})
+        .catch(error => res.send(error))
+
+    },
     
     detalle: (req, res) => {
 
@@ -688,10 +966,174 @@ const productController = {
 
         let productoId = req.params.id;
 
-        db.Producto.findByPk(productoId)
-        
-        .then(producto => {
-            return res.render("detalle.ejs", {producto, userALoguearse})})
+        let producto = db.Producto.findByPk(productoId, {
+            include: ["tipos_mascota", 'descuentos', 'categorias']
+        })
+
+        let comidaPerro = db.Producto.findAll({
+            include: [
+                {
+                    model: db.Categoria,
+                    as: 'categorias',
+                    where: {id: 1}
+                },
+                {
+                    model: db.Descuento,
+                    as: 'descuentos',
+                },
+                {
+                    model: db.TipoMascota,
+                    as: 'tipos_mascota',
+                }
+            ],
+            where: {tipo_mascota_id: 2},
+            limit: 12
+        })
+
+        let comidaGato = db.Producto.findAll({
+            include: [
+                {
+                    model: db.Categoria,
+                    as: 'categorias',
+                    where: {id: 1}
+                },
+                {
+                    model: db.Descuento,
+                    as: 'descuentos',
+                },
+                {
+                    model: db.TipoMascota,
+                    as: 'tipos_mascota',
+                }
+            ],
+            where: {tipo_mascota_id: 1},
+            limit: 12
+        })
+
+        let higienePerro = db.Producto.findAll({
+            include: [
+                {
+                    model: db.Categoria,
+                    as: 'categorias',
+                    where: {id: 3}
+                },
+                {
+                    model: db.Descuento,
+                    as: 'descuentos',
+                },
+                {
+                    model: db.TipoMascota,
+                    as: 'tipos_mascota',
+                }
+            ],
+            where: {tipo_mascota_id: 2},
+            limit: 12
+        })
+
+        let higieneGato = db.Producto.findAll({
+            include: [
+                {
+                    model: db.Categoria,
+                    as: 'categorias',
+                    where: {id: 3}
+                },
+                {
+                    model: db.Descuento,
+                    as: 'descuentos',
+                },
+                {
+                    model: db.TipoMascota,
+                    as: 'tipos_mascota',
+                }
+            ],
+            where: {tipo_mascota_id: 1},
+            limit: 12
+        })
+
+        let accesorioPerro = db.Producto.findAll({
+            include: [
+                {
+                    model: db.Categoria,
+                    as: 'categorias',
+                    where: {id: 2}
+                },
+                {
+                    model: db.Descuento,
+                    as: 'descuentos',
+                },
+                {
+                    model: db.TipoMascota,
+                    as: 'tipos_mascota',
+                }
+            ],
+            where: {tipo_mascota_id: 2},
+            limit: 12
+        })
+
+        let accesorioGato = db.Producto.findAll({
+            include: [
+                {
+                    model: db.Categoria,
+                    as: 'categorias',
+                    where: {id: 2}
+                },
+                {
+                    model: db.Descuento,
+                    as: 'descuentos',
+                },
+                {
+                    model: db.TipoMascota,
+                    as: 'tipos_mascota',
+                }
+            ],
+            where: {tipo_mascota_id: 1},
+            limit: 12
+        })
+
+        let juguetePerro = db.Producto.findAll({
+            include: [
+                {
+                    model: db.Categoria,
+                    as: 'categorias',
+                    where: {id: 4}
+                },
+                {
+                    model: db.Descuento,
+                    as: 'descuentos',
+                },
+                {
+                    model: db.TipoMascota,
+                    as: 'tipos_mascota',
+                }
+            ],
+            where: {tipo_mascota_id: 2},
+            limit: 12
+        })
+
+        let jugueteGato = db.Producto.findAll({
+            include: [
+                {
+                    model: db.Categoria,
+                    as: 'categorias',
+                    where: {id: 4}
+                },
+                {
+                    model: db.Descuento,
+                    as: 'descuentos',
+                },
+                {
+                    model: db.TipoMascota,
+                    as: 'tipos_mascota',
+                }
+            ],
+            where: {tipo_mascota_id: 1},
+            limit: 12
+        })
+          
+        Promise.all([producto, comidaPerro, comidaGato, higienePerro, higieneGato, accesorioPerro, accesorioGato, juguetePerro, jugueteGato])
+
+        .then(([producto, comidaPerro, comidaGato, higienePerro, higieneGato, accesorioPerro, accesorioGato, juguetePerro, jugueteGato]) => {
+            return res.render("detalle.ejs", {producto, comidaPerro, comidaGato, higienePerro, higieneGato, accesorioPerro, accesorioGato, juguetePerro, jugueteGato, userALoguearse})})
         .catch(error => res.send(error))
     },
 
@@ -803,8 +1245,9 @@ const productController = {
         //Conozco el producto que vino por id
         const detalleDeProductoActual = unProducto.id_pet; */
           
-       /* // Función para encontrar 6 productos distintos para recomendados
-        let productosRecomendados = [];
+       // Función para encontrar 6 productos distintos para recomendados
+       /*  let productosRecomendados = [];
+
         if (detalleDeProductoActual == "Perro") {
             
             //Ecuento el id maximo del json
@@ -817,9 +1260,9 @@ const productController = {
             }
         
             // Convierte los randomIDS a array
-            randomIDs = Array.from(randomIDs); */
+            randomIDs = Array.from(randomIDs);
         
-            /* // Filtra los productosPerro según en los IDs aleatorios
+            // Filtra los productosPerro según en los IDs aleatorios
             productosRecomendados = productosPerro.filter(item => randomIDs.includes(item.id));
             
             // Si la cantidad de productos recomendados es menor que 6, agrega productos adicionales
@@ -827,9 +1270,9 @@ const productController = {
                 productosRecomendados.push(productosPerro[Math.floor(Math.random() * productosPerro.length)])
         }
 
-    } else if (detalleDeProductoActual == "Gato") { */
+    } else if (detalleDeProductoActual == "Gato") {
         
-       /*  //encuentro el id máximo en el json
+       //encuentro el id máximo en el json
         let maxID= Math.max(...productosGato.map(item => item.id));
 
         //set de 6 numeros aleatorios no repetidos
@@ -851,7 +1294,7 @@ const productController = {
 
         }
         res.render("detalles-del-producto.ejs", {unProducto, productosRecomendados, userALoguearse}); 
-    }, */
+    },  */
 
     /* editarProducto: (req, res) => {
         // json de productos

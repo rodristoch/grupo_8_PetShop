@@ -1,82 +1,162 @@
 <!DOCTYPE html>
 <html lang="en">
+
     <%- include("./partials/head.ejs", {cssSheet: "carrito2", title: "Carrito de compras"}) %>
-    <link rel="stylesheet" href="/css/index_styles.css">
     <link rel="stylesheet" href="/css/header-footer.css">
+
 <body>
     
     <%- include("./partials/header.ejs") %>
-    
     <%- include("./partials/header2.ejs") %>
 
-<main>
-    <div class="all">
-        <section class="contenedor-producto">
-            <h1 class="titulo">Carrito de compra:</h1>
-            <div class="contenedor1">
-                <img src="\img\productos\Cañita-Alambre-Resistente-Largo.jpg" alt="item-foto" class="imagen">
-                 <div class="texto">
-                    <h2 class="subtitulo">Titulo de producto</h2>
-                    <h3 class="subtitulo2">Descripcion de producto: ejemplo ejemplo ejemplo ejemplo ejemplo ejemplo ejemplo ejemplo ejemplo ejemplo ejemplo ejemplo</h3>
-                    <h2 class="precio">$19.99</h2>
+    <main>
+        <div class="all">
+            <section class="contenedor-producto">
+                <!-- <h1 class="titulo">Carrito de compra:</h1> -->
+                <div class="contenedor1">
+                    <div class="contenedor-img">
+                        <img src="/img/productos/<%= producto.imagen %>" alt="item-foto" class="imagen">
+                    </div>
+                    
+                    <div class="texto">
+                        <h2 class="titulo-nombre-producto"><%= producto.nombre %></h2>
+                        <h3 class="titulo-descrip">Descripcion de producto:</h3>
+                        <h3 class="descrip"><%= producto.descripcion %></h3>
+                        <% if(producto.descuentos[0].id == 2) { %>
+                            <div class="precio-con-descto">
+                                <p class="precio-normal">Precio regular:</p>
+                                <p class="precio-tachado-detalle">$ <%= producto.precio %></p>
+                                <p class="precio-oferta">Precio en oferta!!</p>
+                                <p class="precio-detalle">$ <%= Number((producto.precio*0.8).toFixed(2)) %></p> 
+                                <p class="descuento-precio">20% OFF</p>  
+                            </div>
+                        <% } else { %>
+                            <div class="precio-regular">
+                                <p class="precio-normal">Precio:</p>
+                                <p class="precio-detalle">$ <%= producto.precio %></p>
+                            </div>
+                        <% } %>
+                    </div>
+
+                    <!-- <div class="cantidad">
+                        <form action="/users/carrito2" method="get">   
+                            <select name="cantidad">
+                                <option value="valor1">1 u.</option>
+                                <option value="valor2">2 u.</option>
+                                <option value="valor3">3 u.</option>
+                            </select>
+                            <button class="btn" type="submit">Agregar</button>
+                            <button class="eliminar-btn" type="reset">Eliminar</button>
+                        </form>
+                    </div> -->
+                
                 </div>
-            <div class="cantidad">
-                <form action="/users/carrito2" method="get">   
-                    <select name="cantidad">
-                        <option value="valor1">1</option>
-                        <option value="valor2">2</option>
-                        <option value="valor3">3</option>
-                    </select>
-                    <button type="submit">Agregar</button>
-                    <button class="eliminar-btn" type="reset">Eliminar</button>
-                </form>
-            </div>
-            </div>
-        </section>
-        <section class="contenedor-proceder-pago">
-            <div class="textos2">
-                <h4>Subtotal:</h2>
-                <h5>Cantidad:</h2>
-                <h2>Total:</h2>
-            </div>
+            </section>
+
+            <section class="contenedor-proceder-pago">
+                <div class="textos2">
+                    <p class="resumen-compra">Resumen de compra</p>
+                    <p class="subtotal-titulo">Subtotal</p> <p class="subtotal"><% if(producto.descuentos[0].id == 2) { %> $ <%= Number((producto.precio*0.8).toFixed(2)) %> <% } else { %> $ <%= producto.precio %> <% } %>
+                    <p class="gratis-titulo">Envío</p> <p class="gratis">Gratis</p>
+                    <p class="total-titulo">Total</p> <p class="total"><% if(producto.descuentos[0].id == 2) { %> $ <%= Number((producto.precio*0.8).toFixed(2)) %> <% } else { %> $ <%= producto.precio %> <% } %>
+                </div>
                 <div class="botonDePago">
                     <form action="/users/carrito2" method="get">   
-                        <button type="submit" class="Boton-pago">Proceder a pagar</button>
+                        <button type="submit" class="btn">Proceder a pagar</button>
                     </form>
-                </div>
-        </section>
-    </div>
-
-    <section class="section-productos-descuentos">
-        <h2>Productos con descuentos</h2>
-        <div class="div-section-productos-descuentos">
-            <% productosConDescuentoGato.forEach(producto => {%>
-                <article class="articulo-productos-descuentos">
-                    <a href="/productos/detalle/<%= producto.id %>">
-                        <div class="contenedor_imagen">
-                            <img class="img-productos-descuentos" src="/img/productos/<%= producto.imagen %>" alt="imagen_producto">
-                        </div>
-                    </a>
-                    <div>
-                        <div class="texto_nombre_arriba"> <!--- Limita la altura del box-->
-                            <h4><%= producto.nombre %></h4>
-                        </div>
-                        
-                        <div class="texto_descripcion_arriba">
-                            <p class="descripcion"><%= producto.descripcion %></p>
-                        </div>
-                        <p class="precio-tachado">$ <%= producto.precio %></p>
-                        <p class="descuento">20% off</p>
-                        <p class="precio"><%= Number((producto.precio*0.8).toFixed(2)) %></p>
-                        <div class="div-boton-comprar">
-                            <button class="boton-comprar" type="submit">Agregar</button>
-                        </div>
-                    </div>
-                </article>
-            <%})%>
+                </div> 
+            </section>
         </div>
-    </section>
-</main>
+
+        <!--- Seccion productos con descuentos -->
+        <section class="section-productos-descuentos">
+            <div class="swiffy-slider slider-item-show6 slider-item-show2-sm slider-item-reveal slider-item-snapstart slider-nav-dark slider-indicators-round slider-indicators-dark">
+                <h2>Productos con descuentos</h2>
+                <div class="div-section-productos-descuentos">
+                    <ul class="slider-container">
+                        <% productosConDescuento.forEach(producto => {%>
+                            <article class="articulo-productos-descuentos">
+                                <!-- para saber el contenido de la etiqueta -->
+                                <% if(producto.categorias[0].id == 1) { %>
+                                    <p class="etiqueta-comida-bicho-card"><%= producto.categorias[0].categoria %> <%= producto.tipos_mascota.mascota %></p>
+                                <% } else if(producto.categorias[0].id == 2) { %>
+                                    <p class="etiqueta-accesorio-bicho-card"><%= producto.categorias[0].categoria %> <%= producto.tipos_mascota.mascota %></p>
+                                <% } else if(producto.categorias[0].id == 3) { %>
+                                    <p class="etiqueta-higiene-bicho-card"><%= producto.categorias[0].categoria %> <%= producto.tipos_mascota.mascota %></p>
+                                <% } else if(producto.categorias[0].id == 4) { %>
+                                    <p class="etiqueta-juguete-bicho-card"><%= producto.categorias[0].categoria %> <%= producto.tipos_mascota.mascota %></p>
+                                <% } %>
+
+                                <% if(producto.tipo_mascota_id == 2) { %> <!-- si el tipo de mascota es perro -->
+                                    <% if(producto.categorias[0].categoria == "comida") { %> 
+                                        <a href="/productos/perro/comida/<%= producto.id %>">
+                                    <% } else if (producto.categorias[0].categoria == "accesorio") { %>  
+                                        <a href="/productos/perro/accesorios/<%= producto.id %>">
+                                    <% } else if (producto.categorias[0].categoria == "higiene") { %>
+                                        <a href="/productos/perro/higiene/<%= producto.id %>">
+                                    <% } else if (producto.categorias[0].categoria == "juguete") { %>
+                                        <a href="/productos/perro/juguetes/<%= producto.id %>">
+                                    <% } %>
+                                            <div class="contenedor_imagen">
+                                                <img class="img-productos-descuentos" src="/img/productos/<%= producto.imagen %>" alt="imagen_producto">
+                                            </div>
+                                        </a>
+                                <% } else { %> <!-- y si el tipo de mascota es gato -->
+                                    <% if(producto.categorias[0].categoria == "comida") { %> 
+                                        <a href="/productos/gato/comida/<%= producto.id %>">
+                                    <% } else if (producto.categorias[0].categoria == "accesorio") { %>  
+                                        <a href="/productos/gato/accesorios/<%= producto.id %>">
+                                    <% } else if (producto.categorias[0].categoria == "higiene") { %>
+                                        <a href="/productos/gato/higiene/<%= producto.id %>">
+                                    <% } else if (producto.categorias[0].categoria == "juguete") { %>
+                                        <a href="/productos/gato/juguetes/<%= producto.id %>">
+                                    <% } %>
+                                            <div class="contenedor_imagen">
+                                                <img class="img-productos-descuentos" src="/img/productos/<%= producto.imagen %>" alt="imagen_producto">
+                                            </div>
+                                        </a>
+                                <% } %>  
+                                <div class="div-card">
+                                    <div class="texto_nombre_arriba">
+                                        <h4><%= producto.nombre %></h4>
+                                    </div>
+                                        
+                                    <div class="texto_descripcion_arriba">
+                                        <p class="descripcion"><%= producto.descripcion %></p>
+                                    </div>
+                                    <div class="div-precios">
+                                        <p class="precio-tachado">$ <%= producto.precio %></p>
+                                        <p class="precio-d">$ <%= Number((producto.precio*0.8).toFixed(0)) %></p>
+                                        <p class="descuento">20% OFF</p>
+                                    </div>
+                                    <div class="div-boton-comprar">
+                                        <button class="boton-comprar" type="submit">Agregar</button>
+                                    </div>
+                                </div>
+                            </article>
+                        <%})%>
+                    </ul>
+                
+                    <button type="button" class="slider-nav"></button>
+                    <button type="button" class="slider-nav slider-nav-next"></button>
+                
+                    <ul class="slider-indicators">
+                        <li class=""></li>
+                        <li class=""></li>
+                        <li class=""></li>
+                        <li class=""></li>
+                        <li class=""></li>
+                        <li class=""></li>
+                        <li class=""></li>
+                        <li class=""></li>
+                        <li class=""></li>
+                        <li class=""></li>
+                        <li class="active"></li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+    </main>
 
     <%- include("./partials/footer.ejs") %>
     

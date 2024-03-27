@@ -131,6 +131,16 @@ input::placeholder {
     margin-bottom: 8px;
 }
 
+.input_error-front {
+    border: 1px solid red;
+    background-color: rgb(255, 236, 236);
+}
+
+.input_good-front {
+    border: 1px solid green;
+    background-color: rgb(232, 255, 232);
+}
+
 /* --- Inmput imagen -- */
 .input_imagen {
     border-color: white;
@@ -156,7 +166,7 @@ form input:focus {
 }
 
 form input[type="text"]:not(:placeholder-shown), input[type="password"]:not(:placeholder-shown), input[type="email"]:not(:placeholder-shown){
-    border: 2px solid #4CAF50;
+    border: 1px solid #4CAF50;
 }
 
 

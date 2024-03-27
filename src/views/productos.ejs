@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 
-    <%- include("./partials/head.ejs", {cssSheet: "categoria", title: "Página Categoría"}) %>
+    <%- include("./partials/head.ejs", {cssSheet: "categoria", title: "Productos"}) %>
     <link rel="stylesheet" href="/css/header-footer.css">
 
 <body>
@@ -72,12 +72,24 @@
                 <article class="contenedor_menu_desktop">
                     <div class="contenedor_filtros">
                         <section class="lista_filtros_desktop">
-                            <h4>Promociones</h4>
+                            <h4>Marcas</h4>
                             <div class="flex_enlinea_menu">
-                                <p>Promociones para perro</p><input type="checkbox">
+                                <p>Perro</p><input type="checkbox">
                             </div>
                             <div class="flex_enlinea_menu">
-                                <p>Promociones para gato</p><input type="checkbox">
+                                <p>Gato</p><input type="checkbox">
+                            </div>
+                            <div class="flex_enlinea_menu">
+                                <p>Comida</p><input type="checkbox">
+                            </div>
+                            <div class="flex_enlinea_menu">
+                                <p>Higiene</p><input type="checkbox">
+                            </div>
+                            <div class="flex_enlinea_menu">
+                                <p>Juguetes</p><input type="checkbox">
+                            </div>
+                            <div class="flex_enlinea_menu">
+                                <p>Accesorios</p><input type="checkbox">
                             </div>
                         </section>
     
@@ -100,12 +112,13 @@
                 </article>
             </div>
             
+
              <!-- Lista productos productos-->
-             <div class="lista_desktop">
+            <div class="lista_desktop">
                 <div>
-                    <h2 style="margin-left: 2%; margin-top: 2.5%;">Promociones Perro</h2>
+                    <h2 style="margin-left: 2%; margin-top: 2.5%;">Productos Perro</h2>
                     <div class="lista_flexbox_desktop">
-                        <% for(let producto of productosPerroConDescuento) { %>
+                        <% for(let producto of productosPerro) { %>
                             <article class="articulo-productos-descuentos">
                                 <div class="contenedor_imagen">
                                     <% if(producto.categorias[0].categoria == "comida") { %> 
@@ -174,17 +187,16 @@
                                         </div>
                                     </div>
                                 <% } %>
-                            </article>
-                                    
+                            </article>      
                         <% } %>
                     </div>
-                    <h3><a href="/productos/perro/promociones" style="color: #18515F; margin-left: 2.5%;">Ver todos</a></h3>
+                    <h3><a href="/productos/perro" style="color: #18515F; margin-left: 2.5%;">Ver todos</a></h3>
                 <div>
 
                 <div>
-                    <h2 style="margin-left: 2%; margin-top: 2.5%;">Promociones Gato</h2>
+                    <h2 style="margin-left: 2%; margin-top: 2.5%;">Productos Gato</h2>
                     <div class="lista_flexbox_desktop">
-                        <% for(let producto of productosGatoConDescuento) { %>
+                        <% for(let producto of productosGato) { %>
                             <article class="articulo-productos-descuentos">
                                 <div class="contenedor_imagen">
                                     <% if(producto.categorias[0].categoria == "comida") { %> 
@@ -254,13 +266,12 @@
                                     </div>
                                 <% } %>
                             </article>
-                                        
                         <% } %>
                     </div>
-                    <h3><a href="/productos/gato/promociones" style="color: #18515F; margin-left: 2.5%;">Ver todos</a></h3>
-                <div>
+                    <h3><a href="/productos/gato" style="color: #18515F; margin-left: 2.5%;">Ver todos</a></h3>
+                </div>
+                
             </div>
-
         </section>  
     </main>
 

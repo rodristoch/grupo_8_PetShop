@@ -1,10 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
+
     <%- include("./partials/head.ejs", {cssSheet: "categoria", title: "Marcas"}) %>
+    <link rel="stylesheet" href="/css/header-footer.css">
+
 <body>
 
     <%- include("./partials/header.ejs") %>
-
     <%- include("./partials/header2.ejs") %>
     
     <main>
@@ -65,57 +67,66 @@
 
         <!--  Menú desktop + productos-->
         <section class="contenedor_menu_productos_desktop">
-            <!--  Filtros-->
-            <article class="contenedor_menu_desktop">
-                <div class="contenedor_filtros">
-                    <section class="lista_filtros_desktop">
-                        <h4>Marcas</h4>
-                        <div class="flex_enlinea_menu">
-                            <p>Eukanuba</p><input type="checkbox">
-                        </div>
-                        <div class="flex_enlinea_menu">
-                            <p>Pro Plan</p><input type="checkbox">
-                        </div>
-                        <div class="flex_enlinea_menu">
-                            <p>Royal Canin</p><input type="checkbox">
-                        </div>
-                        <div class="flex_enlinea_menu">
-                            <p>Cancat</p><input type="checkbox">
-                        </div>
-                        <div class="flex_enlinea_menu">
-                            <p>Catit</p><input type="checkbox">
-                        </div>
-                    </section>
-
-                    <section class="lista_filtros_desktop">
-                        <h4>Precio</h4>
-                        <div class="flex_enlinea_menu">
-                            <p>0 a 100</p><input type="checkbox">
-                        </div>
-                        <div class="flex_enlinea_menu">
-                            <p>100 a 200</p><input type="checkbox">
-                        </div>
-                        <div class="flex_enlinea_menu">
-                            <p>200 a 300</p><input type="checkbox">
-                        </div>
-                        <div class="flex_enlinea_menu">
-                            <p>Más de 400</p><input type="checkbox">
-                        </div>
-                    </section>
-                </div>
-            </article>
+            <div class="contenedor-filtros-desktop">
+                <!--  Filtros-->
+                <article class="contenedor_menu_desktop">
+                    <div class="contenedor_filtros">
+                        <section class="lista_filtros_desktop">
+                            <h4>Marcas</h4>
+                            <div class="flex_enlinea_menu">
+                                <p>Eukanuba</p><input type="checkbox">
+                            </div>
+                            <div class="flex_enlinea_menu">
+                                <p>Pro Plan</p><input type="checkbox">
+                            </div>
+                            <div class="flex_enlinea_menu">
+                                <p>Royal Canin</p><input type="checkbox">
+                            </div>
+                            <div class="flex_enlinea_menu">
+                                <p>Cancat</p><input type="checkbox">
+                            </div>
+                            <div class="flex_enlinea_menu">
+                                <p>Catit</p><input type="checkbox">
+                            </div>
+                        </section>
+    
+                        <section class="lista_filtros_desktop">
+                            <h4>Precio</h4>
+                            <div class="flex_enlinea_menu">
+                                <p>0 a 100</p><input type="checkbox">
+                            </div>
+                            <div class="flex_enlinea_menu">
+                                <p>100 a 200</p><input type="checkbox">
+                            </div>
+                            <div class="flex_enlinea_menu">
+                                <p>200 a 300</p><input type="checkbox">
+                            </div>
+                            <div class="flex_enlinea_menu">
+                                <p>Más de 400</p><input type="checkbox">
+                            </div>
+                        </section>
+                    </div>
+                </article>
+            </div>
+            
 
              <!-- Lista productos productos-->
             <div class="lista_desktop">
                 <div>
-                    <h2 style="margin-left: 2.5%;">Productos Eukanuba</h2>
+                    <h2 style="margin-left: 2%; margin-top: 2.5%;">Productos Eukanuba</h2>
                     <div class="lista_flexbox_desktop">
                         <% for(let producto of eukanuba) { %>
                             <article class="articulo-productos-descuentos">
                                 <div class="contenedor_imagen">
-                                    <a href="/productos/detalle/<%= producto.id %>">
-                                        <img class="img-productos-descuentos" src="/img/productos/<%= producto.imagen %>" alt="imagen_producto">
-                                    </a>
+                                    <% if(producto.tipo_mascota_id == 2) { %> <!-- si el tipo de mascota es perro -->
+                                        <a href="/productos/perro/comida/<%= producto.id %>">
+                                            <img class="img-productos-descuentos" src="/img/productos/<%= producto.imagen %>" alt="imagen_producto">
+                                        </a>
+                                    <% } else { %> <!-- y si el tipo de mascota es gato -->
+                                        <a href="/productos/gato/comida/<%= producto.id %>">
+                                            <img class="img-productos-descuentos" src="/img/productos/<%= producto.imagen %>" alt="imagen_producto">
+                                        </a>
+                                    <% } %>
                                 </div>
                                 <% if(producto.descuentos[0].id == 2) { %>
                                     <div class="div-card">
@@ -128,10 +139,8 @@
                                             </div>
                                         </div>
                                         <div class="div-dos">
-                                            <div>
-                                                <p class="descuento"><%= producto.descuentos[0].descripcion %></p>
-                                                <p class="descuento">20% off</p>
-                                            </div>
+                                            <p class="descuento"><%= producto.descuentos[0].descripcion %></p>
+                                            <p class="descuento" style="font-weight: 600;">20% OFF</p>
                                         </div>
                                         <div class="div-tres">
                                             <div class="div-tres-int">
@@ -153,14 +162,12 @@
                                                 <P class="descripcion"><%= producto.descripcion %></P>
                                             </div>
                                         </div>
-                                        <div class="div-dos">
-                                            <div>
-                                                <p class="descuento" style="color: white;">Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
-                                                <p class="descuento" style="color: white;">20% off</p>
-                                            </div>
+                                        <div class="div-dos">                                           
+                                            <p class="descuento" style="color: white;">Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+                                            <p class="descuento" style="color: white;">20% off</p> 
                                         </div>
                                         <div class="div-tres-b">
-                                            <div>
+                                            <div class="div-tres-int">
                                                 <p class="precio">$ <%= producto.precio %></p>
                                             </div>
                                             <div class="div-boton-comprar">
@@ -176,14 +183,20 @@
                 <div>
 
                 <div>
-                    <h2 style="margin-left: 2.5%; margin-top: 30px;">Productos Pro Plan</h2>
+                    <h2 style="margin-left: 2%; margin-top: 2.5%;">Productos Pro Plan</h2>
                     <div class="lista_flexbox_desktop">
                         <% for(let producto of proplan) { %>
                             <article class="articulo-productos-descuentos">
                                 <div class="contenedor_imagen">
-                                    <a href="/productos/detalle/<%= producto.id %>">
-                                        <img class="img-productos-descuentos" src="/img/productos/<%= producto.imagen %>" alt="imagen_producto">
-                                    </a>
+                                    <% if(producto.tipo_mascota_id == 2) { %> <!-- si el tipo de mascota es perro -->
+                                        <a href="/productos/perro/comida/<%= producto.id %>">
+                                            <img class="img-productos-descuentos" src="/img/productos/<%= producto.imagen %>" alt="imagen_producto">
+                                        </a>
+                                    <% } else { %> <!-- y si el tipo de mascota es gato -->
+                                        <a href="/productos/gato/comida/<%= producto.id %>">
+                                            <img class="img-productos-descuentos" src="/img/productos/<%= producto.imagen %>" alt="imagen_producto">
+                                        </a>
+                                    <% } %>
                                 </div>
                                 <% if(producto.descuentos[0].id == 2) { %>
                                     <div class="div-card">
@@ -196,10 +209,8 @@
                                             </div>
                                         </div>
                                         <div class="div-dos">
-                                            <div>
-                                                <p class="descuento"><%= producto.descuentos[0].descripcion %></p>
-                                                <p class="descuento">20% off</p>
-                                            </div>
+                                            <p class="descuento"><%= producto.descuentos[0].descripcion %></p>
+                                            <p class="descuento" style="font-weight: 600;">20% OFF</p>
                                         </div>
                                         <div class="div-tres">
                                             <div class="div-tres-int">
@@ -221,14 +232,12 @@
                                                 <P class="descripcion"><%= producto.descripcion %></P>
                                             </div>
                                         </div>
-                                        <div class="div-dos">
-                                            <div>
-                                                <p class="descuento" style="color: white;">Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
-                                                <p class="descuento" style="color: white;">20% off</p>
-                                            </div>
+                                        <div class="div-dos">                                           
+                                            <p class="descuento" style="color: white;">Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+                                            <p class="descuento" style="color: white;">20% off</p> 
                                         </div>
                                         <div class="div-tres-b">
-                                            <div>
+                                            <div class="div-tres-int">
                                                 <p class="precio">$ <%= producto.precio %></p>
                                             </div>
                                             <div class="div-boton-comprar">
@@ -237,20 +246,26 @@
                                         </div>
                                     </div>
                                 <% } %>
-                            </article>      
+                            </article>
                         <% } %>
                     </div>
                     <h3><a href="/productos/marcas/proplan" style="color: #18515F; margin-left: 2.5%;">Ver todos</a></h3>
                 </div>
                 <div>
-                    <h2 style="margin-left: 2.5%; margin-top: 30px;">Productos Royal</h2>
+                    <h2 style="margin-left: 2%; margin-top: 2.5%;">Productos Royal</h2>
                     <div class="lista_flexbox_desktop">
                         <% for(let producto of royal) { %>
                             <article class="articulo-productos-descuentos">
                                 <div class="contenedor_imagen">
-                                    <a href="/productos/detalle/<%= producto.id %>">
-                                        <img class="img-productos-descuentos" src="/img/productos/<%= producto.imagen %>" alt="imagen_producto">
-                                    </a>
+                                    <% if(producto.tipo_mascota_id == 2) { %> <!-- si el tipo de mascota es perro -->
+                                        <a href="/productos/perro/comida/<%= producto.id %>">
+                                            <img class="img-productos-descuentos" src="/img/productos/<%= producto.imagen %>" alt="imagen_producto">
+                                        </a>
+                                    <% } else { %> <!-- y si el tipo de mascota es gato -->
+                                        <a href="/productos/gato/comida/<%= producto.id %>">
+                                            <img class="img-productos-descuentos" src="/img/productos/<%= producto.imagen %>" alt="imagen_producto">
+                                        </a>
+                                    <% } %>
                                 </div>
                                 <% if(producto.descuentos[0].id == 2) { %>
                                     <div class="div-card">
@@ -263,10 +278,8 @@
                                             </div>
                                         </div>
                                         <div class="div-dos">
-                                            <div>
-                                                <p class="descuento"><%= producto.descuentos[0].descripcion %></p>
-                                                <p class="descuento">20% off</p>
-                                            </div>
+                                            <p class="descuento"><%= producto.descuentos[0].descripcion %></p>
+                                            <p class="descuento" style="font-weight: 600;">20% OFF</p>
                                         </div>
                                         <div class="div-tres">
                                             <div class="div-tres-int">
@@ -288,14 +301,12 @@
                                                 <P class="descripcion"><%= producto.descripcion %></P>
                                             </div>
                                         </div>
-                                        <div class="div-dos">
-                                            <div>
-                                                <p class="descuento" style="color: white;">Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
-                                                <p class="descuento" style="color: white;">20% off</p>
-                                            </div>
+                                        <div class="div-dos">                                           
+                                            <p class="descuento" style="color: white;">Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+                                            <p class="descuento" style="color: white;">20% off</p> 
                                         </div>
                                         <div class="div-tres-b">
-                                            <div>
+                                            <div class="div-tres-int">
                                                 <p class="precio">$ <%= producto.precio %></p>
                                             </div>
                                             <div class="div-boton-comprar">
@@ -304,20 +315,26 @@
                                         </div>
                                     </div>
                                 <% } %>
-                            </article>      
+                            </article>   
                         <% } %>
                     </div>
                     <h3><a href="/productos/marcas/royal" style="color: #18515F; margin-left: 2.5%;">Ver todos</a></h3>
                 <div>
                 <div>
-                    <h2 style="margin-left: 2.5%; margin-top: 30px;">Productos Cancat</h2>
+                    <h2 style="margin-left: 2%; margin-top: 2.5%;">Productos Cancat</h2>
                     <div class="lista_flexbox_desktop">
                         <% for(let producto of cancat) { %>
                             <article class="articulo-productos-descuentos">
                                 <div class="contenedor_imagen">
-                                    <a href="/productos/detalle/<%= producto.id %>">
-                                        <img class="img-productos-descuentos" src="/img/productos/<%= producto.imagen %>" alt="imagen_producto">
-                                    </a>
+                                    <% if(producto.tipo_mascota_id == 2) { %> <!-- si el tipo de mascota es perro -->
+                                        <a href="/productos/perro/comida/<%= producto.id %>">
+                                            <img class="img-productos-descuentos" src="/img/productos/<%= producto.imagen %>" alt="imagen_producto">
+                                        </a>
+                                    <% } else { %> <!-- y si el tipo de mascota es gato -->
+                                        <a href="/productos/gato/comida/<%= producto.id %>">
+                                            <img class="img-productos-descuentos" src="/img/productos/<%= producto.imagen %>" alt="imagen_producto">
+                                        </a>
+                                    <% } %>
                                 </div>
                                 <% if(producto.descuentos[0].id == 2) { %>
                                     <div class="div-card">
@@ -330,10 +347,8 @@
                                             </div>
                                         </div>
                                         <div class="div-dos">
-                                            <div>
-                                                <p class="descuento"><%= producto.descuentos[0].descripcion %></p>
-                                                <p class="descuento">20% off</p>
-                                            </div>
+                                            <p class="descuento"><%= producto.descuentos[0].descripcion %></p>
+                                            <p class="descuento" style="font-weight: 600;">20% OFF</p>
                                         </div>
                                         <div class="div-tres">
                                             <div class="div-tres-int">
@@ -355,14 +370,12 @@
                                                 <P class="descripcion"><%= producto.descripcion %></P>
                                             </div>
                                         </div>
-                                        <div class="div-dos">
-                                            <div>
-                                                <p class="descuento" style="color: white;">Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
-                                                <p class="descuento" style="color: white;">20% off</p>
-                                            </div>
+                                        <div class="div-dos">                                           
+                                            <p class="descuento" style="color: white;">Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+                                            <p class="descuento" style="color: white;">20% off</p> 
                                         </div>
                                         <div class="div-tres-b">
-                                            <div>
+                                            <div class="div-tres-int">
                                                 <p class="precio">$ <%= producto.precio %></p>
                                             </div>
                                             <div class="div-boton-comprar">
@@ -371,20 +384,26 @@
                                         </div>
                                     </div>
                                 <% } %>
-                            </article>      
+                            </article>
                         <% } %>
                     </div>
                     <h3><a href="/productos/marcas/cancat" style="color: #18515F; margin-left: 2.5%;">Ver todos</a></h3>
                 <div>
                 <div>
-                    <h2 style="margin-left: 2.5%; margin-top: 30px;">Productos Catit</h2>
+                    <h2 style="margin-left: 2%; margin-top: 2.5%;">Productos Catit</h2>
                     <div class="lista_flexbox_desktop">
                         <% for(let producto of catit) { %>
                             <article class="articulo-productos-descuentos">
                                 <div class="contenedor_imagen">
-                                    <a href="/productos/detalle/<%= producto.id %>">
-                                        <img class="img-productos-descuentos" src="/img/productos/<%= producto.imagen %>" alt="imagen_producto">
-                                    </a>
+                                    <% if(producto.tipo_mascota_id == 2) { %> <!-- si el tipo de mascota es perro -->
+                                        <a href="/productos/perro/comida/<%= producto.id %>">
+                                            <img class="img-productos-descuentos" src="/img/productos/<%= producto.imagen %>" alt="imagen_producto">
+                                        </a>
+                                    <% } else { %> <!-- y si el tipo de mascota es gato -->
+                                        <a href="/productos/gato/comida/<%= producto.id %>">
+                                            <img class="img-productos-descuentos" src="/img/productos/<%= producto.imagen %>" alt="imagen_producto">
+                                        </a>
+                                    <% } %>
                                 </div>
                                 <% if(producto.descuentos[0].id == 2) { %>
                                     <div class="div-card">
@@ -397,10 +416,8 @@
                                             </div>
                                         </div>
                                         <div class="div-dos">
-                                            <div>
-                                                <p class="descuento"><%= producto.descuentos[0].descripcion %></p>
-                                                <p class="descuento">20% off</p>
-                                            </div>
+                                            <p class="descuento"><%= producto.descuentos[0].descripcion %></p>
+                                            <p class="descuento" style="font-weight: 600;">20% OFF</p>
                                         </div>
                                         <div class="div-tres">
                                             <div class="div-tres-int">
@@ -422,14 +439,12 @@
                                                 <P class="descripcion"><%= producto.descripcion %></P>
                                             </div>
                                         </div>
-                                        <div class="div-dos">
-                                            <div>
-                                                <p class="descuento" style="color: white;">Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
-                                                <p class="descuento" style="color: white;">20% off</p>
-                                            </div>
+                                        <div class="div-dos">                                           
+                                            <p class="descuento" style="color: white;">Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+                                            <p class="descuento" style="color: white;">20% off</p> 
                                         </div>
                                         <div class="div-tres-b">
-                                            <div>
+                                            <div class="div-tres-int">
                                                 <p class="precio">$ <%= producto.precio %></p>
                                             </div>
                                             <div class="div-boton-comprar">
@@ -438,7 +453,7 @@
                                         </div>
                                     </div>
                                 <% } %>
-                            </article>      
+                            </article>
                         <% } %>
                     </div>
                     <h3><a href="/productos/marcas/catit" style="color: #18515F; margin-left: 2.5%;">Ver todos</a></h3>

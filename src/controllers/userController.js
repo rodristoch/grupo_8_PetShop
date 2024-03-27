@@ -264,24 +264,34 @@ const userController = {
         //usuario q se loguea
         const userALoguearse = req.session.userLogueado
 
-        //Productos con descuento de perro
-        db.Producto.findAll({
-            include: ["tipos_mascota"],
-            where: {
-                tipo_mascota_id: 1,  // ID de perro de SQL
-            },
+        let producto = db.Producto.findByPk(27, {
+            include: ["tipos_mascota", 'descuentos', 'categorias']
+        })
+
+        //Productos con descuento
+        let productosConDescuento = db.Producto.findAll({
             include: [{
                 model: db.Descuento,
                 as: 'descuentos',
                 where: {
                     id: 2 // ID descuento de SQL
                 }
+            },
+            {
+                model: db.Categoria,
+                as: 'categorias',
+            },
+            {
+                model: db.TipoMascota,
+                as: 'tipos_mascota',
             }],
-            limit: 6
+            limit: 16
         })
 
-        .then(productosConDescuentoGato => {
-                return res.render('carrito2.ejs', {userALoguearse, productosConDescuentoGato})
+        Promise.all([producto, productosConDescuento])
+
+        .then(([producto, productosConDescuento]) => {
+                return res.render('carrito2.ejs', {userALoguearse, producto, productosConDescuento})
         })
 
     },
