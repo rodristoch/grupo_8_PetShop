@@ -208,6 +208,10 @@ const mainController = {
         // const userALoguearse = req.session.userLogueado
 
 		// res.render("index.ejs", {productosPerro, productosGato, productosPerroAccesorios, productosGatoAccesorios, productosPerroConDescuento, productosGatoConDescuento, accesoriosPerroSinDescuento, accesoriosGatoSinDescuento, userALoguearse});
+    },
+    sobreNosotros: function(req, res) {
+        const userALoguearse = req.session.userLogueado
+        res.render('sobreNosotros.ejs', {userALoguearse})
     }
 };
 

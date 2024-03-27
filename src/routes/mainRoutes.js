@@ -7,6 +7,7 @@ const mainController = require('../controllers/mainController.js'); // requerimo
 
 // ************ Rutas ************
 router.get('/', mainController.index) // ingresamos al router lo que debe hacer cuando el user ingrese en /
+router.get('/sobrenosotros', mainController.sobreNosotros) // definimos la ruta de la pagina sobre nosotros /
 
 
 module.exports = router; 
