@@ -6,7 +6,7 @@ const sequelize = db.sequelize;
 const Op = db.Sequelize.Op;
 
 //base de datos de productos
-const productsFilePath = path.join(__dirname, "../data/productosDataBase.json");
+/* const productsFilePath = path.join(__dirname, "../data/productosDataBase.json"); */
 /* const productos = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8')); */
 
 

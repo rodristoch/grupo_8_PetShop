@@ -18,7 +18,8 @@ a {
     text-align: center;
 }
 
-.contenedor-producto {  /* contenedor padre */
+/* 1er contenedor */
+.contenedor-producto {  /* contenedor padre (igual metido dentro de .all) */
     width: 95%;
     background-color: #fede87;
     border: 1px solid #FECF53;
@@ -63,8 +64,96 @@ a {
     margin: 0;
 }
 
+/* textos del 1er contenedor */
+.titulo-nombre-producto {  /* titulo */
+    font-size: 17px;
+    font-weight: 500;
+    margin: 0;
+    margin-bottom: 12px;
+    text-align: left;
+}
+
+.titulo-descrip {  /* titulo descripcion */
+    font-size: 14px;
+    text-decoration: underline;
+    color: rgb(57, 57, 57);
+    font-weight: 300;
+    margin: 0;
+    margin-bottom: 8px;
+    text-align: left;
+}
+
+.descrip {   /* descripcion producto */
+    font-size: 14px;
+    font-weight: 300;
+    margin: 0;
+    margin-bottom: 25px;
+    text-align: left;
+}
+
+.precio-tachado-detalle {  /* precio tachado */
+    text-decoration: line-through;
+    font-size: 12px;
+    font-weight: 300;
+    margin: 0;
+    margin-bottom: 15px;
+    margin-left: 8px;
+    width: 65%;
+    text-align: left;
+}
+
+.precio-oferta {   /* texto de precio en oferta!! */
+    color: #18515f;
+    font-style: italic;
+    font-weight: 300;
+    font-size: 13px;
+    margin: 0;
+    text-align: left;
+}
+
+.precio-detalle {   /* el precio final */
+    font-size: 15px;
+    font-weight: 500;
+    margin: 0;
+    margin-left: 5px;
+    text-align: left;
+}
+
+.descuento-precio {   /* el texto del 20 OFF */
+    color: #18515f;
+    font-weight: 400;
+    font-size: 13px;
+    margin: 0;
+    margin-left: 5px;
+    width: 25%;
+    text-align: left;
+}
+
+.precio-regular {   /* El div del precio regular */
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    align-items: center;
+    text-align: left;
+}
+
+.precio-normal {   /* texto de precio regular */
+    font-weight: 300;
+    font-size: 12px;
+    margin: 0;
+    margin-bottom: 15px;
+    text-align: left;
+}
+
+.precio-normal2 {   /* texto de precio */
+    font-weight: 300;
+    font-size: 12px;
+    margin: 0;
+    text-align: left;
+}
+
 /* 2do contenedor */
-.contenedor-proceder-pago {
+.contenedor-proceder-pago {  /* contenedor padre (igual metido dentro de .all) */
     background-color: #fede87;
     border: 1px solid #FECF53;
     display: flex;
@@ -77,7 +166,7 @@ a {
     width: 95%;
 }
 
-.textos2 {
+.textos2 {   /* contenedor padre: contenedor-proceder-pago */
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
@@ -185,86 +274,6 @@ a {
     background-color: #ff0000;
 } */
 
-/* textos del 1er contenedor */
-.titulo-nombre-producto {  /* titulo */
-    font-size: 17px;
-    font-weight: 500;
-    margin: 0;
-    margin-bottom: 12px;
-    text-align: left;
-}
-
-.titulo-descrip {  /* titulo descripcion */
-    font-size: 14px;
-    text-decoration: underline;
-    color: rgb(57, 57, 57);
-    font-weight: 300;
-    margin: 0;
-    margin-bottom: 8px;
-    text-align: left;
-}
-
-.descrip {   /* descripcion producto */
-    font-size: 14px;
-    font-weight: 300;
-    margin: 0;
-    margin-bottom: 25px;
-    text-align: left;
-}
-
-.precio-tachado-detalle {  /* precio tachado */
-    text-decoration: line-through;
-    font-size: 12px;
-    font-weight: 300;
-    margin: 0;
-    margin-bottom: 15px;
-    margin-left: 8px;
-    width: 65%;
-    text-align: left;
-}
-
-.precio-oferta {   /* texto de precio en oferta!! */
-    color: #18515f;
-    font-style: italic;
-    font-weight: 300;
-    font-size: 13px;
-    margin: 0;
-    text-align: left;
-}
-
-.precio-detalle {   /* el precio final */
-    font-size: 15px;
-    font-weight: 500;
-    margin: 0;
-    margin-left: 5px;
-    text-align: left;
-}
-
-.descuento-precio {   /* el texto del 20 OFF */
-    color: #18515f;
-    font-weight: 400;
-    font-size: 13px;
-    margin: 0;
-    margin-left: 5px;
-    width: 25%;
-    text-align: left;
-}
-
-.precio-regular {   /* El div del precio regular */
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: flex-start;
-    align-items: center;
-    text-align: left;
-}
-
-.precio-normal {   /* texto de precio regular y precio */
-    font-weight: 300;
-    font-size: 12px;
-    margin: 0;
-    margin-bottom: 15px;
-    text-align: left;
-}
 
 /* seccion productos */
 .section-productos-descuentos {
@@ -374,7 +383,6 @@ h2 {
     width: 60%;
     text-align: left;
     margin-left: 5px;
-    
 }
 
 .div-precios {
@@ -439,75 +447,9 @@ h2 {
 
 @media (min-width: 768px) {
 
-    .cantidad {
+    /* .cantidad {
         border: 1px solid blue;
-    }
-
-    .titulo-nombre-producto {
-        font-size: 14px;
-        font-weight: 500;
-        margin: 0;
-        margin-bottom: 15px;
-    }
-
-    .titulo-descrip {
-        font-size: 12px;
-        text-decoration: underline;
-        font-weight: 400;
-        margin: 0;
-        margin-bottom: 10px;
-    }
-
-    .descrip {
-        font-size: 11px;
-        font-weight: 300;
-        margin: 0;
-        margin-bottom: 25px;
-    }
-
-    .precio-regular {
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: flex-start;
-        align-items: center;
-    }
-
-    .precio-detalle {
-        font-size: 13px;
-        font-weight: 500;
-        margin: 0;
-        margin-left: 5px;
-    }
-
-    .precio-tachado-detalle {
-        font-size: 10px;
-        font-weight: 300;
-        margin: 0;
-        margin-bottom: 15px;
-        margin-left: 8px;
-        width: 70%;
-    }
-
-    .precio-normal {
-        font-weight: 300;
-        font-size: 10px;
-        margin: 0;
-        margin-bottom: 15px;
-    }
-
-    .precio-oferta {
-        font-weight: 300;
-        font-size: 10px;
-        margin: 0;
-    }
-
-    .descuento-precio {
-        font-weight: 400;
-        font-size: 10px;
-        margin: 0;
-        margin-left: 5px;
-        width: 25%;
-    }
+    } */
 
     .all {
         display: flex;
@@ -516,7 +458,8 @@ h2 {
         flex-direction: row;
     }
     
-    .contenedor-producto {
+    /* 1er contenedor */
+    .contenedor-producto {  /* contenedor padre (igual metido dentro de .all) */
         width: 65%;
         display: flex;
         border-radius: 8px;
@@ -524,11 +467,69 @@ h2 {
         flex-direction: column;
         margin: 0;
     }
-    
-    .titulo {
-        width: 99%;
-        padding-left: 10px;
-        border-bottom: solid 1px #18515f;
+
+    /* textos del 1er contenedor */
+    .titulo-nombre-producto {  /* titulo */
+        font-size: 14px;
+        margin-bottom: 15px;
+    }
+
+    .titulo-descrip {  /* titulo descripcion */
+        font-size: 12px;
+        text-decoration: underline;
+        font-weight: 400;
+        margin: 0;
+        margin-bottom: 10px;
+    }
+
+    .descrip {   /* descripcion producto */
+        font-size: 11px;
+        font-weight: 300;
+        margin: 0;
+        margin-bottom: 25px;
+    }
+
+    .precio-tachado-detalle {  /* precio tachado */
+        font-size: 10px;
+        font-weight: 300;
+        margin: 0;
+        margin-bottom: 15px;
+        margin-left: 8px;
+        width: 70%;
+    }
+
+    .precio-oferta {   /* texto de precio en oferta!! */
+        font-weight: 300;
+        font-size: 10px;
+        margin: 0;
+    }
+
+    .precio-normal {   /* texto de precio regular */
+        font-weight: 300;
+        font-size: 10px;
+        margin: 0;
+        margin-bottom: 15px;
+    }
+
+    .precio-detalle {   /* el precio final */
+        font-size: 13px;
+        font-weight: 500;
+        margin: 0;
+        margin-left: 5px;
+    }
+
+    .descuento-precio {   /* el texto del 20 OFF */
+        font-weight: 400;
+        font-size: 10px;
+        margin: 0;
+        margin-left: 5px;
+        width: 25%;
+    }
+
+    .precio-normal2 {   /* texto de precio */
+        font-weight: 300;
+        font-size: 10px;
+        margin: 0;
     }
     
     .subtitulo2, .precio {
@@ -633,9 +634,7 @@ h2 {
         font-size: 10px;
         width: 65%;
     }
-
 }
-
 
 @media (min-width: 993px){
 
@@ -645,7 +644,6 @@ h2 {
         height: auto;
     }
 }
-
 
 @media (min-width: 1024px) {
 
@@ -700,6 +698,12 @@ h2 {
         font-size: 14px;
         margin: 0;
         margin-bottom: 15px;
+    }
+
+    .precio-normal2 {
+        font-weight: 400;
+        font-size: 14px;
+        margin: 0;
     }
 
     .precio-oferta {
@@ -854,6 +858,10 @@ h2 {
     .precio-normal {
         font-size: 16px;
         margin-bottom: 15px;
+    }
+
+    .precio-normal2 {
+        font-size: 16px;
     }
 
     .precio-oferta {

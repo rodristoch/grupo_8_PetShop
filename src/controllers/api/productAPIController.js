@@ -10,21 +10,36 @@ const productAPIController = {
         db.Producto.findAll({
             include: ["tipos_mascota", "descuentos", "categorias", "marcas"]
         })
-        .then(products => {
-            let respuesta = {
+        .then(products => { 
+            
+            return res.status(200).json({
                 meta: {
+                    link: 'http://localhost:3100/api/productos',
                     status : 200,
                     total: products.length,
-                    url: 'api/productos'
                 },
                 data: products
-            }
-                res.json(respuesta);
+            })
         })
+    },
+
+    "detail": (req, res) => {
+        db.Producto.findByPk(req.params.id,
+            {
+                include: ["tipos_mascota", "descuentos", "categorias", "marcas"]
+            })
+            .then(product => {
+
+                return res.status(200).json({
+                    meta: {
+                        link: 'http://localhost:3100/api/productos/:id',
+                        status: 200,
+                        total: product.length
+                    },
+                    data: product
+                })      
+            });
     }
-
-
-
 }
 
 module.exports = productAPIController;
