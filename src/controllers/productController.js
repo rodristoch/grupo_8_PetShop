@@ -64,10 +64,78 @@ const productController = {
             },
         })
 
-        Promise.all([perroVisible, perroInvisible])
+        let checkboxComidaPerro = db.Producto.findAll({
+            include: [{
+                model: db.Categoria,
+                as: 'categorias',
+                where: {
+                    id: 1   /* id comida */
+                }
+            },
+            {
+                model: db.Descuento,
+                as: 'descuentos',
+            }],
+            where: {
+                tipo_mascota_id: 2,
+            }
+        })
 
-        .then(([perroVisible, perroInvisible]) => {
-            res.render('categoria.ejs', {perroVisible, perroInvisible, userALoguearse});
+        let checkboxAccesorioPerro = db.Producto.findAll({
+            include: [{
+                model: db.Categoria,
+                as: 'categorias',
+                where: {
+                    id: 2   /* id accesorio */
+                }
+            },
+            {
+                model: db.Descuento,
+                as: 'descuentos',
+            }],
+            where: {
+                tipo_mascota_id: 2,
+            }
+        })
+
+        let checkboxHigienePerro = db.Producto.findAll({
+            include: [{
+                model: db.Categoria,
+                as: 'categorias',
+                where: {
+                    id: 3   /* id higiene */
+                }
+            },
+            {
+                model: db.Descuento,
+                as: 'descuentos',
+            }],
+            where: {
+                tipo_mascota_id: 2,
+            }
+        })
+
+        let checkboxJuguetePerro = db.Producto.findAll({
+            include: [{
+                model: db.Categoria,
+                as: 'categorias',
+                where: {
+                    id: 4   /* id juguete */
+                }
+            },
+            {
+                model: db.Descuento,
+                as: 'descuentos',
+            }],
+            where: {
+                tipo_mascota_id: 2,
+            }
+        })
+
+        Promise.all([perroVisible, perroInvisible, checkboxComidaPerro, checkboxAccesorioPerro, checkboxHigienePerro, checkboxJuguetePerro])
+
+        .then(([perroVisible, perroInvisible, checkboxComidaPerro, checkboxAccesorioPerro, checkboxHigienePerro, checkboxJuguetePerro]) => {
+            res.render('categoria.ejs', {perroVisible, perroInvisible, checkboxComidaPerro, checkboxAccesorioPerro, checkboxHigienePerro, checkboxJuguetePerro, userALoguearse});
         })
         .catch(function (error){
             console.error('Error al recuperar productos', error);
