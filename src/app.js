@@ -40,7 +40,7 @@ app.use("/", mainRoutes);
 app.use("/users", userRoutes); 
 app.use("/productos", productRoutes);
 
-app.use("/api/users", apiUserRoutes); 
+app.use("/api/usuarios", apiUserRoutes); 
 app.use("/api/productos", apiProductRoutes);
 app.use("/api/categorias", apiCategoryRoutes);
 

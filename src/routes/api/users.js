@@ -4,9 +4,9 @@ const usersAPIController = require('../../controllers/api/usersAPIController.js'
 
 //Rutas
 //Listado de usuarios
-/* router.get('/', usersAPIController.list);
+router.get('/', usersAPIController.list);
 //Detalle de una usuario
-router.get('/:id', usersAPIController.detalle); */
+router.get('/:id', usersAPIController.detalle); 
 
 
 
