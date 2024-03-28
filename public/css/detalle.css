@@ -36,11 +36,14 @@ a {
 .ruta {
     opacity: 0;
     color: rgb(86, 86, 86);
-    
 }
 
 .ruta:hover {
     color: black;
+}
+
+.ruta-barras {
+    opacity: 0;
 }
 
 /* --- detalles de producto ---  */
@@ -121,7 +124,7 @@ a {
     font-size: 12px;
     padding: 5px;
     border-radius: 6px;
-    width: 17%;
+    width: 25%;
     text-align: center;
 }
 
@@ -471,6 +474,10 @@ a {
         opacity: 1;
     }
 
+    .ruta-barras {
+        opacity: 1;
+    }
+
     .contenedor_imagen_mobile {
         width: 30%;
     }
@@ -503,6 +510,7 @@ a {
         display: block;
         font-weight: 400;
         font-size: 22px; 
+        margin-right: 15px;
     }
     
     .precio-tachado-detalle {
@@ -514,7 +522,6 @@ a {
     .precio-detalle {
         font-size: 24px;
         font-weight: 500;
-        margin-left: 15px;
     }
     
     .descuento-detalle {

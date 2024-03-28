@@ -53,14 +53,14 @@ const productController = {
             where: {
                 tipo_mascota_id: 2,
             },
-            limit: 4
+            limit: 8
         })
 
         let perroInvisible = db.Producto.findAll({
             include: ["descuentos", "categorias"],
             where: {
                 tipo_mascota_id: 2,
-                id: {[Op.gt]: 42}
+                id: {[Op.gt]: 46}
             },
         })
 
@@ -85,14 +85,14 @@ const productController = {
             where: {
                 tipo_mascota_id: 1,
             },
-            limit: 4
+            limit: 8
         })
 
         let gatoInvisible = db.Producto.findAll({
             include: ["descuentos", "categorias"],
             where: {
                 tipo_mascota_id: 1,
-                id: {[Op.gt]: 4}
+                id: {[Op.gt]: 8}
             },
         })
 
@@ -200,7 +200,7 @@ const productController = {
         //usuario q se loguea
         const userALoguearse = req.session.userLogueado
 
-        db.Producto.findAll({
+        let promocionesGatoVisible = db.Producto.findAll({
             include: [
                 {
                     model: db.Descuento,
@@ -215,12 +215,36 @@ const productController = {
                 },
             ],
             where: {
-                tipo_mascota_id: 1,  // ID de perro de SQL
-            }
+                tipo_mascota_id: 1,  // ID de gato de SQL
+            },
+            limit: 8
         })
- 
-        .then(productosGatoConDescuento => {
-            return res.render("promocionesTodas.ejs", {userALoguearse, productosGatoConDescuento})
+
+        let promocionesGatoInvisible = db.Producto.findAll({
+            include: [
+                {
+                    model: db.Descuento,
+                    as: 'descuentos',
+                    where: {
+                        id: 2 // ID descuento de SQL
+                    }
+                },
+                {
+                    model: db.Categoria,
+                    as: 'categorias',
+                },
+            ],
+            where: {
+                tipo_mascota_id: 1,
+                id: {[Op.gt]: 27}
+            }
+            
+        })
+
+        Promise.all([promocionesGatoVisible, promocionesGatoInvisible])
+            
+        .then(([promocionesGatoVisible, promocionesGatoInvisible]) => {
+            return res.render("promocionesTodas.ejs", {promocionesGatoVisible, promocionesGatoInvisible, userALoguearse})
         })
 
     },
@@ -229,13 +253,13 @@ const productController = {
 
         const userALoguearse = req.session.userLogueado
 
-        db.Producto.findAll({
+        let comidaPerroVisible = db.Producto.findAll({
             include: [
                 {
                     model: db.Categoria,
                     as: 'categorias',
                     where: {
-                        id: 1
+                        id: 1   /* id comida */
                     }
                 },
                 {
@@ -245,11 +269,35 @@ const productController = {
             ],
             where: {
                 tipo_mascota_id: 2,
-            }
+            },
+            limit: 8
         })
+
+        let comidaPerroInvisible = db.Producto.findAll({
+            include: [
+                {
+                    model: db.Categoria,
+                    as: 'categorias',
+                    where: {
+                        id: 1   /* id comida */
+                    }
+                },
+                {
+                    model: db.Descuento,
+                    as: 'descuentos',
+                }
+            ],
+            where: {
+                tipo_mascota_id: 2,
+                id: {[Op.gt]: 56}
+            }
             
-        .then(comidaPerro => {
-            return res.render('categoria.ejs', {comidaPerro, userALoguearse});
+        })
+
+        Promise.all([comidaPerroVisible, comidaPerroInvisible])
+            
+        .then(([comidaPerroVisible, comidaPerroInvisible]) => {
+            return res.render('categoria.ejs', {comidaPerroVisible, comidaPerroInvisible, userALoguearse});
         })
         .catch(error => {
             console.error('Error al recuperar productos', error);
@@ -262,13 +310,13 @@ const productController = {
 
         const userALoguearse = req.session.userLogueado
 
-        db.Producto.findAll({
+        let comidaGatoVisible = db.Producto.findAll({
             include: [
                 {
                     model: db.Categoria,
                     as: 'categorias',
                     where: {
-                        id: 1
+                        id: 1   /* id comida */
                     }
                 },
                 {
@@ -278,11 +326,35 @@ const productController = {
             ],
             where: {
                 tipo_mascota_id: 1,
-            }
+            },
+            limit: 8
         })
+
+        let comidaGatoInvisible = db.Producto.findAll({
+            include: [
+                {
+                    model: db.Categoria,
+                    as: 'categorias',
+                    where: {
+                        id: 1   /* id comida */
+                    }
+                },
+                {
+                    model: db.Descuento,
+                    as: 'descuentos',
+                }
+            ],
+            where: {
+                tipo_mascota_id: 1,
+                id: {[Op.gt]: 16}
+            }
             
-        .then(comidaGato => {
-            return res.render('categoria.ejs', {comidaGato, userALoguearse});
+        })
+
+        Promise.all([comidaGatoVisible, comidaGatoInvisible])
+            
+        .then(([comidaGatoVisible, comidaGatoInvisible]) => {
+            return res.render('categoria.ejs', {comidaGatoVisible, comidaGatoInvisible, userALoguearse});
         })
         .catch(error => {
             console.error('Error al recuperar productos', error);
@@ -294,13 +366,13 @@ const productController = {
 
         const userALoguearse = req.session.userLogueado
 
-        db.Producto.findAll({
+        let accesoriosPerroVisible = db.Producto.findAll({
             include: [
                 {
                     model: db.Categoria,
                     as: 'categorias',
                     where: {
-                        id: 2
+                        id: 2  /* id accesorio */
                     }
                 },
                 {
@@ -310,11 +382,35 @@ const productController = {
             ],
             where: {
                 tipo_mascota_id: 2,
-            }
+            },
+            limit: 8
         })
 
-        .then(accesoriosPerro => {
-            return res.render('categoria.ejs', {accesoriosPerro, userALoguearse});
+        let accesoriosPerroInvisible = db.Producto.findAll({
+            include: [
+                {
+                    model: db.Categoria,
+                    as: 'categorias',
+                    where: {
+                        id: 2  /* id accesorio */
+                    }
+                },
+                {
+                    model: db.Descuento,
+                    as: 'descuentos',
+                }
+            ],
+            where: {
+                tipo_mascota_id: 2,
+                id: {[Op.gt]: 46}
+            }
+            
+        })
+
+        Promise.all([accesoriosPerroVisible, accesoriosPerroInvisible])
+            
+        .then(([accesoriosPerroVisible, accesoriosPerroInvisible]) => {
+            return res.render('categoria.ejs', {accesoriosPerroVisible, accesoriosPerroInvisible, userALoguearse});
         })
         .catch(error => {
             console.error('Error al recuperar productos', error);
@@ -331,7 +427,7 @@ const productController = {
                     model: db.Categoria,
                     as: 'categorias',
                     where: {
-                        id: 2
+                        id: 2  /* id accesorio */
                     }
                 },
                 {
@@ -356,13 +452,13 @@ const productController = {
 
         const userALoguearse = req.session.userLogueado
 
-        db.Producto.findAll({
+        let higienePerroVisible = db.Producto.findAll({
             include: [
                 {
                     model: db.Categoria,
                     as: 'categorias',
                     where: {
-                        id: 3
+                        id: 3  /* id higiene */
                     }
                 },
                 {
@@ -372,11 +468,35 @@ const productController = {
             ],
             where: {
                 tipo_mascota_id: 2,
-            }
+            },
+            limit: 8
         })
 
-        .then(higienePerro => {
-            return res.render('categoria.ejs', {higienePerro, userALoguearse});
+        let higienePerroInvisible = db.Producto.findAll({
+            include: [
+                {
+                    model: db.Categoria,
+                    as: 'categorias',
+                    where: {
+                        id: 3  /* id higiene */
+                    }
+                },
+                {
+                    model: db.Descuento,
+                    as: 'descuentos',
+                }
+            ],
+            where: {
+                tipo_mascota_id: 2,
+                id: {[Op.gt]: 67}
+            }
+            
+        })
+
+        Promise.all([higienePerroVisible, higienePerroInvisible])
+            
+        .then(([higienePerroVisible, higienePerroInvisible]) => {
+            return res.render('categoria.ejs', {higienePerroVisible, higienePerroInvisible, userALoguearse});
         })
         .catch(error => {
             console.error('Error al recuperar productos', error);
@@ -387,13 +507,13 @@ const productController = {
 
         const userALoguearse = req.session.userLogueado
 
-        db.Producto.findAll({
+        let higieneGatoVisible = db.Producto.findAll({
             include: [
                 {
                     model: db.Categoria,
                     as: 'categorias',
                     where: {
-                        id: 3
+                        id: 3  /* id higiene */
                     }
                 },
                 {
@@ -403,11 +523,35 @@ const productController = {
             ],
             where: {
                 tipo_mascota_id: 1,
-            }
+            },
+            limit: 8
         })
 
-        .then(higieneGato => {
-            return res.render('categoria.ejs', {higieneGato, userALoguearse});
+        let higieneGatoInvisible = db.Producto.findAll({
+            include: [
+                {
+                    model: db.Categoria,
+                    as: 'categorias',
+                    where: {
+                        id: 3  /* id higiene */
+                    }
+                },
+                {
+                    model: db.Descuento,
+                    as: 'descuentos',
+                }
+            ],
+            where: {
+                tipo_mascota_id: 1,
+                id: {[Op.gt]: 26}
+            }
+            
+        })
+
+        Promise.all([higieneGatoVisible, higieneGatoInvisible])
+            
+        .then(([higieneGatoVisible, higieneGatoInvisible]) => {
+            return res.render('categoria.ejs', {higieneGatoVisible, higieneGatoInvisible, userALoguearse});
         })
         .catch(error => {
             console.error('Error al recuperar productos', error);
@@ -418,13 +562,13 @@ const productController = {
 
         const userALoguearse = req.session.userLogueado
 
-        db.Producto.findAll({
+        let juguetesPerroVisible = db.Producto.findAll({
             include: [
                 {
                     model: db.Categoria,
                     as: 'categorias',
                     where: {
-                        id: 4
+                        id: 4  /* id juguete */
                     }
                 },
                 {
@@ -434,11 +578,35 @@ const productController = {
             ],
             where: {
                 tipo_mascota_id: 2,
-            }
+            },
+            limit: 8
         })
 
-        .then(juguetesPerro => {
-            return res.render('categoria.ejs', {juguetesPerro, userALoguearse});
+        let juguetesPerroInvisible = db.Producto.findAll({
+            include: [
+                {
+                    model: db.Categoria,
+                    as: 'categorias',
+                    where: {
+                        id: 4  /* id juguete */
+                    }
+                },
+                {
+                    model: db.Descuento,
+                    as: 'descuentos',
+                }
+            ],
+            where: {
+                tipo_mascota_id: 2,
+                id: {[Op.gt]: 76}
+            }
+            
+        })
+
+        Promise.all([juguetesPerroVisible, juguetesPerroInvisible])
+            
+        .then(([juguetesPerroVisible, juguetesPerroInvisible]) => {
+            return res.render('categoria.ejs', {juguetesPerroVisible, juguetesPerroInvisible, userALoguearse});
         })
         .catch(error => {
             console.error('Error al recuperar productos', error);
@@ -449,13 +617,13 @@ const productController = {
 
         const userALoguearse = req.session.userLogueado
 
-        db.Producto.findAll({
+        let juguetesGatoVisible = db.Producto.findAll({
             include: [
                 {
                     model: db.Categoria,
                     as: 'categorias',
                     where: {
-                        id: 4
+                        id: 4  /* id juguete */
                     }
                 },
                 {
@@ -465,11 +633,35 @@ const productController = {
             ],
             where: {
                 tipo_mascota_id: 1,
-            }
+            },
+            limit: 8
         })
 
-        .then(juguetesGato => {
-            return res.render('categoria.ejs', {juguetesGato, userALoguearse});
+        let juguetesGatoInvisible = db.Producto.findAll({
+            include: [
+                {
+                    model: db.Categoria,
+                    as: 'categorias',
+                    where: {
+                        id: 4  /* id juguete */
+                    }
+                },
+                {
+                    model: db.Descuento,
+                    as: 'descuentos',
+                }
+            ],
+            where: {
+                tipo_mascota_id: 1,
+                id: {[Op.gt]: 37}
+            }
+            
+        })
+
+        Promise.all([juguetesGatoVisible, juguetesGatoInvisible])
+            
+        .then(([juguetesGatoVisible, juguetesGatoInvisible]) => {
+            return res.render('categoria.ejs', {juguetesGatoVisible, juguetesGatoInvisible, userALoguearse});
         })
         .catch(error => {
             console.error('Error al recuperar productos', error);
