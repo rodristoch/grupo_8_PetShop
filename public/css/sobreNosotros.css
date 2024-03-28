@@ -4,20 +4,36 @@ body {
     padding: 0;
 }
 
+
+
 .container {
     max-width: 800px;
     margin: 0 auto;
     padding: 20px;
+    display: flex;
 }
 
-/* header {
-    text-align: center;
-    margin-bottom: 30px;
+.banner-AU {
+    width: 100vw; /* Establecer el ancho máximo al 25% */
+    max-width: 500px; /* Establecer un ancho máximo para evitar que la imagen sea demasiado grande */
+    margin-left: -90px;
+    margin-top: -20px;
+    margin-bottom: 0px;
 }
- */
+
+.banner-AU img {
+    width: 120%; /* Asegurarse de que la imagen llene completamente el contenedor */
+    height: 100%; /* Mantener la proporción de aspecto */
+}
+
+.texto {
+    margin-left: 20px;
+}
+
 h1 {
     color: #333;
     font-size: 37px;
+    text-align: center;
 }
 
 .about-us p {
