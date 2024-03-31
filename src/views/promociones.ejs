@@ -74,26 +74,10 @@
                         <section class="lista_filtros_desktop">
                             <h4>Promociones</h4>
                             <div class="flex_enlinea_menu">
-                                <p>Promociones para perro</p><input type="checkbox">
+                                <p>Promociones para perro</p><input type="checkbox" id="promo1">
                             </div>
                             <div class="flex_enlinea_menu">
-                                <p>Promociones para gato</p><input type="checkbox">
-                            </div>
-                        </section>
-    
-                        <section class="lista_filtros_desktop">
-                            <h4>Precio</h4>
-                            <div class="flex_enlinea_menu">
-                                <p>0 a 100</p><input type="checkbox">
-                            </div>
-                            <div class="flex_enlinea_menu">
-                                <p>100 a 200</p><input type="checkbox">
-                            </div>
-                            <div class="flex_enlinea_menu">
-                                <p>200 a 300</p><input type="checkbox">
-                            </div>
-                            <div class="flex_enlinea_menu">
-                                <p>Más de 400</p><input type="checkbox">
+                                <p>Promociones para gato</p><input type="checkbox" id="promo2">
                             </div>
                         </section>
                     </div>
@@ -103,8 +87,8 @@
              <!-- Lista productos productos-->
              <div class="lista_desktop">
                 <div>
-                    <h2 style="margin-left: 2%; margin-top: 2.5%;">Promociones Perro</h2>
-                    <div class="lista_flexbox_desktop">
+                    <h2 id="tit-promoPerro" style="margin-left: 2%; margin-top: 2.5%;">Promociones Perro</h2>
+                    <div class="lista_flexbox_desktop---contenedorPromoPerro">
                         <% for(let producto of productosPerroConDescuento) { %>
                             <article class="articulo-productos-descuentos">
                                 <div class="contenedor_imagen">
@@ -178,12 +162,12 @@
                                     
                         <% } %>
                     </div>
-                    <h3><a href="/productos/perro/promociones" style="color: #18515F; margin-left: 2.5%;">Ver todos</a></h3>
+                    <h3 id="tit-promoPerro2"><a href="/productos/perro/promociones" style="color: #18515F; margin-left: 2.5%;">Ver todos</a></h3>
                 <div>
 
                 <div>
-                    <h2 style="margin-left: 2%; margin-top: 2.5%;">Promociones Gato</h2>
-                    <div class="lista_flexbox_desktop">
+                    <h2 id="tit-promoGato" style="margin-left: 2%; margin-top: 2.5%;">Promociones Gato</h2>
+                    <div class="lista_flexbox_desktop---contenedorPromoGato">
                         <% for(let producto of productosGatoConDescuento) { %>
                             <article class="articulo-productos-descuentos">
                                 <div class="contenedor_imagen">
@@ -257,7 +241,7 @@
                                         
                         <% } %>
                     </div>
-                    <h3><a href="/productos/gato/promociones" style="color: #18515F; margin-left: 2.5%;">Ver todos</a></h3>
+                    <h3 id="tit-promoGato2"><a href="/productos/gato/promociones" style="color: #18515F; margin-left: 2.5%;">Ver todos</a></h3>
                 <div>
             </div>
 
@@ -265,6 +249,8 @@
     </main>
 
     <%- include("./partials/footer.ejs") %>
+
+    <script src="/js/checksboxesPromo.js"></script>
 
 </body>
 </html>

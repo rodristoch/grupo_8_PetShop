@@ -53,14 +53,14 @@ const productController = {
             where: {
                 tipo_mascota_id: 2,
             },
-            limit: 8
+            limit: 4
         })
 
         let perroInvisible = db.Producto.findAll({
             include: ["descuentos", "categorias"],
             where: {
                 tipo_mascota_id: 2,
-                id: {[Op.gt]: 46}
+                id: {[Op.gt]: 42}
             },
         })
 
@@ -132,10 +132,74 @@ const productController = {
             }
         })
 
-        Promise.all([perroVisible, perroInvisible, checkboxComidaPerro, checkboxAccesorioPerro, checkboxHigienePerro, checkboxJuguetePerro])
+        let de0a10 = db.Producto.findAll({
+            include: [{
+                model: db.Categoria,
+                as: 'categorias',
+            },
+            {
+                model: db.Descuento,
+                as: 'descuentos',
+            }],
+            where: {
+                tipo_mascota_id: 2,
+                precio: {[Op.lte]: 10}  /* Less than or equal to */
+            },
+            order: [['precio', 'asc']],
+        })
 
-        .then(([perroVisible, perroInvisible, checkboxComidaPerro, checkboxAccesorioPerro, checkboxHigienePerro, checkboxJuguetePerro]) => {
-            res.render('categoria.ejs', {perroVisible, perroInvisible, checkboxComidaPerro, checkboxAccesorioPerro, checkboxHigienePerro, checkboxJuguetePerro, userALoguearse});
+        let de10a20 = db.Producto.findAll({
+            include: [{
+                model: db.Categoria,
+                as: 'categorias',
+            },
+            {
+                model: db.Descuento,
+                as: 'descuentos',
+            }],
+            where: {
+                tipo_mascota_id: 2,
+                precio: {[Op.between]: [11, 20]}, /* between */
+            },
+            order: [['precio', 'asc']],
+        })
+
+        let de20a30 = db.Producto.findAll({
+            include: [{
+                model: db.Categoria,
+                as: 'categorias',
+            },
+            {
+                model: db.Descuento,
+                as: 'descuentos',
+            }],
+            where: {
+                tipo_mascota_id: 2,
+                precio: {[Op.between]: [21, 30]}, /* between */
+            },
+            order: [['precio', 'asc']],
+        })
+
+        let de30aX = db.Producto.findAll({
+            include: [{
+                model: db.Categoria,
+                as: 'categorias',
+            },
+            {
+                model: db.Descuento,
+                as: 'descuentos',
+            }],
+            where: {
+                tipo_mascota_id: 2,
+                precio: {[Op.gt]: 30}, /* Greater than */
+            },
+            order: [['precio', 'asc']],
+        })
+
+        Promise.all([perroVisible, perroInvisible, checkboxComidaPerro, checkboxAccesorioPerro, checkboxHigienePerro, checkboxJuguetePerro, de0a10, de10a20, de20a30, de30aX])
+
+        .then(([perroVisible, perroInvisible, checkboxComidaPerro, checkboxAccesorioPerro, checkboxHigienePerro, checkboxJuguetePerro, de0a10, de10a20, de20a30, de30aX]) => {
+            res.render('perro.ejs', {perroVisible, perroInvisible, checkboxComidaPerro, checkboxAccesorioPerro, checkboxHigienePerro, checkboxJuguetePerro, de0a10, de10a20, de20a30, de30aX, userALoguearse});
         })
         .catch(function (error){
             console.error('Error al recuperar productos', error);
@@ -153,21 +217,153 @@ const productController = {
             where: {
                 tipo_mascota_id: 1,
             },
-            limit: 8
+            limit: 4
         })
 
         let gatoInvisible = db.Producto.findAll({
             include: ["descuentos", "categorias"],
             where: {
                 tipo_mascota_id: 1,
-                id: {[Op.gt]: 8}
+                id: {[Op.gt]: 4}
             },
         })
 
-        Promise.all([gatoVisible, gatoInvisible])
+        let checkboxComidaGato = db.Producto.findAll({
+            include: [{
+                model: db.Categoria,
+                as: 'categorias',
+                where: {
+                    id: 1   /* id comida */
+                }
+            },
+            {
+                model: db.Descuento,
+                as: 'descuentos',
+            }],
+            where: {
+                tipo_mascota_id: 1,
+            }
+        })
 
-        .then(([gatoVisible, gatoInvisible]) => {
-            res.render('categoria.ejs', {gatoVisible, gatoInvisible, userALoguearse});
+        let checkboxAccesorioGato = db.Producto.findAll({
+            include: [{
+                model: db.Categoria,
+                as: 'categorias',
+                where: {
+                    id: 2   /* id accesorio */
+                }
+            },
+            {
+                model: db.Descuento,
+                as: 'descuentos',
+            }],
+            where: {
+                tipo_mascota_id: 1,
+            }
+        })
+
+        let checkboxHigieneGato = db.Producto.findAll({
+            include: [{
+                model: db.Categoria,
+                as: 'categorias',
+                where: {
+                    id: 3   /* id higiene */
+                }
+            },
+            {
+                model: db.Descuento,
+                as: 'descuentos',
+            }],
+            where: {
+                tipo_mascota_id: 1,
+            }
+        })
+
+        let checkboxJugueteGato = db.Producto.findAll({
+            include: [{
+                model: db.Categoria,
+                as: 'categorias',
+                where: {
+                    id: 4   /* id juguete */
+                }
+            },
+            {
+                model: db.Descuento,
+                as: 'descuentos',
+            }],
+            where: {
+                tipo_mascota_id: 1,
+            }
+        })
+
+        let de0a10 = db.Producto.findAll({
+            include: [{
+                model: db.Categoria,
+                as: 'categorias',
+            },
+            {
+                model: db.Descuento,
+                as: 'descuentos',
+            }],
+            where: {
+                tipo_mascota_id: 1,
+                precio: {[Op.lte]: 10}  /* Less than or equal to */
+            },
+            order: [['precio', 'asc']],
+        })
+
+        let de10a20 = db.Producto.findAll({
+            include: [{
+                model: db.Categoria,
+                as: 'categorias',
+            },
+            {
+                model: db.Descuento,
+                as: 'descuentos',
+            }],
+            where: {
+                tipo_mascota_id: 1,
+                precio: {[Op.between]: [11, 20]}, /* between */
+            },
+            order: [['precio', 'asc']],
+        })
+
+        let de20a30 = db.Producto.findAll({
+            include: [{
+                model: db.Categoria,
+                as: 'categorias',
+            },
+            {
+                model: db.Descuento,
+                as: 'descuentos',
+            }],
+            where: {
+                tipo_mascota_id: 1,
+                precio: {[Op.between]: [21, 30]}, /* between */
+            },
+            order: [['precio', 'asc']],
+        })
+
+        let de30aX = db.Producto.findAll({
+            include: [{
+                model: db.Categoria,
+                as: 'categorias',
+            },
+            {
+                model: db.Descuento,
+                as: 'descuentos',
+            }],
+            where: {
+                tipo_mascota_id: 1,
+                precio: {[Op.gt]: 30}, /* Greater than */
+            },
+            order: [['precio', 'asc']],
+        })
+
+        Promise.all([gatoVisible, gatoInvisible, checkboxComidaGato, checkboxAccesorioGato, checkboxHigieneGato, checkboxJugueteGato, de0a10, de10a20, de20a30, de30aX])
+
+        .then(([gatoVisible, gatoInvisible, checkboxComidaGato, checkboxAccesorioGato, checkboxHigieneGato, checkboxJugueteGato, de0a10, de10a20, de20a30, de30aX]) => {
+            res.render('gato.ejs', {gatoVisible, gatoInvisible, checkboxComidaGato, checkboxAccesorioGato, checkboxHigieneGato, checkboxJugueteGato, de0a10, de10a20, de20a30, de30aX, userALoguearse});
         })
         .catch(function (error){
             console.error('Error al recuperar productos', error);
@@ -236,28 +432,123 @@ const productController = {
         const userALoguearse = req.session.userLogueado
 
         //Productos con descuento de perro
-        db.Producto.findAll({
-            include: [
-                {
-                    model: db.Descuento,
-                    as: 'descuentos',
-                    where: {
-                        id: 2 // ID descuento de SQL
-                    }
-                },
-                {
-                    model: db.Categoria,
-                    as: 'categorias',
-                },
-            ],
+        let promocionesPerroVisible = db.Producto.findAll({
+            include: [{
+                model: db.Descuento,
+                as: 'descuentos',
+                where: {
+                    id: 2 // ID descuento de SQL
+                }
+            },
+            {
+                model: db.Categoria,
+                as: 'categorias',
+            }],
             where: {
                 tipo_mascota_id: 2,  // ID de perro de SQL
+            },
+            limit: 4
+        })
+
+        let promocionesPerroInvisible = db.Producto.findAll({
+            include: [{
+                model: db.Descuento,
+                as: 'descuentos',
+                where: {
+                    id: 2 // ID descuento de SQL
+                }
+            },
+            {
+                model: db.Categoria,
+                as: 'categorias',
+            }],
+            where: {
+                tipo_mascota_id: 2,  // ID de perro de SQL
+                id: {[Op.gt]: 52}
             }
         })
+
+        let de0a10 = db.Producto.findAll({
+            include: [{
+                model: db.Categoria,
+                as: 'categorias',
+            },
+            {
+                model: db.Descuento,
+                as: 'descuentos',
+                where: {
+                    id: 2 // ID descuento de SQL
+                }
+            }],
+            where: {
+                tipo_mascota_id: 2,
+                precio: {[Op.lte]: 10}  /* Less than or equal to */
+            },
+            order: [['precio', 'asc']],
+        })
+
+        let de10a20 = db.Producto.findAll({
+            include: [{
+                model: db.Categoria,
+                as: 'categorias',
+            },
+            {
+                model: db.Descuento,
+                as: 'descuentos',
+                where: {
+                    id: 2 // ID descuento de SQL
+                }
+            }],
+            where: {
+                tipo_mascota_id: 2,
+                precio: {[Op.between]: [11, 20]}, /* between */
+            },
+            order: [['precio', 'asc']],
+        })
+
+        let de20a30 = db.Producto.findAll({
+            include: [{
+                model: db.Categoria,
+                as: 'categorias',
+            },
+            {
+                model: db.Descuento,
+                as: 'descuentos',
+                where: {
+                    id: 2 // ID descuento de SQL
+                }
+            }],
+            where: {
+                tipo_mascota_id: 2,
+                precio: {[Op.between]: [21, 30]}, /* between */
+            },
+            order: [['precio', 'asc']],
+        })
+
+        let de30aX = db.Producto.findAll({
+            include: [{
+                model: db.Categoria,
+                as: 'categorias',
+            },
+            {
+                model: db.Descuento,
+                as: 'descuentos',
+                where: {
+                    id: 2 // ID descuento de SQL
+                }
+            }],
+            where: {
+                tipo_mascota_id: 2,
+                precio: {[Op.gt]: 30}, /* Greater than */
+            },
+            order: [['precio', 'asc']],
+        })
+
+        Promise.all([promocionesPerroVisible, promocionesPerroInvisible, de0a10, de10a20, de20a30, de30aX])
             
-        .then(productosPerroConDescuento => {
+        .then(([promocionesPerroVisible, promocionesPerroInvisible, de0a10, de10a20, de20a30, de30aX]) => {
             /* res.send(productosPerroConDescuento) */
-                return res.render("promocionesTodas.ejs", {userALoguearse, productosPerroConDescuento})
+                return res.render("promocionesTodas.ejs", {promocionesPerroVisible, promocionesPerroInvisible, de0a10, de10a20, de20a30, de30aX, userALoguearse})
         })
         
     },
@@ -269,23 +560,21 @@ const productController = {
         const userALoguearse = req.session.userLogueado
 
         let promocionesGatoVisible = db.Producto.findAll({
-            include: [
-                {
-                    model: db.Descuento,
-                    as: 'descuentos',
-                    where: {
-                        id: 2 // ID descuento de SQL
-                    }
-                },
-                {
-                    model: db.Categoria,
-                    as: 'categorias',
-                },
-            ],
+            include: [{
+                model: db.Descuento,
+                as: 'descuentos',
+                where: {
+                    id: 2 // ID descuento de SQL
+                }
+            },
+            {
+                model: db.Categoria,
+                as: 'categorias',
+            }],       
             where: {
                 tipo_mascota_id: 1,  // ID de gato de SQL
             },
-            limit: 8
+            limit: 4
         })
 
         let promocionesGatoInvisible = db.Producto.findAll({
@@ -304,15 +593,91 @@ const productController = {
             ],
             where: {
                 tipo_mascota_id: 1,
-                id: {[Op.gt]: 27}
+                id: {[Op.gt]: 23}
             }
             
         })
 
-        Promise.all([promocionesGatoVisible, promocionesGatoInvisible])
-            
-        .then(([promocionesGatoVisible, promocionesGatoInvisible]) => {
-            return res.render("promocionesTodas.ejs", {promocionesGatoVisible, promocionesGatoInvisible, userALoguearse})
+        let de0a10 = db.Producto.findAll({
+            include: [{
+                model: db.Categoria,
+                as: 'categorias',
+            },
+            {
+                model: db.Descuento,
+                as: 'descuentos',
+                where: {
+                    id: 2 // ID descuento de SQL
+                }
+            }],
+            where: {
+                tipo_mascota_id: 1,
+                precio: {[Op.lte]: 10}  /* Less than or equal to */
+            },
+            order: [['precio', 'asc']],
+        })
+
+        let de10a20 = db.Producto.findAll({
+            include: [{
+                model: db.Categoria,
+                as: 'categorias',
+            },
+            {
+                model: db.Descuento,
+                as: 'descuentos',
+                where: {
+                    id: 2 // ID descuento de SQL
+                }
+            }],
+            where: {
+                tipo_mascota_id: 1,
+                precio: {[Op.between]: [11, 20]}, /* between */
+            },
+            order: [['precio', 'asc']],
+        })
+
+        let de20a30 = db.Producto.findAll({
+            include: [{
+                model: db.Categoria,
+                as: 'categorias',
+            },
+            {
+                model: db.Descuento,
+                as: 'descuentos',
+                where: {
+                    id: 2 // ID descuento de SQL
+                }
+            }],
+            where: {
+                tipo_mascota_id: 1,
+                precio: {[Op.between]: [21, 30]}, /* between */
+            },
+            order: [['precio', 'asc']],
+        })
+
+        let de30aX = db.Producto.findAll({
+            include: [{
+                model: db.Categoria,
+                as: 'categorias',
+            },
+            {
+                model: db.Descuento,
+                as: 'descuentos',
+                where: {
+                    id: 2 // ID descuento de SQL
+                }
+            }],
+            where: {
+                tipo_mascota_id: 1,
+                precio: {[Op.gt]: 30}, /* Greater than */
+            },
+            order: [['precio', 'asc']],
+        })
+
+        Promise.all([promocionesGatoVisible, promocionesGatoInvisible, de0a10, de10a20, de20a30, de30aX])
+   
+        .then(([promocionesGatoVisible, promocionesGatoInvisible, de0a10, de10a20, de20a30, de30aX]) => {
+            return res.render("promocionesTodas.ejs", {promocionesGatoVisible, promocionesGatoInvisible, de0a10, de10a20, de20a30, de30aX, userALoguearse})
         })
 
     },
@@ -322,50 +687,122 @@ const productController = {
         const userALoguearse = req.session.userLogueado
 
         let comidaPerroVisible = db.Producto.findAll({
-            include: [
-                {
-                    model: db.Categoria,
-                    as: 'categorias',
-                    where: {
-                        id: 1   /* id comida */
-                    }
-                },
-                {
-                    model: db.Descuento,
-                    as: 'descuentos',
-                }
-            ],
+            include: [{
+                model: db.Categoria,
+                as: 'categorias',
+                where: {
+                    id: 1   /* id comida */
+                }  
+            },
+            {
+                model: db.Descuento,
+                as: 'descuentos',
+            }],
             where: {
                 tipo_mascota_id: 2,
             },
-            limit: 8
+            limit: 4
+        
         })
 
         let comidaPerroInvisible = db.Producto.findAll({
-            include: [
-                {
-                    model: db.Categoria,
-                    as: 'categorias',
-                    where: {
-                        id: 1   /* id comida */
-                    }
-                },
-                {
-                    model: db.Descuento,
-                    as: 'descuentos',
+            include: [{
+                model: db.Categoria,
+                as: 'categorias',
+                where: {
+                    id: 1   /* id comida */
                 }
-            ],
+            },
+            {
+                model: db.Descuento,
+                as: 'descuentos',
+            }],
             where: {
                 tipo_mascota_id: 2,
-                id: {[Op.gt]: 56}
+                id: {[Op.gt]: 52}
             }
-            
         })
 
-        Promise.all([comidaPerroVisible, comidaPerroInvisible])
+        let de0a10 = db.Producto.findAll({
+            include: [{
+                model: db.Categoria,
+                as: 'categorias',
+                where: {
+                    id: 1   /* id comida */
+                }  
+            },
+            {
+                model: db.Descuento,
+                as: 'descuentos',
+            }],
+            where: {
+                tipo_mascota_id: 2,
+                precio: {[Op.lte]: 10}  /* Less than or equal to */
+            },
+            order: [['precio', 'asc']],
+        })
+
+        let de10a20 = db.Producto.findAll({
+            include: [{
+                model: db.Categoria,
+                as: 'categorias',
+                where: {
+                    id: 1   /* id comida */
+                }  
+            },
+            {
+                model: db.Descuento,
+                as: 'descuentos',
+            }],
+            where: {
+                tipo_mascota_id: 2,
+                precio: {[Op.between]: [11, 20]}, /* between */
+            },
+            order: [['precio', 'asc']],
+        })
+
+        let de20a30 = db.Producto.findAll({
+            include: [{
+                model: db.Categoria,
+                as: 'categorias',
+                where: {
+                    id: 1   /* id comida */
+                }  
+            },
+            {
+                model: db.Descuento,
+                as: 'descuentos',
+            }],
+            where: {
+                tipo_mascota_id: 2,
+                precio: {[Op.between]: [21, 30]}, /* between */
+            },
+            order: [['precio', 'asc']],
+        })
+
+        let de30aX = db.Producto.findAll({
+            include: [{
+                model: db.Categoria,
+                as: 'categorias',
+                where: {
+                    id: 1   /* id comida */
+                }  
+            },
+            {
+                model: db.Descuento,
+                as: 'descuentos',
+            }],
+            where: {
+                tipo_mascota_id: 2,
+                precio: {[Op.gt]: 30}, /* Greater than */
+            },
+            order: [['precio', 'asc']],
+        })
+
+        Promise.all([comidaPerroVisible, comidaPerroInvisible, de0a10, de10a20, de20a30, de30aX])
             
-        .then(([comidaPerroVisible, comidaPerroInvisible]) => {
-            return res.render('categoria.ejs', {comidaPerroVisible, comidaPerroInvisible, userALoguearse});
+        .then(([comidaPerroVisible, comidaPerroInvisible, de0a10, de10a20, de20a30, de30aX]) => {
+            return res.render('perro.ejs', {comidaPerroVisible, comidaPerroInvisible, de0a10, de10a20, de20a30, de30aX, userALoguearse});
         })
         .catch(error => {
             console.error('Error al recuperar productos', error);
@@ -379,50 +816,122 @@ const productController = {
         const userALoguearse = req.session.userLogueado
 
         let comidaGatoVisible = db.Producto.findAll({
-            include: [
-                {
-                    model: db.Categoria,
-                    as: 'categorias',
-                    where: {
-                        id: 1   /* id comida */
-                    }
-                },
-                {
-                    model: db.Descuento,
-                    as: 'descuentos',
-                }
-            ],
+            include: [{
+                model: db.Categoria,
+                as: 'categorias',
+                where: {
+                    id: 1   /* id comida */
+                }  
+            },
+            {
+                model: db.Descuento,
+                as: 'descuentos',
+            }],
             where: {
                 tipo_mascota_id: 1,
             },
-            limit: 8
+            limit: 4
         })
 
         let comidaGatoInvisible = db.Producto.findAll({
-            include: [
-                {
-                    model: db.Categoria,
-                    as: 'categorias',
-                    where: {
-                        id: 1   /* id comida */
-                    }
-                },
-                {
-                    model: db.Descuento,
-                    as: 'descuentos',
-                }
-            ],
+            include: [{
+                model: db.Categoria,
+                as: 'categorias',
+                where: {
+                    id: 1   /* id comida */
+                }  
+            },
+            {
+                model: db.Descuento,
+                as: 'descuentos',
+            }],
             where: {
                 tipo_mascota_id: 1,
-                id: {[Op.gt]: 16}
+                id: {[Op.gt]: 12}
             }
             
         })
 
-        Promise.all([comidaGatoVisible, comidaGatoInvisible])
+        let de0a10 = db.Producto.findAll({
+            include: [{
+                model: db.Categoria,
+                as: 'categorias',
+                where: {
+                    id: 1   /* id comida */
+                }  
+            },
+            {
+                model: db.Descuento,
+                as: 'descuentos',
+            }],
+            where: {
+                tipo_mascota_id: 1,
+                precio: {[Op.lte]: 10}  /* Less than or equal to */
+            },
+            order: [['precio', 'asc']],
+        })
+
+        let de10a20 = db.Producto.findAll({
+            include: [{
+                model: db.Categoria,
+                as: 'categorias',
+                where: {
+                    id: 1   /* id comida */
+                }  
+            },
+            {
+                model: db.Descuento,
+                as: 'descuentos',
+            }],
+            where: {
+                tipo_mascota_id: 1,
+                precio: {[Op.between]: [11, 20]}, /* between */
+            },
+            order: [['precio', 'asc']],
+        })
+
+        let de20a30 = db.Producto.findAll({
+            include: [{
+                model: db.Categoria,
+                as: 'categorias',
+                where: {
+                    id: 1   /* id comida */
+                }  
+            },
+            {
+                model: db.Descuento,
+                as: 'descuentos',
+            }],
+            where: {
+                tipo_mascota_id: 1,
+                precio: {[Op.between]: [21, 30]}, /* between */
+            },
+            order: [['precio', 'asc']],
+        })
+
+        let de30aX = db.Producto.findAll({
+            include: [{
+                model: db.Categoria,
+                as: 'categorias',
+                where: {
+                    id: 1   /* id comida */
+                }  
+            },
+            {
+                model: db.Descuento,
+                as: 'descuentos',
+            }],
+            where: {
+                tipo_mascota_id: 1,
+                precio: {[Op.gt]: 30}, /* Greater than */
+            },
+            order: [['precio', 'asc']],
+        })
+
+        Promise.all([comidaGatoVisible, comidaGatoInvisible, de0a10, de10a20, de20a30, de30aX])
             
-        .then(([comidaGatoVisible, comidaGatoInvisible]) => {
-            return res.render('categoria.ejs', {comidaGatoVisible, comidaGatoInvisible, userALoguearse});
+        .then(([comidaGatoVisible, comidaGatoInvisible, de0a10, de10a20, de20a30, de30aX]) => {
+            return res.render('gato.ejs', {comidaGatoVisible, comidaGatoInvisible, de0a10, de10a20, de20a30, de30aX, userALoguearse});
         })
         .catch(error => {
             console.error('Error al recuperar productos', error);
@@ -435,50 +944,121 @@ const productController = {
         const userALoguearse = req.session.userLogueado
 
         let accesoriosPerroVisible = db.Producto.findAll({
-            include: [
-                {
-                    model: db.Categoria,
-                    as: 'categorias',
-                    where: {
-                        id: 2  /* id accesorio */
-                    }
-                },
-                {
-                    model: db.Descuento,
-                    as: 'descuentos',
+            include: [{
+                model: db.Categoria,
+                as: 'categorias',
+                where: {
+                    id: 2  /* id accesorio */
                 }
-            ],
+            },
+            {
+                model: db.Descuento,
+                as: 'descuentos',
+            }],
             where: {
                 tipo_mascota_id: 2,
             },
-            limit: 8
+            limit: 4
         })
 
         let accesoriosPerroInvisible = db.Producto.findAll({
-            include: [
-                {
-                    model: db.Categoria,
-                    as: 'categorias',
-                    where: {
-                        id: 2  /* id accesorio */
-                    }
-                },
-                {
-                    model: db.Descuento,
-                    as: 'descuentos',
+            include: [{
+                model: db.Categoria,
+                as: 'categorias',
+                where: {
+                    id: 2  /* id accesorio */
                 }
-            ],
+            },
+            {
+                model: db.Descuento,
+                as: 'descuentos',
+            }],
             where: {
                 tipo_mascota_id: 2,
-                id: {[Op.gt]: 46}
+                id: {[Op.gt]: 42}
             }
-            
         })
 
-        Promise.all([accesoriosPerroVisible, accesoriosPerroInvisible])
+        let de0a10 = db.Producto.findAll({
+            include: [{
+                model: db.Categoria,
+                as: 'categorias',
+                where: {
+                    id: 2   /* id accesorio */
+                }  
+            },
+            {
+                model: db.Descuento,
+                as: 'descuentos',
+            }],
+            where: {
+                tipo_mascota_id: 2,
+                precio: {[Op.lte]: 10}  /* Less than or equal to */
+            },
+            order: [['precio', 'asc']],
+        })
+
+        let de10a20 = db.Producto.findAll({
+            include: [{
+                model: db.Categoria,
+                as: 'categorias',
+                where: {
+                    id: 2   /* id accesorio */
+                }  
+            },
+            {
+                model: db.Descuento,
+                as: 'descuentos',
+            }],
+            where: {
+                tipo_mascota_id: 2,
+                precio: {[Op.between]: [11, 20]}, /* between */
+            },
+            order: [['precio', 'asc']],
+        })
+
+        let de20a30 = db.Producto.findAll({
+            include: [{
+                model: db.Categoria,
+                as: 'categorias',
+                where: {
+                    id: 2   /* id accesorio */
+                }  
+            },
+            {
+                model: db.Descuento,
+                as: 'descuentos',
+            }],
+            where: {
+                tipo_mascota_id: 2,
+                precio: {[Op.between]: [21, 30]}, /* between */
+            },
+            order: [['precio', 'asc']],
+        })
+
+        let de30aX = db.Producto.findAll({
+            include: [{
+                model: db.Categoria,
+                as: 'categorias',
+                where: {
+                    id: 2   /* id accesorio */
+                }  
+            },
+            {
+                model: db.Descuento,
+                as: 'descuentos',
+            }],
+            where: {
+                tipo_mascota_id: 2,
+                precio: {[Op.gt]: 30}, /* Greater than */
+            },
+            order: [['precio', 'asc']],
+        })
+
+        Promise.all([accesoriosPerroVisible, accesoriosPerroInvisible, de0a10, de10a20, de20a30, de30aX])
             
-        .then(([accesoriosPerroVisible, accesoriosPerroInvisible]) => {
-            return res.render('categoria.ejs', {accesoriosPerroVisible, accesoriosPerroInvisible, userALoguearse});
+        .then(([accesoriosPerroVisible, accesoriosPerroInvisible, de0a10, de10a20, de20a30, de30aX]) => {
+            return res.render('perro.ejs', {accesoriosPerroVisible, accesoriosPerroInvisible, de0a10, de10a20, de20a30, de30aX, userALoguearse});
         })
         .catch(error => {
             console.error('Error al recuperar productos', error);
@@ -489,27 +1069,122 @@ const productController = {
 
         const userALoguearse = req.session.userLogueado
 
-        db.Producto.findAll({
-            include: [
-                {
-                    model: db.Categoria,
-                    as: 'categorias',
-                    where: {
-                        id: 2  /* id accesorio */
-                    }
-                },
-                {
-                    model: db.Descuento,
-                    as: 'descuentos',
+        let accesoriosGatoVisible = db.Producto.findAll({
+            include: [{
+                model: db.Categoria,
+                as: 'categorias',
+                where: {
+                    id: 2  /* id accesorio */
                 }
-            ],
+            },
+            {
+                model: db.Descuento,
+                as: 'descuentos',    
+            }],
             where: {
                 tipo_mascota_id: 1,
-            }
+            },
+            limit: 4
         })
 
-        .then(accesoriosGato => {
-            return res.render('categoria.ejs', {accesoriosGato, userALoguearse});
+        let accesoriosGatoInvisible = db.Producto.findAll({
+            include: [{
+                model: db.Categoria,
+                as: 'categorias',
+                where: {
+                    id: 2  /* id accesorio */
+                }
+            },
+            {
+                model: db.Descuento,
+                as: 'descuentos',    
+            }],
+            where: {
+                tipo_mascota_id: 1,
+                id: {[Op.gt]: 4}
+            },
+        })
+
+        let de0a10 = db.Producto.findAll({
+            include: [{
+                model: db.Categoria,
+                as: 'categorias',
+                where: {
+                    id: 2   /* id accesorio */
+                }  
+            },
+            {
+                model: db.Descuento,
+                as: 'descuentos',
+            }],
+            where: {
+                tipo_mascota_id: 1,
+                precio: {[Op.lte]: 10}  /* Less than or equal to */
+            },
+            order: [['precio', 'asc']],
+        })
+
+        let de10a20 = db.Producto.findAll({
+            include: [{
+                model: db.Categoria,
+                as: 'categorias',
+                where: {
+                    id: 2   /* id accesorio */
+                }  
+            },
+            {
+                model: db.Descuento,
+                as: 'descuentos',
+            }],
+            where: {
+                tipo_mascota_id: 1,
+                precio: {[Op.between]: [11, 20]}, /* between */
+            },
+            order: [['precio', 'asc']],
+        })
+
+        let de20a30 = db.Producto.findAll({
+            include: [{
+                model: db.Categoria,
+                as: 'categorias',
+                where: {
+                    id: 2   /* id accesorio */
+                }  
+            },
+            {
+                model: db.Descuento,
+                as: 'descuentos',
+            }],
+            where: {
+                tipo_mascota_id: 1,
+                precio: {[Op.between]: [21, 30]}, /* between */
+            },
+            order: [['precio', 'asc']],
+        })
+
+        let de30aX = db.Producto.findAll({
+            include: [{
+                model: db.Categoria,
+                as: 'categorias',
+                where: {
+                    id: 2   /* id accesorio */
+                }  
+            },
+            {
+                model: db.Descuento,
+                as: 'descuentos',
+            }],
+            where: {
+                tipo_mascota_id: 1,
+                precio: {[Op.gt]: 30}, /* Greater than */
+            },
+            order: [['precio', 'asc']],
+        })
+
+        Promise.all([accesoriosGatoVisible, accesoriosGatoInvisible, de0a10, de10a20, de20a30, de30aX])
+
+        .then(([accesoriosGatoVisible, accesoriosGatoInvisible, de0a10, de10a20, de20a30, de30aX]) => {
+            return res.render('gato.ejs', {accesoriosGatoVisible, accesoriosGatoInvisible, de0a10, de10a20, de20a30, de30aX, userALoguearse});
         })
         .catch(function (error){
             console.error('Error al recuperar productos', error);
@@ -521,50 +1196,121 @@ const productController = {
         const userALoguearse = req.session.userLogueado
 
         let higienePerroVisible = db.Producto.findAll({
-            include: [
-                {
-                    model: db.Categoria,
-                    as: 'categorias',
-                    where: {
-                        id: 3  /* id higiene */
-                    }
-                },
-                {
-                    model: db.Descuento,
-                    as: 'descuentos',
+            include: [{
+                model: db.Categoria,
+                as: 'categorias',
+                where: {
+                    id: 3  /* id higiene */
                 }
-            ],
+            },
+            {
+                model: db.Descuento,
+                as: 'descuentos',
+            }],
             where: {
                 tipo_mascota_id: 2,
             },
-            limit: 8
+            limit: 4
         })
 
         let higienePerroInvisible = db.Producto.findAll({
-            include: [
-                {
-                    model: db.Categoria,
-                    as: 'categorias',
-                    where: {
-                        id: 3  /* id higiene */
-                    }
-                },
-                {
-                    model: db.Descuento,
-                    as: 'descuentos',
+            include: [{
+                model: db.Categoria,
+                as: 'categorias',
+                where: {
+                    id: 3  /* id higiene */
                 }
-            ],
+            },
+            {
+                model: db.Descuento,
+                as: 'descuentos',
+            }],
             where: {
                 tipo_mascota_id: 2,
-                id: {[Op.gt]: 67}
+                id: {[Op.gt]: 63}
             }
-            
         })
 
-        Promise.all([higienePerroVisible, higienePerroInvisible])
+        let de0a10 = db.Producto.findAll({
+            include: [{
+                model: db.Categoria,
+                as: 'categorias',
+                where: {
+                    id: 3   /* id higiene */
+                }  
+            },
+            {
+                model: db.Descuento,
+                as: 'descuentos',
+            }],
+            where: {
+                tipo_mascota_id: 2,
+                precio: {[Op.lte]: 10}  /* Less than or equal to */
+            },
+            order: [['precio', 'asc']],
+        })
+
+        let de10a20 = db.Producto.findAll({
+            include: [{
+                model: db.Categoria,
+                as: 'categorias',
+                where: {
+                    id: 3   /* id higiene */
+                }  
+            },
+            {
+                model: db.Descuento,
+                as: 'descuentos',
+            }],
+            where: {
+                tipo_mascota_id: 2,
+                precio: {[Op.between]: [11, 20]}, /* between */
+            },
+            order: [['precio', 'asc']],
+        })
+
+        let de20a30 = db.Producto.findAll({
+            include: [{
+                model: db.Categoria,
+                as: 'categorias',
+                where: {
+                    id: 3   /* id higiene */
+                }  
+            },
+            {
+                model: db.Descuento,
+                as: 'descuentos',
+            }],
+            where: {
+                tipo_mascota_id: 2,
+                precio: {[Op.between]: [21, 30]}, /* between */
+            },
+            order: [['precio', 'asc']],
+        })
+
+        let de30aX = db.Producto.findAll({
+            include: [{
+                model: db.Categoria,
+                as: 'categorias',
+                where: {
+                    id: 3   /* id higiene */
+                }  
+            },
+            {
+                model: db.Descuento,
+                as: 'descuentos',
+            }],
+            where: {
+                tipo_mascota_id: 2,
+                precio: {[Op.gt]: 30}, /* Greater than */
+            },
+            order: [['precio', 'asc']],
+        })
+
+        Promise.all([higienePerroVisible, higienePerroInvisible, de0a10, de10a20, de20a30, de30aX])
             
-        .then(([higienePerroVisible, higienePerroInvisible]) => {
-            return res.render('categoria.ejs', {higienePerroVisible, higienePerroInvisible, userALoguearse});
+        .then(([higienePerroVisible, higienePerroInvisible, de0a10, de10a20, de20a30, de30aX]) => {
+            return res.render('perro.ejs', {higienePerroVisible, higienePerroInvisible, de0a10, de10a20, de20a30, de30aX, userALoguearse});
         })
         .catch(error => {
             console.error('Error al recuperar productos', error);
@@ -576,50 +1322,121 @@ const productController = {
         const userALoguearse = req.session.userLogueado
 
         let higieneGatoVisible = db.Producto.findAll({
-            include: [
-                {
-                    model: db.Categoria,
-                    as: 'categorias',
-                    where: {
-                        id: 3  /* id higiene */
-                    }
-                },
-                {
-                    model: db.Descuento,
-                    as: 'descuentos',
+            include: [{
+                model: db.Categoria,
+                as: 'categorias',
+                where: {
+                    id: 3  /* id higiene */
                 }
-            ],
+            },
+            {
+                model: db.Descuento,
+                as: 'descuentos',
+            }],
             where: {
                 tipo_mascota_id: 1,
             },
-            limit: 8
+            limit: 4
         })
 
         let higieneGatoInvisible = db.Producto.findAll({
-            include: [
-                {
-                    model: db.Categoria,
-                    as: 'categorias',
-                    where: {
-                        id: 3  /* id higiene */
-                    }
-                },
-                {
-                    model: db.Descuento,
-                    as: 'descuentos',
+            include: [{
+                model: db.Categoria,
+                as: 'categorias',
+                where: {
+                    id: 3  /* id higiene */
                 }
-            ],
+            },
+            {
+                model: db.Descuento,
+                as: 'descuentos',
+            }],
             where: {
                 tipo_mascota_id: 1,
-                id: {[Op.gt]: 26}
+                id: {[Op.gt]: 22}
             }
-            
         })
 
-        Promise.all([higieneGatoVisible, higieneGatoInvisible])
+        let de0a10 = db.Producto.findAll({
+            include: [{
+                model: db.Categoria,
+                as: 'categorias',
+                where: {
+                    id: 3   /* id higiene */
+                }  
+            },
+            {
+                model: db.Descuento,
+                as: 'descuentos',
+            }],
+            where: {
+                tipo_mascota_id: 1,
+                precio: {[Op.lte]: 10}  /* Less than or equal to */
+            },
+            order: [['precio', 'asc']],
+        })
+
+        let de10a20 = db.Producto.findAll({
+            include: [{
+                model: db.Categoria,
+                as: 'categorias',
+                where: {
+                    id: 3   /* id higiene */
+                }  
+            },
+            {
+                model: db.Descuento,
+                as: 'descuentos',
+            }],
+            where: {
+                tipo_mascota_id: 1,
+                precio: {[Op.between]: [11, 20]}, /* between */
+            },
+            order: [['precio', 'asc']],
+        })
+
+        let de20a30 = db.Producto.findAll({
+            include: [{
+                model: db.Categoria,
+                as: 'categorias',
+                where: {
+                    id: 3   /* id higiene */
+                }  
+            },
+            {
+                model: db.Descuento,
+                as: 'descuentos',
+            }],
+            where: {
+                tipo_mascota_id: 1,
+                precio: {[Op.between]: [21, 30]}, /* between */
+            },
+            order: [['precio', 'asc']],
+        })
+
+        let de30aX = db.Producto.findAll({
+            include: [{
+                model: db.Categoria,
+                as: 'categorias',
+                where: {
+                    id: 3   /* id higiene */
+                }  
+            },
+            {
+                model: db.Descuento,
+                as: 'descuentos',
+            }],
+            where: {
+                tipo_mascota_id: 1,
+                precio: {[Op.gt]: 30}, /* Greater than */
+            },
+            order: [['precio', 'asc']],
+        })
+
+        Promise.all([higieneGatoVisible, higieneGatoInvisible, de0a10, de10a20, de20a30, de30aX])
             
-        .then(([higieneGatoVisible, higieneGatoInvisible]) => {
-            return res.render('categoria.ejs', {higieneGatoVisible, higieneGatoInvisible, userALoguearse});
+        .then(([higieneGatoVisible, higieneGatoInvisible, de0a10, de10a20, de20a30, de30aX]) => {
+            return res.render('gato.ejs', {higieneGatoVisible, higieneGatoInvisible, de0a10, de10a20, de20a30, de30aX, userALoguearse});
         })
         .catch(error => {
             console.error('Error al recuperar productos', error);
@@ -631,50 +1448,121 @@ const productController = {
         const userALoguearse = req.session.userLogueado
 
         let juguetesPerroVisible = db.Producto.findAll({
-            include: [
-                {
-                    model: db.Categoria,
-                    as: 'categorias',
-                    where: {
-                        id: 4  /* id juguete */
-                    }
-                },
-                {
-                    model: db.Descuento,
-                    as: 'descuentos',
+            include: [{
+                model: db.Categoria,
+                as: 'categorias',
+                where: {
+                    id: 4  /* id juguete */
                 }
-            ],
+            },
+            {
+                model: db.Descuento,
+                as: 'descuentos',
+            }],
             where: {
                 tipo_mascota_id: 2,
             },
-            limit: 8
+            limit: 4
         })
 
         let juguetesPerroInvisible = db.Producto.findAll({
-            include: [
-                {
-                    model: db.Categoria,
-                    as: 'categorias',
-                    where: {
-                        id: 4  /* id juguete */
-                    }
-                },
-                {
-                    model: db.Descuento,
-                    as: 'descuentos',
+            include: [{
+                model: db.Categoria,
+                as: 'categorias',
+                where: {
+                    id: 4  /* id juguete */
                 }
-            ],
+            },
+            {
+                model: db.Descuento,
+                as: 'descuentos',
+            }],
             where: {
                 tipo_mascota_id: 2,
-                id: {[Op.gt]: 76}
+                id: {[Op.gt]: 72}
             }
-            
         })
 
-        Promise.all([juguetesPerroVisible, juguetesPerroInvisible])
+        let de0a10 = db.Producto.findAll({
+            include: [{
+                model: db.Categoria,
+                as: 'categorias',
+                where: {
+                    id: 4   /* id juguete */
+                }  
+            },
+            {
+                model: db.Descuento,
+                as: 'descuentos',
+            }],
+            where: {
+                tipo_mascota_id: 2,
+                precio: {[Op.lte]: 10}  /* Less than or equal to */
+            },
+            order: [['precio', 'asc']],
+        })
+
+        let de10a20 = db.Producto.findAll({
+            include: [{
+                model: db.Categoria,
+                as: 'categorias',
+                where: {
+                    id: 4   /* id juguete */
+                }  
+            },
+            {
+                model: db.Descuento,
+                as: 'descuentos',
+            }],
+            where: {
+                tipo_mascota_id: 2,
+                precio: {[Op.between]: [11, 20]}, /* between */
+            },
+            order: [['precio', 'asc']],
+        })
+
+        let de20a30 = db.Producto.findAll({
+            include: [{
+                model: db.Categoria,
+                as: 'categorias',
+                where: {
+                    id: 4   /* id juguete */
+                }  
+            },
+            {
+                model: db.Descuento,
+                as: 'descuentos',
+            }],
+            where: {
+                tipo_mascota_id: 2,
+                precio: {[Op.between]: [21, 30]}, /* between */
+            },
+            order: [['precio', 'asc']],
+        })
+
+        let de30aX = db.Producto.findAll({
+            include: [{
+                model: db.Categoria,
+                as: 'categorias',
+                where: {
+                    id: 4   /* id juguete */
+                }  
+            },
+            {
+                model: db.Descuento,
+                as: 'descuentos',
+            }],
+            where: {
+                tipo_mascota_id: 2,
+                precio: {[Op.gt]: 30}, /* Greater than */
+            },
+            order: [['precio', 'asc']],
+        })
+
+        Promise.all([juguetesPerroVisible, juguetesPerroInvisible, de0a10, de10a20, de20a30, de30aX])
             
-        .then(([juguetesPerroVisible, juguetesPerroInvisible]) => {
-            return res.render('categoria.ejs', {juguetesPerroVisible, juguetesPerroInvisible, userALoguearse});
+        .then(([juguetesPerroVisible, juguetesPerroInvisible, de0a10, de10a20, de20a30, de30aX]) => {
+            return res.render('perro.ejs', {juguetesPerroVisible, juguetesPerroInvisible, de0a10, de10a20, de20a30, de30aX, userALoguearse});
         })
         .catch(error => {
             console.error('Error al recuperar productos', error);
@@ -686,50 +1574,122 @@ const productController = {
         const userALoguearse = req.session.userLogueado
 
         let juguetesGatoVisible = db.Producto.findAll({
-            include: [
-                {
-                    model: db.Categoria,
-                    as: 'categorias',
-                    where: {
-                        id: 4  /* id juguete */
-                    }
-                },
-                {
-                    model: db.Descuento,
-                    as: 'descuentos',
+            include: [{
+                model: db.Categoria,
+                as: 'categorias',
+                where: {
+                    id: 4  /* id juguete */
                 }
-            ],
+            },
+            {
+                model: db.Descuento,
+                as: 'descuentos',
+            }],
             where: {
                 tipo_mascota_id: 1,
             },
-            limit: 8
+            limit: 4
         })
 
         let juguetesGatoInvisible = db.Producto.findAll({
-            include: [
-                {
-                    model: db.Categoria,
-                    as: 'categorias',
-                    where: {
-                        id: 4  /* id juguete */
-                    }
-                },
-                {
-                    model: db.Descuento,
-                    as: 'descuentos',
+            include: [{
+                model: db.Categoria,
+                as: 'categorias',
+                where: {
+                    id: 4  /* id juguete */
                 }
-            ],
+            },
+            {
+                model: db.Descuento,
+                as: 'descuentos',
+            }],
             where: {
                 tipo_mascota_id: 1,
-                id: {[Op.gt]: 37}
+                id: {[Op.gt]: 33}
             }
             
         })
 
-        Promise.all([juguetesGatoVisible, juguetesGatoInvisible])
+        let de0a10 = db.Producto.findAll({
+            include: [{
+                model: db.Categoria,
+                as: 'categorias',
+                where: {
+                    id: 4   /* id juguete */
+                }  
+            },
+            {
+                model: db.Descuento,
+                as: 'descuentos',
+            }],
+            where: {
+                tipo_mascota_id: 1,
+                precio: {[Op.lte]: 10}  /* Less than or equal to */
+            },
+            order: [['precio', 'asc']],
+        })
+
+        let de10a20 = db.Producto.findAll({
+            include: [{
+                model: db.Categoria,
+                as: 'categorias',
+                where: {
+                    id: 4   /* id juguete */
+                }  
+            },
+            {
+                model: db.Descuento,
+                as: 'descuentos',
+            }],
+            where: {
+                tipo_mascota_id: 1,
+                precio: {[Op.between]: [11, 20]}, /* between */
+            },
+            order: [['precio', 'asc']],
+        })
+
+        let de20a30 = db.Producto.findAll({
+            include: [{
+                model: db.Categoria,
+                as: 'categorias',
+                where: {
+                    id: 4   /* id juguete */
+                }  
+            },
+            {
+                model: db.Descuento,
+                as: 'descuentos',
+            }],
+            where: {
+                tipo_mascota_id: 1,
+                precio: {[Op.between]: [21, 30]}, /* between */
+            },
+            order: [['precio', 'asc']],
+        })
+
+        let de30aX = db.Producto.findAll({
+            include: [{
+                model: db.Categoria,
+                as: 'categorias',
+                where: {
+                    id: 4   /* id juguete */
+                }  
+            },
+            {
+                model: db.Descuento,
+                as: 'descuentos',
+            }],
+            where: {
+                tipo_mascota_id: 1,
+                precio: {[Op.gt]: 30}, /* Greater than */
+            },
+            order: [['precio', 'asc']],
+        })
+
+        Promise.all([juguetesGatoVisible, juguetesGatoInvisible, de0a10, de10a20, de20a30, de30aX])
             
-        .then(([juguetesGatoVisible, juguetesGatoInvisible]) => {
-            return res.render('categoria.ejs', {juguetesGatoVisible, juguetesGatoInvisible, userALoguearse});
+        .then(([juguetesGatoVisible, juguetesGatoInvisible, de0a10, de10a20, de20a30, de30aX]) => {
+            return res.render('gato.ejs', {juguetesGatoVisible, juguetesGatoInvisible, de0a10, de10a20, de20a30, de30aX, userALoguearse});
         })
         .catch(error => {
             console.error('Error al recuperar productos', error);
@@ -814,19 +1774,112 @@ const productController = {
         //usuario q se loguea
         const userALoguearse = req.session.userLogueado
 
-        db.Producto.findAll({
+        let ProductosEukanubaVisible = db.Producto.findAll({
             include: ["tipos_mascota", "marcas"],
             where: {
                 marca_id: 12,
             },
             include: [{
+                model: db.Categoria,
+                as: 'categorias',  
+            },
+            {
                 model: db.Descuento,
                 as: 'descuentos',
             }],
+            limit: 4
+        
         })
 
-        .then(ProductosEukanuba => {return res.render("marcasTodas.ejs", {userALoguearse, ProductosEukanuba})})
+        let ProductosEukanubaInvisible = db.Producto.findAll({
+            include: ["tipos_mascota", "marcas"],
+            include: [{
+                model: db.Categoria,
+                as: 'categorias',  
+            },
+            {
+                model: db.Descuento,
+                as: 'descuentos',
+            }],
+            where: {
+                marca_id: 12,
+                id: {[Op.gt]: 57}
+            }
+        })
 
+        let de0a10 = db.Producto.findAll({
+            include: ["tipos_mascota", "marcas"],
+            include: [{
+                model: db.Categoria,
+                as: 'categorias',  
+            },
+            {
+                model: db.Descuento,
+                as: 'descuentos',
+            }],
+            where: {
+                marca_id: 12,
+                precio: {[Op.lte]: 10}  /* Less than or equal to */
+            },
+            order: [['precio', 'asc']],
+        })
+
+        let de10a20 = db.Producto.findAll({
+            include: ["tipos_mascota", "marcas"],
+            include: [{
+                model: db.Categoria,
+                as: 'categorias',  
+            },
+            {
+                model: db.Descuento,
+                as: 'descuentos',
+            }],
+            where: {
+                marca_id: 12,
+                precio: {[Op.between]: [11, 20]}, /* between */
+            },
+            order: [['precio', 'asc']],
+        })
+
+        let de20a30 = db.Producto.findAll({
+            include: ["tipos_mascota", "marcas"],
+            include: [{
+                model: db.Categoria,
+                as: 'categorias',  
+            },
+            {
+                model: db.Descuento,
+                as: 'descuentos',
+            }],
+            where: {
+                marca_id: 12,
+                precio: {[Op.between]: [21, 30]}, /* between */
+            },
+            order: [['precio', 'asc']],
+        })
+
+        let de30aX = db.Producto.findAll({
+            include: ["tipos_mascota", "marcas"],
+            include: [{
+                model: db.Categoria,
+                as: 'categorias',  
+            },
+            {
+                model: db.Descuento,
+                as: 'descuentos',
+            }],
+            where: {
+                marca_id: 12,
+                precio: {[Op.gt]: 30}, /* Greater than */
+            },
+            order: [['precio', 'asc']],
+        })
+
+        Promise.all([ProductosEukanubaVisible, ProductosEukanubaInvisible, de0a10, de10a20, de20a30, de30aX])
+            
+        .then(([ProductosEukanubaVisible, ProductosEukanubaInvisible, de0a10, de10a20, de20a30, de30aX]) => {
+
+            return res.render("marcasTodas.ejs", {ProductosEukanubaVisible, ProductosEukanubaInvisible, de0a10, de10a20, de20a30, de30aX, userALoguearse})})
     },
 
     proplan: (req, res) => {
@@ -834,19 +1887,112 @@ const productController = {
         //usuario q se loguea
         const userALoguearse = req.session.userLogueado
 
-        db.Producto.findAll({
+        let ProductosProplanVisible = db.Producto.findAll({
             include: ["tipos_mascota", "marcas"],
             where: {
-                marca_id: 5
+                marca_id: 5,
             },
             include: [{
+                model: db.Categoria,
+                as: 'categorias',  
+            },
+            {
                 model: db.Descuento,
                 as: 'descuentos',
-            }]
+            }],
+            limit: 4
+        
         })
 
-        .then(ProductosProplan => {return res.render("marcasTodas.ejs", {userALoguearse, ProductosProplan})})
+        let ProductosProplanInvisible = db.Producto.findAll({
+            include: ["tipos_mascota", "marcas"],
+            include: [{
+                model: db.Categoria,
+                as: 'categorias',  
+            },
+            {
+                model: db.Descuento,
+                as: 'descuentos',
+            }],
+            where: {
+                marca_id: 5,
+                id: {[Op.gt]: 15}
+            }
+        })
 
+        let de0a10 = db.Producto.findAll({
+            include: ["tipos_mascota", "marcas"],
+            include: [{
+                model: db.Categoria,
+                as: 'categorias',  
+            },
+            {
+                model: db.Descuento,
+                as: 'descuentos',
+            }],
+            where: {
+                marca_id: 5,
+                precio: {[Op.lte]: 10}  /* Less than or equal to */
+            },
+            order: [['precio', 'asc']],
+        })
+
+        let de10a20 = db.Producto.findAll({
+            include: ["tipos_mascota", "marcas"],
+            include: [{
+                model: db.Categoria,
+                as: 'categorias',  
+            },
+            {
+                model: db.Descuento,
+                as: 'descuentos',
+            }],
+            where: {
+                marca_id: 5,
+                precio: {[Op.between]: [11, 20]}, /* between */
+            },
+            order: [['precio', 'asc']],
+        })
+
+        let de20a30 = db.Producto.findAll({
+            include: ["tipos_mascota", "marcas"],
+            include: [{
+                model: db.Categoria,
+                as: 'categorias',  
+            },
+            {
+                model: db.Descuento,
+                as: 'descuentos',
+            }],
+            where: {
+                marca_id: 5,
+                precio: {[Op.between]: [21, 30]}, /* between */
+            },
+            order: [['precio', 'asc']],
+        })
+
+        let de30aX = db.Producto.findAll({
+            include: ["tipos_mascota", "marcas"],
+            include: [{
+                model: db.Categoria,
+                as: 'categorias',  
+            },
+            {
+                model: db.Descuento,
+                as: 'descuentos',
+            }],
+            where: {
+                marca_id: 5,
+                precio: {[Op.gt]: 30}, /* Greater than */
+            },
+            order: [['precio', 'asc']],
+        })
+
+        Promise.all([ProductosProplanVisible, ProductosProplanInvisible, de0a10, de10a20, de20a30, de30aX])
+            
+        .then(([ProductosProplanVisible, ProductosProplanInvisible, de0a10, de10a20, de20a30, de30aX]) => {
+
+            return res.render("marcasTodas.ejs", {ProductosProplanVisible, ProductosProplanInvisible, de0a10, de10a20, de20a30, de30aX, userALoguearse})})
     },
 
     royal: (req, res) => {
@@ -854,19 +2000,112 @@ const productController = {
         //usuario q se loguea
         const userALoguearse = req.session.userLogueado
 
-        db.Producto.findAll({
+        let ProductosRoyalVisible = db.Producto.findAll({
             include: ["tipos_mascota", "marcas"],
             where: {
-                marca_id: 11
+                marca_id: 11,
             },
             include: [{
+                model: db.Categoria,
+                as: 'categorias',  
+            },
+            {
                 model: db.Descuento,
                 as: 'descuentos',
-            }]
+            }],
+            limit: 4
+        
         })
 
-        .then(ProductosRoyal => {return res.render("marcasTodas.ejs", {userALoguearse, ProductosRoyal})})
+        let ProductosRoyalInvisible = db.Producto.findAll({
+            include: ["tipos_mascota", "marcas"],
+            include: [{
+                model: db.Categoria,
+                as: 'categorias',  
+            },
+            {
+                model: db.Descuento,
+                as: 'descuentos',
+            }],
+            where: {
+                marca_id: 11,
+                id: {[Op.gt]: 52}
+            }
+        })
 
+        let de0a10 = db.Producto.findAll({
+            include: ["tipos_mascota", "marcas"],
+            include: [{
+                model: db.Categoria,
+                as: 'categorias',  
+            },
+            {
+                model: db.Descuento,
+                as: 'descuentos',
+            }],
+            where: {
+                marca_id: 11,
+                precio: {[Op.lte]: 10}  /* Less than or equal to */
+            },
+            order: [['precio', 'asc']],
+        })
+
+        let de10a20 = db.Producto.findAll({
+            include: ["tipos_mascota", "marcas"],
+            include: [{
+                model: db.Categoria,
+                as: 'categorias',  
+            },
+            {
+                model: db.Descuento,
+                as: 'descuentos',
+            }],
+            where: {
+                marca_id: 11,
+                precio: {[Op.between]: [11, 20]}, /* between */
+            },
+            order: [['precio', 'asc']],
+        })
+
+        let de20a30 = db.Producto.findAll({
+            include: ["tipos_mascota", "marcas"],
+            include: [{
+                model: db.Categoria,
+                as: 'categorias',  
+            },
+            {
+                model: db.Descuento,
+                as: 'descuentos',
+            }],
+            where: {
+                marca_id: 11,
+                precio: {[Op.between]: [21, 30]}, /* between */
+            },
+            order: [['precio', 'asc']],
+        })
+
+        let de30aX = db.Producto.findAll({
+            include: ["tipos_mascota", "marcas"],
+            include: [{
+                model: db.Categoria,
+                as: 'categorias',  
+            },
+            {
+                model: db.Descuento,
+                as: 'descuentos',
+            }],
+            where: {
+                marca_id: 11,
+                precio: {[Op.gt]: 30}, /* Greater than */
+            },
+            order: [['precio', 'asc']],
+        })
+
+        Promise.all([ProductosRoyalVisible, ProductosRoyalInvisible, de0a10, de10a20, de20a30, de30aX])
+            
+        .then(([ProductosRoyalVisible, ProductosRoyalInvisible, de0a10, de10a20, de20a30, de30aX]) => {
+
+            return res.render("marcasTodas.ejs", {ProductosRoyalVisible, ProductosRoyalInvisible, de0a10, de10a20, de20a30, de30aX, userALoguearse})})
     },
 
     cancat: (req, res) => {
@@ -874,19 +2113,112 @@ const productController = {
         //usuario q se loguea
         const userALoguearse = req.session.userLogueado
 
-        db.Producto.findAll({
+        let ProductosCancatVisible = db.Producto.findAll({
             include: ["tipos_mascota", "marcas"],
             where: {
-                marca_id: 4
+                marca_id: 4,
             },
             include: [{
+                model: db.Categoria,
+                as: 'categorias',  
+            },
+            {
                 model: db.Descuento,
                 as: 'descuentos',
-            }]
+            }],
+            limit: 4
+        
         })
 
-        .then(ProductosCancat => {return res.render("marcasTodas.ejs", {userALoguearse, ProductosCancat})})
+        let ProductosCancatInvisible = db.Producto.findAll({
+            include: ["tipos_mascota", "marcas"],
+            include: [{
+                model: db.Categoria,
+                as: 'categorias',  
+            },
+            {
+                model: db.Descuento,
+                as: 'descuentos',
+            }],
+            where: {
+                marca_id: 4,
+                id: {[Op.gt]: 73}
+            }
+        })
 
+        let de0a10 = db.Producto.findAll({
+            include: ["tipos_mascota", "marcas"],
+            include: [{
+                model: db.Categoria,
+                as: 'categorias',  
+            },
+            {
+                model: db.Descuento,
+                as: 'descuentos',
+            }],
+            where: {
+                marca_id: 4,
+                precio: {[Op.lte]: 10}  /* Less than or equal to */
+            },
+            order: [['precio', 'asc']],
+        })
+
+        let de10a20 = db.Producto.findAll({
+            include: ["tipos_mascota", "marcas"],
+            include: [{
+                model: db.Categoria,
+                as: 'categorias',  
+            },
+            {
+                model: db.Descuento,
+                as: 'descuentos',
+            }],
+            where: {
+                marca_id: 4,
+                precio: {[Op.between]: [11, 20]}, /* between */
+            },
+            order: [['precio', 'asc']],
+        })
+
+        let de20a30 = db.Producto.findAll({
+            include: ["tipos_mascota", "marcas"],
+            include: [{
+                model: db.Categoria,
+                as: 'categorias',  
+            },
+            {
+                model: db.Descuento,
+                as: 'descuentos',
+            }],
+            where: {
+                marca_id: 4,
+                precio: {[Op.between]: [21, 30]}, /* between */
+            },
+            order: [['precio', 'asc']],
+        })
+
+        let de30aX = db.Producto.findAll({
+            include: ["tipos_mascota", "marcas"],
+            include: [{
+                model: db.Categoria,
+                as: 'categorias',  
+            },
+            {
+                model: db.Descuento,
+                as: 'descuentos',
+            }],
+            where: {
+                marca_id: 4,
+                precio: {[Op.gt]: 30}, /* Greater than */
+            },
+            order: [['precio', 'asc']],
+        })
+
+        Promise.all([ProductosCancatVisible, ProductosCancatInvisible, de0a10, de10a20, de20a30, de30aX])
+            
+        .then(([ProductosCancatVisible, ProductosCancatInvisible, de0a10, de10a20, de20a30, de30aX]) => {
+
+            return res.render("marcasTodas.ejs", {ProductosCancatVisible, ProductosCancatInvisible, de0a10, de10a20, de20a30, de30aX, userALoguearse})})
     },
 
     catit: (req, res) => {
@@ -894,19 +2226,112 @@ const productController = {
         //usuario q se loguea
         const userALoguearse = req.session.userLogueado
 
-        db.Producto.findAll({
+        let ProductosCatitVisible = db.Producto.findAll({
             include: ["tipos_mascota", "marcas"],
             where: {
-                marca_id: 16
+                marca_id: 16,
             },
             include: [{
+                model: db.Categoria,
+                as: 'categorias',  
+            },
+            {
                 model: db.Descuento,
                 as: 'descuentos',
-            }]
+            }],
+            limit: 4
+        
         })
 
-        .then(ProductosCatit => {return res.render("marcasTodas.ejs", {userALoguearse, ProductosCatit})})
+        let ProductosCatitInvisible = db.Producto.findAll({
+            include: ["tipos_mascota", "marcas"],
+            include: [{
+                model: db.Categoria,
+                as: 'categorias',  
+            },
+            {
+                model: db.Descuento,
+                as: 'descuentos',
+            }],
+            where: {
+                marca_id: 16,
+                id: {[Op.gt]: 23}
+            }
+        })
 
+        let de0a10 = db.Producto.findAll({
+            include: ["tipos_mascota", "marcas"],
+            include: [{
+                model: db.Categoria,
+                as: 'categorias',  
+            },
+            {
+                model: db.Descuento,
+                as: 'descuentos',
+            }],
+            where: {
+                marca_id: 16,
+                precio: {[Op.lte]: 10}  /* Less than or equal to */
+            },
+            order: [['precio', 'asc']],
+        })
+
+        let de10a20 = db.Producto.findAll({
+            include: ["tipos_mascota", "marcas"],
+            include: [{
+                model: db.Categoria,
+                as: 'categorias',  
+            },
+            {
+                model: db.Descuento,
+                as: 'descuentos',
+            }],
+            where: {
+                marca_id: 16,
+                precio: {[Op.between]: [11, 20]}, /* between */
+            },
+            order: [['precio', 'asc']],
+        })
+
+        let de20a30 = db.Producto.findAll({
+            include: ["tipos_mascota", "marcas"],
+            include: [{
+                model: db.Categoria,
+                as: 'categorias',  
+            },
+            {
+                model: db.Descuento,
+                as: 'descuentos',
+            }],
+            where: {
+                marca_id: 16,
+                precio: {[Op.between]: [21, 30]}, /* between */
+            },
+            order: [['precio', 'asc']],
+        })
+
+        let de30aX = db.Producto.findAll({
+            include: ["tipos_mascota", "marcas"],
+            include: [{
+                model: db.Categoria,
+                as: 'categorias',  
+            },
+            {
+                model: db.Descuento,
+                as: 'descuentos',
+            }],
+            where: {
+                marca_id: 16,
+                precio: {[Op.gt]: 30}, /* Greater than */
+            },
+            order: [['precio', 'asc']],
+        })
+
+        Promise.all([ProductosCatitVisible, ProductosCatitInvisible, de0a10, de10a20, de20a30, de30aX])
+            
+        .then(([ProductosCatitVisible, ProductosCatitInvisible, de0a10, de10a20, de20a30, de30aX]) => {
+
+            return res.render("marcasTodas.ejs", {ProductosCatitVisible, ProductosCatitInvisible, de0a10, de10a20, de20a30, de30aX, userALoguearse})})
     },
 
     alta2: (req, res) => {

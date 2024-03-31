@@ -180,12 +180,18 @@ input[type="radio"] {
     flex-wrap: wrap;
 }
 
-.lista_flexbox_desktop---comida, .lista_flexbox_desktop---accesorio, .lista_flexbox_desktop---higiene, .lista_flexbox_desktop---juguete {  
+.lista_flexbox_desktop---comida, .lista_flexbox_desktop---accesorio, .lista_flexbox_desktop---higiene, .lista_flexbox_desktop---juguete, .lista_flexbox_desktop---de0a10, .lista_flexbox_desktop---de10a20, .lista_flexbox_desktop---de20a30, .lista_flexbox_desktop---de30aX, .lista_flexbox_desktop---de0a10comidaPerro {  
     border: 1px solid white;
     /* display: flex; */
     display: none;
     flex-wrap: wrap;
     justify-content: space-around;   
+}
+
+.lista_flexbox_desktop---contenedorPromoPerro, .lista_flexbox_desktop---contenedorPromoGato, .lista_flexbox_desktop---eukanuba, .lista_flexbox_desktop---proplan, .lista_flexbox_desktop---royal, .lista_flexbox_desktop---cancat, .lista_flexbox_desktop---catit {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
 }
 
 /* --- Lista productos mobile --- */
@@ -598,6 +604,38 @@ input[type="radio"] {
         justify-content: space-around;   
     }
 
+    .lista_flexbox_desktop---de0a10 {  
+        border: 1px solid white;
+        /* display: flex; */
+        display: none;
+        flex-wrap: wrap;
+        justify-content: space-around;   
+    }
+
+    .lista_flexbox_desktop---de10a20 {  
+        border: 1px solid white;
+        /* display: flex; */
+        display: none;
+        flex-wrap: wrap;
+        justify-content: space-around;   
+    }
+
+    .lista_flexbox_desktop---de20a30 {  
+        border: 1px solid white;
+        /* display: flex; */
+        display: none;
+        flex-wrap: wrap;
+        justify-content: space-around;   
+    }
+
+    .lista_flexbox_desktop---de30aX {  
+        border: 1px solid white;
+        /* display: flex; */
+        display: none;
+        flex-wrap: wrap;
+        justify-content: space-around;   
+    }
+
     .div-btnver {
         display: block;
     }
@@ -614,6 +652,14 @@ input[type="radio"] {
         border: 1px solid #1a2493;
         transition: 450ms;
         margin-top: 5px;
+    }
+
+    .lista_flexbox_desktop---de0a10comidaPerro {  
+        border: 1px solid white;
+        /* display: flex; */
+        display: none;
+        flex-wrap: wrap;
+        justify-content: space-around;   
     }
 
     .btnver:hover {
