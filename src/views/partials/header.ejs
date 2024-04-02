@@ -42,12 +42,13 @@
             </div>
             <div class="mi-cuenta">
                     <% if(userALoguearse){ %>
-                        <div class="dropdown">
+                        <div class="dropdown1">
                             <i class="fa-solid fa-circle-user" style="color: #FECF53;"></i>
                             <a href="/users/edit/<%= userALoguearse.id %>"><p class="nombre-usuario"><%= userALoguearse.nombre %></p></a>
                            
-                            <div class="dropdown-content">
+                            <div class="dropdown-content1">
                                 <a href="/users/perfil/<%= userALoguearse.id %>">Mi perfil</a>
+                                <a href="/users/edit/<%= userALoguearse.id %>">Editá tus datos</a>
                                 <a href="/users/logout">Cerrar sesión</a>
                             </div>
                         </div>

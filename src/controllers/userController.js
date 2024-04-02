@@ -189,9 +189,11 @@ const userController = {
             })
             
             .then(() => {
-                return res.redirect("/")})            
-            .catch(error => res.send(error))
-
+                
+                return res.redirect("/users/logout2")
+                    
+            });
+             
     },
     
     processEdit: async (req, res) => {
@@ -259,12 +261,38 @@ const userController = {
 
     },
 
+    logout2: (req, res) => {
+        // Limpiar cookie si existe
+        if (req.cookies.recordarme) {
+            res.clearCookie("recordarme");
+        }
+        //debug que devuelve correcto el usuario
+        //console.log(req.session.userLogueado);
+
+        // Si existe elimino la sesión
+        if (req.session && req.session.userLogueado) {
+            // Elimino los datos de la sesión
+            req.session.destroy(err => {
+                if (!err) {
+                   res.redirect("/users/login");
+                } else {
+                   console.error("Error al cerrar sesión", err);
+                   res.redirect("/");
+                }
+            });
+        } else {
+            // Si no hay sesión, redirige
+            res.redirect("/");
+        };
+
+    },
+
     carrito2: (req, res) => {
 
         //usuario q se loguea
         const userALoguearse = req.session.userLogueado
 
-        let producto = db.Producto.findByPk(27, {
+        let producto = db.Producto.findByPk(1, {
             include: ["tipos_mascota", 'descuentos', 'categorias']
         })
 

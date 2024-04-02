@@ -13,7 +13,7 @@
     <!--Imagen hardcodeada-->
         <img src="/img/Imagen_register.png" alt="Imagen de perro y gato" class="tamano-imagen">
     <!--Registro-->
-    <form class="formulario" action="/users/edit/<%= userToEdit.id %>?_method=PUT" method="POST">
+    <form class="formulario"  id="formulario" action="/users/edit/<%= userToEdit.id %>?_method=PUT" method="POST">
         <div class="centrado">
 
             <h3 class="editar-titulo">Edita tus datos</h3>
@@ -21,6 +21,7 @@
            <!--Input Nombre-->
            <p class="<%= (locals.errors && locals.errors.nombre) ? 'titulo-error' : 'titulo' %>">Nombre:</p>
            <input class="<%= (locals.errors && locals.errors.nombre) ? 'input_error' : '' %>" type="text" name="nombre" id="nombre" placeholder="Ingresa tu nombre" value="<%= userToEdit.nombre %>%>">
+           <div class="" style="margin-top: 10px;" id=""><small class="errorNombre" style="color: red; font-size: 16px;"></small></div>
            <% if (locals.errors && locals.errors.nombre) { %>
                <label class="error"><i style="color: red; font-size: 16px; margin-right: 5px; margin-left: 5px;" class="fa-sharp fa-solid fa-circle-exclamation"></i><%= errors.nombre.msg %></label>
            <% } %>
@@ -28,6 +29,7 @@
             <!--Input Apellido-->
             <p class="<%= (locals.errors && locals.errors.apellido) ? 'titulo-error' : 'titulo' %>">Apellido</p>
             <input class="<%= (locals.errors && locals.errors.apellido) ? 'input_error' : '' %>"type="text" name="apellido" id="apellido" placeholder="Ingresa tu apellido" value="<%= userToEdit.apellido %>">
+            <div class="" style="margin-top: 10px;" id=""><small class="errorApellido" style="color: red; font-size: 16px;"></small></div>
             <% if (locals.errors && locals.errors.apellido) { %>
                 <label class="error"><i style="color: red; font-size: 16px; margin-right: 5px; margin-left: 5px;" class="fa-sharp fa-solid fa-circle-exclamation"></i><%= errors.apellido.msg %></label>
             <% } %>
@@ -39,6 +41,7 @@
             <!--Input email-->
             <p class="<%= (locals.errors && locals.errors.email) ? 'titulo-error' : 'titulo' %>">Email</p>
             <input class="<%= (locals.errors && locals.errors.email) ? 'input_error' : '' %>" type="email" name="email" id="email" placeholder="Ingresa tu mail para el registro" class="input1" value="<%= userToEdit.email %>">
+            <div class="" style="margin-top: 10px;" id=""><small class="errorEmail" style="color: red; font-size: 16px;"></small></div>
             <% if (locals.errors && locals.errors.email) { %>
                 <label class="error"><i style="color: red; font-size: 16px; margin-right: 5px; margin-left: 5px;" class="fa-sharp fa-solid fa-circle-exclamation"></i><%= errors.email.msg %></label>
             <% } %>
@@ -46,27 +49,25 @@
             <!--Input contraseña-->
             <p class="<%= (locals.errors && locals.errors.password) ? 'titulo-error' : 'titulo' %>">Contraseña</p>
             <input class="<%= (locals.errors && locals.errors.password) ? 'input_error' : '' %>" type="password" name="password" id="password" placeholder="Ingresa una contraseña" class="input1" value="<%= userToEdit.password %>">
+            <div class="" style="margin-top: 10px;" id=""><small class="errorPassword" style="color: red; font-size: 16px;"></small></div>
             <% if (locals.errors && locals.errors.email) { %>
                 <label class="error"><i style="color: red; font-size: 16px; margin-right: 5px; margin-left: 5px;" class="fa-sharp fa-solid fa-circle-exclamation"></i><%= errors.password.msg %></label>
             <% } %>
 
                 <!--Input -->
             <p class="<%= (locals.errors && locals.errors.passwordrepeat) ? 'titulo-error' : 'titulo' %>">Reingresar contraseña</p>
-            <input class="<%= (locals.errors && locals.errors.passwordrepeat) ? 'input_error' : '' %>" type="password" name="passwordrepeat" id="password" placeholder="Reingresa la contraseña" class="input1" value="<%= userToEdit.passwordrepeat %>">
+            <input class="<%= (locals.errors && locals.errors.passwordrepeat) ? 'input_error' : '' %>" type="password" name="passwordrepeat" id="passwordrepeat" placeholder="Reingresa la contraseña" class="input1" value="<%= userToEdit.passwordrepeat %>">
+            <div class="" style="margin-top: 10px;" id=""><small class="errorPasswordrepeat" style="color: red; font-size: 16px;"></small></div>
             <% if (locals.errors && locals.errors.passwordrepeat) { %>
                 <label class="error"><i style="color: red; font-size: 16px; margin-right: 5px; margin-left: 5px;" class="fa-sharp fa-solid fa-circle-exclamation"></i><%= errors.passwordrepeat.msg %></label>
             <% } %>
 
-            
-            <p class="<%= (locals.errors && locals.errors.passwordrepeat) ? 'titulo-error' : 'titulo' %>">Permisos:</p>
-            <label for="permisos">Selecciona un permiso:</label>
-                    <select name="permiso_id" id="permisos">
-                        <% permisos.forEach(permiso => { %> 
-                            <option value="<%= permiso.id %>"><%= permiso.titulo %></option>
-                        <% }) %>
-                    </select>
+            <p style="color: blue; font-size: 16px; font-weight: 400; text-decoration: underline; margin-top: 30px;">Aclaración importante: </p>
+            <p style="color: blue; font-size: 16px; font-weight: 300; margin-top: 0px;">para que los cambios surjan efecto, debes volver a loguearte.</p>
 
-            <button type="submit">Guardar cambios</button>
+            
+            <button id="btnSubmit" type="submit">Guardar cambios</button>
+            
 
 
         </div>
@@ -76,6 +77,8 @@
 </main>
 
 <%- include("./partials/footer.ejs") %>
+
+<script src="/js/validacionEdit.js"></script>
     
 </body>
 </html>

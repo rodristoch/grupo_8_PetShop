@@ -58,6 +58,9 @@ router.post("/login", validacionesLogin, userController.processLogin2);
 //Logout
 router.get("/logout", userController.logout)
 
+//Logout de edicion de user
+router.get("/logout2", userController.logout2)
+
 //Carrito 2 
 router.get("/carrito2", /* authMiddleware */ userController.carrito2)
 
@@ -72,5 +75,4 @@ router.get("/check", function(req, res){
 
 
 module.exports = router; 
-
 
