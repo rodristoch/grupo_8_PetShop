@@ -1,5 +1,9 @@
 /* --------------------------header----------------------------------- */
 
+* {
+    font-family: 'Roboto';
+}
+
 a {
     text-decoration: none;
     color: white;
@@ -21,107 +25,137 @@ a:hover {
     color: #cda840; 
 }
 
-.top {
+.top {    /* el div del header completo */
     background-color: #18515F;
-    height: 20%;
-    width: 100vw;
-    }
+    margin: 0;
+    padding: 0;
+    /* height: 20%; */
+    /* width: 100vw; */
+}
     
-.flex-top {
-    width: 100vw;
+.flex-top {  /* contenedor de los 2 divs */
+    width: 100%;
     height: 20%;
     display: flex;
-    justify-content: space-between;
+    /* justify-content: space-between; */
     align-items: center;
+    /* border: 1px solid violet; */
+    margin: 0;
+    padding: 0;
+
+}
+
+.izquierda {  /* div de la izq */  /* contiene el logo y la barra  */
+    /* border: 1px solid blue; */
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    align-items: center;
+    width: 75%;
+    margin: 0;
+    padding: 0;
+}
+
+.derecha {  /* div de la derecha */  /* contiene crear prod., mi cuenta, carrito y menu hamburg.  */
+    /* border: 1px solid blue; */
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    align-items: center;
+    width: 25%;
+    margin: 0;
+    padding: 0;
+}
+
+.div-logo-mobile {
+    /* border: 1px solid red; */
+    margin: 0;
+    padding: 0;
+    width: 20%;
 }
     
-.logo {
-    width: 45%;
-    height: 60%;
-    margin: 10px;
-    margin-right: 1px;
-    transition: 250ms;
+.logo-mobile {
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    scale: 80%;
 }
-    
-.titulo-head {
+
+.logo-mobile:hover {
+    color: #cdd4d6
+}
+
+.div-logo-desktop {
     display: none;
-    width: 15%;
-    font-family: 'Amatic SC';
-    font-size: 60px;
-    color: white;
-    margin-left: 0.1px;
-    margin-top: 10px;
-    transition: 250ms;
+    /* border: 1px solid red; */
 }
 
-.isologo {
-    transition: 250ms;
+.div-barra-busqueda {
+    /* border: 1px solid green; */
+    width: 50%;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+    position: relative;
+    margin-left: 15px;
 }
 
-.isologo:hover {
-    color: #cdd4d6
-}
-
-.logo:hover {
-    color: #cdd4d6
-}
-
-.titulo-head:hover {
-    color: #cdd4d6
-}
-
-.logo-titulo-jun {
-    display: none;
-}
-
-.barra {
-    width: 28%;
-    font-family: 'Roboto';
-    font-size: 20px;
-    color: white;
-    margin-right: 10px;
-}
-    
-.barra input[type="search"] {
+.input {
     border-radius: 10px; 
-    padding: 10px; 
-    width: 200px; 
+    padding: 5px; 
+    width: 100%; 
     box-sizing: border-box; 
-    border: 1px solid #ccc; 
+    border: 1px solid black; 
 }
 
+.fa-magnifying-glass {
+    position: absolute;
+    top: 5.3px;
+    right: 10px;
+    font-size: 18px;
+    cursor: pointer;
+    color: #10353e;
+}
 
 .mi-cuenta, .mis-compras, .crear-producto {
     display: none;
 }
 
-
-.menu-top {
-    display: block;
-    text-align: right;
-    margin-right: 40px;
-    margin-top: 10px;
-
+.div-logo-carrito {   /* div del carrito */
+    display: flex;
+    /* border: 1px solid red; */
+    padding: 0;
+    width: 20%;
+    height: 20px;
+    align-items: center;
+    justify-content: center;
 }
 
-.carrito {
-    display: block;
+.div-menu-top {   /* div del menu hamburguesa */
+    display: flex;
+    /* border: 1px solid red; */
+    width: 20%;
+    height: 20px;
+    align-items: center;
+    justify-content: center;
 }
 
-.logo-carrito-tablet {
-    display: none;
+.fa-cart-shopping {
+    scale: 117%;
+    margin: 0;
+    padding: 0;
 }
-    
-.logo-carrito-mobile {
-    display: block;
-    text-align: right;
-    margin-right: 20px;
-    margin-top: 10px;
+
+.fa-bars {
+    scale: 75%;
 }
 
 .carrito-text {
     display: none;
 }
+
+
+/* ---------------------------------------------------header2------------------------------------------------------------- */
 
 .header2 {
     display: none;
@@ -218,224 +252,571 @@ a:hover {
     z-index: 2;
 }
 
-    /* --------------------------header----------------------------------- */
+
+/* -----------------------------------------------------------footer------------------------------------------------------------------------ */
 
 
-    /* --------------------------footer----------------------------------- */
 footer {
     background-color: #18515F;
     display: flex;
+    flex-direction: column;
+    /* width: 100%; */
 }
 
-.logo2 {
+footer h4 {  /* los titulos del footer */
+    font-weight: 500;
+    font-size: 16px;
+    margin-bottom: 7px;
+    color: #cda840;
+}
+
+footer p {  /* los textos del footer */
+    font-weight: 300;
+    margin-top: 0;
+}
+
+.logo2 {    /* el perrito del footer */
     width: 3%;
     height: 30%;
     padding: 60px;
     display: none;
+    /* border: 1px solid red; */
 }
 
-.nosotros {
+.nosotros {    /* el contenedor de nosotros */
     color: white;
-    text-align: justify;
+    /* text-align: justify; */
+    text-align: center;
     margin: auto;
-    font-size: 12px;
+    font-size: 14px;
+    /* border: 1px solid red; */
 }
 
-.todo-perro {
+.todo-perro {    /* el contenedor de todo para tu perro y el texto */
     color: white;
-    text-align: justify;
+    /* text-align: justify; */
+    text-align: center;
     margin: auto;
-    font-size: 12px;
+    font-size: 14px;
+    /* border: 1px solid red; */
 }
 
-.todo-gato {
+.todo-gato {    /* el contenedor de todo para tu gato y el texto */
     color: white;
-    text-align: justify;
+    /* text-align: justify; */
+    text-align: center;
     margin: auto;
-    font-size: 12px;
+    font-size: 14px;
+    /* border: 1px solid red; */
 }
 
-.contacto {
+.contacto {    /* el contenedor de contacto y el texto */
     color: white;
-    text-align: justify;
+    /* text-align: justify; */
+    text-align: center;
     margin: auto;
-    font-size: 12px;
+    margin-top: -12px;
+    font-size: 14px;
+    /* border: 1px solid red; */
 }
 
-.redes-sociales {
+.redes-sociales {    /* el contenedor de redes sociales con su div contenedor de los simbolitos */
     color: white;
-    text-align: justify;
+    /* text-align: justify; */
+    text-align: center;
+    font-size: 14px;
     margin: auto;
-    font-size: 12px;
+    margin-bottom: 15px;
+    /* border: 1px solid red; */
 }
 
 .facebook-tablet, .twitter-tablet, .instagram-tablet {
     display: none;
 }
 
-.rrss-iconos {
+.rrss-iconos {    /* el div contenedor de los simbolos de las redes */
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
+    margin-top: 12px;
 }
-/* --------------------------footer----------------------------------- */
 
-/*     ----------------------------------------------------------------------------------- tablet 768 px --------------------------------------------------------------------------------------- */
+.twitter-mobile {    /* los simbolos de las redes */
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+@media (min-width: 465px) {
+
+    .div-barra-busqueda {
+        width: 60%;
+    }
+
+    .div-logo-carrito {   /* div del carrito */
+        width: 30%;
+        height: 30px;
+    }
+    
+    .div-menu-top {   /* div del menu hamburguesa */
+        width: 30%;
+        height: 30px;
+    }
+    
+    .fa-cart-shopping {
+        scale: 158%;
+    }
+    
+    .fa-bars {
+        scale: 100%;
+    }
+}
 
 @media (min-width: 768px) {
-/* --------------------------header----------------------------------- */
 
+    .div-barra-busqueda {
+        height: 35px;
+    }
 
-.titulo-head {
-    display: none;
-    margin: auto;
-}
+    .input {
+        height: 35px;
+    }
 
-.barra {
-    margin-left: 50px;
-    margin-right: 1px;
-}
+    .fa-magnifying-glass {
+        top: 7px;
+        right: 10px;
+        font-size: 20px;
+    }
 
-.barra input[type="search"] {
-    width: 45vw; 
-}
+    .div-logo-carrito {   /* div del carrito */
+        width: 20%;
+        height: 40px;
+    }
+    
+    .div-menu-top {   /* div del menu hamburguesa */
+        width: 20%;
+        height: 40px;
+    }
 
-.opciones-top {
-    width: 40%;
-    display: flex;
-    justify-content: flex-end;
-    align-items: center;
-}
+    .fa-cart-shopping {
+        scale: 180%;
+    }
+    
+    .fa-bars {
+        scale: 115%;
+    }
 
-.crear-producto {
-    font-family: 'Roboto';
-    display: none;
-    flex-direction: column;
-    text-align: center;
-    margin-right: 10px;
-    margin-left: 50px;
-    margin-top: 40px;
-    margin-bottom: 20px;
-    color: white;
-}
+    /* ----------------------- cosas desktop q NO se ven ----------------------- */
 
-.mis-compras {
-    font-family: 'Roboto';
-    display: none;
-    flex-direction: column;
-    text-align: center;
-    margin-right: 10px;
-    margin-left: 50px;
-    margin-top: 40px;
-    margin-bottom: 20px;
-    color: white;
-}
-
-.mi-cuenta {
-    display: none;
-    flex-direction: column;
-    text-align: center;
-    margin-right: 10px;
-    margin-left: 20px;
-    margin-top: 15px;
-    color: white;
-}
-
-.carrito {
-    display: flex;
-    flex-direction: column;
-    text-align: center;
-    margin-right: 60px;
-    margin-left: 25px;
-    margin-top: 10px;
-    color: white;
-    scale: 170%;
-}
-
-.logo-carrito-tablet {
-    display: block;
-}
-
-.logo-carrito-mobile {
-    display: none;
+    .mis-compras, .mi-cuenta, .crear-producto {
+        display: none;
+    }
+    
+    /* .crear-producto {
+        flex-direction: column;
+        text-align: center;
+        color: white;
+        align-items: center;
+    } */
+    
+    .mis-compras {
+        flex-direction: column;
+        text-align: center;
+        color: white;
+        align-items: center;
+    }
+    
+    .mi-cuenta {
+        flex-direction: column;
+        text-align: center;
+        color: white;
+        align-items: center;
+    }
 }
 
 
-/* --------------------------header----------------------------------- */
-}
-
-/*     ----------------------------------------------------------------------------------- desktop 1024 px --------------------------------------------------------------------------------------- */
 @media(min-width:1024px){
 
-/* --------------- header ----------------------------------- */
+    /* ----------------------- cosas de mobile q se van ----------------------- */
 
-/* .top {
-    height: 15vh;
-} */
+    .div-logo-mobile {  /* logo perrito */
+        display: none;
+    }
 
-.carrito-text {
-    display: block;
+    .div-menu-top {  /* menu hamburguesa */
+        display: none;
+    }
+
+    .div-logo-carrito {   /* el div del carrito en mobile */
+        display: none;
+    }
+
+
+    /* ----------------------- cosas desktop q se ven ----------------------- */
+
+    .div-logo-desktop {
+        display: block;
+        /* border: 1px solid red; */
+        margin: 0;
+        padding: 0;
+        width: 30%;
+    }
+    
+    .logo-desktop {
+        width: 100%;
+        margin: 0;
+        padding: 0;
+    }
+
+    .izquierda {  /* div de la izq */  /* contiene el logo y la barra  */
+        width: 60%;
+    }
+    
+    .derecha {  /* div de la derecha */  /* contiene crear prod., mi cuenta, carrito y menu hamburg.  */
+        width: 40%;
+        justify-content: center;
+    }
+
+    .div-barra-busqueda {
+        width: 50%;
+        margin-left: 40px;
+    }
+    
+    .div-barra-busqueda input {
+        font-size: 14px;
+        padding: 5px; 
+        width: 100%; 
+    }
+    
+    .fa-magnifying-glass {
+        top: 7px;
+        font-size: 20px;
+    }
+
+    .mis-compras, .mi-cuenta, .crear-producto {
+        display: flex;
+    }
+
+    .crear-producto {
+        flex-direction: column;
+        text-align: center;
+        color: white;
+        align-items: center;
+        border: 1px dashed #ffe7a3;;
+        width: 25%;
+        /* margin: 0; */
+        padding: 0;
+        padding-top: 12px;
+        margin-right: 5px;
+    }
+
+    .crear-producto p {
+        font-size: 12px;
+    }
+    
+    .mis-compras {
+        flex-direction: column;
+        text-align: center;
+        color: white;
+        align-items: center;
+        /* border: 1px solid red; */
+        width: 25%;
+        /* margin: 0; */
+        padding: 0;
+        padding-top: 12px;
+    }
+
+    .mis-compras p {
+        font-size: 12px;
+    }
+    
+    .mi-cuenta {   /* el div del carrito desktop tambien es */
+        flex-direction: column;
+        text-align: center;
+        color: white;
+        align-items: center;
+        /* border: 1px solid red; */
+        width: 20%;
+        /* margin: 0; */
+        padding: 0;
+        padding-top: 12px;
+    }
+
+    .mi-cuenta p {
+        font-size: 12px;
+    }
+    
+    .fa-cart-shopping {   /* el simbolito del carrito en desktop */
+        scale: 100%;
+    }
+
+
+    /* -------------------------------------------------------------header2-------------------------------------------------------------- */
+    
+    .header2 {
+        display: flex;
+        height: 35px;
+        background-color: #154551;
+        border-top: 0.1px solid #154551;
+        border-bottom: 0.1px solid #154551;
+    }
+    
+    .header2-opciones {
+        color: white;
+        display: flex;
+        width: 100%;
+        justify-content: space-between;
+        align-items: center;
+        margin: 20px;
+    }
+    
+    .fa-circle-arrow-down {
+        margin-left: 10px;
+    }
+    
+    .flex-top {
+        height: 10%;
+    }
+
+    .dropbtn {
+        font-size: 14px;
+    }
+
+    .dropdown-content {
+        font-size: 14px;
+    }
+    
+    /* ---------------------------------------------------------footer----------------------------------------------------------------- */
+    
+    footer {
+        flex-direction: row;
+        align-items: center;
+        padding: 15px;
+        box-sizing: content-box;
+        /* text-align: center; */
+        flex-wrap: wrap;
+        justify-content: space-between;
+    }
+    
+    footer h4 {
+        font-size: 14px;
+    }
+    
+    .div-izquierda {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: center;
+        /* border: 1px solid red; */
+        width: 49%;
+    }
+    
+    .div-derecha {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: center;
+        /* border: 1px solid red; */
+        width: 49%;
+    }
+    
+    .logo2 {
+        display: block;
+        width: 8%;
+        scale: 100%;
+        padding: 0;
+    }
+    
+    .nosotros {
+        width: 25%;
+        font-size: 12px;
+    }
+    
+    .todo-perro {
+        width: 25%;
+        font-size: 12px;
+    }
+    
+    .todo-gato {
+        width: 25%;
+        font-size: 12px;
+    }
+    
+    .contacto {
+        width: 60%;
+        font-size: 12px;
+    }
+    
+    .redes-sociales {
+        margin: auto;
+        width: 20%;
+        font-size: 12px;
+    }
+    
+    .redes-sociales h4 {
+        margin: 0;
+    }
+    
+    .twitter-mobile {
+        margin-left: 17px;
+        margin-right: 17px;
+    }
+
 }
 
-.fa-bars {
-    display: block;
+
+@media(min-width:1200px){
+
+    /* ----------------------------- cosas desktop q se ven --------------------------------- */
+    
+    .input {
+        font-size: 14px;
+        padding: 5px; 
+        width: 100%; 
+    }
+    
+    .fa-magnifying-glass {
+        top: 7px;
+        font-size: 20px;
+    }
+
+    .derecha {
+        justify-content: right;
+        padding-right: 15px;
+    }
+
+    .mis-compras, .mi-cuenta, .crear-producto {
+        display: flex;
+    }
+
+    .crear-producto {
+        width: 20%;
+        padding-top: 12px;
+    }
+
+    .crear-producto p {
+        font-size: 13px;
+    }
+    
+    .mis-compras {
+        width: 20%;
+        padding-top: 12px;
+    }
+
+    .mis-compras p {
+        font-size: 13px;
+    }
+    
+    .mi-cuenta {   /* el div del carrito desktop tambien es */
+        width: 15%;
+        padding-top: 12px;
+    }
+
+    .mi-cuenta p {
+        font-size: 13px;
+    }
+    
+    .fa-cart-shopping, .fa-plus, .fa-lock, .fa-circle-user {   /* simbolitos en desktop */
+        scale: 110%;
+    }
+
+    /* -------------------------------------------------------------header2-------------------------------------------------------------- */
+    
+    .dropbtn {
+        font-size: 15px;
+    }
+
+    .dropdown-content {
+        font-size: 15px;
+    }
+
+    /* ----------------------------------------------------------- footer ------------------------------------------------------------- */
+
+    footer h4 {
+        font-size: 16px;
+    }
+
+    .logo2 {
+        width: 6%;
+        scale: 100%;
+    }
+    
+    .nosotros {
+        font-size: 14px;
+    }
+    
+    .todo-perro {
+        font-size: 14px;
+    }
+    
+    .todo-gato {
+        font-size: 14px;
+    }
+    
+    .contacto {
+        font-size: 14px;
+    }
+    
+    .redes-sociales {
+        font-size: 14px;
+    }
+    
+    .redes-sociales h4 {
+        margin: 0;
+    }
+
 }
 
-.header2 {
-    display: flex;
-    height: 35px;
-    background-color: #154551;
-    border-top: 0.1px solid #154551;
-    border-bottom: 0.1px solid #154551;
-}
+@media(min-width:1600px){
 
-.header2-opciones {
-    color: white;
-    display: flex;
-    width: 100%;
-    justify-content: space-between;
-    align-items: center;
-    margin: 20px;
-}
+    .flex-top {
+        height: 110px;
+    }
 
-.fa-circle-arrow-down {
-    margin-left: 10px;
-}
+    /* ----------------------------- cosas desktop q se ven --------------------------------- */
 
-.flex-top {
-    height: 10%;
-}
+    .derecha {
+        padding-right: 20px;
+    }
 
-.fa-bars {
-    display: none;
-}
+    .crear-producto {
+        width: 18%;
+        padding-top: 12px;
+    }
 
-.barra input[type="search"] {
-    width: 35vw; 
-    margin-left: 60px;
-}
+    .crear-producto p {
+        font-size: 15px;
+    }
+    
+    .mis-compras {
+        width: 18%;
+        padding-top: 12px;
+    }
 
-.carrito, .mis-compras, .mi-cuenta, .crear-producto {
-    display: block;
-}
+    .mis-compras p {
+        font-size: 15px;
+    }
+    
+    .mi-cuenta {   /* el div del carrito desktop tambien es */
+        width: 15%;
+        padding-top: 12px;
+    }
 
-.logo-titulo-jun {
-    display: block;
-    margin-left: 30px;
-}
+    .mi-cuenta p {
+        font-size: 15px;
+    }
+    
+    .fa-cart-shopping, .fa-plus, .fa-lock, .fa-circle-user {   /* simbolitos en desktop */
+        scale: 120%;
+    }
 
-.logo, .titulo-head {
-    display: none;
-}
-/* --------------- header ----------------------------------- */
+    /* -------------------------------------------------------------header2-------------------------------------------------------------- */
+    
+    .dropbtn {
+        font-size: 16px;
+    }
 
-/* --------------------------footer----------------------------------- */
-.logo2 {
-    display: block;
-}
+    .dropdown-content {
+        font-size: 16px;
+    }
 
-.carrito {
-    margin-top: 20px;
-    scale: 100%;
-}
-/* --------------------------footer----------------------------------- */
+
 }

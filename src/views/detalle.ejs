@@ -14,7 +14,7 @@
         <article class="contenedor_mobile">
             <!-- Ruta -->
             <% if(producto.tipo_mascota_id == 2) { %> <!-- si el tipo de mascota es perro -->
-                <p>
+                <p class="ruta-barras">
                     <a class="ruta" href="/">localhost:3100</a> > <a class="ruta" href="/productos">productos</a> > <a class="ruta" href="/productos/perro">perro</a> > 
                     <% if(producto.categorias[0].categoria == "comida"){ %>
                         <a class="ruta" href="/productos/perro/comida">comida</a> > <a class="ruta" href="/productos/perro/comida/<%= producto.id %>"><%= producto.id %></a>
@@ -27,7 +27,7 @@
                     <% } %>
                 </p>
             <% } else { %> <!-- si el tipo de mascota es gato -->
-                <p>
+                <p class="ruta-barras">
                     <a class="ruta" href="/">localhost:3100</a> > <a class="ruta" href="/productos">productos</a> > <a class="ruta" href="/productos/gato">gato</a> > 
                     <% if(producto.categorias[0].categoria == "comida"){ %>
                         <a class="ruta" href="/productos/gato/comida">comida</a> > <a class="ruta" href="/productos/gato/comida/<%= producto.id %>"><%= producto.id %></a>

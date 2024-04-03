@@ -1,50 +1,56 @@
-
-
 <header class="top">
     <div class="flex-top">
-        <a href="/">
-            <div class="logo-titulo-jun">
-                <img src="/img/header/LogoHeadBF2.png" alt="logo-titulo">
-            </div>
-        </a>
-       <!-- <div class="logo-titulo-sep"> -->
-           
+        <div class="izquierda">
+            <div class="div-logo-desktop">
                 <a href="/">
-                    <img src="/img/header/logoB.png" alt="logoB" class="logo"> 
-                    <p class="titulo-head">PATITAS</p>
+                    <!-- el logo en desktop -->
+                    <img src="/img/header/LogoHeadBF2.png" alt="logo-desktop">
                 </a>
-            
-       <!-- </div> -->
-       <form action="/productos/buscar" method="POST">
-       <div class="barra-busqueda">
-           <div class="barra">
-               <input type="search" name="producto" placeholder="Buscar producto">
-               <!-- <i class="fa-solid fa-magnifying-glass"></i> -->
             </div>
-           </div>
-       </form>
-       <div class="opciones-top">
 
+            <div class="div-logo-mobile">
+                <a href="/">
+                    <!-- el logo en mobile y tablet -->
+                    <img src="/img/header/logoB.png" alt="logoB" class="logo-mobile"> 
+                </a>
+            </div>
+               
+           <!-- barra busqueda -->
+           <div class="div-barra-busqueda">
+                <form action="/productos/buscar" method="POST" class="form-barra">
+                    <input type="search" name="producto" placeholder="Buscar producto" class="input">
+                    <i class="fa-solid fa-magnifying-glass"></i>
+                </form>
+           </div>
+        </div>
+        
+        <div class="derecha">
             <% if(userALoguearse && userALoguearse.permiso_id == 1){ %>
+                <!-- crear producto -->
                 <div class="crear-producto">
                     <a href="/productos/alta">
-                    <i class="fa-solid fa-plus" style="color: #ffffff;"></i>
-                    <p>Crear Producto</p>
+                        <i class="fa-solid fa-plus" style="color: #ffe7a3;"></i>
+                        <p style="color: #ffe7a3;">Crear Producto</p>
                     </a>
                 </div>
             <% } %>
 
-           <div class="mis-compras">
+            <!-- mis compras -->
+            <div class="mis-compras">
                <a href="/users/login">
-                <i class="fa-solid fa-lock" style="color: #ffffff;"></i>
-               <p>Mis compras</p>
+                    <i class="fa-solid fa-lock" style="color: #ffffff;"></i>
+                    <p>Mis compras</p>
                 </a>
             </div>
+
+            <!-- mi cuenta -->
             <div class="mi-cuenta">
                     <% if(userALoguearse){ %>
                         <div class="dropdown1">
                             <i class="fa-solid fa-circle-user" style="color: #FECF53;"></i>
-                            <a href="/users/edit/<%= userALoguearse.id %>"><p class="nombre-usuario"><%= userALoguearse.nombre %></p></a>
+                            <a href="/users/edit/<%= userALoguearse.id %>">
+                                <p class="nombre-usuario"><%= userALoguearse.nombre %></p>
+                            </a>
                            
                             <div class="dropdown-content1">
                                 <a href="/users/perfil/<%= userALoguearse.id %>">Mi perfil</a>
@@ -57,15 +63,29 @@
                         <a href="/users/login"><p >Mi cuenta</p></a>
                     <% } %>
             </div>
-           <div class="carrito">
-               <a href="/users/carrito2">  
-                <div class="logo-carrito-tablet"><i class="fa-solid fa-cart-shopping" style="color: #ffffff;"></i></div>
-                <div class="logo-carrito-mobile"><i class="fa-solid fa-cart-shopping fa-2xl" style="color: #ffffff;"></i></div>
-                <p class="carrito-text">Carrito</p>
+
+            <!-- carrito mobile -->
+            <div class="div-logo-carrito">
+                <a href="/users/carrito2">
+                    <i class="fa-solid fa-cart-shopping" style="color: #ffffff;"></i>
                 </a>
-               </div>
-           </div>
-           <div class="menu-top">
-               <i class="fa-solid fa-bars fa-2xl" style="color: #ffffff;"></i>
-           </div>
+            </div>
+
+            <!-- carrito desktop -->
+            <div class="mi-cuenta">
+                <a href="/users/carrito2">
+                     <i class="fa-solid fa-cart-shopping" style="color: #ffffff;"></i>
+                     <p>Carrito</p>
+                 </a>
+             </div>
+
+            <!-- menu hamburguesa -->
+            <div class="div-menu-top">
+                <a href="/users/login">
+                    <i class="fa-solid fa-bars fa-2xl" style="color: #ffffff;"></i>
+                </a>
+            </div>
+            
+        </div>
+    </div>
 </header>
