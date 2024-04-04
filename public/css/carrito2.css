@@ -64,6 +64,23 @@ a {
     margin: 0;
 }
 
+.arriba {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    /* border: 1px solid blue; */
+    width: 90%;
+}
+
+.abajo {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    /* border: 1px solid blue; */
+    width: 90%;
+}
+
+
 /* textos del 1er contenedor */
 .titulo-nombre-producto {  /* titulo */
     font-size: 17px;
@@ -98,7 +115,7 @@ a {
     margin: 0;
     margin-bottom: 15px;
     margin-left: 8px;
-    width: 65%;
+    /* width: 58%; */
     text-align: left;
 }
 
@@ -115,6 +132,14 @@ a {
     font-size: 15px;
     font-weight: 500;
     margin: 0;
+    margin-left: 5px;
+    text-align: left;
+}
+
+.precio-detalle2 {   /* el precio final del producto sin dscto */
+    font-size: 15px;
+    font-weight: 500;
+    margin-top: 0;
     margin-left: 5px;
     text-align: left;
 }
@@ -141,7 +166,6 @@ a {
     font-weight: 300;
     font-size: 12px;
     margin: 0;
-    margin-bottom: 15px;
     text-align: left;
 }
 
@@ -150,6 +174,7 @@ a {
     font-size: 12px;
     margin: 0;
     text-align: left;
+    margin-bottom: 15px;
 }
 
 /* 2do contenedor */
@@ -495,7 +520,7 @@ h2 {
         margin: 0;
         margin-bottom: 15px;
         margin-left: 8px;
-        width: 70%;
+        /* width: 70%; */
     }
 
     .precio-oferta {   /* texto de precio en oferta!! */
@@ -508,10 +533,17 @@ h2 {
         font-weight: 300;
         font-size: 10px;
         margin: 0;
-        margin-bottom: 15px;
+        /* margin-bottom: 15px; */
     }
 
     .precio-detalle {   /* el precio final */
+        font-size: 13px;
+        font-weight: 500;
+        margin: 0;
+        margin-left: 5px;
+    }
+
+    .precio-detalle2 {   /* el precio final */
         font-size: 13px;
         font-weight: 500;
         margin: 0;
@@ -530,6 +562,7 @@ h2 {
         font-weight: 300;
         font-size: 10px;
         margin: 0;
+        margin-bottom: 15px;
     }
     
     .subtitulo2, .precio {
@@ -684,26 +717,33 @@ h2 {
         margin-left: 10px;
     }
 
+    .precio-detalle2 {
+        font-size: 15px;
+        font-weight: 600;
+        margin: 0;
+        margin-left: 10px;
+    }
+
     .precio-tachado-detalle {
         font-size: 14px;
         font-weight: 400;
         margin: 0;
         margin-bottom: 15px;
         margin-left: 8px;
-        width: 70%;
+        /* width: 70%; */
     }
 
     .precio-normal {
         font-weight: 400;
         font-size: 14px;
         margin: 0;
-        margin-bottom: 15px;
     }
 
     .precio-normal2 {
         font-weight: 400;
         font-size: 14px;
         margin: 0;
+        margin-bottom: 15px;
     }
 
     .precio-oferta {
@@ -848,6 +888,11 @@ h2 {
         margin-left: 12px;
     }
 
+    .precio-detalle2 {
+        font-size: 18px;
+        margin-left: 12px;
+    }
+
     .precio-tachado-detalle {
         font-size: 16px;
         margin-bottom: 15px;
@@ -856,6 +901,10 @@ h2 {
     }
 
     .precio-normal {
+        font-size: 16px;
+    }
+
+    .precio-normal2 {
         font-size: 16px;
         margin-bottom: 15px;
     }

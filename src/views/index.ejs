@@ -4,7 +4,7 @@
     <%- include("./partials/head.ejs", {cssSheet: "index_styles", title: "Home - PATITAS"}) %>
     <link rel="stylesheet" href="/css/header-footer.css">
     
-<body>
+<body id="body">
 
     <%- include("./partials/header.ejs") %>
     <%- include("./partials/header2.ejs") %>
@@ -139,7 +139,7 @@
                                         <p class="descuento">20% OFF</p>
                                     </div>
                                     <div class="div-boton-comprar">
-                                        <button class="boton-comprar" id="comprar" type="submit">Agregar</button>
+                                        <button onclick="agregar()" class="boton-comprar" id="comprar" type="submit">Agregar</button>
                                     </div>
                                 </div>
                             </article>
@@ -231,7 +231,7 @@
                                         </div>
                                     <% } %>
                                     <div class="div-boton-comprar">
-                                        <button class="boton-comprar" id="comprar" type="submit">Agregar</button>
+                                        <button onclick="agregar()" class="boton-comprar" id="comprar" type="submit">Agregar</button>
                                     </div>
                                 </div>
                             </article>
@@ -262,8 +262,8 @@
         <!--- Sección productos para Gato-->
         <section class="section-productos-descuentos">
             <div class="swiffy-slider slider-item-show6 slider-item-show2-sm slider-item-reveal slider-item-snapstart slider-nav-dark slider-indicators-round slider-indicators-dark">
-                <h2>Productos para gato</h2>
-                <div class="div-section-productos-descuentos">
+                <h2>Productos para gato</h2> 
+                <div class="div-section-productos-descuentos" id="articulos">
                     <ul class="slider-container">
                         <% productosGato.forEach(producto => { %>
                             <article class="articulo-productos-descuentos">
@@ -312,7 +312,7 @@
                                         </div>
                                     <% } %>
                                     <div class="div-boton-comprar">
-                                        <button class="boton-comprar" id="comprar" type="submit">Agregar</button>
+                                        <button onclick="agregar()" class="boton-comprar" id="comprar" type="submit">Agregar</button>
                                     </div>
                                 </div>
                             </article>
@@ -344,7 +344,7 @@
 
     <%- include("./partials/footer.ejs") %>
 
-    <!-- <script src="/js/carrusel.js"></script> -->
+    <script src="/js/agregar.js"></script>
     
 </body>
 </html>

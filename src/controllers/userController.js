@@ -97,7 +97,7 @@ const userController = {
                 email: req.body.email,
                 password: bcrypt.hashSync(req.body.password, 10),
                 imagen: req.file ? req.file.filename : "/img/default.jpg",
-                permiso_id: 2  //ID de invitado
+                permiso_id: 1  //ID de invitado
             });
 
             //Validaciones con la info del request
@@ -292,7 +292,7 @@ const userController = {
         //usuario q se loguea
         const userALoguearse = req.session.userLogueado
 
-        let producto = db.Producto.findByPk(1, {
+        let producto = db.Producto.findByPk(10, {
             include: ["tipos_mascota", 'descuentos', 'categorias']
         })
 
