@@ -10,25 +10,24 @@
 
 <main>
     <h3 class="titulo-ppal">Listado de usuarios:</h3>
-    <article class="contenedor-alta">
-       
 
-        <ul>
-            <% users.forEach(user => { %>
-                <li>
-                    <p>Nombre: <%= user.nombre %></p>
-                    <p>Apellido: <%= user.apellido %></p>
-                    <p>Permiso ID: <%= user.permiso_id %></p>
-                    <% if(user.imagen) { %>
-                        <img src="<%= user.imagen %>" alt="Imagen de <%= user.nombre %> <%= user.apellido %>">
-                    <% } else { %>
-                        <p>Imagen no disponible</p>
-                    <% } %>
-                </li>
-            <% }); %>
-        </ul>
-        
-    </article>
+    <% users.forEach(user => { %>
+        <article class="contenedor-alta">
+            <div style="padding: 24px;">
+                <% if(user.imagen) { %>
+                    <img src="<%= user.imagen %>" alt="Imagen de <%= user.nombre %> <%= user.apellido %>" style="width:48px; height: 48px;">
+                <% } else { %>
+                    <p>Imagen no disponible</p>
+                <% } %>
+                <p>Nombre: <%= user.nombre %></p>
+                <p>Apellido: <%= user.apellido %></p>
+                <p>Permiso ID: <%= user.permiso_id %></p>
+                
+            </div>
+        </article>
+    <% }); %>
+
+    
 </main>
 
 </body>
