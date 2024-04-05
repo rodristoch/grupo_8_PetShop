@@ -97,7 +97,7 @@ const userController = {
                 email: req.body.email,
                 password: bcrypt.hashSync(req.body.password, 10),
                 imagen: req.file ? req.file.filename : "/img/default.jpg",
-                permiso_id: 1  //ID de invitado
+                permiso_id: 2  //ID de invitado
             });
 
             //Validaciones con la info del request
