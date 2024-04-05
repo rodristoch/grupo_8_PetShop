@@ -333,6 +333,7 @@ const userController = {
             const userAll = await db.Usuario.findAll();
     
             // Renderizar la vista con los datos obtenidos
+     
             res.render('usuariosListado.ejs', { userALoguearse, users: userAll });
         } catch (error) {
             console.error('Error al recuperar listado de usuarios', error);

@@ -12,6 +12,22 @@
     <h3 class="titulo-ppal">Listado de usuarios:</h3>
     <article class="contenedor-alta">
        
+
+        <ul>
+            <% users.forEach(user => { %>
+                <li>
+                    <p>Nombre: <%= user.nombre %></p>
+                    <p>Apellido: <%= user.apellido %></p>
+                    <p>Permiso ID: <%= user.permiso_id %></p>
+                    <% if(user.imagen) { %>
+                        <img src="<%= user.imagen %>" alt="Imagen de <%= user.nombre %> <%= user.apellido %>">
+                    <% } else { %>
+                        <p>Imagen no disponible</p>
+                    <% } %>
+                </li>
+            <% }); %>
+        </ul>
+        
     </article>
 </main>
 
