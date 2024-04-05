@@ -446,6 +446,10 @@ h2 {
     border-radius: 5px;
 } */
 
+#myBtn {
+    display: none;
+}
+
 /* --------------------------Main----------------------------------- */
 
 @media (min-width: 768px) {
@@ -719,6 +723,28 @@ h2 {
         color: white;
         border: 1px solid #9b46d7;
         background-color: #9b46d7;
+    }
+
+    #myBtn {
+        display: none; /* Hidden by default */
+        position: fixed; /* Fixed/sticky position */
+        bottom: 20px; /* Place the button at the bottom of the page */
+        right: 30px; /* Place the button 30px from the right */
+        z-index: 99; /* Make sure it does not overlap */
+        border: none; /* Remove borders */
+        outline: none; /* Remove outline */
+        background-color: #1e697b; /* Set a background color */
+        color: white; /* Text color */
+        cursor: pointer; /* Add a mouse pointer on hover */
+        padding: 15px; /* Some padding */
+        border-radius: 50%; /* Rounded corners */
+        font-size: 18px; /* Increase font size */
+        width: 50px;
+        height: 50px;
+    }
+      
+    #myBtn:hover {
+        background-color: #555; /* Add a dark-grey background on hover */
     }
 
 }
