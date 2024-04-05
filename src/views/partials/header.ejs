@@ -37,10 +37,17 @@
 
             <!-- mis compras -->
             <div class="mis-compras">
-               <a href="/users/login">
-                    <i class="fa-solid fa-lock" style="color: #ffffff;"></i>
-                    <p>Mis compras</p>
-                </a>
+                <% if(userALoguearse){ %>
+                    <a href="/users/perfil/<%= userALoguearse.id %>">
+                        <i class="fa-solid fa-lock" style="color: #ffffff;"></i>
+                        <p>Mis compras</p>
+                    </a>
+                <% } else { %>
+                    <a href="/users/login">
+                        <i class="fa-solid fa-lock" style="color: #ffffff;"></i>
+                        <p>Mis compras</p>
+                    </a>
+                <% } %>
             </div>
 
             <!-- mi cuenta -->
@@ -66,24 +73,45 @@
 
             <!-- carrito mobile -->
             <div class="div-logo-carrito">
-                <a href="/users/carrito2">
-                    <i class="fa-solid fa-cart-shopping" style="color: #ffffff;"></i>
-                </a>
+                <% if(userALoguearse){ %>
+                    <a href="/users/carrito2">
+                        <i class="fa-solid fa-cart-shopping" style="color: #ffffff;"></i>
+                        <p>Carrito</p>
+                    </a>
+                <% } else { %>  
+                    <a href="/users/login">
+                        <i class="fa-solid fa-cart-shopping" style="color: #ffffff;"></i>
+                        <p>Carrito</p>
+                    </a>
+                <% } %>
             </div>
 
             <!-- carrito desktop -->
             <div class="mi-cuenta">
-                <a href="/users/carrito2">
-                     <i class="fa-solid fa-cart-shopping" style="color: #ffffff;"></i>
-                     <p>Carrito</p>
-                 </a>
+                <% if(userALoguearse){ %>
+                    <a href="/users/carrito2">
+                        <i class="fa-solid fa-cart-shopping" style="color: #ffffff;"></i>
+                        <p>Carrito</p>
+                    </a>
+                <% } else { %>  
+                    <a href="/users/login">
+                        <i class="fa-solid fa-cart-shopping" style="color: #ffffff;"></i>
+                        <p>Carrito</p>
+                    </a>
+                <% } %>
              </div>
 
             <!-- menu hamburguesa -->
             <div class="div-menu-top">
-                <a href="/users/login">
-                    <i class="fa-solid fa-bars fa-2xl" style="color: #ffffff;"></i>
-                </a>
+                <% if(userALoguearse){ %>
+                    <a href="/users/perfil/<%= userALoguearse.id %>">
+                        <i class="fa-solid fa-bars fa-2xl" style="color: #ffffff;"></i>
+                    </a>
+                <% } else { %>
+                    <a href="/users/login">
+                        <i class="fa-solid fa-bars fa-2xl" style="color: #ffffff;"></i>
+                    </a>
+                <% } %>
             </div>
             
         </div>

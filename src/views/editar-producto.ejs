@@ -1,102 +1,106 @@
 <!DOCTYPE html>
 <html lang="en">
+
     <%- include("./partials/head.ejs", {cssSheet: "alta-editar", title: "Editar producto"}) %>
-<link rel="stylesheet" href="/css/header-footer.css">
+    <link rel="stylesheet" href="/css/header-footer.css">
+
 <body>
 
-<%- include("./partials/header.ejs") %>    
-<%- include("./partials/header2.ejs") %>
-<main>
-    <h3 class="titulo-ppal">Vas a editar: <%= editarProducto.nombre %></h3>
-    <article class="contenedor-alta">
-        <form class="formu" action="/productos/editar/<%= editarProducto.id %>?_method=PUT" method="POST" enctype="multipart/form-data">
+    <%- include("./partials/header.ejs") %>    
+    <%- include("./partials/header2.ejs") %>
 
-            <section class="flex-linea">
-                <div class="flex-columna">
-                    <label for="nombre_producto">Nombre del producto</label>
-                    <input type="text" id="nombre_producto" name="nombre_producto" placeholder="Ej: Dog chow para perros pequeños" value="<%= editarProducto.nombre %>">
-                </div>
+    <main>
+        <h3 class="titulo-ppal">Vas a editar: <%= editarProducto.nombre %></h3>
+        <article class="contenedor-alta">
+            <form class="formu" action="/productos/editar/<%= editarProducto.id %>?_method=PUT" method="POST" enctype="multipart/form-data">
 
-                <div class="flex-columna">
-                    <label for="precio_producto">Precio del producto</label>
-                    <input type="number" id="precio_producto" name="precio_producto" placeholder="Ej: 50000" value="<%= editarProducto.precio %>">
-                </div>
-               
-            </section>
+                <section class="flex-linea">
+                    <div class="flex-columna">
+                        <label for="nombre_producto">Nombre del producto</label>
+                        <input type="text" id="nombre_producto" name="nombre_producto" placeholder="Ej: Dog chow para perros pequeños" value="<%= editarProducto.nombre %>">
+                    </div>
 
-            <section class="flex-linea">
-                <div class="flex-columna">
-                    <label for="mascota">Selecciona una marca:</label>
-                    <select name="marca_id" id="">
-                        <% marcas.forEach(marca => { %> 
-                            <option value="<%= marca.id %>"><%= marca.marca %></option>
-                        <% }) %>
-                    </select>
-                </div>
-                <div class="flex-columna">
-                    <label for="mascota">El productos es para:</label>
-                    <select name="tipo_mascota_id" id="mascota">
-                        <% tipos.forEach(tipo => { %> 
-                            <option value="<%= tipo.id %>"><%= tipo.mascota %></option>
-                        <% }) %>
-                    </select>
-                </div>
-            </section>
+                    <div class="flex-columna">
+                        <label for="precio_producto">Precio del producto</label>
+                        <input type="number" id="precio_producto" name="precio_producto" placeholder="Ej: 50000" value="<%= editarProducto.precio %>">
+                    </div>
+                
+                </section>
 
-            <section class="flex-linea">
-                <div class="flex-columna">    
-                    <label for="categoria">Selecciona una categoria:</label>
-                    <select name="categoria_id" id="categoria">
-                        <% categorias.forEach(categoria => { %> 
-                            <option value="<%= categoria.id %>"><%= categoria.categoria %></option>
-                        <% }) %>
-                    </select>
-                </div>
-                <div class="flex-columna">
-                    <label for="descuento"> ¿El producto tiene descuento?</label>
-                    <select name="decuento_id" id="descuento">
-                        <% descuentos.forEach(descuento => { %> 
-                            <option value="<%= descuento.id %>"><%= descuento.nombre %></option>
-                        <% }) %>
-                    </select>
-                </div>
-            </section>
+                <section class="flex-linea">
+                    <div class="flex-columna">
+                        <label for="mascota">Selecciona una marca:</label>
+                        <select name="marca_id" id="">
+                            <% marcas.forEach(marca => { %> 
+                                <option value="<%= marca.id %>"><%= marca.marca %></option>
+                            <% }) %>
+                        </select>
+                    </div>
+                    <div class="flex-columna">
+                        <label for="mascota">El productos es para:</label>
+                        <select name="tipo_mascota_id" id="mascota">
+                            <% tipos.forEach(tipo => { %> 
+                                <option value="<%= tipo.id %>"><%= tipo.mascota %></option>
+                            <% }) %>
+                        </select>
+                    </div>
+                </section>
+
+                <section class="flex-linea">
+                    <div class="flex-columna">    
+                        <label for="categoria">Selecciona una categoria:</label>
+                        <select name="categoria_id" id="categoria">
+                            <% categorias.forEach(categoria => { %> 
+                                <option value="<%= categoria.id %>"><%= categoria.categoria %></option>
+                            <% }) %>
+                        </select>
+                    </div>
+                    <div class="flex-columna">
+                        <label for="descuento"> ¿El producto tiene descuento?</label>
+                        <select name="decuento_id" id="descuento">
+                            <% descuentos.forEach(descuento => { %> 
+                                <option value="<%= descuento.id %>"><%= descuento.nombre %></option>
+                            <% }) %>
+                        </select>
+                    </div>
+                </section>
+                
+                <section class="flex-linea">
+                    <div class="flex-columna">
+                        <!-- Seguramente debamos incorporar una condición según la categoría
+                        selecciona porque cada producto tiene sus propias características-->
+                        <label for="peso_producto">Ingresa el peso</label>
+                        <input type="number" id="peso_producto" name="peso_producto" placeholder="Ej: 34" value="<%= editarProducto.peso %>">
+                    </div>
+                    <div class="flex-columna">
+                        <label for="color_producto">Ingrese el color</label>
+                        <input type="text" id="color_producto" name="peso_producto" placeholder=" Ej: Negro" value="<%= editarProducto.color %>">
+                    </div>
+                </section>
             
-            <section class="flex-linea">
-                <div class="flex-columna">
-                    <!-- Seguramente debamos incorporar una condición según la categoría
-                    selecciona porque cada producto tiene sus propias características-->
-                    <label for="peso_producto">Ingresa el peso</label>
-                    <input type="number" id="peso_producto" name="peso_producto" placeholder="Ej: 34" value="<%= editarProducto.peso %>">
-                </div>
-                <div class="flex-columna">
-                    <label for="color_producto">Ingrese el color</label>
-                    <input type="text" id="color_producto" name="peso_producto" placeholder=" Ej: Negro" value="<%= editarProducto.color %>">
-                </div>
-            </section>
-           
 
-            <label for="descripcion">Descripción del producto</label>
-            <textarea name="descripcion" id="descripcion" placeholder="Ingresa la información que describa lo mejor posible el producto" ><%= editarProducto.descripcion %></textarea>
-            
-            <section class="flex-linea">
-                <label for="imagen-producto">Imagen de producto:</label>
-                <input type="file" name="imagen_producto">
-            </section>
-            
-            <section class="flex-linea">
-                <p>Imagen actual de producto:</p>
-                <img src="/img/productos/<%= editarProducto.imagen %>" alt="Imagen actual" class="mostrar_imagen">
+                <label for="descripcion">Descripción del producto</label>
+                <textarea name="descripcion" id="descripcion" placeholder="Ingresa la información que describa lo mejor posible el producto" ><%= editarProducto.descripcion %></textarea>
+                
+                <section class="flex-linea">
+                    <label for="imagen-producto">Imagen de producto:</label>
+                    <input type="file" name="imagen_producto">
+                </section>
+                
+                <section class="flex-linea">
+                    <p>Imagen actual de producto:</p>
+                    <img src="/img/productos/<%= editarProducto.imagen %>" alt="Imagen actual" class="mostrar_imagen">
 
-            </section>
+                </section>
 
-            <button type="submit">Guardar producto</button>
-        </form>
+                <button type="submit">Guardar producto</button>
+            </form>
 
-    </article>
-    
-</main>
+        </article>
+        
+    </main>
 
 <%- include("./partials/footer.ejs") %>
+
 </body>
 </html>

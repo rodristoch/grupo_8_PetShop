@@ -168,7 +168,26 @@ a {
     color: white;
     font-size: 16px;
     padding: 10px;
-    background-color: #1e697b;
+    background-color: #4793a7;
+    border-radius: 8px;
+    width: 100%;
+    margin: auto;
+    margin-top: 10px;
+    text-align: center;
+    cursor: pointer;
+    transition: 350ms;
+    border: 1px solid black;
+}   
+
+.boton_comprar{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    font-size: 17px;
+    font-weight: 500;
+    padding: 10px;
+    background-color: #3c47bd;
     border-radius: 8px;
     width: 100%;
     margin: auto;
@@ -177,14 +196,15 @@ a {
     cursor: pointer;
     transition: 350ms;
     border: 1px solid black;
-}   
+}  
 
 .boton_editar{
     display: flex;
     justify-content: center;
     align-items: center;
-    color: rgb(77, 77, 77);
+    color: rgb(106, 106, 106);
     font-size: 16px;
+    font-weight: 400;
     padding: 10px;
     background-color: rgb(255, 255, 128);
     border-radius: 8px;
@@ -217,7 +237,11 @@ a {
 } 
 
 .boton_agregar:hover{
-    background-color: #349fba;
+    background-color: #75bacb;
+}
+
+.boton_comprar:hover{
+    background-color: #438cd0;
 }
 
 .boton_editar:hover{
@@ -485,6 +509,10 @@ a {
     .boton_agregar {
         width: 70%;
     }  
+    
+    .boton_comprar {
+        width: 70%;
+    } 
     
     .boton_editar {
         width: 70%;

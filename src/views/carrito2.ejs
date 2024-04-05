@@ -23,12 +23,14 @@
                         <h3 class="titulo-descrip">Descripcion de producto:</h3>
                         <h3 class="descrip"><%= producto.descripcion %></h3>
                         <% if(producto.descuentos[0].id == 2) { %>
-                            <div class="precio-con-descto">
-                                <p class="precio-normal">Precio regular:</p>
+                            <div class="arriba">
+                                <p class="precio-normal2">Precio regular:</p>
                                 <p class="precio-tachado-detalle">$ <%= producto.precio %></p>
+                            </div>
+                            <div class="abajo">
                                 <p class="precio-oferta">Precio en oferta!!</p>
                                 <p class="precio-detalle">$ <%= Number((producto.precio*0.8).toFixed(2)) %></p> 
-                                <p class="descuento-precio">20% OFF</p>  
+                                <p class="descuento-precio">20% OFF</p>
                             </div>
                         <% } else { %>
                             <div class="precio-regular">
@@ -130,7 +132,7 @@
                                         <p class="descuento">20% OFF</p>
                                     </div>
                                     <div class="div-boton-comprar">
-                                        <button class="boton-comprar" type="submit">Agregar</button>
+                                        <button onclick="agregar()" class="boton-comprar" type="submit">Agregar</button>
                                     </div>
                                 </div>
                             </article>
@@ -159,5 +161,7 @@
     </main>
 
     <%- include("./partials/footer.ejs") %>
+
+    <script src="/js/agregar.js"></script>
     
 </body>
