@@ -25,6 +25,18 @@
         </div>
         
         <div class="derecha">
+
+            <% if (userALoguearse && userALoguearse.permiso_id == 1) { %>
+            <div class="mis-compras">
+                <a href="/users/usuariosListado">
+                    <i class="fa-solid fa-users"></i>
+                    <p>Usuarios</p>
+                </a>
+
+            </div>
+
+            <% } %>
+
             <% if(userALoguearse && userALoguearse.permiso_id == 1){ %>
                 <!-- crear producto -->
                 <div class="crear-producto">

@@ -64,6 +64,12 @@ router.get("/logout2", userController.logout2)
 //Carrito 2 
 router.get("/carrito2", /* authMiddleware */ userController.carrito2)
 
+//Base de usuarios
+router.get('/usuariosListado', userController.usuariosListado)
+
+
+
+
 //Chequear si estamos logueados
 router.get("/check", function(req, res){
     if(req.session.userLogueado == undefined){

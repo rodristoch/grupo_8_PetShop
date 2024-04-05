@@ -224,7 +224,7 @@ const userController = {
                 // Renderizar la vista de edición con los errores y los datos completados correctamente
                 return res.render("edit-user", { errors: validationResults.mapped(), userToEdit: req.body, userALoguearse });
             }
-    
+     
             // Guardar los cambios en la base de datos
             await userToEdit.save();
     
@@ -323,6 +323,33 @@ const userController = {
         })
 
     },
+
+    usuariosListado: async (req, res) => {
+        try {
+            // Usuario que se ha logueado
+            const userALoguearse = req.session.userLogueado;
+    
+            // Consulta a la base de datos para obtener todos los usuarios
+            const userAll = await db.Usuario.findAll();
+    
+            // Renderizar la vista con los datos obtenidos
+            res.render('usuariosListado.ejs', { userALoguearse, users: userAll });
+        } catch (error) {
+            console.error('Error al recuperar listado de usuarios', error);
+            res.status(500).send('Error al recuperar listado de usuarios');
+        }
+    }
+    
+
+
+
+
+
+
+
+
+
+
 
     /* register: (req, res) => {
 
