@@ -421,9 +421,12 @@ input[type="radio"] {
 @media (min-width: 769px) {
 
     .flex-enlinea {
-        justify-content:flex-end;
-        gap: 12px;
-        padding-right: 12px ;
+        margin: auto;
+        margin-top: 16px;
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+        gap: 30px;
     }
 
     .ordenar {
