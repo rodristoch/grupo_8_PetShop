@@ -14,18 +14,22 @@ a {
     display: flex;
     justify-content: space-between;
     padding: 12px;
+    padding-left: 0;
+    padding-right: 0;
     flex-direction: column;
     text-align: center;
+    width: 90%;
+    margin: 0;
+    margin: auto;
 }
 
 /* 1er contenedor */
 .contenedor-producto {  /* contenedor padre (igual metido dentro de .all) */
-    width: 95%;
+    /* width: 100%; */
     background-color: #fede87;
     border: 1px solid #FECF53;
     display: flex;
     border-radius: 8px;
-    display: flex;
     flex-direction: column;
     padding: 10px;
     margin-bottom: 10px;
@@ -56,6 +60,13 @@ a {
     padding: 5px;
 }
 
+.titulo-cantidad {  /* el div del titulo ppal y la cantidad *//* contenedor padre: texto  */
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+}
+
 .precio-con-descto {   /* contenedor padre: texto  */
     display: flex;
     flex-wrap: wrap;
@@ -78,6 +89,30 @@ a {
     flex-wrap: wrap;
     /* border: 1px solid blue; */
     width: 90%;
+}
+
+.div-botones {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 20px;
+    margin: 0;
+    margin-bottom: 20px;
+}
+
+.boton-eliminar, .botton-comprar {
+    padding: 0;
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: #1e697b;
+    font-size: 13px;
+    font-weight: 500;
+    transition: 450ms;
+}
+
+.boton-eliminar:hover, .botton-comprar:hover {
+    color: black;
 }
 
 
@@ -113,7 +148,7 @@ a {
     font-size: 12px;
     font-weight: 300;
     margin: 0;
-    margin-bottom: 15px;
+    margin-bottom: 10px;
     margin-left: 8px;
     /* width: 58%; */
     text-align: left;
@@ -174,7 +209,22 @@ a {
     font-size: 12px;
     margin: 0;
     text-align: left;
-    margin-bottom: 15px;
+    margin-bottom: 10px;
+}
+
+.ruta {
+    color: #1e697b;
+    font-weight: 500;
+    font-size: 16px;
+}
+
+.ruta:hover {
+    color: black;
+}
+
+.ruta-barras {
+    display: none;
+    font-size: 14px;
 }
 
 /* 2do contenedor */
@@ -188,7 +238,7 @@ a {
     border-radius: 8px;
     margin: 0;
     padding: 10px;
-    width: 95%;
+    /* width: 100%; */
 }
 
 .textos2 {   /* contenedor padre: contenedor-proceder-pago */
@@ -267,6 +317,7 @@ a {
     width: 100%;
     margin: 0;
     margin-top: 15px;
+    /* border: 1px solid red; */
 }
 
 .btn {
@@ -275,10 +326,11 @@ a {
     background-color: #1e697b;
     color: #fff;
     border: none;
-    border-radius: 4px;
+    border-radius: 7px;
     cursor: pointer;
     transition: 450ms;
     border: 1px solid #18515f;
+    width: 100%;
 }
 
 .btn:hover {
@@ -442,7 +494,7 @@ h2 {
     font-size: 11px;
     padding: 4px;
     border-radius: 5px;
-    width: 50%;
+    width: 60%;
     text-align: center;
     margin: 0;
 }
@@ -485,7 +537,7 @@ h2 {
     
     /* 1er contenedor */
     .contenedor-producto {  /* contenedor padre (igual metido dentro de .all) */
-        width: 65%;
+        width: 70%;
         display: flex;
         border-radius: 8px;
         display: flex;
@@ -493,10 +545,19 @@ h2 {
         margin: 0;
     }
 
+    .div-botones {
+        margin-bottom: 20px;
+    }
+    
+    .boton-eliminar, .botton-comprar {
+        font-size: 12px;
+        font-weight: 500;
+    }
+
     /* textos del 1er contenedor */
     .titulo-nombre-producto {  /* titulo */
         font-size: 14px;
-        margin-bottom: 15px;
+        margin-bottom: 13px;
     }
 
     .titulo-descrip {  /* titulo descripcion */
@@ -518,7 +579,7 @@ h2 {
         font-size: 10px;
         font-weight: 300;
         margin: 0;
-        margin-bottom: 15px;
+        margin-bottom: 10px;
         margin-left: 8px;
         /* width: 70%; */
     }
@@ -562,7 +623,7 @@ h2 {
         font-weight: 300;
         font-size: 10px;
         margin: 0;
-        margin-bottom: 15px;
+        margin-bottom: 10px;
     }
     
     .subtitulo2, .precio {
@@ -590,7 +651,7 @@ h2 {
     }
     
     .contenedor-proceder-pago {
-        width: 34%;
+        width: 28%;
         margin-left: 5px;
         padding: 15px;
     }
@@ -642,7 +703,7 @@ h2 {
     .btn {
         padding: 8px 16px;
         font-size: 14px;
-        border-radius: 4px;
+        border-radius: 7px;
     }
     
     /* seccion productos */
@@ -680,6 +741,15 @@ h2 {
 
 @media (min-width: 1024px) {
 
+    .div-botones {
+        margin-bottom: 20px;
+    }
+    
+    .boton-eliminar, .botton-comprar {
+        font-size: 13px;
+        font-weight: 500;
+    }
+
     .contenedor-proceder-pago, .contenedor-producto {
         transition: 450ms;
     }
@@ -693,7 +763,7 @@ h2 {
     }
 
     .titulo-nombre-producto {
-        font-size: 18px;
+        font-size: 16px;
     }
 
     .titulo-descrip {
@@ -728,7 +798,7 @@ h2 {
         font-size: 14px;
         font-weight: 400;
         margin: 0;
-        margin-bottom: 15px;
+        margin-bottom: 10px;
         margin-left: 8px;
         /* width: 70%; */
     }
@@ -743,7 +813,7 @@ h2 {
         font-weight: 400;
         font-size: 14px;
         margin: 0;
-        margin-bottom: 15px;
+        margin-bottom: 10px;
     }
 
     .precio-oferta {
@@ -758,6 +828,23 @@ h2 {
         margin: 0;
         margin-left: 10px;
         width: 30%;
+    }
+
+    .ruta {
+        color: #1e697b;
+        font-weight: 500;
+        font-size: 14px;
+    }
+    
+    .ruta:hover {
+        color: black;
+    }
+    
+    .ruta-barras {
+        display: block;
+        font-size: 13px;
+        margin-bottom: -10px;
+        margin-left: 13px;
     }
 
     /* textos del 2do contenedor */
@@ -868,9 +955,23 @@ h2 {
 
 @media (min-width: 1200px) {
 
+    .all {
+        max-width: 1200px;
+        margin: auto;
+    }
+
+    .boton-eliminar, .botton-comprar {
+        font-size: 15px;
+        font-weight: 500;
+    }
+
+    .div-botones {
+        margin-bottom: 25px;
+    }
+
     .titulo-nombre-producto {
-        font-size: 20px;
-        margin-bottom: 15px;
+        font-size: 18px;
+        margin-bottom: 14px;
     }
 
     .titulo-descrip {
@@ -895,9 +996,9 @@ h2 {
 
     .precio-tachado-detalle {
         font-size: 16px;
-        margin-bottom: 15px;
+        margin-bottom: 12px;
         margin-left: 10px;
-        width: 80%;
+        width: 70%;
     }
 
     .precio-normal {
@@ -906,11 +1007,7 @@ h2 {
 
     .precio-normal2 {
         font-size: 16px;
-        margin-bottom: 15px;
-    }
-
-    .precio-normal2 {
-        font-size: 16px;
+        margin-bottom: 12px;
     }
 
     .precio-oferta {
@@ -921,6 +1018,24 @@ h2 {
         font-size: 15px;
         margin-left: 10px;
         width: 40%;
+    }
+
+    .ruta {
+        opacity: 1;
+        color: #1e697b;
+        font-weight: 500;
+        font-size: 16px;
+    }
+    
+    .ruta:hover {
+        color: black;
+    }
+    
+    .ruta-barras {
+        opacity: 1;
+        font-size: 15px;
+        margin-bottom: -10px;
+        margin-left: 15px;
     }
 
     /* textos 2do contenedor */

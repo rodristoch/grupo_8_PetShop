@@ -362,7 +362,7 @@ footer p {  /* los textos del footer */
     }
     
     .fa-cart-shopping {
-        scale: 158%;
+        scale: 160%;
     }
     
     .fa-bars {
@@ -397,7 +397,7 @@ footer p {  /* los textos del footer */
     }
 
     .fa-cart-shopping {
-        scale: 180%;
+        scale: 185%;
     }
     
     .fa-bars {
@@ -406,7 +406,7 @@ footer p {  /* los textos del footer */
 
     /* ----------------------- cosas desktop q NO se ven ----------------------- */
 
-    .mis-compras, .mi-cuenta, .crear-producto {
+    .mis-compras, .mi-cuenta, .crear-producto {  /* .mi-cuenta pertenece a los divs de listado de usuarios, mi cuenta y del carrito */
         display: none;
     }
     
@@ -417,7 +417,7 @@ footer p {  /* los textos del footer */
         align-items: center;
     } */
     
-    .mis-compras {
+    /* .mis-compras {
         flex-direction: column;
         text-align: center;
         color: white;
@@ -429,7 +429,7 @@ footer p {  /* los textos del footer */
         text-align: center;
         color: white;
         align-items: center;
-    }
+    } */
 }
 
 
@@ -467,17 +467,17 @@ footer p {  /* los textos del footer */
     }
 
     .izquierda {  /* div de la izq */  /* contiene el logo y la barra  */
-        width: 60%;
+        width: 55%;
     }
     
-    .derecha {  /* div de la derecha */  /* contiene crear prod., mi cuenta, carrito y menu hamburg.  */
-        width: 40%;
+    .derecha {  /* div de la derecha */  /* contiene: listado de usuarios, crear prod., mi cuenta, carrito (y menu hamburg. en mobile) */
+        width: 45%;
         justify-content: center;
     }
 
     .div-barra-busqueda {
         width: 50%;
-        margin-left: 40px;
+        margin-left: 55px;
     }
     
     .div-barra-busqueda input {
@@ -501,7 +501,7 @@ footer p {  /* los textos del footer */
         color: white;
         align-items: center;
         border: 1px dashed #ffe7a3;;
-        width: 25%;
+        width: 20%;
         /* margin: 0; */
         padding: 0;
         padding-top: 12px;
@@ -518,7 +518,7 @@ footer p {  /* los textos del footer */
         color: white;
         align-items: center;
         /* border: 1px solid red; */
-        width: 25%;
+        width: 20%;
         /* margin: 0; */
         padding: 0;
         padding-top: 12px;
@@ -534,7 +534,7 @@ footer p {  /* los textos del footer */
         color: white;
         align-items: center;
         /* border: 1px solid red; */
-        width: 20%;
+        width: 17%;
         /* margin: 0; */
         padding: 0;
         padding-top: 12px;
@@ -690,6 +690,7 @@ footer p {  /* los textos del footer */
     .crear-producto {
         width: 20%;
         padding-top: 12px;
+        margin-right: 35px;
     }
 
     .crear-producto p {
@@ -778,8 +779,9 @@ footer p {  /* los textos del footer */
     }
 
     .crear-producto {
-        width: 18%;
+        width: 15%;
         padding-top: 12px;
+        margin-right: 50px;
     }
 
     .crear-producto p {
@@ -787,7 +789,7 @@ footer p {  /* los textos del footer */
     }
     
     .mis-compras {
-        width: 18%;
+        width: 15%;
         padding-top: 12px;
     }
 
@@ -796,7 +798,7 @@ footer p {  /* los textos del footer */
     }
     
     .mi-cuenta {   /* el div del carrito desktop tambien es */
-        width: 15%;
+        width: 12%;
         padding-top: 12px;
     }
 

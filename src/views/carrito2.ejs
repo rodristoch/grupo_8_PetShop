@@ -19,9 +19,14 @@
                     </div>
                     
                     <div class="texto">
-                        <h2 class="titulo-nombre-producto"><%= producto.nombre %></h2>
-                        <h3 class="titulo-descrip">Descripcion de producto:</h3>
-                        <h3 class="descrip"><%= producto.descripcion %></h3>
+                        <div class="titulo-cantidad">
+                            <h2 class="titulo-nombre-producto"><%= producto.nombre %></h2>
+                        </div>
+                        <div class="div-botones">
+                            <button class="boton-eliminar">Eliminar</button>
+                            <button class="botton-comprar">Comprar ahora</button>
+                        </div>
+                        
                         <% if(producto.descuentos[0].id == 2) { %>
                             <div class="arriba">
                                 <p class="precio-normal2">Precio regular:</p>
@@ -37,6 +42,35 @@
                                 <p class="precio-normal">Precio:</p>
                                 <p class="precio-detalle">$ <%= producto.precio %></p>
                             </div>
+                        <% } %>
+                    </div>
+                    <div>
+                        <% if(producto.tipo_mascota_id == 2) { %> <!-- si el tipo de mascota es perro -->
+                            <p class="ruta-barras">Ver más productos de 
+                                <a class="ruta" href="/productos/perro">perro</a> > 
+                                <% if(producto.categorias[0].categoria == "comida"){ %>
+                                    <a class="ruta" href="/productos/perro/comida">comida</a>
+                                <% } else if(producto.categorias[0].categoria == "accesorio"){ %>
+                                    <a class="ruta" href="/productos/perro/accesorios">accesorios</a>
+                                <% } else if(producto.categorias[0].categoria == "higiene"){ %>
+                                    <a class="ruta" href="/productos/perro/higiene">higiene</a>
+                                <% } else if(producto.categorias[0].categoria == "juguete"){ %>
+                                    <a class="ruta" href="/productos/perro/juguetes">juguetes</a>
+                                <% } %>
+                            </p>
+                        <% } else { %> <!-- si el tipo de mascota es gato -->
+                            <p class="ruta-barras">Ver más productos de
+                                <a class="ruta" href="/productos/gato">gato</a> > 
+                                <% if(producto.categorias[0].categoria == "comida"){ %>
+                                    <a class="ruta" href="/productos/gato/comida">comida</a>
+                                <% } else if(producto.categorias[0].categoria == "accesorio"){ %>
+                                    <a class="ruta" href="/productos/gato/accesorios">accesorios</a>
+                                <% } else if(producto.categorias[0].categoria == "higiene"){ %>
+                                    <a class="ruta" href="/productos/gato/higiene">higiene</a>
+                                <% } else if(producto.categorias[0].categoria == "juguete"){ %>
+                                    <a class="ruta" href="/productos/gato/juguetes">juguetes</a>
+                                <% } %>
+                            </p>
                         <% } %>
                     </div>
 
