@@ -95,15 +95,22 @@
             <!-- Boton Agregar al carrito -->
             <button onclick="agregar()" class="boton_agregar" type="submit">Agregar al carrito</button>
 
-            <!-- Boton Editar producto -->
+            <!-- Botones admin -->
             <% if(userALoguearse && userALoguearse.permiso_id == 1){ %>
-                <a class="editar" href="/productos/editar/<%= producto.id %>">
-                    <button class="boton_editar">Editar producto</button>
-                </a>
-                 <!-- Boton Eliminar producto -->
-                <form action="/productos/eliminar/<%= producto.id %>?_method=DELETE" method="POST">
-                    <button type="submit" class="boton_eliminar" >Eliminar producto</button>
-                </form>
+                <div class="botones-admin">
+                    <!-- Boton Editar producto -->
+                    <div style="width: 49.5%;">
+                        <a class="editar" href="/productos/editar/<%= producto.id %>">
+                            <button class="boton_editar" style="width: 100%;">Editar producto</button>
+                        </a>
+                    </div>
+                    <!-- Boton Eliminar producto -->
+                    <div style="width: 49.5%;">
+                        <form action="/productos/eliminar/<%= producto.id %>?_method=DELETE" method="POST">
+                            <button type="submit" class="boton_eliminar" style="width: 100%;">Eliminar producto</button>
+                        </form>
+                    </div>
+                </div>
             <% } %>
             
             <hr class="linea">

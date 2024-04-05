@@ -161,14 +161,24 @@ a {
 
 /* --- Botones ---  */
 
+.botones-admin {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    width: 100%;
+    justify-content: space-between;
+    /* border: 1px solid red; */
+}
+
 .boton_agregar{
     display: flex;
     justify-content: center;
     align-items: center;
-    color: white;
-    font-size: 16px;
+    color: #1e697b;
+    font-size: 17px;
+    font-weight: 500;
     padding: 10px;
-    background-color: #4793a7;
+    background-color: #d4ebf1;
     border-radius: 8px;
     width: 100%;
     margin: auto;
@@ -176,7 +186,7 @@ a {
     text-align: center;
     cursor: pointer;
     transition: 350ms;
-    border: 1px solid black;
+    border: 1px solid #c6e0e7;
 }   
 
 .boton_comprar{
@@ -187,7 +197,7 @@ a {
     font-size: 17px;
     font-weight: 500;
     padding: 10px;
-    background-color: #3c47bd;
+    background-color: #1e697b;
     border-radius: 8px;
     width: 100%;
     margin: auto;
@@ -199,19 +209,16 @@ a {
 }  
 
 .boton_editar{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    color: rgb(106, 106, 106);
+    color: rgb(77, 77, 77);
     font-size: 16px;
     font-weight: 400;
     padding: 10px;
     background-color: rgb(255, 255, 128);
     border-radius: 8px;
-    width: 100%;
+    /* width: 50%; */
     margin: auto;
     margin-top: 10px;
-    margin-bottom: 10px;
+    /* margin-bottom: 10px; */
     text-align: center;
     cursor: pointer;
     transition: 350ms;
@@ -219,17 +226,15 @@ a {
 } 
 
 .boton_eliminar{
-    display: flex;
-    justify-content: center;
-    align-items: center;
     color: white;
     font-size: 16px;
     padding: 10px;
     background-color: #ff5555;
     border-radius: 8px;
-    width: 100%;
+    /* width: 40%; */
     margin: auto;
-    margin-bottom: 15px;
+    margin-top: 10px;
+    /* margin-bottom: 15px; */
     text-align: center;
     cursor: pointer;
     transition: 350ms;
@@ -237,11 +242,11 @@ a {
 } 
 
 .boton_agregar:hover{
-    background-color: #75bacb;
+    background-color: #c9dbe0;
 }
 
 .boton_comprar:hover{
-    background-color: #438cd0;
+    background-color: #349fba;
 }
 
 .boton_editar:hover{
@@ -507,19 +512,19 @@ a {
     }
     
     .boton_agregar {
-        width: 70%;
+        width: 100%;
     }  
     
     .boton_comprar {
-        width: 70%;
+        width: 100%;
     } 
     
     .boton_editar {
-        width: 70%;
+        width: 100%;
     } 
     
     .boton_eliminar {
-        width: 70%;
+        width: 100%;
     } 
     
     .titulo_nombre-detalle {
@@ -665,6 +670,11 @@ a {
 }
 
 @media (min-width: 1200px) {
+
+    .contenedor_mobile {
+        max-width: 1200px;
+        margin: auto;
+    }
 
     .titulo_nombre-detalle {
         font-size: 26px;
