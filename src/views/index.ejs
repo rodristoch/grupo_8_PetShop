@@ -139,7 +139,7 @@
                                         <p class="descuento">20% OFF</p>
                                     </div>
                                     <div class="div-boton-comprar">
-                                        <button onclick="agregar()" class="boton-comprar" id="comprar" type="submit">Agregar</button>
+                                        <button class="boton-comprar" id="comprar" type="submit" data-id="<%= producto.id %>">Agregar</button>
                                     </div>
                                 </div>
                             </article>
@@ -231,7 +231,7 @@
                                         </div>
                                     <% } %>
                                     <div class="div-boton-comprar">
-                                        <button onclick="agregar()" class="boton-comprar" id="comprar" type="submit">Agregar</button>
+                                        <button class="boton-comprar" id="comprar" type="submit" data-id="<%= producto.id %>">Agregar</button>
                                     </div>
                                 </div>
                             </article>
@@ -312,7 +312,7 @@
                                         </div>
                                     <% } %>
                                     <div class="div-boton-comprar">
-                                        <button onclick="agregar()" class="boton-comprar" id="comprar" type="submit">Agregar</button>
+                                        <button class="boton-comprar" id="comprar" type="submit" data-id="<%= producto.id %>">Agregar</button>
                                     </div>
                                 </div>
                             </article>
@@ -345,8 +345,7 @@
     </main>
 
     <%- include("./partials/footer.ejs") %>
-
-    <script src="/js/agregar.js"></script>
+    
     <script src="/js/scroll-up.js"></script>
     
 </body>

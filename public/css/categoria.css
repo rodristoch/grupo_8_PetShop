@@ -12,10 +12,10 @@ body {
   box-sizing: border-box;
 }
 
-h4 {
+/* h4 {
     margin-top: 0;
     margin-bottom: 0;
-}
+} */
 
 .flex-enlinea {
     margin-top: 16px;
@@ -422,6 +422,18 @@ input[type="radio"] {
     }
 }
 
+@media (min-width: 465px) {
+
+    .numerito-carrito-mobile {
+        height: 12px;
+        width: 12px;
+        padding: 3px;
+        top: -9px;
+        right: -10px;
+        font-size: 10px;
+    }
+}
+
 @media (min-width: 769px) {
 
     .flex-enlinea {
@@ -468,6 +480,8 @@ input[type="radio"] {
     .precio-tachado {
         font-size: 14px;
     }
+
+    
     
 }
 
@@ -565,6 +579,8 @@ input[type="radio"] {
     #myBtn:hover {
         background-color: #555; /* Add a dark-grey background on hover */
     }
+
+    
 }
 
 @media (min-width: 1200px) { /* desde acá se muestran 4 cards a lo ancho */
@@ -731,5 +747,6 @@ input[type="radio"] {
     .precio-tachado {
         font-size: 16px;
     }
+
 
 }

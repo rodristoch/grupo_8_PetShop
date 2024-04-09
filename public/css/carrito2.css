@@ -41,6 +41,7 @@ a {
     justify-content: flex-start;
     align-items: center;
     margin: 0;
+    margin-bottom: 20px;
     width: 100%;
     height: 100%;
 }
@@ -114,7 +115,6 @@ a {
 .boton-eliminar:hover, .botton-comprar:hover {
     color: black;
 }
-
 
 /* textos del 1er contenedor */
 .titulo-nombre-producto {  /* titulo */
@@ -235,6 +235,8 @@ a {
     flex-wrap: wrap;
     justify-content: center;
     align-items: flex-start;
+    flex-direction: column;
+    justify-content: space-between;
     border-radius: 8px;
     margin: 0;
     padding: 10px;

@@ -89,11 +89,11 @@
             <!-- Botones -->
             <!-- Boton Comprar -->
             <a href="/users/carrito2">
-                <button class="boton_comprar" type="submit">Comprar ahora</button>
+                <button class="boton_comprar" type="submit" data-id="<%= producto.id %>">Comprar ahora</button>
             </a>
 
             <!-- Boton Agregar al carrito -->
-            <button onclick="agregar()" class="boton_agregar" type="submit">Agregar al carrito</button>
+            <button class="boton_agregar" type="submit" data-id="<%= producto.id %>">Agregar al carrito</button>
 
             <!-- Botones admin -->
             <% if(userALoguearse && userALoguearse.permiso_id == 1){ %>
@@ -157,7 +157,7 @@
                                                 </div>
                                             <% } %>
                                                 <div class="div-boton-comprar">
-                                                    <button onclick="agregar()" class="boton-comprar" type="submit">Agregar</button>
+                                                    <button class="boton-comprar" type="submit" data-id="<%= producto.id %>">Agregar</button>
                                                 </div>
                                         </div>
                                     </article>
@@ -192,7 +192,7 @@
                                                 </div>
                                             <% } %>
                                                 <div class="div-boton-comprar">
-                                                    <button onclick="agregar()" class="boton-comprar" type="submit">Agregar</button>
+                                                    <button class="boton-comprar" type="submit" data-id="<%= producto.id %>">Agregar</button>
                                                 </div>
                                         </div>
                                     </article>
@@ -227,7 +227,7 @@
                                                 </div>
                                             <% } %>
                                                 <div class="div-boton-comprar">
-                                                    <button onclick="agregar()" class="boton-comprar" type="submit">Agregar</button>
+                                                    <button class="boton-comprar" type="submit" data-id="<%= producto.id %>">Agregar</button>
                                                 </div>
                                         </div>
                                     </article>
@@ -262,7 +262,7 @@
                                                 </div>
                                             <% } %>
                                                 <div class="div-boton-comprar">
-                                                    <button onclick="agregar()" class="boton-comprar" type="submit">Agregar</button>
+                                                    <button class="boton-comprar" type="submit" data-id="<%= producto.id %>">Agregar</button>
                                                 </div>
                                         </div>
                                     </article>
@@ -299,7 +299,7 @@
                                                 </div>
                                             <% } %>
                                                 <div class="div-boton-comprar">
-                                                    <button onclick="agregar()" class="boton-comprar" type="submit">Agregar</button>
+                                                    <button class="boton-comprar" type="submit" data-id="<%= producto.id %>">Agregar</button>
                                                 </div>
                                         </div>
                                     </article>
@@ -334,7 +334,7 @@
                                                 </div>
                                             <% } %>
                                                 <div class="div-boton-comprar">
-                                                    <button onclick="agregar()" class="boton-comprar" type="submit">Agregar</button>
+                                                    <button class="boton-comprar" type="submit" data-id="<%= producto.id %>">Agregar</button>
                                                 </div>
                                         </div>
                                     </article>
@@ -369,7 +369,7 @@
                                                 </div>
                                             <% } %>
                                                 <div class="div-boton-comprar">
-                                                    <button onclick="agregar()" class="boton-comprar" type="submit">Agregar</button>
+                                                    <button class="boton-comprar" type="submit" data-id="<%= producto.id %>">Agregar</button>
                                                 </div>
                                         </div>
                                     </article>
@@ -404,7 +404,7 @@
                                                 </div>
                                             <% } %>
                                                 <div class="div-boton-comprar">
-                                                    <button onclick="agregar()" class="boton-comprar" type="submit">Agregar</button>
+                                                    <button class="boton-comprar" type="submit" data-id="<%= producto.id %>">Agregar</button>
                                                 </div>
                                         </div>
                                     </article>
@@ -434,7 +434,7 @@
     <%- include("./partials/footer.ejs") %>
 
     <script src="/js/eliminar-producto.js"></script>
-    <script src="/js/agregar.js"></script>
+    <script src="/js/carrito2.js"></script>
 
 </body>
 </html>

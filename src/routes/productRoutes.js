@@ -66,11 +66,11 @@ router.get('/marcas/catit', productController.catit)
 
 // Crear producto
 router.get('/alta', productController.alta2);
-router.post('/alta', upload.single("imagen_producto"), productController.crearProducto2);
+router.post('/alta', upload.single("imagen"), productController.crearProducto2);
 
 // Modificar producto
 router.get('/editar/:id', productController.editar);
-router.put('/editar/:id', upload.single("imagen_producto"), productController.editarProducto)
+router.put('/editar/:id', upload.single("imagen"), productController.editarProducto)
 
 // Eliminar producto
 router.delete("/eliminar/:id", productController.destroy)

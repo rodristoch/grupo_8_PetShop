@@ -12,89 +12,15 @@
     <main>
         <div class="all">
             <section class="contenedor-producto">
-                <!-- <h1 class="titulo">Carrito de compra:</h1> -->
-                <div class="contenedor1">
-                    <div class="contenedor-img">
-                        <img src="/img/productos/<%= producto.imagen %>" alt="item-foto" class="imagen">
-                    </div>
-                    
-                    <div class="texto">
-                        <div class="titulo-cantidad">
-                            <h2 class="titulo-nombre-producto"><%= producto.nombre %></h2>
-                        </div>
-                        <div class="div-botones">
-                            <button class="boton-eliminar">Eliminar</button>
-                            <button class="botton-comprar">Comprar ahora</button>
-                        </div>
-                        
-                        <% if(producto.descuentos[0].id == 2) { %>
-                            <div class="arriba">
-                                <p class="precio-normal2">Precio regular:</p>
-                                <p class="precio-tachado-detalle">$ <%= producto.precio %></p>
-                            </div>
-                            <div class="abajo">
-                                <p class="precio-oferta">Precio en oferta!!</p>
-                                <p class="precio-detalle">$ <%= Number((producto.precio*0.8).toFixed(2)) %></p> 
-                                <p class="descuento-precio">20% OFF</p>
-                            </div>
-                        <% } else { %>
-                            <div class="precio-regular">
-                                <p class="precio-normal">Precio:</p>
-                                <p class="precio-detalle">$ <%= producto.precio %></p>
-                            </div>
-                        <% } %>
-                    </div>
-                    <div>
-                        <% if(producto.tipo_mascota_id == 2) { %> <!-- si el tipo de mascota es perro -->
-                            <p class="ruta-barras">Ver más productos de 
-                                <a class="ruta" href="/productos/perro">perro</a> > 
-                                <% if(producto.categorias[0].categoria == "comida"){ %>
-                                    <a class="ruta" href="/productos/perro/comida">comida</a>
-                                <% } else if(producto.categorias[0].categoria == "accesorio"){ %>
-                                    <a class="ruta" href="/productos/perro/accesorios">accesorios</a>
-                                <% } else if(producto.categorias[0].categoria == "higiene"){ %>
-                                    <a class="ruta" href="/productos/perro/higiene">higiene</a>
-                                <% } else if(producto.categorias[0].categoria == "juguete"){ %>
-                                    <a class="ruta" href="/productos/perro/juguetes">juguetes</a>
-                                <% } %>
-                            </p>
-                        <% } else { %> <!-- si el tipo de mascota es gato -->
-                            <p class="ruta-barras">Ver más productos de
-                                <a class="ruta" href="/productos/gato">gato</a> > 
-                                <% if(producto.categorias[0].categoria == "comida"){ %>
-                                    <a class="ruta" href="/productos/gato/comida">comida</a>
-                                <% } else if(producto.categorias[0].categoria == "accesorio"){ %>
-                                    <a class="ruta" href="/productos/gato/accesorios">accesorios</a>
-                                <% } else if(producto.categorias[0].categoria == "higiene"){ %>
-                                    <a class="ruta" href="/productos/gato/higiene">higiene</a>
-                                <% } else if(producto.categorias[0].categoria == "juguete"){ %>
-                                    <a class="ruta" href="/productos/gato/juguetes">juguetes</a>
-                                <% } %>
-                            </p>
-                        <% } %>
-                    </div>
-
-                    <!-- <div class="cantidad">
-                        <form action="/users/carrito2" method="get">   
-                            <select name="cantidad">
-                                <option value="valor1">1 u.</option>
-                                <option value="valor2">2 u.</option>
-                                <option value="valor3">3 u.</option>
-                            </select>
-                            <button class="btn" type="submit">Agregar</button>
-                            <button class="eliminar-btn" type="reset">Eliminar</button>
-                        </form>
-                    </div> -->
-                
-                </div>
+                <button onclick="vaciarCarrito()" class="boton-eliminar" style="margin-bottom: 15px;">Vaciar</button>
             </section>
 
             <section class="contenedor-proceder-pago">
                 <div class="textos2">
                     <p class="resumen-compra">Resumen de compra</p>
-                    <p class="subtotal-titulo">Subtotal</p> <p class="subtotal"><% if(producto.descuentos[0].id == 2) { %> $ <%= Number((producto.precio*0.8).toFixed(2)) %> <% } else { %> $ <%= producto.precio %> <% } %>
+                    <p class="subtotal-titulo">Subtotal</p> <p class="subtotal">$ 0</p>
                     <p class="gratis-titulo">Envío</p> <p class="gratis">Gratis</p>
-                    <p class="total-titulo">Total</p> <p class="total"><% if(producto.descuentos[0].id == 2) { %> $ <%= Number((producto.precio*0.8).toFixed(2)) %> <% } else { %> $ <%= producto.precio %> <% } %>
+                    <p class="total-titulo">Total</p> <p class="total">$ 0</p>
                 </div>
                 <div class="botonDePago">
                     <form action="/users/carrito2" method="get">   
@@ -166,7 +92,7 @@
                                         <p class="descuento">20% OFF</p>
                                     </div>
                                     <div class="div-boton-comprar">
-                                        <button onclick="agregar()" class="boton-comprar" type="submit">Agregar</button>
+                                        <button class="boton-comprar" type="submit" data-id="<%= producto.id %>">Agregar</button>
                                     </div>
                                 </div>
                             </article>
@@ -196,6 +122,6 @@
 
     <%- include("./partials/footer.ejs") %>
 
-    <script src="/js/agregar.js"></script>
+    <script src="/js/carrito2.js"></script>
     
 </body>

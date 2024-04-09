@@ -19,9 +19,9 @@ body {
     padding: 0;
 }
 
-* {
+/* * {
   box-sizing: border-box;
-}
+} */
 
 h2{
     line-height: 28px;
@@ -293,4 +293,5 @@ button:hover {
         font-size: 14px;
     }
 }
+
 
