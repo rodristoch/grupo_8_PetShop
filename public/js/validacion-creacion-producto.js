@@ -80,7 +80,7 @@ window.addEventListener('load', () => {
          //validación descripción
          if (description.value.length <1) {
             errores.description = 'Este campo debe estar completo'
-         } else if (description.value. length <100) {
+         } else if (description.value. length <10) {
             errores.description =  'Ingresa una descrición'
          }
 

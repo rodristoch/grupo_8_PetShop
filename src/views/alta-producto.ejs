@@ -39,7 +39,7 @@
                 <section class="flex-linea">
 
                     <div class="flex-columna">
-                        <label for="marca">Selecciona una marca:</label>
+                        <label for="marca_id">Selecciona una marca:</label>
                         <select name="marca_id" id="marca_id">
                             
                             <option value="-1">Seleccionar ...</option>
@@ -56,7 +56,7 @@
                     </div>
 
                     <div class="flex-columna">
-                        <label for="mascota">El productos es para:</label>
+                        <label for="tipo_mascota_id">El productos es para:</label>
                         <select name="tipo_mascota_id" id="tipo_mascota_id">
                             <option value="-1">Seleccionar ...</option>
                             <% tipos.forEach(tipo => { %> 
@@ -76,7 +76,7 @@
 
                 <section class="flex-linea">
                     <div class="flex-columna">    
-                        <label for="categoria">Selecciona una categoria:</label>
+                        <label for="categoria_id">Selecciona una categoria:</label>
                         <select name="categoria_id" id="categoria_id">
                             <option value="-1">Seleccionar ...</option>
                             <% categorias.forEach(categoria => { %> 
@@ -92,7 +92,7 @@
 
                     </div>
                     <div class="flex-columna">
-                        <label for="descuento"> ¿El producto tiene descuento?</label>
+                        <label for="decuento_id"> ¿El producto tiene descuento?</label>
                         <select name="decuento_id" id="decuento_id">
                             <option value="-1">Seleccionar ...</option>
                             <% descuentos.forEach(descuento => { %> 

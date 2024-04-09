@@ -167,17 +167,19 @@
                         <div class="lista_flexbox_desktop">
                             <!-- div visible -->
                             <% for(let producto of perroVisible) { %>
-                                <article class="articulo-productos-descuentos">
+                                <article class="articulo-productos-descuentos"> 
                                     <div class="contenedor_imagen">
                                         <!-- dependiendo de la categoria q sea el producto, para q te lleve a la ruta de categoria correspondiente -->
-                                        <% if(producto.categorias[0].categoria == "comida") { %> 
-                                            <a href="/productos/perro/comida/<%= producto.id %>">
-                                        <% } else if (producto.categorias[0].categoria == "accesorio") { %>  
-                                            <a href="/productos/perro/accesorios/<%= producto.id %>">
-                                        <% } else if (producto.categorias[0].categoria == "higiene") { %>
-                                            <a href="/productos/perro/higiene/<%= producto.id %>">
-                                        <% } else if (producto.categorias[0].categoria == "juguete") { %>
-                                            <a href="/productos/perro/juguetes/<%= producto.id %>">
+                                        <% if(producto.categorias && producto.categorias[0]) { %> 
+                                            <% if(producto.categorias[0].categoria == "comida") { %> 
+                                                <a href="/productos/perro/comida/<%= producto.id %>">
+                                            <% } else if (producto.categorias[0].categoria == "accesorio") { %>  
+                                                <a href="/productos/perro/accesorios/<%= producto.id %>">
+                                            <% } else if (producto.categorias[0].categoria == "higiene") { %>
+                                                <a href="/productos/perro/higiene/<%= producto.id %>">
+                                            <% } else if (producto.categorias[0].categoria == "juguete") { %>
+                                                <a href="/productos/perro/juguetes/<%= producto.id %>">
+                                            <% } %>
                                         <% } %>
                                                 <img class="img-productos-descuentos" src="/img/productos/<%= producto.imagen %>" alt="imagen_producto">
                                             </a>
@@ -191,7 +193,7 @@
                                                 <P class="descripcion"><%= producto.descripcion %></P>
                                             </div>
                                         </div>
-                                        <% if(producto.descuentos[0].id == 2) { %>
+                                        <% if(producto.descuentos && producto.descuentos[0] && producto.descuentos[0].id == 2) { %>
                                             <div class="div-dos">
                                                 <p class="descuento"><%= producto.descuentos[0].descripcion %></p>
                                                 <p class="descuento" style="font-weight: 600;">20% OFF</p>
@@ -212,7 +214,7 @@
                                                 </div>
                                         <% } %>
                                                 <div class="div-boton-comprar">
-                                                    <button onclick="agregar()" class="boton-comprar" type="submit">Agregar</button>
+                                                    <button class="boton-comprar" type="submit" data-id="<%= producto.id %>">Agregar</button>
                                                 </div>
                                             </div>
                                     </div>
@@ -230,14 +232,16 @@
                                 <article class="articulo-productos-descuentos">
                                     <div class="contenedor_imagen">
                                         <!-- dependiendo de la categoria q sea el producto, para q te lleve a la ruta de categoria correspondiente -->
-                                        <% if(producto.categorias[0].categoria == "comida") { %> 
-                                            <a href="/productos/perro/comida/<%= producto.id %>">
-                                        <% } else if (producto.categorias[0].categoria == "accesorio") { %>  
-                                            <a href="/productos/perro/accesorios/<%= producto.id %>">
-                                        <% } else if (producto.categorias[0].categoria == "higiene") { %>
-                                            <a href="/productos/perro/higiene/<%= producto.id %>">
-                                        <% } else if (producto.categorias[0].categoria == "juguete") { %>
-                                            <a href="/productos/perro/juguetes/<%= producto.id %>">
+                                        <% if(producto.categorias && producto.categorias[0]) { %> 
+                                            <% if(producto.categorias[0].categoria == "comida") { %> 
+                                                <a href="/productos/perro/comida/<%= producto.id %>">
+                                            <% } else if (producto.categorias[0].categoria == "accesorio") { %>  
+                                                <a href="/productos/perro/accesorios/<%= producto.id %>">
+                                            <% } else if (producto.categorias[0].categoria == "higiene") { %>
+                                                <a href="/productos/perro/higiene/<%= producto.id %>">
+                                            <% } else if (producto.categorias[0].categoria == "juguete") { %>
+                                                <a href="/productos/perro/juguetes/<%= producto.id %>">
+                                            <% } %>
                                         <% } %>
                                                 <img class="img-productos-descuentos" src="/img/productos/<%= producto.imagen %>" alt="imagen_producto">
                                             </a>
@@ -251,7 +255,7 @@
                                                 <P class="descripcion"><%= producto.descripcion %></P>
                                             </div>
                                         </div>
-                                        <% if(producto.descuentos[0].id == 2) { %>
+                                        <% if(producto.descuentos && producto.descuentos[0] && producto.descuentos[0].id == 2) { %>
                                             <div class="div-dos">
                                                 <p class="descuento"><%= producto.descuentos[0].descripcion %></p>
                                                 <p class="descuento" style="font-weight: 600;">20% OFF</p>
@@ -272,7 +276,7 @@
                                                 </div>
                                         <% } %>
                                                 <div class="div-boton-comprar">
-                                                    <button onclick="agregar()" class="boton-comprar" type="submit">Agregar</button>
+                                                    <button class="boton-comprar" type="submit" data-id="<%= producto.id %>">Agregar</button>
                                                 </div>
                                             </div>
                                     </div>
@@ -288,14 +292,16 @@
                                 <article class="articulo-productos-descuentos">
                                     <div class="contenedor_imagen">
                                         <!-- dependiendo de la categoria q sea el producto, para q te lleve a la ruta de categoria correspondiente -->
-                                        <% if(producto.categorias[0].categoria == "comida") { %> 
-                                            <a href="/productos/perro/comida/<%= producto.id %>">
-                                        <% } else if (producto.categorias[0].categoria == "accesorio") { %>  
-                                            <a href="/productos/perro/accesorios/<%= producto.id %>">
-                                        <% } else if (producto.categorias[0].categoria == "higiene") { %>
-                                            <a href="/productos/perro/higiene/<%= producto.id %>">
-                                        <% } else if (producto.categorias[0].categoria == "juguete") { %>
-                                            <a href="/productos/perro/juguetes/<%= producto.id %>">
+                                        <% if(producto.categorias && producto.categorias[0]) { %> 
+                                            <% if(producto.categorias[0].categoria == "comida") { %> 
+                                                <a href="/productos/perro/comida/<%= producto.id %>">
+                                            <% } else if (producto.categorias[0].categoria == "accesorio") { %>  
+                                                <a href="/productos/perro/accesorios/<%= producto.id %>">
+                                            <% } else if (producto.categorias[0].categoria == "higiene") { %>
+                                                <a href="/productos/perro/higiene/<%= producto.id %>">
+                                            <% } else if (producto.categorias[0].categoria == "juguete") { %>
+                                                <a href="/productos/perro/juguetes/<%= producto.id %>">
+                                            <% } %>
                                         <% } %>
                                                 <img class="img-productos-descuentos" src="/img/productos/<%= producto.imagen %>" alt="imagen_producto">
                                             </a>
@@ -309,7 +315,7 @@
                                                 <P class="descripcion"><%= producto.descripcion %></P>
                                             </div>
                                         </div>
-                                        <% if(producto.descuentos[0].id == 2) { %>
+                                        <% if(producto.descuentos && producto.descuentos[0] && producto.descuentos[0].id == 2) { %>
                                             <div class="div-dos">
                                                 <p class="descuento"><%= producto.descuentos[0].descripcion %></p>
                                                 <p class="descuento" style="font-weight: 600;">20% OFF</p>
@@ -330,7 +336,7 @@
                                                 </div>
                                         <% } %>
                                                 <div class="div-boton-comprar">
-                                                    <button onclick="agregar()" class="boton-comprar" type="submit">Agregar</button>
+                                                    <button class="boton-comprar" type="submit" data-id="<%= producto.id %>">Agregar</button>
                                                 </div>
                                             </div>
                                     </div>
@@ -344,14 +350,16 @@
                                 <article class="articulo-productos-descuentos">
                                     <div class="contenedor_imagen">
                                         <!-- dependiendo de la categoria q sea el producto, para q te lleve a la ruta de categoria correspondiente -->
-                                        <% if(producto.categorias[0].categoria == "comida") { %> 
-                                            <a href="/productos/perro/comida/<%= producto.id %>">
-                                        <% } else if (producto.categorias[0].categoria == "accesorio") { %>  
-                                            <a href="/productos/perro/accesorios/<%= producto.id %>">
-                                        <% } else if (producto.categorias[0].categoria == "higiene") { %>
-                                            <a href="/productos/perro/higiene/<%= producto.id %>">
-                                        <% } else if (producto.categorias[0].categoria == "juguete") { %>
-                                            <a href="/productos/perro/juguetes/<%= producto.id %>">
+                                        <% if(producto.categorias && producto.categorias[0]) { %> 
+                                            <% if(producto.categorias[0].categoria == "comida") { %> 
+                                                <a href="/productos/perro/comida/<%= producto.id %>">
+                                            <% } else if (producto.categorias[0].categoria == "accesorio") { %>  
+                                                <a href="/productos/perro/accesorios/<%= producto.id %>">
+                                            <% } else if (producto.categorias[0].categoria == "higiene") { %>
+                                                <a href="/productos/perro/higiene/<%= producto.id %>">
+                                            <% } else if (producto.categorias[0].categoria == "juguete") { %>
+                                                <a href="/productos/perro/juguetes/<%= producto.id %>">
+                                            <% } %>
                                         <% } %>
                                                 <img class="img-productos-descuentos" src="/img/productos/<%= producto.imagen %>" alt="imagen_producto">
                                             </a>
@@ -365,7 +373,7 @@
                                                 <P class="descripcion"><%= producto.descripcion %></P>
                                             </div>
                                         </div>
-                                        <% if(producto.descuentos[0].id == 2) { %>
+                                        <% if(producto.descuentos && producto.descuentos[0] && producto.descuentos[0].id == 2) { %>
                                             <div class="div-dos">
                                                 <p class="descuento"><%= producto.descuentos[0].descripcion %></p>
                                                 <p class="descuento" style="font-weight: 600;">20% OFF</p>
@@ -386,7 +394,7 @@
                                                 </div>
                                         <% } %>
                                                 <div class="div-boton-comprar">
-                                                    <button onclick="agregar()" class="boton-comprar" type="submit">Agregar</button>
+                                                    <button class="boton-comprar" type="submit" data-id="<%= producto.id %>">Agregar</button>
                                                 </div>
                                             </div>
                                     </div>
@@ -400,14 +408,16 @@
                                 <article class="articulo-productos-descuentos">
                                     <div class="contenedor_imagen">
                                         <!-- dependiendo de la categoria q sea el producto, para q te lleve a la ruta de categoria correspondiente -->
-                                        <% if(producto.categorias[0].categoria == "comida") { %> 
-                                            <a href="/productos/perro/comida/<%= producto.id %>">
-                                        <% } else if (producto.categorias[0].categoria == "accesorio") { %>  
-                                            <a href="/productos/perro/accesorios/<%= producto.id %>">
-                                        <% } else if (producto.categorias[0].categoria == "higiene") { %>
-                                            <a href="/productos/perro/higiene/<%= producto.id %>">
-                                        <% } else if (producto.categorias[0].categoria == "juguete") { %>
-                                            <a href="/productos/perro/juguetes/<%= producto.id %>">
+                                        <% if(producto.categorias && producto.categorias[0]) { %> 
+                                            <% if(producto.categorias[0].categoria == "comida") { %> 
+                                                <a href="/productos/perro/comida/<%= producto.id %>">
+                                            <% } else if (producto.categorias[0].categoria == "accesorio") { %>  
+                                                <a href="/productos/perro/accesorios/<%= producto.id %>">
+                                            <% } else if (producto.categorias[0].categoria == "higiene") { %>
+                                                <a href="/productos/perro/higiene/<%= producto.id %>">
+                                            <% } else if (producto.categorias[0].categoria == "juguete") { %>
+                                                <a href="/productos/perro/juguetes/<%= producto.id %>">
+                                            <% } %>
                                         <% } %>
                                                 <img class="img-productos-descuentos" src="/img/productos/<%= producto.imagen %>" alt="imagen_producto">
                                             </a>
@@ -421,7 +431,7 @@
                                                 <P class="descripcion"><%= producto.descripcion %></P>
                                             </div>
                                         </div>
-                                        <% if(producto.descuentos[0].id == 2) { %>
+                                        <% if(producto.descuentos && producto.descuentos[0] && producto.descuentos[0].id == 2) { %>
                                             <div class="div-dos">
                                                 <p class="descuento"><%= producto.descuentos[0].descripcion %></p>
                                                 <p class="descuento" style="font-weight: 600;">20% OFF</p>
@@ -442,7 +452,7 @@
                                                 </div>
                                         <% } %>
                                                 <div class="div-boton-comprar">
-                                                    <button onclick="agregar()" class="boton-comprar" type="submit">Agregar</button>
+                                                    <button class="boton-comprar" type="submit" data-id="<%= producto.id %>">Agregar</button>
                                                 </div>
                                             </div>
                                     </div>
@@ -456,14 +466,16 @@
                                 <article class="articulo-productos-descuentos">
                                     <div class="contenedor_imagen">
                                         <!-- dependiendo de la categoria q sea el producto, para q te lleve a la ruta de categoria correspondiente -->
-                                        <% if(producto.categorias[0].categoria == "comida") { %> 
-                                            <a href="/productos/perro/comida/<%= producto.id %>">
-                                        <% } else if (producto.categorias[0].categoria == "accesorio") { %>  
-                                            <a href="/productos/perro/accesorios/<%= producto.id %>">
-                                        <% } else if (producto.categorias[0].categoria == "higiene") { %>
-                                            <a href="/productos/perro/higiene/<%= producto.id %>">
-                                        <% } else if (producto.categorias[0].categoria == "juguete") { %>
-                                            <a href="/productos/perro/juguetes/<%= producto.id %>">
+                                        <% if(producto.categorias && producto.categorias[0]) { %> 
+                                            <% if(producto.categorias[0].categoria == "comida") { %> 
+                                                <a href="/productos/perro/comida/<%= producto.id %>">
+                                            <% } else if (producto.categorias[0].categoria == "accesorio") { %>  
+                                                <a href="/productos/perro/accesorios/<%= producto.id %>">
+                                            <% } else if (producto.categorias[0].categoria == "higiene") { %>
+                                                <a href="/productos/perro/higiene/<%= producto.id %>">
+                                            <% } else if (producto.categorias[0].categoria == "juguete") { %>
+                                                <a href="/productos/perro/juguetes/<%= producto.id %>">
+                                            <% } %>
                                         <% } %>
                                                 <img class="img-productos-descuentos" src="/img/productos/<%= producto.imagen %>" alt="imagen_producto">
                                             </a>
@@ -477,7 +489,7 @@
                                                 <P class="descripcion"><%= producto.descripcion %></P>
                                             </div>
                                         </div>
-                                        <% if(producto.descuentos[0].id == 2) { %>
+                                        <% if(producto.descuentos && producto.descuentos[0] && producto.descuentos[0].id == 2) { %>
                                             <div class="div-dos">
                                                 <p class="descuento"><%= producto.descuentos[0].descripcion %></p>
                                                 <p class="descuento" style="font-weight: 600;">20% OFF</p>
@@ -498,7 +510,7 @@
                                                 </div>
                                         <% } %>
                                                 <div class="div-boton-comprar">
-                                                    <button onclick="agregar()" class="boton-comprar" type="submit">Agregar</button>
+                                                    <button class="boton-comprar" type="submit" data-id="<%= producto.id %>">Agregar</button>
                                                 </div>
                                             </div>
                                     </div>
@@ -514,14 +526,16 @@
                                 <article class="articulo-productos-descuentos">
                                     <div class="contenedor_imagen">
                                         <!-- dependiendo de la categoria q sea el producto, para q te lleve a la ruta de categoria correspondiente -->
-                                        <% if(producto.categorias[0].categoria == "comida") { %> 
-                                            <a href="/productos/perro/comida/<%= producto.id %>">
-                                        <% } else if (producto.categorias[0].categoria == "accesorio") { %>  
-                                            <a href="/productos/perro/accesorios/<%= producto.id %>">
-                                        <% } else if (producto.categorias[0].categoria == "higiene") { %>
-                                            <a href="/productos/perro/higiene/<%= producto.id %>">
-                                        <% } else if (producto.categorias[0].categoria == "juguete") { %>
-                                            <a href="/productos/perro/juguetes/<%= producto.id %>">
+                                        <% if(producto.categorias && producto.categorias[0]) { %> 
+                                            <% if(producto.categorias[0].categoria == "comida") { %> 
+                                                <a href="/productos/perro/comida/<%= producto.id %>">
+                                            <% } else if (producto.categorias[0].categoria == "accesorio") { %>  
+                                                <a href="/productos/perro/accesorios/<%= producto.id %>">
+                                            <% } else if (producto.categorias[0].categoria == "higiene") { %>
+                                                <a href="/productos/perro/higiene/<%= producto.id %>">
+                                            <% } else if (producto.categorias[0].categoria == "juguete") { %>
+                                                <a href="/productos/perro/juguetes/<%= producto.id %>">
+                                            <% } %>
                                         <% } %>
                                                 <img class="img-productos-descuentos" src="/img/productos/<%= producto.imagen %>" alt="imagen_producto">
                                             </a>
@@ -535,7 +549,7 @@
                                                 <P class="descripcion"><%= producto.descripcion %></P>
                                             </div>
                                         </div>
-                                        <% if(producto.descuentos[0].id == 2) { %>
+                                        <% if(producto.descuentos && producto.descuentos[0] && producto.descuentos[0].id == 2) { %>
                                             <div class="div-dos">
                                                 <p class="descuento"><%= producto.descuentos[0].descripcion %></p>
                                                 <p class="descuento" style="font-weight: 600;">20% OFF</p>
@@ -556,7 +570,7 @@
                                                 </div>
                                         <% } %>
                                                 <div class="div-boton-comprar">
-                                                    <button onclick="agregar()" class="boton-comprar" type="submit">Agregar</button>
+                                                    <button class="boton-comprar" type="submit" data-id="<%= producto.id %>">Agregar</button>
                                                 </div>
                                             </div>
                                     </div>
@@ -570,14 +584,16 @@
                                 <article class="articulo-productos-descuentos">
                                     <div class="contenedor_imagen">
                                         <!-- dependiendo de la categoria q sea el producto, para q te lleve a la ruta de categoria correspondiente -->
-                                        <% if(producto.categorias[0].categoria == "comida") { %> 
-                                            <a href="/productos/perro/comida/<%= producto.id %>">
-                                        <% } else if (producto.categorias[0].categoria == "accesorio") { %>  
-                                            <a href="/productos/perro/accesorios/<%= producto.id %>">
-                                        <% } else if (producto.categorias[0].categoria == "higiene") { %>
-                                            <a href="/productos/perro/higiene/<%= producto.id %>">
-                                        <% } else if (producto.categorias[0].categoria == "juguete") { %>
-                                            <a href="/productos/perro/juguetes/<%= producto.id %>">
+                                        <% if(producto.categorias && producto.categorias[0]) { %> 
+                                            <% if(producto.categorias[0].categoria == "comida") { %> 
+                                                <a href="/productos/perro/comida/<%= producto.id %>">
+                                            <% } else if (producto.categorias[0].categoria == "accesorio") { %>  
+                                                <a href="/productos/perro/accesorios/<%= producto.id %>">
+                                            <% } else if (producto.categorias[0].categoria == "higiene") { %>
+                                                <a href="/productos/perro/higiene/<%= producto.id %>">
+                                            <% } else if (producto.categorias[0].categoria == "juguete") { %>
+                                                <a href="/productos/perro/juguetes/<%= producto.id %>">
+                                            <% } %>
                                         <% } %>
                                                 <img class="img-productos-descuentos" src="/img/productos/<%= producto.imagen %>" alt="imagen_producto">
                                             </a>
@@ -591,7 +607,7 @@
                                                 <P class="descripcion"><%= producto.descripcion %></P>
                                             </div>
                                         </div>
-                                        <% if(producto.descuentos[0].id == 2) { %>
+                                        <% if(producto.descuentos && producto.descuentos[0] && producto.descuentos[0].id == 2) { %>
                                             <div class="div-dos">
                                                 <p class="descuento"><%= producto.descuentos[0].descripcion %></p>
                                                 <p class="descuento" style="font-weight: 600;">20% OFF</p>
@@ -612,7 +628,7 @@
                                                 </div>
                                         <% } %>
                                                 <div class="div-boton-comprar">
-                                                    <button onclick="agregar()" class="boton-comprar" type="submit">Agregar</button>
+                                                    <button class="boton-comprar" type="submit" data-id="<%= producto.id %>">Agregar</button>
                                                 </div>
                                             </div>
                                     </div>
@@ -626,14 +642,16 @@
                                 <article class="articulo-productos-descuentos">
                                     <div class="contenedor_imagen">
                                         <!-- dependiendo de la categoria q sea el producto, para q te lleve a la ruta de categoria correspondiente -->
-                                        <% if(producto.categorias[0].categoria == "comida") { %> 
-                                            <a href="/productos/perro/comida/<%= producto.id %>">
-                                        <% } else if (producto.categorias[0].categoria == "accesorio") { %>  
-                                            <a href="/productos/perro/accesorios/<%= producto.id %>">
-                                        <% } else if (producto.categorias[0].categoria == "higiene") { %>
-                                            <a href="/productos/perro/higiene/<%= producto.id %>">
-                                        <% } else if (producto.categorias[0].categoria == "juguete") { %>
-                                            <a href="/productos/perro/juguetes/<%= producto.id %>">
+                                        <% if(producto.categorias && producto.categorias[0]) { %> 
+                                            <% if(producto.categorias[0].categoria == "comida") { %> 
+                                                <a href="/productos/perro/comida/<%= producto.id %>">
+                                            <% } else if (producto.categorias[0].categoria == "accesorio") { %>  
+                                                <a href="/productos/perro/accesorios/<%= producto.id %>">
+                                            <% } else if (producto.categorias[0].categoria == "higiene") { %>
+                                                <a href="/productos/perro/higiene/<%= producto.id %>">
+                                            <% } else if (producto.categorias[0].categoria == "juguete") { %>
+                                                <a href="/productos/perro/juguetes/<%= producto.id %>">
+                                            <% } %>
                                         <% } %>
                                                 <img class="img-productos-descuentos" src="/img/productos/<%= producto.imagen %>" alt="imagen_producto">
                                             </a>
@@ -647,7 +665,7 @@
                                                 <P class="descripcion"><%= producto.descripcion %></P>
                                             </div>
                                         </div>
-                                        <% if(producto.descuentos[0].id == 2) { %>
+                                        <% if(producto.descuentos && producto.descuentos[0] && producto.descuentos[0].id == 2) { %>
                                             <div class="div-dos">
                                                 <p class="descuento"><%= producto.descuentos[0].descripcion %></p>
                                                 <p class="descuento" style="font-weight: 600;">20% OFF</p>
@@ -668,7 +686,7 @@
                                                 </div>
                                         <% } %>
                                                 <div class="div-boton-comprar">
-                                                    <button onclick="agregar()" class="boton-comprar" type="submit">Agregar</button>
+                                                    <button class="boton-comprar" type="submit" data-id="<%= producto.id %>">Agregar</button>
                                                 </div>
                                             </div>
                                     </div>
@@ -682,14 +700,16 @@
                                 <article class="articulo-productos-descuentos">
                                     <div class="contenedor_imagen">
                                         <!-- dependiendo de la categoria q sea el producto, para q te lleve a la ruta de categoria correspondiente -->
-                                        <% if(producto.categorias[0].categoria == "comida") { %> 
-                                            <a href="/productos/perro/comida/<%= producto.id %>">
-                                        <% } else if (producto.categorias[0].categoria == "accesorio") { %>  
-                                            <a href="/productos/perro/accesorios/<%= producto.id %>">
-                                        <% } else if (producto.categorias[0].categoria == "higiene") { %>
-                                            <a href="/productos/perro/higiene/<%= producto.id %>">
-                                        <% } else if (producto.categorias[0].categoria == "juguete") { %>
-                                            <a href="/productos/perro/juguetes/<%= producto.id %>">
+                                        <% if(producto.categorias && producto.categorias[0]) { %> 
+                                            <% if(producto.categorias[0].categoria == "comida") { %> 
+                                                <a href="/productos/perro/comida/<%= producto.id %>">
+                                            <% } else if (producto.categorias[0].categoria == "accesorio") { %>  
+                                                <a href="/productos/perro/accesorios/<%= producto.id %>">
+                                            <% } else if (producto.categorias[0].categoria == "higiene") { %>
+                                                <a href="/productos/perro/higiene/<%= producto.id %>">
+                                            <% } else if (producto.categorias[0].categoria == "juguete") { %>
+                                                <a href="/productos/perro/juguetes/<%= producto.id %>">
+                                            <% } %>
                                         <% } %>
                                                 <img class="img-productos-descuentos" src="/img/productos/<%= producto.imagen %>" alt="imagen_producto">
                                             </a>
@@ -703,7 +723,7 @@
                                                 <P class="descripcion"><%= producto.descripcion %></P>
                                             </div>
                                         </div>
-                                        <% if(producto.descuentos[0].id == 2) { %>
+                                        <% if(producto.descuentos && producto.descuentos[0] && producto.descuentos[0].id == 2) { %>
                                             <div class="div-dos">
                                                 <p class="descuento"><%= producto.descuentos[0].descripcion %></p>
                                                 <p class="descuento" style="font-weight: 600;">20% OFF</p>
@@ -724,7 +744,7 @@
                                                 </div>
                                         <% } %>
                                                 <div class="div-boton-comprar">
-                                                    <button onclick="agregar()" class="boton-comprar" type="submit">Agregar</button>
+                                                    <button class="boton-comprar" type="submit" data-id="<%= producto.id %>">Agregar</button>
                                                 </div>
                                             </div>
                                     </div>
@@ -756,7 +776,7 @@
                                                 <P class="descripcion"><%= producto.descripcion %></P>
                                             </div>
                                         </div>
-                                        <% if(producto.descuentos[0].id == 2) { %>
+                                        <% if(producto.descuentos && producto.descuentos[0] && producto.descuentos[0].id == 2) { %>
                                             <div class="div-dos">
                                                 <p class="descuento"><%= producto.descuentos[0].descripcion %></p>
                                                 <p class="descuento" style="font-weight: 600;">20% OFF</p>
@@ -777,9 +797,9 @@
                                                 </div>
                                         <% } %>
                                                 <div class="div-boton-comprar">
-                                                    <button onclick="agregar()" class="boton-comprar" type="submit">Agregar</button>
+                                                    <button class="boton-comprar" type="submit" data-id="<%= producto.id %>">Agregar</button>
                                                 </div>
-                                            
+                                            </div>
                                     </div>
                                 </article>     
                             <% } %>
@@ -807,7 +827,7 @@
                                                 <P class="descripcion"><%= producto.descripcion %></P>
                                             </div>
                                         </div>
-                                        <% if(producto.descuentos[0].id == 2) { %>
+                                        <% if(producto.descuentos && producto.descuentos[0] && producto.descuentos[0].id == 2) { %>
                                             <div class="div-dos">
                                                 <p class="descuento"><%= producto.descuentos[0].descripcion %></p>
                                                 <p class="descuento" style="font-weight: 600;">20% OFF</p>
@@ -828,9 +848,9 @@
                                                 </div>
                                         <% } %>
                                                 <div class="div-boton-comprar">
-                                                    <button onclick="agregar()" class="boton-comprar" type="submit">Agregar</button>
+                                                    <button class="boton-comprar" type="submit" data-id="<%= producto.id %>">Agregar</button>
                                                 </div>
-                                            
+                                            </div>
                                     </div>
                                 </article>     
                             <% } %>
@@ -857,7 +877,7 @@
                                                     <P class="descripcion"><%= producto.descripcion %></P>
                                                 </div>
                                             </div>
-                                            <% if(producto.descuentos[0].id == 2) { %>
+                                            <% if(producto.descuentos && producto.descuentos[0] && producto.descuentos[0].id == 2) { %>
                                                 <div class="div-dos">
                                                     <p class="descuento"><%= producto.descuentos[0].descripcion %></p>
                                                     <p class="descuento" style="font-weight: 600;">20% OFF</p>
@@ -878,7 +898,7 @@
                                                     </div>
                                             <% } %>
                                                     <div class="div-boton-comprar">
-                                                        <button onclick="agregar()" class="boton-comprar" type="submit">Agregar</button>
+                                                        <button class="boton-comprar" type="submit" data-id="<%= producto.id %>">Agregar</button>
                                                     </div>
                                                 </div>
                                         </div>
@@ -908,7 +928,7 @@
                                                     <P class="descripcion"><%= producto.descripcion %></P>
                                                 </div>
                                             </div>
-                                            <% if(producto.descuentos[0].id == 2) { %>
+                                            <% if(producto.descuentos && producto.descuentos[0] && producto.descuentos[0].id == 2) { %>
                                                 <div class="div-dos">
                                                     <p class="descuento"><%= producto.descuentos[0].descripcion %></p>
                                                     <p class="descuento" style="font-weight: 600;">20% OFF</p>
@@ -929,7 +949,7 @@
                                                     </div>
                                             <% } %>
                                                     <div class="div-boton-comprar">
-                                                        <button onclick="agregar()" class="boton-comprar" type="submit">Agregar</button>
+                                                        <button class="boton-comprar" type="submit" data-id="<%= producto.id %>">Agregar</button>
                                                     </div>
                                                 </div>
                                         </div>
@@ -959,7 +979,7 @@
                                                     <P class="descripcion"><%= producto.descripcion %></P>
                                                 </div>
                                             </div>
-                                            <% if(producto.descuentos[0].id == 2) { %>
+                                            <% if(producto.descuentos && producto.descuentos[0] && producto.descuentos[0].id == 2) { %>
                                                 <div class="div-dos">
                                                     <p class="descuento"><%= producto.descuentos[0].descripcion %></p>
                                                     <p class="descuento" style="font-weight: 600;">20% OFF</p>
@@ -980,7 +1000,7 @@
                                                     </div>
                                             <% } %>
                                                     <div class="div-boton-comprar">
-                                                        <button onclick="agregar()" class="boton-comprar" type="submit">Agregar</button>
+                                                        <button class="boton-comprar" type="submit" data-id="<%= producto.id %>">Agregar</button>
                                                     </div>
                                                 </div>
                                         </div>
@@ -1010,7 +1030,7 @@
                                                     <P class="descripcion"><%= producto.descripcion %></P>
                                                 </div>
                                             </div>
-                                            <% if(producto.descuentos[0].id == 2) { %>
+                                            <% if(producto.descuentos && producto.descuentos[0] && producto.descuentos[0].id == 2) { %>
                                                 <div class="div-dos">
                                                     <p class="descuento"><%= producto.descuentos[0].descripcion %></p>
                                                     <p class="descuento" style="font-weight: 600;">20% OFF</p>
@@ -1031,7 +1051,7 @@
                                                     </div>
                                             <% } %>
                                                     <div class="div-boton-comprar">
-                                                        <button onclick="agregar()" class="boton-comprar" type="submit">Agregar</button>
+                                                        <button class="boton-comprar" type="submit" data-id="<%= producto.id %>">Agregar</button>
                                                     </div>
                                                 </div>
                                         </div>
@@ -1066,7 +1086,7 @@
                                                 <P class="descripcion"><%= producto.descripcion %></P>
                                             </div>
                                         </div>
-                                        <% if(producto.descuentos[0].id == 2) { %>
+                                        <% if(producto.descuentos && producto.descuentos[0] && producto.descuentos[0].id == 2) { %>
                                             <div class="div-dos">
                                                 <p class="descuento"><%= producto.descuentos[0].descripcion %></p>
                                                 <p class="descuento" style="font-weight: 600;">20% OFF</p>
@@ -1087,9 +1107,9 @@
                                                 </div>
                                         <% } %>
                                                 <div class="div-boton-comprar">
-                                                    <button onclick="agregar()" class="boton-comprar" type="submit">Agregar</button>
+                                                    <button class="boton-comprar" type="submit" data-id="<%= producto.id %>">Agregar</button>
                                                 </div>
-                                            
+                                            </div>
                                     </div>
                                 </article>     
                             <% } %>
@@ -1117,7 +1137,7 @@
                                                 <P class="descripcion"><%= producto.descripcion %></P>
                                             </div>
                                         </div>
-                                        <% if(producto.descuentos[0].id == 2) { %>
+                                        <% if(producto.descuentos && producto.descuentos[0] && producto.descuentos[0].id == 2) { %>
                                             <div class="div-dos">
                                                 <p class="descuento"><%= producto.descuentos[0].descripcion %></p>
                                                 <p class="descuento" style="font-weight: 600;">20% OFF</p>
@@ -1138,9 +1158,9 @@
                                                 </div>
                                         <% } %>
                                                 <div class="div-boton-comprar">
-                                                    <button onclick="agregar()" class="boton-comprar" type="submit">Agregar</button>
+                                                    <button class="boton-comprar" type="submit" data-id="<%= producto.id %>">Agregar</button>
                                                 </div>
-                                            
+                                            </div>
                                     </div>
                                 </article>     
                             <% } %>
@@ -1167,7 +1187,7 @@
                                                     <P class="descripcion"><%= producto.descripcion %></P>
                                                 </div>
                                             </div>
-                                            <% if(producto.descuentos[0].id == 2) { %>
+                                            <% if(producto.descuentos && producto.descuentos[0] && producto.descuentos[0].id == 2) { %>
                                                 <div class="div-dos">
                                                     <p class="descuento"><%= producto.descuentos[0].descripcion %></p>
                                                     <p class="descuento" style="font-weight: 600;">20% OFF</p>
@@ -1188,7 +1208,7 @@
                                                     </div>
                                             <% } %>
                                                     <div class="div-boton-comprar">
-                                                        <button onclick="agregar()" class="boton-comprar" type="submit">Agregar</button>
+                                                        <button class="boton-comprar" type="submit" data-id="<%= producto.id %>">Agregar</button>
                                                     </div>
                                                 </div>
                                         </div>
@@ -1218,7 +1238,7 @@
                                                     <P class="descripcion"><%= producto.descripcion %></P>
                                                 </div>
                                             </div>
-                                            <% if(producto.descuentos[0].id == 2) { %>
+                                            <% if(producto.descuentos && producto.descuentos[0] && producto.descuentos[0].id == 2) { %>
                                                 <div class="div-dos">
                                                     <p class="descuento"><%= producto.descuentos[0].descripcion %></p>
                                                     <p class="descuento" style="font-weight: 600;">20% OFF</p>
@@ -1239,7 +1259,7 @@
                                                     </div>
                                             <% } %>
                                                     <div class="div-boton-comprar">
-                                                        <button onclick="agregar()" class="boton-comprar" type="submit">Agregar</button>
+                                                        <button class="boton-comprar" type="submit" data-id="<%= producto.id %>">Agregar</button>
                                                     </div>
                                                 </div>
                                         </div>
@@ -1269,7 +1289,7 @@
                                                     <P class="descripcion"><%= producto.descripcion %></P>
                                                 </div>
                                             </div>
-                                            <% if(producto.descuentos[0].id == 2) { %>
+                                            <% if(producto.descuentos && producto.descuentos[0] && producto.descuentos[0].id == 2) { %>
                                                 <div class="div-dos">
                                                     <p class="descuento"><%= producto.descuentos[0].descripcion %></p>
                                                     <p class="descuento" style="font-weight: 600;">20% OFF</p>
@@ -1290,7 +1310,7 @@
                                                     </div>
                                             <% } %>
                                                     <div class="div-boton-comprar">
-                                                        <button onclick="agregar()" class="boton-comprar" type="submit">Agregar</button>
+                                                        <button class="boton-comprar" type="submit" data-id="<%= producto.id %>">Agregar</button>
                                                     </div>
                                                 </div>
                                         </div>
@@ -1320,7 +1340,7 @@
                                                     <P class="descripcion"><%= producto.descripcion %></P>
                                                 </div>
                                             </div>
-                                            <% if(producto.descuentos[0].id == 2) { %>
+                                            <% if(producto.descuentos && producto.descuentos[0] && producto.descuentos[0].id == 2) { %>
                                                 <div class="div-dos">
                                                     <p class="descuento"><%= producto.descuentos[0].descripcion %></p>
                                                     <p class="descuento" style="font-weight: 600;">20% OFF</p>
@@ -1341,7 +1361,7 @@
                                                     </div>
                                             <% } %>
                                                     <div class="div-boton-comprar">
-                                                        <button onclick="agregar()" class="boton-comprar" type="submit">Agregar</button>
+                                                        <button class="boton-comprar" type="submit" data-id="<%= producto.id %>">Agregar</button>
                                                     </div>
                                                 </div>
                                         </div>
@@ -1376,7 +1396,7 @@
                                                 <P class="descripcion"><%= producto.descripcion %></P>
                                             </div>
                                         </div>
-                                        <% if(producto.descuentos[0].id == 2) { %>
+                                        <% if(producto.descuentos && producto.descuentos[0] && producto.descuentos[0].id == 2) { %>
                                             <div class="div-dos">
                                                 <p class="descuento"><%= producto.descuentos[0].descripcion %></p>
                                                 <p class="descuento" style="font-weight: 600;">20% OFF</p>
@@ -1397,9 +1417,9 @@
                                                 </div>
                                         <% } %>
                                                 <div class="div-boton-comprar">
-                                                    <button onclick="agregar()" class="boton-comprar" type="submit">Agregar</button>
+                                                    <button class="boton-comprar" type="submit" data-id="<%= producto.id %>">Agregar</button>
                                                 </div>
-                                            
+                                            </div>
                                     </div>
                                 </article>     
                             <% } %>
@@ -1427,7 +1447,7 @@
                                                 <P class="descripcion"><%= producto.descripcion %></P>
                                             </div>
                                         </div>
-                                        <% if(producto.descuentos[0].id == 2) { %>
+                                        <% if(producto.descuentos && producto.descuentos[0] && producto.descuentos[0].id == 2) { %>
                                             <div class="div-dos">
                                                 <p class="descuento"><%= producto.descuentos[0].descripcion %></p>
                                                 <p class="descuento" style="font-weight: 600;">20% OFF</p>
@@ -1448,9 +1468,9 @@
                                                 </div>
                                         <% } %>
                                                 <div class="div-boton-comprar">
-                                                    <button onclick="agregar()" class="boton-comprar" type="submit">Agregar</button>
+                                                    <button class="boton-comprar" type="submit" data-id="<%= producto.id %>">Agregar</button>
                                                 </div>
-                                            
+                                            </div>
                                     </div>
                                 </article>     
                             <% } %>
@@ -1477,7 +1497,7 @@
                                                     <P class="descripcion"><%= producto.descripcion %></P>
                                                 </div>
                                             </div>
-                                            <% if(producto.descuentos[0].id == 2) { %>
+                                            <% if(producto.descuentos && producto.descuentos[0] && producto.descuentos[0].id == 2) { %>
                                                 <div class="div-dos">
                                                     <p class="descuento"><%= producto.descuentos[0].descripcion %></p>
                                                     <p class="descuento" style="font-weight: 600;">20% OFF</p>
@@ -1498,7 +1518,7 @@
                                                     </div>
                                             <% } %>
                                                     <div class="div-boton-comprar">
-                                                        <button onclick="agregar()" class="boton-comprar" type="submit">Agregar</button>
+                                                        <button class="boton-comprar" type="submit" data-id="<%= producto.id %>">Agregar</button>
                                                     </div>
                                                 </div>
                                         </div>
@@ -1528,7 +1548,7 @@
                                                     <P class="descripcion"><%= producto.descripcion %></P>
                                                 </div>
                                             </div>
-                                            <% if(producto.descuentos[0].id == 2) { %>
+                                            <% if(producto.descuentos && producto.descuentos[0] && producto.descuentos[0].id == 2) { %>
                                                 <div class="div-dos">
                                                     <p class="descuento"><%= producto.descuentos[0].descripcion %></p>
                                                     <p class="descuento" style="font-weight: 600;">20% OFF</p>
@@ -1549,7 +1569,7 @@
                                                     </div>
                                             <% } %>
                                                     <div class="div-boton-comprar">
-                                                        <button onclick="agregar()" class="boton-comprar" type="submit">Agregar</button>
+                                                        <button class="boton-comprar" type="submit" data-id="<%= producto.id %>">Agregar</button>
                                                     </div>
                                                 </div>
                                         </div>
@@ -1579,7 +1599,7 @@
                                                     <P class="descripcion"><%= producto.descripcion %></P>
                                                 </div>
                                             </div>
-                                            <% if(producto.descuentos[0].id == 2) { %>
+                                            <% if(producto.descuentos && producto.descuentos[0] && producto.descuentos[0].id == 2) { %>
                                                 <div class="div-dos">
                                                     <p class="descuento"><%= producto.descuentos[0].descripcion %></p>
                                                     <p class="descuento" style="font-weight: 600;">20% OFF</p>
@@ -1600,7 +1620,7 @@
                                                     </div>
                                             <% } %>
                                                     <div class="div-boton-comprar">
-                                                        <button onclick="agregar()" class="boton-comprar" type="submit">Agregar</button>
+                                                        <button class="boton-comprar" type="submit" data-id="<%= producto.id %>">Agregar</button>
                                                     </div>
                                                 </div>
                                         </div>
@@ -1630,7 +1650,7 @@
                                                     <P class="descripcion"><%= producto.descripcion %></P>
                                                 </div>
                                             </div>
-                                            <% if(producto.descuentos[0].id == 2) { %>
+                                            <% if(producto.descuentos && producto.descuentos[0] && producto.descuentos[0].id == 2) { %>
                                                 <div class="div-dos">
                                                     <p class="descuento"><%= producto.descuentos[0].descripcion %></p>
                                                     <p class="descuento" style="font-weight: 600;">20% OFF</p>
@@ -1651,7 +1671,7 @@
                                                     </div>
                                             <% } %>
                                                     <div class="div-boton-comprar">
-                                                        <button onclick="agregar()" class="boton-comprar" type="submit">Agregar</button>
+                                                        <button class="boton-comprar" type="submit" data-id="<%= producto.id %>">Agregar</button>
                                                     </div>
                                                 </div>
                                         </div>
@@ -1686,7 +1706,7 @@
                                                 <P class="descripcion"><%= producto.descripcion %></P>
                                             </div>
                                         </div>
-                                        <% if(producto.descuentos[0].id == 2) { %>
+                                        <% if(producto.descuentos && producto.descuentos[0] && producto.descuentos[0].id == 2) { %>
                                             <div class="div-dos">
                                                 <p class="descuento"><%= producto.descuentos[0].descripcion %></p>
                                                 <p class="descuento" style="font-weight: 600;">20% OFF</p>
@@ -1707,9 +1727,9 @@
                                                 </div>
                                         <% } %>
                                                 <div class="div-boton-comprar">
-                                                    <button onclick="agregar()" class="boton-comprar" type="submit">Agregar</button>
+                                                    <button class="boton-comprar" type="submit" data-id="<%= producto.id %>">Agregar</button>
                                                 </div>
-                                            
+                                            </div>
                                     </div>
                                 </article>     
                             <% } %>
@@ -1737,7 +1757,7 @@
                                                 <P class="descripcion"><%= producto.descripcion %></P>
                                             </div>
                                         </div>
-                                        <% if(producto.descuentos[0].id == 2) { %>
+                                        <% if(producto.descuentos && producto.descuentos[0] && producto.descuentos[0].id == 2) { %>
                                             <div class="div-dos">
                                                 <p class="descuento"><%= producto.descuentos[0].descripcion %></p>
                                                 <p class="descuento" style="font-weight: 600;">20% OFF</p>
@@ -1758,9 +1778,9 @@
                                                 </div>
                                         <% } %>
                                                 <div class="div-boton-comprar">
-                                                    <button onclick="agregar()" class="boton-comprar" type="submit">Agregar</button>
+                                                    <button class="boton-comprar" type="submit" data-id="<%= producto.id %>">Agregar</button>
                                                 </div>
-                                            
+                                            </div>
                                     </div>
                                 </article>     
                             <% } %>
@@ -1787,7 +1807,7 @@
                                                     <P class="descripcion"><%= producto.descripcion %></P>
                                                 </div>
                                             </div>
-                                            <% if(producto.descuentos[0].id == 2) { %>
+                                            <% if(producto.descuentos && producto.descuentos[0] && producto.descuentos[0].id == 2) { %>
                                                 <div class="div-dos">
                                                     <p class="descuento"><%= producto.descuentos[0].descripcion %></p>
                                                     <p class="descuento" style="font-weight: 600;">20% OFF</p>
@@ -1808,7 +1828,7 @@
                                                     </div>
                                             <% } %>
                                                     <div class="div-boton-comprar">
-                                                        <button onclick="agregar()" class="boton-comprar" type="submit">Agregar</button>
+                                                        <button class="boton-comprar" type="submit" data-id="<%= producto.id %>">Agregar</button>
                                                     </div>
                                                 </div>
                                         </div>
@@ -1838,7 +1858,7 @@
                                                     <P class="descripcion"><%= producto.descripcion %></P>
                                                 </div>
                                             </div>
-                                            <% if(producto.descuentos[0].id == 2) { %>
+                                            <% if(producto.descuentos && producto.descuentos[0] && producto.descuentos[0].id == 2) { %>
                                                 <div class="div-dos">
                                                     <p class="descuento"><%= producto.descuentos[0].descripcion %></p>
                                                     <p class="descuento" style="font-weight: 600;">20% OFF</p>
@@ -1859,7 +1879,7 @@
                                                     </div>
                                             <% } %>
                                                     <div class="div-boton-comprar">
-                                                        <button onclick="agregar()" class="boton-comprar" type="submit">Agregar</button>
+                                                        <button class="boton-comprar" type="submit" data-id="<%= producto.id %>">Agregar</button>
                                                     </div>
                                                 </div>
                                         </div>
@@ -1889,7 +1909,7 @@
                                                     <P class="descripcion"><%= producto.descripcion %></P>
                                                 </div>
                                             </div>
-                                            <% if(producto.descuentos[0].id == 2) { %>
+                                            <% if(producto.descuentos && producto.descuentos[0] && producto.descuentos[0].id == 2) { %>
                                                 <div class="div-dos">
                                                     <p class="descuento"><%= producto.descuentos[0].descripcion %></p>
                                                     <p class="descuento" style="font-weight: 600;">20% OFF</p>
@@ -1910,7 +1930,7 @@
                                                     </div>
                                             <% } %>
                                                     <div class="div-boton-comprar">
-                                                        <button onclick="agregar()" class="boton-comprar" type="submit">Agregar</button>
+                                                        <button class="boton-comprar" type="submit" data-id="<%= producto.id %>">Agregar</button>
                                                     </div>
                                                 </div>
                                         </div>
@@ -1940,7 +1960,7 @@
                                                     <P class="descripcion"><%= producto.descripcion %></P>
                                                 </div>
                                             </div>
-                                            <% if(producto.descuentos[0].id == 2) { %>
+                                            <% if(producto.descuentos && producto.descuentos[0] && producto.descuentos[0].id == 2) { %>
                                                 <div class="div-dos">
                                                     <p class="descuento"><%= producto.descuentos[0].descripcion %></p>
                                                     <p class="descuento" style="font-weight: 600;">20% OFF</p>
@@ -1961,7 +1981,7 @@
                                                     </div>
                                             <% } %>
                                                     <div class="div-boton-comprar">
-                                                        <button onclick="agregar()" class="boton-comprar" type="submit">Agregar</button>
+                                                        <button class="boton-comprar" type="submit" data-id="<%= producto.id %>">Agregar</button>
                                                     </div>
                                                 </div>
                                         </div>
@@ -1986,7 +2006,7 @@
     <script src="/js/vermas.js"></script>
     <script src="/js/checksboxesPerro.js"></script>
     <script src="/js/categorias.js"></script>
-    <script src="/js/agregar.js"></script>
+    <script src="/js/carrito2.js"></script>
     <script src="/js/scroll-up.js"></script>
 
 </body>

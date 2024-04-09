@@ -121,25 +121,27 @@
                         <% for(let producto of productosPerro) { %>
                             <article class="articulo-productos-descuentos">
                                 <div class="contenedor_imagen">
-                                    <% if(producto.categorias[0].categoria == "comida") { %> 
-                                        <a href="/productos/perro/comida/<%= producto.id %>">
-                                            <img class="img-productos-descuentos" src="/img/productos/<%= producto.imagen %>" alt="imagen_producto">
-                                        </a>
-                                    <% } else if (producto.categorias[0].categoria == "accesorio") { %>
-                                        <a href="/productos/perro/accesorios/<%= producto.id %>">
-                                            <img class="img-productos-descuentos" src="/img/productos/<%= producto.imagen %>" alt="imagen_producto">
-                                        </a>
-                                    <% } else if (producto.categorias[0].categoria == "higiene") { %>
-                                        <a href="/productos/perro/higiene/<%= producto.id %>">
-                                            <img class="img-productos-descuentos" src="/img/productos/<%= producto.imagen %>" alt="imagen_producto">
-                                        </a>
-                                    <% } else if (producto.categorias[0].categoria == "juguete") { %>
-                                        <a href="/productos/perro/juguetes/<%= producto.id %>">
-                                            <img class="img-productos-descuentos" src="/img/productos/<%= producto.imagen %>" alt="imagen_producto">
-                                        </a>
+                                    <% if(producto.categorias && producto.categorias[0]) { %> 
+                                        <% if(producto.categorias[0].categoria == "comida") { %> 
+                                            <a href="/productos/perro/comida/<%= producto.id %>">
+                                                <img class="img-productos-descuentos" src="/img/productos/<%= producto.imagen %>" alt="imagen_producto">
+                                            </a>
+                                        <% } else if (producto.categorias[0].categoria == "accesorio") { %>
+                                            <a href="/productos/perro/accesorios/<%= producto.id %>">
+                                                <img class="img-productos-descuentos" src="/img/productos/<%= producto.imagen %>" alt="imagen_producto">
+                                            </a>
+                                        <% } else if (producto.categorias[0].categoria == "higiene") { %>
+                                            <a href="/productos/perro/higiene/<%= producto.id %>">
+                                                <img class="img-productos-descuentos" src="/img/productos/<%= producto.imagen %>" alt="imagen_producto">
+                                            </a>
+                                        <% } else if (producto.categorias[0].categoria == "juguete") { %>
+                                            <a href="/productos/perro/juguetes/<%= producto.id %>">
+                                                <img class="img-productos-descuentos" src="/img/productos/<%= producto.imagen %>" alt="imagen_producto">
+                                            </a>
+                                        <% } %>
                                     <% } %>
                                 </div>
-                                <% if(producto.descuentos[0].id == 2) { %>
+                                <% if(producto.descuentos && producto.descuentos[0] && producto.descuentos[0].id == 2) { %>
                                     <div class="div-card">
                                         <div class="div-uno">
                                             <div class="texto_nombre_arriba">
@@ -159,7 +161,7 @@
                                                 <p class="precio">$ <%= Number((producto.precio*0.8).toFixed(2)) %></p>
                                             </div>
                                             <div class="div-boton-comprar">
-                                                <button class="boton-comprar" type="submit">Agregar</button>
+                                                <button class="boton-comprar" type="submit" data-id="<%= producto.id %>">Agregar</button>
                                             </div>
                                         </div>
                                     </div>
@@ -182,7 +184,7 @@
                                                 <p class="precio">$ <%= producto.precio %></p>
                                             </div>
                                             <div class="div-boton-comprar">
-                                                <button class="boton-comprar" type="submit">Agregar</button>
+                                                <button class="boton-comprar" type="submit" data-id="<%= producto.id %>">Agregar</button>
                                             </div>
                                         </div>
                                     </div>
@@ -199,25 +201,27 @@
                         <% for(let producto of productosGato) { %>
                             <article class="articulo-productos-descuentos">
                                 <div class="contenedor_imagen">
-                                    <% if(producto.categorias[0].categoria == "comida") { %> 
-                                        <a href="/productos/gato/comida/<%= producto.id %>">
-                                            <img class="img-productos-descuentos" src="/img/productos/<%= producto.imagen %>" alt="imagen_producto">
-                                        </a>
-                                    <% } else if (producto.categorias[0].categoria == "accesorio") { %>
-                                        <a href="/productos/gato/accesorios/<%= producto.id %>">
-                                            <img class="img-productos-descuentos" src="/img/productos/<%= producto.imagen %>" alt="imagen_producto">
-                                        </a>
-                                    <% } else if (producto.categorias[0].categoria == "higiene") { %>
-                                        <a href="/productos/gato/higiene/<%= producto.id %>">
-                                            <img class="img-productos-descuentos" src="/img/productos/<%= producto.imagen %>" alt="imagen_producto">
-                                        </a>
-                                    <% } else if (producto.categorias[0].categoria == "juguete") { %>
-                                        <a href="/productos/gato/juguetes/<%= producto.id %>">
-                                            <img class="img-productos-descuentos" src="/img/productos/<%= producto.imagen %>" alt="imagen_producto">
-                                        </a>
+                                    <% if(producto.categorias && producto.categorias[0]) { %> 
+                                        <% if(producto.categorias[0].categoria == "comida") { %> 
+                                            <a href="/productos/gato/comida/<%= producto.id %>">
+                                                <img class="img-productos-descuentos" src="/img/productos/<%= producto.imagen %>" alt="imagen_producto">
+                                            </a>
+                                        <% } else if (producto.categorias[0].categoria == "accesorio") { %>
+                                            <a href="/productos/gato/accesorios/<%= producto.id %>">
+                                                <img class="img-productos-descuentos" src="/img/productos/<%= producto.imagen %>" alt="imagen_producto">
+                                            </a>
+                                        <% } else if (producto.categorias[0].categoria == "higiene") { %>
+                                            <a href="/productos/gato/higiene/<%= producto.id %>">
+                                                <img class="img-productos-descuentos" src="/img/productos/<%= producto.imagen %>" alt="imagen_producto">
+                                            </a>
+                                        <% } else if (producto.categorias[0].categoria == "juguete") { %>
+                                            <a href="/productos/gato/juguetes/<%= producto.id %>">
+                                                <img class="img-productos-descuentos" src="/img/productos/<%= producto.imagen %>" alt="imagen_producto">
+                                            </a>
+                                        <% } %>
                                     <% } %>
                                 </div>
-                                <% if(producto.descuentos[0].id == 2) { %>
+                                <% if(producto.descuentos && producto.descuentos[0] && producto.descuentos[0].id == 2) { %>
                                     <div class="div-card">
                                         <div class="div-uno">
                                             <div class="texto_nombre_arriba">
@@ -237,7 +241,7 @@
                                                 <p class="precio">$ <%= Number((producto.precio*0.8).toFixed(2)) %></p>
                                             </div>
                                             <div class="div-boton-comprar">
-                                                <button class="boton-comprar" type="submit">Agregar</button>
+                                                <button class="boton-comprar" type="submit" data-id="<%= producto.id %>">Agregar</button>
                                             </div>
                                         </div>
                                     </div>
@@ -260,7 +264,7 @@
                                                 <p class="precio">$ <%= producto.precio %></p>
                                             </div>
                                             <div class="div-boton-comprar">
-                                                <button class="boton-comprar" type="submit">Agregar</button>
+                                                <button class="boton-comprar" type="submit" data-id="<%= producto.id %>">Agregar</button>
                                             </div>
                                         </div>
                                     </div>
@@ -276,6 +280,8 @@
     </main>
 
     <%- include("./partials/footer.ejs") %>
+
+    <script src="/js/carrito2.js"></script>
 
 </body>
 </html>
