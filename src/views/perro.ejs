@@ -180,9 +180,14 @@
                                             <% } else if (producto.categorias[0].categoria == "juguete") { %>
                                                 <a href="/productos/perro/juguetes/<%= producto.id %>">
                                             <% } %>
+                                                    <img class="img-productos-descuentos" src="/img/productos/<%= producto.imagen %>" alt="imagen_producto">
+                                                </a>
+                                        <% } else { %>
+                                                <a href="/productos/perro/comida/<%= producto.id %>">
+                                                    <img class="img-productos-descuentos" src="/img/productos/<%= producto.imagen %>" alt="imagen_producto">
+                                                </a>
                                         <% } %>
-                                                <img class="img-productos-descuentos" src="/img/productos/<%= producto.imagen %>" alt="imagen_producto">
-                                            </a>
+                                                
                                     </div>
                                     <div class="div-card">
                                         <div class="div-uno">
@@ -242,9 +247,13 @@
                                             <% } else if (producto.categorias[0].categoria == "juguete") { %>
                                                 <a href="/productos/perro/juguetes/<%= producto.id %>">
                                             <% } %>
+                                                    <img class="img-productos-descuentos" src="/img/productos/<%= producto.imagen %>" alt="imagen_producto">
+                                                </a>
+                                        <% } else { %>
+                                                <a href="/productos/perro/comida/<%= producto.id %>">
+                                                    <img class="img-productos-descuentos" src="/img/productos/<%= producto.imagen %>" alt="imagen_producto">
+                                                </a>
                                         <% } %>
-                                                <img class="img-productos-descuentos" src="/img/productos/<%= producto.imagen %>" alt="imagen_producto">
-                                            </a>
                                     </div>
                                     <div class="div-card">
                                         <div class="div-uno">
