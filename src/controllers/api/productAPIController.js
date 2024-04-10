@@ -34,7 +34,7 @@ const productAPIController = {
                     meta: {
                         link: 'http://localhost:3100/api/productos/:id',
                         status: 200,
-                        total: product.length
+                        /* total: product.length */
                     },
                     data: product
                 })      

@@ -74,8 +74,6 @@ svg {
     color: #18515F;
 }
 
-
-
 /* --- Menu Ordenar --- */
 .seccion-menu-ordenar {
     display: none;
@@ -399,8 +397,9 @@ input[type="radio"] {
     box-shadow : 0px 0px 20px rgb(140, 140, 140);
 }
 
-#myBtn {
+.myBtn {
     display: none;
+    opacity: 0;
 }
 
 @media (min-width:361px){
@@ -420,6 +419,15 @@ input[type="radio"] {
     .contenedor_menu_desktop { /* el box de los filtros */
         display: none;
     }
+
+    .myBtn {
+        display: none;
+        opacity: 0;
+    }
+
+    footer {
+        margin-top: -80px;
+    }
 }
 
 @media (min-width: 465px) {
@@ -431,6 +439,15 @@ input[type="radio"] {
         top: -9px;
         right: -10px;
         font-size: 10px;
+    }
+
+    .myBtn {
+        display: none;
+        opacity: 0;
+    }
+    
+    footer {
+        margin-top: -80px;
     }
 }
 
@@ -479,6 +496,11 @@ input[type="radio"] {
 
     .precio-tachado {
         font-size: 14px;
+    }
+
+    .myBtn {
+        display: none;
+        opacity: 0;
     }
 
     
@@ -558,7 +580,7 @@ input[type="radio"] {
         justify-content: space-around;
     }
 
-    #myBtn {
+    .myBtn {
         display: none; /* Hidden by default */
         position: fixed; /* Fixed/sticky position */
         bottom: 20px; /* Place the button at the bottom of the page */
@@ -574,10 +596,15 @@ input[type="radio"] {
         font-size: 18px; /* Increase font size */
         width: 50px;
         height: 50px;
+        opacity: 1;
     }
       
-    #myBtn:hover {
+    .myBtn:hover {
         background-color: #555; /* Add a dark-grey background on hover */
+    }
+
+    footer {
+        margin-top: 0;
     }
 
     

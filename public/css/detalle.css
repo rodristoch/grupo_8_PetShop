@@ -440,6 +440,10 @@ a {
 
 /* hasta aca card producto */
 
+footer {
+    margin-top: 15px;
+}
+
 
 @media (min-width: 768px) {
 

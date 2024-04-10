@@ -62,7 +62,7 @@ router.get("/logout", userController.logout)
 router.get("/logout2", userController.logout2)
 
 //Carrito 2 
-router.get("/carrito2", /* authMiddleware */ userController.carrito2)
+router.get("/carrito2", authMiddleware, userController.carrito2)
 
 //Base de usuarios
 router.get('/usuariosListado', userController.usuariosListado)

@@ -446,8 +446,13 @@ h2 {
     border-radius: 5px;
 } */
 
-#myBtn {
+.myBtn {
     display: none;
+    opacity: 0;
+}
+
+footer {
+    margin-top: -20px;
 }
 
 /* --------------------------Main----------------------------------- */
@@ -533,6 +538,15 @@ h2 {
     .carrusel {
         margin-bottom: -10px;
     } */
+
+    .myBtn {
+        display: none;
+        opacity: 0;
+    }
+
+    footer {
+        margin-top: -20px;
+    }
 }
 
 @media (min-width: 993px){
@@ -541,6 +555,15 @@ h2 {
     .articulo-productos-descuentos {
         width: 85%;
         height: auto;
+    }
+
+    .myBtn {
+        display: none;
+        opacity: 0;
+    }
+
+    footer {
+        margin-top: -20px;
     }
 }
 
@@ -725,7 +748,7 @@ h2 {
         background-color: #9b46d7;
     }
 
-    #myBtn {
+    .myBtn {
         display: none; /* Hidden by default */
         position: fixed; /* Fixed/sticky position */
         bottom: 20px; /* Place the button at the bottom of the page */
@@ -741,10 +764,15 @@ h2 {
         font-size: 18px; /* Increase font size */
         width: 50px;
         height: 50px;
+        opacity: 1;
     }
       
-    #myBtn:hover {
+    .myBtn:hover {
         background-color: #555; /* Add a dark-grey background on hover */
+    }
+
+    footer {
+        margin-top: 0;
     }
 
 }
